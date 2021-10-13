@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hw_param.h" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"/>
+    <originFiles name="conv_sysarr.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"/>
+    <originFiles name="conv1d.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv1d.cpp"/>
+    <originFiles name="conv.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv.cpp"/>
+    <originFiles name="conv_sysarr.back" path="/home/sumin/workspace/hls_test/conv_sysarr.back"/>
+    <originFiles name="conv_sysarr_fifo.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="test.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

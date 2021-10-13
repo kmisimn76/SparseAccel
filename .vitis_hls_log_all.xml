@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 200-880] The II Violation in module 'Conv_sysarr' (Loop: VITIS_LOOP_161_23): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('output_l1_0_addr_3_write_ln197', Systolic_Array_PCNN_based/conv_sysarr.cpp:197) of variable 'add_ln191_12', Systolic_Array_PCNN_based/conv_sysarr.cpp:191 on array 'output_l1[0]', Systolic_Array_PCNN_based/conv_sysarr.cpp:31 and 'store' operation ('output_l1_0_addr_1_write_ln197', Systolic_Array_PCNN_based/conv_sysarr.cpp:197) of variable 'add_ln191_12', Systolic_Array_PCNN_based/conv_sysarr.cpp:191 on array 'output_l1[0]', Systolic_Array_PCNN_based/conv_sysarr.cpp:31.&#xA;Resolution: For help on HLS 200-880 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-880.html" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:09.579+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_85_5' (Systolic_Array_PCNN_based/conv_sysarr.cpp:85:29) in function 'Conv_sysarr' more than one sub loop.&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-960.html" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:08.925+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_105_12' (Systolic_Array_PCNN_based/conv_sysarr.cpp:105:35) in function 'Conv_sysarr' more than one sub loop.&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-960.html" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:08.923+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_92_8' (Systolic_Array_PCNN_based/conv_sysarr.cpp:92:31) in function 'Conv_sysarr' the outer loop is not a perfect loop.&#xA;Resolution: For help on HLS 200-960 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-960.html" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:08.919+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-1593] Ignore interface attribute or pragma which is not used in top function: Systolic_Array_PCNN_based/conv.cpp:143:9" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:03.554+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5358] Only for/while loops support the 'Unroll ': Systolic_Array_PCNN_based/conv.cpp:98:9" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.634+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5324] unused parameter 'RS': Systolic_Array_PCNN_based/conv.cpp:89:107" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.633+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5324] unused parameter 'C': Systolic_Array_PCNN_based/conv.cpp:89:100" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.632+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5324] unused parameter 's': Systolic_Array_PCNN_based/conv.cpp:89:93" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.631+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5324] unused parameter 'r': Systolic_Array_PCNN_based/conv.cpp:89:86" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.630+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 207-5324] unused parameter 'co': Systolic_Array_PCNN_based/conv.cpp:89:78" projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:33:01.628+0900" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Skipped source file 'conv_sysarr.back'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx." projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2021-10-11T04:32:50.300+0900" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
