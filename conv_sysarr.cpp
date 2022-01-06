@@ -10,8 +10,6 @@
 #define TILE_W 1
 
 
-
-
 void Conv_sysarr(
 	hls::stream<k2k_data> &bias_in,
 	hls::stream<k2k_data> &weight_in,
@@ -156,6 +154,7 @@ DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l1 dim=2 complete) //BRAM cyclic
 									}
 								}
 							}
+							// TODO: double buffering
 							// PE Array
 							int input_rows = H_TILE*W_TILE + (C-1)+(ARRAY_K-1)+ARRAY_C; //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
 							for(int i=0; i < input_rows; i++)

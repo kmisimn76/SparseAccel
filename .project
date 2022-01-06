@@ -62,6 +62,11 @@
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp</location>
 		</link>
 		<link>
+			<name>source/conv_sysarr_dbbuf.cpp</name>
+			<type>1</type>
+			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</location>
+		</link>
+		<link>
 			<name>source/conv_sysarr_fifo.cpp</name>
 			<type>1</type>
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp</location>

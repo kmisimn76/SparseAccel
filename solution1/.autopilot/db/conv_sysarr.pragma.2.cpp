@@ -13445,7 +13445,7 @@ typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
 typedef ap_axiu<8,0,0,0> k2k_sync;
 typedef ap_axiu<32,0,0,0> k2k_data;
 # 3 "Systolic_Array_PCNN_based/conv_sysarr.cpp" 2
-# 15 "Systolic_Array_PCNN_based/conv_sysarr.cpp"
+# 13 "Systolic_Array_PCNN_based/conv_sysarr.cpp"
 __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
  hls::stream<k2k_data> &bias_in,
  hls::stream<k2k_data> &weight_in,
@@ -13453,7 +13453,7 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
  hls::stream<k2k_data> &conv_out)
 {
 #pragma HLS TOP name=Conv_sysarr
-# 20 "Systolic_Array_PCNN_based/conv_sysarr.cpp"
+# 18 "Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 #pragma HLS expression_balance
 
@@ -13507,28 +13507,28 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
  uint RS = (uchar)param_tmp.data(31,0);
  uint contol = 0;
 
- VITIS_LOOP_73_1: for (unsigned int k = 0; k < K; k++) {
+ VITIS_LOOP_71_1: for (unsigned int k = 0; k < K; k++) {
   bias_tmp = bias_in.read(); bias_l2[k] = (DPTYPE)bias_tmp.data(7,0);
  }
- VITIS_LOOP_76_2: for (unsigned int k = 0; k < K*C*RS*RS; k++) {
+ VITIS_LOOP_74_2: for (unsigned int k = 0; k < K*C*RS*RS; k++) {
   weight_tmp = weight_in.read(); weight_l2[k] = (DPTYPE)weight_tmp.data(7,0);
  }
- VITIS_LOOP_79_3: for (unsigned int k = 0; k < C*WH_in*WH_in; k++) {
+ VITIS_LOOP_77_3: for (unsigned int k = 0; k < C*WH_in*WH_in; k++) {
   input_tmp = data_in.read(); data_l2[k] = (DPTYPE)input_tmp.data(7,0);
  }
 
- VITIS_LOOP_83_4: for (int ko = 0; ko < K/4; ko++)
+ VITIS_LOOP_81_4: for (int ko = 0; ko < K/4; ko++)
  {
-  VITIS_LOOP_85_5: for (int co = 0; co < C/4; co++)
+  VITIS_LOOP_83_5: for (int co = 0; co < C/4; co++)
   {
-   VITIS_LOOP_87_6: for (int ho = 0; ho < 1; ho++)
+   VITIS_LOOP_85_6: for (int ho = 0; ho < 1; ho++)
    {
-    VITIS_LOOP_89_7: for (int wo = 0; wo < 1; wo++)
+    VITIS_LOOP_87_7: for (int wo = 0; wo < 1; wo++)
     {
 
-     VITIS_LOOP_92_8: for(int ki=0; ki < 4; ki++) {
-      VITIS_LOOP_93_9: for (int hi = 0; hi < H_TILE; hi++) {
-       VITIS_LOOP_94_10: for (int wi = 0; wi < W_TILE; wi++) {
+     VITIS_LOOP_90_8: for(int ki=0; ki < 4; ki++) {
+      VITIS_LOOP_91_9: for (int hi = 0; hi < H_TILE; hi++) {
+       VITIS_LOOP_92_10: for (int wi = 0; wi < W_TILE; wi++) {
 
         int k = (ko*4 +ki);
         output_l1[ko*H_TILE*W_TILE+hi*W_TILE+wi][ki] = bias_l2[k];
@@ -13537,9 +13537,9 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
      }
 
      bool buf_num = 0;
-     VITIS_LOOP_103_11: for (int r = 0; r < RS; r++)
+     VITIS_LOOP_101_11: for (int r = 0; r < RS; r++)
      {
-      VITIS_LOOP_105_12: for (int s = 0; s < RS; s+=2)
+      VITIS_LOOP_103_12: for (int s = 0; s < RS; s+=2)
       {
 
 
@@ -13547,9 +13547,9 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
 
 
 
-       VITIS_LOOP_113_13: for(int ki=0; ki < 4; ki++) {
+       VITIS_LOOP_111_13: for(int ki=0; ki < 4; ki++) {
 #pragma HLS unroll
- VITIS_LOOP_115_14: for(int ci=0; ci < 4; ci++) {
+ VITIS_LOOP_113_14: for(int ci=0; ci < 4; ci++) {
 #pragma HLS unroll
  int k = (ko*4 +ki);
          int c = (co*4 +ci);
@@ -13558,9 +13558,9 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
        }
 
 
-       VITIS_LOOP_124_15: for(int ki=0; ki < 4; ki++) {
+       VITIS_LOOP_122_15: for(int ki=0; ki < 4; ki++) {
 #pragma HLS unroll
- VITIS_LOOP_126_16: for(int ci=0; ci < 4; ci++) {
+ VITIS_LOOP_124_16: for(int ci=0; ci < 4; ci++) {
 #pragma HLS unroll
  int k = (ko*4 +ki);
          int c = (co*4 +ci);
@@ -13568,10 +13568,10 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
         }
        }
 
-       VITIS_LOOP_134_17: for(int ci=0; ci < 4; ci++) {
+       VITIS_LOOP_132_17: for(int ci=0; ci < 4; ci++) {
 
-        VITIS_LOOP_136_18: for(int hi=0; hi < H_TILE; hi++) {
-         VITIS_LOOP_137_19: for(int wi=0; wi < W_TILE; wi++) {
+        VITIS_LOOP_134_18: for(int hi=0; hi < H_TILE; hi++) {
+         VITIS_LOOP_135_19: for(int wi=0; wi < W_TILE; wi++) {
           int c = (co*4 +ci);
           int h = (ho*H_TILE+hi) + r;
           int w = (wo*W_TILE+wi) + s;
@@ -13581,10 +13581,10 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
         }
        }
 
-       VITIS_LOOP_147_20: for(int ci=0; ci < 4; ci++) {
+       VITIS_LOOP_145_20: for(int ci=0; ci < 4; ci++) {
 
-        VITIS_LOOP_149_21: for(int hi=0; hi < H_TILE; hi++) {
-         VITIS_LOOP_150_22: for(int wi=0; wi < W_TILE; wi++) {
+        VITIS_LOOP_147_21: for(int hi=0; hi < H_TILE; hi++) {
+         VITIS_LOOP_148_22: for(int wi=0; wi < W_TILE; wi++) {
           int c = (co*4 +ci);
           int h = (ho*H_TILE+hi) + r;
           int w = (wo*W_TILE+wi) + s+1;
@@ -13594,20 +13594,21 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
         }
        }
 
+
        int input_rows = H_TILE*W_TILE + (C-1)+(4 -1)+4;
-       VITIS_LOOP_161_23: for(int i=0; i < input_rows; i++)
+       VITIS_LOOP_160_23: for(int i=0; i < input_rows; i++)
        {
 
-        VITIS_LOOP_164_24: for(int ci=0;ci<4;ci++) {
+        VITIS_LOOP_163_24: for(int ci=0;ci<4;ci++) {
 #pragma HLS unroll
  int hi = (i-ci)/W_TILE;
          int wi = (i-ci)%W_TILE;
          if (i-ci >=0) input_data[ci] = data_l1[hi*W_TILE+wi][ci][0];
          else input_data[ci] = 0;
         }
-        VITIS_LOOP_171_25: for(int ki=4 -1; ki >= 0; ki--) {
+        VITIS_LOOP_170_25: for(int ki=4 -1; ki >= 0; ki--) {
 #pragma HLS unroll
- VITIS_LOOP_173_26: for(int ci=4 -1; ci >= 0; ci--) {
+ VITIS_LOOP_172_26: for(int ci=4 -1; ci >= 0; ci--) {
 #pragma HLS unroll
 
  if (ki==0)
@@ -13646,9 +13647,9 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
   }
  }
 
- VITIS_LOOP_212_27: for (int k = 0; k < (K/4); k++) {
-  VITIS_LOOP_213_28: for(int ki =0; ki<4; ki++) {
-   VITIS_LOOP_214_29: for(int wh=0;wh<WH*WH;wh++) {
+ VITIS_LOOP_211_27: for (int k = 0; k < (K/4); k++) {
+  VITIS_LOOP_212_28: for(int ki =0; ki<4; ki++) {
+   VITIS_LOOP_213_29: for(int wh=0;wh<WH*WH;wh++) {
     output_tmp.data(31,0) = (char)output_l1[k*WH*WH+wh][ki]; conv_out.write(output_tmp);
    }
   }

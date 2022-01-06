@@ -3,6 +3,7 @@
   <source>
     <originFiles name="hw_param.h" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"/>
     <originFiles name="conv_sysarr_fifo.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp"/>
+    <originFiles name="conv_sysarr_dbbuf.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"/>
     <originFiles name="conv_sysarr.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"/>
     <originFiles name="conv_sysarr.back" path="/home/sumin/workspace/hls_test/conv_sysarr.back"/>
     <originFiles name="conv1d.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv1d.cpp"/>

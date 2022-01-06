@@ -19,12 +19,12 @@ module AESL_autofifo_data_in_V (
 
 //------------------------Parameter----------------------
 localparam
-	TV_IN	=	"../tv/cdatafile/c.Conv_sysarr.autotvin_data_in_V.dat";
+	TV_IN	=	"../tv/cdatafile/c.Conv_sysarr_dbbuf.autotvin_data_in_V.dat";
 
 //------------------------Local signal-------------------
 parameter DATA_WIDTH = 32'd 64;
-parameter ADDR_WIDTH = 32'd 13;
-parameter DEPTH = 32'd 2592;
+parameter ADDR_WIDTH = 32'd 10;
+parameter DEPTH = 32'd 324;
 
 // Input and Output
 input clk;

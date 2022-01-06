@@ -1,7 +1,7 @@
 set depth_list {
-{bias_in_V 37}
-{weight_in_V 1024}
-{data_in_V 2592}
-{conv_out_V 1568}
+{bias_in_V 21}
+{weight_in_V 576}
+{data_in_V 324}
+{conv_out_V 784}
 }
-set trans_num 1
+set trans_num 4

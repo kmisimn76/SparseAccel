@@ -4,9 +4,10 @@
 ## Copyright (C) 1986-2020 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project Systolic_Array_PCNN_based
-set_top Conv_sysarr
+set_top Conv_sysarr_dbbuf
 add_files Systolic_Array_PCNN_based/hw_param.h
 add_files Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp
+add_files Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp
 add_files Systolic_Array_PCNN_based/conv_sysarr.cpp
 add_files conv_sysarr.back
 add_files Systolic_Array_PCNN_based/conv1d.cpp

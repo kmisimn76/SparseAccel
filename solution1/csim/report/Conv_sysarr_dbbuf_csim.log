@@ -1,0 +1,15 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../conv_sysarr_dbbuf.cpp in debug mode
+   Generating csim.exe
+Test Start
+Kernel coreConv lanched !!!
+Test Case 1 Complete
+Kernel coreConv lanched !!!
+Test Case 2 Complete
+Kernel coreConv lanched !!!
+Test Case 3 Complete
+Kernel coreConv lanched !!!
+Test Case 4 Complete
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

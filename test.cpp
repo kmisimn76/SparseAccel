@@ -3,9 +3,10 @@
 #include "hw_param.h"
 
 
-void coreConv(char frac_dout,
-        char frac_din,
-        char frac_w,
+void coreConv(
+		//char frac_dout,
+        //char frac_din,
+        //char frac_w,
         hls::stream<k2k_data> &bias_in,
         hls::stream<k2k_data> &weight_in,
         hls::stream<k2k_data> &data_in,
@@ -16,6 +17,11 @@ void Conv(
         hls::stream<k2k_data> &data_in,
         hls::stream<k2k_data> &conv_out);
 void Conv_sysarr(
+        hls::stream<k2k_data> &bias_in,
+        hls::stream<k2k_data> &weight_in,
+        hls::stream<k2k_data> &data_in,
+        hls::stream<k2k_data> &conv_out);
+void Conv_sysarr_dbbuf(
         hls::stream<k2k_data> &bias_in,
         hls::stream<k2k_data> &weight_in,
         hls::stream<k2k_data> &data_in,
@@ -39,10 +45,13 @@ void conv_gold(
 				for(int c=0;c<C;c++){
 					for(int r=0;r<RS;r++){
 						for(int s=0;s<RS;s++){
-							//gold[k*WH*WH + h*WH + w] += data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
-							//								 * weight[k*C*RS*RS + c*RS*RS + r*RS + s];
-							gold[k*WH*WH + h*WH + w] = (char)((char)gold[k*WH*WH + h*WH + w] + (char)(data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
-															 * weight[k*C*RS*RS + c*RS*RS + r*RS + s])); // for Quantization
+							// INT32 accumulation
+							gold[k*WH*WH + h*WH + w] += data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
+															 * weight[k*C*RS*RS + c*RS*RS + r*RS + s];
+
+							// INT8 accumulation
+							//gold[k*WH*WH + h*WH + w] = (char)((char)gold[k*WH*WH + h*WH + w] + (char)(data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
+							//								 * weight[k*C*RS*RS + c*RS*RS + r*RS + s])); // for Quantization
 						}
 					}
 				}
@@ -92,13 +101,16 @@ int conv_test(
 		tmp.data(7,0) = data[k]; data_in.write(tmp);
 	}
 
-	Conv_sysarr(bias_in, weight_in, data_in, conv_out);
-	exit(0);
+	//coreConv(bias_in, weight_in, data_in, conv_out); //Systolic Array Old
+	//Conv(bias_in, weight_in, data_in, conv_out); //Systolic Array FIFO
+	//Conv_sysarr(bias_in, weight_in, data_in, conv_out); // Systolic Array Current Optimal //FUNCTIONALITY CHECK REQUIRED
+	Conv_sysarr_dbbuf(bias_in, weight_in, data_in, conv_out); // Systolic Array Current Optimal
+	//exit(0);
     for(int l=0;l<K*WH*WH;l++) {
     	tmp = conv_out.read(); int output = tmp.data(31,0);
     	if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 1; }
     	//if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 0; }
-    	//printf("%d: %d\n", l, (uint)(tmp.data(31,0)));
+    	//printf("%d: %d vs %d(gold)\n", l, (uint)(tmp.data(31,0)), gold[l]);
     }
     return 0;
 }
@@ -110,8 +122,8 @@ int main()
 	char weight[2048];
 	int gold[2048];
 
-    uint K = 32;
-    uint C = 32;
+    uint K = 16;
+    uint C = 4;
     uint WH = 7;
     uint WH_in = 9;
     uint RS = 3;

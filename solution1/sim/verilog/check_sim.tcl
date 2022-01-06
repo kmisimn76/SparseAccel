@@ -80,11 +80,11 @@ proc check_tvin_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "c.Conv_sysarr.autotvin_bias_in_V.dat"
-         "c.Conv_sysarr.autotvin_weight_in_V.dat"
-         "c.Conv_sysarr.autotvin_data_in_V.dat"
-         "c.Conv_sysarr.autotvin_conv_out_V.dat"
-         "c.Conv_sysarr.autotvout_conv_out_V.dat"
+         "c.Conv_sysarr_dbbuf.autotvin_bias_in_V.dat"
+         "c.Conv_sysarr_dbbuf.autotvin_weight_in_V.dat"
+         "c.Conv_sysarr_dbbuf.autotvin_data_in_V.dat"
+         "c.Conv_sysarr_dbbuf.autotvin_conv_out_V.dat"
+         "c.Conv_sysarr_dbbuf.autotvout_conv_out_V.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {
@@ -109,7 +109,7 @@ proc check_tvout_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
-         "rtl.Conv_sysarr.autotvout_conv_out_V.dat"
+         "rtl.Conv_sysarr_dbbuf.autotvout_conv_out_V.dat"
     }
     foreach rtlfile $rtlfilelist {
         if {[file isfile $rtlfile]} {

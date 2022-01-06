@@ -67349,9 +67349,10 @@ typedef ap_axiu<32,0,0,0> k2k_data;
 # 4 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp" 2
 
 
-void coreConv(char frac_dout,
-        char frac_din,
-        char frac_w,
+void coreConv(
+
+
+
         hls::stream<k2k_data> &bias_in,
         hls::stream<k2k_data> &weight_in,
         hls::stream<k2k_data> &data_in,
@@ -67362,6 +67363,11 @@ void Conv(
         hls::stream<k2k_data> &data_in,
         hls::stream<k2k_data> &conv_out);
 void Conv_sysarr(
+        hls::stream<k2k_data> &bias_in,
+        hls::stream<k2k_data> &weight_in,
+        hls::stream<k2k_data> &data_in,
+        hls::stream<k2k_data> &conv_out);
+void Conv_sysarr_dbbuf(
         hls::stream<k2k_data> &bias_in,
         hls::stream<k2k_data> &weight_in,
         hls::stream<k2k_data> &data_in,
@@ -67386,9 +67392,12 @@ void conv_gold(
      for(int r=0;r<RS;r++){
       for(int s=0;s<RS;s++){
 
+       gold[k*WH*WH + h*WH + w] += data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
+                * weight[k*C*RS*RS + c*RS*RS + r*RS + s];
 
-       gold[k*WH*WH + h*WH + w] = (char)((char)gold[k*WH*WH + h*WH + w] + (char)(data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
-                * weight[k*C*RS*RS + c*RS*RS + r*RS + s]));
+
+
+
       }
      }
     }
@@ -67403,8 +67412,8 @@ void conv_gold(
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_Conv_sysarr_sw(hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &);
-# 56 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+void apatb_Conv_sysarr_dbbuf_sw(hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &, hls::stream<ap_axiu<32, 0, 0, 0>, 0> &);
+# 65 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 int conv_test(
      uint K,
      uint C,
@@ -67444,16 +67453,19 @@ int conv_test(
   tmp.data(7,0) = data[k]; data_in.write(tmp);
  }
 
+
+
+
  
 #ifndef HLS_FASTSIM
-#define Conv_sysarr apatb_Conv_sysarr_sw
+#define Conv_sysarr_dbbuf apatb_Conv_sysarr_dbbuf_sw
 #endif
-# 95 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
-Conv_sysarr(bias_in, weight_in, data_in, conv_out);
-#undef Conv_sysarr
-# 95 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 107 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+Conv_sysarr_dbbuf(bias_in, weight_in, data_in, conv_out);
+#undef Conv_sysarr_dbbuf
+# 107 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
- exit(0);
+
     for(int l=0;l<K*WH*WH;l++) {
      tmp = conv_out.read(); int output = tmp.data(31,0);
      if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]); return 1; }
@@ -67463,7 +67475,7 @@ Conv_sysarr(bias_in, weight_in, data_in, conv_out);
     return 0;
 }
 #endif
-# 104 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 116 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
 
 int main()
@@ -67473,8 +67485,8 @@ int main()
  char weight[2048];
  int gold[2048];
 
-    uint K = 32;
-    uint C = 32;
+    uint K = 16;
+    uint C = 4;
     uint WH = 7;
     uint WH_in = 9;
     uint RS = 3;

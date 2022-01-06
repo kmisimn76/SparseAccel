@@ -67601,17 +67601,17 @@ void coreConv(
 
 
 
- char frac_w,
- char frac_din,
- char frac_dout,
+
+
+
  hls::stream<k2k_data> &bias_in,
  hls::stream<k2k_data> &weight_in,
  hls::stream<k2k_data> &data_in,
  hls::stream<k2k_data> &conv_out)
 {
-#pragma HLS interface s_axilite port=frac_dout bundle=cntrl_data
-#pragma HLS interface s_axilite port=frac_din bundle=cntrl_data
-#pragma HLS interface s_axilite port=frac_w bundle=cntrl_data
+
+
+
 #pragma HLS expression_balance
 
  DPTYPE bias_l2[2048];

@@ -67343,7 +67343,7 @@ typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
 typedef ap_axiu<8,0,0,0> k2k_sync;
 typedef ap_axiu<32,0,0,0> k2k_data;
 # 3 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp" 2
-# 15 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+# 13 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 void Conv_sysarr(
  hls::stream<k2k_data> &bias_in,
  hls::stream<k2k_data> &weight_in,
@@ -67362,45 +67362,45 @@ void Conv_sysarr(
  DPTYPE data_l1[512][4][2];
  MACTYPE output_l1[512][4];
 
-# 32 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+# 30 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 #pragma HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=4
+# 30 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+
+
+# 31 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+#pragma HLS ARRAY_PARTITION variable=weight_l2 cyclic factor=4
+# 31 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+
+
+# 32 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+#pragma HLS ARRAY_PARTITION variable=data_l2 cyclic factor=4
 # 32 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 
 # 33 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=weight_l2 cyclic factor=4
+#pragma HLS ARRAY_PARTITION variable=output_l2 cyclic factor=4
 # 33 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 
 # 34 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=data_l2 cyclic factor=4
+#pragma HLS ARRAY_PARTITION variable=bias_l1 dim=2 complete
 # 34 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 
 # 35 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=output_l2 cyclic factor=4
+#pragma HLS ARRAY_PARTITION variable=weight_l1 dim=2 complete
 # 35 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 
 # 36 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=bias_l1 dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 # 36 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
 
-# 37 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=weight_l1 dim=2 complete
-# 37 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-
 
 # 38 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-#pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
-# 38 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
-
-
-
-# 40 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
-# 40 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
+# 38 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 
  DPTYPE weight_reg[4][4][2];
  DPTYPE data_reg[4][4];
@@ -67454,10 +67454,10 @@ void Conv_sysarr(
     {
 
      for(int ki=0; ki < 4; ki++) {
-      int k = (ko*4 +ki);
       for (int hi = 0; hi < H_TILE; hi++) {
        for (int wi = 0; wi < W_TILE; wi++) {
 
+        int k = (ko*4 +ki);
         output_l1[ko*H_TILE*W_TILE+hi*W_TILE+wi][ki] = bias_l2[k];
        }
       }
@@ -67520,6 +67520,7 @@ void Conv_sysarr(
          }
         }
        }
+
 
        int input_rows = H_TILE*W_TILE + (C-1)+(4 -1)+4;
        for(int i=0; i < input_rows; i++)

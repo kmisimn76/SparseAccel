@@ -19,12 +19,12 @@ module AESL_autofifo_bias_in_V (
 
 //------------------------Parameter----------------------
 localparam
-	TV_IN	=	"../tv/cdatafile/c.Conv_sysarr.autotvin_bias_in_V.dat";
+	TV_IN	=	"../tv/cdatafile/c.Conv_sysarr_dbbuf.autotvin_bias_in_V.dat";
 
 //------------------------Local signal-------------------
 parameter DATA_WIDTH = 32'd 64;
-parameter ADDR_WIDTH = 32'd 7;
-parameter DEPTH = 32'd 37;
+parameter ADDR_WIDTH = 32'd 6;
+parameter DEPTH = 32'd 21;
 
 // Input and Output
 input clk;
