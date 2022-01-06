@@ -5,12 +5,12 @@
 ############################################################
 open_project Systolic_Array_PCNN_based
 set_top Conv_sysarr
-add_files Systolic_Array_PCNN_based/conv.cpp
-add_files Systolic_Array_PCNN_based/conv1d.cpp
-add_files conv_sysarr.back
-add_files Systolic_Array_PCNN_based/conv_sysarr.cpp
-add_files Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp
 add_files Systolic_Array_PCNN_based/hw_param.h
+add_files Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp
+add_files Systolic_Array_PCNN_based/conv_sysarr.cpp
+add_files conv_sysarr.back
+add_files Systolic_Array_PCNN_based/conv1d.cpp
+add_files Systolic_Array_PCNN_based/conv.cpp
 add_files -tb Systolic_Array_PCNN_based/test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xcu200-fsgd2104-2-e}

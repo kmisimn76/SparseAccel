@@ -128,7 +128,7 @@
 <max>65031</max>
 </range>
 </IterationLatency>
-<VITIS_LOOP_94_9_VITIS_LOOP_95_10>
+<VITIS_LOOP_93_9_VITIS_LOOP_94_10>
 <TripCount>
 <range>
 <min>0</min>
@@ -149,7 +149,7 @@
 </AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>4</PipelineDepth>
-</VITIS_LOOP_94_9_VITIS_LOOP_95_10>
+</VITIS_LOOP_93_9_VITIS_LOOP_94_10>
 </VITIS_LOOP_92_8>
 <VITIS_LOOP_103_11_VITIS_LOOP_105_12>
 <TripCount>

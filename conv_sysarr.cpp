@@ -90,10 +90,10 @@ DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l1 dim=2 complete) //BRAM cyclic
 				{
 					// Bias Initialization
 					for(int ki=0; ki < ARRAY_K; ki++) {
-						int k = (ko*ARRAY_K+ki);
 						for (int hi = 0; hi < H_TILE; hi++) {
 							for (int wi = 0; wi < W_TILE; wi++) {
 								// TODO: WH TILE
+								int k = (ko*ARRAY_K+ki);
 								output_l1[ko*H_TILE*W_TILE+hi*W_TILE+wi][ki] = bias_l2[k];
 							}
 						}

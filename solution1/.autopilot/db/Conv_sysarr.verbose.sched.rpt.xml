@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr'" level="0">
-<item name = "Date">Mon Oct 11 04:33:09 2021
+<item name = "Date">Thu Jan  6 14:48:23 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -40,7 +40,7 @@
 <column name="- VITIS_LOOP_79_3">0, 16581375, 2, 1, 1, 0 ~ 16581375, yes</column>
 <column name="- VITIS_LOOP_83_4_VITIS_LOOP_85_5">0, 100842797858670, 22 ~ 25407608430, -, -, 0 ~ 3969, no</column>
 <column name=" + VITIS_LOOP_92_8">16, 260124, 4 ~ 65031, -, -, 4, no</column>
-<column name="  ++ VITIS_LOOP_94_9_VITIS_LOOP_95_10">0, 65027, 4, 1, 1, 0 ~ 65025, yes</column>
+<column name="  ++ VITIS_LOOP_93_9_VITIS_LOOP_94_10">0, 65027, 4, 1, 1, 0 ~ 65025, yes</column>
 <column name=" + VITIS_LOOP_103_11_VITIS_LOOP_105_12">0, 25407348300, 72 ~ 390732, -, -, 0 ~ 65025, no</column>
 <column name="  ++ VITIS_LOOP_134_17_VITIS_LOOP_136_18_VITIS_LOOP_137_19">4, 260104, 6, 1, 1, 0 ~ 260100, yes</column>
 <column name="  ++ VITIS_LOOP_161_23">55, 130615, 46, 2, 1, 6 ~ 65286, yes</column>

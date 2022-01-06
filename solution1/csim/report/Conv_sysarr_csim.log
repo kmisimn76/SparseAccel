@@ -1,0 +1,8 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+make: 'csim.exe' is up to date.
+Test Start
+Error(0): 25 (gold 37)
+WARNING: Hls::stream 'hls::stream<ap_axiu<32, 0, 0, 0>, 0>.4' contains leftover data, which may result in RTL simulation hanging.
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

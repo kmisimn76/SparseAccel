@@ -16,7 +16,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../test.cpp ../../../conv_sysarr.cpp ../../../conv1d.cpp ../../../conv.cpp
+HLS_SOURCES = ../../../test.cpp ../../../conv.cpp ../../../conv1d.cpp ../../../conv_sysarr.cpp ../../../conv_sysarr_fifo.cpp
 
 override TARGET := csim.exe
 
@@ -72,11 +72,11 @@ $(ObjDir)/test.o: ../../../test.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/test.d
 
-$(ObjDir)/conv_sysarr.o: ../../../conv_sysarr.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../conv_sysarr.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/conv.o: ../../../conv.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/conv_sysarr.d
+-include $(ObjDir)/conv.d
 
 $(ObjDir)/conv1d.o: ../../../conv1d.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../conv1d.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
@@ -84,8 +84,14 @@ $(ObjDir)/conv1d.o: ../../../conv1d.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/conv1d.d
 
-$(ObjDir)/conv.o: ../../../conv.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../conv.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/conv_sysarr.o: ../../../conv_sysarr.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv_sysarr.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/conv.d
+-include $(ObjDir)/conv_sysarr.d
+
+$(ObjDir)/conv_sysarr_fifo.o: ../../../conv_sysarr_fifo.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../conv_sysarr_fifo.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/conv_sysarr_fifo.d

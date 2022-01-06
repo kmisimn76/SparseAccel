@@ -41,7 +41,7 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xcu200:-fsgd2104:-2-e
-set SourceFiles {sc {} c {../conv_sysarr_fifo.cpp ../conv_sysarr.cpp ../conv1d.cpp ../conv.cpp}}
+set SourceFiles {sc {} c {../conv.cpp ../conv1d.cpp ../conv_sysarr.cpp ../conv_sysarr_fifo.cpp}}
 set SourceFlags {sc {} c {{} {} {} {}}}
 set DirectiveFile /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/solution1.directive
 set TBFiles {verilog ../test.cpp bc ../test.cpp vhdl ../test.cpp sc ../test.cpp cas ../test.cpp c {}}

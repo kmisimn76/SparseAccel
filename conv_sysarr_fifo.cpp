@@ -1,4 +1,4 @@
-
+/*
 #include "hw_param.h"
 
 
@@ -8,7 +8,7 @@
 #define ARRAY_C 4
 #define TILE_H 1
 #define TILE_W 1
-
+#define MACTYPE int
 
 
 
@@ -218,3 +218,4 @@ DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l1 dim=2 complete) //BRAM cyclic
 		}
 	}
 }
+*/

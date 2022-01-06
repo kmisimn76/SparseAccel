@@ -192,8 +192,8 @@ Built simulation snapshot Conv_sysarr
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.dir/Conv_sysarr/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] '/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.dir/Conv_sysarr/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Oct 11 04:32:24 2021. For additional details about this file, please refer to the WebTalk help file at /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Mon Oct 11 04:32:24 2021...
+INFO: [Common 17-186] '/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.dir/Conv_sysarr/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Tue Oct 26 16:32:40 2021. For additional details about this file, please refer to the WebTalk help file at /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Tue Oct 26 16:32:40 2021...
 
 ****** xsim v2020.1 (64-bit)
   **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
@@ -213,11 +213,11 @@ source Conv_sysarr.tcl
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [n/a] @ "1125000"
-// RTL Simulation : 1 / 1 [n/a] @ "117195000"
+// RTL Simulation : 1 / 1 [n/a] @ "473395000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 117235 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr.autotb.v" Line 382
+$finish called at time : 473435 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr.autotb.v" Line 382
 ## quit
-INFO: [Common 17-206] Exiting xsim at Mon Oct 11 04:32:31 2021...
+INFO: [Common 17-206] Exiting xsim at Tue Oct 26 16:32:49 2021...
 Test Start
 INFO: [COSIM-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.

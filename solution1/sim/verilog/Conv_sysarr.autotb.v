@@ -37,10 +37,10 @@ module `AUTOTB_TOP;
 parameter AUTOTB_TRANSACTION_NUM = 1;
 parameter PROGRESS_TIMEOUT = 10000000;
 parameter LATENCY_ESTIMATION = -1;
-parameter LENGTH_bias_in_V = 21;
-parameter LENGTH_weight_in_V = 576;
-parameter LENGTH_data_in_V = 324;
-parameter LENGTH_conv_out_V = 784;
+parameter LENGTH_bias_in_V = 37;
+parameter LENGTH_weight_in_V = 1024;
+parameter LENGTH_data_in_V = 2592;
+parameter LENGTH_conv_out_V = 1568;
 
 task read_token;
     input integer fp;

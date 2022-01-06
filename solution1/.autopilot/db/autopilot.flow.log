@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Mon Oct 11 04:32:49 KST 2021
+INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Thu Jan 06 14:48:06 KST 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -42,7 +42,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data/parts/arch.xml
-Command       ap_part_info done; 0.51 sec.
+Command       ap_part_info done; 0.52 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       ap_family_info -name virtexuplus -data info 
 Execute       add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
@@ -71,7 +71,7 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -default_slave_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 0.61 sec.
+Command   open_solution done; 0.63 sec.
 Execute   set_part xcu200-fsgd2104-2-e 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
 INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data:/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
@@ -93,6 +93,9 @@ Execute   create_clock -period 10 -name default
 Execute   source ./Systolic_Array_PCNN_based/solution1/directives.tcl 
 Execute     set_directive_top -name coreConv coreConv 
 INFO-FLOW: Setting directive 'TOP' name=coreConv 
+Execute     set_directive_top -name Conv_sysarr Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 Execute   csynth_design 
 Execute     get_config_compile -dump_cfg 
 Execute     get_config_compile -effort 
@@ -106,118 +109,73 @@ Execute     get_config_compile -skip_transform
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
 WARNING: [HLS 200-40] Skipped source file 'conv_sysarr.back'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
-INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
-INFO-FLOW: Handling Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp as C++
+INFO-FLOW: Handling Systolic_Array_PCNN_based/conv.cpp as C++
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.err.log 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.err.log 
 INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 Execute       set_directive_top Conv_sysarr -name=Conv_sysarr 
 INFO-FLOW: Setting directive 'TOP' name=coreConv 
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/try/try.tcl 
 INFO-FLOW: Setting directive 'TOP' name=coreConv 
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 Execute       list_core -type functional_unit 
-Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.38 sec.
+Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.25 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
-Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.26 sec.
-Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.37 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
 Command       clang_tidy done; 0.28 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.5 seconds per iteration
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.7 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
-Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
-Command         ap_eval done; 0.49 sec.
+Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
+Command         ap_eval done; 0.51 sec.
 Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
-Command       clang_tidy done; 0.55 sec.
-Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Command       clang_tidy done; 0.59 sec.
+Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
 Command         ap_eval done; 0.24 sec.
-Command       clang_tidy done; 0.25 sec.
-Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Command       clang_tidy done; 0.24 sec.
+Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
 Command         ap_eval done; 0.25 sec.
 Command       clang_tidy done; 0.25 sec.
 Execute       get_config_dataflow -strict_mode 
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.err.log 
-Command       ap_eval done; 0.24 sec.
-Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
-Command         ap_eval done; 0.3 sec.
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.err.log 
+Command       ap_eval done; 0.23 sec.
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
+Command         ap_eval done; 0.29 sec.
 Command       clang_tidy done; 0.3 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: compiling source code to llvm bc
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.err.log 
-Command       ap_eval done; 0.26 sec.
-INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv_sysarr.cpp' ... 
-INFO-FLOW: Compiling one TU...
-Execute       get_config_compile -pragma_strict_mode 
-INFO-FLOW: Handling Systolic_Array_PCNN_based/conv_sysarr.cpp as C++
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO-FLOW: Running: GCC PP 39
-INFO-FLOW: Source preprocessing
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv_sysarr.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.err.log 
-INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
-Execute       set_directive_top Conv_sysarr -name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=coreConv 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=coreConv 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=coreConv 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
-Execute       list_core -type functional_unit 
-Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.25 sec.
-INFO-FLOW: Running: clang-tidy CDT preprocess 39
-Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.37 sec.
-Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.29 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.7 seconds per iteration
-INFO-FLOW: Calling xilinx-label-all-loops ... 
-Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
-Command         ap_eval done; 0.48 sec.
-Command       clang_tidy done; 0.55 sec.
-Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
-Command         ap_eval done; 0.24 sec.
-Command       clang_tidy done; 0.24 sec.
-Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
-Command         ap_eval done; 0.26 sec.
-Command       clang_tidy done; 0.26 sec.
-Execute       get_config_dataflow -strict_mode 
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.err.log 
-Command       ap_eval done; 0.24 sec.
-Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
-Command         ap_eval done; 0.29 sec.
-Command       clang_tidy done; 0.29 sec.
-Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO-FLOW: compiling source code to llvm bc
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.err.log 
-Command       ap_eval done; 0.26 sec.
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.err.log 
+Command       ap_eval done; 0.25 sec.
+WARNING: [HLS 207-5324] unused parameter 'co': Systolic_Array_PCNN_based/conv.cpp:89:78
+WARNING: [HLS 207-5324] unused parameter 'r': Systolic_Array_PCNN_based/conv.cpp:89:86
+WARNING: [HLS 207-5324] unused parameter 's': Systolic_Array_PCNN_based/conv.cpp:89:93
+WARNING: [HLS 207-5324] unused parameter 'C': Systolic_Array_PCNN_based/conv.cpp:89:100
+WARNING: [HLS 207-5324] unused parameter 'RS': Systolic_Array_PCNN_based/conv.cpp:89:107
+WARNING: [HLS 207-5358] Only for/while loops support the 'Unroll ': Systolic_Array_PCNN_based/conv.cpp:98:9
+WARNING: [HLS 207-1593] Ignore interface attribute or pragma which is not used in top function: Systolic_Array_PCNN_based/conv.cpp:143:9
 INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv1d.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -243,11 +201,11 @@ INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr
 Execute       list_core -type functional_unit 
 Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.25 sec.
+Command       clang_tidy done; 0.23 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.25 sec.
+Command       clang_tidy done; 0.24 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
 Command       clang_tidy done; 0.29 sec.
@@ -255,19 +213,19 @@ INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.5 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.err.log 
-Command         ap_eval done; 0.46 sec.
+Command         ap_eval done; 0.47 sec.
 Command       clang_tidy done; 0.5 sec.
 Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.err.log 
-Command         ap_eval done; 0.25 sec.
+Command         ap_eval done; 0.24 sec.
 Command       clang_tidy done; 0.25 sec.
 Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.err.log 
-Command         ap_eval done; 0.25 sec.
-Command       clang_tidy done; 0.25 sec.
+Command         ap_eval done; 0.24 sec.
+Command       clang_tidy done; 0.24 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv1d.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv1d.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv1d.pp.0.cpp.err.log 
-Command       ap_eval done; 0.24 sec.
+Command       ap_eval done; 0.22 sec.
 Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv1d.pp.0.cpp.err.log 
 Command         ap_eval done; 0.29 sec.
@@ -276,15 +234,15 @@ Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info
 INFO-FLOW: compiling source code to llvm bc
 Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv1d.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv1d.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv1d.pragma.2.cpp.err.log 
 Command       ap_eval done; 0.25 sec.
-INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv_sysarr.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
-INFO-FLOW: Handling Systolic_Array_PCNN_based/conv.cpp as C++
+INFO-FLOW: Handling Systolic_Array_PCNN_based/conv_sysarr.cpp as C++
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.cpp.err.log 
-INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv_sysarr.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.cpp.err.log 
+INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
 Execute       set_directive_top Conv_sysarr -name=Conv_sysarr 
 INFO-FLOW: Setting directive 'TOP' name=coreConv 
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
@@ -302,52 +260,96 @@ INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
 Execute       list_core -type functional_unit 
-Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.25 sec.
+Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.24 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
-Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.41 sec.
-Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
-INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.32 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.7 seconds per iteration
+Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.36 sec.
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Command       clang_tidy done; 0.29 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.6 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
-Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
-Command         ap_eval done; 0.56 sec.
-Command       clang_tidy done; 0.64 sec.
-Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
-Command         ap_eval done; 0.25 sec.
-Command       clang_tidy done; 0.25 sec.
-Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
-Command         ap_eval done; 0.25 sec.
+Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
+Command         ap_eval done; 0.47 sec.
+Command       clang_tidy done; 0.53 sec.
+Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
+Command         ap_eval done; 0.24 sec.
+Command       clang_tidy done; 0.24 sec.
+Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
+Command         ap_eval done; 0.24 sec.
 Command       clang_tidy done; 0.25 sec.
 Execute       get_config_dataflow -strict_mode 
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.err.log 
-Command       ap_eval done; 0.24 sec.
-Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++14 -target fpga  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv.pp.0.cpp.err.log 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr.pp.0.cpp.err.log 
+Command       ap_eval done; 0.23 sec.
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr.pp.0.cpp.err.log 
 Command         ap_eval done; 0.3 sec.
 Command       clang_tidy done; 0.3 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: compiling source code to llvm bc
-Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv.pragma.2.cpp.err.log 
-Command       ap_eval done; 0.27 sec.
-WARNING: [HLS 207-5324] unused parameter 'co': Systolic_Array_PCNN_based/conv.cpp:89:78
-WARNING: [HLS 207-5324] unused parameter 'r': Systolic_Array_PCNN_based/conv.cpp:89:86
-WARNING: [HLS 207-5324] unused parameter 's': Systolic_Array_PCNN_based/conv.cpp:89:93
-WARNING: [HLS 207-5324] unused parameter 'C': Systolic_Array_PCNN_based/conv.cpp:89:100
-WARNING: [HLS 207-5324] unused parameter 'RS': Systolic_Array_PCNN_based/conv.cpp:89:107
-WARNING: [HLS 207-5358] Only for/while loops support the 'Unroll ': Systolic_Array_PCNN_based/conv.cpp:98:9
-WARNING: [HLS 207-1593] Ignore interface attribute or pragma which is not used in top function: Systolic_Array_PCNN_based/conv.cpp:143:9
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr.pragma.2.cpp.err.log 
+Command       ap_eval done; 0.25 sec.
+INFO: [HLS 200-10] Analyzing design file 'Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       get_config_compile -pragma_strict_mode 
+INFO-FLOW: Handling Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp as C++
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.diag.yml -fno-limit-debug-info -gcc-toolchain /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/39 -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.cpp.err.log 
+INFO-FLOW: Done: GCC PP 39 time: 0 seconds per iteration
+Execute       set_directive_top Conv_sysarr -name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+Execute       list_core -type functional_unit 
+Execute       clang_tidy xilinx-systemc-detector /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/.systemc_flag -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
+INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_fifo.pp.0.cpp.err.log 
+Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp std=gnu++14 -target fpga  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_fifo.pp.0.cpp.err.log 
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+INFO-FLOW: compiling source code to llvm bc
+Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.diag.yml -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.pragma.2.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot -I /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E2__ -g -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.conv_sysarr_fifo.pragma.2.cpp.err.log 
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
-Execute       run_link_or_opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.g.bc"  
-Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.g.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
+Execute       run_link_or_opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.g.bc" "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.g.bc"  
+Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv1d.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr.g.bc /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_fifo.g.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.0.bc.err.log 
 INFO-FLOW: 
 Execute       run_link_or_opt -opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.1.lower.bc.err.log 
@@ -355,14 +357,14 @@ INFO-FLOW:
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
-Command         ap_eval done; 1.34 sec.
+Command         ap_eval done; 1.35 sec.
 INFO-FLOW: 
 Command       run_link_or_opt done; 1.35 sec.
 Execute       run_link_or_opt -opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Conv_sysarr -reflow-float-conversion 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Conv_sysarr -reflow-float-conversion -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
-Command         ap_eval done; 0.45 sec.
+Command         ap_eval done; 0.44 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.45 sec.
+Command       run_link_or_opt done; 0.44 sec.
 Execute       run_link_or_opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libfloatconversion_39.bc 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libfloatconversion_39.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.4.m2.bc.err.log 
 INFO-FLOW: 
@@ -441,20 +443,20 @@ INFO: [HLS 214-178] Inlining function 'ap_axiu<32, 0, 0, 0>::operator=(ap_axiu<3
 INFO: [HLS 214-178] Inlining function 'ap_axiu<32, 0, 0, 0>::operator=(ap_axiu<32, 0, 0, 0>&&)' into 'Conv_sysarr(hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr.cpp:20:0)
 INFO: [HLS 214-178] Inlining function 'ap_axiu<32, 0, 0, 0>::operator=(ap_axiu<32, 0, 0, 0>&&)' into 'Conv_sysarr(hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&, hls::stream<ap_axiu<32, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr.cpp:20:0)
 INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24732 ; free virtual = 51185
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24732 ; free virtual = 51185
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33375 ; free virtual = 63986
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33375 ; free virtual = 63986
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top Conv_sysarr -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.0.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24724 ; free virtual = 51178
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33367 ; free virtual = 63980
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.prechk.bc -f 
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24715 ; free virtual = 51170
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33358 ; free virtual = 63972
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc to /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -462,7 +464,7 @@ Execute         transform -hls -tmp /home/sumin/workspace/hls_test/Systolic_Arra
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_73_1' (Systolic_Array_PCNN_based/conv_sysarr.cpp:73) in function 'Conv_sysarr' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_76_2' (Systolic_Array_PCNN_based/conv_sysarr.cpp:76) in function 'Conv_sysarr' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_79_3' (Systolic_Array_PCNN_based/conv_sysarr.cpp:79) in function 'Conv_sysarr' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_95_10' (Systolic_Array_PCNN_based/conv_sysarr.cpp:95) in function 'Conv_sysarr' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_94_10' (Systolic_Array_PCNN_based/conv_sysarr.cpp:94) in function 'Conv_sysarr' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_137_19' (Systolic_Array_PCNN_based/conv_sysarr.cpp:137) in function 'Conv_sysarr' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_150_22' (Systolic_Array_PCNN_based/conv_sysarr.cpp:150) in function 'Conv_sysarr' automatically.
 INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_161_23' (Systolic_Array_PCNN_based/conv_sysarr.cpp:161) in function 'Conv_sysarr' automatically.
@@ -476,7 +478,7 @@ INFO: [XFORM 203-102] Partitioning array 'data_l1.0' (Systolic_Array_PCNN_based/
 INFO: [XFORM 203-102] Partitioning array 'data_l1.1' (Systolic_Array_PCNN_based/conv_sysarr.cpp:30) in dimension 2 automatically.
 INFO: [XFORM 203-102] Partitioning array 'data_l1.2' (Systolic_Array_PCNN_based/conv_sysarr.cpp:30) in dimension 2 automatically.
 INFO: [XFORM 203-102] Partitioning array 'data_l1.3' (Systolic_Array_PCNN_based/conv_sysarr.cpp:30) in dimension 2 automatically.
-Command         transform done; 0.24 sec.
+Command         transform done; 0.25 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr.cpp:161:35) to (Systolic_Array_PCNN_based/conv_sysarr.cpp:192:32) in function 'Conv_sysarr'... converting 7 basic blocks.
@@ -484,12 +486,12 @@ INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Arra
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr.cpp:191:42) to (Systolic_Array_PCNN_based/conv_sysarr.cpp:192:32) in function 'Conv_sysarr'... converting 3 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr.cpp:191:42) to (Systolic_Array_PCNN_based/conv_sysarr.cpp:192:32) in function 'Conv_sysarr'... converting 3 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'Conv_sysarr' (Systolic_Array_PCNN_based/conv_sysarr.cpp:16)...3 expression(s) balanced.
-Command         transform done; 0.16 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24680 ; free virtual = 51136
+Command         transform done; 0.15 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33323 ; free virtual = 63938
 Execute         get_config_compile -enable_loop_extract 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.2.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_94_9' (Systolic_Array_PCNN_based/conv_sysarr.cpp:94:33) in function 'Conv_sysarr'.
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_93_9' (Systolic_Array_PCNN_based/conv_sysarr.cpp:93:33) in function 'Conv_sysarr'.
 WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_92_8' (Systolic_Array_PCNN_based/conv_sysarr.cpp:92:31) in function 'Conv_sysarr' the outer loop is not a perfect loop.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_136_18' (Systolic_Array_PCNN_based/conv_sysarr.cpp:136:36) in function 'Conv_sysarr'.
 INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_134_17' (Systolic_Array_PCNN_based/conv_sysarr.cpp:134:35) in function 'Conv_sysarr'.
@@ -506,10 +508,10 @@ INFO: [HLS 200-472] Inferring partial write operation for 'data_l2[0]' (Systolic
 INFO: [HLS 200-472] Inferring partial write operation for 'data_l1[0][0]' (Systolic_Array_PCNN_based/conv_sysarr.cpp:141:40)
 INFO: [HLS 200-472] Inferring partial write operation for 'output_l1[0]' (Systolic_Array_PCNN_based/conv_sysarr.cpp:97:54)
 Command         transform done; 0.4 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24680 ; free virtual = 51136
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33322 ; free virtual = 63938
 INFO-FLOW: Finish building internal data model.
 Command       opt_and_import_c done; 0.95 sec.
-Command     elaborate done; 18.95 sec.
+Command     elaborate done; 15.95 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -536,7 +538,7 @@ Execute       schedule -model Conv_sysarr
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul42) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul55) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln94) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln93) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_3_3_cast) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_3_1_cast) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_2_3_cast) to 3 in order to utilize available DSP registers.
@@ -553,7 +555,7 @@ INFO: [HLS 200-486] Changing DSP48 latency (root=add107_1_2_cast) to 3 in order 
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_3_cast) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_1_cast) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=add107_2_cast) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=empty_50) to 3 in order to utilize available DSP registers.
+INFO: [HLS 200-486] Changing DSP48 latency (root=empty_52) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul165) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=p_mid19) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul165_mid1) to 3 in order to utilize available DSP registers.
@@ -587,7 +589,7 @@ INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_76_2'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_79_3'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_94_9_VITIS_LOOP_95_10'.
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_93_9_VITIS_LOOP_94_10'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_134_17_VITIS_LOOP_136_18_VITIS_LOOP_137_19'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
@@ -598,11 +600,11 @@ INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_212_27_VITIS_LOOP_213_28_VITIS_
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
 INFO: [SCHED 204-11] Finished scheduling.
 Command       schedule done; 0.4 sec.
-INFO: [HLS 200-111]  Elapsed time: 20.15 seconds; current allocated memory: 148.507 MB.
+INFO: [HLS 200-111]  Elapsed time: 17.15 seconds; current allocated memory: 148.543 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.24 sec.
+Command       syn_report done; 0.25 sec.
 Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.sched.adb -f 
 INFO-FLOW: Finish scheduling Conv_sysarr.
 Execute       set_default_model Conv_sysarr 
@@ -613,11 +615,11 @@ INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
 Command       bind done; 0.15 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.42 seconds; current allocated memory: 153.083 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.43 seconds; current allocated memory: 153.118 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.34 sec.
+Command       syn_report done; 0.32 sec.
 Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.bind.adb -f 
 INFO-FLOW: Finish binding Conv_sysarr.
 Execute       get_model_list Conv_sysarr -filter all-wo-channel 
@@ -661,7 +663,7 @@ INFO: [RTGEN 206-100] Generating core module 'udiv_32s_8ns_9_36_1': 3 instance(s
 INFO: [RTGEN 206-100] Generating core module 'urem_32s_8ns_8_36_1': 3 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv_sysarr'.
 Command       create_rtl_model done; 0.18 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.56 seconds; current allocated memory: 160.468 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.54 seconds; current allocated memory: 160.488 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl Conv_sysarr -istop -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr 
 Command       gen_rtl done; 0.13 sec.
@@ -675,7 +677,7 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model Conv_sysarr -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.42 sec.
+Command       syn_report done; 0.41 sec.
 Execute       db_write -model Conv_sysarr -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.adb 
 Command       db_write done; 0.17 sec.
 Execute       gen_tb_info Conv_sysarr -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr 
@@ -917,7 +919,7 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet
 INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_output_l1_3_ram (RAM)' using block RAMs.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Command       ap_source done; 0.26 sec.
+Command       ap_source done; 0.27 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1
 Execute       get_solution -flow_target 
 Execute       get_config_export -xo 
@@ -1022,13 +1024,13 @@ Execute       sc_get_clocks Conv_sysarr
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_debug -directory 
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 24628 ; free virtual = 51100
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 33270 ; free virtual = 63901
 INFO: [VHDL 208-304] Generating VHDL RTL for Conv_sysarr.
 INFO: [VLOG 209-307] Generating Verilog RTL for Conv_sysarr.
 Execute       syn_report -model Conv_sysarr -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
 INFO: [HLS 200-789] **** Estimated Fmax: 180.31 MHz
-Command     autosyn done; 3.15 sec.
-Command   csynth_design done; 22.11 sec.
-Command ap_source done; 22.76 sec.
+Command     autosyn done; 3.1 sec.
+Command   csynth_design done; 19.06 sec.
+Command ap_source done; 19.72 sec.
 Execute cleanup_all 

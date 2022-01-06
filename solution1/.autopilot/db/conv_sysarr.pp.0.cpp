@@ -13527,10 +13527,10 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
     {
 
      VITIS_LOOP_92_8: for(int ki=0; ki < 4; ki++) {
-      int k = (ko*4 +ki);
-      VITIS_LOOP_94_9: for (int hi = 0; hi < H_TILE; hi++) {
-       VITIS_LOOP_95_10: for (int wi = 0; wi < W_TILE; wi++) {
+      VITIS_LOOP_93_9: for (int hi = 0; hi < H_TILE; hi++) {
+       VITIS_LOOP_94_10: for (int wi = 0; wi < W_TILE; wi++) {
 
+        int k = (ko*4 +ki);
         output_l1[ko*H_TILE*W_TILE+hi*W_TILE+wi][ki] = bias_l2[k];
        }
       }

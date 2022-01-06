@@ -67473,8 +67473,8 @@ int main()
  char weight[2048];
  int gold[2048];
 
-    uint K = 16;
-    uint C = 4;
+    uint K = 32;
+    uint C = 32;
     uint WH = 7;
     uint WH_in = 9;
     uint RS = 3;
