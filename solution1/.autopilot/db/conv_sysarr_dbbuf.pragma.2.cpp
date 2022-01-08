@@ -13463,7 +13463,8 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
  DPTYPE weight_l1[512][4];
 
  DPTYPE data_l1[512][4][2];
- MACTYPE output_l1[512][4];
+ static MACTYPE output_l1[512][4];
+
 #pragma HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=4
 #pragma HLS ARRAY_PARTITION variable=weight_l2 cyclic factor=4
 #pragma HLS ARRAY_PARTITION variable=data_l2 cyclic factor=4
@@ -13473,12 +13474,12 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
 #pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
- DPTYPE weight_reg[4][4][2];
+ DPTYPE weight_reg[4][4];
  DPTYPE data_reg[4][4];
- MACTYPE output_reg[4][4];
+ static MACTYPE output_reg[4][4];
 #pragma HLS ARRAY_PARTITION variable=weight_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete
-#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete
+#pragma HLS ARRAY_PARTITION variable=output_reg complete
 
  DPTYPE input_data[4];
 #pragma HLS array_partition variable=input_data complete
@@ -13505,29 +13506,29 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
  uint RS = (uchar) param_tmp.data(31, 0);
  uint contol = 0;
 
- VITIS_LOOP_68_1: for (unsigned int k = 0; k < K; k++) {
+ VITIS_LOOP_69_1: for (unsigned int k = 0; k < K; k++) {
   bias_tmp = bias_in.read();
   bias_l2[k] = (DPTYPE) bias_tmp.data(7, 0);
  }
- VITIS_LOOP_72_2: for (unsigned int k = 0; k < K * C * RS * RS; k++) {
+ VITIS_LOOP_73_2: for (unsigned int k = 0; k < K * C * RS * RS; k++) {
   weight_tmp = weight_in.read();
   weight_l2[k] = (DPTYPE) weight_tmp.data(7, 0);
  }
- VITIS_LOOP_76_3: for (unsigned int k = 0; k < C * WH_in * WH_in; k++) {
+ VITIS_LOOP_77_3: for (unsigned int k = 0; k < C * WH_in * WH_in; k++) {
   input_tmp = data_in.read();
   data_l2[k] = (DPTYPE) input_tmp.data(7, 0);
  }
 
- VITIS_LOOP_81_4: for (int ko = 0; ko < K / 4; ko++) {
-  VITIS_LOOP_82_5: for (int co = 0; co < C / 4; co++) {
-   VITIS_LOOP_83_6: for (int ho = 0; ho < 1; ho++)
+ VITIS_LOOP_82_4: for (int ko = 0; ko < K / 4; ko++) {
+  VITIS_LOOP_83_5: for (int co = 0; co < C / 4; co++) {
+   VITIS_LOOP_84_6: for (int ho = 0; ho < 1; ho++)
      {
-    VITIS_LOOP_85_7: for (int wo = 0; wo < 1; wo++)
+    VITIS_LOOP_86_7: for (int wo = 0; wo < 1; wo++)
       {
 
-     VITIS_LOOP_88_8: for (int ki = 0; ki < 4; ki++) {
-      VITIS_LOOP_89_9: for (int hi = 0; hi < H_TILE; hi++) {
-       VITIS_LOOP_90_10: for (int wi = 0; wi < W_TILE; wi++) {
+     VITIS_LOOP_89_8: for (int ki = 0; ki < 4; ki++) {
+      VITIS_LOOP_90_9: for (int hi = 0; hi < H_TILE; hi++) {
+       VITIS_LOOP_91_10: for (int wi = 0; wi < W_TILE; wi++) {
 
         int k = (ko * 4 + ki);
         output_l1[ko * H_TILE * W_TILE + hi * W_TILE
@@ -13537,9 +13538,9 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
      }
 
      bool buf_num = 0;
-     VITIS_LOOP_100_11: for (int r = 0; r < RS; r++)
+     VITIS_LOOP_101_11: for (int r = 0; r < RS; r++)
        {
-      VITIS_LOOP_102_12: for (int s = 0; s < RS; s++)
+      VITIS_LOOP_103_12: for (int s = 0; s < RS; s++)
         {
 
 
@@ -13547,21 +13548,21 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
 
 
 
-       VITIS_LOOP_110_13: for (int ki = 0; ki < 4; ki++) {
+       VITIS_LOOP_111_13: for (int ki = 0; ki < 4; ki++) {
 #pragma HLS unroll
- VITIS_LOOP_112_14: for (int ci = 0; ci < 4; ci++) {
+ VITIS_LOOP_113_14: for (int ci = 0; ci < 4; ci++) {
 #pragma HLS unroll
  int k = (ko * 4 + ki);
          int c = (co * 4 + ci);
-         weight_reg[ki][ci][0] = weight_l2[k * C * RS
+         weight_reg[ki][ci] = weight_l2[k * C * RS
            * RS + c * RS * RS + r * RS + s];
         }
        }
 
-       VITIS_LOOP_121_15: for (int ci = 0; ci < 4; ci++) {
+       VITIS_LOOP_122_15: for (int ci = 0; ci < 4; ci++) {
 
-        VITIS_LOOP_123_16: for (int hi = 0; hi < H_TILE; hi++) {
-         VITIS_LOOP_124_17: for (int wi = 0; wi < W_TILE; wi++) {
+        VITIS_LOOP_124_16: for (int hi = 0; hi < H_TILE; hi++) {
+         VITIS_LOOP_125_17: for (int wi = 0; wi < W_TILE; wi++) {
           int c = (co * 4 + ci);
           int h = (ho * H_TILE + hi) + r;
           int w = (wo * W_TILE + wi) + s;
@@ -13575,58 +13576,78 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
 
 
        int input_rows = H_TILE
-         * W_TILE+ (C-1)+(4 -1)+4;
-       VITIS_LOOP_139_18: for (int i = 0; i < input_rows; i++) {
+         * W_TILE + (C-1)+(4 -1)+4;
+       VITIS_LOOP_140_18: for (int i = 0; i < input_rows; i++) {
+#pragma HLS DEPENDENCE variable=output_l1
+#pragma HLS pipeline
 
-        VITIS_LOOP_141_19: for (int ci = 0; ci < 4; ci++) {
+ VITIS_LOOP_144_19: for (int ci = 0; ci < 4; ci++) {
 #pragma HLS unroll
  int hi = (i - ci) / W_TILE;
          int wi = (i - ci) % W_TILE;
          if (i - ci >= 0)
-          input_data[ci] = data_l1[hi * W_TILE
-            + wi][ci][0];
+          input_data[ci] = data_l1[hi * W_TILE + wi][ci][0];
          else
           input_data[ci] = 0;
         }
-        VITIS_LOOP_151_20: for (int ci = 4 - 1; ci >= 0; ci--) {
-#pragma HLS unroll
- VITIS_LOOP_153_21: for (int ki = 4 - 1; ki >= 0; ki--) {
-#pragma HLS unroll
+        MACTYPE output_buf[4];
+        VITIS_LOOP_154_20: for(int ki = 4 -1; ki >=0; ki--) {
+         int hi = (i - ki) / W_TILE;
+         int wi = (i - ki) % W_TILE;
+         if (i - ki >= 0)
+         output_buf[ki] = output_l1[ko * H_TILE * W_TILE + hi * W_TILE + wi][ki];
 
- if (ki == 0)
-           data_reg[0][ci] = input_data[ci];
-          else
-           data_reg[ki][ci] =
-             data_reg[(ki - 1)][ci];
+         else
+         output_buf[ki] = 0;
+        }
 
-          if (ci == 0) {
-           int k = (ko * 4 + ki);
-           int hi = (i - ki) / W_TILE;
-           int wi = (i - ki) % W_TILE;
-           if (i - ki >= 0)
-            output_reg[ki][0] = output_l1[ko
-              * H_TILE * W_TILE
-              + hi * W_TILE + wi][ki];
-           else
-            output_reg[ki][0] = 0;
-          } else
-           output_reg[ki][ci] =
-             output_reg[ki][(ci - 1)];
-          output_reg[ki][ci] +=
-            (MACTYPE) data_reg[ki][ci]
-              * (MACTYPE) weight_reg[ki][ci][0];
-          if ((i - 4 + 1) - ki >= 0
-            && (i - 4 + 1) - ki
-              < W_TILE * H_TILE) {
-           int k = (ko * 4 + ki);
-           int hi = ((i - 4 + 1) - ki)
-             / W_TILE;
-           int wi = ((i - 4 + 1) - ki)
-             % W_TILE;
-           output_l1[ko * H_TILE * W_TILE
-             + hi * W_TILE + wi][ki] =
-             output_reg[ki][(4 - 1)];
-          }
+        VITIS_LOOP_164_21: for (int ki = 4 - 1; ki >= 0; ki--) {
+#pragma HLS unroll
+#pragma HLS DEPENDENCE variable=output_reg type=intra direction=RAW
+#pragma HLS DEPENDENCE variable=output_reg type=inter direction=RAW
+ MACTYPE psum3 = (output_reg[ki][2]);
+         MACTYPE psum2 = (output_reg[ki][1]);
+         MACTYPE psum1 = (output_reg[ki][0]);
+         MACTYPE psum0 = output_buf[ki];
+
+          data_reg[ki][3] = (ki==0) ?
+               (input_data[3]) :
+               (data_reg[(ki - 1)][3]);
+          output_reg[ki][3] = psum3 +(MACTYPE) data_reg[ki][3]* (MACTYPE) weight_reg[ki][3];
+
+
+          data_reg[ki][2] = (ki==0) ?
+               (input_data[2]) :
+               (data_reg[(ki - 1)][2]);
+          output_reg[ki][2] = psum2 +(MACTYPE) data_reg[ki][2]* (MACTYPE) weight_reg[ki][2];
+
+
+          data_reg[ki][1] = (ki==0) ?
+               (input_data[1]) :
+               (data_reg[(ki - 1)][1]);
+          output_reg[ki][1] = psum1 +(MACTYPE) data_reg[ki][1]* (MACTYPE) weight_reg[ki][1];
+
+
+          data_reg[ki][0] = (ki==0) ?
+               (input_data[0]) :
+               (data_reg[(ki - 1)][0]);
+          output_reg[ki][0] = psum0 +(MACTYPE) data_reg[ki][0]* (MACTYPE) weight_reg[ki][0];
+        }
+# 258 "Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+        VITIS_LOOP_258_22: for(int ki = 4 -1; ki >=0; ki--) {
+         if (
+
+           (i - 4 + 1) - ki < W_TILE * H_TILE
+           ) {
+          int k = (ko * 4 + ki);
+          int hi = ((i - 4 + 1) - ki)
+            / W_TILE;
+          int wi = ((i - 4 + 1) - ki)
+            % W_TILE;
+          output_l1[ko * H_TILE * W_TILE
+            + hi * W_TILE + wi][ki] =
+
+            output_reg[ki][(4 - 1)];
          }
         }
        }
@@ -13638,14 +13659,14 @@ __attribute__((sdx_kernel("Conv_sysarr_dbbuf", 0))) void Conv_sysarr_dbbuf(hls::
   }
  }
 
- VITIS_LOOP_201_22: for (int k = 0; k < (K / 4); k++) {
-  VITIS_LOOP_202_23: for (int ki = 0; ki < 4; ki++) {
-   VITIS_LOOP_203_24: for (int wh = 0; wh < WH * WH; wh++) {
+ VITIS_LOOP_283_23: for (int k = 0; k < (K / 4); k++) {
+  VITIS_LOOP_284_24: for (int ki = 0; ki < 4; ki++) {
+   VITIS_LOOP_285_25: for (int wh = 0; wh < WH * WH; wh++) {
     output_tmp.data(31, 0) = output_l1[k * WH * WH + wh][ki];
     conv_out.write(output_tmp);
    }
   }
  }
-
+# 302 "Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
  printf("Kernel coreConv lanched !!!\n");
 }

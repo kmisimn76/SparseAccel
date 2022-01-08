@@ -1,7 +1,7 @@
-Running: xsim.dir/Conv_sysarr_dbbuf/xsimk -simmode gui -wdb Conv_sysarr_dbbuf.wdb -simrunnum 0 -socket 48609
+Running: xsim.dir/Conv_sysarr_dbbuf/xsimk -simmode gui -wdb Conv_sysarr_dbbuf.wdb -simrunnum 0 -socket 45599
 Design successfully loaded
-Design Loading Memory Usage: 39208 KB (Peak: 39216 KB)
+Design Loading Memory Usage: 38820 KB (Peak: 38828 KB)
 Design Loading CPU Usage: 0 ms
 Simulation completed
-Simulation Memory Usage: 121396 KB (Peak: 178476 KB)
-Simulation CPU Usage: 2230 ms
+Simulation Memory Usage: 121008 KB (Peak: 178088 KB)
+Simulation CPU Usage: 640 ms
