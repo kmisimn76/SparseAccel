@@ -67358,7 +67358,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
  DPTYPE weight_l1[512][4];
 
  DPTYPE data_l1[512][4][2];
- static MACTYPE output_l1[512][4];
+ MACTYPE output_l1[512][4];
 
 
 # 28 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
@@ -67403,7 +67403,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
  DPTYPE weight_reg[4][4];
  DPTYPE data_reg[4][4];
- static MACTYPE output_reg[4][4];
+ MACTYPE output_reg[4][4];
 #pragma HLS ARRAY_PARTITION variable=weight_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=output_reg complete
@@ -67423,8 +67423,11 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
  uint C = (uchar) param_tmp.data(31, 0);
  param_tmp = bias_in.read();
  uint WH = (uchar) param_tmp.data(31, 0);
+
  uint H_TILE = WH / 1;
  uint W_TILE = WH / 1;
+
+
  param_tmp = bias_in.read();
  uint WH_in = (uchar) param_tmp.data(31, 0);
  uint H_in_TILE = WH_in / 1;
@@ -67488,6 +67491,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
        for (int ci = 0; ci < 4; ci++) {
 
+
+
         for (int hi = 0; hi < H_TILE; hi++) {
          for (int wi = 0; wi < W_TILE; wi++) {
           int c = (co * 4 + ci);
@@ -67530,8 +67535,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
         for (int ki = 4 - 1; ki >= 0; ki--) {
 #pragma HLS unroll
-#pragma HLS DEPENDENCE variable=output_reg type=intra direction=RAW
-#pragma HLS DEPENDENCE variable=output_reg type=inter direction=RAW
+
          MACTYPE psum3 = (output_reg[ki][2]);
          MACTYPE psum2 = (output_reg[ki][1]);
          MACTYPE psum1 = (output_reg[ki][0]);
@@ -67560,7 +67564,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
                (data_reg[(ki - 1)][0]);
           output_reg[ki][0] = psum0 +(MACTYPE) data_reg[ki][0]* (MACTYPE) weight_reg[ki][0];
         }
-# 258 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 262 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
         for(int ki = 4 -1; ki >=0; ki--) {
          if (
 
@@ -67594,6 +67598,6 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
    }
   }
  }
-# 302 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 306 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
  printf("Kernel coreConv lanched !!!\n");
 }

@@ -23,7 +23,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	DPTYPE weight_l1[512][ARRAY_K];
 //DPTYPE data_l1[2][512][ARRAY_C]; //double buffer
 	DPTYPE data_l1[512][ARRAY_C][2]; //double buffer
-	static MACTYPE output_l1[512][ARRAY_K];
+	MACTYPE output_l1[512][ARRAY_K];
 	//static MACTYPE output_l1[512][112*ARRAY_K];
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=ARRAY_C) //BRAM cyclic
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=weight_l2 cyclic factor=ARRAY_K)//BRAM cyclic
@@ -36,7 +36,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l1 dim=2 complete)//BRAM cyclic
 	DPTYPE weight_reg[ARRAY_K][ARRAY_C];
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
-	static MACTYPE output_reg[ARRAY_K][ARRAY_C];
+	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 #pragma HLS ARRAY_PARTITION variable=weight_reg dim=0 complete // Register
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
 #pragma HLS ARRAY_PARTITION variable=output_reg complete  // Register
@@ -51,19 +51,26 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	k2k_data output_tmp;
 
 	param_tmp = bias_in.read();
-	uint K = (uchar) param_tmp.data(31, 0);
+	uint K_ = (uchar) param_tmp.data(31, 0);
+	uint K = 16;
 	param_tmp = bias_in.read();
-	uint C = (uchar) param_tmp.data(31, 0);
+	uint C_ = (uchar) param_tmp.data(31, 0);
+	uint C = 4;
 	param_tmp = bias_in.read();
-	uint WH = (uchar) param_tmp.data(31, 0); //output W(=H)
+	uint WH_ = (uchar) param_tmp.data(31, 0); //output W(=H)
+	uint WH = 7;
 	uint H_TILE = WH / TILE_H;
 	uint W_TILE = WH / TILE_W;
+//#define H_TILE 7
+//#define W_TILE 7
 	param_tmp = bias_in.read();
-	uint WH_in = (uchar) param_tmp.data(31, 0); //input W(=H)
+	uint WH_in_ = (uchar) param_tmp.data(31, 0); //input W(=H)
+	uint WH_in = 9;
 	uint H_in_TILE = WH_in / TILE_H;
 	uint W_in_TILE = WH_in / TILE_H;
 	param_tmp = bias_in.read();
-	uint RS = (uchar) param_tmp.data(31, 0); //R(=S)
+	uint RS_ = (uchar) param_tmp.data(31, 0); //R(=S)
+	uint RS = 3;
 	uint contol = 0;
 
 	for (unsigned int k = 0; k < K; k++) {
@@ -97,13 +104,13 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 						}
 					}
 
-					bool buf_num = 0;
+					bool buffer_number = 0; //double buffering
 					for (int r = 0; r < RS; r++) // No Tiling
 							{
 						for (int s = 0; s < RS; s++) // No Tiling
 								{
 							//#pragma HLS loop_merge
-							//#pragma HLS pipeline
+							#pragma HLS pipeline
 							//#pragma HLS pipeline off
 							//Systolic Array
 
@@ -119,9 +126,12 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 								}
 							}
 							// Input L2 -> L1
+							// Performance Bottleck for K=16 C=4 WH=7 RS=3
 							for (int ci = 0; ci < ARRAY_C; ci++) {
 								//#pragma HLS unroll
-								for (int hi = 0; hi < H_TILE; hi++) {
+								//for (int hi = 0; hi < H_TILE; hi++) { // H_TILE is VARIABLE!!: could reduce performance when H_TILE is big
+								//	for (int wi = 0; wi < W_TILE; wi++) {
+								for (int hi = 0; hi < H_TILE; hi++)  {
 									for (int wi = 0; wi < W_TILE; wi++) {
 										int c = (co * ARRAY_C + ci);
 										int h = (ho * H_TILE + hi) + r;
@@ -137,7 +147,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							// PE Array
 							int input_rows = H_TILE
 									* W_TILE + (C-1)+(ARRAY_K-1)+ARRAY_C; //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
-							for (int i = 0; i < input_rows; i++) {
+							//for (int i = 0; i < input_rows; i++) {
+							for (int i = 0; i < 59; i++) {
 #pragma HLS DEPENDENCE variable=output_l1
 #pragma HLS pipeline
 								//Im2Col & input bubble
@@ -163,8 +174,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
 								for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K
 #pragma HLS unroll
-#pragma HLS DEPENDENCE variable=output_reg type=intra direction=RAW
-#pragma HLS DEPENDENCE variable=output_reg type=inter direction=RAW
+//#pragma HLS DEPENDENCE variable=output_reg
 									MACTYPE psum3	=	(output_reg[ki][2]);
 									MACTYPE psum2	=	(output_reg[ki][1]);
 									MACTYPE psum1	=	(output_reg[ki][0]);
@@ -273,6 +283,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 								}
 							}
 							// Output l1 -> l2
+							buffer_number = ~buffer_number;
 						}
 					}
 				}

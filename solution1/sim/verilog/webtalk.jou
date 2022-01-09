@@ -2,8 +2,8 @@
 # Webtalk v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Sun Jan  9 04:58:40 2022
-# Process ID: 5482
+# Start of session at: Sun Jan  9 10:36:13 2022
+# Process ID: 14862
 # Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog
 # Command line: wbtcv -mode batch -source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.dir/Conv_sysarr_dbbuf/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/webtalk.log

@@ -15,6 +15,31 @@
                 <option name="name" value="Conv_sysarr_dbbuf"/>
             </pragma>
         </directive>
+        <directive functionName="Conv_sysarr_dbbuf" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="Conv_sysarr_dbbuf"/>
+            </pragma>
+        </directive>
+        <directive functionName="Conv_sysarr_dbbuf" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="Conv_sysarr_dbbuf"/>
+            </pragma>
+        </directive>
+        <directive functionName="Conv_sysarr_dbbuf" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="Conv_sysarr_dbbuf"/>
+            </pragma>
+        </directive>
+        <directive functionName="Conv_sysarr_dbbuf" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="Conv_sysarr_dbbuf"/>
+            </pragma>
+        </directive>
+        <directive functionName="Conv_sysarr_dbbuf" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="Conv_sysarr_dbbuf"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 
