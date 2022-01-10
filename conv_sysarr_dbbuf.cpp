@@ -17,7 +17,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
 	DPTYPE bias_l2[2048];
 	DPTYPE weight_l2[2048];
-	DPTYPE data_l2[2048];
+	//DPTYPE data_l2[2048];
+	DPTYPE data_l2[1024][ARRAY_C];
 	MACTYPE output_l2[2048];
 	DPTYPE bias_l1[512][ARRAY_C];
 	DPTYPE weight_l1[512][ARRAY_K];
@@ -27,7 +28,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	//static MACTYPE output_l1[512][112*ARRAY_K];
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=ARRAY_C) //BRAM cyclic
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=weight_l2 cyclic factor=ARRAY_K)//BRAM cyclic
-	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 cyclic factor=ARRAY_C)//BRAM cyclic
+	//DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 cyclic factor=ARRAY_C)//BRAM cyclic
+	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 dim=2 complete)//BRAM cyclic
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2 cyclic factor=ARRAY_K)//BRAM cyclic
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l1 dim=2 complete)//BRAM cyclic
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=weight_l1 dim=2 complete)//BRAM cyclic
@@ -51,26 +53,26 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	k2k_data output_tmp;
 
 	param_tmp = bias_in.read();
-	//uint K = (uchar) param_tmp.data(31, 0);
-	uint K = 16;
+	uint K = (uchar) param_tmp.data(31, 0);
+	//uint K = 16;
 	param_tmp = bias_in.read();
-	//uint C = (uchar) param_tmp.data(31, 0);
-	uint C = 4;
+	uint C = (uchar) param_tmp.data(31, 0);
+	//uint C = 4;
 	param_tmp = bias_in.read();
-	//uint WH = (uchar) param_tmp.data(31, 0); //output W(=H)
-	uint WH = 7;
+	uint WH = (uchar) param_tmp.data(31, 0); //output W(=H)
+	//uint WH = 7;
 	uint H_TILE = WH / TILE_H;
 	uint W_TILE = WH / TILE_W;
 //#define H_TILE 7
 //#define W_TILE 7
 	param_tmp = bias_in.read();
-	//uint WH_in = (uchar) param_tmp.data(31, 0); //input W(=H)
-	uint WH_in = 9;
+	uint WH_in = (uchar) param_tmp.data(31, 0); //input W(=H)
+	//uint WH_in = 9;
 	uint H_in_TILE = WH_in / TILE_H;
 	uint W_in_TILE = WH_in / TILE_H;
 	param_tmp = bias_in.read();
-	//uint RS = (uchar) param_tmp.data(31, 0); //R(=S)
-	uint RS = 3;
+	uint RS = (uchar) param_tmp.data(31, 0); //R(=S)
+	//uint RS = 3;
 	uint contol = 0;
 
 	for (unsigned int k = 0; k < K; k++) {
@@ -81,9 +83,16 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 		weight_tmp = weight_in.read();
 		weight_l2[k] = (DPTYPE) weight_tmp.data(7, 0);
 	}
-	for (unsigned int k = 0; k < C * WH_in * WH_in; k++) {
+	//for (unsigned int k = 0; k < C * WH_in * WH_in; k++) {
+	for (unsigned co = 0; co < C/ARRAY_C; co++) {
+		for(unsigned ci = 0; ci < ARRAY_C; ci++) {
+#pragma HLS unroll
+			for(unsigned wh = 0; wh < WH_in * WH_in; wh++) {
 		input_tmp = data_in.read();
-		data_l2[k] = (DPTYPE) input_tmp.data(7, 0);
+		//data_l2[k] = (DPTYPE) input_tmp.data(7, 0);
+		data_l2[co*WH_in * WH_in + wh][ci] = (DPTYPE) input_tmp.data(7, 0);
+			}
+		}
 	}
 
 	for (int ko = 0; ko < K / ARRAY_K; ko++) {
@@ -127,18 +136,22 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							}
 							// Input L2 -> L1
 							// Performance Bottleck for K=16 C=4 WH=7 RS=3
-							for (int ci = 0; ci < ARRAY_C; ci++) {
-								//#pragma HLS unroll
+							//for (int ci = 0; ci < ARRAY_C; ci++) { // unable unroll in outer loop
+							//	#pragma HLS unroll
 								//for (int hi = 0; hi < H_TILE; hi++) { // H_TILE is VARIABLE!!: could reduce performance when H_TILE is big
 								//	for (int wi = 0; wi < W_TILE; wi++) {
 								for (int hi = 0; hi < H_TILE; hi++)  {
 									for (int wi = 0; wi < W_TILE; wi++) {
+										for (int ci = 0; ci < ARRAY_C; ci++) { // for performance(unroll inner-most loop)
+											#pragma HLS unroll
 										int c = (co * ARRAY_C + ci);
 										int h = (ho * H_TILE + hi) + r;
 										int w = (wo * W_TILE + wi) + s;
 										data_l1[hi * W_TILE + wi][ci][0] =
-												data_l2[c * WH_in * WH_in
-														+ h * WH_in + w];
+												//data_l2[c * WH_in * WH_in
+												//		+ h * WH_in + w];
+												data_l2[co * WH_in * WH_in
+														+ h * WH_in + w][ci];
 										// To Improvement: Im2Col for data_l1
 									}
 								}
@@ -147,8 +160,9 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							// PE Array
 							int input_rows = H_TILE
 									* W_TILE + (C-1)+(ARRAY_K-1)+ARRAY_C; //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
-							//for (int i = 0; i < input_rows; i++) {
-							for (int i = 0; i < 59; i++) {
+							                  /// (C-1) correct???
+							for (int i = 0; i < input_rows; i++) {
+							//for (int i = 0; i < 59; i++) {
 #pragma HLS DEPENDENCE variable=output_l1
 #pragma HLS pipeline
 								//Im2Col & input bubble

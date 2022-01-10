@@ -65,13 +65,13 @@ set NewPortList {[
  	{ "name": "conv_out_V_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "conv_out_V", "role": "write" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89"],
 		"CDFG" : "Conv_sysarr_dbbuf",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "12104", "EstimateLatencyMax" : "12104",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "-1", "EstimateLatencyMax" : "-1",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -79,14 +79,14 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"DependenceCheck" : [
-			{"FromInitialState" : "ap_enable_state60_pp5_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter2", "FromInitialOperation" : "ap_enable_operation_1303", "FromInitialSV" : "30", "FromFinalState" : "ap_enable_state61_pp5_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter3", "FromFinalOperation" : "ap_enable_operation_1340", "FromFinalSV" : "31", "FromAddress" : "output_l1_3_address0", "FromType" : "R", "ToInitialState" : "ap_enable_state65_pp5_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1490", "ToInitialSV" : "35", "ToFinalState" : "ap_enable_state65_pp5_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter7", "ToFinalOperation" : "ap_enable_operation_1490", "ToFinalSV" : "35", "ToAddress" : "output_l1_3_address1", "ToType" : "W", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state60_pp5_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter2", "FromInitialOperation" : "ap_enable_operation_1307", "FromInitialSV" : "30", "FromFinalState" : "ap_enable_state61_pp5_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter3", "FromFinalOperation" : "ap_enable_operation_1342", "FromFinalSV" : "31", "FromAddress" : "output_l1_2_address0", "FromType" : "R", "ToInitialState" : "ap_enable_state65_pp5_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1499", "ToInitialSV" : "35", "ToFinalState" : "ap_enable_state65_pp5_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter7", "ToFinalOperation" : "ap_enable_operation_1499", "ToFinalSV" : "35", "ToAddress" : "output_l1_2_address1", "ToType" : "W", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state60_pp5_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter2", "FromInitialOperation" : "ap_enable_operation_1311", "FromInitialSV" : "30", "FromFinalState" : "ap_enable_state61_pp5_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter3", "FromFinalOperation" : "ap_enable_operation_1344", "FromFinalSV" : "31", "FromAddress" : "output_l1_1_address0", "FromType" : "R", "ToInitialState" : "ap_enable_state65_pp5_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1508", "ToInitialSV" : "35", "ToFinalState" : "ap_enable_state65_pp5_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter7", "ToFinalOperation" : "ap_enable_operation_1508", "ToFinalSV" : "35", "ToAddress" : "output_l1_1_address1", "ToType" : "W", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state60_pp5_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter2", "FromInitialOperation" : "ap_enable_operation_1314", "FromInitialSV" : "30", "FromFinalState" : "ap_enable_state61_pp5_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter3", "FromFinalOperation" : "ap_enable_operation_1346", "FromFinalSV" : "31", "FromAddress" : "output_l1_0_address0", "FromType" : "R", "ToInitialState" : "ap_enable_state65_pp5_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1511", "ToInitialSV" : "35", "ToFinalState" : "ap_enable_state65_pp5_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter7", "ToFinalOperation" : "ap_enable_operation_1511", "ToFinalSV" : "35", "ToAddress" : "output_l1_0_address1", "ToType" : "W", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state65_pp5_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter7", "FromInitialOperation" : "ap_enable_operation_1490", "FromInitialSV" : "35", "FromFinalState" : "ap_enable_state65_pp5_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter7", "FromFinalOperation" : "ap_enable_operation_1490", "FromFinalSV" : "35", "FromAddress" : "output_l1_3_address1", "FromType" : "W", "ToInitialState" : "ap_enable_state60_pp5_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp5_iter3", "ToInitialOperation" : "ap_enable_operation_1303", "ToInitialSV" : "30", "ToFinalState" : "ap_enable_state61_pp5_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter3", "ToFinalOperation" : "ap_enable_operation_1340", "ToFinalSV" : "31", "ToAddress" : "output_l1_3_address0", "ToType" : "R", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state60_pp5_iter2_stage0", "ap_enable_state61_pp5_iter3_stage0", "ap_enable_state65_pp5_iter7_stage0"]},
-			{"FromInitialState" : "ap_enable_state65_pp5_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter7", "FromInitialOperation" : "ap_enable_operation_1499", "FromInitialSV" : "35", "FromFinalState" : "ap_enable_state65_pp5_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter7", "FromFinalOperation" : "ap_enable_operation_1499", "FromFinalSV" : "35", "FromAddress" : "output_l1_2_address1", "FromType" : "W", "ToInitialState" : "ap_enable_state60_pp5_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp5_iter3", "ToInitialOperation" : "ap_enable_operation_1307", "ToInitialSV" : "30", "ToFinalState" : "ap_enable_state61_pp5_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter3", "ToFinalOperation" : "ap_enable_operation_1342", "ToFinalSV" : "31", "ToAddress" : "output_l1_2_address0", "ToType" : "R", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state60_pp5_iter2_stage0", "ap_enable_state61_pp5_iter3_stage0", "ap_enable_state65_pp5_iter7_stage0"]},
-			{"FromInitialState" : "ap_enable_state65_pp5_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter7", "FromInitialOperation" : "ap_enable_operation_1508", "FromInitialSV" : "35", "FromFinalState" : "ap_enable_state65_pp5_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter7", "FromFinalOperation" : "ap_enable_operation_1508", "FromFinalSV" : "35", "FromAddress" : "output_l1_1_address1", "FromType" : "W", "ToInitialState" : "ap_enable_state60_pp5_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp5_iter3", "ToInitialOperation" : "ap_enable_operation_1311", "ToInitialSV" : "30", "ToFinalState" : "ap_enable_state61_pp5_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter3", "ToFinalOperation" : "ap_enable_operation_1344", "ToFinalSV" : "31", "ToAddress" : "output_l1_1_address0", "ToType" : "R", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state60_pp5_iter2_stage0", "ap_enable_state61_pp5_iter3_stage0", "ap_enable_state65_pp5_iter7_stage0"]},
-			{"FromInitialState" : "ap_enable_state65_pp5_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp5_iter7", "FromInitialOperation" : "ap_enable_operation_1511", "FromInitialSV" : "35", "FromFinalState" : "ap_enable_state65_pp5_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp5_iter7", "FromFinalOperation" : "ap_enable_operation_1511", "FromFinalSV" : "35", "FromAddress" : "output_l1_0_address1", "FromType" : "W", "ToInitialState" : "ap_enable_state60_pp5_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp5_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp5_iter3", "ToInitialOperation" : "ap_enable_operation_1314", "ToInitialSV" : "30", "ToFinalState" : "ap_enable_state61_pp5_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp5_iter3", "ToFinalOperation" : "ap_enable_operation_1346", "ToFinalSV" : "31", "ToAddress" : "output_l1_0_address0", "ToType" : "R", "PipelineBlock" : "ap_block_pp5", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state60_pp5_iter2_stage0", "ap_enable_state61_pp5_iter3_stage0", "ap_enable_state65_pp5_iter7_stage0"]}],
+			{"FromInitialState" : "ap_enable_state56_pp8_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter2", "FromInitialOperation" : "ap_enable_operation_975", "FromInitialSV" : "31", "FromFinalState" : "ap_enable_state57_pp8_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter3", "FromFinalOperation" : "ap_enable_operation_1011", "FromFinalSV" : "32", "FromAddress" : "output_l1_3_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state61_pp8_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1158", "ToInitialSV" : "36", "ToFinalState" : "ap_enable_state61_pp8_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter7", "ToFinalOperation" : "ap_enable_operation_1158", "ToFinalSV" : "36", "ToAddress" : "output_l1_3_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "WAR"},
+			{"FromInitialState" : "ap_enable_state56_pp8_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter2", "FromInitialOperation" : "ap_enable_operation_979", "FromInitialSV" : "31", "FromFinalState" : "ap_enable_state57_pp8_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter3", "FromFinalOperation" : "ap_enable_operation_1013", "FromFinalSV" : "32", "FromAddress" : "output_l1_2_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state61_pp8_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1164", "ToInitialSV" : "36", "ToFinalState" : "ap_enable_state61_pp8_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter7", "ToFinalOperation" : "ap_enable_operation_1164", "ToFinalSV" : "36", "ToAddress" : "output_l1_2_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "WAR"},
+			{"FromInitialState" : "ap_enable_state56_pp8_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter2", "FromInitialOperation" : "ap_enable_operation_983", "FromInitialSV" : "31", "FromFinalState" : "ap_enable_state57_pp8_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter3", "FromFinalOperation" : "ap_enable_operation_1015", "FromFinalSV" : "32", "FromAddress" : "output_l1_1_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state61_pp8_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1170", "ToInitialSV" : "36", "ToFinalState" : "ap_enable_state61_pp8_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter7", "ToFinalOperation" : "ap_enable_operation_1170", "ToFinalSV" : "36", "ToAddress" : "output_l1_1_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "WAR"},
+			{"FromInitialState" : "ap_enable_state56_pp8_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter2", "FromInitialOperation" : "ap_enable_operation_987", "FromInitialSV" : "31", "FromFinalState" : "ap_enable_state57_pp8_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter3", "FromFinalOperation" : "ap_enable_operation_1017", "FromFinalSV" : "32", "FromAddress" : "output_l1_0_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state61_pp8_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_1173", "ToInitialSV" : "36", "ToFinalState" : "ap_enable_state61_pp8_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter7", "ToFinalOperation" : "ap_enable_operation_1173", "ToFinalSV" : "36", "ToAddress" : "output_l1_0_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "WAR"},
+			{"FromInitialState" : "ap_enable_state61_pp8_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter7", "FromInitialOperation" : "ap_enable_operation_1158", "FromInitialSV" : "36", "FromFinalState" : "ap_enable_state61_pp8_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter7", "FromFinalOperation" : "ap_enable_operation_1158", "FromFinalSV" : "36", "FromAddress" : "output_l1_3_address0", "FromType" : "W", "ToInitialState" : "ap_enable_state56_pp8_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp8_iter3", "ToInitialOperation" : "ap_enable_operation_975", "ToInitialSV" : "31", "ToFinalState" : "ap_enable_state57_pp8_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter3", "ToFinalOperation" : "ap_enable_operation_1011", "ToFinalSV" : "32", "ToAddress" : "output_l1_3_address1", "ToType" : "R", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state56_pp8_iter2_stage0", "ap_enable_state57_pp8_iter3_stage0", "ap_enable_state61_pp8_iter7_stage0"]},
+			{"FromInitialState" : "ap_enable_state61_pp8_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter7", "FromInitialOperation" : "ap_enable_operation_1164", "FromInitialSV" : "36", "FromFinalState" : "ap_enable_state61_pp8_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter7", "FromFinalOperation" : "ap_enable_operation_1164", "FromFinalSV" : "36", "FromAddress" : "output_l1_2_address0", "FromType" : "W", "ToInitialState" : "ap_enable_state56_pp8_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp8_iter3", "ToInitialOperation" : "ap_enable_operation_979", "ToInitialSV" : "31", "ToFinalState" : "ap_enable_state57_pp8_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter3", "ToFinalOperation" : "ap_enable_operation_1013", "ToFinalSV" : "32", "ToAddress" : "output_l1_2_address1", "ToType" : "R", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state56_pp8_iter2_stage0", "ap_enable_state57_pp8_iter3_stage0", "ap_enable_state61_pp8_iter7_stage0"]},
+			{"FromInitialState" : "ap_enable_state61_pp8_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter7", "FromInitialOperation" : "ap_enable_operation_1170", "FromInitialSV" : "36", "FromFinalState" : "ap_enable_state61_pp8_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter7", "FromFinalOperation" : "ap_enable_operation_1170", "FromFinalSV" : "36", "FromAddress" : "output_l1_1_address0", "FromType" : "W", "ToInitialState" : "ap_enable_state56_pp8_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp8_iter3", "ToInitialOperation" : "ap_enable_operation_983", "ToInitialSV" : "31", "ToFinalState" : "ap_enable_state57_pp8_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter3", "ToFinalOperation" : "ap_enable_operation_1015", "ToFinalSV" : "32", "ToAddress" : "output_l1_1_address1", "ToType" : "R", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state56_pp8_iter2_stage0", "ap_enable_state57_pp8_iter3_stage0", "ap_enable_state61_pp8_iter7_stage0"]},
+			{"FromInitialState" : "ap_enable_state61_pp8_iter7_stage0", "FromInitialIteration" : "ap_enable_reg_pp8_iter7", "FromInitialOperation" : "ap_enable_operation_1173", "FromInitialSV" : "36", "FromFinalState" : "ap_enable_state61_pp8_iter7_stage0", "FromFinalIteration" : "ap_enable_reg_pp8_iter7", "FromFinalOperation" : "ap_enable_operation_1173", "FromFinalSV" : "36", "FromAddress" : "output_l1_0_address0", "FromType" : "W", "ToInitialState" : "ap_enable_state56_pp8_iter2_stage0", "ToInitialIteration" : "ap_enable_reg_pp8_iter2", "ToInitialNextIteration" : "ap_enable_reg_pp8_iter3", "ToInitialOperation" : "ap_enable_operation_987", "ToInitialSV" : "31", "ToFinalState" : "ap_enable_state57_pp8_iter3_stage0", "ToFinalIteration" : "ap_enable_reg_pp8_iter3", "ToFinalOperation" : "ap_enable_operation_1017", "ToFinalSV" : "32", "ToAddress" : "output_l1_0_address1", "ToType" : "R", "PipelineBlock" : "ap_block_pp8", "AddressWidth" : "9", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:64)", "Type" : "RAW", "StateEnableSignalListForFifoShift" : ["ap_enable_state56_pp8_iter2_stage0", "ap_enable_state57_pp8_iter3_stage0", "ap_enable_state61_pp8_iter7_stage0"]}],
 		"Port" : [
 			{"Name" : "bias_in_V", "Type" : "Fifo", "Direction" : "I",
 				"BlockSignal" : [
@@ -120,53 +120,89 @@ set RtlHierarchyInfo {[
 	{"ID" : "18", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_l1_1_U", "Parent" : "0"},
 	{"ID" : "19", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_l1_2_U", "Parent" : "0"},
 	{"ID" : "20", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.output_l1_3_U", "Parent" : "0"},
-	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U1", "Parent" : "0"},
-	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U2", "Parent" : "0"},
-	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U3", "Parent" : "0"},
-	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U4", "Parent" : "0"},
-	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U5", "Parent" : "0"},
-	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U6", "Parent" : "0"},
-	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U7", "Parent" : "0"},
-	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U8", "Parent" : "0"},
-	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U9", "Parent" : "0"},
-	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U10", "Parent" : "0"},
-	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U11", "Parent" : "0"},
+	{"ID" : "21", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_16_1_1_U1", "Parent" : "0"},
+	{"ID" : "22", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_16_1_1_U2", "Parent" : "0"},
+	{"ID" : "23", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_16_1_1_U3", "Parent" : "0"},
+	{"ID" : "24", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_6ns_10s_10_1_1_U4", "Parent" : "0"},
+	{"ID" : "25", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_16_1_1_U5", "Parent" : "0"},
+	{"ID" : "26", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_6ns_6ns_12_1_1_U6", "Parent" : "0"},
+	{"ID" : "27", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_9s_6ns_9_1_1_U7", "Parent" : "0"},
+	{"ID" : "28", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_11_1_1_U8", "Parent" : "0"},
+	{"ID" : "29", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_11_1_1_U9", "Parent" : "0"},
+	{"ID" : "30", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_11_1_1_U10", "Parent" : "0"},
+	{"ID" : "31", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_11_1_1_U11", "Parent" : "0"},
 	{"ID" : "32", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U12", "Parent" : "0"},
-	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U13", "Parent" : "0"},
-	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U14", "Parent" : "0"},
-	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U15", "Parent" : "0"},
-	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8ns_3ns_2ns_8_4_1_U16", "Parent" : "0"},
-	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U17", "Parent" : "0"},
-	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U18", "Parent" : "0"},
-	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U19", "Parent" : "0"},
-	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U20", "Parent" : "0"},
-	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U21", "Parent" : "0"},
-	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U22", "Parent" : "0"},
-	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U23", "Parent" : "0"},
-	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U24", "Parent" : "0"},
-	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U25", "Parent" : "0"},
-	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U26", "Parent" : "0"},
-	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U27", "Parent" : "0"},
-	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U28", "Parent" : "0"},
-	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U29", "Parent" : "0"},
-	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U30", "Parent" : "0"},
-	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U31", "Parent" : "0"},
-	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U32", "Parent" : "0"},
-	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_7ns_3ns_6ns_8_4_1_U33", "Parent" : "0"}]}
+	{"ID" : "33", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_6ns_10s_10_1_1_U13", "Parent" : "0"},
+	{"ID" : "34", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8ns_8ns_11_1_1_U14", "Parent" : "0"},
+	{"ID" : "35", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U15", "Parent" : "0"},
+	{"ID" : "36", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U16", "Parent" : "0"},
+	{"ID" : "37", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U17", "Parent" : "0"},
+	{"ID" : "38", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U18", "Parent" : "0"},
+	{"ID" : "39", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U19", "Parent" : "0"},
+	{"ID" : "40", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U20", "Parent" : "0"},
+	{"ID" : "41", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U21", "Parent" : "0"},
+	{"ID" : "42", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U22", "Parent" : "0"},
+	{"ID" : "43", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U23", "Parent" : "0"},
+	{"ID" : "44", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U24", "Parent" : "0"},
+	{"ID" : "45", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U25", "Parent" : "0"},
+	{"ID" : "46", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U26", "Parent" : "0"},
+	{"ID" : "47", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U27", "Parent" : "0"},
+	{"ID" : "48", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U28", "Parent" : "0"},
+	{"ID" : "49", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U29", "Parent" : "0"},
+	{"ID" : "50", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_464_8_1_1_U30", "Parent" : "0"},
+	{"ID" : "51", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U31", "Parent" : "0"},
+	{"ID" : "52", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_16ns_16ns_32_4_1_U32", "Parent" : "0"},
+	{"ID" : "53", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_18ns_6ns_24_4_1_U33", "Parent" : "0"},
+	{"ID" : "54", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U34", "Parent" : "0"},
+	{"ID" : "55", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U35", "Parent" : "0"},
+	{"ID" : "56", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U36", "Parent" : "0"},
+	{"ID" : "57", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U37", "Parent" : "0"},
+	{"ID" : "58", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U38", "Parent" : "0"},
+	{"ID" : "59", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U39", "Parent" : "0"},
+	{"ID" : "60", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U40", "Parent" : "0"},
+	{"ID" : "61", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U41", "Parent" : "0"},
+	{"ID" : "62", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U42", "Parent" : "0"},
+	{"ID" : "63", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U43", "Parent" : "0"},
+	{"ID" : "64", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U44", "Parent" : "0"},
+	{"ID" : "65", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U45", "Parent" : "0"},
+	{"ID" : "66", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U46", "Parent" : "0"},
+	{"ID" : "67", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U47", "Parent" : "0"},
+	{"ID" : "68", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U48", "Parent" : "0"},
+	{"ID" : "69", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_mul_11s_11s_11_4_1_U49", "Parent" : "0"},
+	{"ID" : "70", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8ns_8ns_9ns_9_4_1_U50", "Parent" : "0"},
+	{"ID" : "71", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8ns_8ns_8ns_9_4_1_U51", "Parent" : "0"},
+	{"ID" : "72", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.ama_addmuladd_8ns_8ns_8ns_8ns_10_4_1_U52", "Parent" : "0"},
+	{"ID" : "73", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U53", "Parent" : "0"},
+	{"ID" : "74", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U54", "Parent" : "0"},
+	{"ID" : "75", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U55", "Parent" : "0"},
+	{"ID" : "76", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U56", "Parent" : "0"},
+	{"ID" : "77", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U57", "Parent" : "0"},
+	{"ID" : "78", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U58", "Parent" : "0"},
+	{"ID" : "79", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U59", "Parent" : "0"},
+	{"ID" : "80", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U60", "Parent" : "0"},
+	{"ID" : "81", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U61", "Parent" : "0"},
+	{"ID" : "82", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U62", "Parent" : "0"},
+	{"ID" : "83", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U63", "Parent" : "0"},
+	{"ID" : "84", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U64", "Parent" : "0"},
+	{"ID" : "85", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U65", "Parent" : "0"},
+	{"ID" : "86", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U66", "Parent" : "0"},
+	{"ID" : "87", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U67", "Parent" : "0"},
+	{"ID" : "88", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_8s_8s_32ns_32_4_1_U68", "Parent" : "0"},
+	{"ID" : "89", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mac_muladd_6ns_9s_9ns_9_4_1_U69", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	Conv_sysarr_dbbuf {
 		bias_in_V {Type I LastRead 6 FirstWrite -1}
-		weight_in_V {Type I LastRead 8 FirstWrite -1}
-		data_in_V {Type I LastRead 10 FirstWrite -1}
-		conv_out_V {Type O LastRead -1 FirstWrite 16}}}
+		weight_in_V {Type I LastRead 11 FirstWrite -1}
+		data_in_V {Type I LastRead 20 FirstWrite -1}
+		conv_out_V {Type O LastRead -1 FirstWrite 21}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "12104", "Max" : "12104"}
-	, {"Name" : "Interval", "Min" : "12105", "Max" : "12105"}
+	{"Name" : "Latency", "Min" : "-1", "Max" : "-1"}
+	, {"Name" : "Interval", "Min" : "0", "Max" : "0"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -177,6 +213,9 @@ set PipelineEnableSignalInfo {[
 	{"Pipeline" : "4", "EnableSignal" : "ap_enable_pp4"}
 	{"Pipeline" : "5", "EnableSignal" : "ap_enable_pp5"}
 	{"Pipeline" : "6", "EnableSignal" : "ap_enable_pp6"}
+	{"Pipeline" : "7", "EnableSignal" : "ap_enable_pp7"}
+	{"Pipeline" : "8", "EnableSignal" : "ap_enable_pp8"}
+	{"Pipeline" : "9", "EnableSignal" : "ap_enable_pp9"}
 ]}
 
 set Spec2ImplPortList { 
@@ -191,10 +230,10 @@ set busDeadlockParameterList {
 
 # RTL port scheduling information:
 set fifoSchedulingInfoList { 
-	bias_in_V { fifo_read 21 no_conditional }
-	weight_in_V { fifo_read 576 no_conditional }
-	data_in_V { fifo_read 324 no_conditional }
-	conv_out_V { fifo_write 784 no_conditional }
+	bias_in_V { fifo_read 6 no_conditional }
+	weight_in_V { fifo_read 1 no_conditional }
+	data_in_V { fifo_read 4 has_conditional }
+	conv_out_V { fifo_write 1 no_conditional }
 }
 
 # RTL bus port read request latency information:
