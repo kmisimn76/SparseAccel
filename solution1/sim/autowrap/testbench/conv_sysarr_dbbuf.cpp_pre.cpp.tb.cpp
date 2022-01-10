@@ -67423,8 +67423,10 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
  param_tmp = bias_in.read();
  uint K = (uchar) param_tmp.data(31, 0);
+
  param_tmp = bias_in.read();
  uint C = (uchar) param_tmp.data(31, 0);
+
  param_tmp = bias_in.read();
  uint WH = (uchar) param_tmp.data(31, 0);
 
@@ -67434,10 +67436,12 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
  param_tmp = bias_in.read();
  uint WH_in = (uchar) param_tmp.data(31, 0);
+
  uint H_in_TILE = WH_in / 1;
  uint W_in_TILE = WH_in / 1;
  param_tmp = bias_in.read();
  uint RS = (uchar) param_tmp.data(31, 0);
+
  uint contol = 0;
 
  for (unsigned int k = 0; k < K; k++) {
@@ -67471,7 +67475,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
       }
      }
 
-     bool buf_num = 0;
+     bool buffer_number = 0;
      for (int r = 0; r < RS; r++)
        {
       for (int s = 0; s < RS; s++)
@@ -67493,6 +67497,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
         }
        }
 
+
        for (int ci = 0; ci < 4; ci++) {
 
 
@@ -67513,7 +67518,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
        int input_rows = H_TILE
          * W_TILE + (C-1)+(4 -1)+4;
-       for (int i = 0; i < input_rows; i++) {
+
+       for (int i = 0; i < 59; i++) {
 #pragma HLS DEPENDENCE variable=output_l1
 #pragma HLS pipeline
 
@@ -67568,7 +67574,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
                (data_reg[(ki - 1)][0]);
           output_reg[ki][0] = psum0 +(MACTYPE) data_reg[ki][0]* (MACTYPE) weight_reg[ki][0];
         }
-# 262 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 268 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
         for(int ki = 4 -1; ki >=0; ki--) {
          if (
 
@@ -67587,6 +67593,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
         }
        }
 
+       buffer_number = ~buffer_number;
       }
      }
     }
@@ -67602,7 +67609,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
    }
   }
  }
-# 306 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 313 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
  printf("Kernel coreConv lanched !!!\n");
 }
 #ifndef HLS_FASTSIM
@@ -67625,5 +67632,5 @@ apatb_Conv_sysarr_dbbuf_hw(bias_in, weight_in, data_in, conv_out);
 return ;
 }
 #endif
-# 307 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 314 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 

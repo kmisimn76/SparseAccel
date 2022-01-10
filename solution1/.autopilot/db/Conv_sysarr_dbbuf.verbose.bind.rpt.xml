@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr_dbbuf'" level="0">
-<item name = "Date">Sun Jan  9 13:25:11 2022
+<item name = "Date">Mon Jan 10 20:35:38 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 4.300 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 4.002 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6244, 6244, 62.440 us, 62.440 us, 6245, 6245, none</column>
+<column name="">12104, 12104, 0.121 ms, 0.121 ms, 12105, 12105, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -38,10 +38,12 @@
 <column name="- VITIS_LOOP_76_1">16, 16, 2, 1, 1, 16, yes</column>
 <column name="- VITIS_LOOP_80_2">576, 576, 2, 1, 1, 576, yes</column>
 <column name="- VITIS_LOOP_84_3">324, 324, 2, 1, 1, 324, yes</column>
-<column name="- VITIS_LOOP_89_4">4528, 4528, 1132, -, -, 4, no</column>
+<column name="- VITIS_LOOP_89_4">10388, 10388, 2597, -, -, 4, no</column>
 <column name=" + VITIS_LOOP_96_8">100, 100, 26, 25, 1, 4, yes</column>
-<column name=" + VITIS_LOOP_108_11_VITIS_LOOP_110_12">1027, 1027, 244, 98, 1, 9, yes</column>
-<column name="- VITIS_LOOP_294_23_VITIS_LOOP_295_24_VITIS_LOOP_296_25">787, 787, 5, 1, 1, 784, yes</column>
+<column name=" + VITIS_LOOP_108_11_VITIS_LOOP_110_12">2493, 2493, 277, -, -, 9, no</column>
+<column name="  ++ VITIS_LOOP_130_15_VITIS_LOOP_134_16_VITIS_LOOP_135_17">199, 199, 5, 1, 1, 196, yes</column>
+<column name="  ++ VITIS_LOOP_151_18">65, 65, 8, 1, 1, 59, yes</column>
+<column name="- VITIS_LOOP_294_24_VITIS_LOOP_295_25_VITIS_LOOP_296_26">787, 787, 5, 1, 1, 784, yes</column>
 </table>
 </item>
 </section>

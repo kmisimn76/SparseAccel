@@ -90,7 +90,7 @@
     "Uncertainty": "2.7",
     "IsCombinational": "0",
     "II": "x",
-    "Latency": "6244"
+    "Latency": "12104"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -107,20 +107,17 @@
   },
   "Files": {
     "CSource": [
-      "..\/conv.cpp",
-      "..\/conv1d.cpp",
-      "..\/conv_sysarr.cpp",
+      "..\/conv_sysarr_fifo.cpp",
       "..\/conv_sysarr_dbbuf.cpp",
-      "..\/conv_sysarr_fifo.cpp"
+      "..\/conv_sysarr.cpp",
+      "..\/conv1d.cpp",
+      "..\/conv.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/Conv_sysarr_dbbuf_bias_l2_0.vhd",
-      "impl\/vhdl\/Conv_sysarr_dbbuf_data_l1_0.vhd",
       "impl\/vhdl\/Conv_sysarr_dbbuf_mac_muladd_7ns_3ns_6ns_8_4_1.vhd",
-      "impl\/vhdl\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1.vhd",
-      "impl\/vhdl\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1.vhd",
+      "impl\/vhdl\/Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1.vhd",
       "impl\/vhdl\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_32ns_32_4_1.vhd",
-      "impl\/vhdl\/Conv_sysarr_dbbuf_mul_8s_8s_16_1_1.vhd",
       "impl\/vhdl\/Conv_sysarr_dbbuf_mux_42_32_1_1.vhd",
       "impl\/vhdl\/Conv_sysarr_dbbuf_mux_464_8_1_1.vhd",
       "impl\/vhdl\/Conv_sysarr_dbbuf_output_l1_0.vhd",
@@ -129,12 +126,9 @@
     ],
     "Verilog": [
       "impl\/verilog\/Conv_sysarr_dbbuf_bias_l2_0.v",
-      "impl\/verilog\/Conv_sysarr_dbbuf_data_l1_0.v",
       "impl\/verilog\/Conv_sysarr_dbbuf_mac_muladd_7ns_3ns_6ns_8_4_1.v",
-      "impl\/verilog\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1.v",
-      "impl\/verilog\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1.v",
+      "impl\/verilog\/Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1.v",
       "impl\/verilog\/Conv_sysarr_dbbuf_mac_muladd_8s_8s_32ns_32_4_1.v",
-      "impl\/verilog\/Conv_sysarr_dbbuf_mul_8s_8s_16_1_1.v",
       "impl\/verilog\/Conv_sysarr_dbbuf_mux_42_32_1_1.v",
       "impl\/verilog\/Conv_sysarr_dbbuf_mux_464_8_1_1.v",
       "impl\/verilog\/Conv_sysarr_dbbuf_output_l1_0.v",
@@ -330,17 +324,17 @@
       }},
     "Metrics": {"Conv_sysarr_dbbuf": {
         "Latency": {
-          "LatencyBest": "6244",
-          "LatencyAvg": "6244",
-          "LatencyWorst": "6244",
-          "PipelineII": "6245",
+          "LatencyBest": "12104",
+          "LatencyAvg": "12104",
+          "LatencyWorst": "12104",
+          "PipelineII": "12105",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "4.300"
+          "Estimate": "4.002"
         },
         "Loops": [
           {
@@ -367,9 +361,9 @@
           {
             "Name": "VITIS_LOOP_89_4",
             "TripCount": "4",
-            "Latency": "4528",
+            "Latency": "10388",
             "PipelineII": "",
-            "PipelineDepth": "1132",
+            "PipelineDepth": "2597",
             "Loops": [
               {
                 "Name": "VITIS_LOOP_96_8",
@@ -381,14 +375,30 @@
               {
                 "Name": "VITIS_LOOP_108_11_VITIS_LOOP_110_12",
                 "TripCount": "9",
-                "Latency": "1027",
-                "PipelineII": "98",
-                "PipelineDepth": "244"
+                "Latency": "2493",
+                "PipelineII": "",
+                "PipelineDepth": "277",
+                "Loops": [
+                  {
+                    "Name": "VITIS_LOOP_130_15_VITIS_LOOP_134_16_VITIS_LOOP_135_17",
+                    "TripCount": "196",
+                    "Latency": "199",
+                    "PipelineII": "1",
+                    "PipelineDepth": "5"
+                  },
+                  {
+                    "Name": "VITIS_LOOP_151_18",
+                    "TripCount": "59",
+                    "Latency": "65",
+                    "PipelineII": "1",
+                    "PipelineDepth": "8"
+                  }
+                ]
               }
             ]
           },
           {
-            "Name": "VITIS_LOOP_294_23_VITIS_LOOP_295_24_VITIS_LOOP_296_25",
+            "Name": "VITIS_LOOP_294_24_VITIS_LOOP_295_25_VITIS_LOOP_296_26",
             "TripCount": "784",
             "Latency": "787",
             "PipelineII": "1",
@@ -399,15 +409,15 @@
           "BRAM_18K": "24",
           "AVAIL_BRAM": "4320",
           "UTIL_BRAM": "~0",
-          "DSP": "589",
+          "DSP": "18",
           "AVAIL_DSP": "6840",
-          "UTIL_DSP": "8",
-          "FF": "29874",
+          "UTIL_DSP": "~0",
+          "FF": "3768",
           "AVAIL_FF": "2364480",
-          "UTIL_FF": "1",
-          "LUT": "31698",
+          "UTIL_FF": "~0",
+          "LUT": "5315",
           "AVAIL_LUT": "1182240",
-          "UTIL_LUT": "2",
+          "UTIL_LUT": "~0",
           "URAM": "0",
           "AVAIL_URAM": "960",
           "UTIL_URAM": "0"
@@ -417,7 +427,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-01-09 13:25:25 KST",
+    "Time": "2022-01-10 20:35:40 KST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

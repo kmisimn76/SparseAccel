@@ -6,22 +6,22 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2 is
+entity Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0 is
 port (
     clk: in  std_logic;
     rst: in  std_logic;
     ce:  in  std_logic;
     in0:  in  std_logic_vector(8 - 1 downto 0);
-    in1:  in  std_logic_vector(8 - 1 downto 0);
-    in2:  in  std_logic_vector(17 - 1 downto 0);
-    dout: out std_logic_vector(17 - 1 downto 0));
+    in1:  in  std_logic_vector(3 - 1 downto 0);
+    in2:  in  std_logic_vector(2 - 1 downto 0);
+    dout: out std_logic_vector(8 - 1 downto 0));
 
     attribute use_dsp : string;
-    attribute use_dsp of Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2 : entity is "yes";
+    attribute use_dsp of Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0 : entity is "yes";
 
 end entity;
 
-architecture behav of Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2 is
+architecture behav of Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0 is
     signal a       : signed(27-1 downto 0);
     signal b       : signed(18-1 downto 0);
     signal c       : signed(48-1 downto 0);
@@ -32,9 +32,9 @@ architecture behav of Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2 is
     signal b_reg   : signed(18-1 downto 0);
     signal p_reg   : signed(48-1 downto 0);
 begin
-a  <= signed(resize(signed(in0), 27));
-b  <= signed(resize(signed(in1), 18));
-c  <= signed(resize(signed(in2), 48));
+a  <= signed(resize(unsigned(in0), 27));
+b  <= signed(resize(unsigned(in1), 18));
+c  <= signed(resize(unsigned(in2), 48));
 
 m  <= a_reg * b_reg;
 p  <= m_reg + c;
@@ -50,13 +50,13 @@ process (clk) begin
     end if;
 end process;
 
-dout <= std_logic_vector(resize(unsigned(p_reg), 17));
+dout <= std_logic_vector(resize(unsigned(p_reg), 8));
 
 end architecture;
 Library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1 is
+entity Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1 is
     generic (
         ID : INTEGER;
         NUM_STAGE : INTEGER;
@@ -74,8 +74,8 @@ entity Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1 is
         dout : OUT STD_LOGIC_VECTOR(dout_WIDTH - 1 DOWNTO 0));
 end entity;
 
-architecture arch of Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1 is
-    component Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2 is
+architecture arch of Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1 is
+    component Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0 is
         port (
             clk : IN STD_LOGIC;
             rst : IN STD_LOGIC;
@@ -89,7 +89,7 @@ architecture arch of Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1 is
 
 
 begin
-    Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2_U :  component Conv_sysarr_dbbuf_mac_muladd_8s_8s_17s_17_4_1_DSP48_2
+    Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0_U :  component Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0
     port map (
         clk => clk,
         rst => reset,

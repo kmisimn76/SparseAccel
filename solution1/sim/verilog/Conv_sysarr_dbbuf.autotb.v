@@ -1078,15 +1078,15 @@ end
 
 `ifndef POST_SYN
 
-// Dependence Check (WAR) "ap_enable_operation_996"(R:SV39-40) -> "ap_enable_operation_1139"(W:SV44-44) @ `AUTOTB_DUT_INST
+// Dependence Check (WAR) "ap_enable_operation_988"(R:SV39-40) -> "ap_enable_operation_1135"(W:SV44-44) @ `AUTOTB_DUT_INST
 
-// Dependence Check (WAR) "ap_enable_operation_998"(R:SV39-40) -> "ap_enable_operation_1145"(W:SV44-44) @ `AUTOTB_DUT_INST
+// Dependence Check (WAR) "ap_enable_operation_990"(R:SV39-40) -> "ap_enable_operation_1145"(W:SV44-44) @ `AUTOTB_DUT_INST
 
-// Dependence Check (WAR) "ap_enable_operation_1000"(R:SV39-40) -> "ap_enable_operation_1151"(W:SV44-44) @ `AUTOTB_DUT_INST
+// Dependence Check (WAR) "ap_enable_operation_992"(R:SV39-40) -> "ap_enable_operation_1155"(W:SV44-44) @ `AUTOTB_DUT_INST
 
-// Dependence Check (WAR) "ap_enable_operation_1002"(R:SV39-40) -> "ap_enable_operation_1154"(W:SV44-44) @ `AUTOTB_DUT_INST
+// Dependence Check (WAR) "ap_enable_operation_994"(R:SV39-40) -> "ap_enable_operation_1158"(W:SV44-44) @ `AUTOTB_DUT_INST
 
-// Dependence Check (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// Dependence Check (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
 reg [9:0] DEP_address_4_to [5 - 1:0];
 time DEP_time_4_to [5 - 1:0];
 reg [9:0] DEP_address_4_from [1 - 1:0];
@@ -1122,7 +1122,7 @@ always @ (negedge AESL_clock) begin
             DEP_time_4_to[2] = DEP_time_4_to[1];
             DEP_address_4_to[1] = DEP_address_4_to[0];
             DEP_time_4_to[1] = DEP_time_4_to[0];
-            if (`AUTOTB_DUT_INST.ap_enable_operation_960) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_951) begin
                 DEP_address_4_to[0] = {1'b1, `AUTOTB_DUT_INST.output_l1_3_address1};
                 DEP_time_4_to[0] = $time;
             end else begin
@@ -1149,7 +1149,7 @@ always @ (negedge AESL_clock) begin
         // record "from" access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1139) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1135) begin
                 if (DEP_address_4_from[0][9]) begin
                     $display("// ERROR : \"DEP_address_4_from[0]\" is overwritten @ \"%0t\"", $time);
                     $display("// autotb LINE:%d", `__LINE__);
@@ -1162,61 +1162,61 @@ always @ (negedge AESL_clock) begin
         // check access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1139) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1135) begin
                 DEP_i_4 = 0;
                 if (DEP_address_4_to[0][9]) begin
                     DEP_error_4 = (DEP_address_4_to[0][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
                     if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
                         $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[0][8:0], DEP_time_4_to[0]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_4_to[1][9]) begin
                     DEP_error_4 = (DEP_address_4_to[1][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
                     if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
                         $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[1][8:0], DEP_time_4_to[1]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_4_to[2][9]) begin
                     DEP_error_4 = (DEP_address_4_to[2][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
                     if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
                         $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[2][8:0], DEP_time_4_to[2]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_4_to[3][9]) begin
                     DEP_error_4 = (DEP_address_4_to[3][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
                     if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
                         $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[3][8:0], DEP_time_4_to[3]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_4_to[4][9]) begin
                     DEP_error_4 = (DEP_address_4_to[4][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
                     if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
                         $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[4][8:0], DEP_time_4_to[4]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1139"(W:SV44-44) -> "ap_enable_operation_960"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1135"(W:SV44-44) -> "ap_enable_operation_951"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 DEP_address_4_from[DEP_i_4] = {1'b0, 9'b0};
@@ -1226,7 +1226,7 @@ always @ (negedge AESL_clock) begin
     end 
 end
 
-// Dependence Check (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// Dependence Check (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
 reg [9:0] DEP_address_5_to [5 - 1:0];
 time DEP_time_5_to [5 - 1:0];
 reg [9:0] DEP_address_5_from [1 - 1:0];
@@ -1262,7 +1262,7 @@ always @ (negedge AESL_clock) begin
             DEP_time_5_to[2] = DEP_time_5_to[1];
             DEP_address_5_to[1] = DEP_address_5_to[0];
             DEP_time_5_to[1] = DEP_time_5_to[0];
-            if (`AUTOTB_DUT_INST.ap_enable_operation_964) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_955) begin
                 DEP_address_5_to[0] = {1'b1, `AUTOTB_DUT_INST.output_l1_2_address1};
                 DEP_time_5_to[0] = $time;
             end else begin
@@ -1307,56 +1307,56 @@ always @ (negedge AESL_clock) begin
                 if (DEP_address_5_to[0][9]) begin
                     DEP_error_5 = (DEP_address_5_to[0][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
                     if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
                         $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[0][8:0], DEP_time_5_to[0]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_5_to[1][9]) begin
                     DEP_error_5 = (DEP_address_5_to[1][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
                     if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
                         $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[1][8:0], DEP_time_5_to[1]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_5_to[2][9]) begin
                     DEP_error_5 = (DEP_address_5_to[2][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
                     if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
                         $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[2][8:0], DEP_time_5_to[2]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_5_to[3][9]) begin
                     DEP_error_5 = (DEP_address_5_to[3][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
                     if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
                         $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[3][8:0], DEP_time_5_to[3]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_5_to[4][9]) begin
                     DEP_error_5 = (DEP_address_5_to[4][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
                     if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
                         $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[4][8:0], DEP_time_5_to[4]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_964"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1145"(W:SV44-44) -> "ap_enable_operation_955"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 DEP_address_5_from[DEP_i_5] = {1'b0, 9'b0};
@@ -1366,7 +1366,7 @@ always @ (negedge AESL_clock) begin
     end 
 end
 
-// Dependence Check (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// Dependence Check (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
 reg [9:0] DEP_address_6_to [5 - 1:0];
 time DEP_time_6_to [5 - 1:0];
 reg [9:0] DEP_address_6_from [1 - 1:0];
@@ -1402,7 +1402,7 @@ always @ (negedge AESL_clock) begin
             DEP_time_6_to[2] = DEP_time_6_to[1];
             DEP_address_6_to[1] = DEP_address_6_to[0];
             DEP_time_6_to[1] = DEP_time_6_to[0];
-            if (`AUTOTB_DUT_INST.ap_enable_operation_968) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_959) begin
                 DEP_address_6_to[0] = {1'b1, `AUTOTB_DUT_INST.output_l1_1_address1};
                 DEP_time_6_to[0] = $time;
             end else begin
@@ -1429,7 +1429,7 @@ always @ (negedge AESL_clock) begin
         // record "from" access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1151) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1155) begin
                 if (DEP_address_6_from[0][9]) begin
                     $display("// ERROR : \"DEP_address_6_from[0]\" is overwritten @ \"%0t\"", $time);
                     $display("// autotb LINE:%d", `__LINE__);
@@ -1442,61 +1442,61 @@ always @ (negedge AESL_clock) begin
         // check access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1151) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1155) begin
                 DEP_i_6 = 0;
                 if (DEP_address_6_to[0][9]) begin
                     DEP_error_6 = (DEP_address_6_to[0][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
                     if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
                         $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[0][8:0], DEP_time_6_to[0]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_6_to[1][9]) begin
                     DEP_error_6 = (DEP_address_6_to[1][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
                     if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
                         $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[1][8:0], DEP_time_6_to[1]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_6_to[2][9]) begin
                     DEP_error_6 = (DEP_address_6_to[2][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
                     if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
                         $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[2][8:0], DEP_time_6_to[2]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_6_to[3][9]) begin
                     DEP_error_6 = (DEP_address_6_to[3][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
                     if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
                         $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[3][8:0], DEP_time_6_to[3]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_6_to[4][9]) begin
                     DEP_error_6 = (DEP_address_6_to[4][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
                     if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
                         $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[4][8:0], DEP_time_6_to[4]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1151"(W:SV44-44) -> "ap_enable_operation_968"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1155"(W:SV44-44) -> "ap_enable_operation_959"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 DEP_address_6_from[DEP_i_6] = {1'b0, 9'b0};
@@ -1506,7 +1506,7 @@ always @ (negedge AESL_clock) begin
     end 
 end
 
-// Dependence Check (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// Dependence Check (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
 reg [9:0] DEP_address_7_to [5 - 1:0];
 time DEP_time_7_to [5 - 1:0];
 reg [9:0] DEP_address_7_from [1 - 1:0];
@@ -1542,7 +1542,7 @@ always @ (negedge AESL_clock) begin
             DEP_time_7_to[2] = DEP_time_7_to[1];
             DEP_address_7_to[1] = DEP_address_7_to[0];
             DEP_time_7_to[1] = DEP_time_7_to[0];
-            if (`AUTOTB_DUT_INST.ap_enable_operation_972) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_962) begin
                 DEP_address_7_to[0] = {1'b1, `AUTOTB_DUT_INST.output_l1_0_address1};
                 DEP_time_7_to[0] = $time;
             end else begin
@@ -1569,7 +1569,7 @@ always @ (negedge AESL_clock) begin
         // record "from" access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1154) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1158) begin
                 if (DEP_address_7_from[0][9]) begin
                     $display("// ERROR : \"DEP_address_7_from[0]\" is overwritten @ \"%0t\"", $time);
                     $display("// autotb LINE:%d", `__LINE__);
@@ -1582,61 +1582,61 @@ always @ (negedge AESL_clock) begin
         // check access
         if (`AUTOTB_DUT_INST.ap_enable_state55_pp5_iter7_stage0
             &&  `AUTOTB_DUT_INST.ap_enable_reg_pp5_iter7) begin
-            if (`AUTOTB_DUT_INST.ap_enable_operation_1154) begin
+            if (`AUTOTB_DUT_INST.ap_enable_operation_1158) begin
                 DEP_i_7 = 0;
                 if (DEP_address_7_to[0][9]) begin
                     DEP_error_7 = (DEP_address_7_to[0][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
                     if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
                         $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[0][8:0], DEP_time_7_to[0]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_7_to[1][9]) begin
                     DEP_error_7 = (DEP_address_7_to[1][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
                     if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
                         $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[1][8:0], DEP_time_7_to[1]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_7_to[2][9]) begin
                     DEP_error_7 = (DEP_address_7_to[2][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
                     if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
                         $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[2][8:0], DEP_time_7_to[2]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_7_to[3][9]) begin
                     DEP_error_7 = (DEP_address_7_to[3][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
                     if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
                         $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[3][8:0], DEP_time_7_to[3]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 if (DEP_address_7_to[4][9]) begin
                     DEP_error_7 = (DEP_address_7_to[4][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
                     if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:145:64), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
+                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:151:56), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST\"");
                         $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
                         $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[4][8:0], DEP_time_7_to[4]);
                         $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
                         $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_1154"(W:SV44-44) -> "ap_enable_operation_972"(R:SV39-40) @ `AUTOTB_DUT_INST
+// (RAW) "ap_enable_operation_1158"(W:SV44-44) -> "ap_enable_operation_962"(R:SV39-40) @ `AUTOTB_DUT_INST
                     end
                 end
                 DEP_address_7_from[DEP_i_7] = {1'b0, 9'b0};

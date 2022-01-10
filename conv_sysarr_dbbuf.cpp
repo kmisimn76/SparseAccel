@@ -51,25 +51,25 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	k2k_data output_tmp;
 
 	param_tmp = bias_in.read();
-	uint K_ = (uchar) param_tmp.data(31, 0);
+	//uint K = (uchar) param_tmp.data(31, 0);
 	uint K = 16;
 	param_tmp = bias_in.read();
-	uint C_ = (uchar) param_tmp.data(31, 0);
+	//uint C = (uchar) param_tmp.data(31, 0);
 	uint C = 4;
 	param_tmp = bias_in.read();
-	uint WH_ = (uchar) param_tmp.data(31, 0); //output W(=H)
+	//uint WH = (uchar) param_tmp.data(31, 0); //output W(=H)
 	uint WH = 7;
 	uint H_TILE = WH / TILE_H;
 	uint W_TILE = WH / TILE_W;
 //#define H_TILE 7
 //#define W_TILE 7
 	param_tmp = bias_in.read();
-	uint WH_in_ = (uchar) param_tmp.data(31, 0); //input W(=H)
+	//uint WH_in = (uchar) param_tmp.data(31, 0); //input W(=H)
 	uint WH_in = 9;
 	uint H_in_TILE = WH_in / TILE_H;
 	uint W_in_TILE = WH_in / TILE_H;
 	param_tmp = bias_in.read();
-	uint RS_ = (uchar) param_tmp.data(31, 0); //R(=S)
+	//uint RS = (uchar) param_tmp.data(31, 0); //R(=S)
 	uint RS = 3;
 	uint contol = 0;
 
@@ -110,7 +110,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 						for (int s = 0; s < RS; s++) // No Tiling
 								{
 							//#pragma HLS loop_merge
-							#pragma HLS pipeline
+							//#pragma HLS pipeline
 							//#pragma HLS pipeline off
 							//Systolic Array
 
@@ -172,7 +172,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 									output_buf[ki] = 0;
 								}
 
-								for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K
+								/*for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K
 #pragma HLS unroll
 //#pragma HLS DEPENDENCE variable=output_reg
 									MACTYPE psum3	=	(output_reg[ki][2]);
@@ -202,8 +202,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 															(input_data[0]) :
 															(data_reg[(ki - 1)][0]);
 										output_reg[ki][0] =	psum0 +(MACTYPE) data_reg[ki][0]* (MACTYPE) weight_reg[ki][0];
-								}
-								/*
+								}*/
+
 								for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K
 #pragma HLS DEPENDENCE variable=output_reg inter WAR false
 #pragma HLS unroll
@@ -228,7 +228,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 												(MACTYPE) data_reg[ki][ci]
 													* (MACTYPE) weight_reg[ki][ci];
 									}
-								}*/
+								}
 								//alternative
 								/*MACTYPE mult[ARRAY_K][ARRAY_C];
 								for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K

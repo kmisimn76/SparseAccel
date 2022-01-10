@@ -4,14 +4,14 @@
 // ==============================================================
 `timescale 1 ns / 1 ps
 
-(* use_dsp = "yes" *) module Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1_DSP48_1(
+(* use_dsp = "yes" *) module Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0(
     input clk,
     input rst,
     input ce,
     input  [8 - 1:0] in0,
-    input  [8 - 1:0] in1,
-    input  [16 - 1:0] in2,
-    output [17 - 1:0]  dout);
+    input  [3 - 1:0] in1,
+    input  [2 - 1:0] in2,
+    output [8 - 1:0]  dout);
 
 wire signed [27 - 1:0]     a;
 wire signed [18 - 1:0]     b;
@@ -23,9 +23,9 @@ reg  signed [27 - 1:0]     a_reg;
 reg  signed [18 - 1:0]     b_reg;
 reg  signed [48 - 1:0]     p_reg;
 
-assign a  = $signed(in0);
-assign b  = $signed(in1);
-assign c  = $signed(in2);
+assign a  = $unsigned(in0);
+assign b  = $unsigned(in1);
+assign c  = $unsigned(in2);
 
 assign m  = a_reg * b_reg;
 assign p  = m_reg + c;
@@ -43,7 +43,7 @@ assign dout = p_reg;
 
 endmodule
 `timescale 1 ns / 1 ps
-module Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1(
+module Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1(
     clk,
     reset,
     ce,
@@ -68,7 +68,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1_DSP48_1 Conv_sysarr_dbbuf_mac_muladd_8s_8s_16s_17_4_1_DSP48_1_U(
+Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0 Conv_sysarr_dbbuf_mac_muladd_8ns_3ns_2ns_8_4_1_DSP48_0_U(
     .clk( clk ),
     .rst( reset ),
     .ce( ce ),
