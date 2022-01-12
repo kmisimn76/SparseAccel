@@ -53,25 +53,25 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 	k2k_data output_tmp;
 
 	param_tmp = bias_in.read();
-	uint K = (uchar) param_tmp.data(31, 0);
+	uint K = (uint) param_tmp.data(31, 0);
 	//uint K = 16;
 	param_tmp = bias_in.read();
-	uint C = (uchar) param_tmp.data(31, 0);
+	uint C = (uint) param_tmp.data(31, 0);
 	//uint C = 4;
 	param_tmp = bias_in.read();
-	uint WH = (uchar) param_tmp.data(31, 0); //output W(=H)
+	uint WH = (uint) param_tmp.data(31, 0); //output W(=H)
 	//uint WH = 7;
 	uint H_TILE = WH / TILE_H;
 	uint W_TILE = WH / TILE_W;
 //#define H_TILE 7
 //#define W_TILE 7
 	param_tmp = bias_in.read();
-	uint WH_in = (uchar) param_tmp.data(31, 0); //input W(=H)
+	uint WH_in = (uint) param_tmp.data(31, 0); //input W(=H)
 	//uint WH_in = 9;
 	uint H_in_TILE = WH_in / TILE_H;
 	uint W_in_TILE = WH_in / TILE_H;
 	param_tmp = bias_in.read();
-	uint RS = (uchar) param_tmp.data(31, 0); //R(=S)
+	uint RS = (uint) param_tmp.data(31, 0); //R(=S)
 	//uint RS = 3;
 	uint contol = 0;
 
