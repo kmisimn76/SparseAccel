@@ -2,8 +2,8 @@
 # xsim v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Mon Jan 10 21:04:28 2022
-# Process ID: 21179
+# Start of session at: Thu Jan 13 18:49:32 2022
+# Process ID: 11308
 # Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog
 # Command line: xsim -mode tcl -source {xsim.dir/Conv_sysarr_dbbuf/xsim_script.tcl}
 # Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.log

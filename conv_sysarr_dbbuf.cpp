@@ -6,6 +6,9 @@
 #define ARRAY_C 4
 #define TILE_H 1
 #define TILE_W 1
+#define MAX_H 100
+#define MAX_W 100
+#define SYSARR_LOOP_MAX  (MAX_H*MAX_W+(C-1)+(ARRAY_K-1)+ARRAY_C)
 
 // Conv SysArr with Double buffering
 void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
@@ -14,6 +17,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 #pragma HLS expression_balance
 
 #pragma HLS expression_balance
+//#pragma HLS dataflow
 
 	DPTYPE bias_l2[2048];
 	DPTYPE weight_l2[2048];
@@ -95,16 +99,24 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 		}
 	}
 
-	for (int ko = 0; ko < K / ARRAY_K; ko++) {
-		for (int co = 0; co < C / ARRAY_C; co++) {
-			for (int ho = 0; ho < TILE_H; ho++) // No Tiling
+	LOOP_K_OUTER: for (int ko = 0; ko < K / ARRAY_K; ko++) {
+//#pragma HLS loop_tripcount min=4 max=4
+#pragma HLS LOOP_TRIPCOUNT max=128 min=128
+		LOOP_C_OUTER: for (int co = 0; co < C / ARRAY_C; co++) {
+//#pragma HLS loop_tripcount min=1 max=1
+#pragma HLS LOOP_TRIPCOUNT max=128 min=128
+			LOOP_H_OUTER: for (int ho = 0; ho < TILE_H; ho++) // No Tiling
 					{
-				for (int wo = 0; wo < TILE_W; wo++) // No Tiling
+				LOOP_W_OUTER: for (int wo = 0; wo < TILE_W; wo++) // No Tiling
 						{
 					// Bias Initialization
 					for (int ki = 0; ki < ARRAY_K; ki++) {
 						for (int hi = 0; hi < H_TILE; hi++) {
+//#pragma HLS loop_tripcount min=7 max=7
+#pragma HLS LOOP_TRIPCOUNT max=14 min=14
 							for (int wi = 0; wi < W_TILE; wi++) {
+//#pragma HLS loop_tripcount min=7 max=7
+#pragma HLS LOOP_TRIPCOUNT max=14 min=14
 								// TODO: WH TILE
 								int k = (ko * ARRAY_K + ki);
 								output_l1[ko * H_TILE * W_TILE + hi * W_TILE
@@ -114,10 +126,11 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 					}
 
 					bool buffer_number = 0; //double buffering
-					for (int r = 0; r < RS; r++) // No Tiling
-							{
-						for (int s = 0; s < RS; s++) // No Tiling
-								{
+					LOOP_R: for (int r = 0; r < 3/*RS*/; r++) { // No Tiling
+//#pragma HLS loop_tripcount min=3 max=3
+						LOOP_S: for (int s = 0; s < 3/*RS*/; s++) { // No Tiling
+//#pragma HLS loop_tripcount min=3 max=3
+#pragma HLS dataflow
 							//#pragma HLS loop_merge
 							//#pragma HLS pipeline
 							//#pragma HLS pipeline off
@@ -131,17 +144,22 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 									int k = (ko * ARRAY_K + ki);
 									int c = (co * ARRAY_C + ci);
 									weight_reg[ki][ci] = weight_l2[k * C * RS
-											* RS + c * RS * RS + r * RS + s];
+														* RS + c * RS * RS + r * RS + s];
 								}
 							}
 							// Input L2 -> L1
 							// Performance Bottleck for K=16 C=4 WH=7 RS=3
 							//for (int ci = 0; ci < ARRAY_C; ci++) { // unable unroll in outer loop
 							//	#pragma HLS unroll
-								//for (int hi = 0; hi < H_TILE; hi++) { // H_TILE is VARIABLE!!: could reduce performance when H_TILE is big
-								//	for (int wi = 0; wi < W_TILE; wi++) {
-								for (int hi = 0; hi < H_TILE; hi++)  {
-									for (int wi = 0; wi < W_TILE; wi++) {
+							LOOP_L2_H: for (int hi = 0; hi < H_TILE; hi++) { // H_TILE is VARIABLE!!: could reduce performance when H_TILE is big
+//#pragma HLS loop_tripcount min=7 max=7
+#pragma HLS LOOP_TRIPCOUNT max=14 min=14
+								LOOP_L2_W: for (int wi = 0; wi < W_TILE; wi++) {
+//#pragma HLS loop_tripcount min=7 max=7
+#pragma HLS LOOP_TRIPCOUNT max=14 min=14
+//#pragma HLS Loop_FLATTEN
+								//for (int hi = 0; hi < 7; hi++)  {
+									//for (int wi = 0; wi < 7; wi++) {
 										for (int ci = 0; ci < ARRAY_C; ci++) { // for performance(unroll inner-most loop)
 											#pragma HLS unroll
 										int c = (co * ARRAY_C + ci);
@@ -159,9 +177,12 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							// TODO: double buffering
 							// PE Array
 							int input_rows = H_TILE
-									* W_TILE + (C-1)+(ARRAY_K-1)+ARRAY_C; //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
+									* W_TILE + (ARRAY_K-1)+(ARRAY_C-1); //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
+									//* W_TILE + (C-1)+(ARRAY_K-1)+ARRAY_C; //input size: WH*WH + input systolic bubble: (C-1) + output systolic bubble: ARRAY (K-1)+C
 							                  /// (C-1) correct???
-							for (int i = 0; i < input_rows; i++) {
+							LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) {
+//#pragma HLS LOOP_TRIPCOUNT max=59 min=59
+#pragma HLS LOOP_TRIPCOUNT max=202 min=202
 							//for (int i = 0; i < 59; i++) {
 #pragma HLS DEPENDENCE variable=output_l1
 #pragma HLS pipeline
@@ -280,8 +301,8 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 								}*/
 
 								for(int ki = ARRAY_K-1; ki >=0; ki--) {
-									if (//(i - ARRAY_C + 1) - ki >= 0 // i >= ki+(ARRAY_C-1)
-											//&&
+									if ((i - ARRAY_C + 1) - ki >= 0 // i >= ki+(ARRAY_C-1)
+											&&
 											(i - ARRAY_C + 1) - ki < W_TILE * H_TILE
 											) { // ki+(ARRAY_C-1) <= i < ki+(ARRAY_C-1)+WH TILE (X*Y)
 										int k = (ko * ARRAY_K + ki);
@@ -295,11 +316,11 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 												output_reg[ki][(ARRAY_C - 1)]; //Cause Pipeline Violation(output_l1 port)
 									}
 								}
-							}
+							} //Loop Input Row
 							// Output l1 -> l2
 							buffer_number = ~buffer_number;
-						}
-					}
+						} // Loop S
+					} // Loop R
 				}
 			}
 		}

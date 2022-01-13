@@ -19,5 +19,5 @@ create_clock -period 10 -name default
 source "./Systolic_Array_PCNN_based/solution1/directives.tcl"
 csim_design
 csynth_design
-cosim_design
-export_design -format ip_catalog
+cosim_design -trace_level all
+export_design -rtl verilog -format ip_catalog

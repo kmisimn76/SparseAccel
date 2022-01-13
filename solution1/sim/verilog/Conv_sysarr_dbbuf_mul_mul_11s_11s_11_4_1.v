@@ -1,7 +1,7 @@
 
 `timescale 1 ns / 1 ps
 
-  module Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_2(clk, rst, ce, a, b, p);
+  module Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_0(clk, rst, ce, a, b, p);
 input clk;
 input rst;
 input ce;
@@ -51,7 +51,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_2 Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_2_U(
+Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_0 Conv_sysarr_dbbuf_mul_mul_11s_11s_11_4_1_DSP48_0_U(
     .clk( clk ),
     .rst( reset ),
     .ce( ce ),

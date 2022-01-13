@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Conv_sysarr_dbbuf.wdb" id="1">
+         <top_modules>
+            <top_module name="apatb_Conv_sysarr_dbbuf_top" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+   </zoom_setting>
+   <column_width_setting>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="group1">
+      <obj_property name="label">Design Top Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group2">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group3">
+            <obj_property name="label">conv_out(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/conv_out_V_write">
+               <obj_property name="ElementShortName">conv_out_V_write</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_write</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/conv_out_V_full_n">
+               <obj_property name="ElementShortName">conv_out_V_full_n</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_full_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/conv_out_V_din">
+               <obj_property name="ElementShortName">conv_out_V_din[63:0]</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_din[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group7">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group8">
+            <obj_property name="label">data_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/data_in_V_read">
+               <obj_property name="ElementShortName">data_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/data_in_V_empty_n">
+               <obj_property name="ElementShortName">data_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/data_in_V_dout">
+               <obj_property name="ElementShortName">data_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group12">
+            <obj_property name="label">weight_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/weight_in_V_read">
+               <obj_property name="ElementShortName">weight_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/weight_in_V_empty_n">
+               <obj_property name="ElementShortName">weight_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/weight_in_V_dout">
+               <obj_property name="ElementShortName">weight_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group16">
+            <obj_property name="label">bias_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/bias_in_V_read">
+               <obj_property name="ElementShortName">bias_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/bias_in_V_empty_n">
+               <obj_property name="ElementShortName">bias_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/bias_in_V_dout">
+               <obj_property name="ElementShortName">bias_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group20">
+         <obj_property name="label">Block-level IO Handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_idle">
+            <obj_property name="ElementShortName">ap_idle</obj_property>
+            <obj_property name="ObjectShortName">ap_idle</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group25">
+         <obj_property name="label">Reset</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_rst">
+            <obj_property name="ElementShortName">ap_rst</obj_property>
+            <obj_property name="ObjectShortName">ap_rst</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group27">
+         <obj_property name="label">Clock</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/AESL_inst_Conv_sysarr_dbbuf/ap_clk">
+            <obj_property name="ElementShortName">ap_clk</obj_property>
+            <obj_property name="ObjectShortName">ap_clk</obj_property>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="group" fp_name="group29">
+      <obj_property name="label">Test Bench Signals</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="group30">
+         <obj_property name="label">Internal Signals</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group31">
+            <obj_property name="label">Simulation Status</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/AUTOTB_TRANSACTION_NUM">
+               <obj_property name="ElementShortName">AUTOTB_TRANSACTION_NUM[31:0]</obj_property>
+               <obj_property name="ObjectShortName">AUTOTB_TRANSACTION_NUM[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/ready_cnt">
+               <obj_property name="ElementShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">ready_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/done_cnt">
+               <obj_property name="ElementShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="ObjectShortName">done_cnt[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group32">
+            <obj_property name="label">Port Depth</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/LENGTH_bias_in_V">
+               <obj_property name="ElementShortName">LENGTH_bias_in_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_bias_in_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/LENGTH_weight_in_V">
+               <obj_property name="ElementShortName">LENGTH_weight_in_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_weight_in_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/LENGTH_data_in_V">
+               <obj_property name="ElementShortName">LENGTH_data_in_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_data_in_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/LENGTH_conv_out_V">
+               <obj_property name="ElementShortName">LENGTH_conv_out_V[31:0]</obj_property>
+               <obj_property name="ObjectShortName">LENGTH_conv_out_V[31:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group40">
+         <obj_property name="label">C Outputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group41">
+            <obj_property name="label">conv_out(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/conv_out_V_write">
+               <obj_property name="ElementShortName">conv_out_V_write</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_write</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/conv_out_V_full_n">
+               <obj_property name="ElementShortName">conv_out_V_full_n</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_full_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/conv_out_V_din">
+               <obj_property name="ElementShortName">conv_out_V_din[63:0]</obj_property>
+               <obj_property name="ObjectShortName">conv_out_V_din[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="group45">
+         <obj_property name="label">C Inputs</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="group46">
+            <obj_property name="label">data_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/data_in_V_read">
+               <obj_property name="ElementShortName">data_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/data_in_V_empty_n">
+               <obj_property name="ElementShortName">data_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/data_in_V_dout">
+               <obj_property name="ElementShortName">data_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">data_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group50">
+            <obj_property name="label">weight_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/weight_in_V_read">
+               <obj_property name="ElementShortName">weight_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/weight_in_V_empty_n">
+               <obj_property name="ElementShortName">weight_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/weight_in_V_dout">
+               <obj_property name="ElementShortName">weight_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">weight_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="group54">
+            <obj_property name="label">bias_in(fifo)</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/bias_in_V_read">
+               <obj_property name="ElementShortName">bias_in_V_read</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_read</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Conv_sysarr_dbbuf_top/bias_in_V_empty_n">
+               <obj_property name="ElementShortName">bias_in_V_empty_n</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_empty_n</obj_property>
+               <obj_property name="CustomSignalColor">#ffff00</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+            </wvobject>
+            <wvobject type="array" fp_name="/apatb_Conv_sysarr_dbbuf_top/bias_in_V_dout">
+               <obj_property name="ElementShortName">bias_in_V_dout[63:0]</obj_property>
+               <obj_property name="ObjectShortName">bias_in_V_dout[63:0]</obj_property>
+               <obj_property name="Radix">HEXRADIX</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

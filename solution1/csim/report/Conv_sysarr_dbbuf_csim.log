@@ -4,12 +4,7 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Generating csim.exe
 Test Start
 Kernel coreConv lanched !!!
-Test Case 1 Complete
-Kernel coreConv lanched !!!
-Test Case 2 Complete
-Kernel coreConv lanched !!!
-Test Case 3 Complete
-Kernel coreConv lanched !!!
-Test Case 4 Complete
-INFO: [SIM 1] CSim done with 0 errors.
+Error(195): 1 (gold 37)
+WARNING: Hls::stream 'hls::stream<ap_axiu<32, 0, 0, 0>, 0>.4' contains leftover data, which may result in RTL simulation hanging.
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
 INFO: [SIM 3] *************** CSIM finish ***************
