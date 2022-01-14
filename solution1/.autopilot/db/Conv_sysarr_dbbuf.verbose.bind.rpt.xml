@@ -1,0 +1,52 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'Conv_sysarr_dbbuf'" level="0">
+<item name = "Date">Fri Jan 14 19:05:40 2022
+</item>
+<item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
+<item name = "Project">Systolic_Array_PCNN_based</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">virtexuplus</item>
+<item name = "Target device">xcu200-fsgd2104-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.803 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">3986, 4946, 39.860 us, 49.460 us, 3987, 4947, none</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_dataflow_parent_loop_proc13_fu_672">dataflow_parent_loop_proc13, 511, 751, 5.110 us, 7.510 us, 511, 751, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_240_1_VITIS_LOOP_242_2">16, 16, 2, 1, 1, 16, yes</column>
+<column name="- VITIS_LOOP_247_3">576, 576, 2, 1, 1, 576, yes</column>
+<column name="- VITIS_LOOP_253_4_VITIS_LOOP_255_5_VITIS_LOOP_257_6">326, 326, 4, 1, 1, 324, yes</column>
+<column name="- LOOP_K_OUTER_LOOP_C_OUTER">2268, 3228, 567 ~ 807, -, -, 4, no</column>
+<column name=" + VITIS_LOOP_277_7_VITIS_LOOP_280_8">51, 51, 4, 1, 1, 49, yes</column>
+<column name="- VITIS_LOOP_332_10_VITIS_LOOP_334_11_VITIS_LOOP_336_12">787, 787, 5, 1, 1, 784, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

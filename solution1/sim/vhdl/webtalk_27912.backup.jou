@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Jan 14 19:14:08 2022
+# Process ID: 27912
+# Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/vhdl
+# Command line: wbtcv -mode batch -source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/vhdl/xsim.dir/Conv_sysarr_dbbuf/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/vhdl/webtalk.log
+# Journal file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/vhdl/webtalk.jou
+#-----------------------------------------------------------
+source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/vhdl/xsim.dir/Conv_sysarr_dbbuf/webtalk/xsim_webtalk.tcl -notrace

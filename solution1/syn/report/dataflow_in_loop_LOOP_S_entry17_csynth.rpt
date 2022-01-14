@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_in_loop_LOOP_S_entry17'
+================================================================
+* Date:           Fri Jan 14 19:05:40 2022
+
+* Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
+* Project:        Systolic_Array_PCNN_based
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu200-fsgd2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 1.458 ns |   2.70 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|   0 ns   |   0 ns   |    0|    0|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|        2|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |        -|     -|        -|        -|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|      117|    -|
+|Register             |        -|     -|        2|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |        0|     0|        2|      119|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        0|     0|    ~0   |    ~0   |    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |        0|     0|    ~0   |    ~0   |    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |    or    |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------+----+-----------+-----+-----------+
+    |      Name     | LUT| Input Size| Bits| Total Bits|
+    +---------------+----+-----------+-----+-----------+
+    |ap_done        |   9|          2|    1|          2|
+    |co_2_c2_blk_n  |   9|          2|    1|          2|
+    |co_2_c_blk_n   |   9|          2|    1|          2|
+    |ko_1_c_blk_n   |   9|          2|    1|          2|
+    |p_c1_blk_n     |   9|          2|    1|          2|
+    |p_c5_blk_n     |   9|          2|    1|          2|
+    |p_c6_blk_n     |   9|          2|    1|          2|
+    |p_c7_blk_n     |   9|          2|    1|          2|
+    |p_c_blk_n      |   9|          2|    1|          2|
+    |r_c3_blk_n     |   9|          2|    1|          2|
+    |r_c_blk_n      |   9|          2|    1|          2|
+    |s_c4_blk_n     |   9|          2|    1|          2|
+    |s_c_blk_n      |   9|          2|    1|          2|
+    +---------------+----+-----------+-----+-----------+
+    |Total          | 117|         26|   13|         26|
+    +---------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |  2|   0|    2|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+---------------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |          Source Object          |    C Type    |
++----------------+-----+-----+------------+---------------------------------+--------------+
+|ap_clk          |  in |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_rst          |  in |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_start        |  in |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_done         | out |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_continue     |  in |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_idle         | out |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|ap_ready        | out |    1| ap_ctrl_hs | dataflow_in_loop_LOOP_S.entry17 | return value |
+|p_read          |  in |   11|   ap_none  |              p_read             |    scalar    |
+|p_read1         |  in |   11|   ap_none  |             p_read1             |    scalar    |
+|ko_1            |  in |    9|   ap_none  |               ko_1              |    scalar    |
+|co_2            |  in |   10|   ap_none  |               co_2              |    scalar    |
+|r               |  in |   11|   ap_none  |                r                |    scalar    |
+|s               |  in |   32|   ap_none  |                s                |    scalar    |
+|p_read2         |  in |   32|   ap_none  |             p_read2             |    scalar    |
+|p_read3         |  in |   10|   ap_none  |             p_read3             |    scalar    |
+|p_c_din         | out |   11|   ap_fifo  |               p_c               |    pointer   |
+|p_c_full_n      |  in |    1|   ap_fifo  |               p_c               |    pointer   |
+|p_c_write       | out |    1|   ap_fifo  |               p_c               |    pointer   |
+|p_c1_din        | out |   11|   ap_fifo  |               p_c1              |    pointer   |
+|p_c1_full_n     |  in |    1|   ap_fifo  |               p_c1              |    pointer   |
+|p_c1_write      | out |    1|   ap_fifo  |               p_c1              |    pointer   |
+|ko_1_c_din      | out |    9|   ap_fifo  |              ko_1_c             |    pointer   |
+|ko_1_c_full_n   |  in |    1|   ap_fifo  |              ko_1_c             |    pointer   |
+|ko_1_c_write    | out |    1|   ap_fifo  |              ko_1_c             |    pointer   |
+|co_2_c_din      | out |    9|   ap_fifo  |              co_2_c             |    pointer   |
+|co_2_c_full_n   |  in |    1|   ap_fifo  |              co_2_c             |    pointer   |
+|co_2_c_write    | out |    1|   ap_fifo  |              co_2_c             |    pointer   |
+|co_2_c2_din     | out |   10|   ap_fifo  |             co_2_c2             |    pointer   |
+|co_2_c2_full_n  |  in |    1|   ap_fifo  |             co_2_c2             |    pointer   |
+|co_2_c2_write   | out |    1|   ap_fifo  |             co_2_c2             |    pointer   |
+|r_c_din         | out |   11|   ap_fifo  |               r_c               |    pointer   |
+|r_c_full_n      |  in |    1|   ap_fifo  |               r_c               |    pointer   |
+|r_c_write       | out |    1|   ap_fifo  |               r_c               |    pointer   |
+|r_c3_din        | out |   10|   ap_fifo  |               r_c3              |    pointer   |
+|r_c3_full_n     |  in |    1|   ap_fifo  |               r_c3              |    pointer   |
+|r_c3_write      | out |    1|   ap_fifo  |               r_c3              |    pointer   |
+|s_c_din         | out |   11|   ap_fifo  |               s_c               |    pointer   |
+|s_c_full_n      |  in |    1|   ap_fifo  |               s_c               |    pointer   |
+|s_c_write       | out |    1|   ap_fifo  |               s_c               |    pointer   |
+|s_c4_din        | out |   10|   ap_fifo  |               s_c4              |    pointer   |
+|s_c4_full_n     |  in |    1|   ap_fifo  |               s_c4              |    pointer   |
+|s_c4_write      | out |    1|   ap_fifo  |               s_c4              |    pointer   |
+|p_c5_din        | out |   32|   ap_fifo  |               p_c5              |    pointer   |
+|p_c5_full_n     |  in |    1|   ap_fifo  |               p_c5              |    pointer   |
+|p_c5_write      | out |    1|   ap_fifo  |               p_c5              |    pointer   |
+|p_c6_din        | out |   32|   ap_fifo  |               p_c6              |    pointer   |
+|p_c6_full_n     |  in |    1|   ap_fifo  |               p_c6              |    pointer   |
+|p_c6_write      | out |    1|   ap_fifo  |               p_c6              |    pointer   |
+|p_c7_din        | out |   10|   ap_fifo  |               p_c7              |    pointer   |
+|p_c7_full_n     |  in |    1|   ap_fifo  |               p_c7              |    pointer   |
+|p_c7_write      | out |    1|   ap_fifo  |               p_c7              |    pointer   |
++----------------+-----+-----+------------+---------------------------------+--------------+
+
