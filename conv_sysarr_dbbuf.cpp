@@ -77,9 +77,6 @@ void runL2toL1(DPTYPE data_l1buf[512][ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint
 				int h = (ho * H_TILE + hi) + r;
 				int w = (wo * W_TILE + wi) + s;
 				data_l1buf[hi * W_TILE + wi][ci] =
-				//data_l1[hi * W_TILE + wi][ci][0] =
-				//data_l2[c * WH_in * WH_in
-				//		+ h * WH_in + w];
 						data_l2[co * WH_in * WH_in + h * WH_in + w][ci];
 				// To Improvement: Im2Col for data_l1
 			}
