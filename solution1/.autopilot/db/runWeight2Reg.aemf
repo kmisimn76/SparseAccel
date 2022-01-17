@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432297000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432772000">
   <ports id="1" name="weight_l2_0" type="PortType" originalName="weight_l2[0]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
@@ -12,7 +12,7 @@
   <ports id="4" name="weight_l2_3" type="PortType" originalName="weight_l2[3]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="5" name="empty_15" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="5" name="empty_14" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="6" name="empty" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
@@ -759,56 +759,56 @@
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="51" name="ko_tmp" lineNumber="26" originalName="ko" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="33" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>ko_2</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="52" name="co_1_read" lineNumber="26" originalName="co" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="7" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="34" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>co_1</dataInputObjs>
       <dataOutputObjs>bitconcatenate</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="53" name="r_read" lineNumber="26" originalName="r" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="32" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="35" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>r</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="54" name="trunc_ln26" lineNumber="26" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln26_fu_409_p1" contextFuncName="runWeight2Reg" bitwidth="9" opcode="trunc" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="55" name="s_read" lineNumber="26" originalName="s" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="32" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="37" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>s</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="empty_27" lineNumber="26" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="empty_27_fu_413_p1" contextFuncName="runWeight2Reg" bitwidth="9" opcode="trunc" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="empty_26" lineNumber="26" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="empty_26_fu_413_p1" contextFuncName="runWeight2Reg" bitwidth="9" opcode="trunc" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="r_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="39" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="58" name="r_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>r_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="s_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="40" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="s_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>s_out</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="61" name="tmp_1" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="41" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
-      <dataInputObjs>empty_15</dataInputObjs>
+      <dataInputObjs>empty_14</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="62" name="tmp_2" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="42" m_clusterGroupNumber="-1">
@@ -818,7 +818,7 @@
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="63" name="mul2_i_i" lineNumber="26" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul2_i_i_fu_417_p3" contextFuncName="runWeight2Reg" bitwidth="9" opcode="bitconcatenate" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="26" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
@@ -831,111 +831,111 @@
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="65" name="write_flag15_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="45" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="66" name="write_flag18_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="46" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="67" name="write_flag21_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="47" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="68" name="write_flag12_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="48" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="69" name="write_flag24_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="49" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="70" name="write_flag27_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="50" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="71" name="write_flag9_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="51" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="72" name="write_flag30_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="52" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="73" name="write_flag33_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="53" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="74" name="write_flag6_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="54" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="75" name="write_flag36_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="55" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="76" name="write_flag39_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="56" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="77" name="write_flag3_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="57" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="78" name="write_flag42_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="58" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="79" name="write_flag45_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="59" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="80" name="write_flag_1_write_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" m_display="0" m_delay="0.6" m_topoIndex="60" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <dataInputObjs>alloca</dataInputObjs>
       <constName>empty</constName>
     </node_objs>
     <node_objs xsi:type="cdfg:CdfgNode" id="81" name="br_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" m_display="0" m_delay="0.6" m_topoIndex="61" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
       <controlInputObjs>bb.i.i</controlInputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
       <validLinenumbers>26</validLinenumbers>
-      <validLinenumbers>365</validLinenumbers>
+      <validLinenumbers>368</validLinenumbers>
       <validLinenumbers>33</validLinenumbers>
-      <validLinenumbers>390</validLinenumbers>
+      <validLinenumbers>392</validLinenumbers>
     </fileValidLineNumbers>
     <fileValidLineNumbers fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h">
       <validLinenumbers>521</validLinenumbers>
@@ -944,184 +944,184 @@
   <blocks id="259" name=".exit" type="BlockType">
     <controlInputObjs>bb.i.i</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="226" name="weight_regfile_3_3_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="194" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="226" name="weight_regfile_3_3_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="194" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="227" name="weight_regfile_3_2_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="195" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="227" name="weight_regfile_3_2_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="195" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="228" name="weight_regfile_0_0_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="196" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="228" name="weight_regfile_0_0_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="196" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="229" name="weight_regfile_3_1_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="197" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="229" name="weight_regfile_3_1_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="197" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="230" name="weight_regfile_3_0_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="198" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="230" name="weight_regfile_3_0_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="198" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="231" name="weight_regfile_0_1_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="199" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="231" name="weight_regfile_0_1_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="199" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="232" name="weight_regfile_2_3_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="200" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="232" name="weight_regfile_2_3_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="200" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="233" name="weight_regfile_2_2_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="201" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="233" name="weight_regfile_2_2_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="201" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="234" name="weight_regfile_0_2_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="202" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="234" name="weight_regfile_0_2_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="202" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="235" name="weight_regfile_2_1_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="203" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="235" name="weight_regfile_2_1_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="203" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="236" name="weight_regfile_2_0_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="204" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="236" name="weight_regfile_2_0_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="204" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="237" name="weight_regfile_0_3_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="205" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="237" name="weight_regfile_0_3_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="205" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="238" name="weight_regfile_1_3_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="206" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="238" name="weight_regfile_1_3_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="206" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="239" name="weight_regfile_1_2_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="207" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="239" name="weight_regfile_1_2_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="207" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="240" name="weight_regfile_1_0_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="208" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="240" name="weight_regfile_1_0_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="208" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="241" name="weight_regfile_1_1_1_load" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="209" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="241" name="weight_regfile_1_1_1_load" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="8" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="209" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>alloca</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="242" name="mrv" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="210" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="242" name="mrv" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="210" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="243" name="mrv_1" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="211" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="243" name="mrv_1" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="211" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="244" name="mrv_2" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="212" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="244" name="mrv_2" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="212" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="245" name="mrv_3" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="213" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="245" name="mrv_3" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="213" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="246" name="mrv_4" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="214" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="246" name="mrv_4" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="214" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="247" name="mrv_5" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="215" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="247" name="mrv_5" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="215" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="248" name="mrv_6" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="216" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="248" name="mrv_6" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="216" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="249" name="mrv_7" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="217" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="249" name="mrv_7" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="217" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="250" name="mrv_8" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="218" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="250" name="mrv_8" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="218" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="251" name="mrv_9" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="219" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="251" name="mrv_9" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="219" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="252" name="mrv_s" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="220" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="252" name="mrv_s" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="220" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="253" name="mrv_10" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="221" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="253" name="mrv_10" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="221" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="254" name="mrv_11" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="222" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="254" name="mrv_11" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="222" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="255" name="mrv_12" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="223" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="255" name="mrv_12" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="223" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="256" name="mrv_13" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="224" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="256" name="mrv_13" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="224" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>insertvalue</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="257" name="mrv_14" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="225" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="257" name="mrv_14" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="128" opcode="insertvalue" nodeLabel="6.0" m_display="0" m_topoIndex="225" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataInputObjs>load</dataInputObjs>
       <dataOutputObjs>ret</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="258" name="_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="ret" nodeLabel="6.0" m_display="0" m_topoIndex="226" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="258" name="_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="ret" nodeLabel="6.0" m_display="0" m_topoIndex="226" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>insertvalue</dataInputObjs>
       <dataOutputObjs>ap_return_0</dataOutputObjs>
       <dataOutputObjs>ap_return_1</dataOutputObjs>
@@ -1141,7 +1141,7 @@
       <dataOutputObjs>ap_return_9</dataOutputObjs>
     </node_objs>
     <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
-      <validLinenumbers>365</validLinenumbers>
+      <validLinenumbers>368</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1070" pipe_depth="5" RegionName="VITIS_LOOP_33_1_VITIS_LOOP_35_2">
@@ -1153,7 +1153,7 @@
       <controlOutputObjs>.exit</controlOutputObjs>
       <controlOutputObjs>.split.i.i</controlOutputObjs>
       <node_objs xsi:type="cdfg:CdfgNode" id="83" name="indvar_flatten" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="5" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1163,7 +1163,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="84" name="ki" lineNumber="33" originalName="ki" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="3" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
@@ -1173,7 +1173,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="85" name="ci" lineNumber="35" originalName="ci" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="3" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="35" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1183,21 +1183,21 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="86" name="icmp_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln33_fu_511_p2" contextFuncName="runWeight2Reg" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.63" m_topoIndex="65" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="87" name="add_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln33_fu_517_p2" contextFuncName="runWeight2Reg" bitwidth="5" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.7" m_topoIndex="66" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="88" name="br_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>.split.i.i</controlInputObjs>
@@ -1206,7 +1206,7 @@
       <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
         <validLinenumbers>33</validLinenumbers>
         <validLinenumbers>35</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="118" name=".split.i.i" type="BlockType">
@@ -1217,7 +1217,7 @@
       <controlOutputObjs>branch1.i.i</controlOutputObjs>
       <controlOutputObjs>branch2.i.i</controlOutputObjs>
       <node_objs xsi:type="cdfg:CdfgNode" id="92" name="icmp_ln35" lineNumber="35" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln35_fu_523_p2" contextFuncName="runWeight2Reg" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.49" m_topoIndex="68" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="35" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
@@ -1225,7 +1225,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="93" name="select_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln33_fu_529_p3" contextFuncName="runWeight2Reg" bitwidth="3" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.27" m_topoIndex="69" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
@@ -1234,14 +1234,14 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="94" name="add_ln33_1" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln33_1_fu_537_p2" contextFuncName="runWeight2Reg" bitwidth="3" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.57" m_topoIndex="70" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="95" name="select_ln33_1" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln33_1_fu_543_p3" contextFuncName="runWeight2Reg" bitwidth="3" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.27" m_topoIndex="71" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -1250,14 +1250,14 @@
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="96" name="trunc_ln33" lineNumber="33" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln33_fu_551_p1" contextFuncName="runWeight2Reg" bitwidth="2" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="33" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>mux</dataOutputObjs>
         <dataOutputObjs>switch</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="99" name="trunc_ln39" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln39_fu_555_p1" contextFuncName="runWeight2Reg" bitwidth="2" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
@@ -1295,55 +1295,55 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="100" name="zext_ln42" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="zext_ln42_fu_559_p1" contextFuncName="runWeight2Reg" bitwidth="9" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="101" name="add_ln42" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln42_fu_563_p2" contextFuncName="runWeight2Reg" bitwidth="9" opcode="add" nodeLabel="1.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="102" name="add_ln42_1" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_ln42_fu_573_p1" contextFuncName="runWeight2Reg" bitwidth="9" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.81" m_topoIndex="76" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>bitconcatenate</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="103" name="mul_ln42" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_9s_9s_9_1_1_U22" contextFuncName="runWeight2Reg" bitwidth="9" opcode="mul" nodeLabel="1.0" m_display="0" m_delay="1.46" m_topoIndex="77" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="104" name="add_ln42_2" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U56" contextFuncName="runWeight2Reg" bitwidth="9" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.69" m_topoIndex="78" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="105" name="mul_ln42_1" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U56" contextFuncName="runWeight2Reg" bitwidth="9" opcode="mul" nodeLabel="1.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="79" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="106" name="add_ln42_3" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U56" contextFuncName="runWeight2Reg" bitwidth="9" opcode="add" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="83" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="107" name="zext_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="zext_ln41_fu_584_p1" contextFuncName="runWeight2Reg" bitwidth="64" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -1352,7 +1352,7 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="108" name="weight_l2_0_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="9" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>weight_l2_0</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
@@ -1360,13 +1360,13 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="109" name="weight_l2_0_load" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="8" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="86" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="110" name="weight_l2_1_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="9" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="87" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>weight_l2_1</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
@@ -1374,13 +1374,13 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="111" name="weight_l2_1_load" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="8" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="88" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="112" name="weight_l2_2_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="9" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>weight_l2_2</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
@@ -1388,13 +1388,13 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="113" name="weight_l2_2_load" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="8" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="90" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="114" name="weight_l2_3_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="9" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="91" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>weight_l2_3</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
@@ -1402,13 +1402,13 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="115" name="weight_l2_3_load" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" bitwidth="8" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="92" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="116" name="tmp" lineNumber="41" originalName="tmp" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U23" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="93" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1433,7 +1433,7 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="117" name="_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="switch" nodeLabel="1.0" m_display="0" m_delay="0.65" m_topoIndex="80" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch3.i.i</controlInputObjs>
@@ -1449,7 +1449,7 @@
         <validLinenumbers>42</validLinenumbers>
         <validLinenumbers>41</validLinenumbers>
         <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="144" name="branch2.i.i" type="BlockType">
@@ -1505,7 +1505,7 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="127" name="weight_regfile_2_3_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U24" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="102" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1515,7 +1515,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="128" name="write_flag33_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U25" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="103" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1525,7 +1525,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="129" name="weight_regfile_2_2_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U26" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="104" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1535,7 +1535,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="130" name="write_flag30_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U27" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="105" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1545,7 +1545,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="131" name="weight_regfile_2_1_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U28" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="106" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>mux</dataInputObjs>
@@ -1555,7 +1555,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="132" name="write_flag27_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U29" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="107" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1565,7 +1565,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="133" name="weight_regfile_2_0_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U30" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="108" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1575,7 +1575,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="134" name="write_flag24_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U31" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="109" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1585,55 +1585,55 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="135" name="write_flag24_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="110" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="136" name="weight_regfile_2_0_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="111" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="137" name="write_flag27_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="112" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="138" name="weight_regfile_2_1_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="113" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="139" name="write_flag30_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="114" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="140" name="weight_regfile_2_2_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="141" name="write_flag33_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="116" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="142" name="weight_regfile_2_3_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="117" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="143" name="br_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="118" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <controlInputObjs>bb.split10.i.i</controlInputObjs>
       </node_objs>
@@ -1641,7 +1641,7 @@
         <validLinenumbers>41</validLinenumbers>
         <validLinenumbers>39</validLinenumbers>
         <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="170" name="branch1.i.i" type="BlockType">
@@ -1697,7 +1697,7 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="153" name="weight_regfile_1_3_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U32" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="127" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1707,7 +1707,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="154" name="write_flag12_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U33" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="128" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1717,7 +1717,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="155" name="write_flag21_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U34" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="129" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1727,7 +1727,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="156" name="weight_regfile_1_2_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U35" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="130" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1737,7 +1737,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="157" name="weight_regfile_1_0_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U36" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="131" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1747,7 +1747,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="158" name="write_flag18_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U37" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="132" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1757,7 +1757,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="159" name="weight_regfile_1_1_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U38" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="133" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>mux</dataInputObjs>
@@ -1767,7 +1767,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="160" name="write_flag15_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U39" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="134" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1777,55 +1777,55 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="161" name="write_flag15_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="135" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="162" name="weight_regfile_1_1_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="136" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="163" name="write_flag18_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="137" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="164" name="weight_regfile_1_0_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="138" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="165" name="weight_regfile_1_2_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="166" name="write_flag21_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="140" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="167" name="write_flag12_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="141" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="168" name="weight_regfile_1_3_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="142" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="169" name="br_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="143" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <controlInputObjs>bb.split10.i.i</controlInputObjs>
       </node_objs>
@@ -1833,7 +1833,7 @@
         <validLinenumbers>41</validLinenumbers>
         <validLinenumbers>39</validLinenumbers>
         <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="196" name="branch0.i.i" type="BlockType">
@@ -1889,7 +1889,7 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="179" name="write_flag_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U40" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="152" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1899,7 +1899,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="180" name="weight_regfile_0_0_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U41" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="153" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1909,7 +1909,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="181" name="write_flag3_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U42" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="154" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1919,7 +1919,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="182" name="weight_regfile_0_1_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U43" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="155" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>mux</dataInputObjs>
@@ -1929,7 +1929,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="183" name="write_flag6_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U44" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="156" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1939,7 +1939,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="184" name="weight_regfile_0_2_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U45" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="157" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1949,7 +1949,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="185" name="write_flag9_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U46" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="158" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1959,7 +1959,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="186" name="weight_regfile_0_3_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U47" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="159" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -1969,55 +1969,55 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="187" name="weight_regfile_0_3_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="160" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="188" name="write_flag9_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="161" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="189" name="weight_regfile_0_2_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="162" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="190" name="write_flag6_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="163" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="191" name="weight_regfile_0_1_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="164" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="192" name="write_flag3_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="165" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="193" name="weight_regfile_0_0_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="166" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="194" name="write_flag_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="167" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="195" name="br_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="168" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <controlInputObjs>bb.split10.i.i</controlInputObjs>
       </node_objs>
@@ -2025,7 +2025,7 @@
         <validLinenumbers>39</validLinenumbers>
         <validLinenumbers>41</validLinenumbers>
         <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="222" name="branch3.i.i" type="BlockType">
@@ -2081,7 +2081,7 @@
         <dataOutputObjs>mux</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="205" name="weight_regfile_3_3_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U48" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="177" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2091,7 +2091,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="206" name="write_flag45_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U49" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="178" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2101,7 +2101,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="207" name="weight_regfile_3_2_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U50" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="179" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2111,7 +2111,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="208" name="write_flag42_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U51" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="180" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2121,7 +2121,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="209" name="weight_regfile_3_1_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U52" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="181" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>mux</dataInputObjs>
@@ -2131,7 +2131,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="210" name="write_flag39_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U53" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="182" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2141,7 +2141,7 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="211" name="weight_regfile_3_0_3" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_8_1_1_U54" contextFuncName="runWeight2Reg" bitwidth="8" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="183" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2151,7 +2151,7 @@
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="212" name="write_flag36_3" lineNumber="39" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mux_42_1_1_1_U55" contextFuncName="runWeight2Reg" bitwidth="1" opcode="mux" nodeLabel="5.0" m_display="0" m_delay="0.39" m_topoIndex="184" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="39" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -2161,55 +2161,55 @@
         <constName>empty</constName>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="213" name="write_flag36_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="185" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="214" name="weight_regfile_3_0_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="186" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="215" name="write_flag39_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="187" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="216" name="weight_regfile_3_1_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="188" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="217" name="write_flag42_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="189" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="218" name="weight_regfile_3_2_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="190" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="219" name="write_flag45_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_delay="0.6" m_topoIndex="191" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="220" name="weight_regfile_3_3_1_write_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="store" nodeLabel="5.0" m_display="0" m_topoIndex="192" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>mux</dataInputObjs>
         <dataInputObjs>alloca</dataInputObjs>
       </node_objs>
       <node_objs xsi:type="cdfg:CdfgNode" id="221" name="br_ln43" lineNumber="43" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runWeight2Reg" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="193" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="43" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <controlInputObjs>bb.split10.i.i</controlInputObjs>
       </node_objs>
@@ -2217,7 +2217,7 @@
         <validLinenumbers>41</validLinenumbers>
         <validLinenumbers>39</validLinenumbers>
         <validLinenumbers>43</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="225" name="bb.split10.i.i" type="BlockType">
@@ -2234,7 +2234,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>bb.i.i</controlOutputObjs>
       <node_objs xsi:type="cdfg:CdfgNode" id="223" name="add_ln35" lineNumber="35" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln35_fu_578_p2" contextFuncName="runWeight2Reg" bitwidth="3" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.57" m_topoIndex="81" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="390" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="392" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="35" fileDirectory="/home/sumin/workspace/hls_test" functionName="runWeight2Reg"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
@@ -2245,7 +2245,7 @@
       </node_objs>
       <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
         <validLinenumbers>35</validLinenumbers>
-        <validLinenumbers>390</validLinenumbers>
+        <validLinenumbers>392</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
@@ -2313,6 +2313,9 @@
   <regnodes realName="write_flag39_1_reg_1384">
     <nodeIds>21</nodeIds>
   </regnodes>
+  <regnodes realName="empty_26_reg_1545">
+    <nodeIds>56</nodeIds>
+  </regnodes>
   <regnodes realName="weight_l2_3_addr_reg_1641">
     <nodeIds>114</nodeIds>
   </regnodes>
@@ -2324,9 +2327,6 @@
   </regnodes>
   <regnodes realName="indvar_flatten_reg_328">
     <nodeIds>83</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_27_reg_1545">
-    <nodeIds>56</nodeIds>
   </regnodes>
   <regnodes realName="write_flag3_1_reg_1377">
     <nodeIds>20</nodeIds>
@@ -2592,9 +2592,6 @@
   <expressionNodes realName="write_flag45_1_fu_104">
     <nodeIds>15</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_27_fu_413">
-    <nodeIds>56</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="write_flag33_1_fu_152">
     <nodeIds>27</nodeIds>
   </expressionNodes>
@@ -2691,6 +2688,9 @@
   <expressionNodes realName="write_flag_3_fu_928">
     <nodeIds>179</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_26_fu_413">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="write_flag39_1_fu_128">
     <nodeIds>21</nodeIds>
   </expressionNodes>
@@ -2735,9 +2735,6 @@
   </ioNodes>
   <ioNodes realName="store_ln43_store_fu_725">
     <nodeIds>136</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_248">
-    <nodeIds>58</nodeIds>
   </ioNodes>
   <ioNodes realName="write_flag21_1_load_load_fu_763">
     <nodeIds>147</nodeIds>
@@ -2924,8 +2921,14 @@
     <nodeIds>197</nodeIds>
     <nodeIds>226</nodeIds>
   </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_248">
+    <nodeIds>58</nodeIds>
+  </ioNodes>
   <ioNodes realName="store_ln43_store_fu_1208">
     <nodeIds>217</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_256">
+    <nodeIds>60</nodeIds>
   </ioNodes>
   <ioNodes realName="grp_load_fu_373">
     <nodeIds>145</nodeIds>
@@ -2937,9 +2940,6 @@
   <ioNodes realName="grp_load_fu_370">
     <nodeIds>125</nodeIds>
     <nodeIds>236</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_256">
-    <nodeIds>60</nodeIds>
   </ioNodes>
   <ioNodes realName="store_ln43_store_fu_750">
     <nodeIds>141</nodeIds>
@@ -3031,7 +3031,7 @@
       <nodeIds>62</nodeIds>
     </contents>
   </ioPorts>
-  <ioPorts name="empty_15">
+  <ioPorts name="empty_14">
     <contents name="read">
       <nodeIds>61</nodeIds>
     </contents>

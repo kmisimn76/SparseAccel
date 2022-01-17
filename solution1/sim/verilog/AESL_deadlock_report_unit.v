@@ -440,7 +440,7 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                 1 : begin
                     case(index2)
                     0: begin
-                        if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runWeight2Reg_U0.empty_15_blk_n) begin
+                        if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runWeight2Reg_U0.empty_14_blk_n) begin
                             chan_path = "Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.p_c_U";
                             if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.p_c_U.if_empty_n) begin
                                 $display("//      Channel: %0s, EMPTY", chan_path);
@@ -666,7 +666,7 @@ module AESL_deadlock_report_unit #( parameter PROC_NUM = 4 ) (
                         end
                     end
                     0: begin
-                        if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runL2toL1_U0.empty_16_blk_n) begin
+                        if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runL2toL1_U0.empty_15_blk_n) begin
                             chan_path = "Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.p_c5_U";
                             if (~AESL_inst_Conv_sysarr_dbbuf.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.p_c5_U.if_empty_n) begin
                                 $display("//      Channel: %0s, EMPTY", chan_path);

@@ -353,7 +353,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "Dataflow", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "1",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "108", "EstimateLatencyMax" : "170",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "57", "EstimateLatencyMax" : "119",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -503,9 +503,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "weight_l2_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "weight_l2_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "weight_l2_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "empty_15", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "70", "DependentChanDepth" : "2",
+			{"Name" : "empty_14", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "70", "DependentChanDepth" : "2",
 				"BlockSignal" : [
-					{"Name" : "empty_15_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "empty_14_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "empty", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "71", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "empty_blk_n", "Type" : "RtlSignal"}]},
@@ -585,9 +585,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_l2_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "data_l2_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "data_l2_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "empty_16", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "79", "DependentChanDepth" : "2",
+			{"Name" : "empty_15", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "79", "DependentChanDepth" : "2",
 				"BlockSignal" : [
-					{"Name" : "empty_16_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "empty_15_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "co_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "5", "DependentChan" : "74", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "co_1_blk_n", "Type" : "RtlSignal"}]},
@@ -610,18 +610,13 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "52", "EstimateLatencyMax" : "114",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "1", "EstimateLatencyMax" : "63",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
 		"HasSubDataflow" : "0",
 		"InDataflowNetwork" : "1",
 		"HasNonBlockingOperation" : "0",
-		"DependenceCheck" : [
-			{"FromInitialState" : "ap_enable_state4_pp0_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp0_iter2", "FromInitialOperation" : "ap_enable_operation_131", "FromInitialSV" : "3", "FromFinalState" : "ap_enable_state5_pp0_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp0_iter3", "FromFinalOperation" : "ap_enable_operation_170", "FromFinalSV" : "4", "FromAddress" : "output_l1_local_3_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state9_pp0_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp0_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_330", "ToInitialSV" : "8", "ToFinalState" : "ap_enable_state9_pp0_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp0_iter7", "ToFinalOperation" : "ap_enable_operation_330", "ToFinalSV" : "8", "ToAddress" : "output_l1_local_3_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp0", "AddressWidth" : "10", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:128:55)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state4_pp0_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp0_iter2", "FromInitialOperation" : "ap_enable_operation_133", "FromInitialSV" : "3", "FromFinalState" : "ap_enable_state5_pp0_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp0_iter3", "FromFinalOperation" : "ap_enable_operation_174", "FromFinalSV" : "4", "FromAddress" : "output_l1_local_2_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state9_pp0_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp0_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_334", "ToInitialSV" : "8", "ToFinalState" : "ap_enable_state9_pp0_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp0_iter7", "ToFinalOperation" : "ap_enable_operation_334", "ToFinalSV" : "8", "ToAddress" : "output_l1_local_2_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp0", "AddressWidth" : "10", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:128:55)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state4_pp0_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp0_iter2", "FromInitialOperation" : "ap_enable_operation_135", "FromInitialSV" : "3", "FromFinalState" : "ap_enable_state5_pp0_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp0_iter3", "FromFinalOperation" : "ap_enable_operation_179", "FromFinalSV" : "4", "FromAddress" : "output_l1_local_1_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state9_pp0_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp0_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_338", "ToInitialSV" : "8", "ToFinalState" : "ap_enable_state9_pp0_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp0_iter7", "ToFinalOperation" : "ap_enable_operation_338", "ToFinalSV" : "8", "ToAddress" : "output_l1_local_1_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp0", "AddressWidth" : "10", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:128:55)", "Type" : "WAR"},
-			{"FromInitialState" : "ap_enable_state4_pp0_iter2_stage0", "FromInitialIteration" : "ap_enable_reg_pp0_iter2", "FromInitialOperation" : "ap_enable_operation_137", "FromInitialSV" : "3", "FromFinalState" : "ap_enable_state5_pp0_iter3_stage0", "FromFinalIteration" : "ap_enable_reg_pp0_iter3", "FromFinalOperation" : "ap_enable_operation_181", "FromFinalSV" : "4", "FromAddress" : "output_l1_local_0_address1", "FromType" : "R", "ToInitialState" : "ap_enable_state9_pp0_iter7_stage0", "ToInitialIteration" : "ap_enable_reg_pp0_iter7", "ToInitialNextIteration" : "null", "ToInitialOperation" : "ap_enable_operation_341", "ToInitialSV" : "8", "ToFinalState" : "ap_enable_state9_pp0_iter7_stage0", "ToFinalIteration" : "ap_enable_reg_pp0_iter7", "ToFinalOperation" : "ap_enable_operation_341", "ToFinalSV" : "8", "ToAddress" : "output_l1_local_0_address0", "ToType" : "W", "PipelineBlock" : "ap_block_pp0", "AddressWidth" : "10", "II" : "1", "Pragma" : "(Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:128:55)", "Type" : "WAR"}],
 		"Port" : [
 			{"Name" : "p_read", "Type" : "None", "Direction" : "I", "DependentProc" : "6", "DependentChan" : "84", "DependentChanDepth" : "2"},
 			{"Name" : "p_read1", "Type" : "None", "Direction" : "I", "DependentProc" : "6", "DependentChan" : "85", "DependentChanDepth" : "2"},
@@ -765,7 +760,7 @@ set ArgLastReadFirstWriteLatency {
 		weight_l2_1 {Type I LastRead 4 FirstWrite -1}
 		weight_l2_2 {Type I LastRead 4 FirstWrite -1}
 		weight_l2_3 {Type I LastRead 4 FirstWrite -1}
-		empty_15 {Type I LastRead 0 FirstWrite -1}
+		empty_14 {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
 		ko_2 {Type I LastRead 0 FirstWrite -1}
 		co_1 {Type I LastRead 0 FirstWrite -1}
@@ -782,7 +777,7 @@ set ArgLastReadFirstWriteLatency {
 		data_l2_1 {Type I LastRead 4 FirstWrite -1}
 		data_l2_2 {Type I LastRead 4 FirstWrite -1}
 		data_l2_3 {Type I LastRead 4 FirstWrite -1}
-		empty_16 {Type I LastRead 0 FirstWrite -1}
+		empty_15 {Type I LastRead 0 FirstWrite -1}
 		co_1 {Type I LastRead 0 FirstWrite -1}
 		r {Type I LastRead 0 FirstWrite -1}
 		s {Type I LastRead 0 FirstWrite -1}
@@ -823,8 +818,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "108", "Max" : "170"}
-	, {"Name" : "Interval", "Min" : "55", "Max" : "115"}
+	{"Name" : "Latency", "Min" : "57", "Max" : "119"}
+	, {"Name" : "Interval", "Min" : "55", "Max" : "64"}
 ]}
 
 set PipelineEnableSignalInfo {[

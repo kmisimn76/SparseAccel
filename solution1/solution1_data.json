@@ -90,7 +90,7 @@
     "Uncertainty": "2.7",
     "IsCombinational": "0",
     "II": "x",
-    "Latency": "3726"
+    "Latency": "3114"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -571,12 +571,12 @@
       },
       "runSysArr": {
         "Latency": {
-          "LatencyBest": "52",
-          "LatencyAvg": "83",
-          "LatencyWorst": "114",
-          "PipelineIIMin": "52",
-          "PipelineIIMax": "114",
-          "PipelineII": "52 ~ 114",
+          "LatencyBest": "1",
+          "LatencyAvg": "32",
+          "LatencyWorst": "63",
+          "PipelineIIMin": "1",
+          "PipelineIIMax": "63",
+          "PipelineII": "1 ~ 63",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -585,22 +585,13 @@
           "Uncertainty": "2.70",
           "Estimate": "6.489"
         },
-        "Loops": [
-          {
+        "Loops": [{
             "Name": "LOOP_INPUT_ROW",
             "TripCount": "55",
             "Latency": "61",
             "PipelineII": "1",
             "PipelineDepth": "8"
-          },
-          {
-            "Name": "VITIS_LOOP_200_6",
-            "TripCount": "49",
-            "Latency": "49",
-            "PipelineII": "1",
-            "PipelineDepth": "2"
-          }
-        ],
+          }],
         "Area": {
           "BRAM_18K": "8",
           "AVAIL_BRAM": "4320",
@@ -608,10 +599,10 @@
           "DSP": "19",
           "AVAIL_DSP": "6840",
           "UTIL_DSP": "~0",
-          "FF": "2189",
+          "FF": "1929",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "1592",
+          "LUT": "1323",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "URAM": "0",
@@ -621,12 +612,12 @@
       },
       "dataflow_in_loop_LOOP_S": {
         "Latency": {
-          "LatencyBest": "108",
-          "LatencyAvg": "139",
-          "LatencyWorst": "170",
+          "LatencyBest": "57",
+          "LatencyAvg": "88",
+          "LatencyWorst": "119",
           "PipelineIIMin": "55",
-          "PipelineIIMax": "115",
-          "PipelineII": "55 ~ 115",
+          "PipelineIIMax": "64",
+          "PipelineII": "55 ~ 64",
           "PipelineDepth": "",
           "PipelineType": "dataflow"
         },
@@ -642,10 +633,10 @@
           "DSP": "26",
           "AVAIL_DSP": "6840",
           "UTIL_DSP": "~0",
-          "FF": "5959",
+          "FF": "5699",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "5767",
+          "LUT": "5498",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "URAM": "0",
@@ -655,12 +646,12 @@
       },
       "dataflow_parent_loop_proc": {
         "Latency": {
-          "LatencyBest": "220",
-          "LatencyAvg": "309",
-          "LatencyWorst": "402",
-          "PipelineIIMin": "220",
-          "PipelineIIMax": "402",
-          "PipelineII": "220 ~ 402",
+          "LatencyBest": "169",
+          "LatencyAvg": "200",
+          "LatencyWorst": "249",
+          "PipelineIIMin": "169",
+          "PipelineIIMax": "249",
+          "PipelineII": "169 ~ 249",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -672,13 +663,13 @@
         "Loops": [{
             "Name": "LOOP_S",
             "TripCount": "3",
-            "LatencyMin": "219",
-            "LatencyMax": "401",
-            "Latency": "219 ~ 401",
+            "LatencyMin": "168",
+            "LatencyMax": "248",
+            "Latency": "168 ~ 248",
             "PipelineII": "",
-            "PipelineDepthMin": "219",
-            "PipelineDepthMax": "401",
-            "PipelineDepth": "219 ~ 401"
+            "PipelineDepthMin": "168",
+            "PipelineDepthMax": "248",
+            "PipelineDepth": "168 ~ 248"
           }],
         "Area": {
           "BRAM_18K": "16",
@@ -687,10 +678,10 @@
           "DSP": "26",
           "AVAIL_DSP": "6840",
           "UTIL_DSP": "~0",
-          "FF": "6023",
+          "FF": "5763",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "5902",
+          "LUT": "5633",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "URAM": "0",
@@ -700,12 +691,12 @@
       },
       "dataflow_parent_loop_proc14": {
         "Latency": {
-          "LatencyBest": "664",
-          "LatencyAvg": "931",
-          "LatencyWorst": "1210",
-          "PipelineIIMin": "664",
-          "PipelineIIMax": "1210",
-          "PipelineII": "664 ~ 1210",
+          "LatencyBest": "511",
+          "LatencyAvg": "604",
+          "LatencyWorst": "751",
+          "PipelineIIMin": "511",
+          "PipelineIIMax": "751",
+          "PipelineII": "511 ~ 751",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -717,13 +708,13 @@
         "Loops": [{
             "Name": "LOOP_R",
             "TripCount": "3",
-            "LatencyMin": "663",
-            "LatencyMax": "1209",
-            "Latency": "663 ~ 1209",
+            "LatencyMin": "510",
+            "LatencyMax": "750",
+            "Latency": "510 ~ 750",
             "PipelineII": "",
-            "PipelineDepthMin": "663",
-            "PipelineDepthMax": "1209",
-            "PipelineDepth": "663 ~ 1209"
+            "PipelineDepthMin": "510",
+            "PipelineDepthMax": "750",
+            "PipelineDepth": "510 ~ 750"
           }],
         "Area": {
           "BRAM_18K": "16",
@@ -732,10 +723,10 @@
           "DSP": "26",
           "AVAIL_DSP": "6840",
           "UTIL_DSP": "~0",
-          "FF": "6087",
+          "FF": "5827",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "6037",
+          "LUT": "5768",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "URAM": "0",
@@ -745,12 +736,12 @@
       },
       "Conv_sysarr_dbbuf": {
         "Latency": {
-          "LatencyBest": "3726",
-          "LatencyAvg": "4794",
-          "LatencyWorst": "5910",
-          "PipelineIIMin": "3727",
-          "PipelineIIMax": "5911",
-          "PipelineII": "3727 ~ 5911",
+          "LatencyBest": "3114",
+          "LatencyAvg": "3486",
+          "LatencyWorst": "4074",
+          "PipelineIIMin": "3115",
+          "PipelineIIMax": "4075",
+          "PipelineII": "3115 ~ 4075",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -761,21 +752,21 @@
         },
         "Loops": [
           {
-            "Name": "VITIS_LOOP_288_1",
+            "Name": "VITIS_LOOP_291_1",
             "TripCount": "4",
             "Latency": "4",
             "PipelineII": "1",
             "PipelineDepth": "2"
           },
           {
-            "Name": "VITIS_LOOP_296_3_VITIS_LOOP_298_4",
+            "Name": "VITIS_LOOP_299_3_VITIS_LOOP_301_4",
             "TripCount": "144",
             "Latency": "146",
             "PipelineII": "1",
             "PipelineDepth": "4"
           },
           {
-            "Name": "VITIS_LOOP_310_6_VITIS_LOOP_312_7",
+            "Name": "VITIS_LOOP_313_6_VITIS_LOOP_315_7",
             "TripCount": "81",
             "Latency": "83",
             "PipelineII": "1",
@@ -784,23 +775,23 @@
           {
             "Name": "LOOP_K_OUTER_LOOP_C_OUTER",
             "TripCount": "4",
-            "LatencyMin": "3280",
-            "LatencyMax": "5464",
-            "Latency": "3280 ~ 5464",
+            "LatencyMin": "2668",
+            "LatencyMax": "3628",
+            "Latency": "2668 ~ 3628",
             "PipelineII": "",
-            "PipelineDepthMin": "820",
-            "PipelineDepthMax": "1366",
-            "PipelineDepth": "820 ~ 1366",
+            "PipelineDepthMin": "667",
+            "PipelineDepthMax": "907",
+            "PipelineDepth": "667 ~ 907",
             "Loops": [
               {
-                "Name": "VITIS_LOOP_340_9_VITIS_LOOP_343_10",
+                "Name": "VITIS_LOOP_343_9_VITIS_LOOP_346_10",
                 "TripCount": "49",
                 "Latency": "51",
                 "PipelineII": "1",
                 "PipelineDepth": "4"
               },
               {
-                "Name": "VITIS_LOOP_410_12",
+                "Name": "VITIS_LOOP_412_12",
                 "TripCount": "49",
                 "Latency": "98",
                 "PipelineII": "2",
@@ -809,7 +800,7 @@
             ]
           },
           {
-            "Name": "VITIS_LOOP_422_14_VITIS_LOOP_424_15",
+            "Name": "VITIS_LOOP_424_14_VITIS_LOOP_426_15",
             "TripCount": "196",
             "Latency": "199",
             "PipelineII": "1",
@@ -823,10 +814,10 @@
           "DSP": "62",
           "AVAIL_DSP": "6840",
           "UTIL_DSP": "~0",
-          "FF": "9357",
+          "FF": "9097",
           "AVAIL_FF": "2364480",
           "UTIL_FF": "~0",
-          "LUT": "9124",
+          "LUT": "8855",
           "AVAIL_LUT": "1182240",
           "UTIL_LUT": "~0",
           "URAM": "0",
@@ -839,7 +830,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-01-18 00:11:39 KST",
+    "Time": "2022-01-18 00:19:35 KST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.1"
   }

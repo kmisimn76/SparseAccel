@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runWeight2Reg'
 ================================================================
-* Date:           Tue Jan 18 00:11:36 2022
+* Date:           Tue Jan 18 00:19:32 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -160,7 +160,7 @@
     |ap_phi_mux_ki_phi_fu_343_p4  |   9|          2|    3|          6|
     |ci_reg_350                   |   9|          2|    3|          6|
     |co_1_blk_n                   |   9|          2|    1|          2|
-    |empty_15_blk_n               |   9|          2|    1|          2|
+    |empty_14_blk_n               |   9|          2|    1|          2|
     |empty_blk_n                  |   9|          2|    1|          2|
     |indvar_flatten_reg_328       |   9|          2|    5|         10|
     |ki_reg_339                   |   9|          2|    3|          6|
@@ -201,7 +201,7 @@
     |ap_enable_reg_pp0_iter3      |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter4      |   1|   0|    1|          0|
     |ci_reg_350                   |   3|   0|    3|          0|
-    |empty_27_reg_1545            |   9|   0|    9|          0|
+    |empty_26_reg_1545            |   9|   0|    9|          0|
     |icmp_ln33_reg_1566           |   1|   0|    1|          0|
     |indvar_flatten_reg_328       |   5|   0|    5|          0|
     |ki_reg_339                   |   3|   0|    3|          0|
@@ -294,9 +294,9 @@
 |weight_l2_3_address0  | out |    9|  ap_memory |  weight_l2_3  |     array    |
 |weight_l2_3_ce0       | out |    1|  ap_memory |  weight_l2_3  |     array    |
 |weight_l2_3_q0        |  in |    8|  ap_memory |  weight_l2_3  |     array    |
-|empty_15_dout         |  in |    9|   ap_fifo  |    empty_15   |    pointer   |
-|empty_15_empty_n      |  in |    1|   ap_fifo  |    empty_15   |    pointer   |
-|empty_15_read         | out |    1|   ap_fifo  |    empty_15   |    pointer   |
+|empty_14_dout         |  in |    9|   ap_fifo  |    empty_14   |    pointer   |
+|empty_14_empty_n      |  in |    1|   ap_fifo  |    empty_14   |    pointer   |
+|empty_14_read         | out |    1|   ap_fifo  |    empty_14   |    pointer   |
 |empty_dout            |  in |    9|   ap_fifo  |     empty     |    pointer   |
 |empty_empty_n         |  in |    1|   ap_fifo  |     empty     |    pointer   |
 |empty_read            | out |    1|   ap_fifo  |     empty     |    pointer   |

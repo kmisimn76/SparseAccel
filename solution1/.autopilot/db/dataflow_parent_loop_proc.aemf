@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432297000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432773000">
   <ports id="1" name="RS" type="PortType" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
@@ -134,7 +134,7 @@
       <dataInputObjs>p_read1</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_read_18" bitwidth="9" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_read_17" bitwidth="9" opcode="read" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
@@ -168,26 +168,26 @@
         <controlInputObjs>.split</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="icmp_ln360" lineNumber="360" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="11" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="360" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="icmp_ln363" lineNumber="363" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="363" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="s_1" lineNumber="360" originalName="s" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.88" m_topoIndex="12" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="360" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="s_1" lineNumber="363" originalName="s" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.88" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="363" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="br_ln360" lineNumber="360" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="360" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="br_ln363" lineNumber="363" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="363" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>.split</controlInputObjs>
         <controlInputObjs>.exitStub</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
-        <validLinenumbers>360</validLinenumbers>
+        <validLinenumbers>363</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
     <basic_blocks id="46" name=".split" type="BlockType">
@@ -195,8 +195,8 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>block_41</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="_ln402" lineNumber="402" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="dataflow_in_loop_LOOP_S_U0" contextFuncName="Conv_sysarr_dbbuf" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="402" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="_ln404" lineNumber="404" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="dataflow_in_loop_LOOP_S_U0" contextFuncName="Conv_sysarr_dbbuf" opcode="call" nodeLabel="1.0" nodeLatency="1" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="404" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <dataInputObjs>weight_l2_0</dataInputObjs>
         <dataInputObjs>weight_l2_1</dataInputObjs>
         <dataInputObjs>weight_l2_2</dataInputObjs>
@@ -219,19 +219,22 @@
         <dataOutputObjs>output_l1_pass_3</dataOutputObjs>
         <constName>dataflow_in_loop_LOOP_S</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln360" lineNumber="360" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
-        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="360" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln363" lineNumber="363" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="363" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
         <controlInputObjs>block_41</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
-        <validLinenumbers>402</validLinenumbers>
-        <validLinenumbers>360</validLinenumbers>
+        <validLinenumbers>404</validLinenumbers>
+        <validLinenumbers>363</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
   <ScheduleInfo time="0"/>
   <ScheduleInfo time="1"/>
   <ScheduleInfo time="2"/>
+  <regnodes realName="icmp_ln363_reg_230">
+    <nodeIds>37</nodeIds>
+  </regnodes>
   <regnodes realName="RS_read_reg_225">
     <nodeIds>33</nodeIds>
   </regnodes>
@@ -244,14 +247,11 @@
   <regnodes realName="p_read310_reg_190">
     <nodeIds>26</nodeIds>
   </regnodes>
-  <regnodes realName="p_read_18_reg_220">
-    <nodeIds>32</nodeIds>
-  </regnodes>
   <regnodes realName="p_read29_reg_195">
     <nodeIds>27</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln360_reg_230">
-    <nodeIds>37</nodeIds>
+  <regnodes realName="p_read_17_reg_220">
+    <nodeIds>32</nodeIds>
   </regnodes>
   <regnodes realName="ko_2_read_reg_210">
     <nodeIds>30</nodeIds>
@@ -268,7 +268,7 @@
   <expressionNodes realName="s_1_fu_184">
     <nodeIds>39</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="icmp_ln360_fu_179">
+  <expressionNodes realName="icmp_ln363_fu_179">
     <nodeIds>37</nodeIds>
   </expressionNodes>
   <expressionNodes realName="s_phi_fu_126">
@@ -286,6 +286,9 @@
   <ioNodes realName="p_read15_read_fu_104">
     <nodeIds>31</nodeIds>
   </ioNodes>
+  <ioNodes realName="p_read_17_read_fu_110">
+    <nodeIds>32</nodeIds>
+  </ioNodes>
   <ioNodes realName="co_1_read_read_fu_92">
     <nodeIds>29</nodeIds>
   </ioNodes>
@@ -297,9 +300,6 @@
   </ioNodes>
   <ioNodes realName="ko_2_read_read_fu_98">
     <nodeIds>30</nodeIds>
-  </ioNodes>
-  <ioNodes realName="p_read_18_read_fu_110">
-    <nodeIds>32</nodeIds>
   </ioNodes>
   <memoryPorts dataString="output_l1_local_0" portID="100">
     <nodeIds>44</nodeIds>
@@ -391,7 +391,7 @@
     </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="dataflow_parent_loop_proc" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="220" mMaxLatency="402">
+    <cfgRegions mId="1" mTag="dataflow_parent_loop_proc" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="169" mMaxLatency="249">
       <subRegions>2</subRegions>
       <subRegions>3</subRegions>
       <subRegions>4</subRegions>
@@ -401,7 +401,7 @@
       <basicBlocks>35</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="3" mTag="LOOP_S" mII="-1" mDepth="-1" mMinTripCount="3" mMaxTripCount="3" mMinLatency="219" mMaxLatency="401" mIsDfPipe="true" mType="1">
+    <cfgRegions mId="3" mTag="LOOP_S" mII="-1" mDepth="-1" mMinTripCount="3" mMaxTripCount="3" mMinLatency="168" mMaxLatency="248" mIsDfPipe="true" mType="1">
       <basicBlocks>41</basicBlocks>
       <basicBlocks>46</basicBlocks>
       <mDfPipe allPipePinInst="//@CFGRegionsRoot/@cfgRegions.2/@mDfPipe/@processe_list.0/@pins.0/@inst">

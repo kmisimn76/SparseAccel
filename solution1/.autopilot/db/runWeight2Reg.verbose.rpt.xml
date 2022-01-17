@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runWeight2Reg'" level="0">
-<item name = "Date">Tue Jan 18 00:11:37 2022
+<item name = "Date">Tue Jan 18 00:19:32 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -139,7 +139,7 @@
 <column name="ap_phi_mux_ki_phi_fu_343_p4">9, 2, 3, 6</column>
 <column name="ci_reg_350">9, 2, 3, 6</column>
 <column name="co_1_blk_n">9, 2, 1, 2</column>
-<column name="empty_15_blk_n">9, 2, 1, 2</column>
+<column name="empty_14_blk_n">9, 2, 1, 2</column>
 <column name="empty_blk_n">9, 2, 1, 2</column>
 <column name="indvar_flatten_reg_328">9, 2, 5, 10</column>
 <column name="ki_reg_339">9, 2, 3, 6</column>
@@ -176,7 +176,7 @@
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
 <column name="ci_reg_350">3, 0, 3, 0</column>
-<column name="empty_27_reg_1545">9, 0, 9, 0</column>
+<column name="empty_26_reg_1545">9, 0, 9, 0</column>
 <column name="icmp_ln33_reg_1566">1, 0, 1, 0</column>
 <column name="indvar_flatten_reg_328">5, 0, 5, 0</column>
 <column name="ki_reg_339">3, 0, 3, 0</column>
@@ -265,9 +265,9 @@
 <column name="weight_l2_3_address0">out, 9, ap_memory, weight_l2_3, array</column>
 <column name="weight_l2_3_ce0">out, 1, ap_memory, weight_l2_3, array</column>
 <column name="weight_l2_3_q0">in, 8, ap_memory, weight_l2_3, array</column>
-<column name="empty_15_dout">in, 9, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_empty_n">in, 1, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_read">out, 1, ap_fifo, empty_15, pointer</column>
+<column name="empty_14_dout">in, 9, ap_fifo, empty_14, pointer</column>
+<column name="empty_14_empty_n">in, 1, ap_fifo, empty_14, pointer</column>
+<column name="empty_14_read">out, 1, ap_fifo, empty_14, pointer</column>
 <column name="empty_dout">in, 9, ap_fifo, empty, pointer</column>
 <column name="empty_empty_n">in, 1, ap_fifo, empty, pointer</column>
 <column name="empty_read">out, 1, ap_fifo, empty, pointer</column>

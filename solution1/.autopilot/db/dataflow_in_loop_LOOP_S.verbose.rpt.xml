@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_LOOP_S'" level="0">
-<item name = "Date">Tue Jan 18 00:11:37 2022
+<item name = "Date">Tue Jan 18 00:19:33 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">108, 170, 1.080 us, 1.700 us, 55, 115, dataflow</column>
+<column name="">57, 119, 0.570 us, 1.190 us, 55, 64, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="runSysArr_U0">runSysArr, 52, 114, 0.520 us, 1.140 us, 52, 114, none</column>
+<column name="runSysArr_U0">runSysArr, 1, 63, 10.000 ns, 0.630 us, 1, 63, none</column>
 <column name="runWeight2Reg_U0">runWeight2Reg, 21, 21, 0.210 us, 0.210 us, 21, 21, none</column>
 <column name="runL2toL1_U0">runL2toL1, 54, 54, 0.540 us, 0.540 us, 54, 54, none</column>
 <column name="dataflow_in_loop_LOOP_S_entry18_U0">dataflow_in_loop_LOOP_S_entry18, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
@@ -53,7 +53,7 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 129, -</column>
 <column name="FIFO">-, -, 2970, 2010, -</column>
-<column name="Instance">8, 26, 2960, 3394, -</column>
+<column name="Instance">8, 26, 2700, 3125, -</column>
 <column name="Memory">8, -, 0, 0, -</column>
 <column name="Multiplexer">-, -, -, 234, -</column>
 <column name="Register">-, -, 29, -, -</column>
@@ -69,7 +69,7 @@
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="dataflow_in_loop_LOOP_S_entry18_U0">dataflow_in_loop_LOOP_S_entry18, 0, 0, 2, 119, 0</column>
 <column name="runL2toL1_U0">runL2toL1, 0, 6, 426, 545, 0</column>
-<column name="runSysArr_U0">runSysArr, 8, 19, 2189, 1592, 0</column>
+<column name="runSysArr_U0">runSysArr, 8, 19, 1929, 1323, 0</column>
 <column name="runWeight2Reg_U0">runWeight2Reg, 0, 1, 343, 1138, 0</column>
 </table>
 </item>

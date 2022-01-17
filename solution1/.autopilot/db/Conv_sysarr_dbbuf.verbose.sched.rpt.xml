@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr_dbbuf'" level="0">
-<item name = "Date">Tue Jan 18 00:11:36 2022
+<item name = "Date">Tue Jan 18 00:19:32 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3726, 5910, 37.260 us, 59.100 us, 3727, 5911, none</column>
+<column name="">3114, 4074, 31.140 us, 40.740 us, 3115, 4075, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,13 +35,13 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_288_1">4, 4, 2, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_296_3_VITIS_LOOP_298_4">146, 146, 4, 1, 1, 144, yes</column>
-<column name="- VITIS_LOOP_310_6_VITIS_LOOP_312_7">83, 83, 4, 1, 1, 81, yes</column>
-<column name="- LOOP_K_OUTER_LOOP_C_OUTER">3280, 5464, 820 ~ 1366, -, -, 4, no</column>
-<column name=" + VITIS_LOOP_340_9_VITIS_LOOP_343_10">51, 51, 4, 1, 1, 49, yes</column>
-<column name=" + VITIS_LOOP_410_12">98, 98, 2, 2, 1, 49, yes</column>
-<column name="- VITIS_LOOP_422_14_VITIS_LOOP_424_15">199, 199, 5, 1, 1, 196, yes</column>
+<column name="- VITIS_LOOP_291_1">4, 4, 2, 1, 1, 4, yes</column>
+<column name="- VITIS_LOOP_299_3_VITIS_LOOP_301_4">146, 146, 4, 1, 1, 144, yes</column>
+<column name="- VITIS_LOOP_313_6_VITIS_LOOP_315_7">83, 83, 4, 1, 1, 81, yes</column>
+<column name="- LOOP_K_OUTER_LOOP_C_OUTER">2668, 3628, 667 ~ 907, -, -, 4, no</column>
+<column name=" + VITIS_LOOP_343_9_VITIS_LOOP_346_10">51, 51, 4, 1, 1, 49, yes</column>
+<column name=" + VITIS_LOOP_412_12">98, 98, 2, 2, 1, 49, yes</column>
+<column name="- VITIS_LOOP_424_14_VITIS_LOOP_426_15">199, 199, 5, 1, 1, 196, yes</column>
 </table>
 </item>
 </section>

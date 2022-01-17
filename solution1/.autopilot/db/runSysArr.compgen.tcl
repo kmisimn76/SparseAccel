@@ -172,7 +172,7 @@ set ID 116
 set hasByteEnable 0
 set MemName Conv_sysarr_dbbuf_runSysArr_output_l1_local_3
 set CoreName ap_simcore_mem
-set PortList { 2 1 }
+set PortList { 0 1 }
 set DataWd 32
 set AddrRange 1024
 set AddrWd 10

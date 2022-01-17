@@ -685,14 +685,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 68 \
-    name empty_15 \
+    name empty_14 \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_15 \
+    corename dc_empty_14 \
     op interface \
-    ports { empty_15_dout { I 9 vector } empty_15_empty_n { I 1 bit } empty_15_read { O 1 bit } } \
+    ports { empty_14_dout { I 9 vector } empty_14_empty_n { I 1 bit } empty_14_read { O 1 bit } } \
 } "
 }
 

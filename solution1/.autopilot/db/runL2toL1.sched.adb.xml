@@ -108,7 +108,7 @@ entry:2 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %co
 
 <Node id="17" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="0" op_3_bw="32" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="32" op_8_bw="0" op_9_bw="0" op_10_bw="0" op_11_bw="32" op_12_bw="32" op_13_bw="32" op_14_bw="32" op_15_bw="0" op_16_bw="0">
 <![CDATA[
-entry:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %empty_16, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str
+entry:3 %specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %empty_15, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str
 
 ]]></Node>
 <StgValue><ssdm name="specinterface_ln0"/></StgValue>
@@ -183,7 +183,7 @@ entry:7 %s_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %s
 
 <Node id="22" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-entry:8 %H_TILE_tmp = read i32 @_ssdm_op_Read.ap_fifo.i32P, i32 %empty_16
+entry:8 %H_TILE_tmp = read i32 @_ssdm_op_Read.ap_fifo.i32P, i32 %empty_15
 
 ]]></Node>
 <StgValue><ssdm name="H_TILE_tmp"/></StgValue>
@@ -557,10 +557,10 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="52" bw="10" op_0_bw="32">
 <![CDATA[
-._crit_edge.loopexit.i.i:14 %empty_40 = trunc i32 %select_ln59
+._crit_edge.loopexit.i.i:14 %empty_39 = trunc i32 %select_ln59
 
 ]]></Node>
-<StgValue><ssdm name="empty_40"/></StgValue>
+<StgValue><ssdm name="empty_39"/></StgValue>
 </operation>
 
 <operation id="41" st_id="2" stage="1" lat="1">
@@ -573,10 +573,10 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="53" bw="9" op_0_bw="32">
 <![CDATA[
-._crit_edge.loopexit.i.i:15 %empty_41 = trunc i32 %select_ln59
+._crit_edge.loopexit.i.i:15 %empty_40 = trunc i32 %select_ln59
 
 ]]></Node>
-<StgValue><ssdm name="empty_41"/></StgValue>
+<StgValue><ssdm name="empty_40"/></StgValue>
 </operation>
 
 <operation id="42" st_id="2" stage="1" lat="1">
@@ -675,7 +675,7 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="54" bw="10" op_0_bw="10" op_1_bw="10">
 <![CDATA[
-._crit_edge.loopexit.i.i:16 %tmp1 = add i10 %mul_ln59, i10 %empty_40
+._crit_edge.loopexit.i.i:16 %tmp1 = add i10 %mul_ln59, i10 %empty_39
 
 ]]></Node>
 <StgValue><ssdm name="tmp1"/></StgValue>
@@ -691,7 +691,7 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="57" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-._crit_edge.loopexit.i.i:19 %add17_i_i = add i9 %empty_41, i9 %mul_ln59_1
+._crit_edge.loopexit.i.i:19 %add17_i_i = add i9 %empty_40, i9 %mul_ln59_1
 
 ]]></Node>
 <StgValue><ssdm name="add17_i_i"/></StgValue>
@@ -710,7 +710,7 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="54" bw="10" op_0_bw="10" op_1_bw="10">
 <![CDATA[
-._crit_edge.loopexit.i.i:16 %tmp1 = add i10 %mul_ln59, i10 %empty_40
+._crit_edge.loopexit.i.i:16 %tmp1 = add i10 %mul_ln59, i10 %empty_39
 
 ]]></Node>
 <StgValue><ssdm name="tmp1"/></StgValue>
@@ -758,7 +758,7 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="57" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-._crit_edge.loopexit.i.i:19 %add17_i_i = add i9 %empty_41, i9 %mul_ln59_1
+._crit_edge.loopexit.i.i:19 %add17_i_i = add i9 %empty_40, i9 %mul_ln59_1
 
 ]]></Node>
 <StgValue><ssdm name="add17_i_i"/></StgValue>
@@ -953,7 +953,7 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="51" bw="0" op_0_bw="0" op_1_bw="0">
 <![CDATA[
-._crit_edge.loopexit.i.i:13 %specloopname_ln65 = specloopname void @_ssdm_op_SpecLoopName, void @empty_14
+._crit_edge.loopexit.i.i:13 %specloopname_ln65 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8
 
 ]]></Node>
 <StgValue><ssdm name="specloopname_ln65"/></StgValue>
@@ -1195,10 +1195,10 @@ bb.i.i:6 %br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exi
 
 <Node id="78" bw="0">
 <![CDATA[
-.exit:0 %ret_ln365 = ret
+.exit:0 %ret_ln368 = ret
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln365"/></StgValue>
+<StgValue><ssdm name="ret_ln368"/></StgValue>
 </operation>
 </state>
 </state_list>

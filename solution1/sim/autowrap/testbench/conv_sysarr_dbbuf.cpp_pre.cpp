@@ -67406,27 +67406,14 @@ void runL2toL1(DPTYPE data_l1buf[512][4], DPTYPE (*data_l2)[4], uint H_TILE,
  }
 
 }
-
-void runOutputPass(MACTYPE (*output_l1)[4], MACTYPE (*output_l1_input)[4], uint H_TILE, uint W_TILE, uint ko) {
- for(uint hi = 0; hi < H_TILE; hi++) {
-  for(uint wi = 0; wi < W_TILE; wi++) {
-   for (int ki = 4 - 1; ki >= 0; ki--) {
-    output_l1_input[hi * W_TILE + wi][ki] =
-      output_l1[ko * H_TILE * W_TILE + hi * W_TILE + wi][ki];
-   }
-  }
- }
-}
-
-
-
-
+# 105 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE data_l1buf[512][4],
-  MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1)[4], MACTYPE (*output_l1_pass)[4],
+  MACTYPE (*output_l1_pass)[4],
   uint input_rows, uint H_TILE, uint W_TILE,
   uint ko, bool isFirst) {
 
 
+ static MACTYPE output_l1_local[1024][4];
 
 
 
@@ -67509,33 +67496,17 @@ void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE data_l1buf[512][4
     int hi = ((i - 4 + 1) - ki) / W_TILE;
     int wi = ((i - 4 + 1) - ki) % W_TILE;
 
-    output_l1[hi * W_TILE + wi][ki] =
+
+    output_l1_local[(i - 4 + 1) - ki][ki] =
 
       output_reg[ki][(4 - 1)];
+    output_l1_pass[(i - 4 + 1) - ki][ki] = output_l1_local[(i - 4 + 1) - ki][ki];
    }
   }
  }
-
- for (unsigned int wh = 0; wh < H_TILE * W_TILE; wh++) {
-#pragma HLS loop_tripcount min=49 max=49
-   for (unsigned int ki = 0; ki < 4; ki++) {
-#pragma HLS unroll
-    output_l1_pass[wh][ki] = output_l1_local[wh][ki];
-   }
- }
+# 210 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 }
-
-void runOutputPass(MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1_pass)[4], uint H_TILE, uint W_TILE) {
- for (unsigned int wh = 0; wh < H_TILE * W_TILE; wh++) {
-#pragma HLS loop_tripcount min=49 max=49
-   for (unsigned int ki = 0; ki < 4; ki++) {
-#pragma HLS unroll
-    output_l1_pass[wh][ki] = output_l1_local[wh][ki];
-   }
- }
-}
-
-
+# 223 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
   hls::stream<k2k_data> &weight_in, hls::stream<k2k_data> &data_in,
   hls::stream<k2k_data> &conv_out) {
@@ -67557,47 +67528,47 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
 
 
-# 240 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 243 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=4
-# 240 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 243 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 241 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 244 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=weight_l2 dim=2 complete
-# 241 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-
-
-
-
 # 244 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+
+
+
+
+# 247 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=data_l2 dim=2 complete
-# 244 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 247 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 245 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 248 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=output_l2 cyclic factor=4
-# 245 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 248 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 246 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 249 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=bias_l1 dim=2 complete
-# 246 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 249 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 247 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 250 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=weight_l1 dim=2 complete
-# 247 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 250 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 248 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 251 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
-# 248 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 251 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
 
-# 250 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 253 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
-# 250 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 253 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
 
@@ -67722,12 +67693,11 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
        DPTYPE weight_regfile[4][4];
        DPTYPE data_l1buf[512][4];
-       static MACTYPE output_l1_local[1024][4];
 #pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_l1buf dim=2 complete
 
        uint H_TILE_tmp, W_TILE_tmp, ko_tmp;
-# 390 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 392 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
        runWeight2Reg(weight_regfile, weight_l2, C, RS, ko, co, r, s,
          ko_tmp);
 
@@ -67740,7 +67710,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 
 
 
-       runSysArr(weight_regfile, data_l1buf, output_l1_local, output_l1_local, output_l1_pass, input_rows,
+       runSysArr(weight_regfile, data_l1buf, output_l1_pass, input_rows,
          H_TILE, W_TILE, ko, isFirst);
 
 

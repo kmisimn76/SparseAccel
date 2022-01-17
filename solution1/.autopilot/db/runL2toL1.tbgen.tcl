@@ -20,7 +20,7 @@ set C_modelArgList {
 	{ data_l2_1 int 8 regular {array 1024 { 1 3 } 1 1 }  }
 	{ data_l2_2 int 8 regular {array 1024 { 1 3 } 1 1 }  }
 	{ data_l2_3 int 8 regular {array 1024 { 1 3 } 1 1 }  }
-	{ empty_16 int 32 regular {fifo 0}  }
+	{ empty_15 int 32 regular {fifo 0}  }
 	{ co_1 int 10 regular {fifo 0}  }
 	{ r int 10 regular {fifo 0}  }
 	{ s int 10 regular {fifo 0}  }
@@ -35,7 +35,7 @@ set C_modelArgMapList {[
  	{ "Name" : "data_l2_1", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "data_l2_2", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "data_l2_3", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "empty_16", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "empty_15", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "co_1", "interface" : "fifo", "bitwidth" : 10, "direction" : "READONLY"} , 
  	{ "Name" : "r", "interface" : "fifo", "bitwidth" : 10, "direction" : "READONLY"} , 
  	{ "Name" : "s", "interface" : "fifo", "bitwidth" : 10, "direction" : "READONLY"} , 
@@ -78,9 +78,9 @@ set portList {
 	{ data_l2_3_address0 sc_out sc_lv 10 signal 7 } 
 	{ data_l2_3_ce0 sc_out sc_logic 1 signal 7 } 
 	{ data_l2_3_q0 sc_in sc_lv 8 signal 7 } 
-	{ empty_16_dout sc_in sc_lv 32 signal 8 } 
-	{ empty_16_empty_n sc_in sc_logic 1 signal 8 } 
-	{ empty_16_read sc_out sc_logic 1 signal 8 } 
+	{ empty_15_dout sc_in sc_lv 32 signal 8 } 
+	{ empty_15_empty_n sc_in sc_logic 1 signal 8 } 
+	{ empty_15_read sc_out sc_logic 1 signal 8 } 
 	{ co_1_dout sc_in sc_lv 10 signal 9 } 
 	{ co_1_empty_n sc_in sc_logic 1 signal 9 } 
 	{ co_1_read sc_out sc_logic 1 signal 9 } 
@@ -130,9 +130,9 @@ set NewPortList {[
  	{ "name": "data_l2_3_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "data_l2_3", "role": "address0" }} , 
  	{ "name": "data_l2_3_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "data_l2_3", "role": "ce0" }} , 
  	{ "name": "data_l2_3_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "data_l2_3", "role": "q0" }} , 
- 	{ "name": "empty_16_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "empty_16", "role": "dout" }} , 
- 	{ "name": "empty_16_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_16", "role": "empty_n" }} , 
- 	{ "name": "empty_16_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_16", "role": "read" }} , 
+ 	{ "name": "empty_15_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "empty_15", "role": "dout" }} , 
+ 	{ "name": "empty_15_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_15", "role": "empty_n" }} , 
+ 	{ "name": "empty_15_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_15", "role": "read" }} , 
  	{ "name": "co_1_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":10, "type": "signal", "bundle":{"name": "co_1", "role": "dout" }} , 
  	{ "name": "co_1_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "co_1", "role": "empty_n" }} , 
  	{ "name": "co_1_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "co_1", "role": "read" }} , 
@@ -169,9 +169,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "data_l2_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "data_l2_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "data_l2_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "empty_16", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
+			{"Name" : "empty_15", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
-					{"Name" : "empty_16_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "empty_15_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "co_1", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "co_1_blk_n", "Type" : "RtlSignal"}]},
@@ -200,7 +200,7 @@ set ArgLastReadFirstWriteLatency {
 		data_l2_1 {Type I LastRead 4 FirstWrite -1}
 		data_l2_2 {Type I LastRead 4 FirstWrite -1}
 		data_l2_3 {Type I LastRead 4 FirstWrite -1}
-		empty_16 {Type I LastRead 0 FirstWrite -1}
+		empty_15 {Type I LastRead 0 FirstWrite -1}
 		co_1 {Type I LastRead 0 FirstWrite -1}
 		r {Type I LastRead 0 FirstWrite -1}
 		s {Type I LastRead 0 FirstWrite -1}
@@ -226,7 +226,7 @@ set Spec2ImplPortList {
 	data_l2_1 { ap_memory {  { data_l2_1_address0 mem_address 1 10 }  { data_l2_1_ce0 mem_ce 1 1 }  { data_l2_1_q0 mem_dout 0 8 } } }
 	data_l2_2 { ap_memory {  { data_l2_2_address0 mem_address 1 10 }  { data_l2_2_ce0 mem_ce 1 1 }  { data_l2_2_q0 mem_dout 0 8 } } }
 	data_l2_3 { ap_memory {  { data_l2_3_address0 mem_address 1 10 }  { data_l2_3_ce0 mem_ce 1 1 }  { data_l2_3_q0 mem_dout 0 8 } } }
-	empty_16 { ap_fifo {  { empty_16_dout fifo_data 0 32 }  { empty_16_empty_n fifo_status 0 1 }  { empty_16_read fifo_update 1 1 } } }
+	empty_15 { ap_fifo {  { empty_15_dout fifo_data 0 32 }  { empty_15_empty_n fifo_status 0 1 }  { empty_15_read fifo_update 1 1 } } }
 	co_1 { ap_fifo {  { co_1_dout fifo_data 0 10 }  { co_1_empty_n fifo_status 0 1 }  { co_1_read fifo_update 1 1 } } }
 	r { ap_fifo {  { r_dout fifo_data 0 10 }  { r_empty_n fifo_status 0 1 }  { r_read fifo_update 1 1 } } }
 	s { ap_fifo {  { s_dout fifo_data 0 10 }  { s_empty_n fifo_status 0 1 }  { s_read fifo_update 1 1 } } }

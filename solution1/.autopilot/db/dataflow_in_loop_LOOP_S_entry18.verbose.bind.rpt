@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_in_loop_LOOP_S_entry18'
 ================================================================
-* Date:           Tue Jan 18 00:11:35 2022
+* Date:           Tue Jan 18 00:19:31 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -82,35 +82,35 @@ ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%r_read = read i32 @_ssdm_op_Read.ap
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %co_1"   --->   Operation 6 'read' 'co_1_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2"   --->   Operation 7 'read' 'ko_2_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_read15 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1"   --->   Operation 8 'read' 'p_read15' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read_19 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read"   --->   Operation 9 'read' 'p_read_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read_18 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read"   --->   Operation 9 'read' 'p_read_18' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%empty = trunc i32 %s_read"   --->   Operation 10 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%empty_42 = trunc i32 %r_read"   --->   Operation 11 'trunc' 'empty_42' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%empty_43 = trunc i10 %co_1_read"   --->   Operation 12 'trunc' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%empty_41 = trunc i32 %r_read"   --->   Operation 11 'trunc' 'empty_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%empty_42 = trunc i10 %co_1_read"   --->   Operation 12 'trunc' 'empty_42' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i9 %p_out, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %p_out, i9 %p_read_19" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 14 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %p_out, i9 %p_read_18" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 14 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
 ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i9 %p_out1, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %p_out1, i9 %p_read15" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 16 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 16 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %p_out1, i9 %p_read15" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 16 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
 ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i9 %ko_2_out, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %ko_2_out, i9 %ko_2_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 18 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 18 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i9P, i9 %ko_2_out, i9 %ko_2_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 18 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
 ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i7 %co_1_out, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i7P, i7 %co_1_out, i7 %empty_43" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 20 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 7> <Depth = 2> <FIFO>
+ST_1 : Operation 20 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i7P, i7 %co_1_out, i7 %empty_42" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 20 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 7> <Depth = 2> <FIFO>
 ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %co_1_out2, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 21 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 22 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %co_1_out2, i10 %co_1_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 22 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 22 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %co_1_out2, i10 %co_1_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 22 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
 ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %r_out, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 23 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 24 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %r_out, i32 %r_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 24 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 24 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %r_out, i32 %r_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 24 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
 ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %r_out3, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 26 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %r_out3, i10 %empty_42" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 26 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 26 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %r_out3, i10 %empty_41" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 26 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
 ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %s_out, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 28 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %s_out, i32 %s_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 28 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 28 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %s_out, i32 %s_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 28 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
 ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %s_out4, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 30 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %s_out4, i10 %empty" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 30 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 30 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %s_out4, i10 %empty" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 30 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
 ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_out5, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 32 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %p_out5, i32 %p_read210" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 32 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 32 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %p_out5, i32 %p_read210" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 32 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
 ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %p_out6, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 33 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 34 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %p_out6, i32 %p_read210" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 34 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 34 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i32P, i32 %p_out6, i32 %p_read210" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 34 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
 ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %p_out7, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 35 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 36 [1/1] (1.45ns)   --->   "%write_ln365 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %p_out7, i10 %p_read311" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 36 'write' 'write_ln365' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%ret_ln365 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 37 'ret' 'ret_ln365' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (1.45ns)   --->   "%write_ln368 = write void @_ssdm_op_Write.ap_fifo.i10P, i10 %p_out7, i10 %p_read311" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 36 'write' 'write_ln368' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%ret_ln368 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 37 'ret' 'ret_ln368' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -157,35 +157,35 @@ r_read            (read         ) [ 00]
 co_1_read         (read         ) [ 00]
 ko_2_read         (read         ) [ 00]
 p_read15          (read         ) [ 00]
-p_read_19         (read         ) [ 00]
+p_read_18         (read         ) [ 00]
 empty             (trunc        ) [ 00]
+empty_41          (trunc        ) [ 00]
 empty_42          (trunc        ) [ 00]
-empty_43          (trunc        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
+write_ln368       (write        ) [ 00]
 specinterface_ln0 (specinterface) [ 00]
-write_ln365       (write        ) [ 00]
-ret_ln365         (ret          ) [ 00]
+write_ln368       (write        ) [ 00]
+ret_ln368         (ret          ) [ 00]
 </LifeTime>
 
 <model>
@@ -581,7 +581,7 @@ ret_ln365         (ret          ) [ 00]
 </bind>
 </comp>
 
-<comp id="110" class="1004" name="p_read_19_read_fu_110">
+<comp id="110" class="1004" name="p_read_18_read_fu_110">
 <pin_list>
 <pin id="111" dir="0" index="0" bw="9" slack="0"/>
 <pin id="112" dir="0" index="1" bw="9" slack="0"/>
@@ -589,11 +589,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="p_read_19/1 "/>
+<opset="p_read_18/1 "/>
 </bind>
 </comp>
 
-<comp id="116" class="1004" name="write_ln365_write_fu_116">
+<comp id="116" class="1004" name="write_ln368_write_fu_116">
 <pin_list>
 <pin id="117" dir="0" index="0" bw="0" slack="0"/>
 <pin id="118" dir="0" index="1" bw="9" slack="0"/>
@@ -602,11 +602,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="124" class="1004" name="write_ln365_write_fu_124">
+<comp id="124" class="1004" name="write_ln368_write_fu_124">
 <pin_list>
 <pin id="125" dir="0" index="0" bw="0" slack="0"/>
 <pin id="126" dir="0" index="1" bw="9" slack="0"/>
@@ -615,11 +615,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="132" class="1004" name="write_ln365_write_fu_132">
+<comp id="132" class="1004" name="write_ln368_write_fu_132">
 <pin_list>
 <pin id="133" dir="0" index="0" bw="0" slack="0"/>
 <pin id="134" dir="0" index="1" bw="9" slack="0"/>
@@ -628,11 +628,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="140" class="1004" name="write_ln365_write_fu_140">
+<comp id="140" class="1004" name="write_ln368_write_fu_140">
 <pin_list>
 <pin id="141" dir="0" index="0" bw="0" slack="0"/>
 <pin id="142" dir="0" index="1" bw="7" slack="0"/>
@@ -641,11 +641,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="147" class="1004" name="write_ln365_write_fu_147">
+<comp id="147" class="1004" name="write_ln368_write_fu_147">
 <pin_list>
 <pin id="148" dir="0" index="0" bw="0" slack="0"/>
 <pin id="149" dir="0" index="1" bw="10" slack="0"/>
@@ -654,11 +654,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="155" class="1004" name="write_ln365_write_fu_155">
+<comp id="155" class="1004" name="write_ln368_write_fu_155">
 <pin_list>
 <pin id="156" dir="0" index="0" bw="0" slack="0"/>
 <pin id="157" dir="0" index="1" bw="32" slack="0"/>
@@ -667,11 +667,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="163" class="1004" name="write_ln365_write_fu_163">
+<comp id="163" class="1004" name="write_ln368_write_fu_163">
 <pin_list>
 <pin id="164" dir="0" index="0" bw="0" slack="0"/>
 <pin id="165" dir="0" index="1" bw="10" slack="0"/>
@@ -680,11 +680,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="170" class="1004" name="write_ln365_write_fu_170">
+<comp id="170" class="1004" name="write_ln368_write_fu_170">
 <pin_list>
 <pin id="171" dir="0" index="0" bw="0" slack="0"/>
 <pin id="172" dir="0" index="1" bw="32" slack="0"/>
@@ -693,11 +693,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="178" class="1004" name="write_ln365_write_fu_178">
+<comp id="178" class="1004" name="write_ln368_write_fu_178">
 <pin_list>
 <pin id="179" dir="0" index="0" bw="0" slack="0"/>
 <pin id="180" dir="0" index="1" bw="10" slack="0"/>
@@ -706,11 +706,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="185" class="1004" name="write_ln365_write_fu_185">
+<comp id="185" class="1004" name="write_ln368_write_fu_185">
 <pin_list>
 <pin id="186" dir="0" index="0" bw="0" slack="0"/>
 <pin id="187" dir="0" index="1" bw="32" slack="0"/>
@@ -719,11 +719,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="193" class="1004" name="write_ln365_write_fu_193">
+<comp id="193" class="1004" name="write_ln368_write_fu_193">
 <pin_list>
 <pin id="194" dir="0" index="0" bw="0" slack="0"/>
 <pin id="195" dir="0" index="1" bw="32" slack="0"/>
@@ -732,11 +732,11 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
-<comp id="201" class="1004" name="write_ln365_write_fu_201">
+<comp id="201" class="1004" name="write_ln368_write_fu_201">
 <pin_list>
 <pin id="202" dir="0" index="0" bw="0" slack="0"/>
 <pin id="203" dir="0" index="1" bw="10" slack="0"/>
@@ -745,7 +745,7 @@ ret_ln365         (ret          ) [ 00]
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln365/1 "/>
+<opset="write_ln368/1 "/>
 </bind>
 </comp>
 
@@ -760,25 +760,25 @@ ret_ln365         (ret          ) [ 00]
 </bind>
 </comp>
 
-<comp id="214" class="1004" name="empty_42_fu_214">
+<comp id="214" class="1004" name="empty_41_fu_214">
 <pin_list>
 <pin id="215" dir="0" index="0" bw="32" slack="0"/>
 <pin id="216" dir="1" index="1" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="empty_42/1 "/>
+<opset="empty_41/1 "/>
 </bind>
 </comp>
 
-<comp id="219" class="1004" name="empty_43_fu_219">
+<comp id="219" class="1004" name="empty_42_fu_219">
 <pin_list>
 <pin id="220" dir="0" index="0" bw="10" slack="0"/>
 <pin id="221" dir="1" index="1" bw="7" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="empty_43/1 "/>
+<opset="empty_42/1 "/>
 </bind>
 </comp>
 
@@ -925,9 +925,9 @@ ret_ln365         (ret          ) [ 00]
 	Port: dataflow_in_loop_LOOP_S.entry18 : p_read3 | {1 }
   - Chain level:
 	State 1
-		write_ln365 : 1
-		write_ln365 : 1
-		write_ln365 : 1
+		write_ln368 : 1
+		write_ln368 : 1
+		write_ln368 : 1
 
 
 ============================================================
@@ -945,24 +945,24 @@ ret_ln365         (ret          ) [ 00]
 |          |   co_1_read_read_fu_92   |
 |          |   ko_2_read_read_fu_98   |
 |          |   p_read15_read_fu_104   |
-|          |   p_read_19_read_fu_110  |
+|          |   p_read_18_read_fu_110  |
 |----------|--------------------------|
-|          | write_ln365_write_fu_116 |
-|          | write_ln365_write_fu_124 |
-|          | write_ln365_write_fu_132 |
-|          | write_ln365_write_fu_140 |
-|          | write_ln365_write_fu_147 |
-|   write  | write_ln365_write_fu_155 |
-|          | write_ln365_write_fu_163 |
-|          | write_ln365_write_fu_170 |
-|          | write_ln365_write_fu_178 |
-|          | write_ln365_write_fu_185 |
-|          | write_ln365_write_fu_193 |
-|          | write_ln365_write_fu_201 |
+|          | write_ln368_write_fu_116 |
+|          | write_ln368_write_fu_124 |
+|          | write_ln368_write_fu_132 |
+|          | write_ln368_write_fu_140 |
+|          | write_ln368_write_fu_147 |
+|   write  | write_ln368_write_fu_155 |
+|          | write_ln368_write_fu_163 |
+|          | write_ln368_write_fu_170 |
+|          | write_ln368_write_fu_178 |
+|          | write_ln368_write_fu_185 |
+|          | write_ln368_write_fu_193 |
+|          | write_ln368_write_fu_201 |
 |----------|--------------------------|
 |          |       empty_fu_209       |
-|   trunc  |      empty_42_fu_214     |
-|          |      empty_43_fu_219     |
+|   trunc  |      empty_41_fu_214     |
+|          |      empty_42_fu_219     |
 |----------|--------------------------|
 |   Total  |                          |
 |----------|--------------------------|

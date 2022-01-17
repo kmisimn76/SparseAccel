@@ -88,7 +88,7 @@ void runL2toL1(DPTYPE data_l1buf[512][ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint
 	//data_l1buf_fifo.write(data_l1buf);
 }
 
-void runOutputPass(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l1_input)[ARRAY_K], uint H_TILE, uint W_TILE, uint ko) {
+/*void runOutputPass(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l1_input)[ARRAY_K], uint H_TILE, uint W_TILE, uint ko) {
 	for(uint hi = 0; hi < H_TILE; hi++) {
 		for(uint wi = 0; wi < W_TILE; wi++) {
 			for (int ki = ARRAY_K - 1; ki >= 0; ki--) {
@@ -97,17 +97,18 @@ void runOutputPass(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l1_input)[ARR
 			}
 		}
 	}
-}
+}*/
 
 //void runSysArr(hls::stream<DPTYPE_REGFILE> &weight_regfile_fifo,
 //		hls::stream<DPTYPE_BUF> &data_l1buf_fifo, uint H_TILE, uint W_TILE,
 //// this function has mismatch cycles between synth & cosim
 void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE data_l1buf[512][ARRAY_C],
-		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l1_pass)[ARRAY_K],
+		MACTYPE (*output_l1_pass)[ARRAY_K],
 		uint input_rows, uint H_TILE, uint W_TILE,
 		uint ko, bool isFirst) {
 	//output_l1[0][0] = weight_regfile[H_TILE%4][W_TILE%4];
 	//output_l1[0][1] = data_l1buf[H_TILE%4][W_TILE%4];
+	static MACTYPE output_l1_local[1024][ARRAY_K];
 
 //#pragma HLS DATA_PACK variable=weight_regfile_fifo
 //#pragma HLS DATA_PACK variable=data_l1buf_fifo
@@ -190,22 +191,24 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE data_
 				int hi = ((i - ARRAY_C + 1) - ki) / W_TILE;
 				int wi = ((i - ARRAY_C + 1) - ki) % W_TILE;
 			//	output_l1[ko * H_TILE * W_TILE + hi * W_TILE + wi][ki] =
-				output_l1[hi * W_TILE + wi][ki] =
+				//output_l1_local[hi * W_TILE + wi][ki] =
+				output_l1_local[(i - ARRAY_C + 1) - ki][ki] =
 				//output_l1[ko * H_TILE + hi][wi*ARRAY_K+ki] =
 						output_reg[ki][(ARRAY_C - 1)]; //Cause Pipeline Violation(output_l1 port)
+				output_l1_pass[(i - ARRAY_C + 1) - ki][ki] = output_l1_local[(i - ARRAY_C + 1) - ki][ki];
 			}
 		}
 	} //Loop Input Row
 
-	for (unsigned int wh = 0; wh < H_TILE * W_TILE; wh++) {
+	/*for (unsigned int wh = 0; wh < H_TILE * W_TILE; wh++) {
 	#pragma HLS loop_tripcount min=49 max=49
 			for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
 #pragma HLS unroll
 				output_l1_pass[wh][ki] = output_l1_local[wh][ki];
 			}
-	}
+	}*/
 }
-
+/*
 void runOutputPass(MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1_pass)[ARRAY_K], uint H_TILE, uint W_TILE) {
 	for (unsigned int wh = 0; wh < H_TILE * W_TILE; wh++) {
 	#pragma HLS loop_tripcount min=49 max=49
@@ -214,7 +217,7 @@ void runOutputPass(MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1_pass
 				output_l1_pass[wh][ki] = output_l1_local[wh][ki];
 			}
 	}
-}
+}*/
 
 // Conv SysArr with Double buffering
 void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
@@ -371,7 +374,6 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							//hls::stream<DPTYPE_BUF> data_l1buf_fifo;
 							DPTYPE weight_regfile[ARRAY_K][ARRAY_C];
 							DPTYPE data_l1buf[512][ARRAY_C];
-							static MACTYPE output_l1_local[1024][ARRAY_K];
 		#pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete // Register
 		#pragma HLS ARRAY_PARTITION variable=data_l1buf dim=2 complete // Register
 
@@ -399,7 +401,7 @@ void Conv_sysarr_dbbuf(hls::stream<k2k_data> &bias_in,
 							//==================================================== PE Array
 							//runSysArr(weight_regfile_fifo, data_l1buf_fifo, H_TILE, W_TILE, ko);
 							//runSysArr(weight_regfile, data_l1buf, output_l1, input_rows, H_TILE, W_TILE, ko);
-							runSysArr(weight_regfile, data_l1buf, output_l1_local, output_l1_local, output_l1_pass, input_rows,
+							runSysArr(weight_regfile, data_l1buf, output_l1_pass, input_rows,
 									H_TILE, W_TILE, ko, isFirst);
 							//runOutputPass(output_l1_local, output_l1_pass, H_TILE, W_TILE);
 

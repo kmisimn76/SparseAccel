@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432296000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642432772000">
   <ports id="1" name="p_read" type="PortType" bitwidth="9">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
@@ -128,7 +128,7 @@
       <dataInputObjs>p_read1</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="p_read_19" bitwidth="9" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="p_read_18" bitwidth="9" opcode="read" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
@@ -136,120 +136,132 @@
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="empty_42" rtlName="r_out3_din" bitwidth="10" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="30" name="empty_41" rtlName="r_out3_din" bitwidth="10" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="empty_43" rtlName="co_1_out_din" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="31" name="empty_42" rtlName="co_1_out_din" bitwidth="7" opcode="trunc" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>write</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="p_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="12" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="p_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>p_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_out1_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="13" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_out1_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>p_out1</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="ko_2_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="14" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="ko_2_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>ko_2_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="co_1_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="15" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="co_1_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>co_1_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="co_1_out2_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="16" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="co_1_out2_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>co_1_out2</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="r_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="17" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="r_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>r_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="r_out3_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="18" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="45" name="r_out3_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>r_out3</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="s_out_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="19" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="47" name="s_out_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>s_out</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="s_out4_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="20" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="49" name="s_out4_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>s_out4</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="p_out5_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="21" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="p_out5_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>p_out5</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="p_out6_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="22" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="53" name="p_out6_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>p_out6</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="p_out7_write_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="23" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="55" name="p_out7_write_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="write" m_display="0" m_delay="1.45" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>p_out7</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="_ln365" lineNumber="365" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="ret" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="365" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="56" name="_ln368" lineNumber="368" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr_dbbuf" opcode="ret" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="368" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr_dbbuf"/>
     </node_objs>
     <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
-      <validLinenumbers>365</validLinenumbers>
+      <validLinenumbers>368</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
   <ScheduleInfo time="0"/>
-  <expressionNodes realName="empty_43_fu_219">
-    <nodeIds>31</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_42_fu_214">
+  <expressionNodes realName="empty_41_fu_214">
     <nodeIds>30</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_42_fu_219">
+    <nodeIds>31</nodeIds>
   </expressionNodes>
   <expressionNodes realName="empty_fu_209">
     <nodeIds>29</nodeIds>
   </expressionNodes>
-  <ioNodes realName="write_ln365_write_fu_116">
-    <nodeIds>33</nodeIds>
+  <ioNodes realName="write_ln368_write_fu_124">
+    <nodeIds>35</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_201">
+    <nodeIds>55</nodeIds>
   </ioNodes>
   <ioNodes realName="p_read210_read_fu_74">
     <nodeIds>22</nodeIds>
   </ioNodes>
-  <ioNodes realName="p_read_19_read_fu_110">
-    <nodeIds>28</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_178">
+  <ioNodes realName="write_ln368_write_fu_178">
     <nodeIds>49</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_155">
+  <ioNodes realName="write_ln368_write_fu_155">
     <nodeIds>43</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_147">
-    <nodeIds>41</nodeIds>
+  <ioNodes realName="write_ln368_write_fu_132">
+    <nodeIds>37</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_124">
-    <nodeIds>35</nodeIds>
+  <ioNodes realName="write_ln368_write_fu_163">
+    <nodeIds>45</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_201">
-    <nodeIds>55</nodeIds>
+  <ioNodes realName="write_ln368_write_fu_185">
+    <nodeIds>51</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_140">
+    <nodeIds>39</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_193">
+    <nodeIds>53</nodeIds>
   </ioNodes>
   <ioNodes realName="co_1_read_read_fu_92">
     <nodeIds>25</nodeIds>
   </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_170">
+    <nodeIds>47</nodeIds>
+  </ioNodes>
   <ioNodes realName="r_read_read_fu_86">
     <nodeIds>24</nodeIds>
+  </ioNodes>
+  <ioNodes realName="p_read_18_read_fu_110">
+    <nodeIds>28</nodeIds>
   </ioNodes>
   <ioNodes realName="s_read_read_fu_80">
     <nodeIds>23</nodeIds>
@@ -257,29 +269,17 @@
   <ioNodes realName="p_read15_read_fu_104">
     <nodeIds>27</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_163">
-    <nodeIds>45</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_185">
-    <nodeIds>51</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_140">
-    <nodeIds>39</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_132">
-    <nodeIds>37</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_170">
-    <nodeIds>47</nodeIds>
-  </ioNodes>
   <ioNodes realName="ko_2_read_read_fu_98">
     <nodeIds>26</nodeIds>
+  </ioNodes>
+  <ioNodes realName="write_ln368_write_fu_116">
+    <nodeIds>33</nodeIds>
   </ioNodes>
   <ioNodes realName="p_read311_read_fu_68">
     <nodeIds>21</nodeIds>
   </ioNodes>
-  <ioNodes realName="write_ln365_write_fu_193">
-    <nodeIds>53</nodeIds>
+  <ioNodes realName="write_ln368_write_fu_147">
+    <nodeIds>41</nodeIds>
   </ioNodes>
   <ioPorts name="co_1">
     <contents name="read">

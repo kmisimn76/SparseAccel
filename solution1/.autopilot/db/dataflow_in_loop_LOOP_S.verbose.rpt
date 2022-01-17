@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_in_loop_LOOP_S'
 ================================================================
-* Date:           Tue Jan 18 00:11:37 2022
+* Date:           Tue Jan 18 00:19:33 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -29,20 +29,20 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
     |   min   |   max   |    min   |    max   | min | max |   Type   |
     +---------+---------+----------+----------+-----+-----+----------+
-    |      108|      170| 1.080 us | 1.700 us |   55|  115| dataflow |
+    |       57|      119| 0.570 us | 1.190 us |   55|   64| dataflow |
     +---------+---------+----------+----------+-----+-----+----------+
 
     + Detail: 
         * Instance: 
-        +------------------------------------+---------------------------------+---------+---------+----------+----------+-----+-----+---------+
-        |                                    |                                 |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
-        |              Instance              |              Module             |   min   |   max   |    min   |    max   | min | max |   Type  |
-        +------------------------------------+---------------------------------+---------+---------+----------+----------+-----+-----+---------+
-        |runSysArr_U0                        |runSysArr                        |       52|      114| 0.520 us | 1.140 us |   52|  114|   none  |
-        |runWeight2Reg_U0                    |runWeight2Reg                    |       21|       21| 0.210 us | 0.210 us |   21|   21|   none  |
-        |runL2toL1_U0                        |runL2toL1                        |       54|       54| 0.540 us | 0.540 us |   54|   54|   none  |
-        |dataflow_in_loop_LOOP_S_entry18_U0  |dataflow_in_loop_LOOP_S_entry18  |        0|        0|   0 ns   |   0 ns   |    0|    0|   none  |
-        +------------------------------------+---------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        +------------------------------------+---------------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |                                    |                                 |  Latency (cycles) |  Latency (absolute)  |  Interval | Pipeline|
+        |              Instance              |              Module             |   min   |   max   |    min    |    max   | min | max |   Type  |
+        +------------------------------------+---------------------------------+---------+---------+-----------+----------+-----+-----+---------+
+        |runSysArr_U0                        |runSysArr                        |        1|       63| 10.000 ns | 0.630 us |    1|   63|   none  |
+        |runWeight2Reg_U0                    |runWeight2Reg                    |       21|       21|  0.210 us | 0.210 us |   21|   21|   none  |
+        |runL2toL1_U0                        |runL2toL1                        |       54|       54|  0.540 us | 0.540 us |   54|   54|   none  |
+        |dataflow_in_loop_LOOP_S_entry18_U0  |dataflow_in_loop_LOOP_S_entry18  |        0|        0|    0 ns   |   0 ns   |    0|    0|   none  |
+        +------------------------------------+---------------------------------+---------+---------+-----------+----------+-----+-----+---------+
 
         * Loop: 
         N/A
@@ -59,12 +59,12 @@
 |DSP                  |        -|     -|        -|        -|    -|
 |Expression           |        -|     -|        0|      129|    -|
 |FIFO                 |        -|     -|     2970|     2010|    -|
-|Instance             |        8|    26|     2960|     3394|    -|
+|Instance             |        8|    26|     2700|     3125|    -|
 |Memory               |        8|     -|        0|        0|    -|
 |Multiplexer          |        -|     -|        -|      234|    -|
 |Register             |        -|     -|       29|        -|    -|
 +---------------------+---------+------+---------+---------+-----+
-|Total                |       16|    26|     5959|     5767|    0|
+|Total                |       16|    26|     5699|     5498|    0|
 +---------------------+---------+------+---------+---------+-----+
 |Available SLR        |     1440|  2280|   788160|   394080|  320|
 +---------------------+---------+------+---------+---------+-----+
@@ -82,10 +82,10 @@
     +------------------------------------+---------------------------------+---------+----+------+------+-----+
     |dataflow_in_loop_LOOP_S_entry18_U0  |dataflow_in_loop_LOOP_S_entry18  |        0|   0|     2|   119|    0|
     |runL2toL1_U0                        |runL2toL1                        |        0|   6|   426|   545|    0|
-    |runSysArr_U0                        |runSysArr                        |        8|  19|  2189|  1592|    0|
+    |runSysArr_U0                        |runSysArr                        |        8|  19|  1929|  1323|    0|
     |runWeight2Reg_U0                    |runWeight2Reg                    |        0|   1|   343|  1138|    0|
     +------------------------------------+---------------------------------+---------+----+------+------+-----+
-    |Total                               |                                 |        8|  26|  2960|  3394|    0|
+    |Total                               |                                 |        8|  26|  2700|  3125|    0|
     +------------------------------------+---------------------------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -466,93 +466,93 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.45>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read311 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 6 'read' 'p_read311' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_read210 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 7 'read' 'p_read210' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%s_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %s" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 8 'read' 's_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %r" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 9 'read' 'r_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %co_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 10 'read' 'co_1_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 11 'read' 'ko_2_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read15 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 12 'read' 'p_read15' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read_20 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 13 'read' 'p_read_20' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%s_c9 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 14 'alloca' 's_c9' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%r_c8 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 15 'alloca' 'r_c8' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_c7 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 16 'alloca' 'p_c7' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_c6 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 17 'alloca' 'p_c6' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_c5 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 18 'alloca' 'p_c5' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%s_c4 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 19 'alloca' 's_c4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%s_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 20 'alloca' 's_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%r_c3 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 21 'alloca' 'r_c3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%r_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 22 'alloca' 'r_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%co_1_c2 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 23 'alloca' 'co_1_c2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%co_1_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 24 'alloca' 'co_1_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 7> <Depth = 2> <FIFO>
-ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ko_2_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 25 'alloca' 'ko_2_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
-ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_c1 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 26 'alloca' 'p_c1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
-ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 27 'alloca' 'p_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
-ST_1 : Operation 28 [1/1] (1.15ns)   --->   "%data_l1buf_0 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:373]   --->   Operation 28 'alloca' 'data_l1buf_0' <Predicate = true> <Delay = 1.15>
-ST_1 : Operation 29 [1/1] (1.15ns)   --->   "%data_l1buf_1 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:373]   --->   Operation 29 'alloca' 'data_l1buf_1' <Predicate = true> <Delay = 1.15>
-ST_1 : Operation 30 [1/1] (1.15ns)   --->   "%data_l1buf_2 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:373]   --->   Operation 30 'alloca' 'data_l1buf_2' <Predicate = true> <Delay = 1.15>
-ST_1 : Operation 31 [1/1] (1.15ns)   --->   "%data_l1buf_3 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:373]   --->   Operation 31 'alloca' 'data_l1buf_3' <Predicate = true> <Delay = 1.15>
-ST_1 : Operation 32 [1/1] (1.45ns)   --->   "%call_ln365 = call void @dataflow_in_loop_LOOP_S.entry18, i9 %p_read_20, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s_read, i32 %p_read210, i10 %p_read311, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i10 %co_1_c2, i32 %r_c, i10 %r_c3, i32 %s_c, i10 %s_c4, i32 %p_c5, i32 %p_c6, i10 %p_c7" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 32 'call' 'call_ln365' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read311 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 6 'read' 'p_read311' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_read210 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 7 'read' 'p_read210' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%s_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %s" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 8 'read' 's_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %r" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 9 'read' 'r_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %co_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 10 'read' 'co_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 11 'read' 'ko_2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read15 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 12 'read' 'p_read15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read_19 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 13 'read' 'p_read_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%s_c9 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 14 'alloca' 's_c9' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%r_c8 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 15 'alloca' 'r_c8' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_c7 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 16 'alloca' 'p_c7' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_c6 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 17 'alloca' 'p_c6' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 3> <FIFO>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_c5 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 18 'alloca' 'p_c5' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%s_c4 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 19 'alloca' 's_c4' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%s_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 20 'alloca' 's_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%r_c3 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 21 'alloca' 'r_c3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%r_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 22 'alloca' 'r_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%co_1_c2 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 23 'alloca' 'co_1_c2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%co_1_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 24 'alloca' 'co_1_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 7> <Depth = 2> <FIFO>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%ko_2_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 25 'alloca' 'ko_2_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_c1 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 26 'alloca' 'p_c1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_c = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 27 'alloca' 'p_c' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 9> <Depth = 2> <FIFO>
+ST_1 : Operation 28 [1/1] (1.15ns)   --->   "%data_l1buf_0 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:376]   --->   Operation 28 'alloca' 'data_l1buf_0' <Predicate = true> <Delay = 1.15>
+ST_1 : Operation 29 [1/1] (1.15ns)   --->   "%data_l1buf_1 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:376]   --->   Operation 29 'alloca' 'data_l1buf_1' <Predicate = true> <Delay = 1.15>
+ST_1 : Operation 30 [1/1] (1.15ns)   --->   "%data_l1buf_2 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:376]   --->   Operation 30 'alloca' 'data_l1buf_2' <Predicate = true> <Delay = 1.15>
+ST_1 : Operation 31 [1/1] (1.15ns)   --->   "%data_l1buf_3 = alloca i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:376]   --->   Operation 31 'alloca' 'data_l1buf_3' <Predicate = true> <Delay = 1.15>
+ST_1 : Operation 32 [1/1] (1.45ns)   --->   "%call_ln368 = call void @dataflow_in_loop_LOOP_S.entry18, i9 %p_read_19, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s_read, i32 %p_read210, i10 %p_read311, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i10 %co_1_c2, i32 %r_c, i10 %r_c3, i32 %s_c, i10 %s_c4, i32 %p_c5, i32 %p_c6, i10 %p_c7" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 32 'call' 'call_ln368' <Predicate = true> <Delay = 1.45> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 2 <SV = 1> <Delay = 0.00>
-ST_2 : Operation 33 [2/2] (0.00ns)   --->   "%call_ret = call i128 @runWeight2Reg, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i32 %r_c, i32 %s_c, i32 %r_c8, i32 %s_c9, void %call_ln365, void %call_ln365" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 33 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 34 [2/2] (0.00ns)   --->   "%call_ln395 = call void @runL2toL1, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_c5, i10 %co_1_c2, i10 %r_c3, i10 %s_c4, i10 %p_c7, void %call_ln365" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:395]   --->   Operation 34 'call' 'call_ln395' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 33 [2/2] (0.00ns)   --->   "%call_ret = call i128 @runWeight2Reg, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i32 %r_c, i32 %s_c, i32 %r_c8, i32 %s_c9, void %call_ln368, void %call_ln368" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 33 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 34 [2/2] (0.00ns)   --->   "%call_ln397 = call void @runL2toL1, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_c5, i10 %co_1_c2, i10 %r_c3, i10 %s_c4, i10 %p_c7, void %call_ln368" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397]   --->   Operation 34 'call' 'call_ln397' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 35 [1/2] (0.00ns)   --->   "%call_ret = call i128 @runWeight2Reg, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i32 %r_c, i32 %s_c, i32 %r_c8, i32 %s_c9, void %call_ln365, void %call_ln365" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 35 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%weight_regfile_0_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 36 'extractvalue' 'weight_regfile_0_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%weight_regfile_0_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 37 'extractvalue' 'weight_regfile_0_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%weight_regfile_0_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 38 'extractvalue' 'weight_regfile_0_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%weight_regfile_0_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 39 'extractvalue' 'weight_regfile_0_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%weight_regfile_1_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 40 'extractvalue' 'weight_regfile_1_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%weight_regfile_1_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 41 'extractvalue' 'weight_regfile_1_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%weight_regfile_1_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 42 'extractvalue' 'weight_regfile_1_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%weight_regfile_1_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 43 'extractvalue' 'weight_regfile_1_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%weight_regfile_2_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 44 'extractvalue' 'weight_regfile_2_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%weight_regfile_2_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 45 'extractvalue' 'weight_regfile_2_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%weight_regfile_2_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 46 'extractvalue' 'weight_regfile_2_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%weight_regfile_2_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 47 'extractvalue' 'weight_regfile_2_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%weight_regfile_3_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 48 'extractvalue' 'weight_regfile_3_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%weight_regfile_3_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 49 'extractvalue' 'weight_regfile_3_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%weight_regfile_3_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 50 'extractvalue' 'weight_regfile_3_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%weight_regfile_3_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:390]   --->   Operation 51 'extractvalue' 'weight_regfile_3_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
-ST_3 : Operation 52 [1/2] (0.00ns)   --->   "%call_ln395 = call void @runL2toL1, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_c5, i10 %co_1_c2, i10 %r_c3, i10 %s_c4, i10 %p_c7, void %call_ln365" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:395]   --->   Operation 52 'call' 'call_ln395' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 35 [1/2] (0.00ns)   --->   "%call_ret = call i128 @runWeight2Reg, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_c, i9 %p_c1, i9 %ko_2_c, i7 %co_1_c, i32 %r_c, i32 %s_c, i32 %r_c8, i32 %s_c9, void %call_ln368, void %call_ln368" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 35 'call' 'call_ret' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 36 [1/1] (0.00ns)   --->   "%weight_regfile_0_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 36 'extractvalue' 'weight_regfile_0_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 37 [1/1] (0.00ns)   --->   "%weight_regfile_0_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 37 'extractvalue' 'weight_regfile_0_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 38 [1/1] (0.00ns)   --->   "%weight_regfile_0_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 38 'extractvalue' 'weight_regfile_0_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 39 [1/1] (0.00ns)   --->   "%weight_regfile_0_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 39 'extractvalue' 'weight_regfile_0_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 40 [1/1] (0.00ns)   --->   "%weight_regfile_1_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 40 'extractvalue' 'weight_regfile_1_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 41 [1/1] (0.00ns)   --->   "%weight_regfile_1_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 41 'extractvalue' 'weight_regfile_1_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 42 [1/1] (0.00ns)   --->   "%weight_regfile_1_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 42 'extractvalue' 'weight_regfile_1_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 43 [1/1] (0.00ns)   --->   "%weight_regfile_1_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 43 'extractvalue' 'weight_regfile_1_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 44 [1/1] (0.00ns)   --->   "%weight_regfile_2_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 44 'extractvalue' 'weight_regfile_2_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%weight_regfile_2_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 45 'extractvalue' 'weight_regfile_2_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%weight_regfile_2_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 46 'extractvalue' 'weight_regfile_2_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%weight_regfile_2_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 47 'extractvalue' 'weight_regfile_2_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%weight_regfile_3_0 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 48 'extractvalue' 'weight_regfile_3_0' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%weight_regfile_3_1 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 49 'extractvalue' 'weight_regfile_3_1' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 50 [1/1] (0.00ns)   --->   "%weight_regfile_3_2 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 50 'extractvalue' 'weight_regfile_3_2' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%weight_regfile_3_3 = extractvalue i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:392]   --->   Operation 51 'extractvalue' 'weight_regfile_3_3' <Predicate = true> <Delay = 0.00> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 2> <FIFO>
+ST_3 : Operation 52 [1/2] (0.00ns)   --->   "%call_ln397 = call void @runL2toL1, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_c5, i10 %co_1_c2, i10 %r_c3, i10 %s_c4, i10 %p_c7, void %call_ln368" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397]   --->   Operation 52 'call' 'call_ln397' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 4 <SV = 3> <Delay = 0.00>
-ST_4 : Operation 53 [2/2] (0.00ns)   --->   "%call_ln402 = call void @runSysArr, i8 %weight_regfile_0_0, i8 %weight_regfile_0_1, i8 %weight_regfile_0_2, i8 %weight_regfile_0_3, i8 %weight_regfile_1_0, i8 %weight_regfile_1_1, i8 %weight_regfile_1_2, i8 %weight_regfile_1_3, i8 %weight_regfile_2_0, i8 %weight_regfile_2_1, i8 %weight_regfile_2_2, i8 %weight_regfile_2_3, i8 %weight_regfile_3_0, i8 %weight_regfile_3_1, i8 %weight_regfile_3_2, i8 %weight_regfile_3_3, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %p_c6, i32 %s_c9, i32 %r_c8, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0, void %call_ln395, i128 %call_ret, i128 %call_ret, i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:402]   --->   Operation 53 'call' 'call_ln402' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_4 : Operation 53 [2/2] (0.00ns)   --->   "%call_ln404 = call void @runSysArr, i8 %weight_regfile_0_0, i8 %weight_regfile_0_1, i8 %weight_regfile_0_2, i8 %weight_regfile_0_3, i8 %weight_regfile_1_0, i8 %weight_regfile_1_1, i8 %weight_regfile_1_2, i8 %weight_regfile_1_3, i8 %weight_regfile_2_0, i8 %weight_regfile_2_1, i8 %weight_regfile_2_2, i8 %weight_regfile_2_3, i8 %weight_regfile_3_0, i8 %weight_regfile_3_1, i8 %weight_regfile_3_2, i8 %weight_regfile_3_3, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %p_c6, i32 %s_c9, i32 %r_c8, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0, void %call_ln397, i128 %call_ret, i128 %call_ret, i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:404]   --->   Operation 53 'call' 'call_ln404' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 
 State 5 <SV = 4> <Delay = 0.00>
-ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln365 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @empty_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 54 'specdataflowpipeline' 'specdataflowpipeline_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @p_c_str, i32, void @p_str, void @p_str, i32, i32, i9 %p_c, i9 %p_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 55 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i9 %p_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 56 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%empty_44 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c1_str, i32, void @p_str, void @p_str, i32, i32, i9 %p_c1, i9 %p_c1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 57 'specchannel' 'empty_44' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i9 %p_c1, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 58 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%empty_45 = specchannel i32 @_ssdm_op_SpecChannel, void @ko_OC_2_c_str, i32, void @p_str, void @p_str, i32, i32, i9 %ko_2_c, i9 %ko_2_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 59 'specchannel' 'empty_45' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i9 %ko_2_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 60 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%empty_46 = specchannel i32 @_ssdm_op_SpecChannel, void @co_OC_1_c_str, i32, void @p_str, void @p_str, i32, i32, i7 %co_1_c, i7 %co_1_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 61 'specchannel' 'empty_46' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i7 %co_1_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 62 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @co_OC_1_c2_str, i32, void @p_str, void @p_str, i32, i32, i10 %co_1_c2, i10 %co_1_c2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 63 'specchannel' 'empty_47' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i10 %co_1_c2, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 64 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%empty_48 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c_str, i32, void @p_str, void @p_str, i32, i32, i32 %r_c, i32 %r_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 65 'specchannel' 'empty_48' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %r_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 66 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%empty_49 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c3_str, i32, void @p_str, void @p_str, i32, i32, i10 %r_c3, i10 %r_c3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 67 'specchannel' 'empty_49' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i10 %r_c3, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 68 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%empty_50 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c_str, i32, void @p_str, void @p_str, i32, i32, i32 %s_c, i32 %s_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 69 'specchannel' 'empty_50' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %s_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 70 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%empty_51 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c4_str, i32, void @p_str, void @p_str, i32, i32, i10 %s_c4, i10 %s_c4" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 71 'specchannel' 'empty_51' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i10 %s_c4, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 72 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%empty_52 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c5_str, i32, void @p_str, void @p_str, i32, i32, i32 %p_c5, i32 %p_c5" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 73 'specchannel' 'empty_52' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %p_c5, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 74 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%empty_53 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c6_str, i32, void @p_str, void @p_str, i32, i32, i32 %p_c6, i32 %p_c6" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 75 'specchannel' 'empty_53' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %p_c6, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 76 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%empty_54 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c7_str, i32, void @p_str, void @p_str, i32, i32, i10 %p_c7, i10 %p_c7" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 77 'specchannel' 'empty_54' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i10 %p_c7, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 78 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%empty_55 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c8_str, i32, void @p_str, void @p_str, i32, i32, i32 %r_c8, i32 %r_c8" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 79 'specchannel' 'empty_55' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %r_c8, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 80 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%empty_56 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c9_str, i32, void @p_str, void @p_str, i32, i32, i32 %s_c9, i32 %s_c9" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 81 'specchannel' 'empty_56' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%specinterface_ln365 = specinterface void @_ssdm_op_SpecInterface, i32 %s_c9, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:365]   --->   Operation 82 'specinterface' 'specinterface_ln365' <Predicate = true> <Delay = 0.00>
-ST_5 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln402 = call void @runSysArr, i8 %weight_regfile_0_0, i8 %weight_regfile_0_1, i8 %weight_regfile_0_2, i8 %weight_regfile_0_3, i8 %weight_regfile_1_0, i8 %weight_regfile_1_1, i8 %weight_regfile_1_2, i8 %weight_regfile_1_3, i8 %weight_regfile_2_0, i8 %weight_regfile_2_1, i8 %weight_regfile_2_2, i8 %weight_regfile_2_3, i8 %weight_regfile_3_0, i8 %weight_regfile_3_1, i8 %weight_regfile_3_2, i8 %weight_regfile_3_3, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %p_c6, i32 %s_c9, i32 %r_c8, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0, void %call_ln395, i128 %call_ret, i128 %call_ret, i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:402]   --->   Operation 83 'call' 'call_ln402' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%ret_ln402 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:402]   --->   Operation 84 'ret' 'ret_ln402' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 54 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln368 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @empty_2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 54 'specdataflowpipeline' 'specdataflowpipeline_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%empty = specchannel i32 @_ssdm_op_SpecChannel, void @p_c_str, i32, void @p_str, void @p_str, i32, i32, i9 %p_c, i9 %p_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 55 'specchannel' 'empty' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 56 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i9 %p_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 56 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%empty_43 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c1_str, i32, void @p_str, void @p_str, i32, i32, i9 %p_c1, i9 %p_c1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 57 'specchannel' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i9 %p_c1, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 58 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%empty_44 = specchannel i32 @_ssdm_op_SpecChannel, void @ko_OC_2_c_str, i32, void @p_str, void @p_str, i32, i32, i9 %ko_2_c, i9 %ko_2_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 59 'specchannel' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i9 %ko_2_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 60 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%empty_45 = specchannel i32 @_ssdm_op_SpecChannel, void @co_OC_1_c_str, i32, void @p_str, void @p_str, i32, i32, i7 %co_1_c, i7 %co_1_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 61 'specchannel' 'empty_45' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i7 %co_1_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 62 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "%empty_46 = specchannel i32 @_ssdm_op_SpecChannel, void @co_OC_1_c2_str, i32, void @p_str, void @p_str, i32, i32, i10 %co_1_c2, i10 %co_1_c2" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 63 'specchannel' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i10 %co_1_c2, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 64 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%empty_47 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c_str, i32, void @p_str, void @p_str, i32, i32, i32 %r_c, i32 %r_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 65 'specchannel' 'empty_47' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %r_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 66 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%empty_48 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c3_str, i32, void @p_str, void @p_str, i32, i32, i10 %r_c3, i10 %r_c3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 67 'specchannel' 'empty_48' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i10 %r_c3, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 68 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%empty_49 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c_str, i32, void @p_str, void @p_str, i32, i32, i32 %s_c, i32 %s_c" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 69 'specchannel' 'empty_49' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %s_c, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 70 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%empty_50 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c4_str, i32, void @p_str, void @p_str, i32, i32, i10 %s_c4, i10 %s_c4" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 71 'specchannel' 'empty_50' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i10 %s_c4, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 72 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%empty_51 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c5_str, i32, void @p_str, void @p_str, i32, i32, i32 %p_c5, i32 %p_c5" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 73 'specchannel' 'empty_51' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 74 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %p_c5, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 74 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 75 [1/1] (0.00ns)   --->   "%empty_52 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c6_str, i32, void @p_str, void @p_str, i32, i32, i32 %p_c6, i32 %p_c6" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 75 'specchannel' 'empty_52' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 76 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %p_c6, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 76 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 77 [1/1] (0.00ns)   --->   "%empty_53 = specchannel i32 @_ssdm_op_SpecChannel, void @p_c7_str, i32, void @p_str, void @p_str, i32, i32, i10 %p_c7, i10 %p_c7" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 77 'specchannel' 'empty_53' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 78 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i10 %p_c7, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 78 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 79 [1/1] (0.00ns)   --->   "%empty_54 = specchannel i32 @_ssdm_op_SpecChannel, void @r_c8_str, i32, void @p_str, void @p_str, i32, i32, i32 %r_c8, i32 %r_c8" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 79 'specchannel' 'empty_54' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %r_c8, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 80 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 81 [1/1] (0.00ns)   --->   "%empty_55 = specchannel i32 @_ssdm_op_SpecChannel, void @s_c9_str, i32, void @p_str, void @p_str, i32, i32, i32 %s_c9, i32 %s_c9" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 81 'specchannel' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 82 [1/1] (0.00ns)   --->   "%specinterface_ln368 = specinterface void @_ssdm_op_SpecInterface, i32 %s_c9, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @p_str" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 82 'specinterface' 'specinterface_ln368' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln404 = call void @runSysArr, i8 %weight_regfile_0_0, i8 %weight_regfile_0_1, i8 %weight_regfile_0_2, i8 %weight_regfile_0_3, i8 %weight_regfile_1_0, i8 %weight_regfile_1_1, i8 %weight_regfile_1_2, i8 %weight_regfile_1_3, i8 %weight_regfile_2_0, i8 %weight_regfile_2_1, i8 %weight_regfile_2_2, i8 %weight_regfile_2_3, i8 %weight_regfile_3_0, i8 %weight_regfile_3_1, i8 %weight_regfile_3_2, i8 %weight_regfile_3_3, i8 %data_l1buf_0, i8 %data_l1buf_1, i8 %data_l1buf_2, i8 %data_l1buf_3, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %p_c6, i32 %s_c9, i32 %r_c8, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0, void %call_ln397, i128 %call_ret, i128 %call_ret, i128 %call_ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:404]   --->   Operation 83 'call' 'call_ln404' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_5 : Operation 84 [1/1] (0.00ns)   --->   "%ret_ln404 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:404]   --->   Operation 84 'ret' 'ret_ln404' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -586,10 +586,10 @@ Port [ output_l1_pass_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; sta
 Port [ output_l1_pass_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ output_l1_pass_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ output_l1_pass_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ output_l1_local_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ output_l1_local_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ output_l1_local_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
-Port [ output_l1_local_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[21]; IO mode=ap_memory:ce=0
+Port [ output_l1_local_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ output_l1_local_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ output_l1_local_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
+Port [ output_l1_local_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -603,7 +603,7 @@ r_read                     (read                ) [ 000000]
 co_1_read                  (read                ) [ 000000]
 ko_2_read                  (read                ) [ 000000]
 p_read15                   (read                ) [ 000000]
-p_read_20                  (read                ) [ 000000]
+p_read_19                  (read                ) [ 000000]
 s_c9                       (alloca              ) [ 001111]
 r_c8                       (alloca              ) [ 001111]
 p_c7                       (alloca              ) [ 011111]
@@ -622,7 +622,7 @@ data_l1buf_0               (alloca              ) [ 001111]
 data_l1buf_1               (alloca              ) [ 001111]
 data_l1buf_2               (alloca              ) [ 001111]
 data_l1buf_3               (alloca              ) [ 001111]
-call_ln365                 (call                ) [ 000000]
+call_ln368                 (call                ) [ 000000]
 call_ret                   (call                ) [ 000000]
 weight_regfile_0_0         (extractvalue        ) [ 000011]
 weight_regfile_0_1         (extractvalue        ) [ 000011]
@@ -640,38 +640,38 @@ weight_regfile_3_0         (extractvalue        ) [ 000011]
 weight_regfile_3_1         (extractvalue        ) [ 000011]
 weight_regfile_3_2         (extractvalue        ) [ 000011]
 weight_regfile_3_3         (extractvalue        ) [ 000011]
-call_ln395                 (call                ) [ 000000]
-specdataflowpipeline_ln365 (specdataflowpipeline) [ 000000]
+call_ln397                 (call                ) [ 000000]
+specdataflowpipeline_ln368 (specdataflowpipeline) [ 000000]
 empty                      (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
+empty_43                   (specchannel         ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_44                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_45                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_46                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_47                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_48                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_49                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_50                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_51                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_52                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_53                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_54                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
 empty_55                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
-empty_56                   (specchannel         ) [ 000000]
-specinterface_ln365        (specinterface       ) [ 000000]
-call_ln402                 (call                ) [ 000000]
-ret_ln402                  (ret                 ) [ 000000]
+specinterface_ln368        (specinterface       ) [ 000000]
+call_ln404                 (call                ) [ 000000]
+ret_ln404                  (ret                 ) [ 000000]
 </LifeTime>
 
 <model>
@@ -874,7 +874,7 @@ ret_ln402                  (ret                 ) [ 000000]
 <pin id="41" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_local_3"/><MemPortTyVec>2 1 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_local_3"/><MemPortTyVec>0 1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -884,7 +884,7 @@ ret_ln402                  (ret                 ) [ 000000]
 <pin id="43" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_local_2"/><MemPortTyVec>2 1 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_local_2"/><MemPortTyVec>0 1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -894,7 +894,7 @@ ret_ln402                  (ret                 ) [ 000000]
 <pin id="45" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_local_1"/><MemPortTyVec>2 1 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_local_1"/><MemPortTyVec>0 1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -904,7 +904,7 @@ ret_ln402                  (ret                 ) [ 000000]
 <pin id="47" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_local_0"/><MemPortTyVec>2 1 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_local_0"/><MemPortTyVec>0 1 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -1013,7 +1013,7 @@ ret_ln402                  (ret                 ) [ 000000]
 <pin id="71" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_3"/></StgValue>
+<StgValue><ssdm name="empty_2"/></StgValue>
 </bind>
 </comp>
 
@@ -1497,7 +1497,7 @@ ret_ln402                  (ret                 ) [ 000000]
 </bind>
 </comp>
 
-<comp id="230" class="1004" name="p_read_20_read_fu_230">
+<comp id="230" class="1004" name="p_read_19_read_fu_230">
 <pin_list>
 <pin id="231" dir="0" index="0" bw="9" slack="0"/>
 <pin id="232" dir="0" index="1" bw="9" slack="0"/>
@@ -1505,7 +1505,7 @@ ret_ln402                  (ret                 ) [ 000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="p_read_20/1 "/>
+<opset="p_read_19/1 "/>
 </bind>
 </comp>
 
@@ -1547,7 +1547,7 @@ ret_ln402                  (ret                 ) [ 000000]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln402/4 "/>
+<opset="call_ln404/4 "/>
 </bind>
 </comp>
 
@@ -1594,11 +1594,11 @@ ret_ln402                  (ret                 ) [ 000000]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln395/2 "/>
+<opset="call_ln397/2 "/>
 </bind>
 </comp>
 
-<comp id="320" class="1004" name="call_ln365_dataflow_in_loop_LOOP_S_entry18_fu_320">
+<comp id="320" class="1004" name="call_ln368_dataflow_in_loop_LOOP_S_entry18_fu_320">
 <pin_list>
 <pin id="321" dir="0" index="0" bw="0" slack="0"/>
 <pin id="322" dir="0" index="1" bw="9" slack="0"/>
@@ -1625,7 +1625,7 @@ ret_ln402                  (ret                 ) [ 000000]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln365/1 "/>
+<opset="call_ln368/1 "/>
 </bind>
 </comp>
 
@@ -2462,7 +2462,7 @@ ret_ln402                  (ret                 ) [ 000000]
 	Port: dataflow_in_loop_LOOP_S : output_l1_local_0 | {4 5 }
   - Chain level:
 	State 1
-		call_ln365 : 1
+		call_ln368 : 1
 	State 2
 	State 3
 		weight_regfile_0_0 : 1
@@ -2493,10 +2493,10 @@ ret_ln402                  (ret                 ) [ 000000]
 |----------|---------------------------------------------------|---------|---------|---------|---------|
 | Operation|                  Functional Unit                  |   DSP   |  Delay  |    FF   |   LUT   |
 |----------|---------------------------------------------------|---------|---------|---------|---------|
-|          |                grp_runSysArr_fu_236               |    19   |  24.837 |   2696  |   1364  |
+|          |                grp_runSysArr_fu_236               |    19   |  22.368 |   2497  |   1245  |
 |   call   |              grp_runWeight2Reg_fu_279             |    1    | 3.02925 |   252   |   819   |
 |          |                grp_runL2toL1_fu_299               |    6    |  4.824  |   479   |   450   |
-|          | call_ln365_dataflow_in_loop_LOOP_S_entry18_fu_320 |    0    |    0    |    0    |    0    |
+|          | call_ln368_dataflow_in_loop_LOOP_S_entry18_fu_320 |    0    |    0    |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|---------|---------|
 |          |               p_read311_read_fu_188               |    0    |    0    |    0    |    0    |
 |          |               p_read210_read_fu_194               |    0    |    0    |    0    |    0    |
@@ -2505,7 +2505,7 @@ ret_ln402                  (ret                 ) [ 000000]
 |          |               co_1_read_read_fu_212               |    0    |    0    |    0    |    0    |
 |          |               ko_2_read_read_fu_218               |    0    |    0    |    0    |    0    |
 |          |                p_read15_read_fu_224               |    0    |    0    |    0    |    0    |
-|          |               p_read_20_read_fu_230               |    0    |    0    |    0    |    0    |
+|          |               p_read_19_read_fu_230               |    0    |    0    |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|---------|---------|
 |          |             weight_regfile_0_0_fu_352             |    0    |    0    |    0    |    0    |
 |          |             weight_regfile_0_1_fu_356             |    0    |    0    |    0    |    0    |
@@ -2524,7 +2524,7 @@ ret_ln402                  (ret                 ) [ 000000]
 |          |             weight_regfile_3_2_fu_408             |    0    |    0    |    0    |    0    |
 |          |             weight_regfile_3_3_fu_412             |    0    |    0    |    0    |    0    |
 |----------|---------------------------------------------------|---------|---------|---------|---------|
-|   Total  |                                                   |    26   | 32.6903 |   3427  |   2633  |
+|   Total  |                                                   |    26   | 30.2213 |   3228  |   2514  |
 |----------|---------------------------------------------------|---------|---------|---------|---------|
 
 Memories:
@@ -2590,10 +2590,10 @@ Memories:
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    -   |   26   |   32   |  3427  |  2633  |
+|  Function |    -   |   26   |   30   |  3228  |  2514  |
 |   Memory  |    8   |    -   |    -   |    0   |    0   |
 |Multiplexer|    -   |    -   |    -   |    -   |    -   |
 |  Register |    -   |    -   |    -   |   394  |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    8   |   26   |   32   |  3821  |  2633  |
+|   Total   |    8   |   26   |   30   |  3622  |  2514  |
 +-----------+--------+--------+--------+--------+--------+

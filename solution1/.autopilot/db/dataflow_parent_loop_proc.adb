@@ -815,7 +815,7 @@
             <Obj>
               <type>0</type>
               <id>32</id>
-              <name>p_read_18</name>
+              <name>p_read_17</name>
               <fileName/>
               <fileDirectory/>
               <lineNumber>0</lineNumber>
@@ -960,10 +960,10 @@
             <Obj>
               <type>0</type>
               <id>37</id>
-              <name>icmp_ln360</name>
+              <name>icmp_ln363</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>360</lineNumber>
+              <lineNumber>363</lineNumber>
               <contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
               <contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
               <inlineStackInfo>
@@ -979,7 +979,7 @@
                         <first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
                         <second>Conv_sysarr_dbbuf</second>
                       </first>
-                      <second>360</second>
+                      <second>363</second>
                     </item>
                   </second>
                 </item>
@@ -1013,7 +1013,7 @@
               <name>s_1</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>360</lineNumber>
+              <lineNumber>363</lineNumber>
               <contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
               <contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
               <inlineStackInfo>
@@ -1029,7 +1029,7 @@
                         <first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
                         <second>Conv_sysarr_dbbuf</second>
                       </first>
-                      <second>360</second>
+                      <second>363</second>
                     </item>
                   </second>
                 </item>
@@ -1060,10 +1060,10 @@
             <Obj>
               <type>0</type>
               <id>40</id>
-              <name>br_ln360</name>
+              <name>br_ln363</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>360</lineNumber>
+              <lineNumber>363</lineNumber>
               <contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
               <contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
               <inlineStackInfo>
@@ -1079,7 +1079,7 @@
                         <first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
                         <second>Conv_sysarr_dbbuf</second>
                       </first>
-                      <second>360</second>
+                      <second>363</second>
                     </item>
                   </second>
                 </item>
@@ -1111,10 +1111,10 @@
             <Obj>
               <type>0</type>
               <id>44</id>
-              <name>_ln402</name>
+              <name>_ln404</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>402</lineNumber>
+              <lineNumber>404</lineNumber>
               <contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
               <contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
               <inlineStackInfo>
@@ -1130,7 +1130,7 @@
                         <first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
                         <second>Conv_sysarr_dbbuf</second>
                       </first>
-                      <second>402</second>
+                      <second>404</second>
                     </item>
                   </second>
                 </item>
@@ -1184,10 +1184,10 @@
             <Obj>
               <type>0</type>
               <id>45</id>
-              <name>br_ln360</name>
+              <name>br_ln363</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
-              <lineNumber>360</lineNumber>
+              <lineNumber>363</lineNumber>
               <contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
               <contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
               <inlineStackInfo>
@@ -1203,7 +1203,7 @@
                         <first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
                         <second>Conv_sysarr_dbbuf</second>
                       </first>
-                      <second>360</second>
+                      <second>363</second>
                     </item>
                   </second>
                 </item>
@@ -1829,8 +1829,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>-1</mMinTripCount>
         <mMaxTripCount>-1</mMaxTripCount>
-        <mMinLatency>220</mMinLatency>
-        <mMaxLatency>402</mMaxLatency>
+        <mMinLatency>169</mMinLatency>
+        <mMaxLatency>249</mMaxLatency>
         <mIsDfPipe>0</mIsDfPipe>
         <mDfPipe class_id="-1"/>
       </item>
@@ -1876,8 +1876,8 @@
         <mDepth>-1</mDepth>
         <mMinTripCount>3</mMinTripCount>
         <mMaxTripCount>3</mMaxTripCount>
-        <mMinLatency>219</mMinLatency>
-        <mMaxLatency>401</mMaxLatency>
+        <mMinLatency>168</mMinLatency>
+        <mMaxLatency>248</mMaxLatency>
         <mIsDfPipe>1</mIsDfPipe>
         <mDfPipe class_id="23" tracking_level="1" version="0" object_id="_97">
           <port_list class_id="24" tracking_level="0" version="0">
@@ -2336,11 +2336,11 @@
             </item>
             <item>
               <first>FF</first>
-              <second>5959</second>
+              <second>5699</second>
             </item>
             <item>
               <first>LUT</first>
-              <second>5767</second>
+              <second>5498</second>
             </item>
           </second>
         </item>
@@ -2837,7 +2837,7 @@
       <count>3</count>
       <item_version>0</item_version>
       <item class_id="64" tracking_level="0" version="0">
-        <first>icmp_ln360_fu_179</first>
+        <first>icmp_ln363_fu_179</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -2926,7 +2926,7 @@
         </second>
       </item>
       <item>
-        <first>p_read_18_read_fu_110</first>
+        <first>p_read_17_read_fu_110</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3106,7 +3106,7 @@
         </second>
       </item>
       <item>
-        <first>icmp_ln360_reg_230</first>
+        <first>icmp_ln363_reg_230</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -3146,7 +3146,7 @@
         </second>
       </item>
       <item>
-        <first>p_read_18_reg_220</first>
+        <first>p_read_17_reg_220</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

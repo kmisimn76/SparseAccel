@@ -36,7 +36,7 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 4;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 5910;
+parameter LATENCY_ESTIMATION = 4074;
 parameter LENGTH_bias_in_V = 9;
 parameter LENGTH_weight_in_V = 144;
 parameter LENGTH_data_in_V = 81;
@@ -1077,14 +1077,6 @@ end
 ////////////////////////////////////////////
 
 `ifndef POST_SYN
-
-// Dependence Check (WAR) "ap_enable_operation_170"(R:SV3-4) -> "ap_enable_operation_330"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-
-// Dependence Check (WAR) "ap_enable_operation_174"(R:SV3-4) -> "ap_enable_operation_334"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-
-// Dependence Check (WAR) "ap_enable_operation_179"(R:SV3-4) -> "ap_enable_operation_338"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-
-// Dependence Check (WAR) "ap_enable_operation_181"(R:SV3-4) -> "ap_enable_operation_341"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
 
 `endif
 

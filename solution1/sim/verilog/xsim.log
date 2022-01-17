@@ -2,8 +2,8 @@
 # xsim v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Jan 18 00:12:57 2022
-# Process ID: 15950
+# Start of session at: Tue Jan 18 00:20:06 2022
+# Process ID: 24754
 # Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog
 # Command line: xsim -source {xsim.dir/Conv_sysarr_dbbuf/xsim_script.tcl}
 # Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.log
@@ -99,11 +99,15 @@ WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of o
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 4 [0.00%] @ "1125000"
-// RTL Simulation : 1 / 4 [100.00%] @ "55445000"
-// RTL Simulation : 2 / 4 [100.00%] @ "109755000"
-// RTL Simulation : 3 / 4 [100.00%] @ "164065000"
-// RTL Simulation : 4 / 4 [100.00%] @ "218375000"
+// RTL Simulation : 1 / 4 [100.00%] @ "37085000"
+// RTL Simulation : 2 / 4 [100.00%] @ "73035000"
+// RTL Simulation : 3 / 4 [100.00%] @ "108985000"
+// RTL Simulation : 4 / 4 [100.00%] @ "144935000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 218415 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dbbuf.autotb.v" Line 382
-run: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 11822.320 ; gain = 0.000 ; free physical = 337 ; free virtual = 61376
-xsim: Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 11822.320 ; gain = 760.902 ; free physical = 364 ; free virtual = 61367
+$finish called at time : 144975 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dbbuf.autotb.v" Line 382
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 12238.242 ; gain = 0.000 ; free physical = 321 ; free virtual = 61369
+xsim: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 12238.242 ; gain = 1176.824 ; free physical = 311 ; free virtual = 61368
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting xsim at Tue Jan 18 00:21:27 2022...
