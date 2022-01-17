@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runL2toL1'
 ================================================================
-* Date:           Tue Jan 18 00:19:31 2022
+* Date:           Tue Jan 18 02:37:19 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -95,85 +95,85 @@ ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface v
 ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %co_1, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %empty_15, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i10 %empty, void @ap_fifo_str, i32, i32, void @p_str, i32, i32, void @p_str, void @p_str, void @p_str, i32, i32, i32, i32, void @p_str, void @ScalarProp_str"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (1.45ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %co_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:335->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 13 'read' 'co_1_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 14 [1/1] (1.45ns)   --->   "%r_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %r" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 14 'read' 'r_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 15 [1/1] (1.45ns)   --->   "%s_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %s" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 15 'read' 's_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 16 [1/1] (1.45ns)   --->   "%H_TILE_tmp = read i32 @_ssdm_op_Read.ap_fifo.i32P, i32 %empty_15"   --->   Operation 16 'read' 'H_TILE_tmp' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
-ST_1 : Operation 17 [1/1] (1.45ns)   --->   "%tmp = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %empty"   --->   Operation 17 'read' 'tmp' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%trunc_ln53 = trunc i32 %H_TILE_tmp" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:53->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 18 'trunc' 'trunc_ln53' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (1.70ns)   --->   "%mul9_i_i = mul i10 %tmp, i10 %co_1_read"   --->   Operation 19 'mul' 'mul9_i_i' <Predicate = true> <Delay = 1.70> <CoreInst = "Multiplier">   --->   Core 4 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%cast = zext i32 %H_TILE_tmp"   --->   Operation 20 'zext' 'cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (1.45ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %co_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:192->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 13 'read' 'co_1_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 14 [1/1] (1.45ns)   --->   "%r_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %r" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:210->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 14 'read' 'r_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 15 [1/1] (1.45ns)   --->   "%s_read = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %s" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 15 'read' 's_read' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 16 [1/1] (1.45ns)   --->   "%tmp = read i32 @_ssdm_op_Read.ap_fifo.i32P, i32 %empty_15"   --->   Operation 16 'read' 'tmp' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 2> <FIFO>
+ST_1 : Operation 17 [1/1] (1.45ns)   --->   "%tmp_10 = read i10 @_ssdm_op_Read.ap_fifo.i10P, i10 %empty"   --->   Operation 17 'read' 'tmp_10' <Predicate = true> <Delay = 1.45> <CoreInst = "FIFO_SRL">   --->   Core 21 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 1.45> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 10> <Depth = 2> <FIFO>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%empty_39 = trunc i32 %tmp"   --->   Operation 18 'trunc' 'empty_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.70ns)   --->   "%mul9_i_i = mul i10 %tmp_10, i10 %co_1_read"   --->   Operation 19 'mul' 'mul9_i_i' <Predicate = true> <Delay = 1.70> <CoreInst = "Multiplier">   --->   Core 4 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%cast = zext i32 %tmp"   --->   Operation 20 'zext' 'cast' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 21 [1/1] (3.17ns)   --->   "%bound = mul i64 %cast, i64 %cast"   --->   Operation 21 'mul' 'bound' <Predicate = true> <Delay = 3.17> <CoreInst = "Multiplier">   --->   Core 4 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.17> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 22 [1/1] (0.60ns)   --->   "%br_ln59 = br void %bb.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 22 'br' 'br_ln59' <Predicate = true> <Delay = 0.60>
+ST_1 : Operation 22 [1/1] (0.60ns)   --->   "%br_ln27 = br void %bb.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 22 'br' 'br_ln27' <Predicate = true> <Delay = 0.60>
 
 State 2 <SV = 1> <Delay = 4.52>
-ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i64, void %entry, i64 %add_ln59_2, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 23 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%hi = phi i32, void %entry, i32 %select_ln59_1, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 24 'phi' 'hi' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%wi = phi i32, void %entry, i32 %add_ln65, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:65->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 25 'phi' 'wi' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i64, void %entry, i64 %add_ln27_2, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 23 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%hi = phi i32, void %entry, i32 %select_ln27_1, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 24 'phi' 'hi' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (0.00ns)   --->   "%wi = phi i32, void %entry, i32 %add_ln29, void %._crit_edge.loopexit.i.i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:29->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 25 'phi' 'wi' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 26 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 27 [1/1] (1.06ns)   --->   "%icmp_ln59 = icmp_eq  i64 %indvar_flatten, i64 %bound" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 27 'icmp' 'icmp_ln59' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 28 [1/1] (1.14ns)   --->   "%add_ln59_2 = add i64 %indvar_flatten, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 28 'add' 'add_ln59_2' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln59 = br i1 %icmp_ln59, void %._crit_edge.loopexit.i.i, void %.exit" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 29 'br' 'br_ln59' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 30 [1/1] (0.85ns)   --->   "%icmp_ln65 = icmp_eq  i32 %wi, i32 %H_TILE_tmp" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:65->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 30 'icmp' 'icmp_ln65' <Predicate = (!icmp_ln59)> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 31 [1/1] (0.22ns)   --->   "%select_ln59 = select i1 %icmp_ln65, i32, i32 %wi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 31 'select' 'select_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.22> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 32 [1/1] (0.88ns)   --->   "%add_ln59_3 = add i32, i32 %hi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 32 'add' 'add_ln59_3' <Predicate = (!icmp_ln59)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 33 [1/1] (0.22ns)   --->   "%select_ln59_1 = select i1 %icmp_ln65, i32 %add_ln59_3, i32 %hi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 33 'select' 'select_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 0.22> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
-ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln59 = trunc i32 %select_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 34 'trunc' 'trunc_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_2 : Operation 35 [1/1] (0.72ns)   --->   "%add_ln59 = add i10 %r_read, i10 %trunc_ln59" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 35 'add' 'add_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 36 [1/1] (1.69ns) (grouped into DSP with root node tmp1)   --->   "%add_ln59_1 = add i10 %add_ln59, i10 %mul9_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 36 'add' 'add_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 1.69> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_2 : Operation 37 [3/3] (0.99ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln59 = mul i10 %tmp, i10 %add_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 37 'mul' 'mul_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln59_1 = trunc i32 %select_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 38 'trunc' 'trunc_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_2 : Operation 39 [3/3] (0.99ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln59_1 = mul i9 %trunc_ln53, i9 %trunc_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 39 'mul' 'mul_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty_39 = trunc i32 %select_ln59" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 40 'trunc' 'empty_39' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%empty_40 = trunc i32 %select_ln59" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 41 'trunc' 'empty_40' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_2 : Operation 42 [1/1] (0.88ns)   --->   "%add_ln65 = add i32, i32 %select_ln59" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:65->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 42 'add' 'add_ln65' <Predicate = (!icmp_ln59)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 27 [1/1] (1.06ns)   --->   "%icmp_ln27 = icmp_eq  i64 %indvar_flatten, i64 %bound" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 27 'icmp' 'icmp_ln27' <Predicate = true> <Delay = 1.06> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (1.14ns)   --->   "%add_ln27_2 = add i64 %indvar_flatten, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 28 'add' 'add_ln27_2' <Predicate = true> <Delay = 1.14> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%br_ln27 = br i1 %icmp_ln27, void %._crit_edge.loopexit.i.i, void %.exit" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 29 'br' 'br_ln27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 30 [1/1] (0.85ns)   --->   "%icmp_ln29 = icmp_eq  i32 %wi, i32 %tmp" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:29->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 30 'icmp' 'icmp_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.22ns)   --->   "%select_ln27 = select i1 %icmp_ln29, i32, i32 %wi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 31 'select' 'select_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.22> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 32 [1/1] (0.88ns)   --->   "%add_ln27_3 = add i32, i32 %hi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 32 'add' 'add_ln27_3' <Predicate = (!icmp_ln27)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.22ns)   --->   "%select_ln27_1 = select i1 %icmp_ln29, i32 %add_ln27_3, i32 %hi" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 33 'select' 'select_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.22> <CoreInst = "Sel">   --->   Core 11 'Sel' <Latency = 0> <II = 1> <Delay = 0.22> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%trunc_ln27 = trunc i32 %select_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 34 'trunc' 'trunc_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.72ns)   --->   "%add_ln27 = add i10 %r_read, i10 %trunc_ln27" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 35 'add' 'add_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 36 [1/1] (1.69ns) (grouped into DSP with root node tmp1)   --->   "%add_ln27_1 = add i10 %add_ln27, i10 %mul9_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 36 'add' 'add_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 1.69> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 37 [3/3] (0.99ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln27 = mul i10 %tmp_10, i10 %add_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 37 'mul' 'mul_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%trunc_ln27_1 = trunc i32 %select_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 38 'trunc' 'trunc_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 39 [3/3] (0.99ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln27_1 = mul i9 %empty_39, i9 %trunc_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 39 'mul' 'mul_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%empty_40 = trunc i32 %select_ln27" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 40 'trunc' 'empty_40' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%empty_41 = trunc i32 %select_ln27" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 41 'trunc' 'empty_41' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.88ns)   --->   "%add_ln29 = add i32, i32 %select_ln27" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:29->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 42 'add' 'add_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 
 State 3 <SV = 2> <Delay = 0.99>
-ST_3 : Operation 43 [2/3] (0.99ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln59 = mul i10 %tmp, i10 %add_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 43 'mul' 'mul_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_3 : Operation 44 [2/3] (0.99ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln59_1 = mul i9 %trunc_ln53, i9 %trunc_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 44 'mul' 'mul_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 43 [2/3] (0.99ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln27 = mul i10 %tmp_10, i10 %add_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 43 'mul' 'mul_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_3 : Operation 44 [2/3] (0.99ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln27_1 = mul i9 %empty_39, i9 %trunc_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 44 'mul' 'mul_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.99> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
 
 State 4 <SV = 3> <Delay = 0.64>
-ST_4 : Operation 45 [1/3] (0.00ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln59 = mul i10 %tmp, i10 %add_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 45 'mul' 'mul_ln59' <Predicate = (!icmp_ln59)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_4 : Operation 46 [1/3] (0.00ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln59_1 = mul i9 %trunc_ln53, i9 %trunc_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 46 'mul' 'mul_ln59_1' <Predicate = (!icmp_ln59)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_4 : Operation 47 [2/2] (0.64ns) (root node of the DSP)   --->   "%tmp1 = add i10 %mul_ln59, i10 %empty_39" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 47 'add' 'tmp1' <Predicate = (!icmp_ln59)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_4 : Operation 48 [2/2] (0.64ns) (root node of the DSP)   --->   "%add17_i_i = add i9 %empty_40, i9 %mul_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 48 'add' 'add17_i_i' <Predicate = (!icmp_ln59)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 45 [1/3] (0.00ns) (grouped into DSP with root node tmp1)   --->   "%mul_ln27 = mul i10 %tmp_10, i10 %add_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 45 'mul' 'mul_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 46 [1/3] (0.00ns) (grouped into DSP with root node add17_i_i)   --->   "%mul_ln27_1 = mul i9 %empty_39, i9 %trunc_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 46 'mul' 'mul_ln27_1' <Predicate = (!icmp_ln27)> <Delay = 0.00> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 47 [2/2] (0.64ns) (root node of the DSP)   --->   "%tmp1 = add i10 %mul_ln27, i10 %empty_40" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 47 'add' 'tmp1' <Predicate = (!icmp_ln27)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_4 : Operation 48 [2/2] (0.64ns) (root node of the DSP)   --->   "%add17_i_i = add i9 %empty_41, i9 %mul_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 48 'add' 'add17_i_i' <Predicate = (!icmp_ln27)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
 
 State 5 <SV = 4> <Delay = 2.52>
-ST_5 : Operation 49 [1/2] (0.64ns) (root node of the DSP)   --->   "%tmp1 = add i10 %mul_ln59, i10 %empty_39" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 49 'add' 'tmp1' <Predicate = (!icmp_ln59)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_5 : Operation 50 [1/1] (0.72ns)   --->   "%add13_i_i = add i10 %tmp1, i10 %s_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 50 'add' 'add13_i_i' <Predicate = (!icmp_ln59)> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%idxprom_i_i = zext i10 %add13_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 51 'zext' 'idxprom_i_i' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_5 : Operation 52 [1/2] (0.64ns) (root node of the DSP)   --->   "%add17_i_i = add i9 %empty_40, i9 %mul_ln59_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 52 'add' 'add17_i_i' <Predicate = (!icmp_ln59)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
-ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%data_l2_0_addr = getelementptr i8 %data_l2_0, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 53 'getelementptr' 'data_l2_0_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_5 : Operation 54 [2/2] (1.15ns)   --->   "%data_l2_0_load = load i10 %data_l2_0_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 54 'load' 'data_l2_0_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%data_l2_1_addr = getelementptr i8 %data_l2_1, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 55 'getelementptr' 'data_l2_1_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_5 : Operation 56 [2/2] (1.15ns)   --->   "%data_l2_1_load = load i10 %data_l2_1_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 56 'load' 'data_l2_1_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%data_l2_2_addr = getelementptr i8 %data_l2_2, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 57 'getelementptr' 'data_l2_2_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_5 : Operation 58 [2/2] (1.15ns)   --->   "%data_l2_2_load = load i10 %data_l2_2_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 58 'load' 'data_l2_2_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%data_l2_3_addr = getelementptr i8 %data_l2_3, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 59 'getelementptr' 'data_l2_3_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_5 : Operation 60 [2/2] (1.15ns)   --->   "%data_l2_3_load = load i10 %data_l2_3_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 60 'load' 'data_l2_3_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_5 : Operation 49 [1/2] (0.64ns) (root node of the DSP)   --->   "%tmp1 = add i10 %mul_ln27, i10 %empty_40" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 49 'add' 'tmp1' <Predicate = (!icmp_ln27)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 50 [1/1] (0.72ns)   --->   "%add13_i_i = add i10 %tmp1, i10 %s_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 50 'add' 'add13_i_i' <Predicate = (!icmp_ln27)> <Delay = 0.72> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.72> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 51 [1/1] (0.00ns)   --->   "%idxprom_i_i = zext i10 %add13_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 51 'zext' 'idxprom_i_i' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_5 : Operation 52 [1/2] (0.64ns) (root node of the DSP)   --->   "%add17_i_i = add i9 %empty_41, i9 %mul_ln27_1" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 52 'add' 'add17_i_i' <Predicate = (!icmp_ln27)> <Delay = 0.64> <CoreInst = "DSP48">   --->   Core 71 'DSP48' <Latency = 3> <II = 1> <Delay = 0.53> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 2> <OutPorts = 1> <Sync> <CReg>
+ST_5 : Operation 53 [1/1] (0.00ns)   --->   "%data_l2_0_addr = getelementptr i8 %data_l2_0, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 53 'getelementptr' 'data_l2_0_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_5 : Operation 54 [2/2] (1.15ns)   --->   "%data_l2_0_load = load i10 %data_l2_0_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 54 'load' 'data_l2_0_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_5 : Operation 55 [1/1] (0.00ns)   --->   "%data_l2_1_addr = getelementptr i8 %data_l2_1, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 55 'getelementptr' 'data_l2_1_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_5 : Operation 56 [2/2] (1.15ns)   --->   "%data_l2_1_load = load i10 %data_l2_1_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 56 'load' 'data_l2_1_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%data_l2_2_addr = getelementptr i8 %data_l2_2, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 57 'getelementptr' 'data_l2_2_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_5 : Operation 58 [2/2] (1.15ns)   --->   "%data_l2_2_load = load i10 %data_l2_2_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 58 'load' 'data_l2_2_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%data_l2_3_addr = getelementptr i8 %data_l2_3, i64, i64 %idxprom_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 59 'getelementptr' 'data_l2_3_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_5 : Operation 60 [2/2] (1.15ns)   --->   "%data_l2_3_load = load i10 %data_l2_3_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 60 'load' 'data_l2_3_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
 
 State 6 <SV = 5> <Delay = 2.31>
-ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @LOOP_L2_H_LOOP_L2_W_str"   --->   Operation 61 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 62 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 63 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specloopname_ln65 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:65->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 64 'specloopname' 'specloopname_ln65' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%idxprom18_i_i = zext i9 %add17_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:59->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 65 'zext' 'idxprom18_i_i' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 66 [1/2] (1.15ns)   --->   "%data_l2_0_load = load i10 %data_l2_0_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 66 'load' 'data_l2_0_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%data_l1buf_018_addr = getelementptr i8 %data_l1buf_018, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 67 'getelementptr' 'data_l1buf_018_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 68 [1/1] (1.15ns)   --->   "%store_ln79 = store i8 %data_l2_0_load, i9 %data_l1buf_018_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 68 'store' 'store_ln79' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
-ST_6 : Operation 69 [1/2] (1.15ns)   --->   "%data_l2_1_load = load i10 %data_l2_1_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 69 'load' 'data_l2_1_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%data_l1buf_119_addr = getelementptr i8 %data_l1buf_119, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 70 'getelementptr' 'data_l1buf_119_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 71 [1/1] (1.15ns)   --->   "%store_ln79 = store i8 %data_l2_1_load, i9 %data_l1buf_119_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 71 'store' 'store_ln79' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
-ST_6 : Operation 72 [1/2] (1.15ns)   --->   "%data_l2_2_load = load i10 %data_l2_2_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 72 'load' 'data_l2_2_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%data_l1buf_220_addr = getelementptr i8 %data_l1buf_220, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 73 'getelementptr' 'data_l1buf_220_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 74 [1/1] (1.15ns)   --->   "%store_ln79 = store i8 %data_l2_2_load, i9 %data_l1buf_220_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 74 'store' 'store_ln79' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
-ST_6 : Operation 75 [1/2] (1.15ns)   --->   "%data_l2_3_load = load i10 %data_l2_3_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:83->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 75 'load' 'data_l2_3_load' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
-ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%data_l1buf_321_addr = getelementptr i8 %data_l1buf_321, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 76 'getelementptr' 'data_l1buf_321_addr' <Predicate = (!icmp_ln59)> <Delay = 0.00>
-ST_6 : Operation 77 [1/1] (1.15ns)   --->   "%store_ln79 = store i8 %data_l2_3_load, i9 %data_l1buf_321_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:79->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:397->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 77 'store' 'store_ln79' <Predicate = (!icmp_ln59)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
-ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%br_ln0 = br void %bb.i.i"   --->   Operation 78 'br' 'br_ln0' <Predicate = (!icmp_ln59)> <Delay = 0.00>
+ST_6 : Operation 61 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @LOOP_L2_H_LOOP_L2_W_str"   --->   Operation 61 'specloopname' 'specloopname_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 62 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64"   --->   Operation 62 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 63 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32, i32, i32, i32, void @p_str"   --->   Operation 63 'specpipeline' 'specpipeline_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 64 [1/1] (0.00ns)   --->   "%specloopname_ln29 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:29->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 64 'specloopname' 'specloopname_ln29' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 65 [1/1] (0.00ns)   --->   "%idxprom18_i_i = zext i9 %add17_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:27->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 65 'zext' 'idxprom18_i_i' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 66 [1/2] (1.15ns)   --->   "%data_l2_0_load = load i10 %data_l2_0_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 66 'load' 'data_l2_0_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_6 : Operation 67 [1/1] (0.00ns)   --->   "%data_l1buf_017_addr = getelementptr i8 %data_l1buf_017, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 67 'getelementptr' 'data_l1buf_017_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 68 [1/1] (1.15ns)   --->   "%store_ln36 = store i8 %data_l2_0_load, i9 %data_l1buf_017_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 68 'store' 'store_ln36' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
+ST_6 : Operation 69 [1/2] (1.15ns)   --->   "%data_l2_1_load = load i10 %data_l2_1_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 69 'load' 'data_l2_1_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_6 : Operation 70 [1/1] (0.00ns)   --->   "%data_l1buf_118_addr = getelementptr i8 %data_l1buf_118, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 70 'getelementptr' 'data_l1buf_118_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 71 [1/1] (1.15ns)   --->   "%store_ln36 = store i8 %data_l2_1_load, i9 %data_l1buf_118_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 71 'store' 'store_ln36' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
+ST_6 : Operation 72 [1/2] (1.15ns)   --->   "%data_l2_2_load = load i10 %data_l2_2_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 72 'load' 'data_l2_2_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_6 : Operation 73 [1/1] (0.00ns)   --->   "%data_l1buf_219_addr = getelementptr i8 %data_l1buf_219, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 73 'getelementptr' 'data_l1buf_219_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 74 [1/1] (1.15ns)   --->   "%store_ln36 = store i8 %data_l2_2_load, i9 %data_l1buf_219_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 74 'store' 'store_ln36' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
+ST_6 : Operation 75 [1/2] (1.15ns)   --->   "%data_l2_3_load = load i10 %data_l2_3_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:37->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 75 'load' 'data_l2_3_load' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 1024> <RAM>
+ST_6 : Operation 76 [1/1] (0.00ns)   --->   "%data_l1buf_320_addr = getelementptr i8 %data_l1buf_320, i64, i64 %idxprom18_i_i" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 76 'getelementptr' 'data_l1buf_320_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_6 : Operation 77 [1/1] (1.15ns)   --->   "%store_ln36 = store i8 %data_l2_3_load, i9 %data_l1buf_320_addr" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:36->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:226->Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 77 'store' 'store_ln36' <Predicate = (!icmp_ln27)> <Delay = 1.15> <CoreInst = "RAM">   --->   Core 23 'RAM' <Latency = 1> <II = 1> <Delay = 1.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 512> <RAM>
+ST_6 : Operation 78 [1/1] (0.00ns)   --->   "%br_ln0 = br void %bb.i.i"   --->   Operation 78 'br' 'br_ln0' <Predicate = (!icmp_ln27)> <Delay = 0.00>
 
 State 7 <SV = 2> <Delay = 0.00>
-ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%ret_ln368 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 79 'ret' 'ret_ln368' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 79 [1/1] (0.00ns)   --->   "%ret_ln216 = ret" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 79 'ret' 'ret_ln216' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -187,10 +187,10 @@ STG Binding:
 - Is pipelined: 0
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
-Port [ data_l1buf_018]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ data_l1buf_119]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ data_l1buf_220]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ data_l1buf_321]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ data_l1buf_017]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ data_l1buf_118]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ data_l1buf_219]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ data_l1buf_320]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=1; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ data_l2_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 Port [ data_l2_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 Port [ data_l2_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
@@ -214,33 +214,33 @@ specinterface_ln0     (specinterface    ) [ 00000000]
 co_1_read             (read             ) [ 00000000]
 r_read                (read             ) [ 00111110]
 s_read                (read             ) [ 00111110]
-H_TILE_tmp            (read             ) [ 00111110]
 tmp                   (read             ) [ 00111110]
-trunc_ln53            (trunc            ) [ 00111110]
+tmp_10                (read             ) [ 00111110]
+empty_39              (trunc            ) [ 00111110]
 mul9_i_i              (mul              ) [ 00111110]
 cast                  (zext             ) [ 00000000]
 bound                 (mul              ) [ 00111110]
-br_ln59               (br               ) [ 01111110]
+br_ln27               (br               ) [ 01111110]
 indvar_flatten        (phi              ) [ 00100000]
 hi                    (phi              ) [ 00100000]
 wi                    (phi              ) [ 00100000]
 specpipeline_ln0      (specpipeline     ) [ 00000000]
-icmp_ln59             (icmp             ) [ 00111110]
-add_ln59_2            (add              ) [ 01111110]
-br_ln59               (br               ) [ 00000000]
-icmp_ln65             (icmp             ) [ 00000000]
-select_ln59           (select           ) [ 00000000]
-add_ln59_3            (add              ) [ 00000000]
-select_ln59_1         (select           ) [ 01111110]
-trunc_ln59            (trunc            ) [ 00000000]
-add_ln59              (add              ) [ 00000000]
-add_ln59_1            (add              ) [ 00111000]
-trunc_ln59_1          (trunc            ) [ 00111000]
-empty_39              (trunc            ) [ 00111100]
+icmp_ln27             (icmp             ) [ 00111110]
+add_ln27_2            (add              ) [ 01111110]
+br_ln27               (br               ) [ 00000000]
+icmp_ln29             (icmp             ) [ 00000000]
+select_ln27           (select           ) [ 00000000]
+add_ln27_3            (add              ) [ 00000000]
+select_ln27_1         (select           ) [ 01111110]
+trunc_ln27            (trunc            ) [ 00000000]
+add_ln27              (add              ) [ 00000000]
+add_ln27_1            (add              ) [ 00111000]
+trunc_ln27_1          (trunc            ) [ 00111000]
 empty_40              (trunc            ) [ 00111100]
-add_ln65              (add              ) [ 01111110]
-mul_ln59              (mul              ) [ 00100100]
-mul_ln59_1            (mul              ) [ 00100100]
+empty_41              (trunc            ) [ 00111100]
+add_ln29              (add              ) [ 01111110]
+mul_ln27              (mul              ) [ 00100100]
+mul_ln27_1            (mul              ) [ 00100100]
 tmp1                  (add              ) [ 00000000]
 add13_i_i             (add              ) [ 00000000]
 idxprom_i_i           (zext             ) [ 00000000]
@@ -252,63 +252,63 @@ data_l2_3_addr        (getelementptr    ) [ 00100010]
 specloopname_ln0      (specloopname     ) [ 00000000]
 speclooptripcount_ln0 (speclooptripcount) [ 00000000]
 specpipeline_ln0      (specpipeline     ) [ 00000000]
-specloopname_ln65     (specloopname     ) [ 00000000]
+specloopname_ln29     (specloopname     ) [ 00000000]
 idxprom18_i_i         (zext             ) [ 00000000]
 data_l2_0_load        (load             ) [ 00000000]
-data_l1buf_018_addr   (getelementptr    ) [ 00000000]
-store_ln79            (store            ) [ 00000000]
+data_l1buf_017_addr   (getelementptr    ) [ 00000000]
+store_ln36            (store            ) [ 00000000]
 data_l2_1_load        (load             ) [ 00000000]
-data_l1buf_119_addr   (getelementptr    ) [ 00000000]
-store_ln79            (store            ) [ 00000000]
+data_l1buf_118_addr   (getelementptr    ) [ 00000000]
+store_ln36            (store            ) [ 00000000]
 data_l2_2_load        (load             ) [ 00000000]
-data_l1buf_220_addr   (getelementptr    ) [ 00000000]
-store_ln79            (store            ) [ 00000000]
+data_l1buf_219_addr   (getelementptr    ) [ 00000000]
+store_ln36            (store            ) [ 00000000]
 data_l2_3_load        (load             ) [ 00000000]
-data_l1buf_321_addr   (getelementptr    ) [ 00000000]
-store_ln79            (store            ) [ 00000000]
+data_l1buf_320_addr   (getelementptr    ) [ 00000000]
+store_ln36            (store            ) [ 00000000]
 br_ln0                (br               ) [ 01111110]
-ret_ln368             (ret              ) [ 00000000]
+ret_ln216             (ret              ) [ 00000000]
 </LifeTime>
 
 <model>
 
 <comp_list>
-<comp id="0" class="1000" name="data_l1buf_018">
+<comp id="0" class="1000" name="data_l1buf_017">
 <pin_list>
 <pin id="1" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="data_l1buf_018"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="data_l1buf_017"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="data_l1buf_119">
+<comp id="2" class="1000" name="data_l1buf_118">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="data_l1buf_119"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="data_l1buf_118"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="4" class="1000" name="data_l1buf_220">
+<comp id="4" class="1000" name="data_l1buf_219">
 <pin_list>
 <pin id="5" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="data_l1buf_220"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="data_l1buf_219"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="6" class="1000" name="data_l1buf_321">
+<comp id="6" class="1000" name="data_l1buf_320">
 <pin_list>
 <pin id="7" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="data_l1buf_321"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="data_l1buf_320"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -605,7 +605,7 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="82" class="1004" name="H_TILE_tmp_read_fu_82">
+<comp id="82" class="1004" name="tmp_read_fu_82">
 <pin_list>
 <pin id="83" dir="0" index="0" bw="32" slack="0"/>
 <pin id="84" dir="0" index="1" bw="32" slack="0"/>
@@ -613,11 +613,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="H_TILE_tmp/1 "/>
+<opset="tmp/1 "/>
 </bind>
 </comp>
 
-<comp id="88" class="1004" name="tmp_read_fu_88">
+<comp id="88" class="1004" name="tmp_10_read_fu_88">
 <pin_list>
 <pin id="89" dir="0" index="0" bw="10" slack="0"/>
 <pin id="90" dir="0" index="1" bw="10" slack="0"/>
@@ -625,7 +625,7 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="tmp/1 "/>
+<opset="tmp_10/1 "/>
 </bind>
 </comp>
 
@@ -733,7 +733,7 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="146" class="1004" name="data_l1buf_018_addr_gep_fu_146">
+<comp id="146" class="1004" name="data_l1buf_017_addr_gep_fu_146">
 <pin_list>
 <pin id="147" dir="0" index="0" bw="8" slack="0"/>
 <pin id="148" dir="0" index="1" bw="1" slack="0"/>
@@ -742,11 +742,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="data_l1buf_018_addr/6 "/>
+<opset="data_l1buf_017_addr/6 "/>
 </bind>
 </comp>
 
-<comp id="153" class="1004" name="store_ln79_access_fu_153">
+<comp id="153" class="1004" name="store_ln36_access_fu_153">
 <pin_list>
 <pin id="154" dir="0" index="0" bw="9" slack="0"/>
 <pin id="155" dir="0" index="1" bw="8" slack="0"/>
@@ -755,11 +755,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln79/6 "/>
+<opset="store_ln36/6 "/>
 </bind>
 </comp>
 
-<comp id="160" class="1004" name="data_l1buf_119_addr_gep_fu_160">
+<comp id="160" class="1004" name="data_l1buf_118_addr_gep_fu_160">
 <pin_list>
 <pin id="161" dir="0" index="0" bw="8" slack="0"/>
 <pin id="162" dir="0" index="1" bw="1" slack="0"/>
@@ -768,11 +768,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="data_l1buf_119_addr/6 "/>
+<opset="data_l1buf_118_addr/6 "/>
 </bind>
 </comp>
 
-<comp id="167" class="1004" name="store_ln79_access_fu_167">
+<comp id="167" class="1004" name="store_ln36_access_fu_167">
 <pin_list>
 <pin id="168" dir="0" index="0" bw="9" slack="0"/>
 <pin id="169" dir="0" index="1" bw="8" slack="0"/>
@@ -781,11 +781,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln79/6 "/>
+<opset="store_ln36/6 "/>
 </bind>
 </comp>
 
-<comp id="174" class="1004" name="data_l1buf_220_addr_gep_fu_174">
+<comp id="174" class="1004" name="data_l1buf_219_addr_gep_fu_174">
 <pin_list>
 <pin id="175" dir="0" index="0" bw="8" slack="0"/>
 <pin id="176" dir="0" index="1" bw="1" slack="0"/>
@@ -794,11 +794,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="data_l1buf_220_addr/6 "/>
+<opset="data_l1buf_219_addr/6 "/>
 </bind>
 </comp>
 
-<comp id="181" class="1004" name="store_ln79_access_fu_181">
+<comp id="181" class="1004" name="store_ln36_access_fu_181">
 <pin_list>
 <pin id="182" dir="0" index="0" bw="9" slack="0"/>
 <pin id="183" dir="0" index="1" bw="8" slack="0"/>
@@ -807,11 +807,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln79/6 "/>
+<opset="store_ln36/6 "/>
 </bind>
 </comp>
 
-<comp id="188" class="1004" name="data_l1buf_321_addr_gep_fu_188">
+<comp id="188" class="1004" name="data_l1buf_320_addr_gep_fu_188">
 <pin_list>
 <pin id="189" dir="0" index="0" bw="8" slack="0"/>
 <pin id="190" dir="0" index="1" bw="1" slack="0"/>
@@ -820,11 +820,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="data_l1buf_321_addr/6 "/>
+<opset="data_l1buf_320_addr/6 "/>
 </bind>
 </comp>
 
-<comp id="195" class="1004" name="store_ln79_access_fu_195">
+<comp id="195" class="1004" name="store_ln36_access_fu_195">
 <pin_list>
 <pin id="196" dir="0" index="0" bw="9" slack="0"/>
 <pin id="197" dir="0" index="1" bw="8" slack="0"/>
@@ -833,7 +833,7 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
-<opset="store_ln79/6 "/>
+<opset="store_ln36/6 "/>
 </bind>
 </comp>
 
@@ -909,14 +909,14 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="235" class="1004" name="trunc_ln53_fu_235">
+<comp id="235" class="1004" name="empty_39_fu_235">
 <pin_list>
 <pin id="236" dir="0" index="0" bw="32" slack="0"/>
 <pin id="237" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln53/1 "/>
+<opset="empty_39/1 "/>
 </bind>
 </comp>
 
@@ -955,7 +955,7 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="255" class="1004" name="icmp_ln59_fu_255">
+<comp id="255" class="1004" name="icmp_ln27_fu_255">
 <pin_list>
 <pin id="256" dir="0" index="0" bw="64" slack="0"/>
 <pin id="257" dir="0" index="1" bw="64" slack="1"/>
@@ -963,11 +963,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln59/2 "/>
+<opset="icmp_ln27/2 "/>
 </bind>
 </comp>
 
-<comp id="260" class="1004" name="add_ln59_2_fu_260">
+<comp id="260" class="1004" name="add_ln27_2_fu_260">
 <pin_list>
 <pin id="261" dir="0" index="0" bw="64" slack="0"/>
 <pin id="262" dir="0" index="1" bw="1" slack="0"/>
@@ -975,11 +975,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln59_2/2 "/>
+<opset="add_ln27_2/2 "/>
 </bind>
 </comp>
 
-<comp id="266" class="1004" name="icmp_ln65_fu_266">
+<comp id="266" class="1004" name="icmp_ln29_fu_266">
 <pin_list>
 <pin id="267" dir="0" index="0" bw="32" slack="0"/>
 <pin id="268" dir="0" index="1" bw="32" slack="1"/>
@@ -987,11 +987,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln65/2 "/>
+<opset="icmp_ln29/2 "/>
 </bind>
 </comp>
 
-<comp id="271" class="1004" name="select_ln59_fu_271">
+<comp id="271" class="1004" name="select_ln27_fu_271">
 <pin_list>
 <pin id="272" dir="0" index="0" bw="1" slack="0"/>
 <pin id="273" dir="0" index="1" bw="1" slack="0"/>
@@ -1000,11 +1000,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="select_ln59/2 "/>
+<opset="select_ln27/2 "/>
 </bind>
 </comp>
 
-<comp id="279" class="1004" name="add_ln59_3_fu_279">
+<comp id="279" class="1004" name="add_ln27_3_fu_279">
 <pin_list>
 <pin id="280" dir="0" index="0" bw="1" slack="0"/>
 <pin id="281" dir="0" index="1" bw="32" slack="0"/>
@@ -1012,11 +1012,11 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln59_3/2 "/>
+<opset="add_ln27_3/2 "/>
 </bind>
 </comp>
 
-<comp id="285" class="1004" name="select_ln59_1_fu_285">
+<comp id="285" class="1004" name="select_ln27_1_fu_285">
 <pin_list>
 <pin id="286" dir="0" index="0" bw="1" slack="0"/>
 <pin id="287" dir="0" index="1" bw="32" slack="0"/>
@@ -1025,22 +1025,22 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="select(49) " fcode="select"/>
-<opset="select_ln59_1/2 "/>
+<opset="select_ln27_1/2 "/>
 </bind>
 </comp>
 
-<comp id="293" class="1004" name="trunc_ln59_fu_293">
+<comp id="293" class="1004" name="trunc_ln27_fu_293">
 <pin_list>
 <pin id="294" dir="0" index="0" bw="32" slack="0"/>
 <pin id="295" dir="1" index="1" bw="10" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln59/2 "/>
+<opset="trunc_ln27/2 "/>
 </bind>
 </comp>
 
-<comp id="297" class="1004" name="add_ln59_fu_297">
+<comp id="297" class="1004" name="add_ln27_fu_297">
 <pin_list>
 <pin id="298" dir="0" index="0" bw="10" slack="1"/>
 <pin id="299" dir="0" index="1" bw="10" slack="0"/>
@@ -1048,36 +1048,25 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln59/2 "/>
+<opset="add_ln27/2 "/>
 </bind>
 </comp>
 
-<comp id="302" class="1004" name="trunc_ln59_1_fu_302">
+<comp id="302" class="1004" name="trunc_ln27_1_fu_302">
 <pin_list>
 <pin id="303" dir="0" index="0" bw="32" slack="0"/>
 <pin id="304" dir="1" index="1" bw="9" slack="0"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
-<opset="trunc_ln59_1/2 "/>
+<opset="trunc_ln27_1/2 "/>
 </bind>
 </comp>
 
-<comp id="306" class="1004" name="empty_39_fu_306">
+<comp id="306" class="1004" name="empty_40_fu_306">
 <pin_list>
 <pin id="307" dir="0" index="0" bw="32" slack="0"/>
 <pin id="308" dir="1" index="1" bw="10" slack="2"/>
-</pin_list>
-<bind>
-<opcode="trunc(33) " fcode="trunc"/>
-<opset="empty_39/2 "/>
-</bind>
-</comp>
-
-<comp id="310" class="1004" name="empty_40_fu_310">
-<pin_list>
-<pin id="311" dir="0" index="0" bw="32" slack="0"/>
-<pin id="312" dir="1" index="1" bw="9" slack="2"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
@@ -1085,7 +1074,18 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="314" class="1004" name="add_ln65_fu_314">
+<comp id="310" class="1004" name="empty_41_fu_310">
+<pin_list>
+<pin id="311" dir="0" index="0" bw="32" slack="0"/>
+<pin id="312" dir="1" index="1" bw="9" slack="2"/>
+</pin_list>
+<bind>
+<opcode="trunc(33) " fcode="trunc"/>
+<opset="empty_41/2 "/>
+</bind>
+</comp>
+
+<comp id="314" class="1004" name="add_ln29_fu_314">
 <pin_list>
 <pin id="315" dir="0" index="0" bw="1" slack="0"/>
 <pin id="316" dir="0" index="1" bw="32" slack="0"/>
@@ -1093,7 +1093,7 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="add_ln65/2 "/>
+<opset="add_ln29/2 "/>
 </bind>
 </comp>
 
@@ -1141,7 +1141,7 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="addmuladd(1175) " fcode="addmuladd"/>
-<opset="add_ln59_1/2 mul_ln59/2 tmp1/4 "/>
+<opset="add_ln27_1/2 mul_ln27/2 tmp1/4 "/>
 </bind>
 </comp>
 
@@ -1154,7 +1154,7 @@ ret_ln368             (ret              ) [ 00000000]
 </pin_list>
 <bind>
 <opcode="muladd(1172) " fcode="muladd"/>
-<opset="mul_ln59_1/2 add17_i_i/4 "/>
+<opset="mul_ln27_1/2 add17_i_i/4 "/>
 </bind>
 </comp>
 
@@ -1178,33 +1178,33 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="363" class="1005" name="H_TILE_tmp_reg_363">
+<comp id="363" class="1005" name="tmp_reg_363">
 <pin_list>
 <pin id="364" dir="0" index="0" bw="32" slack="1"/>
 <pin id="365" dir="1" index="1" bw="32" slack="1"/>
-</pin_list>
-<bind>
-<opset="H_TILE_tmp "/>
-</bind>
-</comp>
-
-<comp id="368" class="1005" name="tmp_reg_368">
-<pin_list>
-<pin id="369" dir="0" index="0" bw="10" slack="1"/>
-<pin id="370" dir="1" index="1" bw="10" slack="1"/>
 </pin_list>
 <bind>
 <opset="tmp "/>
 </bind>
 </comp>
 
-<comp id="373" class="1005" name="trunc_ln53_reg_373">
+<comp id="368" class="1005" name="tmp_10_reg_368">
+<pin_list>
+<pin id="369" dir="0" index="0" bw="10" slack="1"/>
+<pin id="370" dir="1" index="1" bw="10" slack="1"/>
+</pin_list>
+<bind>
+<opset="tmp_10 "/>
+</bind>
+</comp>
+
+<comp id="373" class="1005" name="empty_39_reg_373">
 <pin_list>
 <pin id="374" dir="0" index="0" bw="9" slack="1"/>
 <pin id="375" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
-<opset="trunc_ln53 "/>
+<opset="empty_39 "/>
 </bind>
 </comp>
 
@@ -1228,73 +1228,73 @@ ret_ln368             (ret              ) [ 00000000]
 </bind>
 </comp>
 
-<comp id="388" class="1005" name="icmp_ln59_reg_388">
+<comp id="388" class="1005" name="icmp_ln27_reg_388">
 <pin_list>
 <pin id="389" dir="0" index="0" bw="1" slack="1"/>
 <pin id="390" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln59 "/>
+<opset="icmp_ln27 "/>
 </bind>
 </comp>
 
-<comp id="392" class="1005" name="add_ln59_2_reg_392">
+<comp id="392" class="1005" name="add_ln27_2_reg_392">
 <pin_list>
 <pin id="393" dir="0" index="0" bw="64" slack="0"/>
 <pin id="394" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
-<opset="add_ln59_2 "/>
+<opset="add_ln27_2 "/>
 </bind>
 </comp>
 
-<comp id="397" class="1005" name="select_ln59_1_reg_397">
+<comp id="397" class="1005" name="select_ln27_1_reg_397">
 <pin_list>
 <pin id="398" dir="0" index="0" bw="32" slack="0"/>
 <pin id="399" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
-<opset="select_ln59_1 "/>
+<opset="select_ln27_1 "/>
 </bind>
 </comp>
 
-<comp id="402" class="1005" name="trunc_ln59_1_reg_402">
+<comp id="402" class="1005" name="trunc_ln27_1_reg_402">
 <pin_list>
 <pin id="403" dir="0" index="0" bw="9" slack="1"/>
 <pin id="404" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
-<opset="trunc_ln59_1 "/>
+<opset="trunc_ln27_1 "/>
 </bind>
 </comp>
 
-<comp id="407" class="1005" name="empty_39_reg_407">
+<comp id="407" class="1005" name="empty_40_reg_407">
 <pin_list>
 <pin id="408" dir="0" index="0" bw="10" slack="2"/>
 <pin id="409" dir="1" index="1" bw="10" slack="2"/>
-</pin_list>
-<bind>
-<opset="empty_39 "/>
-</bind>
-</comp>
-
-<comp id="412" class="1005" name="empty_40_reg_412">
-<pin_list>
-<pin id="413" dir="0" index="0" bw="9" slack="2"/>
-<pin id="414" dir="1" index="1" bw="9" slack="2"/>
 </pin_list>
 <bind>
 <opset="empty_40 "/>
 </bind>
 </comp>
 
-<comp id="417" class="1005" name="add_ln65_reg_417">
+<comp id="412" class="1005" name="empty_41_reg_412">
+<pin_list>
+<pin id="413" dir="0" index="0" bw="9" slack="2"/>
+<pin id="414" dir="1" index="1" bw="9" slack="2"/>
+</pin_list>
+<bind>
+<opset="empty_41 "/>
+</bind>
+</comp>
+
+<comp id="417" class="1005" name="add_ln29_reg_417">
 <pin_list>
 <pin id="418" dir="0" index="0" bw="32" slack="0"/>
 <pin id="419" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
-<opset="add_ln65 "/>
+<opset="add_ln29 "/>
 </bind>
 </comp>
 
@@ -1594,10 +1594,10 @@ ret_ln368             (ret              ) [ 00000000]
 
 * FSMD analyzer results:
   - Output states:
-	Port: data_l1buf_018 | {6 }
-	Port: data_l1buf_119 | {6 }
-	Port: data_l1buf_220 | {6 }
-	Port: data_l1buf_321 | {6 }
+	Port: data_l1buf_017 | {6 }
+	Port: data_l1buf_118 | {6 }
+	Port: data_l1buf_219 | {6 }
+	Port: data_l1buf_320 | {6 }
  - Input state : 
 	Port: runL2toL1 : data_l2_0 | {5 6 }
 	Port: runL2toL1 : data_l2_1 | {5 6 }
@@ -1612,22 +1612,22 @@ ret_ln368             (ret              ) [ 00000000]
 	State 1
 		bound : 1
 	State 2
-		icmp_ln59 : 1
-		add_ln59_2 : 1
-		br_ln59 : 2
-		icmp_ln65 : 1
-		select_ln59 : 2
-		add_ln59_3 : 1
-		select_ln59_1 : 2
-		trunc_ln59 : 3
-		add_ln59 : 4
-		add_ln59_1 : 5
-		mul_ln59 : 6
-		trunc_ln59_1 : 3
-		mul_ln59_1 : 4
-		empty_39 : 3
+		icmp_ln27 : 1
+		add_ln27_2 : 1
+		br_ln27 : 2
+		icmp_ln29 : 1
+		select_ln27 : 2
+		add_ln27_3 : 1
+		select_ln27_1 : 2
+		trunc_ln27 : 3
+		add_ln27 : 4
+		add_ln27_1 : 5
+		mul_ln27 : 6
+		trunc_ln27_1 : 3
+		mul_ln27_1 : 4
 		empty_40 : 3
-		add_ln65 : 3
+		empty_41 : 3
+		add_ln29 : 3
 	State 3
 	State 4
 		tmp1 : 1
@@ -1644,14 +1644,14 @@ ret_ln368             (ret              ) [ 00000000]
 		data_l2_3_addr : 3
 		data_l2_3_load : 4
 	State 6
-		data_l1buf_018_addr : 1
-		store_ln79 : 2
-		data_l1buf_119_addr : 1
-		store_ln79 : 2
-		data_l1buf_220_addr : 1
-		store_ln79 : 2
-		data_l1buf_321_addr : 1
-		store_ln79 : 2
+		data_l1buf_017_addr : 1
+		store_ln36 : 2
+		data_l1buf_118_addr : 1
+		store_ln36 : 2
+		data_l1buf_219_addr : 1
+		store_ln36 : 2
+		data_l1buf_320_addr : 1
+		store_ln36 : 2
 	State 7
 
 
@@ -1660,46 +1660,46 @@ ret_ln368             (ret              ) [ 00000000]
 ============================================================
 
 * Functional unit list:
-|----------|-----------------------|---------|---------|---------|
-| Operation|    Functional Unit    |   DSP   |    FF   |   LUT   |
-|----------|-----------------------|---------|---------|---------|
-|          |   add_ln59_2_fu_260   |    0    |    0    |    71   |
-|          |   add_ln59_3_fu_279   |    0    |    0    |    39   |
-|    add   |    add_ln59_fu_297    |    0    |    0    |    17   |
-|          |    add_ln65_fu_314    |    0    |    0    |    39   |
-|          |    add13_i_i_fu_320   |    0    |    0    |    17   |
-|----------|-----------------------|---------|---------|---------|
-|    mul   |    mul9_i_i_fu_239    |    0    |    0    |    62   |
-|          |      bound_fu_249     |    4    |    0    |    20   |
-|----------|-----------------------|---------|---------|---------|
-|  select  |   select_ln59_fu_271  |    0    |    0    |    32   |
-|          |  select_ln59_1_fu_285 |    0    |    0    |    32   |
-|----------|-----------------------|---------|---------|---------|
-|   icmp   |    icmp_ln59_fu_255   |    0    |    0    |    29   |
-|          |    icmp_ln65_fu_266   |    0    |    0    |    20   |
-|----------|-----------------------|---------|---------|---------|
-| addmuladd|       grp_fu_339      |    1    |    0    |    0    |
-|----------|-----------------------|---------|---------|---------|
-|  muladd  |       grp_fu_347      |    1    |    0    |    0    |
-|----------|-----------------------|---------|---------|---------|
-|          |  co_1_read_read_fu_64 |    0    |    0    |    0    |
-|          |   r_read_read_fu_70   |    0    |    0    |    0    |
-|   read   |   s_read_read_fu_76   |    0    |    0    |    0    |
-|          | H_TILE_tmp_read_fu_82 |    0    |    0    |    0    |
-|          |     tmp_read_fu_88    |    0    |    0    |    0    |
-|----------|-----------------------|---------|---------|---------|
-|          |   trunc_ln53_fu_235   |    0    |    0    |    0    |
-|          |   trunc_ln59_fu_293   |    0    |    0    |    0    |
-|   trunc  |  trunc_ln59_1_fu_302  |    0    |    0    |    0    |
-|          |    empty_39_fu_306    |    0    |    0    |    0    |
-|          |    empty_40_fu_310    |    0    |    0    |    0    |
-|----------|-----------------------|---------|---------|---------|
-|          |      cast_fu_245      |    0    |    0    |    0    |
-|   zext   |   idxprom_i_i_fu_324  |    0    |    0    |    0    |
-|          |  idxprom18_i_i_fu_332 |    0    |    0    |    0    |
-|----------|-----------------------|---------|---------|---------|
-|   Total  |                       |    6    |    0    |   378   |
-|----------|-----------------------|---------|---------|---------|
+|----------|----------------------|---------|---------|---------|
+| Operation|    Functional Unit   |   DSP   |    FF   |   LUT   |
+|----------|----------------------|---------|---------|---------|
+|          |   add_ln27_2_fu_260  |    0    |    0    |    71   |
+|          |   add_ln27_3_fu_279  |    0    |    0    |    39   |
+|    add   |    add_ln27_fu_297   |    0    |    0    |    17   |
+|          |    add_ln29_fu_314   |    0    |    0    |    39   |
+|          |   add13_i_i_fu_320   |    0    |    0    |    17   |
+|----------|----------------------|---------|---------|---------|
+|    mul   |    mul9_i_i_fu_239   |    0    |    0    |    62   |
+|          |     bound_fu_249     |    4    |    0    |    20   |
+|----------|----------------------|---------|---------|---------|
+|  select  |  select_ln27_fu_271  |    0    |    0    |    32   |
+|          | select_ln27_1_fu_285 |    0    |    0    |    32   |
+|----------|----------------------|---------|---------|---------|
+|   icmp   |   icmp_ln27_fu_255   |    0    |    0    |    29   |
+|          |   icmp_ln29_fu_266   |    0    |    0    |    20   |
+|----------|----------------------|---------|---------|---------|
+| addmuladd|      grp_fu_339      |    1    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|  muladd  |      grp_fu_347      |    1    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|          | co_1_read_read_fu_64 |    0    |    0    |    0    |
+|          |   r_read_read_fu_70  |    0    |    0    |    0    |
+|   read   |   s_read_read_fu_76  |    0    |    0    |    0    |
+|          |    tmp_read_fu_82    |    0    |    0    |    0    |
+|          |   tmp_10_read_fu_88  |    0    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|          |    empty_39_fu_235   |    0    |    0    |    0    |
+|          |   trunc_ln27_fu_293  |    0    |    0    |    0    |
+|   trunc  |  trunc_ln27_1_fu_302 |    0    |    0    |    0    |
+|          |    empty_40_fu_306   |    0    |    0    |    0    |
+|          |    empty_41_fu_310   |    0    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|          |      cast_fu_245     |    0    |    0    |    0    |
+|   zext   |  idxprom_i_i_fu_324  |    0    |    0    |    0    |
+|          | idxprom18_i_i_fu_332 |    0    |    0    |    0    |
+|----------|----------------------|---------|---------|---------|
+|   Total  |                      |    6    |    0    |   378   |
+|----------|----------------------|---------|---------|---------|
 
 Memories:
 N/A
@@ -1708,27 +1708,27 @@ N/A
 +----------------------+--------+
 |                      |   FF   |
 +----------------------+--------+
-|  H_TILE_tmp_reg_363  |   32   |
 |   add17_i_i_reg_422  |    9   |
-|  add_ln59_2_reg_392  |   64   |
-|   add_ln65_reg_417   |   32   |
+|  add_ln27_2_reg_392  |   64   |
+|   add_ln29_reg_417   |   32   |
 |     bound_reg_383    |   64   |
 |data_l2_0_addr_reg_427|   10   |
 |data_l2_1_addr_reg_432|   10   |
 |data_l2_2_addr_reg_437|   10   |
 |data_l2_3_addr_reg_442|   10   |
-|   empty_39_reg_407   |   10   |
-|   empty_40_reg_412   |    9   |
+|   empty_39_reg_373   |    9   |
+|   empty_40_reg_407   |   10   |
+|   empty_41_reg_412   |    9   |
 |      hi_reg_213      |   32   |
-|   icmp_ln59_reg_388  |    1   |
+|   icmp_ln27_reg_388  |    1   |
 |indvar_flatten_reg_202|   64   |
 |   mul9_i_i_reg_378   |   10   |
 |    r_read_reg_353    |   10   |
 |    s_read_reg_358    |   10   |
-| select_ln59_1_reg_397|   32   |
-|      tmp_reg_368     |   10   |
-|  trunc_ln53_reg_373  |    9   |
-| trunc_ln59_1_reg_402 |    9   |
+| select_ln27_1_reg_397|   32   |
+|    tmp_10_reg_368    |   10   |
+|      tmp_reg_363     |   32   |
+| trunc_ln27_1_reg_402 |    9   |
 |      wi_reg_224      |   32   |
 +----------------------+--------+
 |         Total        |   479  |

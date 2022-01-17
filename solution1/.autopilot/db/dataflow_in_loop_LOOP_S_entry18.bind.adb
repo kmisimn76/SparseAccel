@@ -922,7 +922,7 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>empty_41</name>
+						<name>empty_42</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -957,7 +957,7 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>empty_42</name>
+						<name>empty_43</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -992,12 +992,12 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>p_out_write_ln368</name>
+						<name>p_out_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1009,9 +1009,9 @@
 									<item class_id="13" tracking_level="0" version="0">
 										<first class_id="14" tracking_level="0" version="0">
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1043,12 +1043,12 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>p_out1_write_ln368</name>
+						<name>p_out1_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1060,9 +1060,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1094,12 +1094,12 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>ko_2_out_write_ln368</name>
+						<name>ko_2_out_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1111,9 +1111,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1145,12 +1145,12 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>co_1_out_write_ln368</name>
+						<name>co_1_out_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1162,9 +1162,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1196,12 +1196,12 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>co_1_out2_write_ln368</name>
+						<name>co_1_out2_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1213,9 +1213,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1247,12 +1247,12 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>r_out_write_ln368</name>
+						<name>r_out_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1264,9 +1264,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1298,12 +1298,12 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>r_out3_write_ln368</name>
+						<name>r_out3_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1315,9 +1315,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1349,12 +1349,12 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>s_out_write_ln368</name>
+						<name>s_out_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1366,9 +1366,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1400,12 +1400,12 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>s_out4_write_ln368</name>
+						<name>s_out4_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1417,9 +1417,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1451,12 +1451,12 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>p_out5_write_ln368</name>
+						<name>p_out5_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1468,9 +1468,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1502,12 +1502,12 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>p_out6_write_ln368</name>
+						<name>p_out6_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1519,9 +1519,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1553,12 +1553,12 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>p_out7_write_ln368</name>
+						<name>p_out7_write_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1570,9 +1570,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -1604,12 +1604,12 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>_ln368</name>
+						<name>_ln216</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>368</lineNumber>
-						<contextFuncName>Conv_sysarr_dbbuf</contextFuncName>
-						<contextNormFuncName>Conv_sysarr_dbbuf</contextNormFuncName>
+						<lineNumber>216</lineNumber>
+						<contextFuncName>Conv_sysarr</contextFuncName>
+						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
 							<count>1</count>
 							<item_version>0</item_version>
@@ -1621,9 +1621,9 @@
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
-											<second>Conv_sysarr_dbbuf</second>
+											<second>Conv_sysarr</second>
 										</first>
-										<second>368</second>
+										<second>216</second>
 									</item>
 								</second>
 							</item>
@@ -2557,7 +2557,7 @@
 		<count>3</count>
 		<item_version>0</item_version>
 		<item class_id="41" tracking_level="0" version="0">
-			<first>empty_41_fu_214</first>
+			<first>empty_42_fu_214</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2565,7 +2565,7 @@
 			</second>
 		</item>
 		<item>
-			<first>empty_42_fu_219</first>
+			<first>empty_43_fu_219</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2653,7 +2653,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_116</first>
+			<first>write_ln216_write_fu_116</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2661,7 +2661,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_124</first>
+			<first>write_ln216_write_fu_124</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2669,7 +2669,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_132</first>
+			<first>write_ln216_write_fu_132</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2677,7 +2677,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_140</first>
+			<first>write_ln216_write_fu_140</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2685,7 +2685,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_147</first>
+			<first>write_ln216_write_fu_147</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2693,7 +2693,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_155</first>
+			<first>write_ln216_write_fu_155</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2701,7 +2701,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_163</first>
+			<first>write_ln216_write_fu_163</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2709,7 +2709,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_170</first>
+			<first>write_ln216_write_fu_170</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2717,7 +2717,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_178</first>
+			<first>write_ln216_write_fu_178</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2725,7 +2725,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_185</first>
+			<first>write_ln216_write_fu_185</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2733,7 +2733,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_193</first>
+			<first>write_ln216_write_fu_193</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -2741,7 +2741,7 @@
 			</second>
 		</item>
 		<item>
-			<first>write_ln368_write_fu_201</first>
+			<first>write_ln216_write_fu_201</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

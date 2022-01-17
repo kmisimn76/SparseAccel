@@ -32,13 +32,13 @@
 <Interval-max>21</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_33_1_VITIS_LOOP_35_2>
+<VITIS_LOOP_14_1_VITIS_LOOP_15_2>
 <TripCount>16</TripCount>
 <Latency>19</Latency>
 <AbsoluteTimeLatency>190</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
 <PipelineDepth>5</PipelineDepth>
-</VITIS_LOOP_33_1_VITIS_LOOP_35_2>
+</VITIS_LOOP_14_1_VITIS_LOOP_15_2>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 

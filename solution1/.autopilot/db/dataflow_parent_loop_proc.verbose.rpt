@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_parent_loop_proc'
 ================================================================
-* Date:           Tue Jan 18 00:19:33 2022
+* Date:           Tue Jan 18 02:37:21 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -331,18 +331,18 @@ ST_1 : Operation 12 [1/1] (0.60ns)   --->   "%br_ln0 = br void"   --->   Operati
 
 State 2 <SV = 1> <Delay = 0.98>
 ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%s = phi i32, void %newFuncRoot, i32 %s_1, void %.split"   --->   Operation 13 'phi' 's' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 14 [1/1] (0.85ns)   --->   "%icmp_ln363 = icmp_eq  i32 %s, i32 %RS_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363]   --->   Operation 14 'icmp' 'icmp_ln363' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln363 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %s, i32 %RS" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363]   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln363' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 16 [1/1] (0.88ns)   --->   "%s_1 = add i32 %s, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363]   --->   Operation 16 'add' 's_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln363 = br i1 %icmp_ln363, void %.split, void %.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363]   --->   Operation 17 'br' 'br_ln363' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln404 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:404]   --->   Operation 18 'call' 'call_ln404' <Predicate = (!icmp_ln363)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln363)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.85ns)   --->   "%icmp_ln212 = icmp_eq  i32 %s, i32 %RS_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 14 'icmp' 'icmp_ln212' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln212 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %s, i32 %RS" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln212' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.88ns)   --->   "%s_1 = add i32 %s, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 16 'add' 's_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln212 = br i1 %icmp_ln212, void %.split, void %.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 17 'br' 'br_ln212' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln227 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:227]   --->   Operation 18 'call' 'call_ln227' <Predicate = (!icmp_ln212)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln212)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln368 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln368' <Predicate = (!icmp_ln363)> <Delay = 0.00>
-ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln368 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:368]   --->   Operation 21 'specloopname' 'specloopname_ln368' <Predicate = (!icmp_ln363)> <Delay = 0.00>
-ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln404 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:404]   --->   Operation 22 'call' 'call_ln404' <Predicate = (!icmp_ln363)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln363 = br void" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:363]   --->   Operation 23 'br' 'br_ln363' <Predicate = (!icmp_ln363)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln216 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln216' <Predicate = (!icmp_ln212)> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln216 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 21 'specloopname' 'specloopname_ln216' <Predicate = (!icmp_ln212)> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln227 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:227]   --->   Operation 22 'call' 'call_ln227' <Predicate = (!icmp_ln212)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln212 = br void" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 23 'br' 'br_ln212' <Predicate = (!icmp_ln212)> <Delay = 0.00>
 
 
 ============================================================
@@ -396,15 +396,15 @@ p_read_17                  (read                ) [ 0011]
 RS_read                    (read                ) [ 0011]
 br_ln0                     (br                  ) [ 0111]
 s                          (phi                 ) [ 0011]
-icmp_ln363                 (icmp                ) [ 0011]
-specdataflowpipeline_ln363 (specdataflowpipeline) [ 0000]
+icmp_ln212                 (icmp                ) [ 0011]
+specdataflowpipeline_ln212 (specdataflowpipeline) [ 0000]
 s_1                        (add                 ) [ 0111]
-br_ln363                   (br                  ) [ 0000]
+br_ln212                   (br                  ) [ 0000]
 ret_ln0                    (ret                 ) [ 0000]
-speclooptripcount_ln368    (speclooptripcount   ) [ 0000]
-specloopname_ln368         (specloopname        ) [ 0000]
-call_ln404                 (call                ) [ 0000]
-br_ln363                   (br                  ) [ 0111]
+speclooptripcount_ln216    (speclooptripcount   ) [ 0000]
+specloopname_ln216         (specloopname        ) [ 0000]
+call_ln227                 (call                ) [ 0000]
+br_ln212                   (br                  ) [ 0111]
 </LifeTime>
 
 <model>
@@ -910,11 +910,11 @@ br_ln363                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln404/2 "/>
+<opset="call_ln227/2 "/>
 </bind>
 </comp>
 
-<comp id="179" class="1004" name="icmp_ln363_fu_179">
+<comp id="179" class="1004" name="icmp_ln212_fu_179">
 <pin_list>
 <pin id="180" dir="0" index="0" bw="32" slack="0"/>
 <pin id="181" dir="0" index="1" bw="32" slack="1"/>
@@ -922,7 +922,7 @@ br_ln363                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln363/2 "/>
+<opset="icmp_ln212/2 "/>
 </bind>
 </comp>
 
@@ -1018,13 +1018,13 @@ br_ln363                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="230" class="1005" name="icmp_ln363_reg_230">
+<comp id="230" class="1005" name="icmp_ln212_reg_230">
 <pin_list>
 <pin id="231" dir="0" index="0" bw="1" slack="1"/>
 <pin id="232" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln363 "/>
+<opset="icmp_ln212 "/>
 </bind>
 </comp>
 
@@ -1210,11 +1210,11 @@ br_ln363                   (br                  ) [ 0111]
   - Chain level:
 	State 1
 	State 2
-		icmp_ln363 : 1
-		specdataflowpipeline_ln363 : 1
+		icmp_ln212 : 1
+		specdataflowpipeline_ln212 : 1
 		s_1 : 1
-		br_ln363 : 2
-		call_ln404 : 1
+		br_ln212 : 2
+		call_ln227 : 1
 	State 3
 
 
@@ -1230,7 +1230,7 @@ br_ln363                   (br                  ) [ 0111]
 |----------|------------------------------------|---------|---------|---------|---------|---------|
 |    add   |             s_1_fu_184             |    0    |    0    |    0    |    0    |    39   |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
-|   icmp   |          icmp_ln363_fu_179         |    0    |    0    |    0    |    0    |    20   |
+|   icmp   |          icmp_ln212_fu_179         |    0    |    0    |    0    |    0    |    20   |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
 |          |        p_read310_read_fu_74        |    0    |    0    |    0    |    0    |    0    |
 |          |         p_read29_read_fu_80        |    0    |    0    |    0    |    0    |    0    |
@@ -1253,7 +1253,7 @@ N/A
 +------------------+--------+
 |  RS_read_reg_225 |   32   |
 | co_1_read_reg_205|   10   |
-|icmp_ln363_reg_230|    1   |
+|icmp_ln212_reg_230|    1   |
 | ko_2_read_reg_210|    9   |
 | p_read15_reg_215 |    9   |
 | p_read29_reg_195 |   32   |

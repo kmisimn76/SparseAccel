@@ -3,7 +3,7 @@
 # Memory (RAM/ROM)  definition:
 set ID 144
 set hasByteEnable 0
-set MemName Conv_sysarr_dbbuf_dataflow_in_loop_LOOP_S_data_l1buf_0_memcore
+set MemName Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0_memcore
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -48,7 +48,7 @@ eval "set memGenArgs  { \
 set Depth 2
 set FullThresh 0
 set CoreName ap_simcore_mem_df_channel
-set MemName Conv_sysarr_dbbuf_dataflow_in_loop_LOOP_S_data_l1buf_0
+set MemName Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0
 if {${::AESL::PGuard_autocg_gen} || ${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mem_df_channel] == "ap_gen_simcore_mem_df_channel"} {
     eval "ap_gen_simcore_mem_df_channel { \
@@ -87,7 +87,7 @@ puts "@W \[IMPL-105\] Cannot find ap_gen_simcore_mem_df_channel, check your plat
 
 # FIFO definition:
 set ID 145
-set FifoName Conv_sysarr_dbbuf_fifo_w9_d2_S
+set FifoName Conv_sysarr_fifo_w9_d2_S
 set InstName p_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -162,7 +162,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 146
-set FifoName Conv_sysarr_dbbuf_fifo_w9_d2_S
+set FifoName Conv_sysarr_fifo_w9_d2_S
 set InstName p_c1_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -237,7 +237,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 147
-set FifoName Conv_sysarr_dbbuf_fifo_w9_d2_S
+set FifoName Conv_sysarr_fifo_w9_d2_S
 set InstName ko_2_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -312,7 +312,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 148
-set FifoName Conv_sysarr_dbbuf_fifo_w7_d2_S
+set FifoName Conv_sysarr_fifo_w7_d2_S
 set InstName co_1_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -387,7 +387,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 149
-set FifoName Conv_sysarr_dbbuf_fifo_w10_d2_S
+set FifoName Conv_sysarr_fifo_w10_d2_S
 set InstName co_1_c2_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -462,7 +462,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 150
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d2_S
+set FifoName Conv_sysarr_fifo_w32_d2_S
 set InstName r_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -537,7 +537,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 151
-set FifoName Conv_sysarr_dbbuf_fifo_w10_d2_S
+set FifoName Conv_sysarr_fifo_w10_d2_S
 set InstName r_c3_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -612,7 +612,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 152
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d2_S
+set FifoName Conv_sysarr_fifo_w32_d2_S
 set InstName s_c_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -687,7 +687,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 153
-set FifoName Conv_sysarr_dbbuf_fifo_w10_d2_S
+set FifoName Conv_sysarr_fifo_w10_d2_S
 set InstName s_c4_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -762,7 +762,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 154
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d2_S
+set FifoName Conv_sysarr_fifo_w32_d2_S
 set InstName p_c5_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -837,7 +837,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 155
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d3_S
+set FifoName Conv_sysarr_fifo_w32_d3_S
 set InstName p_c6_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -912,7 +912,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 156
-set FifoName Conv_sysarr_dbbuf_fifo_w10_d2_S
+set FifoName Conv_sysarr_fifo_w10_d2_S
 set InstName p_c7_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -987,7 +987,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 157
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d2_S
+set FifoName Conv_sysarr_fifo_w32_d2_S
 set InstName r_c8_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1062,7 +1062,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 158
-set FifoName Conv_sysarr_dbbuf_fifo_w32_d2_S
+set FifoName Conv_sysarr_fifo_w32_d2_S
 set InstName s_c9_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1137,7 +1137,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 159
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_0_0_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1212,7 +1212,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 160
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_0_1_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1287,7 +1287,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 161
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_0_2_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1362,7 +1362,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 162
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_0_3_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1437,7 +1437,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 163
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_1_0_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1512,7 +1512,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 164
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_1_1_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1587,7 +1587,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 165
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_1_2_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1662,7 +1662,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 166
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_1_3_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1737,7 +1737,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 167
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_2_0_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1812,7 +1812,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 168
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_2_1_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1887,7 +1887,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 169
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_2_2_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -1962,7 +1962,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 170
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_2_3_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -2037,7 +2037,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 171
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_3_0_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -2112,7 +2112,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 172
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_3_1_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -2187,7 +2187,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 173
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_3_2_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2
@@ -2262,7 +2262,7 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 174
-set FifoName Conv_sysarr_dbbuf_fifo_w8_d2_S
+set FifoName Conv_sysarr_fifo_w8_d2_S
 set InstName weight_regfile_3_3_U
 set CoreName ap_simcore_fifo
 set NumOfStage 2

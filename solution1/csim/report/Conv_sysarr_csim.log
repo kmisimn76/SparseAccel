@@ -1,8 +1,15 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-make: 'csim.exe' is up to date.
+   Compiling ../../../conv_sysarr_dbbuf.cpp in debug mode
+   Generating csim.exe
 Test Start
-Error(0): 25 (gold 37)
-WARNING: Hls::stream 'hls::stream<ap_axiu<32, 0, 0, 0>, 0>.4' contains leftover data, which may result in RTL simulation hanging.
-ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+Kernel coreConv compelete !!!
+Test Case 1 Complete
+Kernel coreConv compelete !!!
+Test Case 2 Complete
+Kernel coreConv compelete !!!
+Test Case 3 Complete
+Kernel coreConv compelete !!!
+Test Case 4 Complete
+INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

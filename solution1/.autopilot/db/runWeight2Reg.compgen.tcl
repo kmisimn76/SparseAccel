@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 21
-set name Conv_sysarr_dbbuf_mul_9s_9s_9_1_1
+set name Conv_sysarr_mul_9s_9s_9_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -68,7 +68,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 
 
 set id 23
-set name Conv_sysarr_dbbuf_mux_42_8_1_1
+set name Conv_sysarr_mux_42_8_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -153,7 +153,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 25
-set name Conv_sysarr_dbbuf_mux_42_1_1_1
+set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -238,7 +238,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 27
-set name Conv_sysarr_dbbuf_mux_42_1_1_1
+set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -323,7 +323,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 29
-set name Conv_sysarr_dbbuf_mux_42_1_1_1
+set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -408,7 +408,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 31
-set name Conv_sysarr_dbbuf_mux_42_1_1_1
+set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
 set stage_num 1
@@ -493,7 +493,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 
 
 set id 56
-set name Conv_sysarr_dbbuf_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
+set name Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
 set corename simcore_ama
 set op ama
 set stage_num 4

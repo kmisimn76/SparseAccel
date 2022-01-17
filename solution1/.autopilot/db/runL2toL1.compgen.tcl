@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 76
-set name Conv_sysarr_dbbuf_mul_10s_10s_10_1_1
+set name Conv_sysarr_mul_10s_10s_10_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -68,7 +68,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 
 
 set id 77
-set name Conv_sysarr_dbbuf_mul_32ns_32ns_64_1_1
+set name Conv_sysarr_mul_32ns_32ns_64_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -135,7 +135,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 
 
 set id 78
-set name Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1
+set name Conv_sysarr_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1
 set corename simcore_ama
 set op ama
 set stage_num 4
@@ -241,7 +241,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 
 
 set id 79
-set name Conv_sysarr_dbbuf_mac_muladd_9s_9s_9ns_9_4_1
+set name Conv_sysarr_mac_muladd_9s_9s_9ns_9_4_1
 set corename simcore_mac
 set op mac
 set stage_num 4
@@ -352,16 +352,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 84 \
-    name data_l1buf_018 \
+    name data_l1buf_017 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_l1buf_018 \
+    corename data_l1buf_017 \
     op interface \
-    ports { data_l1buf_018_address0 { O 9 vector } data_l1buf_018_ce0 { O 1 bit } data_l1buf_018_we0 { O 1 bit } data_l1buf_018_d0 { O 8 vector } } \
+    ports { data_l1buf_017_address0 { O 9 vector } data_l1buf_017_ce0 { O 1 bit } data_l1buf_017_we0 { O 1 bit } data_l1buf_017_d0 { O 8 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_018'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_017'"
 }
 }
 
@@ -371,16 +371,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 85 \
-    name data_l1buf_119 \
+    name data_l1buf_118 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_l1buf_119 \
+    corename data_l1buf_118 \
     op interface \
-    ports { data_l1buf_119_address0 { O 9 vector } data_l1buf_119_ce0 { O 1 bit } data_l1buf_119_we0 { O 1 bit } data_l1buf_119_d0 { O 8 vector } } \
+    ports { data_l1buf_118_address0 { O 9 vector } data_l1buf_118_ce0 { O 1 bit } data_l1buf_118_we0 { O 1 bit } data_l1buf_118_d0 { O 8 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_119'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_118'"
 }
 }
 
@@ -390,16 +390,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 86 \
-    name data_l1buf_220 \
+    name data_l1buf_219 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_l1buf_220 \
+    corename data_l1buf_219 \
     op interface \
-    ports { data_l1buf_220_address0 { O 9 vector } data_l1buf_220_ce0 { O 1 bit } data_l1buf_220_we0 { O 1 bit } data_l1buf_220_d0 { O 8 vector } } \
+    ports { data_l1buf_219_address0 { O 9 vector } data_l1buf_219_ce0 { O 1 bit } data_l1buf_219_we0 { O 1 bit } data_l1buf_219_d0 { O 8 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_220'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_219'"
 }
 }
 
@@ -409,16 +409,16 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
     id 87 \
-    name data_l1buf_321 \
+    name data_l1buf_320 \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename data_l1buf_321 \
+    corename data_l1buf_320 \
     op interface \
-    ports { data_l1buf_321_address0 { O 9 vector } data_l1buf_321_ce0 { O 1 bit } data_l1buf_321_we0 { O 1 bit } data_l1buf_321_d0 { O 8 vector } } \
+    ports { data_l1buf_320_address0 { O 9 vector } data_l1buf_320_ce0 { O 1 bit } data_l1buf_320_we0 { O 1 bit } data_l1buf_320_d0 { O 8 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_321'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l1buf_320'"
 }
 }
 

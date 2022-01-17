@@ -19,4 +19,4 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("conv_out_V_full_n", 1, hls_in, 3, "ap_fifo", "fifo_status", 196),
 	Port_Property("conv_out_V_write", 1, hls_out, 3, "ap_fifo", "fifo_update", 196),
 };
-const char* HLS_Design_Meta::dut_name = "Conv_sysarr_dbbuf";
+const char* HLS_Design_Meta::dut_name = "Conv_sysarr";

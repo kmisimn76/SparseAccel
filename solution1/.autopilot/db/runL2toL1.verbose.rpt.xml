@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runL2toL1'" level="0">
-<item name = "Date">Tue Jan 18 00:19:32 2022
+<item name = "Date">Tue Jan 18 02:37:21 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -85,15 +85,15 @@
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="add13_i_i_fu_320_p2">+, 0, 0, 17, 10, 10</column>
-<column name="add_ln59_2_fu_260_p2">+, 0, 0, 71, 64, 1</column>
-<column name="add_ln59_3_fu_279_p2">+, 0, 0, 39, 1, 32</column>
-<column name="add_ln65_fu_314_p2">+, 0, 0, 39, 1, 32</column>
+<column name="add_ln27_2_fu_260_p2">+, 0, 0, 71, 64, 1</column>
+<column name="add_ln27_3_fu_279_p2">+, 0, 0, 39, 1, 32</column>
+<column name="add_ln29_fu_314_p2">+, 0, 0, 39, 1, 32</column>
 <column name="grp_fu_339_p0">+, 0, 0, 17, 10, 10</column>
-<column name="icmp_ln59_fu_255_p2">icmp, 0, 0, 29, 64, 64</column>
-<column name="icmp_ln65_fu_266_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_ln27_fu_255_p2">icmp, 0, 0, 29, 64, 64</column>
+<column name="icmp_ln29_fu_266_p2">icmp, 0, 0, 20, 32, 32</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
-<column name="select_ln59_1_fu_285_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln59_fu_271_p3">select, 0, 0, 32, 1, 1</column>
+<column name="select_ln27_1_fu_285_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln27_fu_271_p3">select, 0, 0, 32, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
 </table>
@@ -117,7 +117,6 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="H_TILE_tmp_reg_363">32, 0, 32, 0</column>
 <column name="add17_i_i_reg_422">9, 0, 9, 0</column>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
@@ -127,21 +126,22 @@
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
 <column name="bound_reg_383">64, 0, 64, 0</column>
-<column name="empty_39_reg_407">10, 0, 10, 0</column>
-<column name="empty_39_reg_407_pp0_iter1_reg">10, 0, 10, 0</column>
-<column name="empty_40_reg_412">9, 0, 9, 0</column>
-<column name="empty_40_reg_412_pp0_iter1_reg">9, 0, 9, 0</column>
+<column name="empty_39_reg_373">9, 0, 9, 0</column>
+<column name="empty_40_reg_407">10, 0, 10, 0</column>
+<column name="empty_40_reg_407_pp0_iter1_reg">10, 0, 10, 0</column>
+<column name="empty_41_reg_412">9, 0, 9, 0</column>
+<column name="empty_41_reg_412_pp0_iter1_reg">9, 0, 9, 0</column>
 <column name="hi_reg_213">32, 0, 32, 0</column>
-<column name="icmp_ln59_reg_388">1, 0, 1, 0</column>
+<column name="icmp_ln27_reg_388">1, 0, 1, 0</column>
 <column name="indvar_flatten_reg_202">64, 0, 64, 0</column>
 <column name="mul9_i_i_reg_378">10, 0, 10, 0</column>
 <column name="r_read_reg_353">10, 0, 10, 0</column>
 <column name="s_read_reg_358">10, 0, 10, 0</column>
-<column name="select_ln59_1_reg_397">32, 0, 32, 0</column>
-<column name="tmp_reg_368">10, 0, 10, 0</column>
-<column name="trunc_ln53_reg_373">9, 0, 9, 0</column>
+<column name="select_ln27_1_reg_397">32, 0, 32, 0</column>
+<column name="tmp_10_reg_368">10, 0, 10, 0</column>
+<column name="tmp_reg_363">32, 0, 32, 0</column>
 <column name="wi_reg_224">32, 0, 32, 0</column>
-<column name="icmp_ln59_reg_388">64, 32, 1, 0</column>
+<column name="icmp_ln27_reg_388">64, 32, 1, 0</column>
 </table>
 </item>
 </section>
@@ -158,22 +158,22 @@
 <column name="ap_continue">in, 1, ap_ctrl_hs, runL2toL1, return value</column>
 <column name="ap_idle">out, 1, ap_ctrl_hs, runL2toL1, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, runL2toL1, return value</column>
-<column name="data_l1buf_018_address0">out, 9, ap_memory, data_l1buf_018, array</column>
-<column name="data_l1buf_018_ce0">out, 1, ap_memory, data_l1buf_018, array</column>
-<column name="data_l1buf_018_we0">out, 1, ap_memory, data_l1buf_018, array</column>
-<column name="data_l1buf_018_d0">out, 8, ap_memory, data_l1buf_018, array</column>
-<column name="data_l1buf_119_address0">out, 9, ap_memory, data_l1buf_119, array</column>
-<column name="data_l1buf_119_ce0">out, 1, ap_memory, data_l1buf_119, array</column>
-<column name="data_l1buf_119_we0">out, 1, ap_memory, data_l1buf_119, array</column>
-<column name="data_l1buf_119_d0">out, 8, ap_memory, data_l1buf_119, array</column>
-<column name="data_l1buf_220_address0">out, 9, ap_memory, data_l1buf_220, array</column>
-<column name="data_l1buf_220_ce0">out, 1, ap_memory, data_l1buf_220, array</column>
-<column name="data_l1buf_220_we0">out, 1, ap_memory, data_l1buf_220, array</column>
-<column name="data_l1buf_220_d0">out, 8, ap_memory, data_l1buf_220, array</column>
-<column name="data_l1buf_321_address0">out, 9, ap_memory, data_l1buf_321, array</column>
-<column name="data_l1buf_321_ce0">out, 1, ap_memory, data_l1buf_321, array</column>
-<column name="data_l1buf_321_we0">out, 1, ap_memory, data_l1buf_321, array</column>
-<column name="data_l1buf_321_d0">out, 8, ap_memory, data_l1buf_321, array</column>
+<column name="data_l1buf_017_address0">out, 9, ap_memory, data_l1buf_017, array</column>
+<column name="data_l1buf_017_ce0">out, 1, ap_memory, data_l1buf_017, array</column>
+<column name="data_l1buf_017_we0">out, 1, ap_memory, data_l1buf_017, array</column>
+<column name="data_l1buf_017_d0">out, 8, ap_memory, data_l1buf_017, array</column>
+<column name="data_l1buf_118_address0">out, 9, ap_memory, data_l1buf_118, array</column>
+<column name="data_l1buf_118_ce0">out, 1, ap_memory, data_l1buf_118, array</column>
+<column name="data_l1buf_118_we0">out, 1, ap_memory, data_l1buf_118, array</column>
+<column name="data_l1buf_118_d0">out, 8, ap_memory, data_l1buf_118, array</column>
+<column name="data_l1buf_219_address0">out, 9, ap_memory, data_l1buf_219, array</column>
+<column name="data_l1buf_219_ce0">out, 1, ap_memory, data_l1buf_219, array</column>
+<column name="data_l1buf_219_we0">out, 1, ap_memory, data_l1buf_219, array</column>
+<column name="data_l1buf_219_d0">out, 8, ap_memory, data_l1buf_219, array</column>
+<column name="data_l1buf_320_address0">out, 9, ap_memory, data_l1buf_320, array</column>
+<column name="data_l1buf_320_ce0">out, 1, ap_memory, data_l1buf_320, array</column>
+<column name="data_l1buf_320_we0">out, 1, ap_memory, data_l1buf_320, array</column>
+<column name="data_l1buf_320_d0">out, 8, ap_memory, data_l1buf_320, array</column>
 <column name="data_l2_0_address0">out, 10, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_ce0">out, 1, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_q0">in, 8, ap_memory, data_l2_0, array</column>

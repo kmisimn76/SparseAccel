@@ -42,34 +42,9 @@
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/conv.cpp</name>
-			<type>1</type>
-			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv.cpp</location>
-		</link>
-		<link>
-			<name>source/conv1d.cpp</name>
-			<type>1</type>
-			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv1d.cpp</location>
-		</link>
-		<link>
-			<name>source/conv_sysarr.back</name>
-			<type>1</type>
-			<location>/home/sumin/workspace/hls_test/conv_sysarr.back</location>
-		</link>
-		<link>
-			<name>source/conv_sysarr.cpp</name>
-			<type>1</type>
-			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp</location>
-		</link>
-		<link>
 			<name>source/conv_sysarr_dbbuf.cpp</name>
 			<type>1</type>
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</location>
-		</link>
-		<link>
-			<name>source/conv_sysarr_fifo.cpp</name>
-			<type>1</type>
-			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_fifo.cpp</location>
 		</link>
 		<link>
 			<name>source/hw_param.h</name>

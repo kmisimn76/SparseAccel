@@ -2,15 +2,12 @@
 # xsim v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Jan 18 00:20:06 2022
-# Process ID: 24754
+# Start of session at: Tue Jan 18 02:26:08 2022
+# Process ID: 13686
 # Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog
-# Command line: xsim -source {xsim.dir/Conv_sysarr_dbbuf/xsim_script.tcl}
+# Command line: xsim -mode tcl -source {xsim.dir/Conv_sysarr/xsim_script.tcl}
 # Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.log
 # Journal file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.jou
 #-----------------------------------------------------------
-start_gui
-source xsim.dir/Conv_sysarr_dbbuf/xsim_script.tcl
-open_wave_config Conv_sysarr_dbbuf_dataflow_ana.wcfg
-source Conv_sysarr_dbbuf.tcl
-close_sim
+source xsim.dir/Conv_sysarr/xsim_script.tcl
+source Conv_sysarr.tcl
