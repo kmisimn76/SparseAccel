@@ -52,7 +52,7 @@
 #define TILE_W 1
 
 // parallel MAC units including (VEC_SIZE-1) multipliers
-MACTYPE mac(lane_data input, lane_data weights)
+/*MACTYPE mac(lane_data input, lane_data weights)
 {
 #pragma HLS inline
 
@@ -64,7 +64,7 @@ MACTYPE mac(lane_data input, lane_data weights)
         output += input.data[i] * weights.data[i];
     }
     return output;
-}
+}*/
 
 class SystolicArray_WeightStationary
 {

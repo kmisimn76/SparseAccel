@@ -67313,7 +67313,8 @@ public:
 };
 }
 # 46 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
-# 118 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
+
+
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef unsigned char uchar;
@@ -67324,40 +67325,11 @@ typedef int MACTYPE;
 
 
 
-typedef struct {
-    DPTYPE data[4];
-} lane_data;
 
 
-typedef struct {
-    lane_data lane[2];
-} channel_vec;
-
-
-typedef struct {
-    DPTYPE lane[2];
-} channel_scal;
-# 149 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
-typedef ap_axiu<2*8,0,0,0> k2k_data_xlane;
-typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
-typedef ap_axiu<8,0,0,0> k2k_sync;
-typedef ap_axiu<32,0,0,0> k2k_data;
+typedef ap_axiu<4*32,0,0,0> k2k_data;
 # 45 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv.cpp" 2
-# 55 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv.cpp"
-MACTYPE mac(lane_data input, lane_data weights)
-{
-#pragma HLS inline
-
-    MACTYPE output = 0xFFFFFFFF & 0x00;
-
-    for (int i = 0; i < 4; i++)
-    {
-#pragma HLS unroll
-        output += input.data[i] * weights.data[i];
-    }
-    return output;
-}
-
+# 69 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv.cpp"
 class SystolicArray_WeightStationary
 {
 public:

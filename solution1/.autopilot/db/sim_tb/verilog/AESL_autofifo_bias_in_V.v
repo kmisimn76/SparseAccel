@@ -22,9 +22,9 @@ localparam
 	TV_IN	=	"c.Conv_sysarr_dbbuf.autotvin_bias_in_V.dat";
 
 //------------------------Local signal-------------------
-parameter DATA_WIDTH = 32'd 64;
-parameter ADDR_WIDTH = 32'd 6;
-parameter DEPTH = 32'd 21;
+parameter DATA_WIDTH = 32'd 256;
+parameter ADDR_WIDTH = 32'd 5;
+parameter DEPTH = 32'd 9;
 
 // Input and Output
 input clk;
@@ -57,7 +57,7 @@ assign	if_full_n	=	((mInPtr == mOutPtr) && mFlag_hint == 1'b1)? 1'b 0: 1'b 1;
 //------------------------Task and function--------------
 task read_token;
 	input integer fp;
-	output reg [151 :0] token;
+	output reg [535 :0] token;
   integer ret;
 	begin
 	    token = "";
@@ -74,7 +74,7 @@ initial begin : read_file_process
   integer err;
   integer ret;
   integer transaction_idx;
-  reg [151 : 0] token;
+  reg [535 : 0] token;
   reg [ 8*5 : 1] str;
   reg [ DATA_WIDTH - 1 : 0] mem_tmp;
   mInPtr = 0;

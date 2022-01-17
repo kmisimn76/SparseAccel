@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runSysArr'" level="0">
-<item name = "Date">Fri Jan 14 19:05:39 2022
+<item name = "Date">Tue Jan 18 00:11:35 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.803 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.489 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">1, 63, 10.000 ns, 0.630 us, 1, 63, none</column>
+<column name="">52, 114, 0.520 us, 1.140 us, 52, 114, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -36,6 +36,7 @@
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- LOOP_INPUT_ROW">61, 61, 8, 1, 1, 55, yes</column>
+<column name="- VITIS_LOOP_200_6">49, 49, 2, 1, 1, 49, yes</column>
 </table>
 </item>
 </section>

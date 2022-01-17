@@ -36,15 +36,15 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 4;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 4946;
-parameter LENGTH_bias_in_V = 21;
-parameter LENGTH_weight_in_V = 576;
-parameter LENGTH_data_in_V = 324;
-parameter LENGTH_conv_out_V = 784;
+parameter LATENCY_ESTIMATION = 5910;
+parameter LENGTH_bias_in_V = 9;
+parameter LENGTH_weight_in_V = 144;
+parameter LENGTH_data_in_V = 81;
+parameter LENGTH_conv_out_V = 196;
 
 task read_token;
     input integer fp;
-    output reg [175 : 0] token;
+    output reg [535 : 0] token;
     integer ret;
     begin
         token = "";
@@ -56,10 +56,10 @@ endtask
 task post_check;
     input integer fp1;
     input integer fp2;
-    reg [175 : 0] token1;
-    reg [175 : 0] token2;
-    reg [175 : 0] golden;
-    reg [175 : 0] result;
+    reg [535 : 0] token1;
+    reg [535 : 0] token2;
+    reg [535 : 0] golden;
+    reg [535 : 0] result;
     integer ret;
     begin
         read_token(fp1, token1);
@@ -128,16 +128,16 @@ wire ap_start;
 wire ap_done;
 wire ap_idle;
 wire ap_ready;
-wire [63 : 0] bias_in_V_dout;
+wire [255 : 0] bias_in_V_dout;
 wire  bias_in_V_empty_n;
 wire  bias_in_V_read;
-wire [63 : 0] weight_in_V_dout;
+wire [255 : 0] weight_in_V_dout;
 wire  weight_in_V_empty_n;
 wire  weight_in_V_read;
-wire [63 : 0] data_in_V_dout;
+wire [255 : 0] data_in_V_dout;
 wire  data_in_V_empty_n;
 wire  data_in_V_read;
-wire [63 : 0] conv_out_V_din;
+wire [255 : 0] conv_out_V_din;
 wire  conv_out_V_full_n;
 wire  conv_out_V_write;
 integer done_cnt = 0;
@@ -207,7 +207,7 @@ assign AESL_continue = tb_continue;
 // Fifo Instantiation bias_in_V
 
 wire fifobias_in_V_rd;
-wire [63 : 0] fifobias_in_V_dout;
+wire [255 : 0] fifobias_in_V_dout;
 wire fifobias_in_V_empty_n;
 wire fifobias_in_V_ready;
 wire fifobias_in_V_done;
@@ -251,7 +251,7 @@ assign      bias_in_V_empty_n    =   reg_fifobias_in_V_empty_n;
 // Fifo Instantiation weight_in_V
 
 wire fifoweight_in_V_rd;
-wire [63 : 0] fifoweight_in_V_dout;
+wire [255 : 0] fifoweight_in_V_dout;
 wire fifoweight_in_V_empty_n;
 wire fifoweight_in_V_ready;
 wire fifoweight_in_V_done;
@@ -295,7 +295,7 @@ assign      weight_in_V_empty_n    =   reg_fifoweight_in_V_empty_n;
 // Fifo Instantiation data_in_V
 
 wire fifodata_in_V_rd;
-wire [63 : 0] fifodata_in_V_dout;
+wire [255 : 0] fifodata_in_V_dout;
 wire fifodata_in_V_empty_n;
 wire fifodata_in_V_ready;
 wire fifodata_in_V_done;
@@ -340,7 +340,7 @@ assign      data_in_V_empty_n    =   reg_fifodata_in_V_empty_n;
 
 // The input and output of fifoconv_out_V
 wire  fifoconv_out_V_wr;
-wire  [63 : 0] fifoconv_out_V_din;
+wire  [255 : 0] fifoconv_out_V_din;
 wire  fifoconv_out_V_full_n;
 wire  fifoconv_out_V_ready;
 wire  fifoconv_out_V_done;
@@ -410,15 +410,7 @@ end
         end
     end
     
-reg all_finish; 
-    always @(posedge AESL_clock) begin
-        if (AESL_reset) begin
-            all_finish = 0;
-        end
-        else if (done_cnt == AUTOTB_TRANSACTION_NUM) begin
-            all_finish = 1;
-        end
-    end
+    wire all_finish = (done_cnt == AUTOTB_TRANSACTION_NUM);
     
     // done_cnt
     always @ (posedge AESL_clock) begin
@@ -1154,573 +1146,13 @@ end
 
 `ifndef POST_SYN
 
-// Dependence Check (WAR) "ap_enable_operation_195"(R:SV3-4) -> "ap_enable_operation_327"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
+// Dependence Check (WAR) "ap_enable_operation_170"(R:SV3-4) -> "ap_enable_operation_330"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
 
-// Dependence Check (WAR) "ap_enable_operation_197"(R:SV3-4) -> "ap_enable_operation_332"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
+// Dependence Check (WAR) "ap_enable_operation_174"(R:SV3-4) -> "ap_enable_operation_334"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
 
-// Dependence Check (WAR) "ap_enable_operation_199"(R:SV3-4) -> "ap_enable_operation_337"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
+// Dependence Check (WAR) "ap_enable_operation_179"(R:SV3-4) -> "ap_enable_operation_338"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
 
-// Dependence Check (WAR) "ap_enable_operation_201"(R:SV3-4) -> "ap_enable_operation_340"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-
-// Dependence Check (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-reg [9:0] DEP_address_4_to [5 - 1:0];
-time DEP_time_4_to [5 - 1:0];
-reg [9:0] DEP_address_4_from [1 - 1:0];
-time DEP_time_4_from [1 - 1:0];
-reg DEP_error_4 = 0;
-integer DEP_i_4;
-
-initial begin
-    DEP_address_4_to[0] = 0;
-    DEP_time_4_to[0] = 0;
-    DEP_address_4_to[1] = 0;
-    DEP_time_4_to[1] = 0;
-    DEP_address_4_to[2] = 0;
-    DEP_time_4_to[2] = 0;
-    DEP_address_4_to[3] = 0;
-    DEP_time_4_to[3] = 0;
-    DEP_address_4_to[4] = 0;
-    DEP_time_4_to[4] = 0;
-    DEP_address_4_from[0] = 0;
-    DEP_time_4_from[0] = 0;
-end
-
-always @ (negedge AESL_clock) begin
-    if (~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_block_pp0) begin 
-        // record "to" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin 
-            DEP_address_4_to[4] = DEP_address_4_to[3];
-            DEP_time_4_to[4] = DEP_time_4_to[3];
-            DEP_address_4_to[3] = DEP_address_4_to[2];
-            DEP_time_4_to[3] = DEP_time_4_to[2];
-            DEP_address_4_to[2] = DEP_address_4_to[1];
-            DEP_time_4_to[2] = DEP_time_4_to[1];
-            DEP_address_4_to[1] = DEP_address_4_to[0];
-            DEP_time_4_to[1] = DEP_time_4_to[0];
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_158) begin
-                DEP_address_4_to[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_3_address1};
-                DEP_time_4_to[0] = $time;
-            end else begin
-                DEP_address_4_to[0] = {1'b0, 9'b0};
-                DEP_time_4_to[0] = $time;
-            end
-        end // of record to access
-        else if( (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state5_pp0_iter3_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0)
-            &&  ~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin
-            DEP_address_4_to[4] = DEP_address_4_to[3];
-            DEP_time_4_to[4] = DEP_time_4_to[3];
-            DEP_address_4_to[3] = DEP_address_4_to[2];
-            DEP_time_4_to[3] = DEP_time_4_to[2];
-            DEP_address_4_to[2] = DEP_address_4_to[1];
-            DEP_time_4_to[2] = DEP_time_4_to[1];
-            DEP_address_4_to[1] = DEP_address_4_to[0];
-            DEP_time_4_to[1] = DEP_time_4_to[0];
-            DEP_address_4_to[0] = {1'b0, 9'b0};
-            DEP_time_4_to[0] = $time;
-        end
-        // record "from" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_327) begin
-                if (DEP_address_4_from[0][9]) begin
-                    $display("// ERROR : \"DEP_address_4_from[0]\" is overwritten @ \"%0t\"", $time);
-                    $display("// autotb LINE:%d", `__LINE__);
-                    $display("////////////////////////////////////////////////////////////////////////////////////");
-                end
-                DEP_address_4_from[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_3_address0};
-                DEP_time_4_from[0] = $time;
-            end
-        end // of record from access
-        // check access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_327) begin
-                DEP_i_4 = 0;
-                if (DEP_address_4_to[0][9]) begin
-                    DEP_error_4 = (DEP_address_4_to[0][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
-                    if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
-                        $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[0][8:0], DEP_time_4_to[0]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_4_to[1][9]) begin
-                    DEP_error_4 = (DEP_address_4_to[1][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
-                    if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
-                        $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[1][8:0], DEP_time_4_to[1]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_4_to[2][9]) begin
-                    DEP_error_4 = (DEP_address_4_to[2][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
-                    if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
-                        $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[2][8:0], DEP_time_4_to[2]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_4_to[3][9]) begin
-                    DEP_error_4 = (DEP_address_4_to[3][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
-                    if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
-                        $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[3][8:0], DEP_time_4_to[3]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_4_to[4][9]) begin
-                    DEP_error_4 = (DEP_address_4_to[4][8:0] == DEP_address_4_from[DEP_i_4][8:0]);
-                    if (DEP_error_4) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_3_address0\" = 0x%0h @ \"%0t\"", DEP_address_4_from[DEP_i_4][8:0], DEP_time_4_from[DEP_i_4]);
-                        $display("//                : To memory access \"output_l1_3_address1\" = DEP_address_4_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_4_to[4][8:0], DEP_time_4_to[4]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_327"(W:SV8-8) -> "ap_enable_operation_158"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                DEP_address_4_from[DEP_i_4] = {1'b0, 9'b0};
-                DEP_time_4_from[DEP_i_4] = 0;
-            end
-        end // of check access
-    end 
-end
-
-// Dependence Check (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-reg [9:0] DEP_address_5_to [5 - 1:0];
-time DEP_time_5_to [5 - 1:0];
-reg [9:0] DEP_address_5_from [1 - 1:0];
-time DEP_time_5_from [1 - 1:0];
-reg DEP_error_5 = 0;
-integer DEP_i_5;
-
-initial begin
-    DEP_address_5_to[0] = 0;
-    DEP_time_5_to[0] = 0;
-    DEP_address_5_to[1] = 0;
-    DEP_time_5_to[1] = 0;
-    DEP_address_5_to[2] = 0;
-    DEP_time_5_to[2] = 0;
-    DEP_address_5_to[3] = 0;
-    DEP_time_5_to[3] = 0;
-    DEP_address_5_to[4] = 0;
-    DEP_time_5_to[4] = 0;
-    DEP_address_5_from[0] = 0;
-    DEP_time_5_from[0] = 0;
-end
-
-always @ (negedge AESL_clock) begin
-    if (~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_block_pp0) begin 
-        // record "to" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin 
-            DEP_address_5_to[4] = DEP_address_5_to[3];
-            DEP_time_5_to[4] = DEP_time_5_to[3];
-            DEP_address_5_to[3] = DEP_address_5_to[2];
-            DEP_time_5_to[3] = DEP_time_5_to[2];
-            DEP_address_5_to[2] = DEP_address_5_to[1];
-            DEP_time_5_to[2] = DEP_time_5_to[1];
-            DEP_address_5_to[1] = DEP_address_5_to[0];
-            DEP_time_5_to[1] = DEP_time_5_to[0];
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_162) begin
-                DEP_address_5_to[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_2_address1};
-                DEP_time_5_to[0] = $time;
-            end else begin
-                DEP_address_5_to[0] = {1'b0, 9'b0};
-                DEP_time_5_to[0] = $time;
-            end
-        end // of record to access
-        else if( (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state5_pp0_iter3_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0)
-            &&  ~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin
-            DEP_address_5_to[4] = DEP_address_5_to[3];
-            DEP_time_5_to[4] = DEP_time_5_to[3];
-            DEP_address_5_to[3] = DEP_address_5_to[2];
-            DEP_time_5_to[3] = DEP_time_5_to[2];
-            DEP_address_5_to[2] = DEP_address_5_to[1];
-            DEP_time_5_to[2] = DEP_time_5_to[1];
-            DEP_address_5_to[1] = DEP_address_5_to[0];
-            DEP_time_5_to[1] = DEP_time_5_to[0];
-            DEP_address_5_to[0] = {1'b0, 9'b0};
-            DEP_time_5_to[0] = $time;
-        end
-        // record "from" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_332) begin
-                if (DEP_address_5_from[0][9]) begin
-                    $display("// ERROR : \"DEP_address_5_from[0]\" is overwritten @ \"%0t\"", $time);
-                    $display("// autotb LINE:%d", `__LINE__);
-                    $display("////////////////////////////////////////////////////////////////////////////////////");
-                end
-                DEP_address_5_from[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_2_address0};
-                DEP_time_5_from[0] = $time;
-            end
-        end // of record from access
-        // check access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_332) begin
-                DEP_i_5 = 0;
-                if (DEP_address_5_to[0][9]) begin
-                    DEP_error_5 = (DEP_address_5_to[0][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
-                    if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
-                        $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[0][8:0], DEP_time_5_to[0]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_5_to[1][9]) begin
-                    DEP_error_5 = (DEP_address_5_to[1][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
-                    if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
-                        $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[1][8:0], DEP_time_5_to[1]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_5_to[2][9]) begin
-                    DEP_error_5 = (DEP_address_5_to[2][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
-                    if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
-                        $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[2][8:0], DEP_time_5_to[2]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_5_to[3][9]) begin
-                    DEP_error_5 = (DEP_address_5_to[3][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
-                    if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
-                        $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[3][8:0], DEP_time_5_to[3]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_5_to[4][9]) begin
-                    DEP_error_5 = (DEP_address_5_to[4][8:0] == DEP_address_5_from[DEP_i_5][8:0]);
-                    if (DEP_error_5) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_2_address0\" = 0x%0h @ \"%0t\"", DEP_address_5_from[DEP_i_5][8:0], DEP_time_5_from[DEP_i_5]);
-                        $display("//                : To memory access \"output_l1_2_address1\" = DEP_address_5_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_5_to[4][8:0], DEP_time_5_to[4]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_332"(W:SV8-8) -> "ap_enable_operation_162"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                DEP_address_5_from[DEP_i_5] = {1'b0, 9'b0};
-                DEP_time_5_from[DEP_i_5] = 0;
-            end
-        end // of check access
-    end 
-end
-
-// Dependence Check (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-reg [9:0] DEP_address_6_to [5 - 1:0];
-time DEP_time_6_to [5 - 1:0];
-reg [9:0] DEP_address_6_from [1 - 1:0];
-time DEP_time_6_from [1 - 1:0];
-reg DEP_error_6 = 0;
-integer DEP_i_6;
-
-initial begin
-    DEP_address_6_to[0] = 0;
-    DEP_time_6_to[0] = 0;
-    DEP_address_6_to[1] = 0;
-    DEP_time_6_to[1] = 0;
-    DEP_address_6_to[2] = 0;
-    DEP_time_6_to[2] = 0;
-    DEP_address_6_to[3] = 0;
-    DEP_time_6_to[3] = 0;
-    DEP_address_6_to[4] = 0;
-    DEP_time_6_to[4] = 0;
-    DEP_address_6_from[0] = 0;
-    DEP_time_6_from[0] = 0;
-end
-
-always @ (negedge AESL_clock) begin
-    if (~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_block_pp0) begin 
-        // record "to" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin 
-            DEP_address_6_to[4] = DEP_address_6_to[3];
-            DEP_time_6_to[4] = DEP_time_6_to[3];
-            DEP_address_6_to[3] = DEP_address_6_to[2];
-            DEP_time_6_to[3] = DEP_time_6_to[2];
-            DEP_address_6_to[2] = DEP_address_6_to[1];
-            DEP_time_6_to[2] = DEP_time_6_to[1];
-            DEP_address_6_to[1] = DEP_address_6_to[0];
-            DEP_time_6_to[1] = DEP_time_6_to[0];
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_166) begin
-                DEP_address_6_to[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_1_address1};
-                DEP_time_6_to[0] = $time;
-            end else begin
-                DEP_address_6_to[0] = {1'b0, 9'b0};
-                DEP_time_6_to[0] = $time;
-            end
-        end // of record to access
-        else if( (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state5_pp0_iter3_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0)
-            &&  ~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin
-            DEP_address_6_to[4] = DEP_address_6_to[3];
-            DEP_time_6_to[4] = DEP_time_6_to[3];
-            DEP_address_6_to[3] = DEP_address_6_to[2];
-            DEP_time_6_to[3] = DEP_time_6_to[2];
-            DEP_address_6_to[2] = DEP_address_6_to[1];
-            DEP_time_6_to[2] = DEP_time_6_to[1];
-            DEP_address_6_to[1] = DEP_address_6_to[0];
-            DEP_time_6_to[1] = DEP_time_6_to[0];
-            DEP_address_6_to[0] = {1'b0, 9'b0};
-            DEP_time_6_to[0] = $time;
-        end
-        // record "from" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_337) begin
-                if (DEP_address_6_from[0][9]) begin
-                    $display("// ERROR : \"DEP_address_6_from[0]\" is overwritten @ \"%0t\"", $time);
-                    $display("// autotb LINE:%d", `__LINE__);
-                    $display("////////////////////////////////////////////////////////////////////////////////////");
-                end
-                DEP_address_6_from[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_1_address0};
-                DEP_time_6_from[0] = $time;
-            end
-        end // of record from access
-        // check access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_337) begin
-                DEP_i_6 = 0;
-                if (DEP_address_6_to[0][9]) begin
-                    DEP_error_6 = (DEP_address_6_to[0][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
-                    if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
-                        $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[0][8:0], DEP_time_6_to[0]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_6_to[1][9]) begin
-                    DEP_error_6 = (DEP_address_6_to[1][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
-                    if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
-                        $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[1][8:0], DEP_time_6_to[1]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_6_to[2][9]) begin
-                    DEP_error_6 = (DEP_address_6_to[2][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
-                    if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
-                        $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[2][8:0], DEP_time_6_to[2]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_6_to[3][9]) begin
-                    DEP_error_6 = (DEP_address_6_to[3][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
-                    if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
-                        $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[3][8:0], DEP_time_6_to[3]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_6_to[4][9]) begin
-                    DEP_error_6 = (DEP_address_6_to[4][8:0] == DEP_address_6_from[DEP_i_6][8:0]);
-                    if (DEP_error_6) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_1_address0\" = 0x%0h @ \"%0t\"", DEP_address_6_from[DEP_i_6][8:0], DEP_time_6_from[DEP_i_6]);
-                        $display("//                : To memory access \"output_l1_1_address1\" = DEP_address_6_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_6_to[4][8:0], DEP_time_6_to[4]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_337"(W:SV8-8) -> "ap_enable_operation_166"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                DEP_address_6_from[DEP_i_6] = {1'b0, 9'b0};
-                DEP_time_6_from[DEP_i_6] = 0;
-            end
-        end // of check access
-    end 
-end
-
-// Dependence Check (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-reg [9:0] DEP_address_7_to [5 - 1:0];
-time DEP_time_7_to [5 - 1:0];
-reg [9:0] DEP_address_7_from [1 - 1:0];
-time DEP_time_7_from [1 - 1:0];
-reg DEP_error_7 = 0;
-integer DEP_i_7;
-
-initial begin
-    DEP_address_7_to[0] = 0;
-    DEP_time_7_to[0] = 0;
-    DEP_address_7_to[1] = 0;
-    DEP_time_7_to[1] = 0;
-    DEP_address_7_to[2] = 0;
-    DEP_time_7_to[2] = 0;
-    DEP_address_7_to[3] = 0;
-    DEP_time_7_to[3] = 0;
-    DEP_address_7_to[4] = 0;
-    DEP_time_7_to[4] = 0;
-    DEP_address_7_from[0] = 0;
-    DEP_time_7_from[0] = 0;
-end
-
-always @ (negedge AESL_clock) begin
-    if (~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_block_pp0) begin 
-        // record "to" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin 
-            DEP_address_7_to[4] = DEP_address_7_to[3];
-            DEP_time_7_to[4] = DEP_time_7_to[3];
-            DEP_address_7_to[3] = DEP_address_7_to[2];
-            DEP_time_7_to[3] = DEP_time_7_to[2];
-            DEP_address_7_to[2] = DEP_address_7_to[1];
-            DEP_time_7_to[2] = DEP_time_7_to[1];
-            DEP_address_7_to[1] = DEP_address_7_to[0];
-            DEP_time_7_to[1] = DEP_time_7_to[0];
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_170) begin
-                DEP_address_7_to[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_0_address1};
-                DEP_time_7_to[0] = $time;
-            end else begin
-                DEP_address_7_to[0] = {1'b0, 9'b0};
-                DEP_time_7_to[0] = $time;
-            end
-        end // of record to access
-        else if( (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state4_pp0_iter2_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state5_pp0_iter3_stage0||
-            `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0)
-            &&  ~`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter2) begin
-            DEP_address_7_to[4] = DEP_address_7_to[3];
-            DEP_time_7_to[4] = DEP_time_7_to[3];
-            DEP_address_7_to[3] = DEP_address_7_to[2];
-            DEP_time_7_to[3] = DEP_time_7_to[2];
-            DEP_address_7_to[2] = DEP_address_7_to[1];
-            DEP_time_7_to[2] = DEP_time_7_to[1];
-            DEP_address_7_to[1] = DEP_address_7_to[0];
-            DEP_time_7_to[1] = DEP_time_7_to[0];
-            DEP_address_7_to[0] = {1'b0, 9'b0};
-            DEP_time_7_to[0] = $time;
-        end
-        // record "from" access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_340) begin
-                if (DEP_address_7_from[0][9]) begin
-                    $display("// ERROR : \"DEP_address_7_from[0]\" is overwritten @ \"%0t\"", $time);
-                    $display("// autotb LINE:%d", `__LINE__);
-                    $display("////////////////////////////////////////////////////////////////////////////////////");
-                end
-                DEP_address_7_from[0] = {1'b1, `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.output_l1_0_address0};
-                DEP_time_7_from[0] = $time;
-            end
-        end // of record from access
-        // check access
-        if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_state9_pp0_iter7_stage0
-            &&  `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_reg_pp0_iter7) begin
-            if (`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0.ap_enable_operation_340) begin
-                DEP_i_7 = 0;
-                if (DEP_address_7_to[0][9]) begin
-                    DEP_error_7 = (DEP_address_7_to[0][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
-                    if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 5) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
-                        $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[0][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[0][8:0], DEP_time_7_to[0]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_7_to[1][9]) begin
-                    DEP_error_7 = (DEP_address_7_to[1][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
-                    if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 4) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
-                        $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[1][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[1][8:0], DEP_time_7_to[1]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_7_to[2][9]) begin
-                    DEP_error_7 = (DEP_address_7_to[2][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
-                    if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 3) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
-                        $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[2][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[2][8:0], DEP_time_7_to[2]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_7_to[3][9]) begin
-                    DEP_error_7 = (DEP_address_7_to[3][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
-                    if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 2) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
-                        $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[3][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[3][8:0], DEP_time_7_to[3]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                if (DEP_address_7_to[4][9]) begin
-                    DEP_error_7 = (DEP_address_7_to[4][8:0] == DEP_address_7_from[DEP_i_7][8:0]);
-                    if (DEP_error_7) begin
-                        $display("//Critical WARNING: Due to pragma (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:114:55), dependence access (loop distance = 1) is detected in \"`AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0\"");
-                        $display("//                : From memory access \"output_l1_0_address0\" = 0x%0h @ \"%0t\"", DEP_address_7_from[DEP_i_7][8:0], DEP_time_7_from[DEP_i_7]);
-                        $display("//                : To memory access \"output_l1_0_address1\" = DEP_address_7_to[4][8:0] = 0x%0h @ \"%0t\"", DEP_address_7_to[4][8:0], DEP_time_7_to[4]);
-                        $display("//If cosim fails, the WARNING should be checked. autotb LINE:%d", `__LINE__);
-                        $display("////////////////////////////////////////////////////////////////////////////////////");
-// (RAW) "ap_enable_operation_340"(W:SV8-8) -> "ap_enable_operation_170"(R:SV3-4) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc13_fu_672.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
-                    end
-                end
-                DEP_address_7_from[DEP_i_7] = {1'b0, 9'b0};
-                DEP_time_7_from[DEP_i_7] = 0;
-            end
-        end // of check access
-    end 
-end
+// Dependence Check (WAR) "ap_enable_operation_181"(R:SV3-4) -> "ap_enable_operation_341"(W:SV8-8) @ `AUTOTB_DUT_INST.grp_dataflow_parent_loop_proc14_fu_736.dataflow_parent_loop_proc_U0.dataflow_in_loop_LOOP_S_U0.runSysArr_U0
 
 `endif
 
@@ -1728,12 +1160,5 @@ AESL_deadlock_detector deadlock_detector(
     .reset(~AESL_reset),
     .clock(AESL_clock));
 
-///////////////////////////////////////////////////////
-// dataflow status monitor
-///////////////////////////////////////////////////////
-dataflow_monitor U_dataflow_monitor(
-    .clock(AESL_clock),
-    .reset(rst),
-    .finish(all_finish));
 
 endmodule

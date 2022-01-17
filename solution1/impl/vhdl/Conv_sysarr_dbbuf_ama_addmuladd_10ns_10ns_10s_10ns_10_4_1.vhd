@@ -6,7 +6,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3 is
+entity Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1 is
 port (
     clk: in  std_logic;
     rst: in  std_logic;
@@ -19,7 +19,7 @@ port (
 
 end entity;
 
-architecture behav of Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3 is
+architecture behav of Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1 is
     signal b       : signed(18-1 downto 0);
     signal a       : signed(27-1 downto 0);
     signal d       : signed(27-1 downto 0);
@@ -79,7 +79,7 @@ entity Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1 is
 end entity;
 
 architecture arch of Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1 is
-    component Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3 is
+    component Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1 is
         port (
             clk : IN STD_LOGIC;
             rst : IN STD_LOGIC;
@@ -94,7 +94,7 @@ architecture arch of Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1 i
 
 
 begin
-    Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3_U :  component Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3
+    Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1_U :  component Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1
     port map (
         clk => clk,
         rst => reset,

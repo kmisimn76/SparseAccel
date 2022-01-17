@@ -67313,7 +67313,8 @@ public:
 };
 }
 # 46 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
-# 118 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
+
+
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef unsigned char uchar;
@@ -67324,24 +67325,9 @@ typedef int MACTYPE;
 
 
 
-typedef struct {
-    DPTYPE data[4];
-} lane_data;
 
 
-typedef struct {
-    lane_data lane[2];
-} channel_vec;
-
-
-typedef struct {
-    DPTYPE lane[2];
-} channel_scal;
-# 149 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
-typedef ap_axiu<2*8,0,0,0> k2k_data_xlane;
-typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
-typedef ap_axiu<8,0,0,0> k2k_sync;
-typedef ap_axiu<32,0,0,0> k2k_data;
+typedef ap_axiu<4*32,0,0,0> k2k_data;
 # 4 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp" 2
 
 
@@ -67433,14 +67419,38 @@ int conv_test(
     tmp.data(31,0) = RS;
     bias_in.write(tmp);
 
- for (unsigned int k = 0; k < K; k++) {
-  tmp.data(7,0) = bias[k]; bias_in.write(tmp);
+ for (unsigned int ko = 0; ko < K/4; ko++) {
+  for (unsigned int ki = 0; ki < 4; ki++) {
+   uint k = ko * 4 + ki;
+   int v = ki;
+   tmp.data((v+1)*8 -1, v*8) = bias[k];
+  }
+
+  bias_in.write(tmp);
  }
- for (unsigned int k = 0; k < K*C*RS*RS; k++) {
-  tmp.data(7,0) = weight[k]; weight_in.write(tmp);
+ for (unsigned int crs = 0; crs < C*RS*RS; crs++) {
+  for (unsigned int ko = 0; ko < K/4; ko++) {
+   for (unsigned int ki = 0; ki < 4; ki++) {
+
+    uint ptr = (ko*4 + ki)*C*RS*RS + crs;
+    int v = ki;
+    tmp.data((v+1)*8 -1, v*8) = weight[ptr];
+   }
+
+   weight_in.write(tmp);
+  }
  }
- for (unsigned int k = 0; k < C*WH_in*WH_in; k++) {
-  tmp.data(7,0) = data[k]; data_in.write(tmp);
+ for (unsigned int wh = 0; wh < WH_in*WH_in; wh++) {
+  for (unsigned int co = 0; co < C/4; co++) {
+   for (unsigned int ci = 0; ci < 4; ci++) {
+
+    uint ptr = (co*4 +ci)*WH_in*WH_in + wh;
+    int v = ci;
+    tmp.data((v+1)*8 -1, v*8) = data[ptr];
+   }
+
+   data_in.write(tmp);
+  }
  }
 
 
@@ -67448,11 +67458,19 @@ int conv_test(
 
  Conv_sysarr_dbbuf(bias_in, weight_in, data_in, conv_out);
 
-    for(int l=0;l<K*WH*WH;l++) {
-     tmp = conv_out.read(); int output = tmp.data(31,0);
-     if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]); return 1; }
+    for(int wh=0;wh<WH*WH;wh++) {
+  for (unsigned int ko = 0; ko < K/4; ko++) {
+   tmp = conv_out.read();
+   for (unsigned int ki = 0; ki < 4; ki++) {
+
+    uint l = (ko*4 +ki)*WH*WH + wh;
+    int v = ki;
+    int output = tmp.data((v+1)*32 -1, v*32);
+    if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]); return 1; }
 
 
+   }
+  }
     }
     return 0;
 }
@@ -67477,7 +67495,7 @@ int main()
  for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = 1;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 1 Complete\n");
+    printf("Test Case 1 Complete %d\n", gold[0]);
 
 
  for(int k = 0; k < K; k++) bias[k] = k;
@@ -67485,7 +67503,7 @@ int main()
  for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = 1;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 2 Complete\n");
+    printf("Test Case 2 Complete %d\n", gold[0]);
 
 
  for(int k = 0; k < K; k++) bias[k] = k;
@@ -67493,7 +67511,7 @@ int main()
  for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = k%256-128;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 3 Complete\n");
+    printf("Test Case 3 Complete %d\n", gold[0]);
 
 
  for(int k = 0; k < K; k++) bias[k] = rand()%256-128;
@@ -67501,7 +67519,7 @@ int main()
  for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = rand()%256-128;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 4 Complete\n");
+    printf("Test Case 4 Complete %d\n", gold[0]);
 
  return 0;
 }

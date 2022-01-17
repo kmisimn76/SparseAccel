@@ -23,9 +23,9 @@ localparam
 	TV_OUT	=	"impl_rtl.Conv_sysarr_dbbuf.autotvout_conv_out_V.dat";
 
 //------------------------Local signal-------------------
-parameter DATA_WIDTH = 32'd 64;
-parameter ADDR_WIDTH = 32'd 11;
-parameter DEPTH = 32'd 784;
+parameter DATA_WIDTH = 32'd 256;
+parameter ADDR_WIDTH = 32'd 9;
+parameter DEPTH = 32'd 196;
 
 // Input and Output
 input clk;
@@ -58,7 +58,7 @@ assign	if_full_n	=	((mInPtr == mOutPtr) && mFlag_hint == 1'b1)? 1'b 0: 1'b 1;
 //------------------------Task and function--------------
 task read_token;
 	input integer fp;
-	output reg [151 :0] token;
+	output reg [535 :0] token;
   integer ret;
 	begin
 	    token = "";

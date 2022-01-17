@@ -13415,7 +13415,9 @@ public:
 # 44 "Systolic_Array_PCNN_based/hw_param.h" 2
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int.h" 1
 # 45 "Systolic_Array_PCNN_based/hw_param.h" 2
-# 118 "Systolic_Array_PCNN_based/hw_param.h"
+
+
+
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef unsigned char uchar;
@@ -13426,40 +13428,11 @@ typedef int MACTYPE;
 
 
 
-typedef struct {
-    DPTYPE data[4];
-} lane_data;
 
 
-typedef struct {
-    lane_data lane[2];
-} channel_vec;
-
-
-typedef struct {
-    DPTYPE lane[2];
-} channel_scal;
-# 149 "Systolic_Array_PCNN_based/hw_param.h"
-typedef ap_axiu<2*8,0,0,0> k2k_data_xlane;
-typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
-typedef ap_axiu<8,0,0,0> k2k_sync;
-typedef ap_axiu<32,0,0,0> k2k_data;
+typedef ap_axiu<4*32,0,0,0> k2k_data;
 # 45 "Systolic_Array_PCNN_based/conv.cpp" 2
-# 55 "Systolic_Array_PCNN_based/conv.cpp"
-MACTYPE mac(lane_data input, lane_data weights)
-{
-#pragma HLS inline
-
- MACTYPE output = 0xFFFFFFFF & 0x00;
-
-    VITIS_LOOP_61_1: for (int i = 0; i < 4; i++)
-    {
-#pragma HLS unroll
- output += input.data[i] * weights.data[i];
-    }
-    return output;
-}
-
+# 69 "Systolic_Array_PCNN_based/conv.cpp"
 class SystolicArray_WeightStationary
 {
 public:

@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 238
-set name Conv_sysarr_dbbuf_mul_30ns_34ns_64_1_1
+set id 237
+set name Conv_sysarr_dbbuf_mul_30ns_32ns_62_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
@@ -9,9 +9,9 @@ set max_latency -1
 set registered_input 1
 set in0_width 30
 set in0_signed 0
-set in1_width 34
+set in1_width 32
 set in1_signed 0
-set out_width 64
+set out_width 62
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
 eval "ap_gen_simcore_mul { \
@@ -67,7 +67,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 240
+set id 241
 set name Conv_sysarr_dbbuf_mul_30ns_30ns_60_1_1
 set corename simcore_mul
 set op mul
@@ -134,92 +134,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 244
-set name Conv_sysarr_dbbuf_mux_42_32_1_1
-set corename simcore_mux
-set op mux
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set din0_width 32
-set din0_signed 0
-set din1_width 32
-set din1_signed 0
-set din2_width 32
-set din2_signed 0
-set din3_width 32
-set din3_signed 0
-set din4_width 2
-set din4_signed 0
-set dout_width 32
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mux] == "ap_gen_simcore_mux"} {
-eval "ap_gen_simcore_mux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mux, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mux
-set corename MuxnS
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipemux] == "::AESL_LIB_VIRTEX::xil_gen_pipemux"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
-}
-}
-
-
-set id 245
+set id 246
 set name Conv_sysarr_dbbuf_mac_muladd_10s_10s_10ns_10_4_1
 set corename simcore_mac
 set op mac
@@ -319,8 +234,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 }
 
 
-set id 246
-set name Conv_sysarr_dbbuf_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
+set id 247
+set name Conv_sysarr_dbbuf_ama_addmuladd_9ns_9s_9s_9ns_9_4_1
 set corename simcore_ama
 set op ama
 set stage_num 4
@@ -333,7 +248,7 @@ set reset_signed 0
 set in0_width 9
 set in0_signed 0
 set in1_width 9
-set in1_signed 0
+set in1_signed 1
 set in2_width 9
 set in2_signed 1
 set in3_width 9
@@ -342,7 +257,7 @@ set ce_width 1
 set ce_signed 0
 set out_width 9
 set exp (i0+i1)*i2+i3
-set arg_lists {i0 {9 0 +} i1 {9 0 +} s {9 1 +} i2 {9 1 +} m {9 1 +} i3 {9 0 +} p {9 1 +} c_expval {c} c_reg {1} rnd {0} acc {0} }
+set arg_lists {i0 {9 0 +} i1 {9 1 +} s {9 1 +} i2 {9 1 +} m {9 1 +} i3 {9 0 +} p {9 1 +} c_expval {c} c_reg {1} rnd {0} acc {0} }
 set TrueReset 0
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_ama] == "ap_gen_simcore_ama"} {
@@ -428,18 +343,17 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your p
 # Memory (RAM/ROM)  definition:
 set ID 253
 set hasByteEnable 0
-set MemName Conv_sysarr_dbbuf_output_l1_0
+set MemName Conv_sysarr_dbbuf_weight_l2_0
 set CoreName ap_simcore_mem
-set PortList { 2 1 }
-set DataWd 32
+set PortList { 2 3 }
+set DataWd 8
 set AddrRange 512
 set AddrWd 9
 set impl_style auto
 set TrueReset 0
+set HasInitializer 0
 set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
+set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 1.158
@@ -514,18 +428,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 254
 set hasByteEnable 0
-set MemName Conv_sysarr_dbbuf_weight_l2_0
+set MemName Conv_sysarr_dbbuf_data_l2_0
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
-set AddrRange 512
-set AddrWd 9
+set AddrRange 1024
+set AddrWd 10
 set impl_style auto
 set TrueReset 0
+set HasInitializer 0
 set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
+set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 1.158
@@ -600,18 +513,102 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 # Memory (RAM/ROM)  definition:
 set ID 255
 set hasByteEnable 0
-set MemName Conv_sysarr_dbbuf_data_l2_0
+set MemName Conv_sysarr_dbbuf_output_l1_0
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 8
+set DataWd 32
+set AddrRange 512
+set AddrWd 9
+set impl_style auto
+set TrueReset 0
+set HasInitializer 0
+set IsROM 0
+set ROMData {}
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 1.158
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName RAM
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 2 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    style ${impl_style} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 256
+set hasByteEnable 0
+set MemName Conv_sysarr_dbbuf_output_l1_pass_0
+set CoreName ap_simcore_mem
+set PortList { 2 3 }
+set DataWd 32
 set AddrRange 1024
 set AddrWd 10
 set impl_style auto
 set TrueReset 0
+set HasInitializer 0
 set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
+set ROMData {}
 set NumOfStage 2
 set MaxLatency -1
 set DelayBudget 1.158
@@ -694,7 +691,7 @@ set axilite_register_dict [dict create]
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 256 \
+    id 257 \
     name bias_in_V \
     type fifo \
     dir I \
@@ -702,22 +699,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_bias_in_V \
     op interface \
-    ports { bias_in_V_dout { I 64 vector } bias_in_V_empty_n { I 1 bit } bias_in_V_read { O 1 bit } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 257 \
-    name weight_in_V \
-    type fifo \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_weight_in_V \
-    op interface \
-    ports { weight_in_V_dout { I 64 vector } weight_in_V_empty_n { I 1 bit } weight_in_V_read { O 1 bit } } \
+    ports { bias_in_V_dout { I 256 vector } bias_in_V_empty_n { I 1 bit } bias_in_V_read { O 1 bit } } \
 } "
 }
 
@@ -725,14 +707,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 258 \
-    name data_in_V \
+    name weight_in_V \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_data_in_V \
+    corename dc_weight_in_V \
     op interface \
-    ports { data_in_V_dout { I 64 vector } data_in_V_empty_n { I 1 bit } data_in_V_read { O 1 bit } } \
+    ports { weight_in_V_dout { I 256 vector } weight_in_V_empty_n { I 1 bit } weight_in_V_read { O 1 bit } } \
 } "
 }
 
@@ -740,6 +722,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 259 \
+    name data_in_V \
+    type fifo \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_data_in_V \
+    op interface \
+    ports { data_in_V_dout { I 256 vector } data_in_V_empty_n { I 1 bit } data_in_V_read { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 260 \
     name conv_out_V \
     type fifo \
     dir O \
@@ -747,7 +744,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_conv_out_V \
     op interface \
-    ports { conv_out_V_din { O 64 vector } conv_out_V_full_n { I 1 bit } conv_out_V_write { O 1 bit } } \
+    ports { conv_out_V_din { O 256 vector } conv_out_V_full_n { I 1 bit } conv_out_V_write { O 1 bit } } \
 } "
 }
 

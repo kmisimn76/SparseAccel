@@ -67313,7 +67313,8 @@ public:
 };
 }
 # 46 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
-# 118 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
+
+
 typedef unsigned int uint;
 typedef unsigned short ushort;
 typedef unsigned char uchar;
@@ -67324,24 +67325,9 @@ typedef int MACTYPE;
 
 
 
-typedef struct {
-    DPTYPE data[4];
-} lane_data;
 
 
-typedef struct {
-    lane_data lane[2];
-} channel_vec;
-
-
-typedef struct {
-    DPTYPE lane[2];
-} channel_scal;
-# 149 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
-typedef ap_axiu<2*8,0,0,0> k2k_data_xlane;
-typedef ap_axiu<4*2*8,0,0,0> k2k_data_vecxlane;
-typedef ap_axiu<8,0,0,0> k2k_sync;
-typedef ap_axiu<32,0,0,0> k2k_data;
+typedef ap_axiu<4*32,0,0,0> k2k_data;
 # 3 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp" 2
 # 13 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr.cpp"
 void Conv_sysarr(

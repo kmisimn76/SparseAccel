@@ -129,7 +129,7 @@ static void RTLOutputCheckAndReplacement(std::string &AESL_token, std::string Po
       no_x = true;
   }
 }
-struct __cosim_s8__ { char data[8]; };
+struct __cosim_s20__ { char data[32]; };
 extern "C" void Conv_sysarr_dbbuf_hw_stub(volatile void *, volatile void *, volatile void *, volatile void *);
 
 extern "C" void apatb_Conv_sysarr_dbbuf_hw(volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
@@ -173,7 +173,7 @@ extern "C" void apatb_Conv_sysarr_dbbuf_hw(volatile void * __xlx_apatb_param_bia
         } // end transaction
       } // end file is good
     } // end post check logic bolck
-  for (long i = 0; i < __xlx_apatb_param_bias_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->read();
+  for (long i = 0; i < __xlx_apatb_param_bias_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->read();
 long __xlx_apatb_param_weight_in_V_stream_buf_final_size;
 {
       static ifstream rtl_tv_out_file;
@@ -204,7 +204,7 @@ long __xlx_apatb_param_weight_in_V_stream_buf_final_size;
         } // end transaction
       } // end file is good
     } // end post check logic bolck
-  for (long i = 0; i < __xlx_apatb_param_weight_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->read();
+  for (long i = 0; i < __xlx_apatb_param_weight_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->read();
 long __xlx_apatb_param_data_in_V_stream_buf_final_size;
 {
       static ifstream rtl_tv_out_file;
@@ -235,7 +235,7 @@ long __xlx_apatb_param_data_in_V_stream_buf_final_size;
         } // end transaction
       } // end file is good
     } // end post check logic bolck
-  for (long i = 0; i < __xlx_apatb_param_data_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->read();
+  for (long i = 0; i < __xlx_apatb_param_data_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->read();
 long __xlx_apatb_param_conv_out_V_stream_buf_final_size;
 {
       static ifstream rtl_tv_out_file;
@@ -285,7 +285,7 @@ long __xlx_apatb_param_conv_out_V_stream_buf_final_size;
           exit(1);
         }
         if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
-          std::vector<sc_bv<64> > conv_out_V_pc_buffer;
+          std::vector<sc_bv<256> > conv_out_V_pc_buffer;
           int i = 0;
 
           rtl_tv_out_file >> AESL_token; //data
@@ -304,10 +304,12 @@ long __xlx_apatb_param_conv_out_V_stream_buf_final_size;
               exit(1);
           }
           if (i > 0) {for (int j = 0, e = i; j != e; ++j) {
-__cosim_s8__ xlx_stream_elt;
-
-            ((long long*)&xlx_stream_elt)[0] = conv_out_V_pc_buffer[j].to_int64();
-          ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->write(xlx_stream_elt);
+__cosim_s20__ xlx_stream_elt;
+((long long*)&xlx_stream_elt)[0*4+0] = conv_out_V_pc_buffer[j].range(63,0).to_int64();
+((long long*)&xlx_stream_elt)[0*4+1] = conv_out_V_pc_buffer[j].range(127,64).to_int64();
+((long long*)&xlx_stream_elt)[0*4+2] = conv_out_V_pc_buffer[j].range(191,128).to_int64();
+((long long*)&xlx_stream_elt)[0*4+3] = conv_out_V_pc_buffer[j].range(255,192).to_int64();
+((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->write(xlx_stream_elt);
 }
 }
         } // end transaction
@@ -343,42 +345,46 @@ aesl_fh.touch(AUTOTB_TVOUT_conv_out_V);
 aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_conv_out_V);
 aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_conv_out_V);
 CodeState = DUMP_INPUTS;
-std::vector<__cosim_s8__> __xlx_apatb_param_bias_in_stream_buf;
+std::vector<__cosim_s20__> __xlx_apatb_param_bias_in_stream_buf;
 {
-  while (!((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->empty())
-    __xlx_apatb_param_bias_in_stream_buf.push_back(((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->read());
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->empty())
+    __xlx_apatb_param_bias_in_stream_buf.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->read());
   for (int i = 0; i < __xlx_apatb_param_bias_in_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->write(__xlx_apatb_param_bias_in_stream_buf[i]);
+    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->write(__xlx_apatb_param_bias_in_stream_buf[i]);
   }
-long __xlx_apatb_param_bias_in_stream_buf_size = ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->size();
-std::vector<__cosim_s8__> __xlx_apatb_param_weight_in_stream_buf;
+long __xlx_apatb_param_bias_in_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->size();
+std::vector<__cosim_s20__> __xlx_apatb_param_weight_in_stream_buf;
 {
-  while (!((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->empty())
-    __xlx_apatb_param_weight_in_stream_buf.push_back(((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->read());
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->empty())
+    __xlx_apatb_param_weight_in_stream_buf.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->read());
   for (int i = 0; i < __xlx_apatb_param_weight_in_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->write(__xlx_apatb_param_weight_in_stream_buf[i]);
+    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->write(__xlx_apatb_param_weight_in_stream_buf[i]);
   }
-long __xlx_apatb_param_weight_in_stream_buf_size = ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->size();
-std::vector<__cosim_s8__> __xlx_apatb_param_data_in_stream_buf;
+long __xlx_apatb_param_weight_in_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->size();
+std::vector<__cosim_s20__> __xlx_apatb_param_data_in_stream_buf;
 {
-  while (!((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->empty())
-    __xlx_apatb_param_data_in_stream_buf.push_back(((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->read());
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->empty())
+    __xlx_apatb_param_data_in_stream_buf.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->read());
   for (int i = 0; i < __xlx_apatb_param_data_in_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->write(__xlx_apatb_param_data_in_stream_buf[i]);
+    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->write(__xlx_apatb_param_data_in_stream_buf[i]);
   }
-long __xlx_apatb_param_data_in_stream_buf_size = ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->size();
-std::vector<__cosim_s8__> __xlx_apatb_param_conv_out_stream_buf;
-long __xlx_apatb_param_conv_out_stream_buf_size = ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->size();
+long __xlx_apatb_param_data_in_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->size();
+std::vector<__cosim_s20__> __xlx_apatb_param_conv_out_stream_buf;
+long __xlx_apatb_param_conv_out_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->size();
 CodeState = CALL_C_DUT;
 Conv_sysarr_dbbuf_hw_stub(__xlx_apatb_param_bias_in, __xlx_apatb_param_weight_in, __xlx_apatb_param_data_in, __xlx_apatb_param_conv_out);
 CodeState = DUMP_OUTPUTS;
-long __xlx_apatb_param_bias_in_stream_buf_final_size = __xlx_apatb_param_bias_in_stream_buf_size - ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_bias_in)->size();
+long __xlx_apatb_param_bias_in_stream_buf_final_size = __xlx_apatb_param_bias_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->size();
 // print bias_in_V Transactions
 {
   sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
   aesl_fh.write(AUTOTB_TVIN_bias_in_V, __xlx_sprintf_buffer.data());
   for (int j = 0, e = __xlx_apatb_param_bias_in_stream_buf_final_size; j != e; ++j) {
-sc_bv<64> __xlx_tmp_lv = ((long long*)&__xlx_apatb_param_bias_in_stream_buf[j])[0];
+sc_bv<256> __xlx_tmp_lv;
+__xlx_tmp_lv.range(63,0) = ((long long*)&__xlx_apatb_param_bias_in_stream_buf[j])[0*4+0];
+__xlx_tmp_lv.range(127,64) = ((long long*)&__xlx_apatb_param_bias_in_stream_buf[j])[0*4+1];
+__xlx_tmp_lv.range(191,128) = ((long long*)&__xlx_apatb_param_bias_in_stream_buf[j])[0*4+2];
+__xlx_tmp_lv.range(255,192) = ((long long*)&__xlx_apatb_param_bias_in_stream_buf[j])[0*4+3];
 
     sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
     aesl_fh.write(AUTOTB_TVIN_bias_in_V, __xlx_sprintf_buffer.data()); 
@@ -418,13 +424,17 @@ sprintf(__xlx_sprintf_buffer.data(), "%d\n", bias_in_V_stream_ingress_size);
 
   sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
   aesl_fh.write(WRAPC_STREAM_SIZE_IN_bias_in_V, __xlx_sprintf_buffer.data());
-}long __xlx_apatb_param_weight_in_stream_buf_final_size = __xlx_apatb_param_weight_in_stream_buf_size - ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_weight_in)->size();
+}long __xlx_apatb_param_weight_in_stream_buf_final_size = __xlx_apatb_param_weight_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->size();
 // print weight_in_V Transactions
 {
   sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
   aesl_fh.write(AUTOTB_TVIN_weight_in_V, __xlx_sprintf_buffer.data());
   for (int j = 0, e = __xlx_apatb_param_weight_in_stream_buf_final_size; j != e; ++j) {
-sc_bv<64> __xlx_tmp_lv = ((long long*)&__xlx_apatb_param_weight_in_stream_buf[j])[0];
+sc_bv<256> __xlx_tmp_lv;
+__xlx_tmp_lv.range(63,0) = ((long long*)&__xlx_apatb_param_weight_in_stream_buf[j])[0*4+0];
+__xlx_tmp_lv.range(127,64) = ((long long*)&__xlx_apatb_param_weight_in_stream_buf[j])[0*4+1];
+__xlx_tmp_lv.range(191,128) = ((long long*)&__xlx_apatb_param_weight_in_stream_buf[j])[0*4+2];
+__xlx_tmp_lv.range(255,192) = ((long long*)&__xlx_apatb_param_weight_in_stream_buf[j])[0*4+3];
 
     sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
     aesl_fh.write(AUTOTB_TVIN_weight_in_V, __xlx_sprintf_buffer.data()); 
@@ -464,13 +474,17 @@ sprintf(__xlx_sprintf_buffer.data(), "%d\n", weight_in_V_stream_ingress_size);
 
   sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
   aesl_fh.write(WRAPC_STREAM_SIZE_IN_weight_in_V, __xlx_sprintf_buffer.data());
-}long __xlx_apatb_param_data_in_stream_buf_final_size = __xlx_apatb_param_data_in_stream_buf_size - ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_data_in)->size();
+}long __xlx_apatb_param_data_in_stream_buf_final_size = __xlx_apatb_param_data_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->size();
 // print data_in_V Transactions
 {
   sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
   aesl_fh.write(AUTOTB_TVIN_data_in_V, __xlx_sprintf_buffer.data());
   for (int j = 0, e = __xlx_apatb_param_data_in_stream_buf_final_size; j != e; ++j) {
-sc_bv<64> __xlx_tmp_lv = ((long long*)&__xlx_apatb_param_data_in_stream_buf[j])[0];
+sc_bv<256> __xlx_tmp_lv;
+__xlx_tmp_lv.range(63,0) = ((long long*)&__xlx_apatb_param_data_in_stream_buf[j])[0*4+0];
+__xlx_tmp_lv.range(127,64) = ((long long*)&__xlx_apatb_param_data_in_stream_buf[j])[0*4+1];
+__xlx_tmp_lv.range(191,128) = ((long long*)&__xlx_apatb_param_data_in_stream_buf[j])[0*4+2];
+__xlx_tmp_lv.range(255,192) = ((long long*)&__xlx_apatb_param_data_in_stream_buf[j])[0*4+3];
 
     sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
     aesl_fh.write(AUTOTB_TVIN_data_in_V, __xlx_sprintf_buffer.data()); 
@@ -510,19 +524,23 @@ sprintf(__xlx_sprintf_buffer.data(), "%d\n", data_in_V_stream_ingress_size);
 
   sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
   aesl_fh.write(WRAPC_STREAM_SIZE_IN_data_in_V, __xlx_sprintf_buffer.data());
-}long __xlx_apatb_param_conv_out_stream_buf_final_size = ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->size() - __xlx_apatb_param_conv_out_stream_buf_size;
+}long __xlx_apatb_param_conv_out_stream_buf_final_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->size() - __xlx_apatb_param_conv_out_stream_buf_size;
 {
-  while (!((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->empty())
-    __xlx_apatb_param_conv_out_stream_buf.push_back(((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->read());
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->empty())
+    __xlx_apatb_param_conv_out_stream_buf.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->read());
   for (int i = 0; i < __xlx_apatb_param_conv_out_stream_buf.size(); ++i)
-    ((hls::stream<__cosim_s8__>*)__xlx_apatb_param_conv_out)->write(__xlx_apatb_param_conv_out_stream_buf[i]);
+    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->write(__xlx_apatb_param_conv_out_stream_buf[i]);
   }
 // print conv_out_V Transactions
 {
   sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
   aesl_fh.write(AUTOTB_TVOUT_conv_out_V, __xlx_sprintf_buffer.data());
   for (int j = 0, e = __xlx_apatb_param_conv_out_stream_buf_final_size; j != e; ++j) {
-sc_bv<64> __xlx_tmp_lv = ((long long*)&__xlx_apatb_param_conv_out_stream_buf[__xlx_apatb_param_conv_out_stream_buf_size+j])[0];
+sc_bv<256> __xlx_tmp_lv;
+__xlx_tmp_lv.range(63,0) = ((long long*)&__xlx_apatb_param_conv_out_stream_buf[__xlx_apatb_param_conv_out_stream_buf_size+j])[0*4+0];
+__xlx_tmp_lv.range(127,64) = ((long long*)&__xlx_apatb_param_conv_out_stream_buf[__xlx_apatb_param_conv_out_stream_buf_size+j])[0*4+1];
+__xlx_tmp_lv.range(191,128) = ((long long*)&__xlx_apatb_param_conv_out_stream_buf[__xlx_apatb_param_conv_out_stream_buf_size+j])[0*4+2];
+__xlx_tmp_lv.range(255,192) = ((long long*)&__xlx_apatb_param_conv_out_stream_buf[__xlx_apatb_param_conv_out_stream_buf_size+j])[0*4+3];
 
     sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
     aesl_fh.write(AUTOTB_TVOUT_conv_out_V, __xlx_sprintf_buffer.data()); 

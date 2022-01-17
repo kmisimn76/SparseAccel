@@ -4,7 +4,7 @@
 // ==============================================================
 `timescale 1 ns / 1 ps
 
-module Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3 (
+module Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1 (
     input clk,
     input rst,
     input ce,
@@ -77,7 +77,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3 Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_3_U(
+Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1 Conv_sysarr_dbbuf_ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_DSP48_1_U(
     .clk( clk ),
     .rst( reset ),
     .ce( ce ),

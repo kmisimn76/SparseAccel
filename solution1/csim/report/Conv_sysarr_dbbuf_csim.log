@@ -4,12 +4,12 @@ INFO: [SIM 4] CSIM will launch GCC as the compiler.
    Generating csim.exe
 Test Start
 Kernel coreConv lanched !!!
-Test Case 1 Complete
+Test Case 1 Complete 37
 Kernel coreConv lanched !!!
-Test Case 2 Complete
+Test Case 2 Complete -3978
 Kernel coreConv lanched !!!
-Test Case 3 Complete
+Test Case 3 Complete -642
 Kernel coreConv lanched !!!
-Test Case 4 Complete
+Test Case 4 Complete 44285
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

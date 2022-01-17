@@ -47,7 +47,7 @@
         <Format formatName="xo"/>
     </ExportDesign>
     <Simulation argv="">
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="true" name="cosim" optimizeCompile="true" random_stall="false" reduce_diskspace="false" setup="false" toolName="vcs" waveDebug="false" ldflags="" mflags="" compiledLibrary="">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="all" enableDataflowProfiling="false" name="cosim" optimizeCompile="true" random_stall="false" reduce_diskspace="false" setup="false" toolName="auto" waveDebug="true" ldflags="" mflags="" compiledLibrary="">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>

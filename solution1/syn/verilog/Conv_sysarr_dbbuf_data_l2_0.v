@@ -18,9 +18,6 @@ input clk;
 
 (* ram_style = "block" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
-initial begin
-    $readmemh("./Conv_sysarr_dbbuf_data_l2_0_ram.dat", ram);
-end
 
 
 

@@ -91,14 +91,38 @@ int conv_test(
     tmp.data(31,0) = RS;
     bias_in.write(tmp);
 
-	for (unsigned int k = 0; k < K; k++) {
-		tmp.data(7,0) = bias[k]; bias_in.write(tmp);
+	for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
+		for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+			uint k = ko * VEC_SIZE + ki;
+			int v = ki;
+			tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = bias[k];
+		}
+		//tmp.data(7,0) = bias[k];
+		bias_in.write(tmp);
 	}
-	for (unsigned int k = 0; k < K*C*RS*RS; k++) {
-		tmp.data(7,0) = weight[k]; weight_in.write(tmp);
+	for (unsigned int crs = 0; crs < C*RS*RS; crs++) {
+		for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
+			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+				//uint ptr = crs*K + ko*VEC_SIZE + ki;
+				uint ptr = (ko*VEC_SIZE + ki)*C*RS*RS + crs;
+				int v = ki;
+				tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = weight[ptr];
+			}
+			//tmp.data(7,0) = weight[k];
+			weight_in.write(tmp);
+		}
 	}
-	for (unsigned int k = 0; k < C*WH_in*WH_in; k++) {
-		tmp.data(7,0) = data[k]; data_in.write(tmp);
+	for (unsigned int wh = 0; wh < WH_in*WH_in; wh++) {
+		for (unsigned int co = 0; co < C/VEC_SIZE; co++) {
+			for (unsigned int ci = 0; ci < VEC_SIZE; ci++) {
+				//uint ptr = wh*C + co*VEC_SIZE + ci;
+				uint ptr = (co*VEC_SIZE+ci)*WH_in*WH_in + wh;
+				int v = ci;
+				tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = data[ptr];
+			}
+			//tmp.data(7,0) = data[k];
+			data_in.write(tmp);
+		}
 	}
 
 	//coreConv(bias_in, weight_in, data_in, conv_out); //Systolic Array Old
@@ -106,11 +130,19 @@ int conv_test(
 	//Conv_sysarr(bias_in, weight_in, data_in, conv_out); // Systolic Array Current Optimal //FUNCTIONALITY CHECK REQUIRED
 	Conv_sysarr_dbbuf(bias_in, weight_in, data_in, conv_out); // Systolic Array Current Optimal
 	//exit(0);
-    for(int l=0;l<K*WH*WH;l++) {
-    	tmp = conv_out.read(); int output = tmp.data(31,0);
-    	if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 1; }
-    	//if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 0; }
-    	//printf("%d: %d vs %d(gold)\n", l, (uint)(tmp.data(31,0)), gold[l]);
+    for(int wh=0;wh<WH*WH;wh++) {
+		for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
+			tmp = conv_out.read();
+			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+				//uint l = wh*K + ko*VEC_SIZE + ki;
+				uint l = (ko*VEC_SIZE+ki)*WH*WH + wh;
+				int v = ki;
+				int output = tmp.data((v+1)*MAC_WIDTH-1, v*MAC_WIDTH);
+				if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 1; }
+				//if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 0; }
+				//printf("%d: %d vs %d(gold)\n", l, (uint)(tmp.data(31,0)), gold[l]);
+			}
+		}
     }
     return 0;
 }
@@ -135,7 +167,7 @@ int main()
 	for(int k = 0; k < C*WH_in*WH_in; k++)	data[k]		= 1;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 1 Complete\n");
+    printf("Test Case 1 Complete %d\n", gold[0]);
 
     //TEST CASE 2
 	for(int k = 0; k < K; k++)				bias[k]		= k;
@@ -143,7 +175,7 @@ int main()
 	for(int k = 0; k < C*WH_in*WH_in; k++)	data[k]		= 1;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 2 Complete\n");
+    printf("Test Case 2 Complete %d\n", gold[0]);
 
     //TEST CASE 3
 	for(int k = 0; k < K; k++)				bias[k]		= k;
@@ -151,7 +183,7 @@ int main()
 	for(int k = 0; k < C*WH_in*WH_in; k++)	data[k]		= k%256-128;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 3 Complete\n");
+    printf("Test Case 3 Complete %d\n", gold[0]);
 
     //TEST CASE 4
 	for(int k = 0; k < K; k++)				bias[k]		= rand()%256-128;
@@ -159,7 +191,7 @@ int main()
 	for(int k = 0; k < C*WH_in*WH_in; k++)	data[k]		= rand()%256-128;
     conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
     if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
-    printf("Test Case 4 Complete\n");
+    printf("Test Case 4 Complete %d\n", gold[0]);
 
 	return 0;
 }
