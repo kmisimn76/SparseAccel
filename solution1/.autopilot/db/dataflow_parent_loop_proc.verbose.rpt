@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_parent_loop_proc'
 ================================================================
-* Date:           Tue Jan 18 02:37:21 2022
+* Date:           Thu Jan 20 09:42:08 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  | 10.00 ns | 6.489 ns |   2.70 ns  |
+    |ap_clk  | 10.00 ns | 6.803 ns |   2.70 ns  |
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |      169|      249| 1.690 us | 2.490 us |  169|  249|   none  |
+    |      231|      231| 2.310 us | 2.310 us |  231|  231|   none  |
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -38,7 +38,7 @@
         |                            |                         |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
         |          Instance          |          Module         |   min   |   max   |    min   |    max   | min | max |   Type   |
         +----------------------------+-------------------------+---------+---------+----------+----------+-----+-----+----------+
-        |dataflow_in_loop_LOOP_S_U0  |dataflow_in_loop_LOOP_S  |       57|      119| 0.570 us | 1.190 us |   55|   64| dataflow |
+        |dataflow_in_loop_LOOP_S_U0  |dataflow_in_loop_LOOP_S  |      113|      113| 1.130 us | 1.130 us |   58|   58| dataflow |
         +----------------------------+-------------------------+---------+---------+----------+----------+-----+-----+----------+
 
         * Loop: 
@@ -46,7 +46,7 @@
         |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +----------+---------+---------+----------+-----------+-----------+------+----------+
-        |- LOOP_S  |      168|      248| 59 ~ 121 |          -|          -|     3|    no    |
+        |- LOOP_S  |      230|      230|       115|          -|          -|     3|    no    |
         +----------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -61,16 +61,16 @@
 |DSP                  |        -|     -|        -|        -|    -|
 |Expression           |        -|     -|        0|      117|    -|
 |FIFO                 |        -|     -|        -|        -|    -|
-|Instance             |       16|    26|     5699|     5498|    -|
+|Instance             |       16|    22|     4515|     5570|    -|
 |Memory               |        -|     -|        -|        -|    -|
 |Multiplexer          |        -|     -|        -|       18|    -|
 |Register             |        -|     -|       64|        -|    -|
 +---------------------+---------+------+---------+---------+-----+
-|Total                |       16|    26|     5763|     5633|    0|
+|Total                |       16|    22|     4579|     5705|    0|
 +---------------------+---------+------+---------+---------+-----+
 |Available SLR        |     1440|  2280|   788160|   394080|  320|
 +---------------------+---------+------+---------+---------+-----+
-|Utilization SLR (%)  |        1|     1|    ~0   |        1|    0|
+|Utilization SLR (%)  |        1|  ~0  |    ~0   |        1|    0|
 +---------------------+---------+------+---------+---------+-----+
 |Available            |     4320|  6840|  2364480|  1182240|  960|
 +---------------------+---------+------+---------+---------+-----+
@@ -82,9 +82,9 @@
     +----------------------------+-------------------------+---------+----+------+------+-----+
     |          Instance          |          Module         | BRAM_18K| DSP|  FF  |  LUT | URAM|
     +----------------------------+-------------------------+---------+----+------+------+-----+
-    |dataflow_in_loop_LOOP_S_U0  |dataflow_in_loop_LOOP_S  |       16|  26|  5699|  5498|    0|
+    |dataflow_in_loop_LOOP_S_U0  |dataflow_in_loop_LOOP_S  |       16|  22|  4515|  5570|    0|
     +----------------------------+-------------------------+---------+----+------+------+-----+
-    |Total                       |                         |       16|  26|  5699|  5498|    0|
+    |Total                       |                         |       16|  22|  4515|  5570|    0|
     +----------------------------+-------------------------+---------+----+------+------+-----+
 
     * DSP: 
@@ -133,152 +133,152 @@
 == Interface
 ================================================================
 * Summary: 
-+---------------------------+-----+-----+------------+---------------------------+--------------+
-|         RTL Ports         | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
-+---------------------------+-----+-----+------------+---------------------------+--------------+
-|RS                         |  in |   32|   ap_none  |             RS            |    scalar    |
-|weight_l2_0_address0       | out |    9|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_ce0            | out |    1|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_d0             | out |    8|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_q0             |  in |    8|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_we0            | out |    1|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_address1       | out |    9|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_ce1            | out |    1|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_d1             | out |    8|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_q1             |  in |    8|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_0_we1            | out |    1|  ap_memory |        weight_l2_0        |     array    |
-|weight_l2_1_address0       | out |    9|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_ce0            | out |    1|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_d0             | out |    8|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_q0             |  in |    8|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_we0            | out |    1|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_address1       | out |    9|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_ce1            | out |    1|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_d1             | out |    8|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_q1             |  in |    8|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_1_we1            | out |    1|  ap_memory |        weight_l2_1        |     array    |
-|weight_l2_2_address0       | out |    9|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_ce0            | out |    1|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_d0             | out |    8|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_q0             |  in |    8|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_we0            | out |    1|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_address1       | out |    9|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_ce1            | out |    1|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_d1             | out |    8|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_q1             |  in |    8|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_2_we1            | out |    1|  ap_memory |        weight_l2_2        |     array    |
-|weight_l2_3_address0       | out |    9|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_ce0            | out |    1|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_d0             | out |    8|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_q0             |  in |    8|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_we0            | out |    1|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_address1       | out |    9|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_ce1            | out |    1|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_d1             | out |    8|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_q1             |  in |    8|  ap_memory |        weight_l2_3        |     array    |
-|weight_l2_3_we1            | out |    1|  ap_memory |        weight_l2_3        |     array    |
-|p_read                     |  in |    9|   ap_none  |           p_read          |    scalar    |
-|p_read_ap_vld              |  in |    1|   ap_none  |           p_read          |    scalar    |
-|p_read1                    |  in |    9|   ap_none  |          p_read1          |    scalar    |
-|p_read1_ap_vld             |  in |    1|   ap_none  |          p_read1          |    scalar    |
-|ko_2                       |  in |    9|   ap_none  |            ko_2           |    scalar    |
-|ko_2_ap_vld                |  in |    1|   ap_none  |            ko_2           |    scalar    |
-|co_1                       |  in |   10|   ap_none  |            co_1           |    scalar    |
-|co_1_ap_vld                |  in |    1|   ap_none  |            co_1           |    scalar    |
-|r                          |  in |   32|   ap_none  |             r             |    scalar    |
-|r_ap_vld                   |  in |    1|   ap_none  |             r             |    scalar    |
-|data_l2_0_address0         | out |   10|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_ce0              | out |    1|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_d0               | out |    8|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_q0               |  in |    8|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_we0              | out |    1|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_address1         | out |   10|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_ce1              | out |    1|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_d1               | out |    8|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_q1               |  in |    8|  ap_memory |         data_l2_0         |     array    |
-|data_l2_0_we1              | out |    1|  ap_memory |         data_l2_0         |     array    |
-|data_l2_1_address0         | out |   10|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_ce0              | out |    1|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_d0               | out |    8|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_q0               |  in |    8|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_we0              | out |    1|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_address1         | out |   10|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_ce1              | out |    1|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_d1               | out |    8|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_q1               |  in |    8|  ap_memory |         data_l2_1         |     array    |
-|data_l2_1_we1              | out |    1|  ap_memory |         data_l2_1         |     array    |
-|data_l2_2_address0         | out |   10|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_ce0              | out |    1|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_d0               | out |    8|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_q0               |  in |    8|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_we0              | out |    1|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_address1         | out |   10|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_ce1              | out |    1|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_d1               | out |    8|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_q1               |  in |    8|  ap_memory |         data_l2_2         |     array    |
-|data_l2_2_we1              | out |    1|  ap_memory |         data_l2_2         |     array    |
-|data_l2_3_address0         | out |   10|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_ce0              | out |    1|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_d0               | out |    8|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_q0               |  in |    8|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_we0              | out |    1|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_address1         | out |   10|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_ce1              | out |    1|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_d1               | out |    8|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_q1               |  in |    8|  ap_memory |         data_l2_3         |     array    |
-|data_l2_3_we1              | out |    1|  ap_memory |         data_l2_3         |     array    |
-|p_read2                    |  in |   32|   ap_none  |          p_read2          |    scalar    |
-|p_read2_ap_vld             |  in |    1|   ap_none  |          p_read2          |    scalar    |
-|p_read3                    |  in |   10|   ap_none  |          p_read3          |    scalar    |
-|p_read3_ap_vld             |  in |    1|   ap_none  |          p_read3          |    scalar    |
-|output_l1_pass_0_address0  | out |   10|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_ce0       | out |    1|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_d0        | out |   32|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_q0        |  in |   32|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_we0       | out |    1|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_address1  | out |   10|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_ce1       | out |    1|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_d1        | out |   32|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_q1        |  in |   32|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_0_we1       | out |    1|  ap_memory |      output_l1_pass_0     |     array    |
-|output_l1_pass_1_address0  | out |   10|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_ce0       | out |    1|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_d0        | out |   32|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_q0        |  in |   32|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_we0       | out |    1|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_address1  | out |   10|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_ce1       | out |    1|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_d1        | out |   32|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_q1        |  in |   32|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_1_we1       | out |    1|  ap_memory |      output_l1_pass_1     |     array    |
-|output_l1_pass_2_address0  | out |   10|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_ce0       | out |    1|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_d0        | out |   32|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_q0        |  in |   32|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_we0       | out |    1|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_address1  | out |   10|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_ce1       | out |    1|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_d1        | out |   32|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_q1        |  in |   32|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_2_we1       | out |    1|  ap_memory |      output_l1_pass_2     |     array    |
-|output_l1_pass_3_address0  | out |   10|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_ce0       | out |    1|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_d0        | out |   32|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_q0        |  in |   32|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_we0       | out |    1|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_address1  | out |   10|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_ce1       | out |    1|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_d1        | out |   32|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_q1        |  in |   32|  ap_memory |      output_l1_pass_3     |     array    |
-|output_l1_pass_3_we1       | out |    1|  ap_memory |      output_l1_pass_3     |     array    |
-|ap_clk                     |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_rst                     |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_start                   |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_done                    | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_ready                   | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_idle                    | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-|ap_continue                |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
-+---------------------------+-----+-----+------------+---------------------------+--------------+
++----------------------+-----+-----+------------+---------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |       Source Object       |    C Type    |
++----------------------+-----+-----+------------+---------------------------+--------------+
+|RS                    |  in |   32|   ap_none  |             RS            |    scalar    |
+|weight_l2_0_address0  | out |    9|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_ce0       | out |    1|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_d0        | out |    8|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_q0        |  in |    8|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_we0       | out |    1|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_address1  | out |    9|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_ce1       | out |    1|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_d1        | out |    8|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_q1        |  in |    8|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_0_we1       | out |    1|  ap_memory |        weight_l2_0        |     array    |
+|weight_l2_1_address0  | out |    9|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_ce0       | out |    1|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_d0        | out |    8|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_q0        |  in |    8|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_we0       | out |    1|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_address1  | out |    9|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_ce1       | out |    1|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_d1        | out |    8|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_q1        |  in |    8|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_1_we1       | out |    1|  ap_memory |        weight_l2_1        |     array    |
+|weight_l2_2_address0  | out |    9|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_ce0       | out |    1|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_d0        | out |    8|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_q0        |  in |    8|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_we0       | out |    1|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_address1  | out |    9|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_ce1       | out |    1|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_d1        | out |    8|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_q1        |  in |    8|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_2_we1       | out |    1|  ap_memory |        weight_l2_2        |     array    |
+|weight_l2_3_address0  | out |    9|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_ce0       | out |    1|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_d0        | out |    8|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_q0        |  in |    8|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_we0       | out |    1|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_address1  | out |    9|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_ce1       | out |    1|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_d1        | out |    8|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_q1        |  in |    8|  ap_memory |        weight_l2_3        |     array    |
+|weight_l2_3_we1       | out |    1|  ap_memory |        weight_l2_3        |     array    |
+|p_read                |  in |    9|   ap_none  |           p_read          |    scalar    |
+|p_read_ap_vld         |  in |    1|   ap_none  |           p_read          |    scalar    |
+|p_read1               |  in |    9|   ap_none  |          p_read1          |    scalar    |
+|p_read1_ap_vld        |  in |    1|   ap_none  |          p_read1          |    scalar    |
+|ko_2                  |  in |    9|   ap_none  |            ko_2           |    scalar    |
+|ko_2_ap_vld           |  in |    1|   ap_none  |            ko_2           |    scalar    |
+|co_1                  |  in |   10|   ap_none  |            co_1           |    scalar    |
+|co_1_ap_vld           |  in |    1|   ap_none  |            co_1           |    scalar    |
+|r                     |  in |   32|   ap_none  |             r             |    scalar    |
+|r_ap_vld              |  in |    1|   ap_none  |             r             |    scalar    |
+|data_l2_0_address0    | out |   10|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_ce0         | out |    1|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_d0          | out |    8|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_q0          |  in |    8|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_we0         | out |    1|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_address1    | out |   10|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_ce1         | out |    1|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_d1          | out |    8|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_q1          |  in |    8|  ap_memory |         data_l2_0         |     array    |
+|data_l2_0_we1         | out |    1|  ap_memory |         data_l2_0         |     array    |
+|data_l2_1_address0    | out |   10|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_ce0         | out |    1|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_d0          | out |    8|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_q0          |  in |    8|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_we0         | out |    1|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_address1    | out |   10|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_ce1         | out |    1|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_d1          | out |    8|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_q1          |  in |    8|  ap_memory |         data_l2_1         |     array    |
+|data_l2_1_we1         | out |    1|  ap_memory |         data_l2_1         |     array    |
+|data_l2_2_address0    | out |   10|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_ce0         | out |    1|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_d0          | out |    8|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_q0          |  in |    8|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_we0         | out |    1|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_address1    | out |   10|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_ce1         | out |    1|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_d1          | out |    8|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_q1          |  in |    8|  ap_memory |         data_l2_2         |     array    |
+|data_l2_2_we1         | out |    1|  ap_memory |         data_l2_2         |     array    |
+|data_l2_3_address0    | out |   10|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_ce0         | out |    1|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_d0          | out |    8|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_q0          |  in |    8|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_we0         | out |    1|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_address1    | out |   10|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_ce1         | out |    1|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_d1          | out |    8|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_q1          |  in |    8|  ap_memory |         data_l2_3         |     array    |
+|data_l2_3_we1         | out |    1|  ap_memory |         data_l2_3         |     array    |
+|p_read2               |  in |   32|   ap_none  |          p_read2          |    scalar    |
+|p_read2_ap_vld        |  in |    1|   ap_none  |          p_read2          |    scalar    |
+|p_read3               |  in |   10|   ap_none  |          p_read3          |    scalar    |
+|p_read3_ap_vld        |  in |    1|   ap_none  |          p_read3          |    scalar    |
+|output_l1_0_address0  | out |    9|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_ce0       | out |    1|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_d0        | out |   32|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_q0        |  in |   32|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_we0       | out |    1|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_address1  | out |    9|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_ce1       | out |    1|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_d1        | out |   32|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_q1        |  in |   32|  ap_memory |        output_l1_0        |     array    |
+|output_l1_0_we1       | out |    1|  ap_memory |        output_l1_0        |     array    |
+|output_l1_1_address0  | out |    9|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_ce0       | out |    1|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_d0        | out |   32|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_q0        |  in |   32|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_we0       | out |    1|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_address1  | out |    9|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_ce1       | out |    1|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_d1        | out |   32|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_q1        |  in |   32|  ap_memory |        output_l1_1        |     array    |
+|output_l1_1_we1       | out |    1|  ap_memory |        output_l1_1        |     array    |
+|output_l1_2_address0  | out |    9|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_ce0       | out |    1|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_d0        | out |   32|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_q0        |  in |   32|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_we0       | out |    1|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_address1  | out |    9|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_ce1       | out |    1|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_d1        | out |   32|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_q1        |  in |   32|  ap_memory |        output_l1_2        |     array    |
+|output_l1_2_we1       | out |    1|  ap_memory |        output_l1_2        |     array    |
+|output_l1_3_address0  | out |    9|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_ce0       | out |    1|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_d0        | out |   32|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_q0        |  in |   32|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_we0       | out |    1|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_address1  | out |    9|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_ce1       | out |    1|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_d1        | out |   32|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_q1        |  in |   32|  ap_memory |        output_l1_3        |     array    |
+|output_l1_3_we1       | out |    1|  ap_memory |        output_l1_3        |     array    |
+|ap_clk                |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_rst                |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_start              |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_done               | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_ready              | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_idle               | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
+|ap_continue           |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc | return value |
++----------------------+-----+-----+------------+---------------------------+--------------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -319,30 +319,30 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.60>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read310 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3"   --->   Operation 4 'read' 'p_read310' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read_10 = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %p_read3"   --->   Operation 4 'read' 'p_read_10' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read29 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read2"   --->   Operation 5 'read' 'p_read29' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %r"   --->   Operation 6 'read' 'r_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%co_1_read = read i10 @_ssdm_op_Read.ap_auto.i10, i10 %co_1"   --->   Operation 7 'read' 'co_1_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2"   --->   Operation 8 'read' 'ko_2_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read15 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1"   --->   Operation 9 'read' 'p_read15' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_17 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read"   --->   Operation 10 'read' 'p_read_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_11 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read"   --->   Operation 10 'read' 'p_read_11' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%RS_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %RS"   --->   Operation 11 'read' 'RS_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.60ns)   --->   "%br_ln0 = br void"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.60>
 
 State 2 <SV = 1> <Delay = 0.98>
 ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%s = phi i32, void %newFuncRoot, i32 %s_1, void %.split"   --->   Operation 13 'phi' 's' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 14 [1/1] (0.85ns)   --->   "%icmp_ln212 = icmp_eq  i32 %s, i32 %RS_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 14 'icmp' 'icmp_ln212' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln212 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %s, i32 %RS" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln212' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 16 [1/1] (0.88ns)   --->   "%s_1 = add i32 %s, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 16 'add' 's_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln212 = br i1 %icmp_ln212, void %.split, void %.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 17 'br' 'br_ln212' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln227 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:227]   --->   Operation 18 'call' 'call_ln227' <Predicate = (!icmp_ln212)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln212)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.85ns)   --->   "%icmp_ln193 = icmp_eq  i32 %s, i32 %RS_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:193]   --->   Operation 14 'icmp' 'icmp_ln193' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln193 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %s, i32 %RS" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:193]   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln193' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.88ns)   --->   "%s_1 = add i32 %s, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:193]   --->   Operation 16 'add' 's_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln193 = br i1 %icmp_ln193, void %.split, void %.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:193]   --->   Operation 17 'br' 'br_ln193' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln208 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_11, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read_10, i32 %output_l1_0, i32 %output_l1_1, i32 %output_l1_2, i32 %output_l1_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:208]   --->   Operation 18 'call' 'call_ln208' <Predicate = (!icmp_ln193)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln193)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln216 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln216' <Predicate = (!icmp_ln212)> <Delay = 0.00>
-ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln216 = specloopname void @_ssdm_op_SpecLoopName, void @empty_12" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:216]   --->   Operation 21 'specloopname' 'specloopname_ln216' <Predicate = (!icmp_ln212)> <Delay = 0.00>
-ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln227 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_17, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read310, i32 %output_l1_pass_0, i32 %output_l1_pass_1, i32 %output_l1_pass_2, i32 %output_l1_pass_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:227]   --->   Operation 22 'call' 'call_ln227' <Predicate = (!icmp_ln212)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln212 = br void" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:212]   --->   Operation 23 'br' 'br_ln212' <Predicate = (!icmp_ln212)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln197 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:197]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln197' <Predicate = (!icmp_ln193)> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln197 = specloopname void @_ssdm_op_SpecLoopName, void @empty" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:197]   --->   Operation 21 'specloopname' 'specloopname_ln197' <Predicate = (!icmp_ln193)> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln208 = call void @dataflow_in_loop_LOOP_S, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_11, i9 %p_read15, i9 %ko_2_read, i10 %co_1_read, i32 %r_read, i32 %s, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read29, i10 %p_read_10, i32 %output_l1_0, i32 %output_l1_1, i32 %output_l1_2, i32 %output_l1_3, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:208]   --->   Operation 22 'call' 'call_ln208' <Predicate = (!icmp_ln193)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln193 = br void" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:193]   --->   Operation 23 'br' 'br_ln193' <Predicate = (!icmp_ln193)> <Delay = 0.00>
 
 
 ============================================================
@@ -372,10 +372,10 @@ Port [ data_l2_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; 
 Port [ data_l2_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
 Port [ p_read2]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 Port [ p_read3]:  wired=1; compound=0; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
-Port [ output_l1_pass_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ output_l1_pass_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ output_l1_pass_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
-Port [ output_l1_pass_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ output_l1_0]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ output_l1_1]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ output_l1_2]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ output_l1_3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 Port [ output_l1_local_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
 Port [ output_l1_local_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
 Port [ output_l1_local_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=2; type=1; pingpong=0; private_global=0; MemPort=[01]; IO mode=ap_memory:ce=0
@@ -386,25 +386,25 @@ Port [ output_l1_local_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; st
 
 <LifeTime>
 <method=bitvector/>
-p_read310                  (read                ) [ 0011]
+p_read_10                  (read                ) [ 0011]
 p_read29                   (read                ) [ 0011]
 r_read                     (read                ) [ 0011]
 co_1_read                  (read                ) [ 0011]
 ko_2_read                  (read                ) [ 0011]
 p_read15                   (read                ) [ 0011]
-p_read_17                  (read                ) [ 0011]
+p_read_11                  (read                ) [ 0011]
 RS_read                    (read                ) [ 0011]
 br_ln0                     (br                  ) [ 0111]
 s                          (phi                 ) [ 0011]
-icmp_ln212                 (icmp                ) [ 0011]
-specdataflowpipeline_ln212 (specdataflowpipeline) [ 0000]
+icmp_ln193                 (icmp                ) [ 0011]
+specdataflowpipeline_ln193 (specdataflowpipeline) [ 0000]
 s_1                        (add                 ) [ 0111]
-br_ln212                   (br                  ) [ 0000]
+br_ln193                   (br                  ) [ 0000]
 ret_ln0                    (ret                 ) [ 0000]
-speclooptripcount_ln216    (speclooptripcount   ) [ 0000]
-specloopname_ln216         (specloopname        ) [ 0000]
-call_ln227                 (call                ) [ 0000]
-br_ln212                   (br                  ) [ 0111]
+speclooptripcount_ln197    (speclooptripcount   ) [ 0000]
+specloopname_ln197         (specloopname        ) [ 0000]
+call_ln208                 (call                ) [ 0000]
+br_ln193                   (br                  ) [ 0111]
 </LifeTime>
 
 <model>
@@ -562,42 +562,42 @@ br_ln212                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="32" class="1000" name="output_l1_pass_0">
+<comp id="32" class="1000" name="output_l1_0">
 <pin_list>
 <pin id="33" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_pass_0"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_0"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="34" class="1000" name="output_l1_pass_1">
+<comp id="34" class="1000" name="output_l1_1">
 <pin_list>
 <pin id="35" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_pass_1"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_1"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="36" class="1000" name="output_l1_pass_2">
+<comp id="36" class="1000" name="output_l1_2">
 <pin_list>
 <pin id="37" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_pass_2"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_2"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
 
-<comp id="38" class="1000" name="output_l1_pass_3">
+<comp id="38" class="1000" name="output_l1_3">
 <pin_list>
 <pin id="39" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="output_l1_pass_3"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="output_l1_3"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -755,11 +755,11 @@ br_ln212                   (br                  ) [ 0111]
 <pin id="73" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="empty_12"/></StgValue>
+<StgValue><ssdm name="empty"/></StgValue>
 </bind>
 </comp>
 
-<comp id="74" class="1004" name="p_read310_read_fu_74">
+<comp id="74" class="1004" name="p_read_10_read_fu_74">
 <pin_list>
 <pin id="75" dir="0" index="0" bw="10" slack="0"/>
 <pin id="76" dir="0" index="1" bw="10" slack="0"/>
@@ -767,7 +767,7 @@ br_ln212                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="p_read310/1 "/>
+<opset="p_read_10/1 "/>
 </bind>
 </comp>
 
@@ -831,7 +831,7 @@ br_ln212                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="110" class="1004" name="p_read_17_read_fu_110">
+<comp id="110" class="1004" name="p_read_11_read_fu_110">
 <pin_list>
 <pin id="111" dir="0" index="0" bw="9" slack="0"/>
 <pin id="112" dir="0" index="1" bw="9" slack="0"/>
@@ -839,7 +839,7 @@ br_ln212                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
-<opset="p_read_17/1 "/>
+<opset="p_read_11/1 "/>
 </bind>
 </comp>
 
@@ -910,11 +910,11 @@ br_ln212                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="call(48) " fcode="call"/>
-<opset="call_ln227/2 "/>
+<opset="call_ln208/2 "/>
 </bind>
 </comp>
 
-<comp id="179" class="1004" name="icmp_ln212_fu_179">
+<comp id="179" class="1004" name="icmp_ln193_fu_179">
 <pin_list>
 <pin id="180" dir="0" index="0" bw="32" slack="0"/>
 <pin id="181" dir="0" index="1" bw="32" slack="1"/>
@@ -922,7 +922,7 @@ br_ln212                   (br                  ) [ 0111]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="icmp_ln212/2 "/>
+<opset="icmp_ln193/2 "/>
 </bind>
 </comp>
 
@@ -938,13 +938,13 @@ br_ln212                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="190" class="1005" name="p_read310_reg_190">
+<comp id="190" class="1005" name="p_read_10_reg_190">
 <pin_list>
 <pin id="191" dir="0" index="0" bw="10" slack="1"/>
 <pin id="192" dir="1" index="1" bw="10" slack="1"/>
 </pin_list>
 <bind>
-<opset="p_read310 "/>
+<opset="p_read_10 "/>
 </bind>
 </comp>
 
@@ -998,13 +998,13 @@ br_ln212                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="220" class="1005" name="p_read_17_reg_220">
+<comp id="220" class="1005" name="p_read_11_reg_220">
 <pin_list>
 <pin id="221" dir="0" index="0" bw="9" slack="1"/>
 <pin id="222" dir="1" index="1" bw="9" slack="1"/>
 </pin_list>
 <bind>
-<opset="p_read_17 "/>
+<opset="p_read_11 "/>
 </bind>
 </comp>
 
@@ -1018,13 +1018,13 @@ br_ln212                   (br                  ) [ 0111]
 </bind>
 </comp>
 
-<comp id="230" class="1005" name="icmp_ln212_reg_230">
+<comp id="230" class="1005" name="icmp_ln193_reg_230">
 <pin_list>
 <pin id="231" dir="0" index="0" bw="1" slack="1"/>
 <pin id="232" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<opset="icmp_ln212 "/>
+<opset="icmp_ln193 "/>
 </bind>
 </comp>
 
@@ -1174,10 +1174,10 @@ br_ln212                   (br                  ) [ 0111]
 	Port: data_l2_1 | {}
 	Port: data_l2_2 | {}
 	Port: data_l2_3 | {}
-	Port: output_l1_pass_0 | {2 3 }
-	Port: output_l1_pass_1 | {2 3 }
-	Port: output_l1_pass_2 | {2 3 }
-	Port: output_l1_pass_3 | {2 3 }
+	Port: output_l1_0 | {2 3 }
+	Port: output_l1_1 | {2 3 }
+	Port: output_l1_2 | {2 3 }
+	Port: output_l1_3 | {2 3 }
 	Port: output_l1_local_3 | {2 3 }
 	Port: output_l1_local_2 | {2 3 }
 	Port: output_l1_local_1 | {2 3 }
@@ -1199,10 +1199,10 @@ br_ln212                   (br                  ) [ 0111]
 	Port: dataflow_parent_loop_proc : data_l2_3 | {2 3 }
 	Port: dataflow_parent_loop_proc : p_read2 | {1 }
 	Port: dataflow_parent_loop_proc : p_read3 | {1 }
-	Port: dataflow_parent_loop_proc : output_l1_pass_0 | {}
-	Port: dataflow_parent_loop_proc : output_l1_pass_1 | {}
-	Port: dataflow_parent_loop_proc : output_l1_pass_2 | {}
-	Port: dataflow_parent_loop_proc : output_l1_pass_3 | {}
+	Port: dataflow_parent_loop_proc : output_l1_0 | {}
+	Port: dataflow_parent_loop_proc : output_l1_1 | {}
+	Port: dataflow_parent_loop_proc : output_l1_2 | {}
+	Port: dataflow_parent_loop_proc : output_l1_3 | {}
 	Port: dataflow_parent_loop_proc : output_l1_local_3 | {2 3 }
 	Port: dataflow_parent_loop_proc : output_l1_local_2 | {2 3 }
 	Port: dataflow_parent_loop_proc : output_l1_local_1 | {2 3 }
@@ -1210,11 +1210,11 @@ br_ln212                   (br                  ) [ 0111]
   - Chain level:
 	State 1
 	State 2
-		icmp_ln212 : 1
-		specdataflowpipeline_ln212 : 1
+		icmp_ln193 : 1
+		specdataflowpipeline_ln193 : 1
 		s_1 : 1
-		br_ln212 : 2
-		call_ln227 : 1
+		br_ln193 : 2
+		call_ln208 : 1
 	State 3
 
 
@@ -1226,22 +1226,22 @@ br_ln212                   (br                  ) [ 0111]
 |----------|------------------------------------|---------|---------|---------|---------|---------|
 | Operation|           Functional Unit          |   BRAM  |   DSP   |  Delay  |    FF   |   LUT   |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
-|   call   | grp_dataflow_in_loop_LOOP_S_fu_134 |    8    |    26   | 30.2213 |   3622  |   2514  |
+|   call   | grp_dataflow_in_loop_LOOP_S_fu_134 |    8    |    22   | 18.1042 |   2219  |   2697  |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
 |    add   |             s_1_fu_184             |    0    |    0    |    0    |    0    |    39   |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
-|   icmp   |          icmp_ln212_fu_179         |    0    |    0    |    0    |    0    |    20   |
+|   icmp   |          icmp_ln193_fu_179         |    0    |    0    |    0    |    0    |    20   |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
-|          |        p_read310_read_fu_74        |    0    |    0    |    0    |    0    |    0    |
+|          |        p_read_10_read_fu_74        |    0    |    0    |    0    |    0    |    0    |
 |          |         p_read29_read_fu_80        |    0    |    0    |    0    |    0    |    0    |
 |          |          r_read_read_fu_86         |    0    |    0    |    0    |    0    |    0    |
 |   read   |        co_1_read_read_fu_92        |    0    |    0    |    0    |    0    |    0    |
 |          |        ko_2_read_read_fu_98        |    0    |    0    |    0    |    0    |    0    |
 |          |        p_read15_read_fu_104        |    0    |    0    |    0    |    0    |    0    |
-|          |        p_read_17_read_fu_110       |    0    |    0    |    0    |    0    |    0    |
+|          |        p_read_11_read_fu_110       |    0    |    0    |    0    |    0    |    0    |
 |          |         RS_read_read_fu_116        |    0    |    0    |    0    |    0    |    0    |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
-|   Total  |                                    |    8    |    26   | 30.2213 |   3622  |   2573  |
+|   Total  |                                    |    8    |    22   | 18.1042 |   2219  |   2756  |
 |----------|------------------------------------|---------|---------|---------|---------|---------|
 
 Memories:
@@ -1253,12 +1253,12 @@ N/A
 +------------------+--------+
 |  RS_read_reg_225 |   32   |
 | co_1_read_reg_205|   10   |
-|icmp_ln212_reg_230|    1   |
+|icmp_ln193_reg_230|    1   |
 | ko_2_read_reg_210|    9   |
 | p_read15_reg_215 |    9   |
 | p_read29_reg_195 |   32   |
-| p_read310_reg_190|   10   |
-| p_read_17_reg_220|    9   |
+| p_read_10_reg_190|   10   |
+| p_read_11_reg_220|    9   |
 |  r_read_reg_200  |   32   |
 |    s_1_reg_234   |   32   |
 |     s_reg_122    |   32   |
@@ -1281,10 +1281,10 @@ N/A
 +-----------+--------+--------+--------+--------+--------+
 |           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+--------+--------+
-|  Function |    8   |   26   |   30   |  3622  |  2573  |
+|  Function |    8   |   22   |   18   |  2219  |  2756  |
 |   Memory  |    -   |    -   |    -   |    -   |    -   |
 |Multiplexer|    -   |    -   |    0   |    -   |    9   |
 |  Register |    -   |    -   |    -   |   208  |    -   |
 +-----------+--------+--------+--------+--------+--------+
-|   Total   |    8   |   26   |   30   |  3830  |  2582  |
+|   Total   |    8   |   22   |   18   |  2427  |  2765  |
 +-----------+--------+--------+--------+--------+--------+

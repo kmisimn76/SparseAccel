@@ -24,8 +24,8 @@ typedef int  MACTYPE;
 #define DP_WIDTH 8    // data path width
 #define MAC_WIDTH 32
 
-#define VEC_SIZE 4
-//typedef ap_axiu<32,0,0,0> k2k_data;
+#define VEC_SIZE 4 // smaller than ARRAY_C,ARRAY_K
+//typedef ap_axiu<512,0,0,0> k2k_data;
 typedef ap_axiu<VEC_SIZE*32,0,0,0> k2k_data;
 
 #endif

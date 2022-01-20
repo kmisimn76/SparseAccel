@@ -16,12 +16,13 @@ set C_modelArgList {
 	{ weight_l2_1 int 8 regular {array 512 { 1 3 } 1 1 }  }
 	{ weight_l2_2 int 8 regular {array 512 { 1 3 } 1 1 }  }
 	{ weight_l2_3 int 8 regular {array 512 { 1 3 } 1 1 }  }
-	{ empty_14 int 9 regular {fifo 0}  }
+	{ empty_15 int 9 regular {fifo 0}  }
 	{ empty int 9 regular {fifo 0}  }
 	{ ko_2 int 9 regular {fifo 0}  }
 	{ co_1 int 7 regular {fifo 0}  }
 	{ r int 32 regular {fifo 0}  }
 	{ s int 32 regular {fifo 0}  }
+	{ ko_2_out int 9 regular {fifo 1}  }
 	{ r_out int 32 regular {fifo 1}  }
 	{ s_out int 32 regular {fifo 1}  }
 }
@@ -30,17 +31,18 @@ set C_modelArgMapList {[
  	{ "Name" : "weight_l2_1", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "weight_l2_2", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
  	{ "Name" : "weight_l2_3", "interface" : "memory", "bitwidth" : 8, "direction" : "READONLY"} , 
- 	{ "Name" : "empty_14", "interface" : "fifo", "bitwidth" : 9, "direction" : "READONLY"} , 
+ 	{ "Name" : "empty_15", "interface" : "fifo", "bitwidth" : 9, "direction" : "READONLY"} , 
  	{ "Name" : "empty", "interface" : "fifo", "bitwidth" : 9, "direction" : "READONLY"} , 
  	{ "Name" : "ko_2", "interface" : "fifo", "bitwidth" : 9, "direction" : "READONLY"} , 
  	{ "Name" : "co_1", "interface" : "fifo", "bitwidth" : 7, "direction" : "READONLY"} , 
  	{ "Name" : "r", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "s", "interface" : "fifo", "bitwidth" : 32, "direction" : "READONLY"} , 
+ 	{ "Name" : "ko_2_out", "interface" : "fifo", "bitwidth" : 9, "direction" : "WRITEONLY"} , 
  	{ "Name" : "r_out", "interface" : "fifo", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "s_out", "interface" : "fifo", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "ap_return", "interface" : "wire", "bitwidth" : 128} ]}
 # RTL Port declarations: 
-set portNum 59
+set portNum 62
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -61,9 +63,9 @@ set portList {
 	{ weight_l2_3_address0 sc_out sc_lv 9 signal 3 } 
 	{ weight_l2_3_ce0 sc_out sc_logic 1 signal 3 } 
 	{ weight_l2_3_q0 sc_in sc_lv 8 signal 3 } 
-	{ empty_14_dout sc_in sc_lv 9 signal 4 } 
-	{ empty_14_empty_n sc_in sc_logic 1 signal 4 } 
-	{ empty_14_read sc_out sc_logic 1 signal 4 } 
+	{ empty_15_dout sc_in sc_lv 9 signal 4 } 
+	{ empty_15_empty_n sc_in sc_logic 1 signal 4 } 
+	{ empty_15_read sc_out sc_logic 1 signal 4 } 
 	{ empty_dout sc_in sc_lv 9 signal 5 } 
 	{ empty_empty_n sc_in sc_logic 1 signal 5 } 
 	{ empty_read sc_out sc_logic 1 signal 5 } 
@@ -79,12 +81,15 @@ set portList {
 	{ s_dout sc_in sc_lv 32 signal 9 } 
 	{ s_empty_n sc_in sc_logic 1 signal 9 } 
 	{ s_read sc_out sc_logic 1 signal 9 } 
-	{ r_out_din sc_out sc_lv 32 signal 10 } 
-	{ r_out_full_n sc_in sc_logic 1 signal 10 } 
-	{ r_out_write sc_out sc_logic 1 signal 10 } 
-	{ s_out_din sc_out sc_lv 32 signal 11 } 
-	{ s_out_full_n sc_in sc_logic 1 signal 11 } 
-	{ s_out_write sc_out sc_logic 1 signal 11 } 
+	{ ko_2_out_din sc_out sc_lv 9 signal 10 } 
+	{ ko_2_out_full_n sc_in sc_logic 1 signal 10 } 
+	{ ko_2_out_write sc_out sc_logic 1 signal 10 } 
+	{ r_out_din sc_out sc_lv 32 signal 11 } 
+	{ r_out_full_n sc_in sc_logic 1 signal 11 } 
+	{ r_out_write sc_out sc_logic 1 signal 11 } 
+	{ s_out_din sc_out sc_lv 32 signal 12 } 
+	{ s_out_full_n sc_in sc_logic 1 signal 12 } 
+	{ s_out_write sc_out sc_logic 1 signal 12 } 
 	{ ap_return_0 sc_out sc_lv 8 signal -1 } 
 	{ ap_return_1 sc_out sc_lv 8 signal -1 } 
 	{ ap_return_2 sc_out sc_lv 8 signal -1 } 
@@ -122,9 +127,9 @@ set NewPortList {[
  	{ "name": "weight_l2_3_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "weight_l2_3", "role": "address0" }} , 
  	{ "name": "weight_l2_3_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "weight_l2_3", "role": "ce0" }} , 
  	{ "name": "weight_l2_3_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "weight_l2_3", "role": "q0" }} , 
- 	{ "name": "empty_14_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "empty_14", "role": "dout" }} , 
- 	{ "name": "empty_14_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_14", "role": "empty_n" }} , 
- 	{ "name": "empty_14_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_14", "role": "read" }} , 
+ 	{ "name": "empty_15_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "empty_15", "role": "dout" }} , 
+ 	{ "name": "empty_15_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_15", "role": "empty_n" }} , 
+ 	{ "name": "empty_15_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_15", "role": "read" }} , 
  	{ "name": "empty_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "empty", "role": "dout" }} , 
  	{ "name": "empty_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty", "role": "empty_n" }} , 
  	{ "name": "empty_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "empty", "role": "read" }} , 
@@ -140,6 +145,9 @@ set NewPortList {[
  	{ "name": "s_dout", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "s", "role": "dout" }} , 
  	{ "name": "s_empty_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "s", "role": "empty_n" }} , 
  	{ "name": "s_read", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "s", "role": "read" }} , 
+ 	{ "name": "ko_2_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":9, "type": "signal", "bundle":{"name": "ko_2_out", "role": "din" }} , 
+ 	{ "name": "ko_2_out_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ko_2_out", "role": "full_n" }} , 
+ 	{ "name": "ko_2_out_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "ko_2_out", "role": "write" }} , 
  	{ "name": "r_out_din", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "r_out", "role": "din" }} , 
  	{ "name": "r_out_full_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "r_out", "role": "full_n" }} , 
  	{ "name": "r_out_write", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "r_out", "role": "write" }} , 
@@ -170,7 +178,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "1", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "21", "EstimateLatencyMax" : "21",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "41", "EstimateLatencyMax" : "41",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -182,9 +190,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "weight_l2_1", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "weight_l2_2", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "weight_l2_3", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "empty_14", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
+			{"Name" : "empty_15", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
-					{"Name" : "empty_14_blk_n", "Type" : "RtlSignal"}]},
+					{"Name" : "empty_15_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "empty", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "empty_blk_n", "Type" : "RtlSignal"}]},
@@ -200,6 +208,9 @@ set RtlHierarchyInfo {[
 			{"Name" : "s", "Type" : "Fifo", "Direction" : "I", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "s_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "ko_2_out", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
+				"BlockSignal" : [
+					{"Name" : "ko_2_out_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "r_out", "Type" : "Fifo", "Direction" : "O", "DependentProc" : "0", "DependentChan" : "0", "DependentChanDepth" : "2",
 				"BlockSignal" : [
 					{"Name" : "r_out_blk_n", "Type" : "RtlSignal"}]},
@@ -250,24 +261,24 @@ set ArgLastReadFirstWriteLatency {
 		weight_l2_1 {Type I LastRead 4 FirstWrite -1}
 		weight_l2_2 {Type I LastRead 4 FirstWrite -1}
 		weight_l2_3 {Type I LastRead 4 FirstWrite -1}
-		empty_14 {Type I LastRead 0 FirstWrite -1}
+		empty_15 {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
 		ko_2 {Type I LastRead 0 FirstWrite -1}
 		co_1 {Type I LastRead 0 FirstWrite -1}
 		r {Type I LastRead 0 FirstWrite -1}
 		s {Type I LastRead 0 FirstWrite -1}
+		ko_2_out {Type O LastRead -1 FirstWrite 0}
 		r_out {Type O LastRead -1 FirstWrite 0}
 		s_out {Type O LastRead -1 FirstWrite 0}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "21", "Max" : "21"}
-	, {"Name" : "Interval", "Min" : "21", "Max" : "21"}
+	{"Name" : "Latency", "Min" : "41", "Max" : "41"}
+	, {"Name" : "Interval", "Min" : "41", "Max" : "41"}
 ]}
 
 set PipelineEnableSignalInfo {[
-	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
@@ -275,12 +286,13 @@ set Spec2ImplPortList {
 	weight_l2_1 { ap_memory {  { weight_l2_1_address0 mem_address 1 9 }  { weight_l2_1_ce0 mem_ce 1 1 }  { weight_l2_1_q0 mem_dout 0 8 } } }
 	weight_l2_2 { ap_memory {  { weight_l2_2_address0 mem_address 1 9 }  { weight_l2_2_ce0 mem_ce 1 1 }  { weight_l2_2_q0 mem_dout 0 8 } } }
 	weight_l2_3 { ap_memory {  { weight_l2_3_address0 mem_address 1 9 }  { weight_l2_3_ce0 mem_ce 1 1 }  { weight_l2_3_q0 mem_dout 0 8 } } }
-	empty_14 { ap_fifo {  { empty_14_dout fifo_data 0 9 }  { empty_14_empty_n fifo_status 0 1 }  { empty_14_read fifo_update 1 1 } } }
+	empty_15 { ap_fifo {  { empty_15_dout fifo_data 0 9 }  { empty_15_empty_n fifo_status 0 1 }  { empty_15_read fifo_update 1 1 } } }
 	empty { ap_fifo {  { empty_dout fifo_data 0 9 }  { empty_empty_n fifo_status 0 1 }  { empty_read fifo_update 1 1 } } }
 	ko_2 { ap_fifo {  { ko_2_dout fifo_data 0 9 }  { ko_2_empty_n fifo_status 0 1 }  { ko_2_read fifo_update 1 1 } } }
 	co_1 { ap_fifo {  { co_1_dout fifo_data 0 7 }  { co_1_empty_n fifo_status 0 1 }  { co_1_read fifo_update 1 1 } } }
 	r { ap_fifo {  { r_dout fifo_data 0 32 }  { r_empty_n fifo_status 0 1 }  { r_read fifo_update 1 1 } } }
 	s { ap_fifo {  { s_dout fifo_data 0 32 }  { s_empty_n fifo_status 0 1 }  { s_read fifo_update 1 1 } } }
+	ko_2_out { ap_fifo {  { ko_2_out_din fifo_data 1 9 }  { ko_2_out_full_n fifo_status 0 1 }  { ko_2_out_write fifo_update 1 1 } } }
 	r_out { ap_fifo {  { r_out_din fifo_data 1 32 }  { r_out_full_n fifo_status 0 1 }  { r_out_write fifo_update 1 1 } } }
 	s_out { ap_fifo {  { s_out_din fifo_data 1 32 }  { s_out_full_n fifo_status 0 1 }  { s_out_write fifo_update 1 1 } } }
 }

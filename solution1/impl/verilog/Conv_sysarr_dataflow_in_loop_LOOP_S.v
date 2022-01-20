@@ -98,46 +98,46 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S (
         data_l2_3_we1,
         p_read2,
         p_read3,
-        output_l1_pass_0_address0,
-        output_l1_pass_0_ce0,
-        output_l1_pass_0_d0,
-        output_l1_pass_0_q0,
-        output_l1_pass_0_we0,
-        output_l1_pass_0_address1,
-        output_l1_pass_0_ce1,
-        output_l1_pass_0_d1,
-        output_l1_pass_0_q1,
-        output_l1_pass_0_we1,
-        output_l1_pass_1_address0,
-        output_l1_pass_1_ce0,
-        output_l1_pass_1_d0,
-        output_l1_pass_1_q0,
-        output_l1_pass_1_we0,
-        output_l1_pass_1_address1,
-        output_l1_pass_1_ce1,
-        output_l1_pass_1_d1,
-        output_l1_pass_1_q1,
-        output_l1_pass_1_we1,
-        output_l1_pass_2_address0,
-        output_l1_pass_2_ce0,
-        output_l1_pass_2_d0,
-        output_l1_pass_2_q0,
-        output_l1_pass_2_we0,
-        output_l1_pass_2_address1,
-        output_l1_pass_2_ce1,
-        output_l1_pass_2_d1,
-        output_l1_pass_2_q1,
-        output_l1_pass_2_we1,
-        output_l1_pass_3_address0,
-        output_l1_pass_3_ce0,
-        output_l1_pass_3_d0,
-        output_l1_pass_3_q0,
-        output_l1_pass_3_we0,
-        output_l1_pass_3_address1,
-        output_l1_pass_3_ce1,
-        output_l1_pass_3_d1,
-        output_l1_pass_3_q1,
-        output_l1_pass_3_we1,
+        output_l1_0_address0,
+        output_l1_0_ce0,
+        output_l1_0_d0,
+        output_l1_0_q0,
+        output_l1_0_we0,
+        output_l1_0_address1,
+        output_l1_0_ce1,
+        output_l1_0_d1,
+        output_l1_0_q1,
+        output_l1_0_we1,
+        output_l1_1_address0,
+        output_l1_1_ce0,
+        output_l1_1_d0,
+        output_l1_1_q0,
+        output_l1_1_we0,
+        output_l1_1_address1,
+        output_l1_1_ce1,
+        output_l1_1_d1,
+        output_l1_1_q1,
+        output_l1_1_we1,
+        output_l1_2_address0,
+        output_l1_2_ce0,
+        output_l1_2_d0,
+        output_l1_2_q0,
+        output_l1_2_we0,
+        output_l1_2_address1,
+        output_l1_2_ce1,
+        output_l1_2_d1,
+        output_l1_2_q1,
+        output_l1_2_we1,
+        output_l1_3_address0,
+        output_l1_3_ce0,
+        output_l1_3_d0,
+        output_l1_3_q0,
+        output_l1_3_we0,
+        output_l1_3_address1,
+        output_l1_3_ce1,
+        output_l1_3_d1,
+        output_l1_3_q1,
+        output_l1_3_we1,
         p_read_ap_vld,
         p_read1_ap_vld,
         ko_2_ap_vld,
@@ -244,46 +244,46 @@ input  [7:0] data_l2_3_q1;
 output   data_l2_3_we1;
 input  [31:0] p_read2;
 input  [9:0] p_read3;
-output  [9:0] output_l1_pass_0_address0;
-output   output_l1_pass_0_ce0;
-output  [31:0] output_l1_pass_0_d0;
-input  [31:0] output_l1_pass_0_q0;
-output   output_l1_pass_0_we0;
-output  [9:0] output_l1_pass_0_address1;
-output   output_l1_pass_0_ce1;
-output  [31:0] output_l1_pass_0_d1;
-input  [31:0] output_l1_pass_0_q1;
-output   output_l1_pass_0_we1;
-output  [9:0] output_l1_pass_1_address0;
-output   output_l1_pass_1_ce0;
-output  [31:0] output_l1_pass_1_d0;
-input  [31:0] output_l1_pass_1_q0;
-output   output_l1_pass_1_we0;
-output  [9:0] output_l1_pass_1_address1;
-output   output_l1_pass_1_ce1;
-output  [31:0] output_l1_pass_1_d1;
-input  [31:0] output_l1_pass_1_q1;
-output   output_l1_pass_1_we1;
-output  [9:0] output_l1_pass_2_address0;
-output   output_l1_pass_2_ce0;
-output  [31:0] output_l1_pass_2_d0;
-input  [31:0] output_l1_pass_2_q0;
-output   output_l1_pass_2_we0;
-output  [9:0] output_l1_pass_2_address1;
-output   output_l1_pass_2_ce1;
-output  [31:0] output_l1_pass_2_d1;
-input  [31:0] output_l1_pass_2_q1;
-output   output_l1_pass_2_we1;
-output  [9:0] output_l1_pass_3_address0;
-output   output_l1_pass_3_ce0;
-output  [31:0] output_l1_pass_3_d0;
-input  [31:0] output_l1_pass_3_q0;
-output   output_l1_pass_3_we0;
-output  [9:0] output_l1_pass_3_address1;
-output   output_l1_pass_3_ce1;
-output  [31:0] output_l1_pass_3_d1;
-input  [31:0] output_l1_pass_3_q1;
-output   output_l1_pass_3_we1;
+output  [8:0] output_l1_0_address0;
+output   output_l1_0_ce0;
+output  [31:0] output_l1_0_d0;
+input  [31:0] output_l1_0_q0;
+output   output_l1_0_we0;
+output  [8:0] output_l1_0_address1;
+output   output_l1_0_ce1;
+output  [31:0] output_l1_0_d1;
+input  [31:0] output_l1_0_q1;
+output   output_l1_0_we1;
+output  [8:0] output_l1_1_address0;
+output   output_l1_1_ce0;
+output  [31:0] output_l1_1_d0;
+input  [31:0] output_l1_1_q0;
+output   output_l1_1_we0;
+output  [8:0] output_l1_1_address1;
+output   output_l1_1_ce1;
+output  [31:0] output_l1_1_d1;
+input  [31:0] output_l1_1_q1;
+output   output_l1_1_we1;
+output  [8:0] output_l1_2_address0;
+output   output_l1_2_ce0;
+output  [31:0] output_l1_2_d0;
+input  [31:0] output_l1_2_q0;
+output   output_l1_2_we0;
+output  [8:0] output_l1_2_address1;
+output   output_l1_2_ce1;
+output  [31:0] output_l1_2_d1;
+input  [31:0] output_l1_2_q1;
+output   output_l1_2_we1;
+output  [8:0] output_l1_3_address0;
+output   output_l1_3_ce0;
+output  [31:0] output_l1_3_d0;
+input  [31:0] output_l1_3_q0;
+output   output_l1_3_we0;
+output  [8:0] output_l1_3_address1;
+output   output_l1_3_ce1;
+output  [31:0] output_l1_3_d1;
+input  [31:0] output_l1_3_q1;
+output   output_l1_3_we1;
 input   p_read_ap_vld;
 input   p_read1_ap_vld;
 input   ko_2_ap_vld;
@@ -306,35 +306,35 @@ wire   [7:0] data_l1buf_2_i_q0;
 wire   [7:0] data_l1buf_2_t_q0;
 wire   [7:0] data_l1buf_3_i_q0;
 wire   [7:0] data_l1buf_3_t_q0;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ap_start;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ap_done;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ap_continue;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ap_idle;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ap_ready;
-wire   [8:0] dataflow_in_loop_LOOP_S_entry18_U0_p_out_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_p_out_write;
-wire   [8:0] dataflow_in_loop_LOOP_S_entry18_U0_p_out1_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_p_out1_write;
-wire   [8:0] dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_write;
-wire   [6:0] dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_write;
-wire   [9:0] dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_entry18_U0_r_out_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_r_out_write;
-wire   [9:0] dataflow_in_loop_LOOP_S_entry18_U0_r_out3_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_r_out3_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_entry18_U0_s_out_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_s_out_write;
-wire   [9:0] dataflow_in_loop_LOOP_S_entry18_U0_s_out4_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_s_out4_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_entry18_U0_p_out5_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_p_out5_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_entry18_U0_p_out6_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_p_out6_write;
-wire   [9:0] dataflow_in_loop_LOOP_S_entry18_U0_p_out7_din;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_p_out7_write;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ap_start;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ap_done;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ap_continue;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ap_idle;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ap_ready;
+wire   [8:0] dataflow_in_loop_LOOP_S_entry20_U0_p_out_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_p_out_write;
+wire   [8:0] dataflow_in_loop_LOOP_S_entry20_U0_p_out1_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_p_out1_write;
+wire   [8:0] dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_write;
+wire   [6:0] dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_write;
+wire   [9:0] dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_entry20_U0_r_out_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_r_out_write;
+wire   [9:0] dataflow_in_loop_LOOP_S_entry20_U0_r_out3_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_r_out3_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_entry20_U0_s_out_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_s_out_write;
+wire   [9:0] dataflow_in_loop_LOOP_S_entry20_U0_s_out4_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_s_out4_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_entry20_U0_p_out5_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_p_out5_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_entry20_U0_p_out6_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_p_out6_write;
+wire   [9:0] dataflow_in_loop_LOOP_S_entry20_U0_p_out7_din;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_p_out7_write;
 wire    runWeight2Reg_U0_ap_start;
 wire    runWeight2Reg_U0_ap_done;
 wire    runWeight2Reg_U0_ap_continue;
@@ -348,12 +348,14 @@ wire   [8:0] runWeight2Reg_U0_weight_l2_2_address0;
 wire    runWeight2Reg_U0_weight_l2_2_ce0;
 wire   [8:0] runWeight2Reg_U0_weight_l2_3_address0;
 wire    runWeight2Reg_U0_weight_l2_3_ce0;
-wire    runWeight2Reg_U0_empty_14_read;
+wire    runWeight2Reg_U0_empty_15_read;
 wire    runWeight2Reg_U0_empty_read;
 wire    runWeight2Reg_U0_ko_2_read;
 wire    runWeight2Reg_U0_co_1_read;
 wire    runWeight2Reg_U0_r_read;
 wire    runWeight2Reg_U0_s_read;
+wire   [8:0] runWeight2Reg_U0_ko_2_out_din;
+wire    runWeight2Reg_U0_ko_2_out_write;
 wire   [31:0] runWeight2Reg_U0_r_out_din;
 wire    runWeight2Reg_U0_r_out_write;
 wire   [31:0] runWeight2Reg_U0_s_out_din;
@@ -467,7 +469,7 @@ wire   [9:0] runL2toL1_U0_data_l2_2_address0;
 wire    runL2toL1_U0_data_l2_2_ce0;
 wire   [9:0] runL2toL1_U0_data_l2_3_address0;
 wire    runL2toL1_U0_data_l2_3_ce0;
-wire    runL2toL1_U0_empty_15_read;
+wire    runL2toL1_U0_empty_16_read;
 wire    runL2toL1_U0_co_1_read;
 wire    runL2toL1_U0_r_read;
 wire    runL2toL1_U0_s_read;
@@ -493,31 +495,32 @@ wire    runSysArr_U0_ap_done;
 wire    runSysArr_U0_ap_continue;
 wire    runSysArr_U0_ap_idle;
 wire    runSysArr_U0_ap_ready;
-wire   [8:0] runSysArr_U0_data_l1buf_017_address0;
-wire    runSysArr_U0_data_l1buf_017_ce0;
-wire   [8:0] runSysArr_U0_data_l1buf_118_address0;
-wire    runSysArr_U0_data_l1buf_118_ce0;
-wire   [8:0] runSysArr_U0_data_l1buf_219_address0;
-wire    runSysArr_U0_data_l1buf_219_ce0;
-wire   [8:0] runSysArr_U0_data_l1buf_320_address0;
-wire    runSysArr_U0_data_l1buf_320_ce0;
-wire   [9:0] runSysArr_U0_output_l1_pass_0_address0;
+wire   [8:0] runSysArr_U0_data_l1buf_0_address0;
+wire    runSysArr_U0_data_l1buf_0_ce0;
+wire   [8:0] runSysArr_U0_data_l1buf_1_address0;
+wire    runSysArr_U0_data_l1buf_1_ce0;
+wire   [8:0] runSysArr_U0_data_l1buf_2_address0;
+wire    runSysArr_U0_data_l1buf_2_ce0;
+wire   [8:0] runSysArr_U0_data_l1buf_3_address0;
+wire    runSysArr_U0_data_l1buf_3_ce0;
+wire   [8:0] runSysArr_U0_output_l1_pass_0_address0;
 wire    runSysArr_U0_output_l1_pass_0_ce0;
 wire    runSysArr_U0_output_l1_pass_0_we0;
 wire   [31:0] runSysArr_U0_output_l1_pass_0_d0;
-wire   [9:0] runSysArr_U0_output_l1_pass_1_address0;
+wire   [8:0] runSysArr_U0_output_l1_pass_1_address0;
 wire    runSysArr_U0_output_l1_pass_1_ce0;
 wire    runSysArr_U0_output_l1_pass_1_we0;
 wire   [31:0] runSysArr_U0_output_l1_pass_1_d0;
-wire   [9:0] runSysArr_U0_output_l1_pass_2_address0;
+wire   [8:0] runSysArr_U0_output_l1_pass_2_address0;
 wire    runSysArr_U0_output_l1_pass_2_ce0;
 wire    runSysArr_U0_output_l1_pass_2_we0;
 wire   [31:0] runSysArr_U0_output_l1_pass_2_d0;
-wire   [9:0] runSysArr_U0_output_l1_pass_3_address0;
+wire   [8:0] runSysArr_U0_output_l1_pass_3_address0;
 wire    runSysArr_U0_output_l1_pass_3_ce0;
 wire    runSysArr_U0_output_l1_pass_3_we0;
 wire   [31:0] runSysArr_U0_output_l1_pass_3_d0;
 wire    runSysArr_U0_empty_read;
+wire    runSysArr_U0_ko_2_read;
 wire    runSysArr_U0_s_read;
 wire    runSysArr_U0_r_read;
 wire    ap_sync_continue;
@@ -565,12 +568,15 @@ wire    p_c6_empty_n;
 wire    p_c7_full_n;
 wire   [9:0] p_c7_dout;
 wire    p_c7_empty_n;
-wire    r_c8_full_n;
-wire   [31:0] r_c8_dout;
-wire    r_c8_empty_n;
-wire    s_c9_full_n;
-wire   [31:0] s_c9_dout;
-wire    s_c9_empty_n;
+wire    ko_2_c8_full_n;
+wire   [8:0] ko_2_c8_dout;
+wire    ko_2_c8_empty_n;
+wire    r_c9_full_n;
+wire   [31:0] r_c9_dout;
+wire    r_c9_empty_n;
+wire    s_c10_full_n;
+wire   [31:0] s_c10_dout;
+wire    s_c10_empty_n;
 wire   [7:0] weight_regfile_0_0_dout;
 wire    weight_regfile_0_0_empty_n;
 wire   [7:0] weight_regfile_0_1_dout;
@@ -605,17 +611,17 @@ wire   [7:0] weight_regfile_3_3_dout;
 wire    weight_regfile_3_3_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-reg    ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready;
-wire    ap_sync_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready;
-reg   [1:0] dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count;
+reg    ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready;
+wire    ap_sync_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready;
+reg   [1:0] dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count;
 reg    ap_sync_reg_runWeight2Reg_U0_ap_ready;
 wire    ap_sync_runWeight2Reg_U0_ap_ready;
 reg   [1:0] runWeight2Reg_U0_ap_ready_count;
 reg    ap_sync_reg_runL2toL1_U0_ap_ready;
 wire    ap_sync_runL2toL1_U0_ap_ready;
 reg   [1:0] runL2toL1_U0_ap_ready_count;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_start_full_n;
-wire    dataflow_in_loop_LOOP_S_entry18_U0_start_write;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_start_full_n;
+wire    dataflow_in_loop_LOOP_S_entry20_U0_start_write;
 wire    runWeight2Reg_U0_start_full_n;
 wire    runWeight2Reg_U0_start_write;
 wire    runL2toL1_U0_start_full_n;
@@ -645,8 +651,8 @@ initial begin
 #0 ap_sync_reg_channel_write_data_l1buf_2 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1buf_1 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1buf_0 = 1'b0;
-#0 ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready = 1'b0;
-#0 dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count = 2'd0;
+#0 ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready = 1'b0;
+#0 dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count = 2'd0;
 #0 ap_sync_reg_runWeight2Reg_U0_ap_ready = 1'b0;
 #0 runWeight2Reg_U0_ap_ready_count = 2'd0;
 #0 ap_sync_reg_runL2toL1_U0_ap_ready = 1'b0;
@@ -665,8 +671,8 @@ data_l1buf_0_U(
     .i_we0(runL2toL1_U0_data_l1buf_017_we0),
     .i_d0(runL2toL1_U0_data_l1buf_017_d0),
     .i_q0(data_l1buf_0_i_q0),
-    .t_address0(runSysArr_U0_data_l1buf_017_address0),
-    .t_ce0(runSysArr_U0_data_l1buf_017_ce0),
+    .t_address0(runSysArr_U0_data_l1buf_0_address0),
+    .t_ce0(runSysArr_U0_data_l1buf_0_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
     .t_q0(data_l1buf_0_t_q0),
@@ -690,8 +696,8 @@ data_l1buf_1_U(
     .i_we0(runL2toL1_U0_data_l1buf_118_we0),
     .i_d0(runL2toL1_U0_data_l1buf_118_d0),
     .i_q0(data_l1buf_1_i_q0),
-    .t_address0(runSysArr_U0_data_l1buf_118_address0),
-    .t_ce0(runSysArr_U0_data_l1buf_118_ce0),
+    .t_address0(runSysArr_U0_data_l1buf_1_address0),
+    .t_ce0(runSysArr_U0_data_l1buf_1_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
     .t_q0(data_l1buf_1_t_q0),
@@ -715,8 +721,8 @@ data_l1buf_2_U(
     .i_we0(runL2toL1_U0_data_l1buf_219_we0),
     .i_d0(runL2toL1_U0_data_l1buf_219_d0),
     .i_q0(data_l1buf_2_i_q0),
-    .t_address0(runSysArr_U0_data_l1buf_219_address0),
-    .t_ce0(runSysArr_U0_data_l1buf_219_ce0),
+    .t_address0(runSysArr_U0_data_l1buf_2_address0),
+    .t_ce0(runSysArr_U0_data_l1buf_2_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
     .t_q0(data_l1buf_2_t_q0),
@@ -740,8 +746,8 @@ data_l1buf_3_U(
     .i_we0(runL2toL1_U0_data_l1buf_320_we0),
     .i_d0(runL2toL1_U0_data_l1buf_320_d0),
     .i_q0(data_l1buf_3_i_q0),
-    .t_address0(runSysArr_U0_data_l1buf_320_address0),
-    .t_ce0(runSysArr_U0_data_l1buf_320_ce0),
+    .t_address0(runSysArr_U0_data_l1buf_3_address0),
+    .t_ce0(runSysArr_U0_data_l1buf_3_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
     .t_q0(data_l1buf_3_t_q0),
@@ -753,14 +759,14 @@ data_l1buf_3_U(
     .t_read(runSysArr_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_entry18 dataflow_in_loop_LOOP_S_entry18_U0(
+Conv_sysarr_dataflow_in_loop_LOOP_S_entry20 dataflow_in_loop_LOOP_S_entry20_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(dataflow_in_loop_LOOP_S_entry18_U0_ap_start),
-    .ap_done(dataflow_in_loop_LOOP_S_entry18_U0_ap_done),
-    .ap_continue(dataflow_in_loop_LOOP_S_entry18_U0_ap_continue),
-    .ap_idle(dataflow_in_loop_LOOP_S_entry18_U0_ap_idle),
-    .ap_ready(dataflow_in_loop_LOOP_S_entry18_U0_ap_ready),
+    .ap_start(dataflow_in_loop_LOOP_S_entry20_U0_ap_start),
+    .ap_done(dataflow_in_loop_LOOP_S_entry20_U0_ap_done),
+    .ap_continue(dataflow_in_loop_LOOP_S_entry20_U0_ap_continue),
+    .ap_idle(dataflow_in_loop_LOOP_S_entry20_U0_ap_idle),
+    .ap_ready(dataflow_in_loop_LOOP_S_entry20_U0_ap_ready),
     .p_read(p_read),
     .p_read1(p_read1),
     .ko_2(ko_2),
@@ -769,42 +775,42 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_entry18 dataflow_in_loop_LOOP_S_entry18_U0(
     .s(s),
     .p_read2(p_read2),
     .p_read3(p_read3),
-    .p_out_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out_din),
+    .p_out_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out_din),
     .p_out_full_n(p_c_full_n),
-    .p_out_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out_write),
-    .p_out1_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out1_din),
+    .p_out_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out_write),
+    .p_out1_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out1_din),
     .p_out1_full_n(p_c1_full_n),
-    .p_out1_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out1_write),
-    .ko_2_out_din(dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_din),
+    .p_out1_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out1_write),
+    .ko_2_out_din(dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_din),
     .ko_2_out_full_n(ko_2_c_full_n),
-    .ko_2_out_write(dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_write),
-    .co_1_out_din(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_din),
+    .ko_2_out_write(dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_write),
+    .co_1_out_din(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_din),
     .co_1_out_full_n(co_1_c_full_n),
-    .co_1_out_write(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_write),
-    .co_1_out2_din(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_din),
+    .co_1_out_write(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_write),
+    .co_1_out2_din(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_din),
     .co_1_out2_full_n(co_1_c2_full_n),
-    .co_1_out2_write(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_write),
-    .r_out_din(dataflow_in_loop_LOOP_S_entry18_U0_r_out_din),
+    .co_1_out2_write(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_write),
+    .r_out_din(dataflow_in_loop_LOOP_S_entry20_U0_r_out_din),
     .r_out_full_n(r_c_full_n),
-    .r_out_write(dataflow_in_loop_LOOP_S_entry18_U0_r_out_write),
-    .r_out3_din(dataflow_in_loop_LOOP_S_entry18_U0_r_out3_din),
+    .r_out_write(dataflow_in_loop_LOOP_S_entry20_U0_r_out_write),
+    .r_out3_din(dataflow_in_loop_LOOP_S_entry20_U0_r_out3_din),
     .r_out3_full_n(r_c3_full_n),
-    .r_out3_write(dataflow_in_loop_LOOP_S_entry18_U0_r_out3_write),
-    .s_out_din(dataflow_in_loop_LOOP_S_entry18_U0_s_out_din),
+    .r_out3_write(dataflow_in_loop_LOOP_S_entry20_U0_r_out3_write),
+    .s_out_din(dataflow_in_loop_LOOP_S_entry20_U0_s_out_din),
     .s_out_full_n(s_c_full_n),
-    .s_out_write(dataflow_in_loop_LOOP_S_entry18_U0_s_out_write),
-    .s_out4_din(dataflow_in_loop_LOOP_S_entry18_U0_s_out4_din),
+    .s_out_write(dataflow_in_loop_LOOP_S_entry20_U0_s_out_write),
+    .s_out4_din(dataflow_in_loop_LOOP_S_entry20_U0_s_out4_din),
     .s_out4_full_n(s_c4_full_n),
-    .s_out4_write(dataflow_in_loop_LOOP_S_entry18_U0_s_out4_write),
-    .p_out5_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out5_din),
+    .s_out4_write(dataflow_in_loop_LOOP_S_entry20_U0_s_out4_write),
+    .p_out5_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out5_din),
     .p_out5_full_n(p_c5_full_n),
-    .p_out5_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out5_write),
-    .p_out6_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out6_din),
+    .p_out5_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out5_write),
+    .p_out6_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out6_din),
     .p_out6_full_n(p_c6_full_n),
-    .p_out6_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out6_write),
-    .p_out7_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out7_din),
+    .p_out6_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out6_write),
+    .p_out7_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out7_din),
     .p_out7_full_n(p_c7_full_n),
-    .p_out7_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out7_write)
+    .p_out7_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out7_write)
 );
 
 Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
@@ -827,9 +833,9 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .weight_l2_3_address0(runWeight2Reg_U0_weight_l2_3_address0),
     .weight_l2_3_ce0(runWeight2Reg_U0_weight_l2_3_ce0),
     .weight_l2_3_q0(weight_l2_3_q0),
-    .empty_14_dout(p_c_dout),
-    .empty_14_empty_n(p_c_empty_n),
-    .empty_14_read(runWeight2Reg_U0_empty_14_read),
+    .empty_15_dout(p_c_dout),
+    .empty_15_empty_n(p_c_empty_n),
+    .empty_15_read(runWeight2Reg_U0_empty_15_read),
     .empty_dout(p_c1_dout),
     .empty_empty_n(p_c1_empty_n),
     .empty_read(runWeight2Reg_U0_empty_read),
@@ -845,11 +851,14 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .s_dout(s_c_dout),
     .s_empty_n(s_c_empty_n),
     .s_read(runWeight2Reg_U0_s_read),
+    .ko_2_out_din(runWeight2Reg_U0_ko_2_out_din),
+    .ko_2_out_full_n(ko_2_c8_full_n),
+    .ko_2_out_write(runWeight2Reg_U0_ko_2_out_write),
     .r_out_din(runWeight2Reg_U0_r_out_din),
-    .r_out_full_n(r_c8_full_n),
+    .r_out_full_n(r_c9_full_n),
     .r_out_write(runWeight2Reg_U0_r_out_write),
     .s_out_din(runWeight2Reg_U0_s_out_din),
-    .s_out_full_n(s_c9_full_n),
+    .s_out_full_n(s_c10_full_n),
     .s_out_write(runWeight2Reg_U0_s_out_write),
     .ap_return_0(runWeight2Reg_U0_ap_return_0),
     .ap_return_1(runWeight2Reg_U0_ap_return_1),
@@ -905,9 +914,9 @@ Conv_sysarr_runL2toL1 runL2toL1_U0(
     .data_l2_3_address0(runL2toL1_U0_data_l2_3_address0),
     .data_l2_3_ce0(runL2toL1_U0_data_l2_3_ce0),
     .data_l2_3_q0(data_l2_3_q0),
-    .empty_15_dout(p_c5_dout),
-    .empty_15_empty_n(p_c5_empty_n),
-    .empty_15_read(runL2toL1_U0_empty_15_read),
+    .empty_16_dout(p_c5_dout),
+    .empty_16_empty_n(p_c5_empty_n),
+    .empty_16_read(runL2toL1_U0_empty_16_read),
     .co_1_dout(co_1_c2_dout),
     .co_1_empty_n(co_1_c2_empty_n),
     .co_1_read(runL2toL1_U0_co_1_read),
@@ -930,34 +939,34 @@ Conv_sysarr_runSysArr runSysArr_U0(
     .ap_continue(runSysArr_U0_ap_continue),
     .ap_idle(runSysArr_U0_ap_idle),
     .ap_ready(runSysArr_U0_ap_ready),
-    .p_read(weight_regfile_0_0_dout),
-    .p_read1(weight_regfile_0_1_dout),
-    .p_read2(weight_regfile_0_2_dout),
-    .p_read3(weight_regfile_0_3_dout),
-    .p_read4(weight_regfile_1_0_dout),
-    .p_read5(weight_regfile_1_1_dout),
-    .p_read6(weight_regfile_1_2_dout),
-    .p_read7(weight_regfile_1_3_dout),
-    .p_read8(weight_regfile_2_0_dout),
-    .p_read9(weight_regfile_2_1_dout),
-    .p_read10(weight_regfile_2_2_dout),
-    .p_read11(weight_regfile_2_3_dout),
-    .p_read12(weight_regfile_3_0_dout),
-    .p_read13(weight_regfile_3_1_dout),
-    .p_read14(weight_regfile_3_2_dout),
-    .p_read15(weight_regfile_3_3_dout),
-    .data_l1buf_017_address0(runSysArr_U0_data_l1buf_017_address0),
-    .data_l1buf_017_ce0(runSysArr_U0_data_l1buf_017_ce0),
-    .data_l1buf_017_q0(data_l1buf_0_t_q0),
-    .data_l1buf_118_address0(runSysArr_U0_data_l1buf_118_address0),
-    .data_l1buf_118_ce0(runSysArr_U0_data_l1buf_118_ce0),
-    .data_l1buf_118_q0(data_l1buf_1_t_q0),
-    .data_l1buf_219_address0(runSysArr_U0_data_l1buf_219_address0),
-    .data_l1buf_219_ce0(runSysArr_U0_data_l1buf_219_ce0),
-    .data_l1buf_219_q0(data_l1buf_2_t_q0),
-    .data_l1buf_320_address0(runSysArr_U0_data_l1buf_320_address0),
-    .data_l1buf_320_ce0(runSysArr_U0_data_l1buf_320_ce0),
-    .data_l1buf_320_q0(data_l1buf_3_t_q0),
+    .weight_regfile_0_0_read(weight_regfile_0_0_dout),
+    .weight_regfile_0_1_read(weight_regfile_0_1_dout),
+    .weight_regfile_0_2_read(weight_regfile_0_2_dout),
+    .weight_regfile_0_3_read(weight_regfile_0_3_dout),
+    .weight_regfile_1_0_read(weight_regfile_1_0_dout),
+    .weight_regfile_1_1_read(weight_regfile_1_1_dout),
+    .weight_regfile_1_2_read(weight_regfile_1_2_dout),
+    .weight_regfile_1_3_read(weight_regfile_1_3_dout),
+    .weight_regfile_2_0_read(weight_regfile_2_0_dout),
+    .weight_regfile_2_1_read(weight_regfile_2_1_dout),
+    .weight_regfile_2_2_read(weight_regfile_2_2_dout),
+    .weight_regfile_2_3_read(weight_regfile_2_3_dout),
+    .weight_regfile_3_0_read(weight_regfile_3_0_dout),
+    .weight_regfile_3_1_read(weight_regfile_3_1_dout),
+    .weight_regfile_3_2_read(weight_regfile_3_2_dout),
+    .weight_regfile_3_3_read(weight_regfile_3_3_dout),
+    .data_l1buf_0_address0(runSysArr_U0_data_l1buf_0_address0),
+    .data_l1buf_0_ce0(runSysArr_U0_data_l1buf_0_ce0),
+    .data_l1buf_0_q0(data_l1buf_0_t_q0),
+    .data_l1buf_1_address0(runSysArr_U0_data_l1buf_1_address0),
+    .data_l1buf_1_ce0(runSysArr_U0_data_l1buf_1_ce0),
+    .data_l1buf_1_q0(data_l1buf_1_t_q0),
+    .data_l1buf_2_address0(runSysArr_U0_data_l1buf_2_address0),
+    .data_l1buf_2_ce0(runSysArr_U0_data_l1buf_2_ce0),
+    .data_l1buf_2_q0(data_l1buf_2_t_q0),
+    .data_l1buf_3_address0(runSysArr_U0_data_l1buf_3_address0),
+    .data_l1buf_3_ce0(runSysArr_U0_data_l1buf_3_ce0),
+    .data_l1buf_3_q0(data_l1buf_3_t_q0),
     .output_l1_pass_0_address0(runSysArr_U0_output_l1_pass_0_address0),
     .output_l1_pass_0_ce0(runSysArr_U0_output_l1_pass_0_ce0),
     .output_l1_pass_0_we0(runSysArr_U0_output_l1_pass_0_we0),
@@ -977,11 +986,14 @@ Conv_sysarr_runSysArr runSysArr_U0(
     .empty_dout(p_c6_dout),
     .empty_empty_n(p_c6_empty_n),
     .empty_read(runSysArr_U0_empty_read),
-    .s_dout(s_c9_dout),
-    .s_empty_n(s_c9_empty_n),
+    .ko_2_dout(ko_2_c8_dout),
+    .ko_2_empty_n(ko_2_c8_empty_n),
+    .ko_2_read(runSysArr_U0_ko_2_read),
+    .s_dout(s_c10_dout),
+    .s_empty_n(s_c10_empty_n),
     .s_read(runSysArr_U0_s_read),
-    .r_dout(r_c8_dout),
-    .r_empty_n(r_c8_empty_n),
+    .r_dout(r_c9_dout),
+    .r_empty_n(r_c9_empty_n),
     .r_read(runSysArr_U0_r_read)
 );
 
@@ -990,12 +1002,12 @@ Conv_sysarr_fifo_w9_d2_S p_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out_din),
     .if_full_n(p_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out_write),
     .if_dout(p_c_dout),
     .if_empty_n(p_c_empty_n),
-    .if_read(runWeight2Reg_U0_empty_14_read)
+    .if_read(runWeight2Reg_U0_empty_15_read)
 );
 
 Conv_sysarr_fifo_w9_d2_S p_c1_U(
@@ -1003,9 +1015,9 @@ Conv_sysarr_fifo_w9_d2_S p_c1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out1_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out1_din),
     .if_full_n(p_c1_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out1_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out1_write),
     .if_dout(p_c1_dout),
     .if_empty_n(p_c1_empty_n),
     .if_read(runWeight2Reg_U0_empty_read)
@@ -1016,9 +1028,9 @@ Conv_sysarr_fifo_w9_d2_S ko_2_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_din),
     .if_full_n(ko_2_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_ko_2_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_ko_2_out_write),
     .if_dout(ko_2_c_dout),
     .if_empty_n(ko_2_c_empty_n),
     .if_read(runWeight2Reg_U0_ko_2_read)
@@ -1029,9 +1041,9 @@ Conv_sysarr_fifo_w7_d2_S co_1_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_din),
     .if_full_n(co_1_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out_write),
     .if_dout(co_1_c_dout),
     .if_empty_n(co_1_c_empty_n),
     .if_read(runWeight2Reg_U0_co_1_read)
@@ -1042,9 +1054,9 @@ Conv_sysarr_fifo_w10_d2_S co_1_c2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_din),
     .if_full_n(co_1_c2_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_co_1_out2_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_co_1_out2_write),
     .if_dout(co_1_c2_dout),
     .if_empty_n(co_1_c2_empty_n),
     .if_read(runL2toL1_U0_co_1_read)
@@ -1055,9 +1067,9 @@ Conv_sysarr_fifo_w32_d2_S r_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_r_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_r_out_din),
     .if_full_n(r_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_r_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_r_out_write),
     .if_dout(r_c_dout),
     .if_empty_n(r_c_empty_n),
     .if_read(runWeight2Reg_U0_r_read)
@@ -1068,9 +1080,9 @@ Conv_sysarr_fifo_w10_d2_S r_c3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_r_out3_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_r_out3_din),
     .if_full_n(r_c3_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_r_out3_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_r_out3_write),
     .if_dout(r_c3_dout),
     .if_empty_n(r_c3_empty_n),
     .if_read(runL2toL1_U0_r_read)
@@ -1081,9 +1093,9 @@ Conv_sysarr_fifo_w32_d2_S s_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_s_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_s_out_din),
     .if_full_n(s_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_s_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_s_out_write),
     .if_dout(s_c_dout),
     .if_empty_n(s_c_empty_n),
     .if_read(runWeight2Reg_U0_s_read)
@@ -1094,9 +1106,9 @@ Conv_sysarr_fifo_w10_d2_S s_c4_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_s_out4_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_s_out4_din),
     .if_full_n(s_c4_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_s_out4_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_s_out4_write),
     .if_dout(s_c4_dout),
     .if_empty_n(s_c4_empty_n),
     .if_read(runL2toL1_U0_s_read)
@@ -1107,12 +1119,12 @@ Conv_sysarr_fifo_w32_d2_S p_c5_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out5_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out5_din),
     .if_full_n(p_c5_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out5_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out5_write),
     .if_dout(p_c5_dout),
     .if_empty_n(p_c5_empty_n),
-    .if_read(runL2toL1_U0_empty_15_read)
+    .if_read(runL2toL1_U0_empty_16_read)
 );
 
 Conv_sysarr_fifo_w32_d3_S p_c6_U(
@@ -1120,9 +1132,9 @@ Conv_sysarr_fifo_w32_d3_S p_c6_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out6_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out6_din),
     .if_full_n(p_c6_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out6_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out6_write),
     .if_dout(p_c6_dout),
     .if_empty_n(p_c6_empty_n),
     .if_read(runSysArr_U0_empty_read)
@@ -1133,37 +1145,50 @@ Conv_sysarr_fifo_w10_d2_S p_c7_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_entry18_U0_p_out7_din),
+    .if_din(dataflow_in_loop_LOOP_S_entry20_U0_p_out7_din),
     .if_full_n(p_c7_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_entry18_U0_p_out7_write),
+    .if_write(dataflow_in_loop_LOOP_S_entry20_U0_p_out7_write),
     .if_dout(p_c7_dout),
     .if_empty_n(p_c7_empty_n),
     .if_read(runL2toL1_U0_empty_read)
 );
 
-Conv_sysarr_fifo_w32_d2_S r_c8_U(
+Conv_sysarr_fifo_w9_d2_S ko_2_c8_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ko_2_out_din),
+    .if_full_n(ko_2_c8_full_n),
+    .if_write(runWeight2Reg_U0_ko_2_out_write),
+    .if_dout(ko_2_c8_dout),
+    .if_empty_n(ko_2_c8_empty_n),
+    .if_read(runSysArr_U0_ko_2_read)
+);
+
+Conv_sysarr_fifo_w32_d2_S r_c9_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(runWeight2Reg_U0_r_out_din),
-    .if_full_n(r_c8_full_n),
+    .if_full_n(r_c9_full_n),
     .if_write(runWeight2Reg_U0_r_out_write),
-    .if_dout(r_c8_dout),
-    .if_empty_n(r_c8_empty_n),
+    .if_dout(r_c9_dout),
+    .if_empty_n(r_c9_empty_n),
     .if_read(runSysArr_U0_r_read)
 );
 
-Conv_sysarr_fifo_w32_d2_S s_c9_U(
+Conv_sysarr_fifo_w32_d2_S s_c10_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
     .if_din(runWeight2Reg_U0_s_out_din),
-    .if_full_n(s_c9_full_n),
+    .if_full_n(s_c10_full_n),
     .if_write(runWeight2Reg_U0_s_out_write),
-    .if_dout(s_c9_dout),
-    .if_empty_n(s_c9_empty_n),
+    .if_dout(s_c10_dout),
+    .if_empty_n(s_c10_empty_n),
     .if_read(runSysArr_U0_s_read)
 );
 
@@ -1617,12 +1642,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready <= 1'b0;
+        ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready <= 1'b0;
     end else begin
         if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready <= 1'b0;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready <= 1'b0;
         end else begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready;
         end
     end
 end
@@ -1652,25 +1677,25 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_sync_ready == 1'b1) & (dataflow_in_loop_LOOP_S_entry18_U0_ap_ready == 1'b0))) begin
-        dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count - 2'd1);
-    end else if (((ap_sync_ready == 1'b0) & (dataflow_in_loop_LOOP_S_entry18_U0_ap_ready == 1'b1))) begin
-        dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_entry18_U0_ap_ready_count + 2'd1);
+    if (((dataflow_in_loop_LOOP_S_entry20_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
+        dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count - 2'd1);
+    end else if (((dataflow_in_loop_LOOP_S_entry20_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
+        dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_entry20_U0_ap_ready_count + 2'd1);
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_sync_ready == 1'b1) & (runL2toL1_U0_ap_ready == 1'b0))) begin
+    if (((runL2toL1_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
         runL2toL1_U0_ap_ready_count <= (runL2toL1_U0_ap_ready_count - 2'd1);
-    end else if (((ap_sync_ready == 1'b0) & (runL2toL1_U0_ap_ready == 1'b1))) begin
+    end else if (((runL2toL1_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
         runL2toL1_U0_ap_ready_count <= (runL2toL1_U0_ap_ready_count + 2'd1);
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_sync_ready == 1'b1) & (runWeight2Reg_U0_ap_ready == 1'b0))) begin
+    if (((runWeight2Reg_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
         runWeight2Reg_U0_ap_ready_count <= (runWeight2Reg_U0_ap_ready_count - 2'd1);
-    end else if (((ap_sync_ready == 1'b0) & (runWeight2Reg_U0_ap_ready == 1'b1))) begin
+    end else if (((runWeight2Reg_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
         runWeight2Reg_U0_ap_ready_count <= (runWeight2Reg_U0_ap_ready_count + 2'd1);
     end
 end
@@ -1717,7 +1742,7 @@ assign ap_channel_done_weight_regfile_3_3 = (runWeight2Reg_U0_ap_done & (ap_sync
 
 assign ap_done = runSysArr_U0_ap_done;
 
-assign ap_idle = (runWeight2Reg_U0_ap_idle & runSysArr_U0_ap_idle & runL2toL1_U0_ap_idle & (weight_regfile_3_3_empty_n ^ 1'b1) & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (data_l1buf_3_t_empty_n ^ 1'b1) & (data_l1buf_2_t_empty_n ^ 1'b1) & (data_l1buf_1_t_empty_n ^ 1'b1) & (data_l1buf_0_t_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_entry18_U0_ap_idle);
+assign ap_idle = (runWeight2Reg_U0_ap_idle & runSysArr_U0_ap_idle & runL2toL1_U0_ap_idle & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (data_l1buf_3_t_empty_n ^ 1'b1) & (data_l1buf_2_t_empty_n ^ 1'b1) & (data_l1buf_1_t_empty_n ^ 1'b1) & (data_l1buf_0_t_empty_n ^ 1'b1) & (weight_regfile_3_3_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_entry20_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
@@ -1763,11 +1788,11 @@ assign ap_sync_channel_write_weight_regfile_3_3 = ((weight_regfile_3_3_full_n & 
 
 assign ap_sync_continue = ap_continue;
 
-assign ap_sync_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready = (dataflow_in_loop_LOOP_S_entry18_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready);
+assign ap_sync_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready = (dataflow_in_loop_LOOP_S_entry20_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready);
 
 assign ap_sync_done = runSysArr_U0_ap_done;
 
-assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runL2toL1_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready);
+assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runL2toL1_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready);
 
 assign ap_sync_runL2toL1_U0_ap_ready = (runL2toL1_U0_ap_ready | ap_sync_reg_runL2toL1_U0_ap_ready);
 
@@ -1837,77 +1862,77 @@ assign data_l2_3_we0 = 1'b0;
 
 assign data_l2_3_we1 = 1'b0;
 
-assign dataflow_in_loop_LOOP_S_entry18_U0_ap_continue = 1'b1;
+assign dataflow_in_loop_LOOP_S_entry20_U0_ap_continue = 1'b1;
 
-assign dataflow_in_loop_LOOP_S_entry18_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_entry18_U0_ap_ready ^ 1'b1) & ap_start);
+assign dataflow_in_loop_LOOP_S_entry20_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_entry20_U0_ap_ready ^ 1'b1) & ap_start);
 
-assign dataflow_in_loop_LOOP_S_entry18_U0_start_full_n = 1'b1;
+assign dataflow_in_loop_LOOP_S_entry20_U0_start_full_n = 1'b1;
 
-assign dataflow_in_loop_LOOP_S_entry18_U0_start_write = 1'b0;
+assign dataflow_in_loop_LOOP_S_entry20_U0_start_write = 1'b0;
 
-assign output_l1_pass_0_address0 = runSysArr_U0_output_l1_pass_0_address0;
+assign output_l1_0_address0 = runSysArr_U0_output_l1_pass_0_address0;
 
-assign output_l1_pass_0_address1 = 10'd0;
+assign output_l1_0_address1 = 9'd0;
 
-assign output_l1_pass_0_ce0 = runSysArr_U0_output_l1_pass_0_ce0;
+assign output_l1_0_ce0 = runSysArr_U0_output_l1_pass_0_ce0;
 
-assign output_l1_pass_0_ce1 = 1'b0;
+assign output_l1_0_ce1 = 1'b0;
 
-assign output_l1_pass_0_d0 = runSysArr_U0_output_l1_pass_0_d0;
+assign output_l1_0_d0 = runSysArr_U0_output_l1_pass_0_d0;
 
-assign output_l1_pass_0_d1 = 32'd0;
+assign output_l1_0_d1 = 32'd0;
 
-assign output_l1_pass_0_we0 = runSysArr_U0_output_l1_pass_0_we0;
+assign output_l1_0_we0 = runSysArr_U0_output_l1_pass_0_we0;
 
-assign output_l1_pass_0_we1 = 1'b0;
+assign output_l1_0_we1 = 1'b0;
 
-assign output_l1_pass_1_address0 = runSysArr_U0_output_l1_pass_1_address0;
+assign output_l1_1_address0 = runSysArr_U0_output_l1_pass_1_address0;
 
-assign output_l1_pass_1_address1 = 10'd0;
+assign output_l1_1_address1 = 9'd0;
 
-assign output_l1_pass_1_ce0 = runSysArr_U0_output_l1_pass_1_ce0;
+assign output_l1_1_ce0 = runSysArr_U0_output_l1_pass_1_ce0;
 
-assign output_l1_pass_1_ce1 = 1'b0;
+assign output_l1_1_ce1 = 1'b0;
 
-assign output_l1_pass_1_d0 = runSysArr_U0_output_l1_pass_1_d0;
+assign output_l1_1_d0 = runSysArr_U0_output_l1_pass_1_d0;
 
-assign output_l1_pass_1_d1 = 32'd0;
+assign output_l1_1_d1 = 32'd0;
 
-assign output_l1_pass_1_we0 = runSysArr_U0_output_l1_pass_1_we0;
+assign output_l1_1_we0 = runSysArr_U0_output_l1_pass_1_we0;
 
-assign output_l1_pass_1_we1 = 1'b0;
+assign output_l1_1_we1 = 1'b0;
 
-assign output_l1_pass_2_address0 = runSysArr_U0_output_l1_pass_2_address0;
+assign output_l1_2_address0 = runSysArr_U0_output_l1_pass_2_address0;
 
-assign output_l1_pass_2_address1 = 10'd0;
+assign output_l1_2_address1 = 9'd0;
 
-assign output_l1_pass_2_ce0 = runSysArr_U0_output_l1_pass_2_ce0;
+assign output_l1_2_ce0 = runSysArr_U0_output_l1_pass_2_ce0;
 
-assign output_l1_pass_2_ce1 = 1'b0;
+assign output_l1_2_ce1 = 1'b0;
 
-assign output_l1_pass_2_d0 = runSysArr_U0_output_l1_pass_2_d0;
+assign output_l1_2_d0 = runSysArr_U0_output_l1_pass_2_d0;
 
-assign output_l1_pass_2_d1 = 32'd0;
+assign output_l1_2_d1 = 32'd0;
 
-assign output_l1_pass_2_we0 = runSysArr_U0_output_l1_pass_2_we0;
+assign output_l1_2_we0 = runSysArr_U0_output_l1_pass_2_we0;
 
-assign output_l1_pass_2_we1 = 1'b0;
+assign output_l1_2_we1 = 1'b0;
 
-assign output_l1_pass_3_address0 = runSysArr_U0_output_l1_pass_3_address0;
+assign output_l1_3_address0 = runSysArr_U0_output_l1_pass_3_address0;
 
-assign output_l1_pass_3_address1 = 10'd0;
+assign output_l1_3_address1 = 9'd0;
 
-assign output_l1_pass_3_ce0 = runSysArr_U0_output_l1_pass_3_ce0;
+assign output_l1_3_ce0 = runSysArr_U0_output_l1_pass_3_ce0;
 
-assign output_l1_pass_3_ce1 = 1'b0;
+assign output_l1_3_ce1 = 1'b0;
 
-assign output_l1_pass_3_d0 = runSysArr_U0_output_l1_pass_3_d0;
+assign output_l1_3_d0 = runSysArr_U0_output_l1_pass_3_d0;
 
-assign output_l1_pass_3_d1 = 32'd0;
+assign output_l1_3_d1 = 32'd0;
 
-assign output_l1_pass_3_we0 = runSysArr_U0_output_l1_pass_3_we0;
+assign output_l1_3_we0 = runSysArr_U0_output_l1_pass_3_we0;
 
-assign output_l1_pass_3_we1 = 1'b0;
+assign output_l1_3_we1 = 1'b0;
 
 assign runL2toL1_U0_ap_continue = (ap_sync_channel_write_data_l1buf_3 & ap_sync_channel_write_data_l1buf_2 & ap_sync_channel_write_data_l1buf_1 & ap_sync_channel_write_data_l1buf_0);
 

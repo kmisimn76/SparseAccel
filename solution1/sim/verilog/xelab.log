@@ -5,16 +5,16 @@ Multi-threading is on. Using 14 slave threads.
 WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/glbl.v" into library work
 INFO: [VRFC 10-311] analyzing module glbl
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_32ns_32_4_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_32ns_32_4_1_DSP48_3
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_32ns_32_4_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mux_42_8_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mux_42_8_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/AESL_autofifo_weight_in_V.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_autofifo_weight_in_V
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1_DSP48_5
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_17s_18_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_17s_18_1_1_DSP48_7
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_17s_18_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_16s_17_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_16s_17_1_1_DSP48_8
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_16s_17_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_fifo_w7_d2_S.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w7_d2_S_shiftReg
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w7_d2_S
@@ -31,9 +31,6 @@ INFO: [VRFC 10-311] analyzing module Conv_sysarr_data_l2_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_output_l1_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_output_l1_0_ram
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_output_l1_0
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_output_l1_pass_0.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_output_l1_pass_0_ram
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_output_l1_pass_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_runWeight2Reg.v" into library xil_defaultlib
@@ -41,6 +38,9 @@ INFO: [VRFC 10-311] analyzing module Conv_sysarr_runWeight2Reg
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_DSP48_0
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_8s_8s_16_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_4
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_8s_8s_16_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_fifo_w8_d2_S.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w8_d2_S_shiftReg
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w8_d2_S
@@ -66,6 +66,9 @@ INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w32_d2_S_shiftReg
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w32_d2_S
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/AESL_autofifo_data_in_V.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_autofifo_data_in_V
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_16s_17_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_16s_17_2_1_DSP48_5
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_16s_17_2_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0_memcore.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0_memcore_ram
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0_memcore
@@ -74,6 +77,11 @@ INFO: [VRFC 10-311] analyzing module Conv_sysarr_mux_42_1_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_32ns_32ns_64_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_32ns_32ns_64_1_1_Multiplier_2
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_32ns_32ns_64_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_parent_loop_proc16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_parent_loop_proc16
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_17s_18_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_17s_18_2_1_DSP48_4
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_17s_18_2_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_10s_10s_10_1_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_10s_10s_10_1_1_Multiplier_1
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_10s_10s_10_1_1
@@ -84,15 +92,12 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_tes
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w10_d2_S_shiftReg
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_fifo_w10_d2_S
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_10s_10s_10ns_10_4_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_10s_10s_10ns_10_4_1_DSP48_4
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_10s_10s_10ns_10_4_1_DSP48_9
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_10s_10s_10ns_10_4_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_runSysArr.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_runSysArr
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_30ns_30ns_60_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_30ns_30ns_60_1_1_Multiplier_5
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_30ns_30ns_60_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S_data_l1buf_0
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_9s_9s_9_1_1.v" into library xil_defaultlib
@@ -100,6 +105,11 @@ INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_9s_9s_9_1_1_Multiplier_0
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_9s_9s_9_1_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr.autotb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module apatb_Conv_sysarr_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_18s_19_1_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_18s_19_1_1_DSP48_6
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_18s_19_1_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_parent_loop_proc15.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_parent_loop_proc15
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_runSysArr_output_l1_local_3.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_runSysArr_output_l1_local_3_ram
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_runSysArr_output_l1_local_3
@@ -108,13 +118,16 @@ INFO: [VRFC 10-311] analyzing module AESL_autofifo_conv_out_V
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_weight_l2_0.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_weight_l2_0_ram
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_weight_l2_0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_entry20.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S_entry20
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mac_muladd_8s_8s_18s_19_2_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_18s_19_2_1_DSP48_3
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mac_muladd_8s_8s_18s_19_2_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_parent_loop_proc14.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_parent_loop_proc14
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_mul_30ns_32ns_62_1_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_30ns_32ns_62_1_1_Multiplier_4
+INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_30ns_32ns_62_1_1_Multiplier_5
 INFO: [VRFC 10-311] analyzing module Conv_sysarr_mul_30ns_32ns_62_1_1
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_entry18.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module Conv_sysarr_dataflow_in_loop_LOOP_S_entry18
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
@@ -127,8 +140,6 @@ Compiling module xil_defaultlib.Conv_sysarr_data_l2_0_ram
 Compiling module xil_defaultlib.Conv_sysarr_data_l2_0(DataWidth=...
 Compiling module xil_defaultlib.Conv_sysarr_output_l1_0_ram
 Compiling module xil_defaultlib.Conv_sysarr_output_l1_0(DataWidt...
-Compiling module xil_defaultlib.Conv_sysarr_output_l1_pass_0_ram
-Compiling module xil_defaultlib.Conv_sysarr_output_l1_pass_0(Dat...
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_in_loop_LOO...
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_in_loop_LOO...
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_in_loop_LOO...
@@ -153,8 +164,20 @@ Compiling module xil_defaultlib.Conv_sysarr_runSysArr_output_l1_...
 Compiling module xil_defaultlib.Conv_sysarr_runSysArr_output_l1_...
 Compiling module xil_defaultlib.Conv_sysarr_mul_32s_32s_32_1_1_M...
 Compiling module xil_defaultlib.Conv_sysarr_mul_32s_32s_32_1_1(I...
-Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_32n...
-Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_32n...
+Compiling module xil_defaultlib.Conv_sysarr_mul_8s_8s_16_1_1_Mul...
+Compiling module xil_defaultlib.Conv_sysarr_mul_8s_8s_16_1_1(ID=...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_18s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_18s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_17s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_17s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_16s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_16s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_18s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_18s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_17s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_17s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_16s...
+Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_8s_8s_16s...
 Compiling module xil_defaultlib.Conv_sysarr_runSysArr
 Compiling module xil_defaultlib.Conv_sysarr_fifo_w9_d2_S_shiftRe...
 Compiling module xil_defaultlib.Conv_sysarr_fifo_w9_d2_S
@@ -171,14 +194,12 @@ Compiling module xil_defaultlib.Conv_sysarr_fifo_w8_d2_S
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_in_loop_LOO...
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_parent_loop...
 Compiling module xil_defaultlib.Conv_sysarr_dataflow_parent_loop...
+Compiling module xil_defaultlib.Conv_sysarr_dataflow_parent_loop...
+Compiling module xil_defaultlib.Conv_sysarr_dataflow_parent_loop...
 Compiling module xil_defaultlib.Conv_sysarr_mul_30ns_32ns_62_1_1...
 Compiling module xil_defaultlib.Conv_sysarr_mul_30ns_32ns_62_1_1...
-Compiling module xil_defaultlib.Conv_sysarr_mul_30ns_30ns_60_1_1...
-Compiling module xil_defaultlib.Conv_sysarr_mul_30ns_30ns_60_1_1...
 Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_10s_10s_1...
 Compiling module xil_defaultlib.Conv_sysarr_mac_muladd_10s_10s_1...
-Compiling module xil_defaultlib.Conv_sysarr_ama_addmuladd_9ns_9s...
-Compiling module xil_defaultlib.Conv_sysarr_ama_addmuladd_9ns_9s...
 Compiling module xil_defaultlib.Conv_sysarr
 Compiling module xil_defaultlib.AESL_autofifo_bias_in_V
 Compiling module xil_defaultlib.AESL_autofifo_weight_in_V

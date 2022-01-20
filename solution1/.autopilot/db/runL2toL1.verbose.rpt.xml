@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runL2toL1'" level="0">
-<item name = "Date">Tue Jan 18 02:37:21 2022
+<item name = "Date">Thu Jan 20 09:42:07 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -64,14 +64,14 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_10s_10s_10_1_1_U76">mul_10s_10s_10_1_1, 0, 0, 0, 62, 0</column>
-<column name="mul_32ns_32ns_64_1_1_U77">mul_32ns_32ns_64_1_1, 0, 4, 0, 20, 0</column>
+<column name="mul_10s_10s_10_1_1_U77">mul_10s_10s_10_1_1, 0, 0, 0, 62, 0</column>
+<column name="mul_32ns_32ns_64_1_1_U78">mul_32ns_32ns_64_1_1, 0, 4, 0, 20, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
-<column name="ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_U78">ama_addmuladd_10ns_10ns_10s_10ns_10_4_1, i0 * (i1 + i2) + i3</column>
-<column name="mac_muladd_9s_9s_9ns_9_4_1_U79">mac_muladd_9s_9s_9ns_9_4_1, i0 + i1 * i2</column>
+<column name="ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_U79">ama_addmuladd_10ns_10ns_10s_10ns_10_4_1, i0 * (i1 + i2) + i3</column>
+<column name="mac_muladd_9s_9s_9ns_9_4_1_U80">mac_muladd_9s_9s_9ns_9_4_1, i0 + i1 * i2</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
@@ -106,7 +106,7 @@
 <column name="ap_enable_reg_pp0_iter4">9, 2, 1, 2</column>
 <column name="ap_phi_mux_hi_phi_fu_217_p4">9, 2, 32, 64</column>
 <column name="co_1_blk_n">9, 2, 1, 2</column>
-<column name="empty_15_blk_n">9, 2, 1, 2</column>
+<column name="empty_16_blk_n">9, 2, 1, 2</column>
 <column name="empty_blk_n">9, 2, 1, 2</column>
 <column name="hi_reg_213">9, 2, 32, 64</column>
 <column name="indvar_flatten_reg_202">9, 2, 64, 128</column>
@@ -126,11 +126,11 @@
 <column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
 <column name="bound_reg_383">64, 0, 64, 0</column>
-<column name="empty_39_reg_373">9, 0, 9, 0</column>
-<column name="empty_40_reg_407">10, 0, 10, 0</column>
-<column name="empty_40_reg_407_pp0_iter1_reg">10, 0, 10, 0</column>
-<column name="empty_41_reg_412">9, 0, 9, 0</column>
-<column name="empty_41_reg_412_pp0_iter1_reg">9, 0, 9, 0</column>
+<column name="empty_31_reg_373">9, 0, 9, 0</column>
+<column name="empty_32_reg_407">10, 0, 10, 0</column>
+<column name="empty_32_reg_407_pp0_iter1_reg">10, 0, 10, 0</column>
+<column name="empty_33_reg_412">9, 0, 9, 0</column>
+<column name="empty_33_reg_412_pp0_iter1_reg">9, 0, 9, 0</column>
 <column name="hi_reg_213">32, 0, 32, 0</column>
 <column name="icmp_ln27_reg_388">1, 0, 1, 0</column>
 <column name="indvar_flatten_reg_202">64, 0, 64, 0</column>
@@ -138,7 +138,7 @@
 <column name="r_read_reg_353">10, 0, 10, 0</column>
 <column name="s_read_reg_358">10, 0, 10, 0</column>
 <column name="select_ln27_1_reg_397">32, 0, 32, 0</column>
-<column name="tmp_10_reg_368">10, 0, 10, 0</column>
+<column name="tmp_7_reg_368">10, 0, 10, 0</column>
 <column name="tmp_reg_363">32, 0, 32, 0</column>
 <column name="wi_reg_224">32, 0, 32, 0</column>
 <column name="icmp_ln27_reg_388">64, 32, 1, 0</column>
@@ -186,9 +186,9 @@
 <column name="data_l2_3_address0">out, 10, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_ce0">out, 1, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_q0">in, 8, ap_memory, data_l2_3, array</column>
-<column name="empty_15_dout">in, 32, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_empty_n">in, 1, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_read">out, 1, ap_fifo, empty_15, pointer</column>
+<column name="empty_16_dout">in, 32, ap_fifo, empty_16, pointer</column>
+<column name="empty_16_empty_n">in, 1, ap_fifo, empty_16, pointer</column>
+<column name="empty_16_read">out, 1, ap_fifo, empty_16, pointer</column>
 <column name="co_1_dout">in, 10, ap_fifo, co_1, pointer</column>
 <column name="co_1_empty_n">in, 1, ap_fifo, co_1, pointer</column>
 <column name="co_1_read">out, 1, ap_fifo, co_1, pointer</column>

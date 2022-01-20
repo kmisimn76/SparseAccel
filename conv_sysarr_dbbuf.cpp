@@ -11,9 +11,9 @@
 
 void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE (*weight_l2)[ARRAY_C], const uint C,
 		const uint RS, const uint ko, const uint co, const uint r, const uint s) {
-	for (int ki = 0; ki < ARRAY_K; ki++) {
-		for (int ci = 0; ci < ARRAY_C; ci++) {
-			#pragma HLS pipeline //must be pipelined for dataflow, (and ARRAY_K & ARRAY_C may be small)
+	for (int ci = 0; ci < ARRAY_C; ci++) {
+			for (int ki = 0; ki < ARRAY_K; ki++) {
+			//#pragma HLS pipeline //must be pipelined for dataflow, (and ARRAY_K & ARRAY_C may be small) ..?
 			int k = (ko * ARRAY_K + ki);
 			int c = (co * ARRAY_C + ci);
 			weight_regfile[ki][ci] = weight_l2[ko * C * RS
@@ -45,68 +45,63 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE data_
 		uint input_rows, uint TILED_H, uint TILED_W,
 		uint ko, bool isFirst) {
 	static MACTYPE output_l1_local[1024][ARRAY_K];
+	#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
 
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS dependence variable=data_reg
 	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
-	#pragma HLS ARRAY_PARTITION variable=output_reg complete  // Register
+	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
 	LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) {
 		#pragma HLS LOOP_TRIPCOUNT max=55 min=55
 		#pragma HLS DEPENDENCE variable=output_l1
 		#pragma HLS pipeline
+		#pragma HLS latency min=1 max=1 // systolic array implementation
 
+		// Push Input
 		DPTYPE input_data[ARRAY_C];
 		#pragma HLS array_partition variable=input_data complete
 		for (int ci = 0; ci < ARRAY_C; ci++) {
-			#pragma HLS pipeline
-			int hi = (i - ci) / TILED_W;
-			int wi = (i - ci) % TILED_W;
+			#pragma HLS unroll
+			//int hi = (i - ci) / TILED_W;
+			//int wi = (i - ci) % TILED_W;
 			if (i - ci >= 0)
-				input_data[ci] = data_l1buf[hi * TILED_W + wi][ci];
+				//input_data[ci] = data_l1buf[hi * TILED_W + wi][ci];
+				input_data[ci] = data_l1buf[i - ci][ci];
 			else
 				input_data[ci] = 0; //Bubble
 		}
-		MACTYPE output_buf[ARRAY_K];
-		for (int ki = ARRAY_K - 1; ki >= 0; ki--) {
-			int hi = (i - ki) / TILED_W;
-			int wi = (i - ki) % TILED_W;
-			if (i - ki >= 0)
-				output_buf[ki] = (isFirst)?(0):(output_l1_local[hi * TILED_W + wi][ki]);
-			else
-				output_buf[ki] = 0;
-		}
 
+		// SysArr
 		for (int ki = ARRAY_K - 1; ki >= 0; ki--) { // SysArr DIM : K
-			#pragma HLS DEPENDENCE variable=output_reg inter WAR false
 			#pragma HLS unroll
 			for (int ci = ARRAY_C - 1; ci >= 0; ci--) { // SysArr DIM : C
-				#pragma HLS DEPENDENCE variable=output_reg inter WAR false
 				#pragma HLS unroll
 				data_reg[ki][ci] =
 						(ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
 				MACTYPE psum =
 						(ci == 0) ?
-								(output_buf[ki]) : (output_reg[ki][(ci - 1)]);
+								(0) : (output_reg[ki][(ci - 1)]);
 				output_reg[ki][ci] = psum
-						+ (MACTYPE) data_reg[ki][ci]
-								* (MACTYPE) weight_regfile[ki][ci];
+						+ (data_reg[ki][ci]	* weight_regfile[ki][ci]);
 			}
 		}
 
+		// Pull Output
 		for (int ki = ARRAY_K - 1; ki >= 0; ki--) {
+			#pragma HLS unroll
 			if ((i - ARRAY_C + 1) - ki >= 0 && (i - ARRAY_C + 1) - ki < TILED_W * TILED_H) { //is needed?
-				int k = (ko * ARRAY_K + ki);
-				int hi = ((i - ARRAY_C + 1) - ki) / TILED_W;
-				int wi = ((i - ARRAY_C + 1) - ki) % TILED_W;
-				output_l1_local[(i - ARRAY_C + 1) - ki][ki] =
-						output_reg[ki][(ARRAY_C - 1)];
-				output_l1_pass[(i - ARRAY_C + 1) - ki][ki] = output_l1_local[(i - ARRAY_C + 1) - ki][ki];
+				if(isFirst)
+					output_l1_local[(i - ARRAY_C + 1) - ki][ki] =
+							output_reg[ki][(ARRAY_C - 1)];
+				else
+					output_l1_local[(i - ARRAY_C + 1) - ki][ki] +=
+							output_reg[ki][(ARRAY_C - 1)];
+				output_l1_pass[ko*TILED_H*TILED_W + ((i - ARRAY_C + 1) - ki)][ki] = output_l1_local[(i - ARRAY_C + 1) - ki][ki];
 			}
 		}
 	}
 }
-
 
 void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 		hls::stream<k2k_data> &weight_in, hls::stream<k2k_data> &data_in,
@@ -133,7 +128,6 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 	k2k_data bias_tmp;
 	k2k_data weight_tmp;
 	k2k_data input_tmp;
-	k2k_data output_tmp;
 
 	param_tmp = bias_in.read();
 	uint K = (uint) param_tmp.data(31, 0);
@@ -150,7 +144,7 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 	param_tmp = bias_in.read();
 	uint RS = (uint) param_tmp.data(31, 0);
 
-	uint input_rows = TILED_H * TILED_W + (ARRAY_K - 1) + (ARRAY_C - 1);
+	const uint input_rows = TILED_H * TILED_W + (ARRAY_K - 1) + (ARRAY_C - 1);
 
 	// Read Bias from DRAM
 	for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
@@ -187,26 +181,13 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 		}
 	}
 
+	//uchar flag = 0x01;
 	LOOP_K_OUTER: for (int ko = 0; ko < K / ARRAY_K; ko++) {
 		#pragma HLS loop_tripcount min=4 max=4
 		LOOP_C_OUTER: for (int co = 0; co < C / ARRAY_C; co++) {
 			#pragma HLS loop_tripcount min=1 max=1
 			LOOP_H_OUTER: for (int ho = 0; ho < TILESIZE_H; ho++) { // TODO: Tiling
 				LOOP_W_OUTER: for (int wo = 0; wo < TILESIZE_W; wo++) { // TODO: Tiling
-					// Bias Initialization
-					for (int hi = 0; hi < TILED_H; hi++) {
-						#pragma HLS loop_tripcount min=7 max=7
-						for (int wi = 0; wi < TILED_W; wi++) {
-							#pragma HLS loop_tripcount min=7 max=7
-							for (int ki = 0; ki < ARRAY_K; ki++) {
-								#pragma HLS unroll
-								output_l1[ko*TILED_H*TILED_W + hi*TILED_W + wi][ki] = bias_l1[ko][ki];
-							}
-						}
-					}
-
-					// Systolic Array
-					MACTYPE output_l1_pass[1024][ARRAY_K];
 					LOOP_R: for (int r = 0; r < RS; r++) { // TODO: Tiling
 						#pragma HLS loop_tripcount min=3 max=3
 						LOOP_S: for (int s = 0; s < RS; s++) { // TODO: Tiling
@@ -224,19 +205,11 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 							//Systolic Array
 							runWeight2Reg(weight_regfile, weight_l2, C, RS, ko, co, r, s);
 							runL2toL1(data_l1buf, data_l2, TILED_H, TILED_W, co, ho, wo, r, s, WH_in);
-							runSysArr(weight_regfile, data_l1buf, output_l1_pass, input_rows,
+							runSysArr(weight_regfile, data_l1buf, output_l1, input_rows,
 									TILED_H, TILED_W, ko, isFirst);
 						} // Loop S
 					} // Loop R
-
-					// Store output
-					for (unsigned int wh = 0; wh < TILED_H * TILED_W; wh++) {
-						#pragma HLS loop_tripcount min=49 max=49
-						for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
-							#pragma HLS unroll
-							output_l1[ko*TILED_H*TILED_W + wh][ki] += output_l1_pass[wh][ki];
-						}
-					}
+					//flag = (~flag)&0x01;
 				}
 			}
 		}
@@ -246,9 +219,11 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 		#pragma HLS loop_tripcount min=49 max=49
 		for (unsigned int ko = 0; ko < (K / VEC_SIZE); ko++) {
 			#pragma HLS loop_tripcount min=4 max=4
+			k2k_data output_tmp;
 			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 				unsigned int v = ki;
-				output_tmp.data((v+1)*MAC_WIDTH-1, v*MAC_WIDTH) = output_l1[ko * WH * WH + wh][ki];
+				output_tmp.data((v+1)*MAC_WIDTH-1, v*MAC_WIDTH) = output_l1[ko * WH * WH + wh][ki]
+																	+ bias_l1[ko][ki];
 			}
 			conv_out.write(output_tmp);
 		}

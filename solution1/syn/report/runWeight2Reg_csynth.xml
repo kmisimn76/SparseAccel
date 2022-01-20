@@ -18,35 +18,40 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>5.747</EstimatedClockPeriod>
+<EstimatedClockPeriod>4.970</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>21</Best-caseLatency>
-<Average-caseLatency>21</Average-caseLatency>
-<Worst-caseLatency>21</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.210 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.210 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.210 us</Worst-caseRealTimeLatency>
-<Interval-min>21</Interval-min>
-<Interval-max>21</Interval-max>
+<Best-caseLatency>41</Best-caseLatency>
+<Average-caseLatency>41</Average-caseLatency>
+<Worst-caseLatency>41</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.410 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.410 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.410 us</Worst-caseRealTimeLatency>
+<Interval-min>41</Interval-min>
+<Interval-max>41</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
-<VITIS_LOOP_14_1_VITIS_LOOP_15_2>
-<TripCount>16</TripCount>
-<Latency>19</Latency>
-<AbsoluteTimeLatency>190</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>5</PipelineDepth>
-</VITIS_LOOP_14_1_VITIS_LOOP_15_2>
+<VITIS_LOOP_14_1>
+<TripCount>4</TripCount>
+<Latency>40</Latency>
+<AbsoluteTimeLatency>400</AbsoluteTimeLatency>
+<IterationLatency>10</IterationLatency>
+<VITIS_LOOP_15_2>
+<TripCount>4</TripCount>
+<Latency>4</Latency>
+<AbsoluteTimeLatency>40</AbsoluteTimeLatency>
+<IterationLatency>1</IterationLatency>
+</VITIS_LOOP_15_2>
+</VITIS_LOOP_14_1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
 <DSP>1</DSP>
-<FF>343</FF>
-<LUT>1138</LUT>
+<FF>238</FF>
+<LUT>1040</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -446,8 +451,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_14_dout</name>
-<Object>empty_14</Object>
+<name>empty_15_dout</name>
+<Object>empty_15</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -457,8 +462,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_14_empty_n</name>
-<Object>empty_14</Object>
+<name>empty_15_empty_n</name>
+<Object>empty_15</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -468,8 +473,8 @@
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_14_read</name>
-<Object>empty_14</Object>
+<name>empty_15_read</name>
+<Object>empty_15</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>
@@ -635,6 +640,39 @@
 <RtlPorts>
 <name>s_read</name>
 <Object>s</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ko_2_out_din</name>
+<Object>ko_2_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>out</Dir>
+<Bits>9</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ko_2_out_full_n</name>
+<Object>ko_2_out</Object>
+<Type>pointer</Type>
+<Scope></Scope>
+<IOProtocol>ap_fifo</IOProtocol>
+<IOConfig></IOConfig>
+<Dir>in</Dir>
+<Bits>1</Bits>
+<Attribute>control</Attribute>
+</RtlPorts>
+<RtlPorts>
+<name>ko_2_out_write</name>
+<Object>ko_2_out</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>ap_fifo</IOProtocol>

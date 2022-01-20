@@ -59,5 +59,4 @@ add_wave /apatb_Conv_sysarr_top/bias_in_V_empty_n -into $tb_bias_in_group -color
 add_wave /apatb_Conv_sysarr_top/bias_in_V_dout -into $tb_bias_in_group -radix hex
 save_wave_config Conv_sysarr.wcfg
 run all
-quit
 

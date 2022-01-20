@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runL2toL1'
 ================================================================
-* Date:           Tue Jan 18 02:37:21 2022
+* Date:           Thu Jan 20 09:42:07 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -77,8 +77,8 @@
     +--------------------------+----------------------+---------+----+---+----+-----+
     |         Instance         |        Module        | BRAM_18K| DSP| FF| LUT| URAM|
     +--------------------------+----------------------+---------+----+---+----+-----+
-    |mul_10s_10s_10_1_1_U76    |mul_10s_10s_10_1_1    |        0|   0|  0|  62|    0|
-    |mul_32ns_32ns_64_1_1_U77  |mul_32ns_32ns_64_1_1  |        0|   4|  0|  20|    0|
+    |mul_10s_10s_10_1_1_U77    |mul_10s_10s_10_1_1    |        0|   0|  0|  62|    0|
+    |mul_32ns_32ns_64_1_1_U78  |mul_32ns_32ns_64_1_1  |        0|   4|  0|  20|    0|
     +--------------------------+----------------------+---------+----+---+----+-----+
     |Total                     |                      |        0|   4|  0|  82|    0|
     +--------------------------+----------------------+---------+----+---+----+-----+
@@ -87,8 +87,8 @@
     +---------------------------------------------+-----------------------------------------+---------------------+
     |                   Instance                  |                  Module                 |      Expression     |
     +---------------------------------------------+-----------------------------------------+---------------------+
-    |ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_U78  |ama_addmuladd_10ns_10ns_10s_10ns_10_4_1  | i0 * (i1 + i2) + i3 |
-    |mac_muladd_9s_9s_9ns_9_4_1_U79               |mac_muladd_9s_9s_9ns_9_4_1               |     i0 + i1 * i2    |
+    |ama_addmuladd_10ns_10ns_10s_10ns_10_4_1_U79  |ama_addmuladd_10ns_10ns_10s_10ns_10_4_1  | i0 * (i1 + i2) + i3 |
+    |mac_muladd_9s_9s_9ns_9_4_1_U80               |mac_muladd_9s_9s_9ns_9_4_1               |     i0 + i1 * i2    |
     +---------------------------------------------+-----------------------------------------+---------------------+
 
     * Memory: 
@@ -127,7 +127,7 @@
     |ap_enable_reg_pp0_iter4      |   9|          2|    1|          2|
     |ap_phi_mux_hi_phi_fu_217_p4  |   9|          2|   32|         64|
     |co_1_blk_n                   |   9|          2|    1|          2|
-    |empty_15_blk_n               |   9|          2|    1|          2|
+    |empty_16_blk_n               |   9|          2|    1|          2|
     |empty_blk_n                  |   9|          2|    1|          2|
     |hi_reg_213                   |   9|          2|   32|         64|
     |indvar_flatten_reg_202       |   9|          2|   64|        128|
@@ -151,11 +151,11 @@
     |ap_enable_reg_pp0_iter3         |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter4         |   1|   0|    1|          0|
     |bound_reg_383                   |  64|   0|   64|          0|
-    |empty_39_reg_373                |   9|   0|    9|          0|
-    |empty_40_reg_407                |  10|   0|   10|          0|
-    |empty_40_reg_407_pp0_iter1_reg  |  10|   0|   10|          0|
-    |empty_41_reg_412                |   9|   0|    9|          0|
-    |empty_41_reg_412_pp0_iter1_reg  |   9|   0|    9|          0|
+    |empty_31_reg_373                |   9|   0|    9|          0|
+    |empty_32_reg_407                |  10|   0|   10|          0|
+    |empty_32_reg_407_pp0_iter1_reg  |  10|   0|   10|          0|
+    |empty_33_reg_412                |   9|   0|    9|          0|
+    |empty_33_reg_412_pp0_iter1_reg  |   9|   0|    9|          0|
     |hi_reg_213                      |  32|   0|   32|          0|
     |icmp_ln27_reg_388               |   1|   0|    1|          0|
     |indvar_flatten_reg_202          |  64|   0|   64|          0|
@@ -163,7 +163,7 @@
     |r_read_reg_353                  |  10|   0|   10|          0|
     |s_read_reg_358                  |  10|   0|   10|          0|
     |select_ln27_1_reg_397           |  32|   0|   32|          0|
-    |tmp_10_reg_368                  |  10|   0|   10|          0|
+    |tmp_7_reg_368                   |  10|   0|   10|          0|
     |tmp_reg_363                     |  32|   0|   32|          0|
     |wi_reg_224                      |  32|   0|   32|          0|
     |icmp_ln27_reg_388               |  64|  32|    1|          0|
@@ -215,9 +215,9 @@
 |data_l2_3_address0       | out |   10|  ap_memory |    data_l2_3   |     array    |
 |data_l2_3_ce0            | out |    1|  ap_memory |    data_l2_3   |     array    |
 |data_l2_3_q0             |  in |    8|  ap_memory |    data_l2_3   |     array    |
-|empty_15_dout            |  in |   32|   ap_fifo  |    empty_15    |    pointer   |
-|empty_15_empty_n         |  in |    1|   ap_fifo  |    empty_15    |    pointer   |
-|empty_15_read            | out |    1|   ap_fifo  |    empty_15    |    pointer   |
+|empty_16_dout            |  in |   32|   ap_fifo  |    empty_16    |    pointer   |
+|empty_16_empty_n         |  in |    1|   ap_fifo  |    empty_16    |    pointer   |
+|empty_16_read            | out |    1|   ap_fifo  |    empty_16    |    pointer   |
 |co_1_dout                |  in |   10|   ap_fifo  |      co_1      |    pointer   |
 |co_1_empty_n             |  in |    1|   ap_fifo  |      co_1      |    pointer   |
 |co_1_read                | out |    1|   ap_fifo  |      co_1      |    pointer   |

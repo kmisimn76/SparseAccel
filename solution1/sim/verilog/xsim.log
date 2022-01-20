@@ -2,17 +2,36 @@
 # xsim v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Jan 18 02:26:08 2022
-# Process ID: 13686
+# Start of session at: Thu Jan 20 09:34:38 2022
+# Process ID: 31692
 # Current directory: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog
-# Command line: xsim -mode tcl -source {xsim.dir/Conv_sysarr/xsim_script.tcl}
+# Command line: xsim -source {xsim.dir/Conv_sysarr/xsim_script.tcl}
 # Log file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.log
 # Journal file: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/xsim.jou
 #-----------------------------------------------------------
+start_gui
 source xsim.dir/Conv_sysarr/xsim_script.tcl
-# xsim {Conv_sysarr} -autoloadwcfg -tclbatch {Conv_sysarr.tcl}
+# set_param project.enableReportConfiguration 0
+# load_feature core
+# current_fileset
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data/ip'.
+# xsim {Conv_sysarr} -view {{Conv_sysarr_dataflow_ana.wcfg}} -tclbatch {Conv_sysarr.tcl} -protoinst {Conv_sysarr.protoinst}
 Vivado Simulator 2020.1
+INFO: [Wavedata 42-565] Reading protoinst file Conv_sysarr.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr//AESL_inst_Conv_sysarr_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc14_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_U0/dataflow_in_loop_LOOP_S_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_U0/dataflow_in_loop_LOOP_S_entry20_U0/dataflow_in_loop_LOOP_S_entry20_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_U0/runL2toL1_U0/runL2toL1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_U0/runSysArr_U0/runSysArr_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_U0/runWeight2Reg_U0/runWeight2Reg_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc14_U0/dataflow_parent_loop_proc_U0/dataflow_parent_loop_proc_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc15_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/grp_dataflow_parent_loop_proc16_fu_522/grp_dataflow_parent_loop_proc16_fu_522_activity
 Time resolution is 1 ps
+open_wave_config Conv_sysarr_dataflow_ana.wcfg
 source Conv_sysarr.tcl
 ## log_wave -r /
 WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
@@ -82,11 +101,11 @@ WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of o
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 4 [0.00%] @ "1125000"
-// RTL Simulation : 1 / 4 [100.00%] @ "37085000"
-// RTL Simulation : 2 / 4 [100.00%] @ "73035000"
-// RTL Simulation : 3 / 4 [100.00%] @ "108985000"
-// RTL Simulation : 4 / 4 [100.00%] @ "144935000"
+// RTL Simulation : 1 / 4 [100.00%] @ "27035000"
+// RTL Simulation : 2 / 4 [100.00%] @ "52935000"
+// RTL Simulation : 3 / 4 [100.00%] @ "78835000"
+// RTL Simulation : 4 / 4 [100.00%] @ "104735000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 144975 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr.autotb.v" Line 382
-## quit
-INFO: [Common 17-206] Exiting xsim at Tue Jan 18 02:26:20 2022...
+$finish called at time : 104775 ns : File "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/sim/verilog/Conv_sysarr.autotb.v" Line 382
+run: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 11940.309 ; gain = 0.000 ; free physical = 318 ; free virtual = 57476
+xsim: Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 11940.309 ; gain = 878.895 ; free physical = 318 ; free virtual = 57476

@@ -685,14 +685,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 68 \
-    name empty_14 \
+    name empty_15 \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_14 \
+    corename dc_empty_15 \
     op interface \
-    ports { empty_14_dout { I 9 vector } empty_14_empty_n { I 1 bit } empty_14_read { O 1 bit } } \
+    ports { empty_15_dout { I 9 vector } empty_15_empty_n { I 1 bit } empty_15_read { O 1 bit } } \
 } "
 }
 
@@ -775,6 +775,21 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 74 \
+    name ko_2_out \
+    type fifo \
+    dir O \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_ko_2_out \
+    op interface \
+    ports { ko_2_out_din { O 9 vector } ko_2_out_full_n { I 1 bit } ko_2_out_write { O 1 bit } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 75 \
     name r_out \
     type fifo \
     dir O \
@@ -789,7 +804,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 75 \
+    id 76 \
     name s_out \
     type fifo \
     dir O \

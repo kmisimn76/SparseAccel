@@ -1,0 +1,280 @@
+
+
+================================================================
+== Vitis HLS Report for 'dataflow_parent_loop_proc16'
+================================================================
+* Date:           Thu Jan 20 09:42:08 2022
+
+* Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
+* Project:        Systolic_Array_PCNN_based
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: virtexuplus
+* Target device:  xcu200-fsgd2104-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 6.803 ns |   2.70 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
+    |   min   |   max   |    min    |    max    |  min |  max |   Type  |
+    +---------+---------+-----------+-----------+------+------+---------+
+    |     2801|     2801| 28.010 us | 28.010 us |  2801|  2801|   none  |
+    +---------+---------+-----------+-----------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                |                             |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |            Instance            |            Module           |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +--------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |dataflow_parent_loop_proc15_U0  |dataflow_parent_loop_proc15  |      699|      699| 6.990 us | 6.990 us |  699|  699|   none  |
+        +--------------------------------+-----------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |    Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- LOOP_K_OUTER  |     2800|     2800|       701|          -|          -|     4|    no    |
+        +----------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++---------------------+---------+------+---------+---------+-----+
+|         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
++---------------------+---------+------+---------+---------+-----+
+|DSP                  |        -|     -|        -|        -|    -|
+|Expression           |        -|     -|        0|      111|    -|
+|FIFO                 |        -|     -|        -|        -|    -|
+|Instance             |       16|    22|     4703|     5969|    -|
+|Memory               |        -|     -|        -|        -|    -|
+|Multiplexer          |        -|     -|        -|       18|    -|
+|Register             |        -|     -|       60|        -|    -|
++---------------------+---------+------+---------+---------+-----+
+|Total                |       16|    22|     4763|     6098|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available SLR        |     1440|  2280|   788160|   394080|  320|
++---------------------+---------+------+---------+---------+-----+
+|Utilization SLR (%)  |        1|  ~0  |    ~0   |        1|    0|
++---------------------+---------+------+---------+---------+-----+
+|Available            |     4320|  6840|  2364480|  1182240|  960|
++---------------------+---------+------+---------+---------+-----+
+|Utilization (%)      |    ~0   |  ~0  |    ~0   |    ~0   |    0|
++---------------------+---------+------+---------+---------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------+-----------------------------+---------+----+------+------+-----+
+    |            Instance            |            Module           | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------+-----------------------------+---------+----+------+------+-----+
+    |dataflow_parent_loop_proc15_U0  |dataflow_parent_loop_proc15  |       16|  22|  4703|  5969|    0|
+    +--------------------------------+-----------------------------+---------+----+------+------+-----+
+    |Total                           |                             |       16|  22|  4703|  5969|    0|
+    +--------------------------------+-----------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+----+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+----+---+----+------------+------------+
+    |loop_dataflow_input_count   |     +    |   0|  0|  37|          30|           1|
+    |loop_dataflow_output_count  |     +    |   0|  0|  37|          30|           1|
+    |bound_minus_1               |     -    |   0|  0|  37|          30|           1|
+    +----------------------------+----------+----+---+----+------------+------------+
+    |Total                       |          |   0|  0| 111|          90|           3|
+    +----------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   9|          2|   30|         60|
+    |loop_dataflow_output_count  |   9|          2|   30|         60|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  18|          4|   60|        120|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+----+----+-----+-----------+
+    |            Name            | FF | LUT| Bits| Const Bits|
+    +----------------------------+----+----+-----+-----------+
+    |loop_dataflow_input_count   |  30|   0|   30|          0|
+    |loop_dataflow_output_count  |  30|   0|   30|          0|
+    +----------------------------+----+----+-----+-----------+
+    |Total                       |  60|   0|   60|          0|
+    +----------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------------+-----+-----+------------+-----------------------------+--------------+
+|       RTL Ports      | Dir | Bits|  Protocol  |        Source Object        |    C Type    |
++----------------------+-----+-----+------------+-----------------------------+--------------+
+|div30_cast124         |  in |   30|   ap_none  |        div30_cast124        |    scalar    |
+|div76_cast125         |  in |   30|   ap_none  |        div76_cast125        |    scalar    |
+|div76_cast125_ap_vld  |  in |    1|   ap_none  |        div76_cast125        |    scalar    |
+|RS                    |  in |   32|   ap_none  |              RS             |    scalar    |
+|RS_ap_vld             |  in |    1|   ap_none  |              RS             |    scalar    |
+|weight_l2_0_address0  | out |    9|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_ce0       | out |    1|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_d0        | out |    8|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_q0        |  in |    8|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_we0       | out |    1|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_address1  | out |    9|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_ce1       | out |    1|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_d1        | out |    8|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_q1        |  in |    8|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_0_we1       | out |    1|  ap_memory |         weight_l2_0         |     array    |
+|weight_l2_1_address0  | out |    9|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_ce0       | out |    1|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_d0        | out |    8|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_q0        |  in |    8|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_we0       | out |    1|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_address1  | out |    9|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_ce1       | out |    1|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_d1        | out |    8|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_q1        |  in |    8|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_1_we1       | out |    1|  ap_memory |         weight_l2_1         |     array    |
+|weight_l2_2_address0  | out |    9|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_ce0       | out |    1|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_d0        | out |    8|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_q0        |  in |    8|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_we0       | out |    1|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_address1  | out |    9|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_ce1       | out |    1|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_d1        | out |    8|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_q1        |  in |    8|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_2_we1       | out |    1|  ap_memory |         weight_l2_2         |     array    |
+|weight_l2_3_address0  | out |    9|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_ce0       | out |    1|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_d0        | out |    8|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_q0        |  in |    8|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_we0       | out |    1|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_address1  | out |    9|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_ce1       | out |    1|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_d1        | out |    8|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_q1        |  in |    8|  ap_memory |         weight_l2_3         |     array    |
+|weight_l2_3_we1       | out |    1|  ap_memory |         weight_l2_3         |     array    |
+|p_read                |  in |    9|   ap_none  |            p_read           |    scalar    |
+|p_read_ap_vld         |  in |    1|   ap_none  |            p_read           |    scalar    |
+|p_read1               |  in |    9|   ap_none  |           p_read1           |    scalar    |
+|p_read1_ap_vld        |  in |    1|   ap_none  |           p_read1           |    scalar    |
+|data_l2_0_address0    | out |   10|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_ce0         | out |    1|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_d0          | out |    8|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_q0          |  in |    8|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_we0         | out |    1|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_address1    | out |   10|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_ce1         | out |    1|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_d1          | out |    8|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_q1          |  in |    8|  ap_memory |          data_l2_0          |     array    |
+|data_l2_0_we1         | out |    1|  ap_memory |          data_l2_0          |     array    |
+|data_l2_1_address0    | out |   10|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_ce0         | out |    1|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_d0          | out |    8|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_q0          |  in |    8|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_we0         | out |    1|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_address1    | out |   10|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_ce1         | out |    1|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_d1          | out |    8|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_q1          |  in |    8|  ap_memory |          data_l2_1          |     array    |
+|data_l2_1_we1         | out |    1|  ap_memory |          data_l2_1          |     array    |
+|data_l2_2_address0    | out |   10|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_ce0         | out |    1|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_d0          | out |    8|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_q0          |  in |    8|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_we0         | out |    1|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_address1    | out |   10|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_ce1         | out |    1|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_d1          | out |    8|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_q1          |  in |    8|  ap_memory |          data_l2_2          |     array    |
+|data_l2_2_we1         | out |    1|  ap_memory |          data_l2_2          |     array    |
+|data_l2_3_address0    | out |   10|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_ce0         | out |    1|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_d0          | out |    8|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_q0          |  in |    8|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_we0         | out |    1|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_address1    | out |   10|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_ce1         | out |    1|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_d1          | out |    8|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_q1          |  in |    8|  ap_memory |          data_l2_3          |     array    |
+|data_l2_3_we1         | out |    1|  ap_memory |          data_l2_3          |     array    |
+|p_read2               |  in |   32|   ap_none  |           p_read2           |    scalar    |
+|p_read2_ap_vld        |  in |    1|   ap_none  |           p_read2           |    scalar    |
+|p_read3               |  in |   10|   ap_none  |           p_read3           |    scalar    |
+|p_read3_ap_vld        |  in |    1|   ap_none  |           p_read3           |    scalar    |
+|output_l1_0_address0  | out |    9|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_ce0       | out |    1|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_d0        | out |   32|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_q0        |  in |   32|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_we0       | out |    1|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_address1  | out |    9|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_ce1       | out |    1|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_d1        | out |   32|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_q1        |  in |   32|  ap_memory |         output_l1_0         |     array    |
+|output_l1_0_we1       | out |    1|  ap_memory |         output_l1_0         |     array    |
+|output_l1_1_address0  | out |    9|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_ce0       | out |    1|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_d0        | out |   32|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_q0        |  in |   32|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_we0       | out |    1|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_address1  | out |    9|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_ce1       | out |    1|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_d1        | out |   32|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_q1        |  in |   32|  ap_memory |         output_l1_1         |     array    |
+|output_l1_1_we1       | out |    1|  ap_memory |         output_l1_1         |     array    |
+|output_l1_2_address0  | out |    9|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_ce0       | out |    1|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_d0        | out |   32|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_q0        |  in |   32|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_we0       | out |    1|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_address1  | out |    9|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_ce1       | out |    1|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_d1        | out |   32|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_q1        |  in |   32|  ap_memory |         output_l1_2         |     array    |
+|output_l1_2_we1       | out |    1|  ap_memory |         output_l1_2         |     array    |
+|output_l1_3_address0  | out |    9|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_ce0       | out |    1|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_d0        | out |   32|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_q0        |  in |   32|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_we0       | out |    1|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_address1  | out |    9|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_ce1       | out |    1|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_d1        | out |   32|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_q1        |  in |   32|  ap_memory |         output_l1_3         |     array    |
+|output_l1_3_we1       | out |    1|  ap_memory |         output_l1_3         |     array    |
+|ap_clk                |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_rst                |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_start              |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_done               | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_ready              | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_idle               | out |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
+|ap_continue           |  in |    1| ap_ctrl_hs | dataflow_parent_loop_proc16 | return value |
++----------------------+-----+-----+------------+-----------------------------+--------------+
+

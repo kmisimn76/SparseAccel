@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_LOOP_S'" level="0">
-<item name = "Date">Tue Jan 18 02:37:20 2022
+<item name = "Date">Thu Jan 20 09:42:06 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.489 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.803 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,17 +24,17 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">57, 119, 0.570 us, 1.190 us, 55, 64, dataflow</column>
+<column name="">113, 113, 1.130 us, 1.130 us, 58, 58, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runSysArr_fu_236">runSysArr, 1, 63, 10.000 ns, 0.630 us, 1, 63, none</column>
-<column name="grp_runWeight2Reg_fu_279">runWeight2Reg, 21, 21, 0.210 us, 0.210 us, 21, 21, none</column>
-<column name="grp_runL2toL1_fu_299">runL2toL1, 54, 54, 0.540 us, 0.540 us, 54, 54, none</column>
-<column name="call_ln216_dataflow_in_loop_LOOP_S_entry18_fu_320">dataflow_in_loop_LOOP_S_entry18, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="grp_runSysArr_fu_242">runSysArr, 57, 57, 0.570 us, 0.570 us, 57, 57, none</column>
+<column name="grp_runWeight2Reg_fu_286">runWeight2Reg, 41, 41, 0.410 us, 0.410 us, 41, 41, none</column>
+<column name="grp_runL2toL1_fu_307">runL2toL1, 54, 54, 0.540 us, 0.540 us, 54, 54, none</column>
+<column name="call_ln197_dataflow_in_loop_LOOP_S_entry20_fu_328">dataflow_in_loop_LOOP_S_entry20, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

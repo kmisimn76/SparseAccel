@@ -479,7 +479,7 @@
 					<Obj>
 						<type>1</type>
 						<id>17</id>
-						<name>output_l1_pass_0</name>
+						<name>output_l1_0</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -497,7 +497,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>1024</array_size>
+				<array_size>512</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -508,7 +508,7 @@
 					<Obj>
 						<type>1</type>
 						<id>18</id>
-						<name>output_l1_pass_1</name>
+						<name>output_l1_1</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -526,7 +526,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>1024</array_size>
+				<array_size>512</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -537,7 +537,7 @@
 					<Obj>
 						<type>1</type>
 						<id>19</id>
-						<name>output_l1_pass_2</name>
+						<name>output_l1_2</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -555,7 +555,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>1024</array_size>
+				<array_size>512</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -566,7 +566,7 @@
 					<Obj>
 						<type>1</type>
 						<id>20</id>
-						<name>output_l1_pass_3</name>
+						<name>output_l1_3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -584,7 +584,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>1024</array_size>
+				<array_size>512</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -599,7 +599,7 @@
 					<Obj>
 						<type>0</type>
 						<id>26</id>
-						<name>p_read310</name>
+						<name>p_read_10</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -815,7 +815,7 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>p_read_17</name>
+						<name>p_read_11</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -960,10 +960,10 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>icmp_ln212</name>
+						<name>icmp_ln193</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>193</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -979,7 +979,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>212</second>
+										<second>193</second>
 									</item>
 								</second>
 							</item>
@@ -1013,7 +1013,7 @@
 						<name>s_1</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>193</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1029,7 +1029,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>212</second>
+										<second>193</second>
 									</item>
 								</second>
 							</item>
@@ -1060,10 +1060,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>br_ln212</name>
+						<name>br_ln193</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>193</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1079,7 +1079,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>212</second>
+										<second>193</second>
 									</item>
 								</second>
 							</item>
@@ -1111,10 +1111,10 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>_ln227</name>
+						<name>_ln208</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>227</lineNumber>
+						<lineNumber>208</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1130,7 +1130,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>227</second>
+										<second>208</second>
 									</item>
 								</second>
 							</item>
@@ -1184,10 +1184,10 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>br_ln212</name>
+						<name>br_ln193</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>212</lineNumber>
+						<lineNumber>193</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1203,7 +1203,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>212</second>
+										<second>193</second>
 									</item>
 								</second>
 							</item>
@@ -1829,8 +1829,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>-1</mMinTripCount>
 			<mMaxTripCount>-1</mMaxTripCount>
-			<mMinLatency>169</mMinLatency>
-			<mMaxLatency>249</mMaxLatency>
+			<mMinLatency>231</mMinLatency>
+			<mMaxLatency>231</mMaxLatency>
 			<mIsDfPipe>0</mIsDfPipe>
 			<mDfPipe class_id="-1"></mDfPipe>
 		</item>
@@ -1876,8 +1876,8 @@
 			<mDepth>-1</mDepth>
 			<mMinTripCount>3</mMinTripCount>
 			<mMaxTripCount>3</mMaxTripCount>
-			<mMinLatency>168</mMinLatency>
-			<mMaxLatency>248</mMaxLatency>
+			<mMinLatency>230</mMinLatency>
+			<mMaxLatency>230</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
 			<mDfPipe class_id="23" tracking_level="1" version="0" object_id="_97">
 				<port_list class_id="24" tracking_level="0" version="0">
@@ -2028,7 +2028,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_132">
 								<port class_id_reference="29" object_id="_133">
-									<name>output_l1_pass_0</name>
+									<name>output_l1_0</name>
 									<dir>2</dir>
 									<type>1</type>
 								</port>
@@ -2036,7 +2036,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_134">
 								<port class_id_reference="29" object_id="_135">
-									<name>output_l1_pass_1</name>
+									<name>output_l1_1</name>
 									<dir>2</dir>
 									<type>1</type>
 								</port>
@@ -2044,7 +2044,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_136">
 								<port class_id_reference="29" object_id="_137">
-									<name>output_l1_pass_2</name>
+									<name>output_l1_2</name>
 									<dir>2</dir>
 									<type>1</type>
 								</port>
@@ -2052,7 +2052,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_138">
 								<port class_id_reference="29" object_id="_139">
-									<name>output_l1_pass_3</name>
+									<name>output_l1_3</name>
 									<dir>2</dir>
 									<type>1</type>
 								</port>
