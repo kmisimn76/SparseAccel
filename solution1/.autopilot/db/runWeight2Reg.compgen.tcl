@@ -1,6 +1,6 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 21
+set id 36
 set name Conv_sysarr_mul_9s_9s_9_1_1
 set corename simcore_mul
 set op mul
@@ -67,7 +67,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 23
+set id 38
 set name Conv_sysarr_mux_42_8_1_1
 set corename simcore_mux
 set op mux
@@ -152,7 +152,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 25
+set id 40
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -237,7 +237,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 27
+set id 42
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -322,7 +322,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 29
+set id 44
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -407,7 +407,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 31
+set id 46
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -492,7 +492,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 56
+set id 71
 set name Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
 set corename simcore_ama
 set op ama
@@ -609,7 +609,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 64 \
+    id 79 \
     name weight_l2_0 \
     reset_level 1 \
     sync_rst true \
@@ -628,7 +628,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 65 \
+    id 80 \
     name weight_l2_1 \
     reset_level 1 \
     sync_rst true \
@@ -647,7 +647,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 66 \
+    id 81 \
     name weight_l2_2 \
     reset_level 1 \
     sync_rst true \
@@ -666,7 +666,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 67 \
+    id 82 \
     name weight_l2_3 \
     reset_level 1 \
     sync_rst true \
@@ -684,22 +684,22 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 68 \
-    name empty_15 \
+    id 83 \
+    name empty_19 \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_15 \
+    corename dc_empty_19 \
     op interface \
-    ports { empty_15_dout { I 9 vector } empty_15_empty_n { I 1 bit } empty_15_read { O 1 bit } } \
+    ports { empty_19_dout { I 9 vector } empty_19_empty_n { I 1 bit } empty_19_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 69 \
+    id 84 \
     name empty \
     type fifo \
     dir I \
@@ -714,7 +714,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 70 \
+    id 85 \
     name ko_2 \
     type fifo \
     dir I \
@@ -729,7 +729,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 71 \
+    id 86 \
     name co_1 \
     type fifo \
     dir I \
@@ -744,37 +744,37 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 72 \
-    name r \
+    id 87 \
+    name ro \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_r \
+    corename dc_ro \
     op interface \
-    ports { r_dout { I 32 vector } r_empty_n { I 1 bit } r_read { O 1 bit } } \
+    ports { ro_dout { I 32 vector } ro_empty_n { I 1 bit } ro_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 73 \
-    name s \
+    id 88 \
+    name so \
     type fifo \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_s \
+    corename dc_so \
     op interface \
-    ports { s_dout { I 32 vector } s_empty_n { I 1 bit } s_read { O 1 bit } } \
+    ports { so_dout { I 32 vector } so_empty_n { I 1 bit } so_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 74 \
+    id 89 \
     name ko_2_out \
     type fifo \
     dir O \
@@ -789,30 +789,30 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 75 \
-    name r_out \
+    id 90 \
+    name ro_out \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_r_out \
+    corename dc_ro_out \
     op interface \
-    ports { r_out_din { O 32 vector } r_out_full_n { I 1 bit } r_out_write { O 1 bit } } \
+    ports { ro_out_din { O 32 vector } ro_out_full_n { I 1 bit } ro_out_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 76 \
-    name s_out \
+    id 91 \
+    name so_out \
     type fifo \
     dir O \
     reset_level 1 \
     sync_rst true \
-    corename dc_s_out \
+    corename dc_so_out \
     op interface \
-    ports { s_out_din { O 32 vector } s_out_full_n { I 1 bit } s_out_write { O 1 bit } } \
+    ports { so_out_din { O 32 vector } so_out_full_n { I 1 bit } so_out_write { O 1 bit } } \
 } "
 }
 

@@ -5,7 +5,7 @@
 
 `timescale 1 ns / 1 ps
 
-module Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_4(a, b, p);
+module Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_3(a, b, p);
 input[8 - 1 : 0] a; 
 input[8 - 1 : 0] b; 
 output[16 - 1 : 0] p;
@@ -29,7 +29,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_4 Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_4_U(
+Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_3 Conv_sysarr_mul_8s_8s_16_1_1_Multiplier_3_U(
     .a( din0 ),
     .b( din1 ),
     .p( dout ));

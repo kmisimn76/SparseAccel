@@ -11,8 +11,8 @@ entity Conv_sysarr_runSysArr_output_l1_local_3_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 32; 
-            AWIDTH     : integer := 10; 
-            MEM_SIZE    : integer := 1024
+            AWIDTH     : integer := 9; 
+            MEM_SIZE    : integer := 512
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -83,8 +83,8 @@ use IEEE.std_logic_1164.all;
 entity Conv_sysarr_runSysArr_output_l1_local_3 is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 1024;
-        AddressWidth : INTEGER := 10);
+        AddressRange : INTEGER := 512;
+        AddressWidth : INTEGER := 9);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

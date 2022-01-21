@@ -80,6 +80,7 @@ proc check_tvin_file {} {
 		puts stdout "[debug_prompt arg check_sim.tcl] start...";
 	}
     set rtlfilelist {
+         "c.Conv_sysarr.autotvin_param_in_V.dat"
          "c.Conv_sysarr.autotvin_bias_in_V.dat"
          "c.Conv_sysarr.autotvin_weight_in_V.dat"
          "c.Conv_sysarr.autotvin_data_in_V.dat"

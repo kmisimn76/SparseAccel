@@ -1,5 +1,15 @@
 <InterfaceSummary>
 <RtlPorts>
+<name>param_in_V</name>
+<CType>
+<TypeName>int</TypeName>
+<TypeWidth>32</TypeWidth>
+<PhysicalWidth>256</PhysicalWidth>
+</CType>
+<CFractionWidth>0</CFractionWidth>
+<InvalidType>0</InvalidType>
+</RtlPorts>
+<RtlPorts>
 <name>bias_in_V</name>
 <CType>
 <TypeName>int</TypeName>

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr'" level="0">
-<item name = "Date">Thu Jan 20 09:42:07 2022
+<item name = "Date">Sat Jan 22 00:49:22 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.803 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.340 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,22 +24,22 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">3247, 3247, 32.470 us, 32.470 us, 3248, 3248, none</column>
+<column name="">?, ?, ?, ?, ?, ?, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_parent_loop_proc16_fu_522">dataflow_parent_loop_proc16, 2801, 2801, 28.010 us, 28.010 us, 2801, 2801, none</column>
+<column name="grp_dataflow_parent_loop_proc20_fu_530">dataflow_parent_loop_proc20, ?, ?, ?, ?, ?, ?, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_150_1">4, 4, 2, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_159_3_VITIS_LOOP_161_4">146, 146, 4, 1, 1, 144, yes</column>
-<column name="- VITIS_LOOP_172_6_VITIS_LOOP_174_7">83, 83, 4, 1, 1, 81, yes</column>
-<column name="- VITIS_LOOP_218_9_VITIS_LOOP_220_10">199, 199, 5, 1, 1, 196, yes</column>
+<column name="- VITIS_LOOP_212_1">4, 4, 2, 1, 1, 4, yes</column>
+<column name="- VITIS_LOOP_221_3_VITIS_LOOP_223_4">146, 146, 4, 1, 1, 144, yes</column>
+<column name="- VITIS_LOOP_234_6_VITIS_LOOP_236_7">83, 83, 4, 1, 1, 81, yes</column>
+<column name="- VITIS_LOOP_290_9_VITIS_LOOP_292_10">199, 199, 5, 1, 1, 196, yes</column>
 </table>
 </item>
 </section>

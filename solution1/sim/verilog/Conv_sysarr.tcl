@@ -19,6 +19,10 @@ set bias_in_group [add_wave_group bias_in(fifo) -into $cinputgroup]
 add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/bias_in_V_read -into $bias_in_group -color #ffff00 -radix hex
 add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/bias_in_V_empty_n -into $bias_in_group -color #ffff00 -radix hex
 add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/bias_in_V_dout -into $bias_in_group -radix hex
+set param_in_group [add_wave_group param_in(fifo) -into $cinputgroup]
+add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/param_in_V_read -into $param_in_group -color #ffff00 -radix hex
+add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/param_in_V_empty_n -into $param_in_group -color #ffff00 -radix hex
+add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/param_in_V_dout -into $param_in_group -radix hex
 set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
 add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/ap_start -into $blocksiggroup
 add_wave /apatb_Conv_sysarr_top/AESL_inst_Conv_sysarr/ap_done -into $blocksiggroup
@@ -35,6 +39,7 @@ set tb_portdepth_group [add_wave_group "Port Depth" -into $tbinternalsiggroup]
 add_wave /apatb_Conv_sysarr_top/AUTOTB_TRANSACTION_NUM -into $tb_simstatus_group -radix hex
 add_wave /apatb_Conv_sysarr_top/ready_cnt -into $tb_simstatus_group -radix hex
 add_wave /apatb_Conv_sysarr_top/done_cnt -into $tb_simstatus_group -radix hex
+add_wave /apatb_Conv_sysarr_top/LENGTH_param_in_V -into $tb_portdepth_group -radix hex
 add_wave /apatb_Conv_sysarr_top/LENGTH_bias_in_V -into $tb_portdepth_group -radix hex
 add_wave /apatb_Conv_sysarr_top/LENGTH_weight_in_V -into $tb_portdepth_group -radix hex
 add_wave /apatb_Conv_sysarr_top/LENGTH_data_in_V -into $tb_portdepth_group -radix hex
@@ -57,6 +62,11 @@ set tb_bias_in_group [add_wave_group bias_in(fifo) -into $tbcinputgroup]
 add_wave /apatb_Conv_sysarr_top/bias_in_V_read -into $tb_bias_in_group -color #ffff00 -radix hex
 add_wave /apatb_Conv_sysarr_top/bias_in_V_empty_n -into $tb_bias_in_group -color #ffff00 -radix hex
 add_wave /apatb_Conv_sysarr_top/bias_in_V_dout -into $tb_bias_in_group -radix hex
+set tb_param_in_group [add_wave_group param_in(fifo) -into $tbcinputgroup]
+add_wave /apatb_Conv_sysarr_top/param_in_V_read -into $tb_param_in_group -color #ffff00 -radix hex
+add_wave /apatb_Conv_sysarr_top/param_in_V_empty_n -into $tb_param_in_group -color #ffff00 -radix hex
+add_wave /apatb_Conv_sysarr_top/param_in_V_dout -into $tb_param_in_group -radix hex
 save_wave_config Conv_sysarr.wcfg
 run all
+quit
 

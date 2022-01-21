@@ -131,7 +131,7 @@
 					<Obj>
 						<type>1</type>
 						<id>5</id>
-						<name>empty_15</name>
+						<name>empty_19</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -247,7 +247,7 @@
 					<Obj>
 						<type>1</type>
 						<id>9</id>
-						<name>r</name>
+						<name>ro</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -276,7 +276,7 @@
 					<Obj>
 						<type>1</type>
 						<id>10</id>
-						<name>s</name>
+						<name>so</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -334,7 +334,7 @@
 					<Obj>
 						<type>1</type>
 						<id>12</id>
-						<name>r_out</name>
+						<name>ro_out</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -363,7 +363,7 @@
 					<Obj>
 						<type>1</type>
 						<id>13</id>
-						<name>s_out</name>
+						<name>so_out</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1519,7 +1519,7 @@
 						<name>ko_2_read</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1535,14 +1535,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1576,7 +1576,7 @@
 						<name>co_1_read</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1592,14 +1592,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1630,10 +1630,10 @@
 					<Obj>
 						<type>0</type>
 						<id>54</id>
-						<name>r_read</name>
+						<name>ro_read</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1649,14 +1649,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1687,10 +1687,10 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>trunc_ln13</name>
+						<name>trunc_ln18</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1706,14 +1706,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1743,10 +1743,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>s_read</name>
+						<name>so_read</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1762,14 +1762,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1800,10 +1800,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>empty_27</name>
+						<name>empty_36</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -1819,14 +1819,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -1856,10 +1856,10 @@
 					<Obj>
 						<type>0</type>
 						<id>59</id>
-						<name>ko_2_out_write_ln197</name>
+						<name>ko_2_out_write_ln262</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1875,7 +1875,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -1907,10 +1907,10 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>r_out_write_ln197</name>
+						<name>ro_out_write_ln262</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1926,7 +1926,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -1958,10 +1958,10 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>s_out_write_ln197</name>
+						<name>so_out_write_ln262</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1977,7 +1977,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -2112,7 +2112,7 @@
 						<name>mul2_i_i</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2128,14 +2128,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -2217,10 +2217,10 @@
 					<Obj>
 						<type>0</type>
 						<id>68</id>
-						<name>write_flag15_0_write_ln14</name>
+						<name>write_flag15_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2236,14 +2236,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2274,10 +2274,10 @@
 					<Obj>
 						<type>0</type>
 						<id>69</id>
-						<name>write_flag18_0_write_ln14</name>
+						<name>write_flag18_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2293,14 +2293,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2331,10 +2331,10 @@
 					<Obj>
 						<type>0</type>
 						<id>70</id>
-						<name>write_flag21_0_write_ln14</name>
+						<name>write_flag21_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2350,14 +2350,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2388,10 +2388,10 @@
 					<Obj>
 						<type>0</type>
 						<id>71</id>
-						<name>write_flag12_0_write_ln14</name>
+						<name>write_flag12_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2407,14 +2407,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2445,10 +2445,10 @@
 					<Obj>
 						<type>0</type>
 						<id>72</id>
-						<name>write_flag24_0_write_ln14</name>
+						<name>write_flag24_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2464,14 +2464,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2502,10 +2502,10 @@
 					<Obj>
 						<type>0</type>
 						<id>73</id>
-						<name>write_flag27_0_write_ln14</name>
+						<name>write_flag27_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2521,14 +2521,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2559,10 +2559,10 @@
 					<Obj>
 						<type>0</type>
 						<id>74</id>
-						<name>write_flag9_0_write_ln14</name>
+						<name>write_flag9_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2578,14 +2578,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2616,10 +2616,10 @@
 					<Obj>
 						<type>0</type>
 						<id>75</id>
-						<name>write_flag30_0_write_ln14</name>
+						<name>write_flag30_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2635,14 +2635,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2673,10 +2673,10 @@
 					<Obj>
 						<type>0</type>
 						<id>76</id>
-						<name>write_flag33_0_write_ln14</name>
+						<name>write_flag33_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2692,14 +2692,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2730,10 +2730,10 @@
 					<Obj>
 						<type>0</type>
 						<id>77</id>
-						<name>write_flag6_0_write_ln14</name>
+						<name>write_flag6_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2749,14 +2749,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2787,10 +2787,10 @@
 					<Obj>
 						<type>0</type>
 						<id>78</id>
-						<name>write_flag36_0_write_ln14</name>
+						<name>write_flag36_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2806,14 +2806,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2844,10 +2844,10 @@
 					<Obj>
 						<type>0</type>
 						<id>79</id>
-						<name>write_flag39_0_write_ln14</name>
+						<name>write_flag39_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2863,14 +2863,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2901,10 +2901,10 @@
 					<Obj>
 						<type>0</type>
 						<id>80</id>
-						<name>write_flag3_0_write_ln14</name>
+						<name>write_flag3_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2920,14 +2920,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -2958,10 +2958,10 @@
 					<Obj>
 						<type>0</type>
 						<id>81</id>
-						<name>write_flag42_0_write_ln14</name>
+						<name>write_flag42_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -2977,14 +2977,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3015,10 +3015,10 @@
 					<Obj>
 						<type>0</type>
 						<id>82</id>
-						<name>write_flag45_0_write_ln14</name>
+						<name>write_flag45_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3034,14 +3034,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3072,10 +3072,10 @@
 					<Obj>
 						<type>0</type>
 						<id>83</id>
-						<name>write_flag_0_write_ln14</name>
+						<name>write_flag_0_write_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3091,14 +3091,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3129,10 +3129,10 @@
 					<Obj>
 						<type>0</type>
 						<id>84</id>
-						<name>br_ln14</name>
+						<name>br_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3148,14 +3148,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3188,7 +3188,7 @@
 						<name>ci</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3204,14 +3204,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3244,10 +3244,10 @@
 					<Obj>
 						<type>0</type>
 						<id>87</id>
-						<name>icmp_ln14</name>
+						<name>icmp_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3263,14 +3263,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3301,10 +3301,10 @@
 					<Obj>
 						<type>0</type>
 						<id>89</id>
-						<name>add_ln14</name>
+						<name>add_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3320,14 +3320,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3358,10 +3358,10 @@
 					<Obj>
 						<type>0</type>
 						<id>90</id>
-						<name>br_ln14</name>
+						<name>br_ln19</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3377,14 +3377,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3416,10 +3416,10 @@
 					<Obj>
 						<type>0</type>
 						<id>93</id>
-						<name>empty_28</name>
+						<name>empty_37</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3435,14 +3435,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3475,7 +3475,7 @@
 						<name>ci_cast_i_i_cast</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3491,14 +3491,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -3681,7 +3681,7 @@
 						<name>add93_i_i</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3697,14 +3697,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -3788,7 +3788,7 @@
 						<name>add12_i_i</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3804,14 +3804,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -3845,7 +3845,7 @@
 						<name>idxprom_i_i</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>13</lineNumber>
+						<lineNumber>18</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3861,14 +3861,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>13</second>
+										<second>18</second>
 									</item>
 								</second>
 							</item>
@@ -3901,7 +3901,7 @@
 						<name>weight_l2_0_addr</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3917,14 +3917,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -3959,7 +3959,7 @@
 						<name>weight_l2_0_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -3975,14 +3975,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4015,7 +4015,7 @@
 						<name>weight_l2_1_addr</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4031,14 +4031,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4073,7 +4073,7 @@
 						<name>weight_l2_1_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4089,14 +4089,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4129,7 +4129,7 @@
 						<name>weight_l2_2_addr</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4145,14 +4145,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4187,7 +4187,7 @@
 						<name>weight_l2_2_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4203,14 +4203,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4243,7 +4243,7 @@
 						<name>weight_l2_3_addr</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4259,14 +4259,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4301,7 +4301,7 @@
 						<name>weight_l2_3_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4317,14 +4317,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4354,10 +4354,10 @@
 					<Obj>
 						<type>0</type>
 						<id>110</id>
-						<name>br_ln15</name>
+						<name>br_ln20</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4373,14 +4373,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>15</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -4413,7 +4413,7 @@
 						<name>ki</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4429,14 +4429,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>15</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -4469,10 +4469,10 @@
 					<Obj>
 						<type>0</type>
 						<id>113</id>
-						<name>icmp_ln15</name>
+						<name>icmp_ln20</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4488,14 +4488,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>15</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -4526,10 +4526,10 @@
 					<Obj>
 						<type>0</type>
 						<id>115</id>
-						<name>add_ln15</name>
+						<name>add_ln20</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4545,14 +4545,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>15</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -4583,10 +4583,10 @@
 					<Obj>
 						<type>0</type>
 						<id>116</id>
-						<name>br_ln15</name>
+						<name>br_ln20</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>15</lineNumber>
+						<lineNumber>20</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4602,14 +4602,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>15</second>
+										<second>20</second>
 									</item>
 								</second>
 							</item>
@@ -4641,10 +4641,10 @@
 					<Obj>
 						<type>0</type>
 						<id>119</id>
-						<name>trunc_ln19</name>
+						<name>trunc_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4660,14 +4660,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4700,7 +4700,7 @@
 						<name>weight_regfile_1_1</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4716,14 +4716,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -4758,10 +4758,10 @@
 					<Obj>
 						<type>0</type>
 						<id>121</id>
-						<name>_ln19</name>
+						<name>_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -4777,14 +4777,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5108,7 +5108,7 @@
 						<name>weight_regfile_2_3_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5124,14 +5124,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5169,7 +5169,7 @@
 						<name>write_flag33_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5185,14 +5185,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -5230,7 +5230,7 @@
 						<name>weight_regfile_2_2_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5246,14 +5246,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5291,7 +5291,7 @@
 						<name>write_flag30_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5307,14 +5307,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -5352,7 +5352,7 @@
 						<name>weight_regfile_2_1_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5368,14 +5368,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5413,7 +5413,7 @@
 						<name>write_flag27_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5429,14 +5429,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -5474,7 +5474,7 @@
 						<name>weight_regfile_2_0_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5490,14 +5490,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5535,7 +5535,7 @@
 						<name>write_flag24_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5551,14 +5551,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -5593,10 +5593,10 @@
 					<Obj>
 						<type>0</type>
 						<id>139</id>
-						<name>write_flag24_0_write_ln19</name>
+						<name>write_flag24_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5612,14 +5612,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5652,10 +5652,10 @@
 					<Obj>
 						<type>0</type>
 						<id>140</id>
-						<name>weight_regfile_2_0_026_write_ln19</name>
+						<name>weight_regfile_2_0_026_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5671,14 +5671,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5710,10 +5710,10 @@
 					<Obj>
 						<type>0</type>
 						<id>141</id>
-						<name>write_flag27_0_write_ln19</name>
+						<name>write_flag27_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5729,14 +5729,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5769,10 +5769,10 @@
 					<Obj>
 						<type>0</type>
 						<id>142</id>
-						<name>weight_regfile_2_1_025_write_ln19</name>
+						<name>weight_regfile_2_1_025_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5788,14 +5788,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5827,10 +5827,10 @@
 					<Obj>
 						<type>0</type>
 						<id>143</id>
-						<name>write_flag30_0_write_ln19</name>
+						<name>write_flag30_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5846,14 +5846,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5886,10 +5886,10 @@
 					<Obj>
 						<type>0</type>
 						<id>144</id>
-						<name>weight_regfile_2_2_023_write_ln19</name>
+						<name>weight_regfile_2_2_023_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5905,14 +5905,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -5944,10 +5944,10 @@
 					<Obj>
 						<type>0</type>
 						<id>145</id>
-						<name>write_flag33_0_write_ln19</name>
+						<name>write_flag33_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -5963,14 +5963,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6003,10 +6003,10 @@
 					<Obj>
 						<type>0</type>
 						<id>146</id>
-						<name>weight_regfile_2_3_022_write_ln19</name>
+						<name>weight_regfile_2_3_022_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6022,14 +6022,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6061,10 +6061,10 @@
 					<Obj>
 						<type>0</type>
 						<id>147</id>
-						<name>br_ln19</name>
+						<name>br_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6080,14 +6080,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6404,7 +6404,7 @@
 						<name>weight_regfile_1_3_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6420,14 +6420,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6465,7 +6465,7 @@
 						<name>write_flag12_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6481,14 +6481,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -6526,7 +6526,7 @@
 						<name>write_flag21_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6542,14 +6542,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -6587,7 +6587,7 @@
 						<name>weight_regfile_1_2_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6603,14 +6603,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6648,7 +6648,7 @@
 						<name>weight_regfile_1_0_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6664,14 +6664,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6709,7 +6709,7 @@
 						<name>write_flag18_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6725,14 +6725,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -6770,7 +6770,7 @@
 						<name>weight_regfile_1_1_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6786,14 +6786,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6831,7 +6831,7 @@
 						<name>write_flag15_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6847,14 +6847,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -6889,10 +6889,10 @@
 					<Obj>
 						<type>0</type>
 						<id>165</id>
-						<name>write_flag15_0_write_ln19</name>
+						<name>write_flag15_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6908,14 +6908,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -6948,10 +6948,10 @@
 					<Obj>
 						<type>0</type>
 						<id>166</id>
-						<name>weight_regfile_1_1_031_write_ln19</name>
+						<name>weight_regfile_1_1_031_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -6967,14 +6967,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7006,10 +7006,10 @@
 					<Obj>
 						<type>0</type>
 						<id>167</id>
-						<name>write_flag18_0_write_ln19</name>
+						<name>write_flag18_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7025,14 +7025,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7065,10 +7065,10 @@
 					<Obj>
 						<type>0</type>
 						<id>168</id>
-						<name>weight_regfile_1_0_030_write_ln19</name>
+						<name>weight_regfile_1_0_030_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7084,14 +7084,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7123,10 +7123,10 @@
 					<Obj>
 						<type>0</type>
 						<id>169</id>
-						<name>weight_regfile_1_2_029_write_ln19</name>
+						<name>weight_regfile_1_2_029_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7142,14 +7142,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7181,10 +7181,10 @@
 					<Obj>
 						<type>0</type>
 						<id>170</id>
-						<name>write_flag21_0_write_ln19</name>
+						<name>write_flag21_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7200,14 +7200,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7240,10 +7240,10 @@
 					<Obj>
 						<type>0</type>
 						<id>171</id>
-						<name>write_flag12_0_write_ln19</name>
+						<name>write_flag12_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7259,14 +7259,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7299,10 +7299,10 @@
 					<Obj>
 						<type>0</type>
 						<id>172</id>
-						<name>weight_regfile_1_3_028_write_ln19</name>
+						<name>weight_regfile_1_3_028_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7318,14 +7318,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7357,10 +7357,10 @@
 					<Obj>
 						<type>0</type>
 						<id>173</id>
-						<name>br_ln19</name>
+						<name>br_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7376,14 +7376,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7700,7 +7700,7 @@
 						<name>write_flag_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7716,14 +7716,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -7761,7 +7761,7 @@
 						<name>weight_regfile_0_0_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7777,14 +7777,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7822,7 +7822,7 @@
 						<name>write_flag3_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7838,14 +7838,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -7883,7 +7883,7 @@
 						<name>weight_regfile_0_1_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7899,14 +7899,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -7944,7 +7944,7 @@
 						<name>write_flag6_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -7960,14 +7960,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -8005,7 +8005,7 @@
 						<name>weight_regfile_0_2_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8021,14 +8021,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8066,7 +8066,7 @@
 						<name>write_flag9_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8082,14 +8082,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -8127,7 +8127,7 @@
 						<name>weight_regfile_0_3_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8143,14 +8143,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8185,10 +8185,10 @@
 					<Obj>
 						<type>0</type>
 						<id>191</id>
-						<name>weight_regfile_0_3_027_write_ln19</name>
+						<name>weight_regfile_0_3_027_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8204,14 +8204,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8243,10 +8243,10 @@
 					<Obj>
 						<type>0</type>
 						<id>192</id>
-						<name>write_flag9_0_write_ln19</name>
+						<name>write_flag9_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8262,14 +8262,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8302,10 +8302,10 @@
 					<Obj>
 						<type>0</type>
 						<id>193</id>
-						<name>weight_regfile_0_2_024_write_ln19</name>
+						<name>weight_regfile_0_2_024_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8321,14 +8321,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8360,10 +8360,10 @@
 					<Obj>
 						<type>0</type>
 						<id>194</id>
-						<name>write_flag6_0_write_ln19</name>
+						<name>write_flag6_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8379,14 +8379,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8419,10 +8419,10 @@
 					<Obj>
 						<type>0</type>
 						<id>195</id>
-						<name>weight_regfile_0_1_021_write_ln19</name>
+						<name>weight_regfile_0_1_021_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8438,14 +8438,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8477,10 +8477,10 @@
 					<Obj>
 						<type>0</type>
 						<id>196</id>
-						<name>write_flag3_0_write_ln19</name>
+						<name>write_flag3_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8496,14 +8496,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8536,10 +8536,10 @@
 					<Obj>
 						<type>0</type>
 						<id>197</id>
-						<name>weight_regfile_0_0_018_write_ln19</name>
+						<name>weight_regfile_0_0_018_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8555,14 +8555,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8594,10 +8594,10 @@
 					<Obj>
 						<type>0</type>
 						<id>198</id>
-						<name>write_flag_0_write_ln19</name>
+						<name>write_flag_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8613,14 +8613,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8653,10 +8653,10 @@
 					<Obj>
 						<type>0</type>
 						<id>199</id>
-						<name>br_ln19</name>
+						<name>br_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -8672,14 +8672,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -8996,7 +8996,7 @@
 						<name>weight_regfile_3_3_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9012,14 +9012,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9057,7 +9057,7 @@
 						<name>write_flag45_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9073,14 +9073,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -9118,7 +9118,7 @@
 						<name>weight_regfile_3_2_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9134,14 +9134,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9179,7 +9179,7 @@
 						<name>write_flag42_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9195,14 +9195,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -9240,7 +9240,7 @@
 						<name>weight_regfile_3_1_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9256,14 +9256,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9301,7 +9301,7 @@
 						<name>write_flag39_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9317,14 +9317,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -9362,7 +9362,7 @@
 						<name>weight_regfile_3_0_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9378,14 +9378,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9423,7 +9423,7 @@
 						<name>write_flag36_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>14</lineNumber>
+						<lineNumber>19</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9439,14 +9439,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>14</second>
+										<second>19</second>
 									</item>
 								</second>
 							</item>
@@ -9481,10 +9481,10 @@
 					<Obj>
 						<type>0</type>
 						<id>217</id>
-						<name>write_flag36_0_write_ln19</name>
+						<name>write_flag36_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9500,14 +9500,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9540,10 +9540,10 @@
 					<Obj>
 						<type>0</type>
 						<id>218</id>
-						<name>weight_regfile_3_0_020_write_ln19</name>
+						<name>weight_regfile_3_0_020_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9559,14 +9559,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9598,10 +9598,10 @@
 					<Obj>
 						<type>0</type>
 						<id>219</id>
-						<name>write_flag39_0_write_ln19</name>
+						<name>write_flag39_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9617,14 +9617,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9657,10 +9657,10 @@
 					<Obj>
 						<type>0</type>
 						<id>220</id>
-						<name>weight_regfile_3_1_019_write_ln19</name>
+						<name>weight_regfile_3_1_019_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9676,14 +9676,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9715,10 +9715,10 @@
 					<Obj>
 						<type>0</type>
 						<id>221</id>
-						<name>write_flag42_0_write_ln19</name>
+						<name>write_flag42_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9734,14 +9734,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9774,10 +9774,10 @@
 					<Obj>
 						<type>0</type>
 						<id>222</id>
-						<name>weight_regfile_3_2_017_write_ln19</name>
+						<name>weight_regfile_3_2_017_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9793,14 +9793,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9832,10 +9832,10 @@
 					<Obj>
 						<type>0</type>
 						<id>223</id>
-						<name>write_flag45_0_write_ln19</name>
+						<name>write_flag45_0_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9851,14 +9851,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9891,10 +9891,10 @@
 					<Obj>
 						<type>0</type>
 						<id>224</id>
-						<name>weight_regfile_3_3_016_write_ln19</name>
+						<name>weight_regfile_3_3_016_write_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9910,14 +9910,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -9949,10 +9949,10 @@
 					<Obj>
 						<type>0</type>
 						<id>225</id>
-						<name>br_ln19</name>
+						<name>br_ln24</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>19</lineNumber>
+						<lineNumber>24</lineNumber>
 						<contextFuncName>runWeight2Reg</contextFuncName>
 						<contextNormFuncName>runWeight2Reg</contextNormFuncName>
 						<inlineStackInfo>
@@ -9968,14 +9968,14 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>206</second>
+										<second>275</second>
 									</item>
 									<item>
 										<first>
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>runWeight2Reg</second>
 										</first>
-										<second>19</second>
+										<second>24</second>
 									</item>
 								</second>
 							</item>
@@ -10078,7 +10078,7 @@
 						<name>weight_regfile_3_3_016_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10094,7 +10094,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10127,7 +10127,7 @@
 						<name>weight_regfile_3_2_017_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10143,7 +10143,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10176,7 +10176,7 @@
 						<name>weight_regfile_0_0_018_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10192,7 +10192,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10225,7 +10225,7 @@
 						<name>weight_regfile_3_1_019_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10241,7 +10241,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10274,7 +10274,7 @@
 						<name>weight_regfile_3_0_020_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10290,7 +10290,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10323,7 +10323,7 @@
 						<name>weight_regfile_0_1_021_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10339,7 +10339,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10372,7 +10372,7 @@
 						<name>weight_regfile_2_3_022_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10388,7 +10388,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10421,7 +10421,7 @@
 						<name>weight_regfile_2_2_023_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10437,7 +10437,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10470,7 +10470,7 @@
 						<name>weight_regfile_0_2_024_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10486,7 +10486,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10519,7 +10519,7 @@
 						<name>weight_regfile_2_1_025_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10535,7 +10535,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10568,7 +10568,7 @@
 						<name>weight_regfile_2_0_026_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10584,7 +10584,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10617,7 +10617,7 @@
 						<name>weight_regfile_0_3_027_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10633,7 +10633,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10666,7 +10666,7 @@
 						<name>weight_regfile_1_3_028_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10682,7 +10682,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10715,7 +10715,7 @@
 						<name>weight_regfile_1_2_029_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10731,7 +10731,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10764,7 +10764,7 @@
 						<name>weight_regfile_1_0_030_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10780,7 +10780,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10813,7 +10813,7 @@
 						<name>weight_regfile_1_1_031_load</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10829,7 +10829,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10862,7 +10862,7 @@
 						<name>mrv</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10878,7 +10878,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10912,7 +10912,7 @@
 						<name>mrv_1</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10928,7 +10928,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -10962,7 +10962,7 @@
 						<name>mrv_2</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -10978,7 +10978,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11012,7 +11012,7 @@
 						<name>mrv_3</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11028,7 +11028,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11062,7 +11062,7 @@
 						<name>mrv_4</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11078,7 +11078,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11112,7 +11112,7 @@
 						<name>mrv_5</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11128,7 +11128,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11162,7 +11162,7 @@
 						<name>mrv_6</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11178,7 +11178,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11212,7 +11212,7 @@
 						<name>mrv_7</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11228,7 +11228,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11262,7 +11262,7 @@
 						<name>mrv_8</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11278,7 +11278,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11312,7 +11312,7 @@
 						<name>mrv_9</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11328,7 +11328,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11362,7 +11362,7 @@
 						<name>mrv_s</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11378,7 +11378,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11412,7 +11412,7 @@
 						<name>mrv_10</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11428,7 +11428,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11462,7 +11462,7 @@
 						<name>mrv_11</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11478,7 +11478,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11512,7 +11512,7 @@
 						<name>mrv_12</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11528,7 +11528,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11562,7 +11562,7 @@
 						<name>mrv_13</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11578,7 +11578,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11612,7 +11612,7 @@
 						<name>mrv_14</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11628,7 +11628,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -11659,10 +11659,10 @@
 					<Obj>
 						<type>0</type>
 						<id>263</id>
-						<name>_ln197</name>
+						<name>_ln262</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>197</lineNumber>
+						<lineNumber>262</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -11678,7 +11678,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>197</second>
+										<second>262</second>
 									</item>
 								</second>
 							</item>
@@ -16330,8 +16330,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_807">
 			<mId>3</mId>
-			<mTag>VITIS_LOOP_14_1</mTag>
-			<mNormTag>VITIS_LOOP_14_1</mNormTag>
+			<mTag>VITIS_LOOP_19_1</mTag>
+			<mNormTag>VITIS_LOOP_19_1</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>3</count>
@@ -16379,8 +16379,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_809">
 			<mId>5</mId>
-			<mTag>VITIS_LOOP_15_2</mTag>
-			<mNormTag>VITIS_LOOP_15_2</mNormTag>
+			<mTag>VITIS_LOOP_20_2</mTag>
+			<mNormTag>VITIS_LOOP_20_2</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>

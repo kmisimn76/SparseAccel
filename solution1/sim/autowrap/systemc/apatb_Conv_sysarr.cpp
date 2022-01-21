@@ -18,6 +18,11 @@ using namespace sc_core;
 using namespace sc_dt;
 
 // wrapc file define:
+#define AUTOTB_TVIN_param_in_V "../tv/cdatafile/c.Conv_sysarr.autotvin_param_in_V.dat"
+#define AUTOTB_TVOUT_param_in_V "../tv/cdatafile/c.Conv_sysarr.autotvout_param_in_V.dat"
+#define WRAPC_STREAM_SIZE_IN_param_in_V "../tv/stream_size/stream_size_in_param_in_V.dat"
+#define WRAPC_STREAM_INGRESS_STATUS_param_in_V "../tv/stream_size/stream_ingress_status_param_in_V.dat"
+// wrapc file define:
 #define AUTOTB_TVIN_bias_in_V "../tv/cdatafile/c.Conv_sysarr.autotvin_bias_in_V.dat"
 #define AUTOTB_TVOUT_bias_in_V "../tv/cdatafile/c.Conv_sysarr.autotvout_bias_in_V.dat"
 #define WRAPC_STREAM_SIZE_IN_bias_in_V "../tv/stream_size/stream_size_in_bias_in_V.dat"
@@ -41,6 +46,8 @@ using namespace sc_dt;
 #define INTER_TCL "../tv/cdatafile/ref.tcl"
 
 // tvout file define:
+#define AUTOTB_TVOUT_PC_param_in_V "../tv/rtldatafile/rtl.Conv_sysarr.autotvout_param_in_V.dat"
+// tvout file define:
 #define AUTOTB_TVOUT_PC_bias_in_V "../tv/rtldatafile/rtl.Conv_sysarr.autotvout_bias_in_V.dat"
 // tvout file define:
 #define AUTOTB_TVOUT_PC_weight_in_V "../tv/rtldatafile/rtl.Conv_sysarr.autotvout_weight_in_V.dat"
@@ -53,6 +60,7 @@ class INTER_TCL_FILE {
   public:
 INTER_TCL_FILE(const char* name) {
   mName = name; 
+  param_in_V_depth = 0;
   bias_in_V_depth = 0;
   weight_in_V_depth = 0;
   data_in_V_depth = 0;
@@ -74,6 +82,7 @@ INTER_TCL_FILE(const char* name) {
 }
 string get_depth_list () {
   stringstream total_list;
+  total_list << "{param_in_V " << param_in_V_depth << "}\n";
   total_list << "{bias_in_V " << bias_in_V_depth << "}\n";
   total_list << "{weight_in_V " << weight_in_V_depth << "}\n";
   total_list << "{data_in_V " << data_in_V_depth << "}\n";
@@ -84,6 +93,7 @@ void set_num (int num , int* class_num) {
   (*class_num) = (*class_num) > num ? (*class_num) : num;
 }
   public:
+    int param_in_V_depth;
     int bias_in_V_depth;
     int weight_in_V_depth;
     int data_in_V_depth;
@@ -130,9 +140,9 @@ static void RTLOutputCheckAndReplacement(std::string &AESL_token, std::string Po
   }
 }
 struct __cosim_s20__ { char data[32]; };
-extern "C" void Conv_sysarr_hw_stub(volatile void *, volatile void *, volatile void *, volatile void *);
+extern "C" void Conv_sysarr_hw_stub(volatile void *, volatile void *, volatile void *, volatile void *, volatile void *);
 
-extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
+extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_param_in, volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
   refine_signal_handler();
   fstream wrapc_switch_file_token;
   wrapc_switch_file_token.open(".hls_cosim_wrapc_switch.log");
@@ -143,7 +153,38 @@ extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_bias_in, 
     CodeState = ENTER_WRAPC_PC;
     static unsigned AESL_transaction_pc = 0;
     string AESL_token;
-    string AESL_num;long __xlx_apatb_param_bias_in_V_stream_buf_final_size;
+    string AESL_num;long __xlx_apatb_param_param_in_V_stream_buf_final_size;
+{
+      static ifstream rtl_tv_out_file;
+      if (!rtl_tv_out_file.is_open()) {
+        rtl_tv_out_file.open(WRAPC_STREAM_SIZE_IN_param_in_V);
+        if (rtl_tv_out_file.good()) {
+          rtl_tv_out_file >> AESL_token;
+          if (AESL_token != "[[[runtime]]]")
+            exit(1);
+        }
+      }
+  
+      if (rtl_tv_out_file.good()) {
+        rtl_tv_out_file >> AESL_token; 
+        rtl_tv_out_file >> AESL_num;  // transaction number
+        if (AESL_token != "[[transaction]]") {
+          cerr << "Unexpected token: " << AESL_token << endl;
+          exit(1);
+        }
+        if (atoi(AESL_num.c_str()) == AESL_transaction_pc) {
+          rtl_tv_out_file >> AESL_token; //data
+          while (AESL_token != "[[/transaction]]"){__xlx_apatb_param_param_in_V_stream_buf_final_size = atoi(AESL_token.c_str());
+
+            rtl_tv_out_file >> AESL_token; //data or [[/transaction]]
+            if (AESL_token == "[[[/runtime]]]" || rtl_tv_out_file.eof())
+              exit(1);
+          }
+        } // end transaction
+      } // end file is good
+    } // end post check logic bolck
+  for (long i = 0; i < __xlx_apatb_param_param_in_V_stream_buf_final_size; ++i)((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->read();
+long __xlx_apatb_param_bias_in_V_stream_buf_final_size;
 {
       static ifstream rtl_tv_out_file;
       if (!rtl_tv_out_file.is_open()) {
@@ -324,6 +365,11 @@ static AESL_FILE_HANDLER aesl_fh;
 static INTER_TCL_FILE tcl_file(INTER_TCL);
 std::vector<char> __xlx_sprintf_buffer(1024);
 CodeState = ENTER_WRAPC;
+//param_in_V
+aesl_fh.touch(AUTOTB_TVIN_param_in_V);
+aesl_fh.touch(AUTOTB_TVOUT_param_in_V);
+aesl_fh.touch(WRAPC_STREAM_SIZE_IN_param_in_V);
+aesl_fh.touch(WRAPC_STREAM_INGRESS_STATUS_param_in_V);
 //bias_in_V
 aesl_fh.touch(AUTOTB_TVIN_bias_in_V);
 aesl_fh.touch(AUTOTB_TVOUT_bias_in_V);
@@ -345,6 +391,14 @@ aesl_fh.touch(AUTOTB_TVOUT_conv_out_V);
 aesl_fh.touch(WRAPC_STREAM_SIZE_OUT_conv_out_V);
 aesl_fh.touch(WRAPC_STREAM_EGRESS_STATUS_conv_out_V);
 CodeState = DUMP_INPUTS;
+std::vector<__cosim_s20__> __xlx_apatb_param_param_in_stream_buf;
+{
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->empty())
+    __xlx_apatb_param_param_in_stream_buf.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->read());
+  for (int i = 0; i < __xlx_apatb_param_param_in_stream_buf.size(); ++i)
+    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->write(__xlx_apatb_param_param_in_stream_buf[i]);
+  }
+long __xlx_apatb_param_param_in_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->size();
 std::vector<__cosim_s20__> __xlx_apatb_param_bias_in_stream_buf;
 {
   while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->empty())
@@ -372,9 +426,59 @@ long __xlx_apatb_param_data_in_stream_buf_size = ((hls::stream<__cosim_s20__>*)_
 std::vector<__cosim_s20__> __xlx_apatb_param_conv_out_stream_buf;
 long __xlx_apatb_param_conv_out_stream_buf_size = ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->size();
 CodeState = CALL_C_DUT;
-Conv_sysarr_hw_stub(__xlx_apatb_param_bias_in, __xlx_apatb_param_weight_in, __xlx_apatb_param_data_in, __xlx_apatb_param_conv_out);
+Conv_sysarr_hw_stub(__xlx_apatb_param_param_in, __xlx_apatb_param_bias_in, __xlx_apatb_param_weight_in, __xlx_apatb_param_data_in, __xlx_apatb_param_conv_out);
 CodeState = DUMP_OUTPUTS;
-long __xlx_apatb_param_bias_in_stream_buf_final_size = __xlx_apatb_param_bias_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->size();
+long __xlx_apatb_param_param_in_stream_buf_final_size = __xlx_apatb_param_param_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->size();
+// print param_in_V Transactions
+{
+  sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
+  aesl_fh.write(AUTOTB_TVIN_param_in_V, __xlx_sprintf_buffer.data());
+  for (int j = 0, e = __xlx_apatb_param_param_in_stream_buf_final_size; j != e; ++j) {
+sc_bv<256> __xlx_tmp_lv;
+__xlx_tmp_lv.range(63,0) = ((long long*)&__xlx_apatb_param_param_in_stream_buf[j])[0*4+0];
+__xlx_tmp_lv.range(127,64) = ((long long*)&__xlx_apatb_param_param_in_stream_buf[j])[0*4+1];
+__xlx_tmp_lv.range(191,128) = ((long long*)&__xlx_apatb_param_param_in_stream_buf[j])[0*4+2];
+__xlx_tmp_lv.range(255,192) = ((long long*)&__xlx_apatb_param_param_in_stream_buf[j])[0*4+3];
+
+    sprintf(__xlx_sprintf_buffer.data(), "%s\n", __xlx_tmp_lv.to_string(SC_HEX).c_str());
+    aesl_fh.write(AUTOTB_TVIN_param_in_V, __xlx_sprintf_buffer.data()); 
+  }
+
+  tcl_file.set_num(__xlx_apatb_param_param_in_stream_buf_final_size, &tcl_file.param_in_V_depth);
+  sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
+  aesl_fh.write(AUTOTB_TVIN_param_in_V, __xlx_sprintf_buffer.data());
+}
+
+// dump stream ingress status to file
+{
+  sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
+  aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_param_in_V, __xlx_sprintf_buffer.data());
+  if (__xlx_apatb_param_param_in_stream_buf_final_size > 0) {
+  long param_in_V_stream_ingress_size = __xlx_apatb_param_param_in_stream_buf_size;
+sprintf(__xlx_sprintf_buffer.data(), "%d\n", param_in_V_stream_ingress_size);
+ aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_param_in_V, __xlx_sprintf_buffer.data());
+  for (int j = 0, e = __xlx_apatb_param_param_in_stream_buf_final_size; j != e; j++) {
+    param_in_V_stream_ingress_size--;
+sprintf(__xlx_sprintf_buffer.data(), "%d\n", param_in_V_stream_ingress_size);
+ aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_param_in_V, __xlx_sprintf_buffer.data());
+  }
+} else {
+  long param_in_V_stream_ingress_size = 0;
+sprintf(__xlx_sprintf_buffer.data(), "%d\n", param_in_V_stream_ingress_size);
+ aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_param_in_V, __xlx_sprintf_buffer.data());
+}
+
+  sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
+  aesl_fh.write(WRAPC_STREAM_INGRESS_STATUS_param_in_V, __xlx_sprintf_buffer.data());
+}{
+  sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);
+  aesl_fh.write(WRAPC_STREAM_SIZE_IN_param_in_V, __xlx_sprintf_buffer.data());
+  sprintf(__xlx_sprintf_buffer.data(), "%d\n", __xlx_apatb_param_param_in_stream_buf_final_size);
+ aesl_fh.write(WRAPC_STREAM_SIZE_IN_param_in_V, __xlx_sprintf_buffer.data());
+
+  sprintf(__xlx_sprintf_buffer.data(), "[[/transaction]] \n");
+  aesl_fh.write(WRAPC_STREAM_SIZE_IN_param_in_V, __xlx_sprintf_buffer.data());
+}long __xlx_apatb_param_bias_in_stream_buf_final_size = __xlx_apatb_param_bias_in_stream_buf_size - ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->size();
 // print bias_in_V Transactions
 {
   sprintf(__xlx_sprintf_buffer.data(), "[[transaction]] %d\n", AESL_transaction);

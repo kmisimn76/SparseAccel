@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runWeight2Reg'" level="0">
-<item name = "Date">Thu Jan 20 09:42:06 2022
+<item name = "Date">Sat Jan 22 00:49:20 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_14_1">40, 40, 10, -, -, 4, no</column>
-<column name=" + VITIS_LOOP_15_2">4, 4, 1, -, -, 4, no</column>
+<column name="- VITIS_LOOP_19_1">40, 40, 10, -, -, 4, no</column>
+<column name=" + VITIS_LOOP_20_2">4, 4, 1, -, -, 4, no</column>
 </table>
 </item>
 </section>

@@ -4,6 +4,7 @@
 // ==============================================================
 
 extern "C" void AESL_WRAP_Conv_sysarr (
+hls::stream<int > param_in,
 hls::stream<int > bias_in,
 hls::stream<int > weight_in,
 hls::stream<int > data_in,

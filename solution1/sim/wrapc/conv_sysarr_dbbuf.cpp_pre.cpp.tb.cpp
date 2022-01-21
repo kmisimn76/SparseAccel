@@ -67336,7 +67336,7 @@ typedef int MACTYPE;
 
 typedef ap_axiu<4*32,0,0,0> k2k_data;
 # 2 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" 2
-# 12 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 17 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 void runWeight2Reg(DPTYPE weight_regfile[4][4], DPTYPE (*weight_l2)[4], const uint C,
   const uint RS, const uint ko, const uint co, const uint r, const uint s) {
  for (int ci = 0; ci < 4; ci++) {
@@ -67350,138 +67350,167 @@ void runWeight2Reg(DPTYPE weight_regfile[4][4], DPTYPE (*weight_l2)[4], const ui
  }
 }
 
-void runL2toL1(DPTYPE data_l1buf[512][4], DPTYPE (*data_l2)[4], uint TILED_H,
-  uint TILED_W, uint co, uint ho, uint wo, uint r, uint s, uint WH_in) {
- LOOP_L2_H: for (int hi = 0; hi < TILED_H; hi++) {
+void runDataL2toL1(DPTYPE (*data_l1)[4], DPTYPE (*data_l2)[4], uint TILESIZE_H,
+  uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint WH_in) {
+ LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
 #pragma HLS loop_tripcount min=7 max=7
-  LOOP_L2_W: for (int wi = 0; wi < TILED_W; wi++) {
+  LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
 #pragma HLS loop_tripcount min=7 max=7
    for (int ci = 0; ci < 4; ci++) {
 #pragma HLS unroll
     int c = (co * 4 + ci);
-    int h = (ho * TILED_H + hi) + r;
-    int w = (wo * TILED_W + wi) + s;
-    data_l1buf[hi * TILED_W + wi][ci] =
+    int h = (ho * TILESIZE_H + hi) + r;
+    int w = (wo * TILESIZE_W + wi) + s;
+    data_l1[hi * TILESIZE_W + wi][ci] =
       data_l2[co * WH_in * WH_in + h * WH_in + w][ci];
    }
   }
  }
 }
 
-void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE data_l1buf[512][4],
-  MACTYPE (*output_l1_pass)[4],
-  uint input_rows, uint TILED_H, uint TILED_W,
-  uint ko, bool isFirst) {
- static MACTYPE output_l1_local[1024][4];
-#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
+
+void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4],
+  uint TILESIZE_H, uint TILESIZE_W, uint ko, uint ho, uint wo, uint WH) {
+ LOOP_L2_H: for (int hi = 0; hi < TILESIZE_H; hi++) {
+#pragma HLS loop_tripcount min=7 max=7
+  LOOP_L2_W: for (int wi = 0; wi < TILESIZE_W; wi++) {
+#pragma HLS loop_tripcount min=7 max=7
+   for (int ki = 0; ki < 4; ki++) {
+#pragma HLS unroll
+    int k = (ko * 4 + ki);
+    int h = (ho * TILESIZE_H + hi);
+    int w = (wo * TILESIZE_W + wi);
+    output_l2[ko * WH * WH + h * WH + w][ki] =
+      output_l1[hi * TILESIZE_W + wi][ki];
+   }
+  }
+ }
+}
+
+void doSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
+  DPTYPE data_reg[4][4], MACTYPE output_reg[4][4],
+  MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1)[4],
+  uint hi, uint wi, uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S, bool isFirst) {
+#pragma HLS inline
+
+ int i = hi*TILESIZE_W + wi;
+ DPTYPE input_data[4];
+#pragma HLS array_partition variable=input_data complete
+ for (int ci = 0; ci < 4; ci++) {
+#pragma HLS unroll
+
+
+  if (i - ci >= 0)
+
+   input_data[ci] = data_l1[i - ci][ci];
+  else
+   input_data[ci] = 0;
+ }
+
+
+ for (int ki = 4 - 1; ki >= 0; ki--) {
+#pragma HLS unroll
+  for (int ci = 4 - 1; ci >= 0; ci--) {
+#pragma HLS unroll
+   data_reg[ki][ci] =
+     (ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
+   MACTYPE psum =
+     (ci == 0) ?
+       (0) : (output_reg[ki][(ci - 1)]);
+   output_reg[ki][ci] = psum
+     + (data_reg[ki][ci] * weight_regfile[ki][ci]);
+  }
+ }
+
+
+ for (int ki = 4 - 1; ki >= 0; ki--) {
+#pragma HLS unroll
+  if ((i - 4 + 1) - ki >= 0 && (i - 4 + 1) - ki < TILESIZE_W * TILESIZE_H) {
+
+
+
+
+
+
+   MACTYPE tmp = (isFirst)?(0):(output_l1_local[(i - 4 + 1) - ki][ki]);
+   output_l1_local[(i - 4 + 1) - ki][ki] =
+         tmp + output_reg[ki][(4 - 1)];
+   output_l1[((i - 4 + 1) - ki)][ki] = output_l1_local[(i - 4 + 1) - ki][ki];
+  }
+ }
+}
+
+void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
+  MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1)[4],
+  int input_rows,
+  int bubble_h, int bubble_w,
+  uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
+  bool isFirst) {
 
  DPTYPE data_reg[4][4];
 #pragma HLS dependence variable=data_reg
  MACTYPE output_reg[4][4];
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete
- LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) {
-#pragma HLS LOOP_TRIPCOUNT max=55 min=55
-#pragma HLS DEPENDENCE variable=output_reg
-#pragma HLS pipeline
+ LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
+#pragma HLS LOOP_TRIPCOUNT max=10 min=10
+  LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
+#pragma HLS LOOP_TRIPCOUNT max=10 min=10
+#pragma HLS loop_flatten
+   LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) { {
+
+
+
+
+#pragma HLS LOOP_TRIPCOUNT max=10000 min=10000
+#pragma HLS DEPENDENCE variable=output_l1
+#pragma HLS DEPENDENCE variable=output_l1_local
+#pragma HLS pipeline rewind
 #pragma HLS latency min=1 max=1
-
-
-  DPTYPE input_data[4];
-#pragma HLS array_partition variable=input_data complete
-  for (int ci = 0; ci < 4; ci++) {
-#pragma HLS unroll
-
-
-   if (i - ci >= 0)
-
-    input_data[ci] = data_l1buf[i - ci][ci];
-   else
-    input_data[ci] = 0;
-  }
-
-
-  for (int ki = 4 - 1; ki >= 0; ki--) {
-#pragma HLS unroll
-   for (int ci = 4 - 1; ci >= 0; ci--) {
-#pragma HLS unroll
-    data_reg[ki][ci] =
-      (ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
-    MACTYPE psum =
-      (ci == 0) ?
-        (0) : (output_reg[ki][(ci - 1)]);
-    output_reg[ki][ci] = psum
-      + (data_reg[ki][ci] * weight_regfile[ki][ci]);
-   }
-  }
-
-
-  for (int ki = 4 - 1; ki >= 0; ki--) {
-#pragma HLS unroll
-   if ((i - 4 + 1) - ki >= 0 && (i - 4 + 1) - ki < TILED_W * TILED_H) {
-    if(isFirst)
-     output_l1_local[(i - 4 + 1) - ki][ki] =
-       output_reg[ki][(4 - 1)];
-    else
-     output_l1_local[(i - 4 + 1) - ki][ki] +=
-       output_reg[ki][(4 - 1)];
-    output_l1_pass[ko*TILED_H*TILED_W + ((i - 4 + 1) - ki)][ki] = output_l1_local[(i - 4 + 1) - ki][ki];
+     int hi = (i) / TILESIZE_W;
+     int wi = (i) % TILESIZE_W;
+     doSysArr(weight_regfile, data_l1,
+       data_reg, output_reg,
+       output_l1_local, output_l1,
+       hi, wi, TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+    }
    }
   }
  }
 }
 
-void Conv_sysarr(hls::stream<k2k_data> &bias_in,
-  hls::stream<k2k_data> &weight_in, hls::stream<k2k_data> &data_in,
+void Conv_sysarr(
+  hls::stream<k2k_data> &param_in,
+  hls::stream<k2k_data> &bias_in,
+  hls::stream<k2k_data> &weight_in,
+  hls::stream<k2k_data> &data_in,
   hls::stream<k2k_data> &conv_out) {
 #pragma HLS expression_balance
 
- DPTYPE bias_l2[2048];
+ DPTYPE bias_l2[512][4];
  DPTYPE weight_l2[512][4];
- DPTYPE data_l2[1024][4];
- MACTYPE output_l2[2048];
- DPTYPE bias_l1[512][4];
- MACTYPE output_l1[512][4];
+ DPTYPE data_l2[512][4];
+ MACTYPE output_l2[512][4];
 
 
-# 118 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=bias_l2 cyclic factor=4
-# 118 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 172 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+#pragma HLS ARRAY_PARTITION variable=bias_l2 dim=2 complete
+# 172 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 119 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 173 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=weight_l2 dim=2 complete
-# 119 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 173 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 120 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 174 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=data_l2 dim=2 complete
-# 120 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 174 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 121 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=output_l2 cyclic factor=4
-# 121 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-
-
-# 122 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=bias_l1 dim=2 complete
-# 122 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-
-
-# 123 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=weight_l2 dim=2 complete
-# 123 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-
-
-# 124 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=data_l2 dim=2 complete
-# 124 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-
-
-# 125 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
-#pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
-# 125 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 175 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+#pragma HLS ARRAY_PARTITION variable=output_l2 dim=2 complete
+# 175 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
  k2k_data param_tmp;
@@ -67489,22 +67518,34 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
  k2k_data weight_tmp;
  k2k_data input_tmp;
 
- param_tmp = bias_in.read();
+ param_tmp = param_in.read();
  uint K = (uint) param_tmp.data(31, 0);
- param_tmp = bias_in.read();
+ param_tmp = param_in.read();
  uint C = (uint) param_tmp.data(31, 0);
- param_tmp = bias_in.read();
+ param_tmp = param_in.read();
  uint WH = (uint) param_tmp.data(31, 0);
- uint TILED_H = WH / 1;
- uint TILED_W = WH / 1;
- param_tmp = bias_in.read();
+ param_tmp = param_in.read();
  uint WH_in = (uint) param_tmp.data(31, 0);
- uint H_in_TILE = WH_in / 1;
- uint W_in_TILE = WH_in / 1;
- param_tmp = bias_in.read();
+ param_tmp = param_in.read();
  uint RS = (uint) param_tmp.data(31, 0);
+ param_tmp = param_in.read();
+ uint TILESIZE_W = (uint) param_tmp.data(31, 0);
+ param_tmp = param_in.read();
+ uint TILESIZE_H = (uint) param_tmp.data(31, 0);
+ param_tmp = param_in.read();
+ uint TILESIZE_R = (uint) param_tmp.data(31, 0);
+ param_tmp = param_in.read();
+ uint TILESIZE_S = (uint) param_tmp.data(31, 0);
 
- const uint input_rows = TILED_H * TILED_W + (4 - 1) + (4 - 1);
+ uint TILES_W = WH / TILESIZE_W;
+ uint TILES_H = WH / TILESIZE_H;
+ uint TILES_R = RS / TILESIZE_R;
+ uint TILES_S = RS / TILESIZE_S;
+
+ const uint input_rows = TILESIZE_H * TILESIZE_W + (4 - 1) + (4 - 1);
+ const uint bubble = (4 - 1) + (4 - 1);
+ const uint bubble_h = bubble / TILESIZE_W;
+ const uint bubble_w = bubble % TILESIZE_W;
 
 
  for (unsigned int ko = 0; ko < K/4; ko++) {
@@ -67512,7 +67553,7 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
   bias_tmp = bias_in.read();
   for (unsigned int ki = 0; ki < 4; ki++) {
    unsigned int v = ki;
-   bias_l1[ko][ki] = (DPTYPE) bias_tmp.data((v+1)*8 -1, v*8);
+   bias_l2[ko][ki] = (DPTYPE) bias_tmp.data((v+1)*8 -1, v*8);
   }
  }
 
@@ -67545,28 +67586,38 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
  LOOP_K_OUTER: for (int ko = 0; ko < K / 4; ko++) {
 #pragma HLS loop_tripcount min=4 max=4
   LOOP_C_OUTER: for (int co = 0; co < C / 4; co++) {
-#pragma HLS loop_tripcount min=1 max=1
-   LOOP_H_OUTER: for (int ho = 0; ho < 1; ho++) {
-    LOOP_W_OUTER: for (int wo = 0; wo < 1; wo++) {
-     LOOP_R: for (int r = 0; r < RS; r++) {
+#pragma HLS loop_tripcount min=10 max=10
+   LOOP_H_OUTER: for (int ho = 0; ho < TILES_H; ho++) {
+#pragma HLS loop_tripcount min=10 max=10
+    LOOP_W_OUTER: for (int wo = 0; wo < TILES_W; wo++) {
+#pragma HLS loop_tripcount min=10 max=10
+     LOOP_R_OUTER: for (int ro = 0; ro < TILES_R; ro++) {
 #pragma HLS loop_tripcount min=3 max=3
-      LOOP_S: for (int s = 0; s < RS; s++) {
+      LOOP_S_OUTER: for (int so = 0; so < TILES_S; so++) {
+
 #pragma HLS loop_tripcount min=3 max=3
 #pragma HLS dataflow
        bool isFirst;
-       if(r==0 && s==0) isFirst = true;
+       if(ro==0 && so==0) isFirst = true;
        else isFirst = false;
 
        DPTYPE weight_regfile[4][4];
-       DPTYPE data_l1buf[512][4];
+       DPTYPE data_l1[512][4];
+       MACTYPE output_l1[512][4];
+       static MACTYPE output_l1_local[512][4];
 #pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete
-#pragma HLS ARRAY_PARTITION variable=data_l1buf dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
+#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
 
 
-       runWeight2Reg(weight_regfile, weight_l2, C, RS, ko, co, r, s);
-       runL2toL1(data_l1buf, data_l2, TILED_H, TILED_W, co, ho, wo, r, s, WH_in);
-       runSysArr(weight_regfile, data_l1buf, output_l1, input_rows,
-         TILED_H, TILED_W, ko, isFirst);
+       runWeight2Reg(weight_regfile, weight_l2, C, RS, ko, co, ro, so);
+       runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, WH_in);
+       runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
+          input_rows,
+          bubble_h, bubble_w,
+          TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+       runOutputL1toL2(output_l1, output_l2, TILESIZE_H, TILESIZE_W, ko, ho, wo, WH);
       }
      }
 
@@ -67582,8 +67633,8 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
    k2k_data output_tmp;
    for (unsigned int ki = 0; ki < 4; ki++) {
     unsigned int v = ki;
-    output_tmp.data((v+1)*32 -1, v*32) = output_l1[ko * WH * WH + wh][ki]
-                 + bias_l1[ko][ki];
+    output_tmp.data((v+1)*32 -1, v*32) = output_l2[ko * WH * WH + wh][ki]
+                 + bias_l2[ko][ki];
    }
    conv_out.write(output_tmp);
   }
@@ -67595,21 +67646,21 @@ void Conv_sysarr(hls::stream<k2k_data> &bias_in,
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_Conv_sysarr_hw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &);
+void apatb_Conv_sysarr_hw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &);
 #ifdef __cplusplus
 extern "C"
 #endif
-void Conv_sysarr_hw_stub(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &bias_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &weight_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &data_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &conv_out){
-Conv_sysarr(bias_in, weight_in, data_in, conv_out);
+void Conv_sysarr_hw_stub(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &param_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &bias_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &weight_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &data_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &conv_out){
+Conv_sysarr(param_in, bias_in, weight_in, data_in, conv_out);
 return ;
 }
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_Conv_sysarr_sw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &bias_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &weight_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &data_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &conv_out){
-apatb_Conv_sysarr_hw(bias_in, weight_in, data_in, conv_out);
+void apatb_Conv_sysarr_sw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &param_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &bias_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &weight_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &data_in, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &conv_out){
+apatb_Conv_sysarr_hw(param_in, bias_in, weight_in, data_in, conv_out);
 return ;
 }
 #endif
-# 233 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 305 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 

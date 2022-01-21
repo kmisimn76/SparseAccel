@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runWeight2Reg'
 ================================================================
-* Date:           Thu Jan 20 09:42:07 2022
+* Date:           Sat Jan 22 00:49:22 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -41,8 +41,8 @@
         |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- VITIS_LOOP_14_1   |       40|       40|        10|          -|          -|     4|    no    |
-        | + VITIS_LOOP_15_2  |        4|        4|         1|          -|          -|     4|    no    |
+        |- VITIS_LOOP_19_1   |       40|       40|        10|          -|          -|     4|    no    |
+        | + VITIS_LOOP_20_2  |        4|        4|         1|          -|          -|     4|    no    |
         +--------------------+---------+---------+----------+-----------+-----------+------+----------+
 
 
@@ -78,41 +78,41 @@
     +---------------------+-----------------+---------+----+---+----+-----+
     |       Instance      |      Module     | BRAM_18K| DSP| FF| LUT| URAM|
     +---------------------+-----------------+---------+----+---+----+-----+
-    |mul_9s_9s_9_1_1_U21  |mul_9s_9s_9_1_1  |        0|   0|  0|  49|    0|
-    |mul_9s_9s_9_1_1_U22  |mul_9s_9s_9_1_1  |        0|   0|  0|  49|    0|
-    |mux_42_1_1_1_U25     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U27     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U29     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U31     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U33     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U34     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U37     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U39     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mul_9s_9s_9_1_1_U36  |mul_9s_9s_9_1_1  |        0|   0|  0|  49|    0|
+    |mul_9s_9s_9_1_1_U37  |mul_9s_9s_9_1_1  |        0|   0|  0|  49|    0|
     |mux_42_1_1_1_U40     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_1_1_1_U42     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_1_1_1_U44     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_1_1_1_U46     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U48     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_1_1_1_U49     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U51     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_1_1_1_U53     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U52     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U54     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_1_1_1_U55     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U23     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U24     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U26     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U28     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U30     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U32     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U35     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U36     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U57     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U59     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U61     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U64     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U66     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U68     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_1_1_1_U70     |mux_42_1_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U38     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U39     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U41     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U43     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U45     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U47     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U48     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     |mux_42_8_1_1_U50     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U52     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
-    |mux_42_8_1_1_U54     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U51     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U53     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U56     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U58     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U60     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U62     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U63     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U65     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U67     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
+    |mux_42_8_1_1_U69     |mux_42_8_1_1     |        0|   0|  0|  17|    0|
     +---------------------+-----------------+---------+----+---+----+-----+
     |Total                |                 |        0|   0|  0| 659|    0|
     +---------------------+-----------------+---------+----+---+----+-----+
@@ -121,7 +121,7 @@
     +----------------------------------------+------------------------------------+---------------------+
     |                Instance                |               Module               |      Expression     |
     +----------------------------------------+------------------------------------+---------------------+
-    |ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U56  |ama_addmuladd_9ns_9ns_9s_9ns_9_4_1  | i0 + i1 * (i2 + i3) |
+    |ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U71  |ama_addmuladd_9ns_9ns_9s_9ns_9_4_1  | i0 + i1 * (i2 + i3) |
     +----------------------------------------+------------------------------------+---------------------+
 
     * Memory: 
@@ -134,12 +134,12 @@
     +---------------------+----------+----+---+----+------------+------------+
     |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +---------------------+----------+----+---+----+------------+------------+
-    |add_ln14_fu_506_p2   |     +    |   0|  0|  11|           3|           1|
-    |add_ln15_fu_644_p2   |     +    |   0|  0|  11|           3|           1|
+    |add_ln19_fu_506_p2   |     +    |   0|  0|  11|           3|           1|
+    |add_ln20_fu_644_p2   |     +    |   0|  0|  11|           3|           1|
     |mul61_i_i_fu_530_p1  |     +    |   0|  0|  23|           9|           9|
     |tmp_fu_520_p2        |     +    |   0|  0|  23|           9|           9|
-    |icmp_ln14_fu_500_p2  |   icmp   |   0|  0|   9|           3|           4|
-    |icmp_ln15_fu_638_p2  |   icmp   |   0|  0|   9|           3|           4|
+    |icmp_ln19_fu_500_p2  |   icmp   |   0|  0|   9|           3|           4|
+    |icmp_ln20_fu_638_p2  |   icmp   |   0|  0|   9|           3|           4|
     |ap_block_state1      |    or    |   0|  0|   2|           1|           1|
     +---------------------+----------+----+---+----+------------+------------+
     |Total                |          |   0|  0|  88|          31|          29|
@@ -153,15 +153,15 @@
     |ap_done                |   9|          2|    1|          2|
     |ci_reg_328             |   9|          2|    3|          6|
     |co_1_blk_n             |   9|          2|    1|          2|
-    |empty_15_blk_n         |   9|          2|    1|          2|
+    |empty_19_blk_n         |   9|          2|    1|          2|
     |empty_blk_n            |   9|          2|    1|          2|
     |ki_reg_339             |   9|          2|    3|          6|
     |ko_2_blk_n             |   9|          2|    1|          2|
     |ko_2_out_blk_n         |   9|          2|    1|          2|
-    |r_blk_n                |   9|          2|    1|          2|
-    |r_out_blk_n            |   9|          2|    1|          2|
-    |s_blk_n                |   9|          2|    1|          2|
-    |s_out_blk_n            |   9|          2|    1|          2|
+    |ro_blk_n               |   9|          2|    1|          2|
+    |ro_out_blk_n           |   9|          2|    1|          2|
+    |so_blk_n               |   9|          2|    1|          2|
+    |so_out_blk_n           |   9|          2|    1|          2|
     |write_flag12_0_fu_188  |   9|          2|    1|          2|
     |write_flag15_0_fu_212  |   9|          2|    1|          2|
     |write_flag18_0_fu_204  |   9|          2|    1|          2|
@@ -186,17 +186,17 @@
     +-------------------------------+---+----+-----+-----------+
     |              Name             | FF| LUT| Bits| Const Bits|
     +-------------------------------+---+----+-----+-----------+
-    |add_ln14_reg_1533              |  3|   0|    3|          0|
+    |add_ln19_reg_1533              |  3|   0|    3|          0|
     |ap_CS_fsm                      |  7|   0|    7|          0|
     |ap_done_reg                    |  1|   0|    1|          0|
     |ci_reg_328                     |  3|   0|    3|          0|
-    |empty_27_reg_1509              |  9|   0|    9|          0|
-    |empty_28_reg_1538              |  2|   0|    2|          0|
+    |empty_36_reg_1509              |  9|   0|    9|          0|
+    |empty_37_reg_1538              |  2|   0|    2|          0|
     |ki_reg_339                     |  3|   0|    3|          0|
     |mul2_i_i_reg_1520              |  7|   0|    9|          2|
     |mul4_i_i_reg_1525              |  9|   0|    9|          0|
     |tmp_2_reg_1514                 |  9|   0|    9|          0|
-    |trunc_ln13_reg_1504            |  9|   0|    9|          0|
+    |trunc_ln18_reg_1504            |  9|   0|    9|          0|
     |weight_l2_0_load_reg_1594      |  8|   0|    8|          0|
     |weight_l2_1_load_reg_1599      |  8|   0|    8|          0|
     |weight_l2_2_load_reg_1604      |  8|   0|    8|          0|
@@ -281,9 +281,9 @@
 |weight_l2_3_address0  | out |    9|  ap_memory |  weight_l2_3  |     array    |
 |weight_l2_3_ce0       | out |    1|  ap_memory |  weight_l2_3  |     array    |
 |weight_l2_3_q0        |  in |    8|  ap_memory |  weight_l2_3  |     array    |
-|empty_15_dout         |  in |    9|   ap_fifo  |    empty_15   |    pointer   |
-|empty_15_empty_n      |  in |    1|   ap_fifo  |    empty_15   |    pointer   |
-|empty_15_read         | out |    1|   ap_fifo  |    empty_15   |    pointer   |
+|empty_19_dout         |  in |    9|   ap_fifo  |    empty_19   |    pointer   |
+|empty_19_empty_n      |  in |    1|   ap_fifo  |    empty_19   |    pointer   |
+|empty_19_read         | out |    1|   ap_fifo  |    empty_19   |    pointer   |
 |empty_dout            |  in |    9|   ap_fifo  |     empty     |    pointer   |
 |empty_empty_n         |  in |    1|   ap_fifo  |     empty     |    pointer   |
 |empty_read            | out |    1|   ap_fifo  |     empty     |    pointer   |
@@ -293,20 +293,20 @@
 |co_1_dout             |  in |    7|   ap_fifo  |      co_1     |    pointer   |
 |co_1_empty_n          |  in |    1|   ap_fifo  |      co_1     |    pointer   |
 |co_1_read             | out |    1|   ap_fifo  |      co_1     |    pointer   |
-|r_dout                |  in |   32|   ap_fifo  |       r       |    pointer   |
-|r_empty_n             |  in |    1|   ap_fifo  |       r       |    pointer   |
-|r_read                | out |    1|   ap_fifo  |       r       |    pointer   |
-|s_dout                |  in |   32|   ap_fifo  |       s       |    pointer   |
-|s_empty_n             |  in |    1|   ap_fifo  |       s       |    pointer   |
-|s_read                | out |    1|   ap_fifo  |       s       |    pointer   |
+|ro_dout               |  in |   32|   ap_fifo  |       ro      |    pointer   |
+|ro_empty_n            |  in |    1|   ap_fifo  |       ro      |    pointer   |
+|ro_read               | out |    1|   ap_fifo  |       ro      |    pointer   |
+|so_dout               |  in |   32|   ap_fifo  |       so      |    pointer   |
+|so_empty_n            |  in |    1|   ap_fifo  |       so      |    pointer   |
+|so_read               | out |    1|   ap_fifo  |       so      |    pointer   |
 |ko_2_out_din          | out |    9|   ap_fifo  |    ko_2_out   |    pointer   |
 |ko_2_out_full_n       |  in |    1|   ap_fifo  |    ko_2_out   |    pointer   |
 |ko_2_out_write        | out |    1|   ap_fifo  |    ko_2_out   |    pointer   |
-|r_out_din             | out |   32|   ap_fifo  |     r_out     |    pointer   |
-|r_out_full_n          |  in |    1|   ap_fifo  |     r_out     |    pointer   |
-|r_out_write           | out |    1|   ap_fifo  |     r_out     |    pointer   |
-|s_out_din             | out |   32|   ap_fifo  |     s_out     |    pointer   |
-|s_out_full_n          |  in |    1|   ap_fifo  |     s_out     |    pointer   |
-|s_out_write           | out |    1|   ap_fifo  |     s_out     |    pointer   |
+|ro_out_din            | out |   32|   ap_fifo  |     ro_out    |    pointer   |
+|ro_out_full_n         |  in |    1|   ap_fifo  |     ro_out    |    pointer   |
+|ro_out_write          | out |    1|   ap_fifo  |     ro_out    |    pointer   |
+|so_out_din            | out |   32|   ap_fifo  |     so_out    |    pointer   |
+|so_out_full_n         |  in |    1|   ap_fifo  |     so_out    |    pointer   |
+|so_out_write          | out |    1|   ap_fifo  |     so_out    |    pointer   |
 +----------------------+-----+-----+------------+---------------+--------------+
 

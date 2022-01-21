@@ -32,6 +32,8 @@ class AESL_RUNTIME_BC {
     fstream file_token;
     string mName;
 };
+unsigned int ap_apatb_param_in_V_cap_bc;
+static AESL_RUNTIME_BC __xlx_param_in_V_size_Reader("../tv/stream_size/stream_size_in_param_in_V.dat");
 unsigned int ap_apatb_bias_in_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_bias_in_V_size_Reader("../tv/stream_size/stream_size_in_bias_in_V.dat");
 unsigned int ap_apatb_weight_in_V_cap_bc;
@@ -41,8 +43,22 @@ static AESL_RUNTIME_BC __xlx_data_in_V_size_Reader("../tv/stream_size/stream_siz
 unsigned int ap_apatb_conv_out_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_conv_out_V_size_Reader("../tv/stream_size/stream_size_out_conv_out_V.dat");
 struct __cosim_s20__ { char data[32]; };
-extern "C" void Conv_sysarr(__cosim_s20__*, __cosim_s20__*, __cosim_s20__*, __cosim_s20__*);
-extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
+extern "C" void Conv_sysarr(__cosim_s20__*, __cosim_s20__*, __cosim_s20__*, __cosim_s20__*, __cosim_s20__*);
+extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_param_in, volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
+  // collect __xlx_param_in_tmp_vec
+  unsigned __xlx_param_in_V_tmp_Count = 0;
+  unsigned __xlx_param_in_V_read_Size = __xlx_param_in_V_size_Reader.read_size();
+  vector<__cosim_s20__> __xlx_param_in_tmp_vec;
+  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->empty() && __xlx_param_in_V_tmp_Count < __xlx_param_in_V_read_Size) {
+    __xlx_param_in_tmp_vec.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->read());
+    __xlx_param_in_V_tmp_Count++;
+  }
+  ap_apatb_param_in_V_cap_bc = __xlx_param_in_tmp_vec.size();
+  // store input buffer
+  __cosim_s20__* __xlx_param_in_input_buffer= new __cosim_s20__[__xlx_param_in_tmp_vec.size()];
+  for (int i = 0; i < __xlx_param_in_tmp_vec.size(); ++i) {
+    __xlx_param_in_input_buffer[i] = __xlx_param_in_tmp_vec[i];
+  }
   // collect __xlx_bias_in_tmp_vec
   unsigned __xlx_bias_in_V_tmp_Count = 0;
   unsigned __xlx_bias_in_V_read_Size = __xlx_bias_in_V_size_Reader.read_size();
@@ -89,7 +105,7 @@ extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_bias_in, 
   ap_apatb_conv_out_V_cap_bc = __xlx_conv_out_V_size_Reader.read_size();
   __cosim_s20__* __xlx_conv_out_input_buffer= new __cosim_s20__[ap_apatb_conv_out_V_cap_bc];
   // DUT call
-  Conv_sysarr(__xlx_bias_in_input_buffer, __xlx_weight_in_input_buffer, __xlx_data_in_input_buffer, __xlx_conv_out_input_buffer);
+  Conv_sysarr(__xlx_param_in_input_buffer, __xlx_bias_in_input_buffer, __xlx_weight_in_input_buffer, __xlx_data_in_input_buffer, __xlx_conv_out_input_buffer);
   for (unsigned i = 0; i <ap_apatb_conv_out_V_cap_bc; ++i)
     ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->write(__xlx_conv_out_input_buffer[i]);
 }

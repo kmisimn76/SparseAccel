@@ -67341,32 +67341,43 @@ typedef ap_axiu<4*32,0,0,0> k2k_data;
 
 
 void Conv_sysarr(
+        hls::stream<k2k_data> &param_in,
         hls::stream<k2k_data> &bias_in,
         hls::stream<k2k_data> &weight_in,
         hls::stream<k2k_data> &data_in,
         hls::stream<k2k_data> &conv_out);
 
+typedef struct {
+    uint K;
+    uint C;
+    uint WH;
+    uint WH_in;
+    uint RS;
+    uint TILESIZE_W;
+    uint TILESIZE_H;
+    uint TILESIZE_R;
+    uint TILESIZE_S;
+} NPU_PARAM;
+
 void conv_gold(
-     uint K,
-     uint C,
-     uint WH,
-     uint WH_in,
-     uint RS,
+  NPU_PARAM param,
   char *bias,
   char *weight,
   char *data,
   int *gold)
 {
- for(int k=0;k<K;k++){
-  for(int h=0;h<WH;h++){
-   for(int w=0;w<WH;w++){
-    gold[k*WH*WH + h*WH + w] = bias[k];
-    for(int c=0;c<C;c++){
-     for(int r=0;r<RS;r++){
-      for(int s=0;s<RS;s++){
+ for(int k=0;k<param.K;k++){
+  for(int h=0;h<param.WH;h++){
+   for(int w=0;w<param.WH;w++){
+    gold[k*param.WH*param.WH + h*param.WH + w] = bias[k];
+    for(int c=0;c<param.C;c++){
+     for(int r=0;r<param.RS;r++){
+      for(int s=0;s<param.RS;s++){
 
-       gold[k*WH*WH + h*WH + w] += data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
-                * weight[k*C*RS*RS + c*RS*RS + r*RS + s];
+       gold[k*param.WH*param.WH + h*param.WH + w]
+         += data[c*param.WH_in*param.WH_in + (h+r)*param.WH_in + (w+s)]
+          * weight[k*param.C*param.RS*param.RS
+             + c*param.RS*param.RS + r*param.RS + s];
 
 
 
@@ -67385,38 +67396,43 @@ void conv_gold(
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_Conv_sysarr_sw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &);
-# 47 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+void apatb_Conv_sysarr_sw(hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &, hls::stream<ap_axiu<128, 0, 0, 0>, 0> &);
+# 58 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 int conv_test(
-     uint K,
-     uint C,
-     uint WH,
-     uint WH_in,
-     uint RS,
+  NPU_PARAM param,
   char *bias,
   char *weight,
   char *data,
   int *gold
   )
 {
+    hls::stream<k2k_data> param_in;
     hls::stream<k2k_data> bias_in;
     hls::stream<k2k_data> weight_in;
     hls::stream<k2k_data> data_in;
     hls::stream<k2k_data> conv_out;
 
     k2k_data tmp;
-    tmp.data(31,0) = K;
-    bias_in.write(tmp);
-    tmp.data(31,0) = C;
-    bias_in.write(tmp);
-    tmp.data(31,0) = WH;
-    bias_in.write(tmp);
-    tmp.data(31,0) = WH_in;
-    bias_in.write(tmp);
-    tmp.data(31,0) = RS;
-    bias_in.write(tmp);
+    tmp.data(31,0) = param.K;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.C;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.WH;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.WH_in;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.RS;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.TILESIZE_W;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.TILESIZE_H;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.TILESIZE_R;
+    param_in.write(tmp);
+    tmp.data(31,0) = param.TILESIZE_S;
+    param_in.write(tmp);
 
- for (unsigned int ko = 0; ko < K/4; ko++) {
+ for (unsigned int ko = 0; ko < param.K/4; ko++) {
   for (unsigned int ki = 0; ki < 4; ki++) {
    uint k = ko * 4 + ki;
    int v = ki;
@@ -67424,20 +67440,20 @@ int conv_test(
   }
   bias_in.write(tmp);
  }
- for (unsigned int crs = 0; crs < C*RS*RS; crs++) {
-  for (unsigned int ko = 0; ko < K/4; ko++) {
+ for (unsigned int crs = 0; crs < param.C*param.RS*param.RS; crs++) {
+  for (unsigned int ko = 0; ko < param.K/4; ko++) {
    for (unsigned int ki = 0; ki < 4; ki++) {
-    uint ptr = (ko*4 + ki)*C*RS*RS + crs;
+    uint ptr = (ko*4 + ki)*param.C*param.RS*param.RS + crs;
     int v = ki;
     tmp.data((v+1)*8 -1, v*8) = weight[ptr];
    }
    weight_in.write(tmp);
   }
  }
- for (unsigned int wh = 0; wh < WH_in*WH_in; wh++) {
-  for (unsigned int co = 0; co < C/4; co++) {
+ for (unsigned int wh = 0; wh < param.WH_in*param.WH_in; wh++) {
+  for (unsigned int co = 0; co < param.C/4; co++) {
    for (unsigned int ci = 0; ci < 4; ci++) {
-    uint ptr = (co*4 +ci)*WH_in*WH_in + wh;
+    uint ptr = (co*4 +ci)*param.WH_in*param.WH_in + wh;
     int v = ci;
     tmp.data((v+1)*8 -1, v*8) = data[ptr];
    }
@@ -67449,17 +67465,17 @@ int conv_test(
 #ifndef HLS_FASTSIM
 #define Conv_sysarr apatb_Conv_sysarr_sw
 #endif
-# 105 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
-Conv_sysarr(bias_in, weight_in, data_in, conv_out);
+# 121 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+Conv_sysarr(param_in, bias_in, weight_in, data_in, conv_out);
 #undef Conv_sysarr
-# 105 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 121 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
 
-    for(int wh=0;wh<WH*WH;wh++) {
-  for (unsigned int ko = 0; ko < K/4; ko++) {
+    for(int wh=0;wh<param.WH*param.WH;wh++) {
+  for (unsigned int ko = 0; ko < param.K/4; ko++) {
    tmp = conv_out.read();
    for (unsigned int ki = 0; ki < 4; ki++) {
-    uint l = (ko*4 +ki)*WH*WH + wh;
+    uint l = (ko*4 +ki)*param.WH*param.WH + wh;
     int v = ki;
     int output = tmp.data((v+1)*32 -1, v*32);
     if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]); return 1; }
@@ -67469,7 +67485,7 @@ Conv_sysarr(bias_in, weight_in, data_in, conv_out);
     return 0;
 }
 #endif
-# 119 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 135 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
 
 int main()
@@ -67479,43 +67495,48 @@ int main()
  char weight[2048];
  int gold[2048];
 
-    uint K = 16;
-    uint C = 4;
-    uint WH = 7;
-    uint WH_in = 9;
-    uint RS = 3;
+ NPU_PARAM param;
+ param.K = 16;
+ param.C = 4;
+ param.WH = 7;
+ param.WH_in = 9;
+ param.RS = 3;
+ param.TILESIZE_W = 7;
+ param.TILESIZE_H = 7;
+ param.TILESIZE_R = 1;
+ param.TILESIZE_S = 1;
 
     printf("Test Start\n");
 
- for(int k = 0; k < K; k++) bias[k] = 1;
- for(int k = 0; k < K*C*RS*RS; k++) weight[k] = 1;
- for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = 1;
-    conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
-    if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
+ for(int k = 0; k < param.K; k++) bias[k] = 1;
+ for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = 1;
+ for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = 1;
+    conv_gold(param,bias,weight,data,gold);
+    if(conv_test(param,bias,weight,data,gold)==1) return 1;
     printf("Test Case 1 Complete\n");
 
 
- for(int k = 0; k < K; k++) bias[k] = k;
- for(int k = 0; k < K*C*RS*RS; k++) weight[k] = k%256-128;
- for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = 1;
-    conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
-    if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
+ for(int k = 0; k < param.K; k++) bias[k] = k;
+ for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = k%256-128;
+ for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = 1;
+    conv_gold(param,bias,weight,data,gold);
+    if(conv_test(param,bias,weight,data,gold)==1) return 1;
     printf("Test Case 2 Complete\n");
 
 
- for(int k = 0; k < K; k++) bias[k] = k;
- for(int k = 0; k < K*C*RS*RS; k++) weight[k] = 1;
- for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = k%256-128;
-    conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
-    if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
+ for(int k = 0; k < param.K; k++) bias[k] = k;
+ for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = 1;
+ for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = k%256-128;
+    conv_gold(param,bias,weight,data,gold);
+    if(conv_test(param,bias,weight,data,gold)==1) return 1;
     printf("Test Case 3 Complete\n");
 
 
- for(int k = 0; k < K; k++) bias[k] = rand()%256-128;
- for(int k = 0; k < K*C*RS*RS; k++) weight[k] = rand()%256-128;
- for(int k = 0; k < C*WH_in*WH_in; k++) data[k] = rand()%256-128;
-    conv_gold(K,C,WH,WH_in,RS,bias,weight,data,gold);
-    if(conv_test(K,C,WH,WH_in,RS,bias,weight,data,gold)==1) return 1;
+ for(int k = 0; k < param.K; k++) bias[k] = rand()%256-128;
+ for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = rand()%256-128;
+ for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = rand()%256-128;
+    conv_gold(param,bias,weight,data,gold);
+    if(conv_test(param,bias,weight,data,gold)==1) return 1;
     printf("Test Case 4 Complete\n");
 
  return 0;

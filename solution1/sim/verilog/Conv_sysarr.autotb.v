@@ -14,6 +14,8 @@
 `define AUTOTB_MAX_ALLOW_LATENCY  15000000
 `define AUTOTB_CLOCK_PERIOD_DIV2 5.00
 
+`define AESL_FIFO_param_in_V AESL_autofifo_param_in_V
+`define AESL_FIFO_INST_param_in_V AESL_autofifo_inst_param_in_V
 `define AESL_FIFO_bias_in_V AESL_autofifo_bias_in_V
 `define AESL_FIFO_INST_bias_in_V AESL_autofifo_inst_bias_in_V
 `define AESL_FIFO_weight_in_V AESL_autofifo_weight_in_V
@@ -22,10 +24,12 @@
 `define AESL_FIFO_INST_data_in_V AESL_autofifo_inst_data_in_V
 `define AESL_FIFO_conv_out_V AESL_autofifo_conv_out_V
 `define AESL_FIFO_INST_conv_out_V AESL_autofifo_inst_conv_out_V
+`define AUTOTB_TVIN_param_in_V  "../tv/cdatafile/c.Conv_sysarr.autotvin_param_in_V.dat"
 `define AUTOTB_TVIN_bias_in_V  "../tv/cdatafile/c.Conv_sysarr.autotvin_bias_in_V.dat"
 `define AUTOTB_TVIN_weight_in_V  "../tv/cdatafile/c.Conv_sysarr.autotvin_weight_in_V.dat"
 `define AUTOTB_TVIN_data_in_V  "../tv/cdatafile/c.Conv_sysarr.autotvin_data_in_V.dat"
 `define AUTOTB_TVIN_conv_out_V  "../tv/cdatafile/c.Conv_sysarr.autotvin_conv_out_V.dat"
+`define AUTOTB_TVIN_param_in_V_out_wrapc  "../tv/rtldatafile/rtl.Conv_sysarr.autotvin_param_in_V.dat"
 `define AUTOTB_TVIN_bias_in_V_out_wrapc  "../tv/rtldatafile/rtl.Conv_sysarr.autotvin_bias_in_V.dat"
 `define AUTOTB_TVIN_weight_in_V_out_wrapc  "../tv/rtldatafile/rtl.Conv_sysarr.autotvin_weight_in_V.dat"
 `define AUTOTB_TVIN_data_in_V_out_wrapc  "../tv/rtldatafile/rtl.Conv_sysarr.autotvin_data_in_V.dat"
@@ -36,8 +40,9 @@ module `AUTOTB_TOP;
 
 parameter AUTOTB_TRANSACTION_NUM = 4;
 parameter PROGRESS_TIMEOUT = 10000000;
-parameter LATENCY_ESTIMATION = 3247;
-parameter LENGTH_bias_in_V = 9;
+parameter LATENCY_ESTIMATION = -1;
+parameter LENGTH_param_in_V = 9;
+parameter LENGTH_bias_in_V = 4;
 parameter LENGTH_weight_in_V = 144;
 parameter LENGTH_data_in_V = 81;
 parameter LENGTH_conv_out_V = 196;
@@ -75,6 +80,9 @@ wire ap_start;
 wire ap_done;
 wire ap_idle;
 wire ap_ready;
+wire [255 : 0] param_in_V_dout;
+wire  param_in_V_empty_n;
+wire  param_in_V_read;
 wire [255 : 0] bias_in_V_dout;
 wire  bias_in_V_empty_n;
 wire  bias_in_V_read;
@@ -108,6 +116,9 @@ wire ap_rst_n;
     .ap_done(ap_done),
     .ap_idle(ap_idle),
     .ap_ready(ap_ready),
+    .param_in_V_dout(param_in_V_dout),
+    .param_in_V_empty_n(param_in_V_empty_n),
+    .param_in_V_read(param_in_V_read),
     .bias_in_V_dout(bias_in_V_dout),
     .bias_in_V_empty_n(bias_in_V_empty_n),
     .bias_in_V_read(bias_in_V_read),
@@ -151,6 +162,50 @@ assign AESL_continue = tb_continue;
             end
         end
     end
+// Fifo Instantiation param_in_V
+
+wire fifoparam_in_V_rd;
+wire [255 : 0] fifoparam_in_V_dout;
+wire fifoparam_in_V_empty_n;
+wire fifoparam_in_V_ready;
+wire fifoparam_in_V_done;
+reg [31:0] ap_c_n_tvin_trans_num_param_in_V;
+reg param_in_V_ready_reg;
+
+`AESL_FIFO_param_in_V `AESL_FIFO_INST_param_in_V (
+    .clk          (AESL_clock),
+    .reset        (AESL_reset),
+    .if_write     (),
+    .if_din       (),
+    .if_full_n    (),
+    .if_read      (fifoparam_in_V_rd),
+    .if_dout      (fifoparam_in_V_dout),
+    .if_empty_n   (fifoparam_in_V_empty_n),
+    .ready        (fifoparam_in_V_ready),
+    .done         (fifoparam_in_V_done)
+);
+
+// Assignment between dut and fifoparam_in_V
+
+// Assign input of fifoparam_in_V
+assign      fifoparam_in_V_rd        =   param_in_V_read & param_in_V_empty_n;
+assign    fifoparam_in_V_ready   =   param_in_V_ready_reg | ready_initial;
+assign    fifoparam_in_V_done    =   0;
+// Assign input of dut
+assign      param_in_V_dout       =   fifoparam_in_V_dout;
+reg   reg_fifoparam_in_V_empty_n;
+initial begin : gen_reg_fifoparam_in_V_empty_n_process
+    integer proc_rand;
+    reg_fifoparam_in_V_empty_n = fifoparam_in_V_empty_n;
+    while (1) begin
+        @ (fifoparam_in_V_empty_n);
+        reg_fifoparam_in_V_empty_n = fifoparam_in_V_empty_n;
+    end
+end
+
+assign      param_in_V_empty_n    =   reg_fifoparam_in_V_empty_n;
+
+
 // Fifo Instantiation bias_in_V
 
 wire fifobias_in_V_rd;
@@ -388,6 +443,9 @@ initial begin
 end
 
 
+reg end_param_in_V;
+reg [31:0] size_param_in_V;
+reg [31:0] size_param_in_V_backup;
 reg end_bias_in_V;
 reg [31:0] size_bias_in_V;
 reg [31:0] size_bias_in_V_backup;
@@ -506,6 +564,26 @@ begin
           interface_done = 0;
   end
 end
+initial begin : proc_gen_param_in_V_internal_ready
+    integer internal_trans_num;
+    wait(AESL_reset === 0);
+    wait (ready_initial === 1);
+    param_in_V_ready_reg <= 0;
+    @(posedge AESL_clock);
+    internal_trans_num = 1;
+    while(internal_trans_num != AUTOTB_TRANSACTION_NUM + 1) begin
+        if (ap_c_n_tvin_trans_num_param_in_V > internal_trans_num) begin
+            param_in_V_ready_reg <= 1;
+            @(posedge AESL_clock);
+            param_in_V_ready_reg <= 0;
+            internal_trans_num = internal_trans_num + 1;
+        end
+        else begin
+            @(posedge AESL_clock);
+        end
+    end
+    param_in_V_ready_reg <= 0;
+end
 initial begin : proc_gen_bias_in_V_internal_ready
     integer internal_trans_num;
     wait(AESL_reset === 0);
@@ -566,6 +644,91 @@ initial begin : proc_gen_data_in_V_internal_ready
     end
     data_in_V_ready_reg <= 0;
 end
+    
+    `define STREAM_SIZE_IN_param_in_V "../tv/stream_size/stream_size_in_param_in_V.dat"
+    
+    initial begin : gen_ap_c_n_tvin_trans_num_param_in_V
+        integer fp_param_in_V;
+        reg [127:0] token_param_in_V;
+        integer ret;
+        
+        ap_c_n_tvin_trans_num_param_in_V = 0;
+        end_param_in_V = 0;
+        wait (AESL_reset === 0);
+        
+        fp_param_in_V = $fopen(`STREAM_SIZE_IN_param_in_V, "r");
+        if(fp_param_in_V == 0) begin
+            $display("Failed to open file \"%s\"!", `STREAM_SIZE_IN_param_in_V);
+            $finish;
+        end
+        read_token(fp_param_in_V, token_param_in_V); // should be [[[runtime]]]
+        if (token_param_in_V != "[[[runtime]]]") begin
+            $display("ERROR: token_param_in_V != \"[[[runtime]]]\"");
+            $finish;
+        end
+        size_param_in_V = 0;
+        size_param_in_V_backup = 0;
+        while (size_param_in_V == 0 && end_param_in_V == 0) begin
+            ap_c_n_tvin_trans_num_param_in_V = ap_c_n_tvin_trans_num_param_in_V + 1;
+            read_token(fp_param_in_V, token_param_in_V); // should be [[transaction]] or [[[/runtime]]]
+            if (token_param_in_V == "[[transaction]]") begin
+                read_token(fp_param_in_V, token_param_in_V); // should be transaction number
+                read_token(fp_param_in_V, token_param_in_V); // should be size for hls::stream
+                ret = $sscanf(token_param_in_V, "%d", size_param_in_V);
+                if (size_param_in_V > 0) begin
+                    size_param_in_V_backup = size_param_in_V;
+                end
+                read_token(fp_param_in_V, token_param_in_V); // should be [[/transaction]]
+            end else if (token_param_in_V == "[[[/runtime]]]") begin
+                $fclose(fp_param_in_V);
+                end_param_in_V = 1;
+            end else begin
+                $display("ERROR: unknown token_param_in_V");
+                $finish;
+            end
+        end
+        forever begin
+            @ (posedge AESL_clock);
+            if (end_param_in_V == 0) begin
+                if (param_in_V_read == 1 && param_in_V_empty_n == 1) begin
+                    if (size_param_in_V > 0) begin
+                        size_param_in_V = size_param_in_V - 1;
+                        while (size_param_in_V == 0 && end_param_in_V == 0) begin
+                            ap_c_n_tvin_trans_num_param_in_V = ap_c_n_tvin_trans_num_param_in_V + 1;
+                            read_token(fp_param_in_V, token_param_in_V); // should be [[transaction]] or [[[/runtime]]]
+                            if (token_param_in_V == "[[transaction]]") begin
+                                read_token(fp_param_in_V, token_param_in_V); // should be transaction number
+                                read_token(fp_param_in_V, token_param_in_V); // should be size for hls::stream
+                                ret = $sscanf(token_param_in_V, "%d", size_param_in_V);
+                                if (size_param_in_V > 0) begin
+                                    size_param_in_V_backup = size_param_in_V;
+                                end
+                                read_token(fp_param_in_V, token_param_in_V); // should be [[/transaction]]
+                            end else if (token_param_in_V == "[[[/runtime]]]") begin
+                                size_param_in_V = size_param_in_V_backup;
+                                $fclose(fp_param_in_V);
+                                end_param_in_V = 1;
+                            end else begin
+                                $display("ERROR: unknown token_param_in_V");
+                                $finish;
+                            end
+                        end
+                    end
+                end
+            end else begin
+                if (param_in_V_read == 1 && param_in_V_empty_n == 1) begin
+                    if (size_param_in_V > 0) begin
+                        size_param_in_V = size_param_in_V - 1;
+                        if (size_param_in_V == 0) begin
+                            ap_c_n_tvin_trans_num_param_in_V = ap_c_n_tvin_trans_num_param_in_V + 1;
+                            size_param_in_V = size_param_in_V_backup;
+                        end
+                    end
+                end
+            end
+        end
+    end
+    
     
     `define STREAM_SIZE_IN_bias_in_V "../tv/stream_size/stream_size_in_bias_in_V.dat"
     

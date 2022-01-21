@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runWeight2Reg'" level="0">
-<item name = "Date">Thu Jan 20 09:42:07 2022
+<item name = "Date">Sat Jan 22 00:49:22 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_14_1">40, 40, 10, -, -, 4, no</column>
-<column name=" + VITIS_LOOP_15_2">4, 4, 1, -, -, 4, no</column>
+<column name="- VITIS_LOOP_19_1">40, 40, 10, -, -, 4, no</column>
+<column name=" + VITIS_LOOP_20_2">4, 4, 1, -, -, 4, no</column>
 </table>
 </item>
 </section>
@@ -65,46 +65,46 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_9s_9s_9_1_1_U21">mul_9s_9s_9_1_1, 0, 0, 0, 49, 0</column>
-<column name="mul_9s_9s_9_1_1_U22">mul_9s_9s_9_1_1, 0, 0, 0, 49, 0</column>
-<column name="mux_42_1_1_1_U25">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U27">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U29">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U31">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U33">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U34">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U37">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U39">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mul_9s_9s_9_1_1_U36">mul_9s_9s_9_1_1, 0, 0, 0, 49, 0</column>
+<column name="mul_9s_9s_9_1_1_U37">mul_9s_9s_9_1_1, 0, 0, 0, 49, 0</column>
 <column name="mux_42_1_1_1_U40">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_1_1_1_U42">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_1_1_1_U44">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_1_1_1_U46">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U48">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_1_1_1_U49">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U51">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_1_1_1_U53">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U52">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U54">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_1_1_1_U55">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U23">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U24">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U26">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U28">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U30">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U32">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U35">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U36">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U57">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U59">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U61">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U64">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U66">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U68">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_1_1_1_U70">mux_42_1_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U38">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U39">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U41">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U43">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U45">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U47">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U48">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 <column name="mux_42_8_1_1_U50">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U52">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
-<column name="mux_42_8_1_1_U54">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U51">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U53">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U56">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U58">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U60">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U62">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U63">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U65">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U67">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
+<column name="mux_42_8_1_1_U69">mux_42_8_1_1, 0, 0, 0, 17, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
 <keys size="3">Instance, Module, Expression</keys>
-<column name="ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U56">ama_addmuladd_9ns_9ns_9s_9ns_9_4_1, i0 + i1 * (i2 + i3)</column>
+<column name="ama_addmuladd_9ns_9ns_9s_9ns_9_4_1_U71">ama_addmuladd_9ns_9ns_9s_9ns_9_4_1, i0 + i1 * (i2 + i3)</column>
 </table>
 </item>
 <item name = "Memory"><table name="" hasTotal="1">
@@ -117,12 +117,12 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln14_fu_506_p2">+, 0, 0, 11, 3, 1</column>
-<column name="add_ln15_fu_644_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln19_fu_506_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln20_fu_644_p2">+, 0, 0, 11, 3, 1</column>
 <column name="mul61_i_i_fu_530_p1">+, 0, 0, 23, 9, 9</column>
 <column name="tmp_fu_520_p2">+, 0, 0, 23, 9, 9</column>
-<column name="icmp_ln14_fu_500_p2">icmp, 0, 0, 9, 3, 4</column>
-<column name="icmp_ln15_fu_638_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln19_fu_500_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln20_fu_638_p2">icmp, 0, 0, 9, 3, 4</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
@@ -132,15 +132,15 @@
 <column name="ap_done">9, 2, 1, 2</column>
 <column name="ci_reg_328">9, 2, 3, 6</column>
 <column name="co_1_blk_n">9, 2, 1, 2</column>
-<column name="empty_15_blk_n">9, 2, 1, 2</column>
+<column name="empty_19_blk_n">9, 2, 1, 2</column>
 <column name="empty_blk_n">9, 2, 1, 2</column>
 <column name="ki_reg_339">9, 2, 3, 6</column>
 <column name="ko_2_blk_n">9, 2, 1, 2</column>
 <column name="ko_2_out_blk_n">9, 2, 1, 2</column>
-<column name="r_blk_n">9, 2, 1, 2</column>
-<column name="r_out_blk_n">9, 2, 1, 2</column>
-<column name="s_blk_n">9, 2, 1, 2</column>
-<column name="s_out_blk_n">9, 2, 1, 2</column>
+<column name="ro_blk_n">9, 2, 1, 2</column>
+<column name="ro_out_blk_n">9, 2, 1, 2</column>
+<column name="so_blk_n">9, 2, 1, 2</column>
+<column name="so_out_blk_n">9, 2, 1, 2</column>
 <column name="write_flag12_0_fu_188">9, 2, 1, 2</column>
 <column name="write_flag15_0_fu_212">9, 2, 1, 2</column>
 <column name="write_flag18_0_fu_204">9, 2, 1, 2</column>
@@ -161,17 +161,17 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="add_ln14_reg_1533">3, 0, 3, 0</column>
+<column name="add_ln19_reg_1533">3, 0, 3, 0</column>
 <column name="ap_CS_fsm">7, 0, 7, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
 <column name="ci_reg_328">3, 0, 3, 0</column>
-<column name="empty_27_reg_1509">9, 0, 9, 0</column>
-<column name="empty_28_reg_1538">2, 0, 2, 0</column>
+<column name="empty_36_reg_1509">9, 0, 9, 0</column>
+<column name="empty_37_reg_1538">2, 0, 2, 0</column>
 <column name="ki_reg_339">3, 0, 3, 0</column>
 <column name="mul2_i_i_reg_1520">7, 0, 9, 2</column>
 <column name="mul4_i_i_reg_1525">9, 0, 9, 0</column>
 <column name="tmp_2_reg_1514">9, 0, 9, 0</column>
-<column name="trunc_ln13_reg_1504">9, 0, 9, 0</column>
+<column name="trunc_ln18_reg_1504">9, 0, 9, 0</column>
 <column name="weight_l2_0_load_reg_1594">8, 0, 8, 0</column>
 <column name="weight_l2_1_load_reg_1599">8, 0, 8, 0</column>
 <column name="weight_l2_2_load_reg_1604">8, 0, 8, 0</column>
@@ -252,9 +252,9 @@
 <column name="weight_l2_3_address0">out, 9, ap_memory, weight_l2_3, array</column>
 <column name="weight_l2_3_ce0">out, 1, ap_memory, weight_l2_3, array</column>
 <column name="weight_l2_3_q0">in, 8, ap_memory, weight_l2_3, array</column>
-<column name="empty_15_dout">in, 9, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_empty_n">in, 1, ap_fifo, empty_15, pointer</column>
-<column name="empty_15_read">out, 1, ap_fifo, empty_15, pointer</column>
+<column name="empty_19_dout">in, 9, ap_fifo, empty_19, pointer</column>
+<column name="empty_19_empty_n">in, 1, ap_fifo, empty_19, pointer</column>
+<column name="empty_19_read">out, 1, ap_fifo, empty_19, pointer</column>
 <column name="empty_dout">in, 9, ap_fifo, empty, pointer</column>
 <column name="empty_empty_n">in, 1, ap_fifo, empty, pointer</column>
 <column name="empty_read">out, 1, ap_fifo, empty, pointer</column>
@@ -264,21 +264,21 @@
 <column name="co_1_dout">in, 7, ap_fifo, co_1, pointer</column>
 <column name="co_1_empty_n">in, 1, ap_fifo, co_1, pointer</column>
 <column name="co_1_read">out, 1, ap_fifo, co_1, pointer</column>
-<column name="r_dout">in, 32, ap_fifo, r, pointer</column>
-<column name="r_empty_n">in, 1, ap_fifo, r, pointer</column>
-<column name="r_read">out, 1, ap_fifo, r, pointer</column>
-<column name="s_dout">in, 32, ap_fifo, s, pointer</column>
-<column name="s_empty_n">in, 1, ap_fifo, s, pointer</column>
-<column name="s_read">out, 1, ap_fifo, s, pointer</column>
+<column name="ro_dout">in, 32, ap_fifo, ro, pointer</column>
+<column name="ro_empty_n">in, 1, ap_fifo, ro, pointer</column>
+<column name="ro_read">out, 1, ap_fifo, ro, pointer</column>
+<column name="so_dout">in, 32, ap_fifo, so, pointer</column>
+<column name="so_empty_n">in, 1, ap_fifo, so, pointer</column>
+<column name="so_read">out, 1, ap_fifo, so, pointer</column>
 <column name="ko_2_out_din">out, 9, ap_fifo, ko_2_out, pointer</column>
 <column name="ko_2_out_full_n">in, 1, ap_fifo, ko_2_out, pointer</column>
 <column name="ko_2_out_write">out, 1, ap_fifo, ko_2_out, pointer</column>
-<column name="r_out_din">out, 32, ap_fifo, r_out, pointer</column>
-<column name="r_out_full_n">in, 1, ap_fifo, r_out, pointer</column>
-<column name="r_out_write">out, 1, ap_fifo, r_out, pointer</column>
-<column name="s_out_din">out, 32, ap_fifo, s_out, pointer</column>
-<column name="s_out_full_n">in, 1, ap_fifo, s_out, pointer</column>
-<column name="s_out_write">out, 1, ap_fifo, s_out, pointer</column>
+<column name="ro_out_din">out, 32, ap_fifo, ro_out, pointer</column>
+<column name="ro_out_full_n">in, 1, ap_fifo, ro_out, pointer</column>
+<column name="ro_out_write">out, 1, ap_fifo, ro_out, pointer</column>
+<column name="so_out_din">out, 32, ap_fifo, so_out, pointer</column>
+<column name="so_out_full_n">in, 1, ap_fifo, so_out, pointer</column>
+<column name="so_out_write">out, 1, ap_fifo, so_out, pointer</column>
 </table>
 </item>
 </section>
