@@ -10,7 +10,7 @@ entity Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0  is
     generic (
         DataWidth    : integer := 8;
         AddressRange : integer := 32;
-        AddressWidth : integer := 9;
+        AddressWidth : integer := 8;
         BufferCount  : integer := 2;
         IndexWidth   : integer := 1
     );
@@ -46,12 +46,12 @@ port (
     clk      : in  std_logic;
     reset    : in  std_logic;
     ce0      : in  std_logic;
-    address0 : in  std_logic_vector(9 downto 0);
+    address0 : in  std_logic_vector(8 downto 0);
     we0      : in  std_logic;
     d0       : in  std_logic_vector(7 downto 0);
     q0       : out std_logic_vector(7 downto 0);
     ce1      : in  std_logic;
-    address1 : in  std_logic_vector(9 downto 0);
+    address1 : in  std_logic_vector(8 downto 0);
     we1      : in  std_logic;
     d1       : in  std_logic_vector(7 downto 0);
     q1       : out std_logic_vector(7 downto 0)

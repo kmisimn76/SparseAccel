@@ -6,8 +6,8 @@
 module Conv_sysarr_bias_l2_0_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 8;
-parameter AWIDTH = 9;
-parameter MEM_SIZE = 512;
+parameter AWIDTH = 4;
+parameter MEM_SIZE = 16;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -16,7 +16,7 @@ input we0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-(* ram_style = "block" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
 
 
@@ -44,8 +44,8 @@ module Conv_sysarr_bias_l2_0(
     q0);
 
 parameter DataWidth = 32'd8;
-parameter AddressRange = 32'd512;
-parameter AddressWidth = 32'd9;
+parameter AddressRange = 32'd16;
+parameter AddressWidth = 32'd4;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

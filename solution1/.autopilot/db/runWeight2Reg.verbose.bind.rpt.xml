@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runWeight2Reg'" level="0">
-<item name = "Date">Sat Jan 22 00:49:20 2022
+<item name = "Date">Sat Jan 22 01:13:12 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 4.970 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.947 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">41, 41, 0.410 us, 0.410 us, 41, 41, none</column>
+<column name="">33, 33, 0.330 us, 0.330 us, 33, 33, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,7 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_19_1">40, 40, 10, -, -, 4, no</column>
+<column name="- VITIS_LOOP_19_1">32, 32, 8, -, -, 4, no</column>
 <column name=" + VITIS_LOOP_20_2">4, 4, 1, -, -, 4, no</column>
 </table>
 </item>

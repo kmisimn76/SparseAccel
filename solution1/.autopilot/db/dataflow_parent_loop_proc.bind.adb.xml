@@ -37,9 +37,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="32" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:0 %p_read720 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read7
+newFuncRoot:0 %p_read720 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read7
 
 ]]></Node>
 <StgValue><ssdm name="p_read720"/></StgValue>
@@ -82,9 +82,9 @@ newFuncRoot:2 %p_read518 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read5
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="35" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="35" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:3 %p_read417 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read4
+newFuncRoot:3 %p_read417 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read4
 
 ]]></Node>
 <StgValue><ssdm name="p_read417"/></StgValue>
@@ -97,9 +97,9 @@ newFuncRoot:3 %p_read417 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read4
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="36" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:4 %wo_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %wo
+newFuncRoot:4 %wo_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %wo
 
 ]]></Node>
 <StgValue><ssdm name="wo_read"/></StgValue>
@@ -112,9 +112,9 @@ newFuncRoot:4 %wo_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %wo
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="37" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:5 %ho_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ho
+newFuncRoot:5 %ho_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %ho
 
 ]]></Node>
 <StgValue><ssdm name="ho_read"/></StgValue>
@@ -172,9 +172,9 @@ newFuncRoot:8 %ro_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %ro
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="41" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:9 %co_1_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %co_1
+newFuncRoot:9 %co_1_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %co_1
 
 ]]></Node>
 <StgValue><ssdm name="co_1_read"/></StgValue>
@@ -187,9 +187,9 @@ newFuncRoot:9 %co_1_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %co_1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="42" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:10 %ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2
+newFuncRoot:10 %ko_2_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %ko_2
 
 ]]></Node>
 <StgValue><ssdm name="ko_2_read"/></StgValue>
@@ -202,9 +202,9 @@ newFuncRoot:10 %ko_2_read = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %ko_2
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="43" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:11 %p_read19 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1
+newFuncRoot:11 %p_read19 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read1
 
 ]]></Node>
 <StgValue><ssdm name="p_read19"/></StgValue>
@@ -217,9 +217,9 @@ newFuncRoot:11 %p_read19 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="9" op_0_bw="9" op_1_bw="9">
+<Node id="44" bw="20" op_0_bw="20" op_1_bw="20">
 <![CDATA[
-newFuncRoot:12 %p_read_22 = read i9 @_ssdm_op_Read.ap_auto.i9, i9 %p_read
+newFuncRoot:12 %p_read_22 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read
 
 ]]></Node>
 <StgValue><ssdm name="p_read_22"/></StgValue>
@@ -341,9 +341,9 @@ newFuncRoot:14 %br_ln0 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="9" op_6_bw="9" op_7_bw="9" op_8_bw="9" op_9_bw="32" op_10_bw="32" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="32" op_16_bw="32" op_17_bw="9" op_18_bw="9" op_19_bw="9" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="9" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="20" op_6_bw="20" op_7_bw="20" op_8_bw="20" op_9_bw="32" op_10_bw="32" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="32" op_16_bw="32" op_17_bw="20" op_18_bw="20" op_19_bw="20" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="20" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32">
 <![CDATA[
-.split:2 %call_ln281 = call void @dataflow_in_loop_LOOP_S_OUTER, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_22, i9 %p_read19, i9 %ko_2_read, i9 %co_1_read, i32 %ro_read, i32 %so, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read213, i32 %p_read314, i9 %ho_read, i9 %wo_read, i9 %p_read417, i32 %p_read518, i32 %p_read619, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i9 %p_read720, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0
+.split:2 %call_ln281 = call void @dataflow_in_loop_LOOP_S_OUTER, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i20 %p_read_22, i20 %p_read19, i20 %ko_2_read, i20 %co_1_read, i32 %ro_read, i32 %so, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read213, i32 %p_read314, i20 %ho_read, i20 %wo_read, i20 %p_read417, i32 %p_read518, i32 %p_read619, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i20 %p_read720, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0
 
 ]]></Node>
 <StgValue><ssdm name="call_ln281"/></StgValue>
@@ -408,9 +408,9 @@ newFuncRoot:14 %br_ln0 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="56" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="9" op_6_bw="9" op_7_bw="9" op_8_bw="9" op_9_bw="32" op_10_bw="32" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="32" op_16_bw="32" op_17_bw="9" op_18_bw="9" op_19_bw="9" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="9" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32">
+<Node id="56" bw="0" op_0_bw="0" op_1_bw="8" op_2_bw="8" op_3_bw="8" op_4_bw="8" op_5_bw="20" op_6_bw="20" op_7_bw="20" op_8_bw="20" op_9_bw="32" op_10_bw="32" op_11_bw="8" op_12_bw="8" op_13_bw="8" op_14_bw="8" op_15_bw="32" op_16_bw="32" op_17_bw="20" op_18_bw="20" op_19_bw="20" op_20_bw="32" op_21_bw="32" op_22_bw="32" op_23_bw="32" op_24_bw="32" op_25_bw="32" op_26_bw="20" op_27_bw="32" op_28_bw="32" op_29_bw="32" op_30_bw="32">
 <![CDATA[
-.split:2 %call_ln281 = call void @dataflow_in_loop_LOOP_S_OUTER, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i9 %p_read_22, i9 %p_read19, i9 %ko_2_read, i9 %co_1_read, i32 %ro_read, i32 %so, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read213, i32 %p_read314, i9 %ho_read, i9 %wo_read, i9 %p_read417, i32 %p_read518, i32 %p_read619, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i9 %p_read720, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0
+.split:2 %call_ln281 = call void @dataflow_in_loop_LOOP_S_OUTER, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i20 %p_read_22, i20 %p_read19, i20 %ko_2_read, i20 %co_1_read, i32 %ro_read, i32 %so, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read213, i32 %p_read314, i20 %ho_read, i20 %wo_read, i20 %p_read417, i32 %p_read518, i32 %p_read619, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i20 %p_read720, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0
 
 ]]></Node>
 <StgValue><ssdm name="call_ln281"/></StgValue>
@@ -546,7 +546,7 @@ newFuncRoot:14 %br_ln0 = br void
 
 
 <dataflows>
-<dataflow id="66" from="_ssdm_op_Read.ap_auto.i9" to="p_read720" fromId="65" toId="4">
+<dataflow id="66" from="_ssdm_op_Read.ap_auto.i20" to="p_read720" fromId="65" toId="4">
 </dataflow>
 <dataflow id="67" from="p_read7" to="p_read720" fromId="60" toId="4">
 </dataflow>
@@ -558,15 +558,15 @@ newFuncRoot:14 %br_ln0 = br void
 </dataflow>
 <dataflow id="72" from="p_read5" to="p_read518" fromId="54" toId="6">
 </dataflow>
-<dataflow id="73" from="_ssdm_op_Read.ap_auto.i9" to="p_read417" fromId="65" toId="7">
+<dataflow id="73" from="_ssdm_op_Read.ap_auto.i20" to="p_read417" fromId="65" toId="7">
 </dataflow>
 <dataflow id="74" from="p_read4" to="p_read417" fromId="53" toId="7">
 </dataflow>
-<dataflow id="75" from="_ssdm_op_Read.ap_auto.i9" to="wo_read" fromId="65" toId="8">
+<dataflow id="75" from="_ssdm_op_Read.ap_auto.i20" to="wo_read" fromId="65" toId="8">
 </dataflow>
 <dataflow id="76" from="wo" to="wo_read" fromId="52" toId="8">
 </dataflow>
-<dataflow id="77" from="_ssdm_op_Read.ap_auto.i9" to="ho_read" fromId="65" toId="9">
+<dataflow id="77" from="_ssdm_op_Read.ap_auto.i20" to="ho_read" fromId="65" toId="9">
 </dataflow>
 <dataflow id="78" from="ho" to="ho_read" fromId="51" toId="9">
 </dataflow>
@@ -582,19 +582,19 @@ newFuncRoot:14 %br_ln0 = br void
 </dataflow>
 <dataflow id="84" from="ro" to="ro_read" fromId="44" toId="12">
 </dataflow>
-<dataflow id="85" from="_ssdm_op_Read.ap_auto.i9" to="co_1_read" fromId="65" toId="13">
+<dataflow id="85" from="_ssdm_op_Read.ap_auto.i20" to="co_1_read" fromId="65" toId="13">
 </dataflow>
 <dataflow id="86" from="co_1" to="co_1_read" fromId="43" toId="13">
 </dataflow>
-<dataflow id="87" from="_ssdm_op_Read.ap_auto.i9" to="ko_2_read" fromId="65" toId="14">
+<dataflow id="87" from="_ssdm_op_Read.ap_auto.i20" to="ko_2_read" fromId="65" toId="14">
 </dataflow>
 <dataflow id="88" from="ko_2" to="ko_2_read" fromId="42" toId="14">
 </dataflow>
-<dataflow id="89" from="_ssdm_op_Read.ap_auto.i9" to="p_read19" fromId="65" toId="15">
+<dataflow id="89" from="_ssdm_op_Read.ap_auto.i20" to="p_read19" fromId="65" toId="15">
 </dataflow>
 <dataflow id="90" from="p_read1" to="p_read19" fromId="41" toId="15">
 </dataflow>
-<dataflow id="91" from="_ssdm_op_Read.ap_auto.i9" to="p_read_22" fromId="65" toId="16">
+<dataflow id="91" from="_ssdm_op_Read.ap_auto.i20" to="p_read_22" fromId="65" toId="16">
 </dataflow>
 <dataflow id="92" from="p_read" to="p_read_22" fromId="40" toId="16">
 </dataflow>

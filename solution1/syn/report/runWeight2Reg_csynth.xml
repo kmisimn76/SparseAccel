@@ -18,25 +18,25 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>4.970</EstimatedClockPeriod>
+<EstimatedClockPeriod>6.947</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>41</Best-caseLatency>
-<Average-caseLatency>41</Average-caseLatency>
-<Worst-caseLatency>41</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.410 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.410 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.410 us</Worst-caseRealTimeLatency>
-<Interval-min>41</Interval-min>
-<Interval-max>41</Interval-max>
+<Best-caseLatency>33</Best-caseLatency>
+<Average-caseLatency>33</Average-caseLatency>
+<Worst-caseLatency>33</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.330 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.330 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.330 us</Worst-caseRealTimeLatency>
+<Interval-min>33</Interval-min>
+<Interval-max>33</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_19_1>
 <TripCount>4</TripCount>
-<Latency>40</Latency>
-<AbsoluteTimeLatency>400</AbsoluteTimeLatency>
-<IterationLatency>10</IterationLatency>
+<Latency>32</Latency>
+<AbsoluteTimeLatency>320</AbsoluteTimeLatency>
+<IterationLatency>8</IterationLatency>
 <VITIS_LOOP_20_2>
 <TripCount>4</TripCount>
 <Latency>4</Latency>
@@ -49,9 +49,9 @@
 
 <AreaEstimates>
 <Resources>
-<DSP>1</DSP>
-<FF>238</FF>
-<LUT>1040</LUT>
+<DSP>6</DSP>
+<FF>311</FF>
+<LUT>1012</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
@@ -326,7 +326,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -359,7 +359,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -392,7 +392,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -425,7 +425,7 @@
 <IOProtocol>ap_memory</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>address</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -458,7 +458,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -491,7 +491,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -524,7 +524,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -557,7 +557,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>7</Bits>
+<Bits>18</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>
@@ -656,7 +656,7 @@
 <IOProtocol>ap_fifo</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>9</Bits>
+<Bits>20</Bits>
 <Attribute>control</Attribute>
 </RtlPorts>
 <RtlPorts>

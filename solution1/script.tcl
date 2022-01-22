@@ -12,7 +12,7 @@ open_solution "solution1" -flow_target vivado
 set_part {xcu200-fsgd2104-2-e}
 create_clock -period 10 -name default
 source "./Systolic_Array_PCNN_based/solution1/directives.tcl"
-csim_design
+csim_design -O
 csynth_design
 cosim_design -O -trace_level all
 export_design -rtl verilog -format ip_catalog

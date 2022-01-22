@@ -67475,13 +67475,13 @@ int main()
  int gold[2048];
 
  NPU_PARAM param;
- param.K = 16;
- param.C = 4;
- param.WH = 7;
- param.WH_in = 9;
+ param.K = 512;
+ param.C = 512;
+ param.WH = 28;
+ param.WH_in = 30;
  param.RS = 3;
- param.TILESIZE_W = 7;
- param.TILESIZE_H = 7;
+ param.TILESIZE_W = 14;
+ param.TILESIZE_H = 14;
  param.TILESIZE_R = 1;
  param.TILESIZE_S = 1;
 

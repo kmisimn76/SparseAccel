@@ -1,17 +1,17 @@
 # This script segment is generated automatically by AutoPilot
 
 set id 36
-set name Conv_sysarr_mul_9s_9s_9_1_1
+set name Conv_sysarr_mul_20s_20s_20_1_1
 set corename simcore_mul
 set op mul
 set stage_num 1
 set max_latency -1
 set registered_input 1
-set in0_width 9
+set in0_width 20
 set in0_signed 1
-set in1_width 9
+set in1_width 20
 set in1_signed 1
-set out_width 9
+set out_width 20
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
 eval "ap_gen_simcore_mul { \
@@ -67,7 +67,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_multicycle_mul, che
 }
 
 
-set id 38
+set id 39
 set name Conv_sysarr_mux_42_8_1_1
 set corename simcore_mux
 set op mux
@@ -152,7 +152,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 40
+set id 41
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -237,7 +237,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 42
+set id 43
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -322,7 +322,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 44
+set id 45
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -407,7 +407,7 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your
 }
 
 
-set id 46
+set id 47
 set name Conv_sysarr_mux_42_1_1_1
 set corename simcore_mux
 set op mux
@@ -488,112 +488,6 @@ eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
 }"
 } else {
 puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
-}
-}
-
-
-set id 71
-set name Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
-set corename simcore_ama
-set op ama
-set stage_num 4
-set max_latency -1
-set registered_input 1
-set clk_width 1
-set clk_signed 0
-set reset_width 1
-set reset_signed 0
-set in0_width 9
-set in0_signed 0
-set in1_width 9
-set in1_signed 0
-set in2_width 9
-set in2_signed 1
-set in3_width 9
-set in3_signed 0
-set ce_width 1
-set ce_signed 0
-set out_width 9
-set exp (i0+i1)*i2+i3
-set arg_lists {i0 {9 0 +} i1 {9 0 +} s {9 1 +} i2 {9 1 +} m {9 1 +} i3 {9 0 +} p {9 1 +} c_expval {c} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_ama] == "ap_gen_simcore_ama"} {
-eval "ap_gen_simcore_ama { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    in3_width ${in3_width} \
-    in3_signed ${in3_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_ama, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op ama
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    clk_width ${clk_width} \
-    clk_signed ${clk_signed} \
-    reset_width ${reset_width} \
-    reset_signed ${reset_signed} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    in3_width ${in3_width} \
-    in3_signed ${in3_signed} \
-    ce_width ${ce_width} \
-    ce_signed ${ce_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
 }
 }
 
@@ -609,14 +503,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 79 \
+    id 78 \
     name weight_l2_0 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_0 \
     op interface \
-    ports { weight_l2_0_address0 { O 9 vector } weight_l2_0_ce0 { O 1 bit } weight_l2_0_q0 { I 8 vector } } \
+    ports { weight_l2_0_address0 { O 20 vector } weight_l2_0_ce0 { O 1 bit } weight_l2_0_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_0'"
@@ -628,14 +522,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 80 \
+    id 79 \
     name weight_l2_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_1 \
     op interface \
-    ports { weight_l2_1_address0 { O 9 vector } weight_l2_1_ce0 { O 1 bit } weight_l2_1_q0 { I 8 vector } } \
+    ports { weight_l2_1_address0 { O 20 vector } weight_l2_1_ce0 { O 1 bit } weight_l2_1_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_1'"
@@ -647,14 +541,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 81 \
+    id 80 \
     name weight_l2_2 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_2 \
     op interface \
-    ports { weight_l2_2_address0 { O 9 vector } weight_l2_2_ce0 { O 1 bit } weight_l2_2_q0 { I 8 vector } } \
+    ports { weight_l2_2_address0 { O 20 vector } weight_l2_2_ce0 { O 1 bit } weight_l2_2_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_2'"
@@ -666,14 +560,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 82 \
+    id 81 \
     name weight_l2_3 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_3 \
     op interface \
-    ports { weight_l2_3_address0 { O 9 vector } weight_l2_3_ce0 { O 1 bit } weight_l2_3_q0 { I 8 vector } } \
+    ports { weight_l2_3_address0 { O 20 vector } weight_l2_3_ce0 { O 1 bit } weight_l2_3_q0 { I 8 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_3'"
@@ -684,7 +578,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 83 \
+    id 82 \
     name empty_19 \
     type fifo \
     dir I \
@@ -692,14 +586,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_empty_19 \
     op interface \
-    ports { empty_19_dout { I 9 vector } empty_19_empty_n { I 1 bit } empty_19_read { O 1 bit } } \
+    ports { empty_19_dout { I 20 vector } empty_19_empty_n { I 1 bit } empty_19_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 84 \
+    id 83 \
     name empty \
     type fifo \
     dir I \
@@ -707,14 +601,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_empty \
     op interface \
-    ports { empty_dout { I 9 vector } empty_empty_n { I 1 bit } empty_read { O 1 bit } } \
+    ports { empty_dout { I 20 vector } empty_empty_n { I 1 bit } empty_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 85 \
+    id 84 \
     name ko_2 \
     type fifo \
     dir I \
@@ -722,14 +616,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_ko_2 \
     op interface \
-    ports { ko_2_dout { I 9 vector } ko_2_empty_n { I 1 bit } ko_2_read { O 1 bit } } \
+    ports { ko_2_dout { I 20 vector } ko_2_empty_n { I 1 bit } ko_2_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 86 \
+    id 85 \
     name co_1 \
     type fifo \
     dir I \
@@ -737,14 +631,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_co_1 \
     op interface \
-    ports { co_1_dout { I 7 vector } co_1_empty_n { I 1 bit } co_1_read { O 1 bit } } \
+    ports { co_1_dout { I 18 vector } co_1_empty_n { I 1 bit } co_1_read { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 87 \
+    id 86 \
     name ro \
     type fifo \
     dir I \
@@ -759,7 +653,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 88 \
+    id 87 \
     name so \
     type fifo \
     dir I \
@@ -774,7 +668,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 89 \
+    id 88 \
     name ko_2_out \
     type fifo \
     dir O \
@@ -782,14 +676,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_ko_2_out \
     op interface \
-    ports { ko_2_out_din { O 9 vector } ko_2_out_full_n { I 1 bit } ko_2_out_write { O 1 bit } } \
+    ports { ko_2_out_din { O 20 vector } ko_2_out_full_n { I 1 bit } ko_2_out_write { O 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 90 \
+    id 89 \
     name ro_out \
     type fifo \
     dir O \
@@ -804,7 +698,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 91 \
+    id 90 \
     name so_out \
     type fifo \
     dir O \

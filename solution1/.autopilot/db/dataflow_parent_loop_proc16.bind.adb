@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>TILES_R</name>
+						<name>TILES_W</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -44,7 +44,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>TILES_S</name>
+						<name>TILES_R</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -73,355 +73,7 @@
 					<Obj>
 						<type>1</type>
 						<id>3</id>
-						<name>weight_l2_0</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_4">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>4</id>
-						<name>weight_l2_1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_5">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>5</id>
-						<name>weight_l2_2</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_6">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>6</id>
-						<name>weight_l2_3</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_7">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>7</id>
-						<name>p_read</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_8">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>8</id>
-						<name>p_read1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_9">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>9</id>
-						<name>ko_2</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_10">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>10</id>
-						<name>co_1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName></coreName>
-					</Obj>
-					<bitwidth>9</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>0</if_type>
-				<array_size>0</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_11">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>11</id>
-						<name>data_l2_0</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_12">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>12</id>
-						<name>data_l2_1</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_13">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>13</id>
-						<name>data_l2_2</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_14">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>14</id>
-						<name>data_l2_3</name>
-						<fileName></fileName>
-						<fileDirectory></fileDirectory>
-						<lineNumber>0</lineNumber>
-						<contextFuncName></contextFuncName>
-						<contextNormFuncName></contextNormFuncName>
-						<inlineStackInfo>
-							<count>0</count>
-							<item_version>0</item_version>
-						</inlineStackInfo>
-						<originalName></originalName>
-						<rtlName></rtlName>
-						<coreName>RAM</coreName>
-					</Obj>
-					<bitwidth>8</bitwidth>
-				</Value>
-				<direction>0</direction>
-				<if_type>1</if_type>
-				<array_size>512</array_size>
-				<bit_vecs>
-					<count>0</count>
-					<item_version>0</item_version>
-				</bit_vecs>
-			</item>
-			<item class_id_reference="3" object_id="_15">
-				<Value>
-					<Obj>
-						<type>1</type>
-						<id>15</id>
-						<name>p_read2</name>
+						<name>TILES_S</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -445,12 +97,360 @@
 					<item_version>0</item_version>
 				</bit_vecs>
 			</item>
+			<item class_id_reference="3" object_id="_4">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>4</id>
+						<name>weight_l2_0</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>589824</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_5">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>5</id>
+						<name>weight_l2_1</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>589824</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_6">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>6</id>
+						<name>weight_l2_2</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>589824</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_7">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>7</id>
+						<name>weight_l2_3</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>589824</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_8">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>8</id>
+						<name>p_read</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>20</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_9">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>9</id>
+						<name>p_read1</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>20</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_10">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>10</id>
+						<name>ko_2</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>20</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_11">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>11</id>
+						<name>co_1</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName></coreName>
+					</Obj>
+					<bitwidth>20</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>0</if_type>
+				<array_size>0</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_12">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>12</id>
+						<name>data_l2_0</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>817216</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_13">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>13</id>
+						<name>data_l2_1</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>817216</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_14">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>14</id>
+						<name>data_l2_2</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>817216</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
+			<item class_id_reference="3" object_id="_15">
+				<Value>
+					<Obj>
+						<type>1</type>
+						<id>15</id>
+						<name>data_l2_3</name>
+						<fileName></fileName>
+						<fileDirectory></fileDirectory>
+						<lineNumber>0</lineNumber>
+						<contextFuncName></contextFuncName>
+						<contextNormFuncName></contextNormFuncName>
+						<inlineStackInfo>
+							<count>0</count>
+							<item_version>0</item_version>
+						</inlineStackInfo>
+						<originalName></originalName>
+						<rtlName></rtlName>
+						<coreName>RAM</coreName>
+					</Obj>
+					<bitwidth>8</bitwidth>
+				</Value>
+				<direction>0</direction>
+				<if_type>1</if_type>
+				<array_size>817216</array_size>
+				<bit_vecs>
+					<count>0</count>
+					<item_version>0</item_version>
+				</bit_vecs>
+			</item>
 			<item class_id_reference="3" object_id="_16">
 				<Value>
 					<Obj>
 						<type>1</type>
 						<id>16</id>
-						<name>p_read3</name>
+						<name>p_read2</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -479,7 +479,7 @@
 					<Obj>
 						<type>1</type>
 						<id>17</id>
-						<name>ho</name>
+						<name>p_read3</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -493,7 +493,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -508,7 +508,7 @@
 					<Obj>
 						<type>1</type>
 						<id>18</id>
-						<name>wo</name>
+						<name>ho</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -551,7 +551,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -642,7 +642,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -671,7 +671,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -700,7 +700,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -729,7 +729,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -754,7 +754,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -773,7 +773,7 @@
 					<Obj>
 						<type>0</type>
 						<id>32</id>
-						<name>p_read719</name>
+						<name>p_read718</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -787,7 +787,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -809,7 +809,7 @@
 					<Obj>
 						<type>0</type>
 						<id>33</id>
-						<name>p_read618</name>
+						<name>p_read617</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -845,7 +845,7 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>p_read517</name>
+						<name>p_read516</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -881,7 +881,7 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>p_read416</name>
+						<name>p_read415</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -895,7 +895,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -917,7 +917,7 @@
 					<Obj>
 						<type>0</type>
 						<id>36</id>
-						<name>wo_read</name>
+						<name>ho_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -953,7 +953,7 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>ho_read</name>
+						<name>p_read313</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -967,7 +967,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -989,7 +989,7 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>p_read313</name>
+						<name>p_read212</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1025,7 +1025,7 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>p_read212</name>
+						<name>co_1_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1039,7 +1039,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>32</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1061,7 +1061,7 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>co_1_read</name>
+						<name>ko_2_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1075,7 +1075,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1097,7 +1097,7 @@
 					<Obj>
 						<type>0</type>
 						<id>41</id>
-						<name>ko_2_read</name>
+						<name>p_read19</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1111,7 +1111,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1133,7 +1133,7 @@
 					<Obj>
 						<type>0</type>
 						<id>42</id>
-						<name>p_read19</name>
+						<name>p_read_20</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1147,7 +1147,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1169,7 +1169,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>p_read_21</name>
+						<name>TILES_S_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1183,7 +1183,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>32</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1205,7 +1205,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>TILES_S_read</name>
+						<name>TILES_R_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1241,7 +1241,7 @@
 					<Obj>
 						<type>0</type>
 						<id>45</id>
-						<name>TILES_R_read</name>
+						<name>TILES_W_read</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1291,7 +1291,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1347,7 +1347,7 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>ro</name>
+						<name>wo</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1357,7 +1357,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>ro</originalName>
+						<originalName>wo</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1385,10 +1385,10 @@
 					<Obj>
 						<type>0</type>
 						<id>51</id>
-						<name>icmp_ln255</name>
+						<name>icmp_ln253</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1404,7 +1404,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>255</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -1435,10 +1435,10 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>ro_1</name>
+						<name>wo_1</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1454,12 +1454,12 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>255</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>ro</originalName>
+						<originalName>wo</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1485,10 +1485,10 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>br_ln255</name>
+						<name>br_ln253</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1504,7 +1504,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>255</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -1536,10 +1536,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>_ln255</name>
+						<name>_ln253</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
-						<lineNumber>255</lineNumber>
+						<lineNumber>253</lineNumber>
 						<contextFuncName>Conv_sysarr</contextFuncName>
 						<contextNormFuncName>Conv_sysarr</contextNormFuncName>
 						<inlineStackInfo>
@@ -1555,7 +1555,7 @@
 											<first>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</first>
 											<second>Conv_sysarr</second>
 										</first>
-										<second>255</second>
+										<second>253</second>
 									</item>
 								</second>
 							</item>
@@ -1736,7 +1736,7 @@
 					<Obj>
 						<type>2</type>
 						<id>107</id>
-						<name>dataflow_parent_loop_proc</name>
+						<name>dataflow_parent_loop_proc15</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -1753,7 +1753,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:dataflow_parent_loop_proc&gt;</content>
+				<content>&lt;constant:dataflow_parent_loop_proc15&gt;</content>
 			</item>
 		</consts>
 		<blocks class_id="17" tracking_level="0" version="0">
@@ -1829,7 +1829,7 @@
 				<Obj>
 					<type>3</type>
 					<id>59</id>
-					<name>.split6</name>
+					<name>.split8</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -1854,7 +1854,7 @@
 				<Obj>
 					<type>3</type>
 					<id>61</id>
-					<name>._crit_edge317.loopexit.exitStub</name>
+					<name>._crit_edge322.loopexit.exitStub</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -1930,7 +1930,7 @@
 			<item class_id_reference="20" object_id="_64">
 				<id>79</id>
 				<edge_type>1</edge_type>
-				<source_obj>15</source_obj>
+				<source_obj>11</source_obj>
 				<sink_obj>39</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -1958,7 +1958,7 @@
 			<item class_id_reference="20" object_id="_68">
 				<id>87</id>
 				<edge_type>1</edge_type>
-				<source_obj>7</source_obj>
+				<source_obj>3</source_obj>
 				<sink_obj>43</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -2084,7 +2084,7 @@
 			<item class_id_reference="20" object_id="_86">
 				<id>110</id>
 				<edge_type>1</edge_type>
-				<source_obj>3</source_obj>
+				<source_obj>43</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -2112,7 +2112,7 @@
 			<item class_id_reference="20" object_id="_90">
 				<id>114</id>
 				<edge_type>1</edge_type>
-				<source_obj>43</source_obj>
+				<source_obj>7</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -2140,63 +2140,63 @@
 			<item class_id_reference="20" object_id="_94">
 				<id>118</id>
 				<edge_type>1</edge_type>
-				<source_obj>49</source_obj>
+				<source_obj>39</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_95">
 				<id>119</id>
 				<edge_type>1</edge_type>
-				<source_obj>11</source_obj>
+				<source_obj>12</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_96">
 				<id>120</id>
 				<edge_type>1</edge_type>
-				<source_obj>12</source_obj>
+				<source_obj>13</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_97">
 				<id>121</id>
 				<edge_type>1</edge_type>
-				<source_obj>13</source_obj>
+				<source_obj>14</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_98">
 				<id>122</id>
 				<edge_type>1</edge_type>
-				<source_obj>14</source_obj>
+				<source_obj>15</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_99">
 				<id>123</id>
 				<edge_type>1</edge_type>
-				<source_obj>39</source_obj>
+				<source_obj>38</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_100">
 				<id>124</id>
 				<edge_type>1</edge_type>
-				<source_obj>38</source_obj>
+				<source_obj>37</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_101">
 				<id>125</id>
 				<edge_type>1</edge_type>
-				<source_obj>37</source_obj>
+				<source_obj>46</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
 			<item class_id_reference="20" object_id="_102">
 				<id>126</id>
 				<edge_type>1</edge_type>
-				<source_obj>46</source_obj>
+				<source_obj>49</source_obj>
 				<sink_obj>57</sink_obj>
 				<is_back_edge>0</is_back_edge>
 			</item>
@@ -2374,8 +2374,8 @@
 		</item>
 		<item class_id_reference="22" object_id="_122">
 			<mId>3</mId>
-			<mTag>LOOP_R_OUTER</mTag>
-			<mNormTag>LOOP_R_OUTER</mNormTag>
+			<mTag>LOOP_W_OUTER</mTag>
+			<mNormTag>LOOP_W_OUTER</mNormTag>
 			<mType>1</mType>
 			<sub_regions>
 				<count>0</count>
@@ -2389,8 +2389,8 @@
 			</basic_blocks>
 			<mII>-1</mII>
 			<mDepth>-1</mDepth>
-			<mMinTripCount>3</mMinTripCount>
-			<mMaxTripCount>3</mMaxTripCount>
+			<mMinTripCount>10</mMinTripCount>
+			<mMaxTripCount>10</mMaxTripCount>
 			<mMinLatency>-1</mMinLatency>
 			<mMaxLatency>-1</mMaxLatency>
 			<mIsDfPipe>1</mIsDfPipe>
@@ -2404,34 +2404,34 @@
 					<item_version>0</item_version>
 					<item class_id="26" tracking_level="1" version="0" object_id="_124">
 						<type>0</type>
-						<name>dataflow_parent_loop_proc_U0</name>
+						<name>dataflow_parent_loop_proc15_U0</name>
 						<ssdmobj_id>57</ssdmobj_id>
 						<pins class_id="27" tracking_level="0" version="0">
 							<count>30</count>
 							<item_version>0</item_version>
 							<item class_id="28" tracking_level="1" version="0" object_id="_125">
 								<port class_id="29" tracking_level="1" version="0" object_id="_126">
-									<name>TILES_S</name>
+									<name>TILES_R</name>
 									<dir>3</dir>
 									<type>0</type>
 								</port>
 								<inst class_id="30" tracking_level="1" version="0" object_id="_127">
 									<type>0</type>
-									<name>dataflow_parent_loop_proc_U0</name>
+									<name>dataflow_parent_loop_proc15_U0</name>
 									<ssdmobj_id>57</ssdmobj_id>
 								</inst>
 							</item>
 							<item class_id_reference="28" object_id="_128">
 								<port class_id_reference="29" object_id="_129">
-									<name>weight_l2_0</name>
-									<dir>2</dir>
+									<name>TILES_S</name>
+									<dir>3</dir>
 									<type>0</type>
 								</port>
 								<inst class_id_reference="30" object_id_reference="_127"></inst>
 							</item>
 							<item class_id_reference="28" object_id="_130">
 								<port class_id_reference="29" object_id="_131">
-									<name>weight_l2_1</name>
+									<name>weight_l2_0</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -2439,7 +2439,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_132">
 								<port class_id_reference="29" object_id="_133">
-									<name>weight_l2_2</name>
+									<name>weight_l2_1</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -2447,7 +2447,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_134">
 								<port class_id_reference="29" object_id="_135">
-									<name>weight_l2_3</name>
+									<name>weight_l2_2</name>
 									<dir>2</dir>
 									<type>0</type>
 								</port>
@@ -2455,15 +2455,15 @@
 							</item>
 							<item class_id_reference="28" object_id="_136">
 								<port class_id_reference="29" object_id="_137">
-									<name>p_read</name>
-									<dir>3</dir>
+									<name>weight_l2_3</name>
+									<dir>2</dir>
 									<type>0</type>
 								</port>
 								<inst class_id_reference="30" object_id_reference="_127"></inst>
 							</item>
 							<item class_id_reference="28" object_id="_138">
 								<port class_id_reference="29" object_id="_139">
-									<name>p_read1</name>
+									<name>p_read</name>
 									<dir>3</dir>
 									<type>0</type>
 								</port>
@@ -2471,7 +2471,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_140">
 								<port class_id_reference="29" object_id="_141">
-									<name>ko_2</name>
+									<name>p_read1</name>
 									<dir>3</dir>
 									<type>0</type>
 								</port>
@@ -2479,7 +2479,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_142">
 								<port class_id_reference="29" object_id="_143">
-									<name>co_1</name>
+									<name>ko_2</name>
 									<dir>3</dir>
 									<type>0</type>
 								</port>
@@ -2487,7 +2487,7 @@
 							</item>
 							<item class_id_reference="28" object_id="_144">
 								<port class_id_reference="29" object_id="_145">
-									<name>ro</name>
+									<name>co_1</name>
 									<dir>3</dir>
 									<type>0</type>
 								</port>
@@ -3117,7 +3117,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item class_id="53" tracking_level="1" version="0" object_id="_221">
-			<region_name>LOOP_R_OUTER</region_name>
+			<region_name>LOOP_W_OUTER</region_name>
 			<basic_blocks>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -3312,7 +3312,7 @@
 			</second>
 		</item>
 		<item>
-			<first>icmp_ln255_fu_235</first>
+			<first>icmp_ln253_fu_235</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3320,7 +3320,7 @@
 			</second>
 		</item>
 		<item>
-			<first>ro_1_fu_240</first>
+			<first>wo_1_fu_240</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3328,7 +3328,7 @@
 			</second>
 		</item>
 		<item>
-			<first>ro_phi_fu_172</first>
+			<first>wo_phi_fu_172</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3340,7 +3340,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item>
-			<first>grp_dataflow_parent_loop_proc_fu_180</first>
+			<first>grp_dataflow_parent_loop_proc15_fu_180</first>
 			<second>
 				<count>2</count>
 				<item_version>0</item_version>
@@ -3353,15 +3353,7 @@
 		<count>14</count>
 		<item_version>0</item_version>
 		<item>
-			<first>TILES_R_read_read_fu_162</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>45</item>
-			</second>
-		</item>
-		<item>
-			<first>TILES_S_read_read_fu_156</first>
+			<first>TILES_R_read_read_fu_156</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3369,87 +3361,7 @@
 			</second>
 		</item>
 		<item>
-			<first>co_1_read_read_fu_132</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>40</item>
-			</second>
-		</item>
-		<item>
-			<first>ho_read_read_fu_114</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>37</item>
-			</second>
-		</item>
-		<item>
-			<first>ko_2_read_read_fu_138</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>41</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read19_read_fu_144</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>42</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read212_read_fu_126</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>39</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read313_read_fu_120</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>38</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read416_read_fu_102</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>35</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read517_read_fu_96</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>34</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read618_read_fu_90</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>33</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read719_read_fu_84</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>32</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read_21_read_fu_150</first>
+			<first>TILES_S_read_read_fu_150</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3457,11 +3369,99 @@
 			</second>
 		</item>
 		<item>
-			<first>wo_read_read_fu_108</first>
+			<first>TILES_W_read_read_fu_162</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>45</item>
+			</second>
+		</item>
+		<item>
+			<first>co_1_read_read_fu_126</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>39</item>
+			</second>
+		</item>
+		<item>
+			<first>ho_read_read_fu_108</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>36</item>
+			</second>
+		</item>
+		<item>
+			<first>ko_2_read_read_fu_132</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>40</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read19_read_fu_138</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>41</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read212_read_fu_120</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>38</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read313_read_fu_114</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>37</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read415_read_fu_102</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>35</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read516_read_fu_96</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>34</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read617_read_fu_90</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>33</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read718_read_fu_84</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>32</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read_20_read_fu_144</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>42</item>
 			</second>
 		</item>
 	</dp_fu_nodes_io>
@@ -3661,15 +3661,7 @@
 		<count>17</count>
 		<item_version>0</item_version>
 		<item>
-			<first>TILES_R_read_reg_306</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>45</item>
-			</second>
-		</item>
-		<item>
-			<first>TILES_S_read_reg_301</first>
+			<first>TILES_R_read_reg_301</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3677,11 +3669,27 @@
 			</second>
 		</item>
 		<item>
-			<first>co_1_read_reg_281</first>
+			<first>TILES_S_read_reg_296</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>40</item>
+				<item>43</item>
+			</second>
+		</item>
+		<item>
+			<first>TILES_W_read_reg_306</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>45</item>
+			</second>
+		</item>
+		<item>
+			<first>co_1_read_reg_276</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>39</item>
 			</second>
 		</item>
 		<item>
@@ -3693,15 +3701,7 @@
 			</second>
 		</item>
 		<item>
-			<first>ho_read_reg_266</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>37</item>
-			</second>
-		</item>
-		<item>
-			<first>icmp_ln255_reg_316</first>
+			<first>icmp_ln253_reg_316</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3709,7 +3709,15 @@
 			</second>
 		</item>
 		<item>
-			<first>ko_2_read_reg_286</first>
+			<first>ko_2_read_reg_281</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>40</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read19_reg_286</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3717,23 +3725,7 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read19_reg_291</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>42</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read212_reg_276</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>39</item>
-			</second>
-		</item>
-		<item>
-			<first>p_read313_reg_271</first>
+			<first>p_read212_reg_271</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3741,7 +3733,15 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read416_reg_261</first>
+			<first>p_read313_reg_266</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>37</item>
+			</second>
+		</item>
+		<item>
+			<first>p_read415_reg_261</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3749,7 +3749,7 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read517_reg_256</first>
+			<first>p_read516_reg_256</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3757,7 +3757,7 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read618_reg_251</first>
+			<first>p_read617_reg_251</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3765,7 +3765,7 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read719_reg_246</first>
+			<first>p_read718_reg_246</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3773,15 +3773,15 @@
 			</second>
 		</item>
 		<item>
-			<first>p_read_21_reg_296</first>
+			<first>p_read_20_reg_291</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>43</item>
+				<item>42</item>
 			</second>
 		</item>
 		<item>
-			<first>ro_1_reg_320</first>
+			<first>wo_1_reg_320</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3789,7 +3789,7 @@
 			</second>
 		</item>
 		<item>
-			<first>ro_reg_168</first>
+			<first>wo_reg_168</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3813,7 +3813,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item>
-			<first>ro_reg_168</first>
+			<first>wo_reg_168</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -3834,7 +3834,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>45</item>
+						<item>44</item>
 					</second>
 				</item>
 			</second>
@@ -3849,7 +3849,22 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>44</item>
+						<item>43</item>
+					</second>
+				</item>
+			</second>
+		</item>
+		<item>
+			<first>TILES_W</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>
+					<first>read</first>
+					<second>
+						<count>1</count>
+						<item_version>0</item_version>
+						<item>45</item>
 					</second>
 				</item>
 			</second>
@@ -3864,7 +3879,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>40</item>
+						<item>39</item>
 					</second>
 				</item>
 			</second>
@@ -3879,7 +3894,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>37</item>
+						<item>36</item>
 					</second>
 				</item>
 			</second>
@@ -3894,7 +3909,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>41</item>
+						<item>40</item>
 					</second>
 				</item>
 			</second>
@@ -3909,7 +3924,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>43</item>
+						<item>42</item>
 					</second>
 				</item>
 			</second>
@@ -3924,7 +3939,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>42</item>
+						<item>41</item>
 					</second>
 				</item>
 			</second>
@@ -3939,7 +3954,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>39</item>
+						<item>38</item>
 					</second>
 				</item>
 			</second>
@@ -3954,7 +3969,7 @@
 					<second>
 						<count>1</count>
 						<item_version>0</item_version>
-						<item>38</item>
+						<item>37</item>
 					</second>
 				</item>
 			</second>
@@ -4019,32 +4034,10 @@
 				</item>
 			</second>
 		</item>
-		<item>
-			<first>wo</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>
-					<first>read</first>
-					<second>
-						<count>1</count>
-						<item_version>0</item_version>
-						<item>36</item>
-					</second>
-				</item>
-			</second>
-		</item>
 	</dp_port_io_nodes>
 	<port2core>
 		<count>12</count>
 		<item_version>0</item_version>
-		<item>
-			<first>3</first>
-			<second>
-				<first>666</first>
-				<second>136</second>
-			</second>
-		</item>
 		<item>
 			<first>4</first>
 			<second>
@@ -4067,7 +4060,7 @@
 			</second>
 		</item>
 		<item>
-			<first>11</first>
+			<first>7</first>
 			<second>
 				<first>666</first>
 				<second>136</second>
@@ -4089,6 +4082,13 @@
 		</item>
 		<item>
 			<first>14</first>
+			<second>
+				<first>666</first>
+				<second>136</second>
+			</second>
+		</item>
+		<item>
+			<first>15</first>
 			<second>
 				<first>666</first>
 				<second>136</second>

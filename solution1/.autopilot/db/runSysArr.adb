@@ -497,7 +497,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -526,7 +526,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -555,7 +555,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -584,7 +584,7 @@
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -613,7 +613,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -642,7 +642,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -671,7 +671,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -700,7 +700,7 @@
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
-          <array_size>512</array_size>
+          <array_size>196</array_size>
           <bit_vecs>
             <count>0</count>
             <item_version>0</item_version>
@@ -3166,7 +3166,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_32s_32s_32_1_1_U117</rtlName>
+              <rtlName>mul_32s_32s_32_1_1_U115</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -3241,7 +3241,7 @@
             <Obj>
               <type>0</type>
               <id>98</id>
-              <name>tmp_4</name>
+              <name>tmp_2</name>
               <fileName>/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>521</lineNumber>
@@ -3291,7 +3291,7 @@
             <Obj>
               <type>0</type>
               <id>99</id>
-              <name>tmp_5</name>
+              <name>tmp_6</name>
               <fileName>/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>521</lineNumber>
@@ -4460,7 +4460,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_32ns_32ns_64_1_1_U118</rtlName>
+              <rtlName>mul_32ns_32ns_64_1_1_U116</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>64</bitwidth>
@@ -5577,7 +5577,7 @@
               <rtlName>empty_38_fu_732_p1</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>1</count>
@@ -5689,7 +5689,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -5803,7 +5803,7 @@
               <rtlName>add_ln80_fu_741_p2</rtlName>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>2</count>
@@ -5816,7 +5816,7 @@
           <m_isOnCriticalPath>0</m_isOnCriticalPath>
           <m_isLCDNode>0</m_isLCDNode>
           <m_isStartOfPath>0</m_isStartOfPath>
-          <m_delay>0.71</m_delay>
+          <m_delay>0.70</m_delay>
           <m_topoIndex>92</m_topoIndex>
           <m_clusterGroupNumber>-1</m_clusterGroupNumber>
         </item>
@@ -5973,7 +5973,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -6167,7 +6167,7 @@
             <Obj>
               <type>0</type>
               <id>161</id>
-              <name>tmp_6</name>
+              <name>tmp_7</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>80</lineNumber>
@@ -6199,7 +6199,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_6_reg_1734</rtlName>
+              <rtlName>tmp_7_reg_1734</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -6316,7 +6316,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -6510,7 +6510,7 @@
             <Obj>
               <type>0</type>
               <id>167</id>
-              <name>tmp_7</name>
+              <name>tmp_8</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>80</lineNumber>
@@ -6542,7 +6542,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_7_reg_1744</rtlName>
+              <rtlName>tmp_8_reg_1744</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -6716,7 +6716,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -7054,7 +7054,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_8s_8s_16_1_1_U119</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U117</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -7336,7 +7336,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U125</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -7393,7 +7393,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U125</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -7449,7 +7449,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[3][2]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U125</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -7675,7 +7675,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U126</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -7732,7 +7732,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U126</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -7788,7 +7788,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[3][1]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U126</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -8014,7 +8014,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[3][0]</originalName>
-              <rtlName>mul_8s_8s_16_1_1_U120</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U118</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -8297,7 +8297,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_8s_8s_16_1_1_U121</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U119</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -8580,7 +8580,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -8637,7 +8637,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -8693,7 +8693,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[2][2]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U127</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -8920,7 +8920,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -8977,7 +8977,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -9033,7 +9033,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[2][1]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U128</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -9260,7 +9260,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[2][0]</originalName>
-              <rtlName>mul_8s_8s_16_1_1_U122</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U120</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -9543,7 +9543,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_8s_8s_16_1_1_U123</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U121</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -9826,7 +9826,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U131</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -9883,7 +9883,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U131</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -9939,7 +9939,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[1][2]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U131</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U129</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -10166,7 +10166,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U132</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -10223,7 +10223,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U132</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -10279,7 +10279,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[1][1]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U132</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_2_1_U130</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -10506,7 +10506,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[1][0]</originalName>
-              <rtlName>mul_8s_8s_16_1_1_U124</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U122</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -10733,7 +10733,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mul_8s_8s_16_1_1_U125</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U123</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -10960,7 +10960,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U133</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U131</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -11017,7 +11017,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U133</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U131</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -11073,7 +11073,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[0][2]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U133</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U131</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -11244,7 +11244,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U134</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U132</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -11301,7 +11301,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U134</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U132</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -11357,7 +11357,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[0][1]</originalName>
-              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U134</rtlName>
+              <rtlName>mac_muladd_8s_8s_32ns_32_1_1_U132</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -11528,7 +11528,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>output_reg[0][0]</originalName>
-              <rtlName>mul_8s_8s_16_1_1_U126</rtlName>
+              <rtlName>mul_8s_8s_16_1_1_U124</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>16</bitwidth>
@@ -11723,7 +11723,7 @@
             <Obj>
               <type>0</type>
               <id>259</id>
-              <name>tmp_8</name>
+              <name>tmp_9</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>105</lineNumber>
@@ -11755,7 +11755,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_8_fu_887_p3</rtlName>
+              <rtlName>tmp_9_fu_887_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -12157,7 +12157,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -12494,7 +12494,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -12687,7 +12687,7 @@
             <Obj>
               <type>0</type>
               <id>278</id>
-              <name>tmp_9</name>
+              <name>tmp_10</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>105</lineNumber>
@@ -12719,7 +12719,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_9_fu_923_p3</rtlName>
+              <rtlName>tmp_10_fu_923_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -13121,7 +13121,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -13200,7 +13200,7 @@
             <Obj>
               <type>0</type>
               <id>288</id>
-              <name>tmp_10</name>
+              <name>tmp_11</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>262</lineNumber>
@@ -13225,7 +13225,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>tmp</originalName>
-              <rtlName>tmp_10_fu_1246_p3</rtlName>
+              <rtlName>tmp_11_fu_1246_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -13458,7 +13458,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -13594,7 +13594,7 @@
             <Obj>
               <type>0</type>
               <id>296</id>
-              <name>tmp_11</name>
+              <name>tmp_12</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>105</lineNumber>
@@ -13626,7 +13626,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_11_fu_953_p3</rtlName>
+              <rtlName>tmp_12_fu_953_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>1</bitwidth>
@@ -14028,7 +14028,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -14107,7 +14107,7 @@
             <Obj>
               <type>0</type>
               <id>306</id>
-              <name>tmp_12</name>
+              <name>tmp_13</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>262</lineNumber>
@@ -14132,7 +14132,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>tmp</originalName>
-              <rtlName>tmp_12_fu_1270_p3</rtlName>
+              <rtlName>tmp_13_fu_1270_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -14365,7 +14365,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -14764,7 +14764,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -14843,7 +14843,7 @@
             <Obj>
               <type>0</type>
               <id>321</id>
-              <name>tmp_13</name>
+              <name>tmp_14</name>
               <fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>262</lineNumber>
@@ -14868,7 +14868,7 @@
                 </item>
               </inlineStackInfo>
               <originalName>tmp</originalName>
-              <rtlName>tmp_13_fu_1294_p3</rtlName>
+              <rtlName>tmp_14_fu_1294_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>32</bitwidth>
@@ -15101,7 +15101,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <oprand_edges>
             <count>3</count>
@@ -16237,10 +16237,10 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>9</bitwidth>
+            <bitwidth>8</bitwidth>
           </Value>
           <const_type>0</const_type>
-          <content>511</content>
+          <content>255</content>
         </item>
         <item class_id_reference="16" object_id="_321">
           <Value>
@@ -22361,7 +22361,7 @@
         <count>10</count>
         <item_version>0</item_version>
         <item class_id="38" tracking_level="0" version="0">
-          <first>mul_32ns_32ns_64_1_1_U118 (mul_32ns_32ns_64_1_1)</first>
+          <first>mul_32ns_32ns_64_1_1_U116 (mul_32ns_32ns_64_1_1)</first>
           <second class_id="39" tracking_level="0" version="0">
             <count>3</count>
             <item_version>0</item_version>
@@ -22380,7 +22380,7 @@
           </second>
         </item>
         <item>
-          <first>mul_32s_32s_32_1_1_U117 (mul_32s_32s_32_1_1)</first>
+          <first>mul_32s_32s_32_1_1_U115 (mul_32s_32s_32_1_1)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -22395,6 +22395,44 @@
             <item>
               <first>LUT</first>
               <second>20</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>mul_8s_8s_16_1_1_U117 (mul_8s_8s_16_1_1)</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>40</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>mul_8s_8s_16_1_1_U118 (mul_8s_8s_16_1_1)</first>
+          <second>
+            <count>3</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>FF</first>
+              <second>0</second>
+            </item>
+            <item>
+              <first>LUT</first>
+              <second>40</second>
             </item>
           </second>
         </item>
@@ -22495,44 +22533,6 @@
         </item>
         <item>
           <first>mul_8s_8s_16_1_1_U124 (mul_8s_8s_16_1_1)</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>40</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>mul_8s_8s_16_1_1_U125 (mul_8s_8s_16_1_1)</first>
-          <second>
-            <count>3</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>FF</first>
-              <second>0</second>
-            </item>
-            <item>
-              <first>LUT</first>
-              <second>40</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>mul_8s_8s_16_1_1_U126 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -22887,7 +22887,7 @@
             </item>
             <item>
               <first>(1P1)</first>
-              <second>9</second>
+              <second>8</second>
             </item>
             <item>
               <first>FF</first>
@@ -22895,7 +22895,7 @@
             </item>
             <item>
               <first>LUT</first>
-              <second>16</second>
+              <second>15</second>
             </item>
           </second>
         </item>
@@ -23395,7 +23395,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_10_fu_1246_p3 ( select ) </first>
+          <first>tmp_11_fu_1246_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -23422,7 +23422,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_12_fu_1270_p3 ( select ) </first>
+          <first>tmp_13_fu_1270_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -23449,7 +23449,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_13_fu_1294_p3 ( select ) </first>
+          <first>tmp_14_fu_1294_p3 ( select ) </first>
           <second>
             <count>5</count>
             <item_version>0</item_version>
@@ -23609,7 +23609,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>512</second>
+              <second>196</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -23621,7 +23621,7 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>6272</second>
             </item>
             <item>
               <first>BRAM</first>
@@ -23644,7 +23644,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>512</second>
+              <second>196</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -23656,7 +23656,7 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>6272</second>
             </item>
             <item>
               <first>BRAM</first>
@@ -23679,7 +23679,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>512</second>
+              <second>196</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -23691,7 +23691,7 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>6272</second>
             </item>
             <item>
               <first>BRAM</first>
@@ -23714,7 +23714,7 @@
             <item_version>0</item_version>
             <item>
               <first>(0Words)</first>
-              <second>512</second>
+              <second>196</second>
             </item>
             <item>
               <first>(1Bits)</first>
@@ -23726,7 +23726,7 @@
             </item>
             <item>
               <first>(3W*Bits*Banks)</first>
-              <second>16384</second>
+              <second>6272</second>
             </item>
             <item>
               <first>BRAM</first>
@@ -24653,7 +24653,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>9</second>
+              <second>8</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -24661,7 +24661,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>9</second>
+              <second>8</second>
             </item>
           </second>
         </item>
@@ -24672,7 +24672,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>9</second>
+              <second>8</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -24680,7 +24680,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>9</second>
+              <second>8</second>
             </item>
           </second>
         </item>
@@ -24691,7 +24691,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>9</second>
+              <second>8</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -24699,7 +24699,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>9</second>
+              <second>8</second>
             </item>
           </second>
         </item>
@@ -24710,7 +24710,7 @@
             <item_version>0</item_version>
             <item>
               <first>(Bits)</first>
-              <second>9</second>
+              <second>8</second>
             </item>
             <item>
               <first>(Consts)</first>
@@ -24718,7 +24718,7 @@
             </item>
             <item>
               <first>FF</first>
-              <second>9</second>
+              <second>8</second>
             </item>
           </second>
         </item>
@@ -25255,7 +25255,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_6_reg_1734</first>
+          <first>tmp_7_reg_1734</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -25274,7 +25274,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_7_reg_1744</first>
+          <first>tmp_8_reg_1744</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -25373,7 +25373,7 @@
         <count>18</count>
         <item_version>0</item_version>
         <item>
-          <first>mac_muladd_8s_8s_32ns_32_1_1_U133</first>
+          <first>mac_muladd_8s_8s_32ns_32_1_1_U131</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25384,7 +25384,29 @@
           </second>
         </item>
         <item>
-          <first>mac_muladd_8s_8s_32ns_32_1_1_U134</first>
+          <first>mac_muladd_8s_8s_32ns_32_1_1_U132</first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>mac_muladd_8s_8s_32ns_32_2_1_U125</first>
+          <second>
+            <count>1</count>
+            <item_version>0</item_version>
+            <item>
+              <first>DSP</first>
+              <second>1</second>
+            </item>
+          </second>
+        </item>
+        <item>
+          <first>mac_muladd_8s_8s_32ns_32_2_1_U126</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25439,36 +25461,28 @@
           </second>
         </item>
         <item>
-          <first>mac_muladd_8s_8s_32ns_32_2_1_U131</first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>mac_muladd_8s_8s_32ns_32_2_1_U132</first>
-          <second>
-            <count>1</count>
-            <item_version>0</item_version>
-            <item>
-              <first>DSP</first>
-              <second>1</second>
-            </item>
-          </second>
-        </item>
-        <item>
-          <first>mul_32ns_32ns_64_1_1_U118</first>
+          <first>mul_32ns_32ns_64_1_1_U116</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
           </second>
         </item>
         <item>
-          <first>mul_32s_32s_32_1_1_U117</first>
+          <first>mul_32s_32s_32_1_1_U115</first>
+          <second>
+            <count>0</count>
+            <item_version>0</item_version>
+          </second>
+        </item>
+        <item>
+          <first>mul_8s_8s_16_1_1_U117</first>
+          <second>
+            <count>0</count>
+            <item_version>0</item_version>
+          </second>
+        </item>
+        <item>
+          <first>mul_8s_8s_16_1_1_U118</first>
           <second>
             <count>0</count>
             <item_version>0</item_version>
@@ -25516,26 +25530,12 @@
             <item_version>0</item_version>
           </second>
         </item>
-        <item>
-          <first>mul_8s_8s_16_1_1_U125</first>
-          <second>
-            <count>0</count>
-            <item_version>0</item_version>
-          </second>
-        </item>
-        <item>
-          <first>mul_8s_8s_16_1_1_U126</first>
-          <second>
-            <count>0</count>
-            <item_version>0</item_version>
-          </second>
-        </item>
       </dp_dsp_resource>
       <dp_component_map class_id="41" tracking_level="0" version="0">
         <count>10</count>
         <item_version>0</item_version>
         <item class_id="42" tracking_level="0" version="0">
-          <first>mul_32ns_32ns_64_1_1_U118 (mul_32ns_32ns_64_1_1)</first>
+          <first>mul_32ns_32ns_64_1_1_U116 (mul_32ns_32ns_64_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25543,7 +25543,7 @@
           </second>
         </item>
         <item>
-          <first>mul_32s_32s_32_1_1_U117 (mul_32s_32s_32_1_1)</first>
+          <first>mul_32s_32s_32_1_1_U115 (mul_32s_32s_32_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25551,7 +25551,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U119 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U117 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25559,7 +25559,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U120 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U118 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25567,7 +25567,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U121 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U119 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25575,7 +25575,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U122 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U120 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25583,7 +25583,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U123 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U121 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25591,7 +25591,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U124 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U122 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25599,7 +25599,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U125 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U123 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25607,7 +25607,7 @@
           </second>
         </item>
         <item>
-          <first>mul_8s_8s_16_1_1_U126 (mul_8s_8s_16_1_1)</first>
+          <first>mul_8s_8s_16_1_1_U124 (mul_8s_8s_16_1_1)</first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25883,7 +25883,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_10_fu_1246_p3 ( select ) </first>
+          <first>tmp_11_fu_1246_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25891,7 +25891,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_12_fu_1270_p3 ( select ) </first>
+          <first>tmp_13_fu_1270_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -25899,7 +25899,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_13_fu_1294_p3 ( select ) </first>
+          <first>tmp_14_fu_1294_p3 ( select ) </first>
           <second>
             <count>1</count>
             <item_version>0</item_version>
@@ -31341,7 +31341,15 @@
         </second>
       </item>
       <item>
-        <first>tmp_10_fu_1246</first>
+        <first>tmp_10_fu_923</first>
+        <second>
+          <count>1</count>
+          <item_version>0</item_version>
+          <item>278</item>
+        </second>
+      </item>
+      <item>
+        <first>tmp_11_fu_1246</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31349,7 +31357,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_11_fu_953</first>
+        <first>tmp_12_fu_953</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31357,7 +31365,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_12_fu_1270</first>
+        <first>tmp_13_fu_1270</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31365,7 +31373,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_13_fu_1294</first>
+        <first>tmp_14_fu_1294</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31373,7 +31381,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_6_fu_764</first>
+        <first>tmp_7_fu_764</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31381,7 +31389,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_7_fu_783</first>
+        <first>tmp_8_fu_783</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -31389,19 +31397,11 @@
         </second>
       </item>
       <item>
-        <first>tmp_8_fu_887</first>
+        <first>tmp_9_fu_887</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
           <item>259</item>
-        </second>
-      </item>
-      <item>
-        <first>tmp_9_fu_923</first>
-        <second>
-          <count>1</count>
-          <item_version>0</item_version>
-          <item>278</item>
         </second>
       </item>
       <item>
@@ -32151,7 +32151,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_4_read_fu_398</first>
+        <first>tmp_2_read_fu_398</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -32159,7 +32159,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_5_read_fu_404</first>
+        <first>tmp_6_read_fu_404</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -33599,7 +33599,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_6_reg_1734</first>
+        <first>tmp_7_reg_1734</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -33607,7 +33607,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_7_reg_1744</first>
+        <first>tmp_8_reg_1744</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

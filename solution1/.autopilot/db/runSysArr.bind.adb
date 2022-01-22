@@ -497,7 +497,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -526,7 +526,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -555,7 +555,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -584,7 +584,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -613,7 +613,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -642,7 +642,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -671,7 +671,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -700,7 +700,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>196</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -3241,7 +3241,7 @@
 					<Obj>
 						<type>0</type>
 						<id>98</id>
-						<name>tmp_4</name>
+						<name>tmp_2</name>
 						<fileName>/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>521</lineNumber>
@@ -3291,7 +3291,7 @@
 					<Obj>
 						<type>0</type>
 						<id>99</id>
-						<name>tmp_5</name>
+						<name>tmp_6</name>
 						<fileName>/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>521</lineNumber>
@@ -5577,7 +5577,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -5689,7 +5689,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -5803,7 +5803,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -5816,7 +5816,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.71</m_delay>
+				<m_delay>0.70</m_delay>
 				<m_topoIndex>92</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -5973,7 +5973,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -6167,7 +6167,7 @@
 					<Obj>
 						<type>0</type>
 						<id>161</id>
-						<name>tmp_6</name>
+						<name>tmp_7</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>80</lineNumber>
@@ -6316,7 +6316,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -6510,7 +6510,7 @@
 					<Obj>
 						<type>0</type>
 						<id>167</id>
-						<name>tmp_7</name>
+						<name>tmp_8</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>80</lineNumber>
@@ -6716,7 +6716,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -11723,7 +11723,7 @@
 					<Obj>
 						<type>0</type>
 						<id>259</id>
-						<name>tmp_8</name>
+						<name>tmp_9</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>105</lineNumber>
@@ -12157,7 +12157,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -12494,7 +12494,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -12687,7 +12687,7 @@
 					<Obj>
 						<type>0</type>
 						<id>278</id>
-						<name>tmp_9</name>
+						<name>tmp_10</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>105</lineNumber>
@@ -13121,7 +13121,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -13200,7 +13200,7 @@
 					<Obj>
 						<type>0</type>
 						<id>288</id>
-						<name>tmp_10</name>
+						<name>tmp_11</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>262</lineNumber>
@@ -13458,7 +13458,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -13594,7 +13594,7 @@
 					<Obj>
 						<type>0</type>
 						<id>296</id>
-						<name>tmp_11</name>
+						<name>tmp_12</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>105</lineNumber>
@@ -14028,7 +14028,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -14107,7 +14107,7 @@
 					<Obj>
 						<type>0</type>
 						<id>306</id>
-						<name>tmp_12</name>
+						<name>tmp_13</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>262</lineNumber>
@@ -14365,7 +14365,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -14764,7 +14764,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -14843,7 +14843,7 @@
 					<Obj>
 						<type>0</type>
 						<id>321</id>
-						<name>tmp_13</name>
+						<name>tmp_14</name>
 						<fileName>Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</fileName>
 						<fileDirectory>/home/sumin/workspace/hls_test</fileDirectory>
 						<lineNumber>262</lineNumber>
@@ -15101,7 +15101,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -16237,10 +16237,10 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>8</bitwidth>
 				</Value>
 				<const_type>0</const_type>
-				<content>511</content>
+				<content>255</content>
 			</item>
 			<item class_id_reference="16" object_id="_321">
 				<Value>
@@ -27710,7 +27710,15 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_10_fu_1246</first>
+			<first>tmp_10_fu_923</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>278</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_11_fu_1246</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27718,7 +27726,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_11_fu_953</first>
+			<first>tmp_12_fu_953</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27726,7 +27734,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_12_fu_1270</first>
+			<first>tmp_13_fu_1270</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27734,7 +27742,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_13_fu_1294</first>
+			<first>tmp_14_fu_1294</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27742,7 +27750,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_6_fu_764</first>
+			<first>tmp_7_fu_764</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27750,7 +27758,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_7_fu_783</first>
+			<first>tmp_8_fu_783</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -27758,19 +27766,11 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_8_fu_887</first>
+			<first>tmp_9_fu_887</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>259</item>
-			</second>
-		</item>
-		<item>
-			<first>tmp_9_fu_923</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>278</item>
 			</second>
 		</item>
 		<item>
@@ -28520,7 +28520,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_4_read_fu_398</first>
+			<first>tmp_2_read_fu_398</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -28528,7 +28528,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_5_read_fu_404</first>
+			<first>tmp_6_read_fu_404</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -29968,7 +29968,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_6_reg_1734</first>
+			<first>tmp_7_reg_1734</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -29976,7 +29976,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_7_reg_1744</first>
+			<first>tmp_8_reg_1744</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

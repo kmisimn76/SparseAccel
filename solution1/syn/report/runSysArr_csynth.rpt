@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'runSysArr'
 ================================================================
-* Date:           Sat Jan 22 00:49:22 2022
+* Date:           Sat Jan 22 01:13:14 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -55,14 +55,14 @@
 |         Name        | BRAM_18K|  DSP |    FF   |   LUT   | URAM|
 +---------------------+---------+------+---------+---------+-----+
 |DSP                  |        -|     8|        -|        -|    -|
-|Expression           |        -|     -|        0|      990|    -|
+|Expression           |        -|     -|        0|      989|    -|
 |FIFO                 |        -|     -|        -|        -|    -|
 |Instance             |        -|     7|        0|      360|    -|
 |Memory               |        4|     -|        0|        0|    -|
 |Multiplexer          |        -|     -|        -|      159|    -|
-|Register             |        -|     -|     1203|        -|    -|
+|Register             |        -|     -|     1199|        -|    -|
 +---------------------+---------+------+---------+---------+-----+
-|Total                |        4|    15|     1203|     1509|    0|
+|Total                |        4|    15|     1199|     1508|    0|
 +---------------------+---------+------+---------+---------+-----+
 |Available SLR        |     1440|  2280|   788160|   394080|  320|
 +---------------------+---------+------+---------+---------+-----+
@@ -78,16 +78,16 @@
     +---------------------------+----------------------+---------+----+---+----+-----+
     |          Instance         |        Module        | BRAM_18K| DSP| FF| LUT| URAM|
     +---------------------------+----------------------+---------+----+---+----+-----+
-    |mul_32ns_32ns_64_1_1_U118  |mul_32ns_32ns_64_1_1  |        0|   4|  0|  20|    0|
-    |mul_32s_32s_32_1_1_U117    |mul_32s_32s_32_1_1    |        0|   3|  0|  20|    0|
+    |mul_32ns_32ns_64_1_1_U116  |mul_32ns_32ns_64_1_1  |        0|   4|  0|  20|    0|
+    |mul_32s_32s_32_1_1_U115    |mul_32s_32s_32_1_1    |        0|   3|  0|  20|    0|
+    |mul_8s_8s_16_1_1_U117      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
+    |mul_8s_8s_16_1_1_U118      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U119      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U120      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U121      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U122      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U123      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     |mul_8s_8s_16_1_1_U124      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
-    |mul_8s_8s_16_1_1_U125      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
-    |mul_8s_8s_16_1_1_U126      |mul_8s_8s_16_1_1      |        0|   0|  0|  40|    0|
     +---------------------------+----------------------+---------+----+---+----+-----+
     |Total                      |                      |        0|   7|  0| 360|    0|
     +---------------------------+----------------------+---------+----+---+----+-----+
@@ -96,26 +96,26 @@
     +-----------------------------------+------------------------------+--------------+
     |              Instance             |            Module            |  Expression  |
     +-----------------------------------+------------------------------+--------------+
-    |mac_muladd_8s_8s_32ns_32_1_1_U133  |mac_muladd_8s_8s_32ns_32_1_1  | i0 + i1 * i2 |
-    |mac_muladd_8s_8s_32ns_32_1_1_U134  |mac_muladd_8s_8s_32ns_32_1_1  | i0 + i1 * i2 |
+    |mac_muladd_8s_8s_32ns_32_1_1_U131  |mac_muladd_8s_8s_32ns_32_1_1  | i0 + i1 * i2 |
+    |mac_muladd_8s_8s_32ns_32_1_1_U132  |mac_muladd_8s_8s_32ns_32_1_1  | i0 + i1 * i2 |
+    |mac_muladd_8s_8s_32ns_32_2_1_U125  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
+    |mac_muladd_8s_8s_32ns_32_2_1_U126  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
     |mac_muladd_8s_8s_32ns_32_2_1_U127  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
     |mac_muladd_8s_8s_32ns_32_2_1_U128  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
     |mac_muladd_8s_8s_32ns_32_2_1_U129  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
     |mac_muladd_8s_8s_32ns_32_2_1_U130  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
-    |mac_muladd_8s_8s_32ns_32_2_1_U131  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
-    |mac_muladd_8s_8s_32ns_32_2_1_U132  |mac_muladd_8s_8s_32ns_32_2_1  | i0 + i1 * i2 |
     +-----------------------------------+------------------------------+--------------+
 
     * Memory: 
     +---------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
     |        Memory       |            Module           | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
     +---------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
-    |output_l1_local_3_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   512|   32|     1|        16384|
-    |output_l1_local_2_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   512|   32|     1|        16384|
-    |output_l1_local_1_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   512|   32|     1|        16384|
-    |output_l1_local_0_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   512|   32|     1|        16384|
+    |output_l1_local_3_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   196|   32|     1|         6272|
+    |output_l1_local_2_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   196|   32|     1|         6272|
+    |output_l1_local_1_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   196|   32|     1|         6272|
+    |output_l1_local_0_U  |runSysArr_output_l1_local_3  |        1|  0|   0|    0|   196|   32|     1|         6272|
     +---------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
-    |Total                |                             |        4|  0|   0|    0|  2048|  128|     4|        65536|
+    |Total                |                             |        4|  0|   0|    0|   784|  128|     4|        25088|
     +---------------------+-----------------------------+---------+---+----+-----+------+-----+------+-------------+
 
     * FIFO: 
@@ -139,7 +139,7 @@
     |add_ln206_fu_610_p2        |     +    |   0|  0|  39|          32|           3|
     |add_ln80_1_fu_758_p2       |     +    |   0|  0|  39|           3|          32|
     |add_ln80_2_fu_777_p2       |     +    |   0|  0|  39|           3|          32|
-    |add_ln80_fu_741_p2         |     +    |   0|  0|  16|           2|           9|
+    |add_ln80_fu_741_p2         |     +    |   0|  0|  15|           2|           8|
     |i_1_fu_726_p2              |     +    |   0|  0|  38|          31|           1|
     |sub49_i_i_i_fu_875_p2      |     +    |   0|  0|  39|           4|          32|
     |and_ln105_1_fu_942_p2      |    and   |   0|  0|   2|           1|           1|
@@ -159,9 +159,9 @@
     |data_reg_0_1_1_fu_1018_p3  |  select  |   0|  0|   8|           1|           1|
     |data_reg_0_2_1_fu_1025_p3  |  select  |   0|  0|   8|           1|           1|
     |data_reg_0_3_1_fu_1032_p3  |  select  |   0|  0|   8|           1|           1|
-    |tmp_10_fu_1246_p3          |  select  |   0|  0|  32|           1|           1|
-    |tmp_12_fu_1270_p3          |  select  |   0|  0|  32|           1|           1|
-    |tmp_13_fu_1294_p3          |  select  |   0|  0|  32|           1|           1|
+    |tmp_11_fu_1246_p3          |  select  |   0|  0|  32|           1|           1|
+    |tmp_13_fu_1270_p3          |  select  |   0|  0|  32|           1|           1|
+    |tmp_14_fu_1294_p3          |  select  |   0|  0|  32|           1|           1|
     |tmp_fu_1222_p3             |  select  |   0|  0|  32|           1|           1|
     |ap_enable_pp0              |    xor   |   0|  0|   2|           1|           2|
     |ap_enable_reg_pp0_iter1    |    xor   |   0|  0|   2|           2|           1|
@@ -170,7 +170,7 @@
     |xor_ln105_fu_895_p2        |    xor   |   0|  0|   2|           1|           2|
     |xor_ln80_fu_791_p2         |    xor   |   0|  0|   2|           1|           2|
     +---------------------------+----------+----+---+----+------------+------------+
-    |Total                      |          |   0|  0| 990|         769|         683|
+    |Total                      |          |   0|  0| 989|         769|         682|
     +---------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -229,10 +229,10 @@
     |icmp_ln80_reg_1724               |   1|   0|    1|          0|
     |indvar_flatten_reg_582           |  64|   0|   64|          0|
     |mul_ln206_reg_1595               |  32|   0|   32|          0|
-    |output_l1_local_0_addr_reg_1838  |   9|   0|    9|          0|
-    |output_l1_local_1_addr_reg_1828  |   9|   0|    9|          0|
-    |output_l1_local_2_addr_reg_1813  |   9|   0|    9|          0|
-    |output_l1_local_3_addr_reg_1798  |   9|   0|    9|          0|
+    |output_l1_local_0_addr_reg_1838  |   8|   0|    8|          0|
+    |output_l1_local_1_addr_reg_1828  |   8|   0|    8|          0|
+    |output_l1_local_2_addr_reg_1813  |   8|   0|    8|          0|
+    |output_l1_local_3_addr_reg_1798  |   8|   0|    8|          0|
     |psum_10_fu_190                   |  32|   0|   32|          0|
     |psum_11_fu_194                   |  32|   0|   32|          0|
     |psum_1_fu_154                    |  32|   0|   32|          0|
@@ -261,14 +261,14 @@
     |sext_ln98_8_reg_1656             |  16|   0|   16|          0|
     |sext_ln98_9_reg_1661             |  16|   0|   16|          0|
     |sext_ln98_reg_1616               |  16|   0|   16|          0|
-    |tmp_6_reg_1734                   |   1|   0|    1|          0|
-    |tmp_7_reg_1744                   |   1|   0|    1|          0|
+    |tmp_7_reg_1734                   |   1|   0|    1|          0|
+    |tmp_8_reg_1744                   |   1|   0|    1|          0|
     |zext_ln113_1_reg_1808            |  32|   0|   64|         32|
     |zext_ln113_2_reg_1823            |  32|   0|   64|         32|
     |zext_ln113_reg_1793              |  32|   0|   64|         32|
     |zext_ln82_3_reg_1749             |  32|   0|   64|         32|
     +---------------------------------+----+----+-----+-----------+
-    |Total                            |1203|   0| 1331|        128|
+    |Total                            |1199|   0| 1327|        128|
     +---------------------------------+----+----+-----+-----------+
 
 
@@ -303,31 +303,31 @@
 |p_read13                |  in |    8|   ap_none  |    p_read13   |    scalar    |
 |p_read14                |  in |    8|   ap_none  |    p_read14   |    scalar    |
 |p_read15                |  in |    8|   ap_none  |    p_read15   |    scalar    |
-|data_l1_017_address0    | out |    9|  ap_memory |  data_l1_017  |     array    |
+|data_l1_017_address0    | out |    8|  ap_memory |  data_l1_017  |     array    |
 |data_l1_017_ce0         | out |    1|  ap_memory |  data_l1_017  |     array    |
 |data_l1_017_q0          |  in |    8|  ap_memory |  data_l1_017  |     array    |
-|data_l1_118_address0    | out |    9|  ap_memory |  data_l1_118  |     array    |
+|data_l1_118_address0    | out |    8|  ap_memory |  data_l1_118  |     array    |
 |data_l1_118_ce0         | out |    1|  ap_memory |  data_l1_118  |     array    |
 |data_l1_118_q0          |  in |    8|  ap_memory |  data_l1_118  |     array    |
-|data_l1_219_address0    | out |    9|  ap_memory |  data_l1_219  |     array    |
+|data_l1_219_address0    | out |    8|  ap_memory |  data_l1_219  |     array    |
 |data_l1_219_ce0         | out |    1|  ap_memory |  data_l1_219  |     array    |
 |data_l1_219_q0          |  in |    8|  ap_memory |  data_l1_219  |     array    |
-|data_l1_320_address0    | out |    9|  ap_memory |  data_l1_320  |     array    |
+|data_l1_320_address0    | out |    8|  ap_memory |  data_l1_320  |     array    |
 |data_l1_320_ce0         | out |    1|  ap_memory |  data_l1_320  |     array    |
 |data_l1_320_q0          |  in |    8|  ap_memory |  data_l1_320  |     array    |
-|output_l1_021_address0  | out |    9|  ap_memory | output_l1_021 |     array    |
+|output_l1_021_address0  | out |    8|  ap_memory | output_l1_021 |     array    |
 |output_l1_021_ce0       | out |    1|  ap_memory | output_l1_021 |     array    |
 |output_l1_021_we0       | out |    1|  ap_memory | output_l1_021 |     array    |
 |output_l1_021_d0        | out |   32|  ap_memory | output_l1_021 |     array    |
-|output_l1_122_address0  | out |    9|  ap_memory | output_l1_122 |     array    |
+|output_l1_122_address0  | out |    8|  ap_memory | output_l1_122 |     array    |
 |output_l1_122_ce0       | out |    1|  ap_memory | output_l1_122 |     array    |
 |output_l1_122_we0       | out |    1|  ap_memory | output_l1_122 |     array    |
 |output_l1_122_d0        | out |   32|  ap_memory | output_l1_122 |     array    |
-|output_l1_223_address0  | out |    9|  ap_memory | output_l1_223 |     array    |
+|output_l1_223_address0  | out |    8|  ap_memory | output_l1_223 |     array    |
 |output_l1_223_ce0       | out |    1|  ap_memory | output_l1_223 |     array    |
 |output_l1_223_we0       | out |    1|  ap_memory | output_l1_223 |     array    |
 |output_l1_223_d0        | out |   32|  ap_memory | output_l1_223 |     array    |
-|output_l1_324_address0  | out |    9|  ap_memory | output_l1_324 |     array    |
+|output_l1_324_address0  | out |    8|  ap_memory | output_l1_324 |     array    |
 |output_l1_324_ce0       | out |    1|  ap_memory | output_l1_324 |     array    |
 |output_l1_324_we0       | out |    1|  ap_memory | output_l1_324 |     array    |
 |output_l1_324_d0        | out |   32|  ap_memory | output_l1_324 |     array    |

@@ -67483,10 +67483,10 @@ void Conv_sysarr(
   hls::stream<k2k_data> &conv_out) {
 #pragma HLS expression_balance
 
- DPTYPE bias_l2[512][4];
- DPTYPE weight_l2[512][4];
- DPTYPE data_l2[512][4];
- MACTYPE output_l2[512][4];
+ DPTYPE bias_l2[16][4];
+ DPTYPE weight_l2[589824][4];
+ DPTYPE data_l2[817216][4];
+ MACTYPE output_l2[802816][4];
 
 
 # 172 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
@@ -67598,9 +67598,9 @@ void Conv_sysarr(
        else isFirst = false;
 
        DPTYPE weight_regfile[4][4];
-       DPTYPE data_l1[512][4];
-       MACTYPE output_l1[512][4];
-       static MACTYPE output_l1_local[512][4];
+       DPTYPE data_l1[196][4];
+       MACTYPE output_l1[196][4];
+       static MACTYPE output_l1_local[196][4];
 #pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete

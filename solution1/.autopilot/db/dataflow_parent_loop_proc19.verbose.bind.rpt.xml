@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc19'" level="0">
-<item name = "Date">Sat Jan 22 00:49:21 2022
+<item name = "Date">Sat Jan 22 01:13:13 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 5.508 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 6.947 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -36,7 +36,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_C_OUTER">?, ?, ?, -, -, 10, no</column>
+<column name="- LOOP_K_OUTER">?, ?, ?, -, -, 4, no</column>
 </table>
 </item>
 </section>

@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 263 \
+    id 261 \
     name weight_l2_0 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_0 \
     op interface \
-    ports { weight_l2_0_address0 { O 9 vector } weight_l2_0_ce0 { O 1 bit } weight_l2_0_d0 { O 8 vector } weight_l2_0_q0 { I 8 vector } weight_l2_0_we0 { O 1 bit } weight_l2_0_address1 { O 9 vector } weight_l2_0_ce1 { O 1 bit } weight_l2_0_d1 { O 8 vector } weight_l2_0_q1 { I 8 vector } weight_l2_0_we1 { O 1 bit } } \
+    ports { weight_l2_0_address0 { O 20 vector } weight_l2_0_ce0 { O 1 bit } weight_l2_0_d0 { O 8 vector } weight_l2_0_q0 { I 8 vector } weight_l2_0_we0 { O 1 bit } weight_l2_0_address1 { O 20 vector } weight_l2_0_ce1 { O 1 bit } weight_l2_0_d1 { O 8 vector } weight_l2_0_q1 { I 8 vector } weight_l2_0_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_0'"
@@ -30,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 264 \
+    id 262 \
     name weight_l2_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_1 \
     op interface \
-    ports { weight_l2_1_address0 { O 9 vector } weight_l2_1_ce0 { O 1 bit } weight_l2_1_d0 { O 8 vector } weight_l2_1_q0 { I 8 vector } weight_l2_1_we0 { O 1 bit } weight_l2_1_address1 { O 9 vector } weight_l2_1_ce1 { O 1 bit } weight_l2_1_d1 { O 8 vector } weight_l2_1_q1 { I 8 vector } weight_l2_1_we1 { O 1 bit } } \
+    ports { weight_l2_1_address0 { O 20 vector } weight_l2_1_ce0 { O 1 bit } weight_l2_1_d0 { O 8 vector } weight_l2_1_q0 { I 8 vector } weight_l2_1_we0 { O 1 bit } weight_l2_1_address1 { O 20 vector } weight_l2_1_ce1 { O 1 bit } weight_l2_1_d1 { O 8 vector } weight_l2_1_q1 { I 8 vector } weight_l2_1_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_1'"
@@ -49,14 +49,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 265 \
+    id 263 \
     name weight_l2_2 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_2 \
     op interface \
-    ports { weight_l2_2_address0 { O 9 vector } weight_l2_2_ce0 { O 1 bit } weight_l2_2_d0 { O 8 vector } weight_l2_2_q0 { I 8 vector } weight_l2_2_we0 { O 1 bit } weight_l2_2_address1 { O 9 vector } weight_l2_2_ce1 { O 1 bit } weight_l2_2_d1 { O 8 vector } weight_l2_2_q1 { I 8 vector } weight_l2_2_we1 { O 1 bit } } \
+    ports { weight_l2_2_address0 { O 20 vector } weight_l2_2_ce0 { O 1 bit } weight_l2_2_d0 { O 8 vector } weight_l2_2_q0 { I 8 vector } weight_l2_2_we0 { O 1 bit } weight_l2_2_address1 { O 20 vector } weight_l2_2_ce1 { O 1 bit } weight_l2_2_d1 { O 8 vector } weight_l2_2_q1 { I 8 vector } weight_l2_2_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_2'"
@@ -68,14 +68,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 266 \
+    id 264 \
     name weight_l2_3 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename weight_l2_3 \
     op interface \
-    ports { weight_l2_3_address0 { O 9 vector } weight_l2_3_ce0 { O 1 bit } weight_l2_3_d0 { O 8 vector } weight_l2_3_q0 { I 8 vector } weight_l2_3_we0 { O 1 bit } weight_l2_3_address1 { O 9 vector } weight_l2_3_ce1 { O 1 bit } weight_l2_3_d1 { O 8 vector } weight_l2_3_q1 { I 8 vector } weight_l2_3_we1 { O 1 bit } } \
+    ports { weight_l2_3_address0 { O 20 vector } weight_l2_3_ce0 { O 1 bit } weight_l2_3_d0 { O 8 vector } weight_l2_3_q0 { I 8 vector } weight_l2_3_we0 { O 1 bit } weight_l2_3_address1 { O 20 vector } weight_l2_3_ce1 { O 1 bit } weight_l2_3_d1 { O 8 vector } weight_l2_3_q1 { I 8 vector } weight_l2_3_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'weight_l2_3'"
@@ -87,14 +87,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 272 \
+    id 270 \
     name data_l2_0 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename data_l2_0 \
     op interface \
-    ports { data_l2_0_address0 { O 9 vector } data_l2_0_ce0 { O 1 bit } data_l2_0_d0 { O 8 vector } data_l2_0_q0 { I 8 vector } data_l2_0_we0 { O 1 bit } data_l2_0_address1 { O 9 vector } data_l2_0_ce1 { O 1 bit } data_l2_0_d1 { O 8 vector } data_l2_0_q1 { I 8 vector } data_l2_0_we1 { O 1 bit } } \
+    ports { data_l2_0_address0 { O 20 vector } data_l2_0_ce0 { O 1 bit } data_l2_0_d0 { O 8 vector } data_l2_0_q0 { I 8 vector } data_l2_0_we0 { O 1 bit } data_l2_0_address1 { O 20 vector } data_l2_0_ce1 { O 1 bit } data_l2_0_d1 { O 8 vector } data_l2_0_q1 { I 8 vector } data_l2_0_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l2_0'"
@@ -106,14 +106,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 273 \
+    id 271 \
     name data_l2_1 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename data_l2_1 \
     op interface \
-    ports { data_l2_1_address0 { O 9 vector } data_l2_1_ce0 { O 1 bit } data_l2_1_d0 { O 8 vector } data_l2_1_q0 { I 8 vector } data_l2_1_we0 { O 1 bit } data_l2_1_address1 { O 9 vector } data_l2_1_ce1 { O 1 bit } data_l2_1_d1 { O 8 vector } data_l2_1_q1 { I 8 vector } data_l2_1_we1 { O 1 bit } } \
+    ports { data_l2_1_address0 { O 20 vector } data_l2_1_ce0 { O 1 bit } data_l2_1_d0 { O 8 vector } data_l2_1_q0 { I 8 vector } data_l2_1_we0 { O 1 bit } data_l2_1_address1 { O 20 vector } data_l2_1_ce1 { O 1 bit } data_l2_1_d1 { O 8 vector } data_l2_1_q1 { I 8 vector } data_l2_1_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l2_1'"
@@ -125,14 +125,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 274 \
+    id 272 \
     name data_l2_2 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename data_l2_2 \
     op interface \
-    ports { data_l2_2_address0 { O 9 vector } data_l2_2_ce0 { O 1 bit } data_l2_2_d0 { O 8 vector } data_l2_2_q0 { I 8 vector } data_l2_2_we0 { O 1 bit } data_l2_2_address1 { O 9 vector } data_l2_2_ce1 { O 1 bit } data_l2_2_d1 { O 8 vector } data_l2_2_q1 { I 8 vector } data_l2_2_we1 { O 1 bit } } \
+    ports { data_l2_2_address0 { O 20 vector } data_l2_2_ce0 { O 1 bit } data_l2_2_d0 { O 8 vector } data_l2_2_q0 { I 8 vector } data_l2_2_we0 { O 1 bit } data_l2_2_address1 { O 20 vector } data_l2_2_ce1 { O 1 bit } data_l2_2_d1 { O 8 vector } data_l2_2_q1 { I 8 vector } data_l2_2_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l2_2'"
@@ -144,14 +144,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 275 \
+    id 273 \
     name data_l2_3 \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename data_l2_3 \
     op interface \
-    ports { data_l2_3_address0 { O 9 vector } data_l2_3_ce0 { O 1 bit } data_l2_3_d0 { O 8 vector } data_l2_3_q0 { I 8 vector } data_l2_3_we0 { O 1 bit } data_l2_3_address1 { O 9 vector } data_l2_3_ce1 { O 1 bit } data_l2_3_d1 { O 8 vector } data_l2_3_q1 { I 8 vector } data_l2_3_we1 { O 1 bit } } \
+    ports { data_l2_3_address0 { O 20 vector } data_l2_3_ce0 { O 1 bit } data_l2_3_d0 { O 8 vector } data_l2_3_q0 { I 8 vector } data_l2_3_we0 { O 1 bit } data_l2_3_address1 { O 20 vector } data_l2_3_ce1 { O 1 bit } data_l2_3_d1 { O 8 vector } data_l2_3_q1 { I 8 vector } data_l2_3_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'data_l2_3'"
@@ -163,14 +163,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 283 \
+    id 281 \
     name output_l2_0 \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename output_l2_0 \
     op interface \
-    ports { output_l2_0_address0 { O 9 vector } output_l2_0_ce0 { O 1 bit } output_l2_0_d0 { O 32 vector } output_l2_0_q0 { I 32 vector } output_l2_0_we0 { O 1 bit } output_l2_0_address1 { O 9 vector } output_l2_0_ce1 { O 1 bit } output_l2_0_d1 { O 32 vector } output_l2_0_q1 { I 32 vector } output_l2_0_we1 { O 1 bit } } \
+    ports { output_l2_0_address0 { O 20 vector } output_l2_0_ce0 { O 1 bit } output_l2_0_d0 { O 32 vector } output_l2_0_q0 { I 32 vector } output_l2_0_we0 { O 1 bit } output_l2_0_address1 { O 20 vector } output_l2_0_ce1 { O 1 bit } output_l2_0_d1 { O 32 vector } output_l2_0_q1 { I 32 vector } output_l2_0_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_l2_0'"
@@ -182,14 +182,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 284 \
+    id 282 \
     name output_l2_1 \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename output_l2_1 \
     op interface \
-    ports { output_l2_1_address0 { O 9 vector } output_l2_1_ce0 { O 1 bit } output_l2_1_d0 { O 32 vector } output_l2_1_q0 { I 32 vector } output_l2_1_we0 { O 1 bit } output_l2_1_address1 { O 9 vector } output_l2_1_ce1 { O 1 bit } output_l2_1_d1 { O 32 vector } output_l2_1_q1 { I 32 vector } output_l2_1_we1 { O 1 bit } } \
+    ports { output_l2_1_address0 { O 20 vector } output_l2_1_ce0 { O 1 bit } output_l2_1_d0 { O 32 vector } output_l2_1_q0 { I 32 vector } output_l2_1_we0 { O 1 bit } output_l2_1_address1 { O 20 vector } output_l2_1_ce1 { O 1 bit } output_l2_1_d1 { O 32 vector } output_l2_1_q1 { I 32 vector } output_l2_1_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_l2_1'"
@@ -201,14 +201,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 285 \
+    id 283 \
     name output_l2_2 \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename output_l2_2 \
     op interface \
-    ports { output_l2_2_address0 { O 9 vector } output_l2_2_ce0 { O 1 bit } output_l2_2_d0 { O 32 vector } output_l2_2_q0 { I 32 vector } output_l2_2_we0 { O 1 bit } output_l2_2_address1 { O 9 vector } output_l2_2_ce1 { O 1 bit } output_l2_2_d1 { O 32 vector } output_l2_2_q1 { I 32 vector } output_l2_2_we1 { O 1 bit } } \
+    ports { output_l2_2_address0 { O 20 vector } output_l2_2_ce0 { O 1 bit } output_l2_2_d0 { O 32 vector } output_l2_2_q0 { I 32 vector } output_l2_2_we0 { O 1 bit } output_l2_2_address1 { O 20 vector } output_l2_2_ce1 { O 1 bit } output_l2_2_d1 { O 32 vector } output_l2_2_q1 { I 32 vector } output_l2_2_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_l2_2'"
@@ -220,14 +220,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 286 \
+    id 284 \
     name output_l2_3 \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename output_l2_3 \
     op interface \
-    ports { output_l2_3_address0 { O 9 vector } output_l2_3_ce0 { O 1 bit } output_l2_3_d0 { O 32 vector } output_l2_3_q0 { I 32 vector } output_l2_3_we0 { O 1 bit } output_l2_3_address1 { O 9 vector } output_l2_3_ce1 { O 1 bit } output_l2_3_d1 { O 32 vector } output_l2_3_q1 { I 32 vector } output_l2_3_we1 { O 1 bit } } \
+    ports { output_l2_3_address0 { O 20 vector } output_l2_3_ce0 { O 1 bit } output_l2_3_d0 { O 32 vector } output_l2_3_q0 { I 32 vector } output_l2_3_we0 { O 1 bit } output_l2_3_address1 { O 20 vector } output_l2_3_ce1 { O 1 bit } output_l2_3_d1 { O 32 vector } output_l2_3_q1 { I 32 vector } output_l2_3_we1 { O 1 bit } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_l2_3'"
@@ -238,7 +238,7 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 262 \
+    id 260 \
     name TILES_S \
     type other \
     dir I \
@@ -253,7 +253,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 267 \
+    id 265 \
     name p_read \
     type other \
     dir I \
@@ -261,14 +261,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read \
     op interface \
-    ports { p_read { I 9 vector } p_read_ap_vld { I 1 bit } } \
+    ports { p_read { I 20 vector } p_read_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 268 \
+    id 266 \
     name p_read1 \
     type other \
     dir I \
@@ -276,14 +276,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read1 \
     op interface \
-    ports { p_read1 { I 9 vector } p_read1_ap_vld { I 1 bit } } \
+    ports { p_read1 { I 20 vector } p_read1_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 269 \
+    id 267 \
     name ko_2 \
     type other \
     dir I \
@@ -291,14 +291,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_ko_2 \
     op interface \
-    ports { ko_2 { I 9 vector } ko_2_ap_vld { I 1 bit } } \
+    ports { ko_2 { I 20 vector } ko_2_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 270 \
+    id 268 \
     name co_1 \
     type other \
     dir I \
@@ -306,14 +306,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_co_1 \
     op interface \
-    ports { co_1 { I 9 vector } co_1_ap_vld { I 1 bit } } \
+    ports { co_1 { I 20 vector } co_1_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 271 \
+    id 269 \
     name ro \
     type other \
     dir I \
@@ -328,7 +328,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 276 \
+    id 274 \
     name p_read2 \
     type other \
     dir I \
@@ -343,7 +343,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 277 \
+    id 275 \
     name p_read3 \
     type other \
     dir I \
@@ -358,7 +358,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 278 \
+    id 276 \
     name ho \
     type other \
     dir I \
@@ -366,14 +366,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_ho \
     op interface \
-    ports { ho { I 9 vector } ho_ap_vld { I 1 bit } } \
+    ports { ho { I 20 vector } ho_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 279 \
+    id 277 \
     name wo \
     type other \
     dir I \
@@ -381,14 +381,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_wo \
     op interface \
-    ports { wo { I 9 vector } wo_ap_vld { I 1 bit } } \
+    ports { wo { I 20 vector } wo_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 280 \
+    id 278 \
     name p_read4 \
     type other \
     dir I \
@@ -396,14 +396,14 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read4 \
     op interface \
-    ports { p_read4 { I 9 vector } p_read4_ap_vld { I 1 bit } } \
+    ports { p_read4 { I 20 vector } p_read4_ap_vld { I 1 bit } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 281 \
+    id 279 \
     name p_read5 \
     type other \
     dir I \
@@ -418,7 +418,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 282 \
+    id 280 \
     name p_read6 \
     type other \
     dir I \
@@ -433,7 +433,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 287 \
+    id 285 \
     name p_read7 \
     type other \
     dir I \
@@ -441,7 +441,7 @@ eval "cg_default_interface_gen_dc { \
     sync_rst true \
     corename dc_p_read7 \
     op interface \
-    ports { p_read7 { I 9 vector } p_read7_ap_vld { I 1 bit } } \
+    ports { p_read7 { I 20 vector } p_read7_ap_vld { I 1 bit } } \
 } "
 }
 

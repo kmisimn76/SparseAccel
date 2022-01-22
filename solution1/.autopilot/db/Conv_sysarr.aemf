@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642780164000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642781596000">
   <ports id="1" name="param_in_V" type="PortType" originalName="param_in" coreName="FIFO" bitwidth="256" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
     <dataOutputObjs>read</dataOutputObjs>
@@ -149,10 +149,10 @@
   <edges id="447" edge_type="CtrlEdge" source_obj="//@regions.1/@basic_blocks.0" sink_obj="//@regions.1/@basic_blocks.1/@node_objs.23"/>
   <edges id="448" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.2/@node_objs.0"/>
   <edges id="449" source_obj="//@blocks.0/@node_objs.23" sink_obj="//@blocks.2/@node_objs.0"/>
-  <edges id="450" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.1"/>
-  <edges id="452" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.2/@node_objs.2"/>
+  <edges id="451" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.2/@node_objs.1"/>
+  <edges id="454" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.2"/>
   <edges id="455" source_obj="//@blocks.2/@node_objs.0" sink_obj="//@blocks.2/@node_objs.3"/>
-  <edges id="456" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.2/@node_objs.4"/>
+  <edges id="456" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.2/@node_objs.4"/>
   <edges id="457" source_obj="//@blocks.2/@node_objs.4" sink_obj="//@blocks.2/@node_objs.5"/>
   <edges id="458" source_obj="//@blocks.2/@node_objs.3" sink_obj="//@blocks.2/@node_objs.5"/>
   <edges id="459" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.0" sink_obj="//@blocks.2/@node_objs.6"/>
@@ -172,7 +172,7 @@
   <edges id="477" edge_type="CtrlEdge" source_obj="//@regions.2/@basic_blocks.1" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.5"/>
   <edges id="478" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@regions.2/@basic_blocks.0/@node_objs.5"/>
   <edges id="479" source_obj="//@regions.2/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
-  <edges id="480" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
+  <edges id="480" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.0"/>
   <edges id="481" source_obj="//@regions.2/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.1"/>
   <edges id="483" source_obj="//@regions.2/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.1"/>
   <edges id="485" source_obj="//@regions.2/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.2"/>
@@ -183,7 +183,7 @@
   <edges id="491" source_obj="//@ports.3" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.5"/>
   <edges id="492" source_obj="//@regions.2/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.6"/>
   <edges id="493" source_obj="//@regions.2/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.7"/>
-  <edges id="494" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.7"/>
+  <edges id="494" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.7"/>
   <edges id="495" source_obj="//@regions.2/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.8"/>
   <edges id="496" source_obj="//@regions.2/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.8"/>
   <edges id="497" source_obj="//@regions.2/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.2/@basic_blocks.1/@node_objs.9"/>
@@ -212,7 +212,7 @@
   <edges id="534" source_obj="//@blocks.0/@node_objs.22" sink_obj="//@blocks.3/@node_objs.0"/>
   <edges id="535" source_obj="//@blocks.0/@node_objs.20" sink_obj="//@blocks.3/@node_objs.1"/>
   <edges id="538" source_obj="//@blocks.0/@node_objs.39" sink_obj="//@blocks.3/@node_objs.2"/>
-  <edges id="539" source_obj="//@blocks.2/@node_objs.2" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="539" source_obj="//@blocks.2/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
   <edges id="540" source_obj="//@blocks.0/@node_objs.32" sink_obj="//@blocks.3/@node_objs.2"/>
   <edges id="541" source_obj="//@blocks.0/@node_objs.29" sink_obj="//@blocks.3/@node_objs.2"/>
   <edges id="542" source_obj="//@blocks.0/@node_objs.35" sink_obj="//@blocks.3/@node_objs.2"/>
@@ -423,22 +423,26 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="output_l2_0" rtlName="output_l2_0_U" coreName="RAM" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="output_l2_0" lineNumber="170" originalName="output_l2[0]" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="output_l2_0_U" coreName="RAM" contextFuncName="Conv_sysarr" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="170" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="output_l2_1" rtlName="output_l2_1_U" coreName="RAM" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="output_l2_1" lineNumber="170" originalName="output_l2[1]" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="output_l2_1_U" coreName="RAM" contextFuncName="Conv_sysarr" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="170" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="output_l2_2" rtlName="output_l2_2_U" coreName="RAM" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="output_l2_2" lineNumber="170" originalName="output_l2[2]" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="output_l2_2_U" coreName="RAM" contextFuncName="Conv_sysarr" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="170" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="output_l2_3" rtlName="output_l2_3_U" coreName="RAM" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="output_l2_3" lineNumber="170" originalName="output_l2[3]" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="output_l2_3_U" coreName="RAM" contextFuncName="Conv_sysarr" bitwidth="32" opcode="alloca" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="170" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataOutputObjs>call</dataOutputObjs>
       <dataOutputObjs>getelementptr</dataOutputObjs>
       <constName>empty</constName>
@@ -460,7 +464,7 @@
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="trunc_ln185" lineNumber="185" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln185_fu_582_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="trunc_ln185" lineNumber="185" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln185_fu_582_p1" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="185" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
@@ -505,7 +509,7 @@
       <dataOutputObjs>mul</dataOutputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="trunc_ln191" lineNumber="191" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln191_fu_598_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="48" name="trunc_ln191" lineNumber="191" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln191_fu_598_p1" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="28" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="191" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
@@ -521,7 +525,7 @@
       <dataOutputObjs>udiv</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="TILES_W" lineNumber="201" originalName="TILES_W" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U418" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="35" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="51" name="TILES_W" lineNumber="201" originalName="TILES_W" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U416" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="35" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="201" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
@@ -538,7 +542,7 @@
       <dataOutputObjs>udiv</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="TILES_H" lineNumber="202" originalName="TILES_H" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U419" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="36" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="54" name="TILES_H" lineNumber="202" originalName="TILES_H" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U417" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="36" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="202" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
@@ -555,7 +559,7 @@
       <dataOutputObjs>udiv</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="TILES_R" lineNumber="203" originalName="TILES_R" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U420" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="37" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="57" name="TILES_R" lineNumber="203" originalName="TILES_R" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U418" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="37" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="203" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
@@ -572,13 +576,13 @@
       <dataOutputObjs>udiv</dataOutputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="TILES_S" lineNumber="204" originalName="TILES_S" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U421" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="40" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="60" name="TILES_S" lineNumber="204" originalName="TILES_S" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="udiv_32s_32ns_32_36_seq_1_U419" contextFuncName="Conv_sysarr" bitwidth="32" opcode="udiv" nodeLabel="8.0" nodeLatency="35" m_display="0" m_delay="1.17" m_topoIndex="40" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="204" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="div55_cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="div55_cast_reg_1111" contextFuncName="read" bitwidth="30" opcode="partselect" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="61" name="div55_cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="div55_cast_reg_1125" contextFuncName="read" bitwidth="30" opcode="partselect" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
@@ -599,6 +603,7 @@
       <validLinenumbers>167</validLinenumbers>
       <validLinenumbers>168</validLinenumbers>
       <validLinenumbers>169</validLinenumbers>
+      <validLinenumbers>170</validLinenumbers>
       <validLinenumbers>185</validLinenumbers>
       <validLinenumbers>191</validLinenumbers>
       <validLinenumbers>201</validLinenumbers>
@@ -618,21 +623,21 @@
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>bb546</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="tmp" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U422" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="46.0" m_display="0" m_delay="3.17" m_topoIndex="61" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="88" name="tmp" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U420" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="46.0" m_display="0" m_delay="3.17" m_topoIndex="61" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="mul70" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U423" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="46.0" m_display="0" m_delay="3.17" m_topoIndex="62" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="89" name="mul70" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U421" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="46.0" m_display="0" m_delay="3.17" m_topoIndex="62" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>mul</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="trunc_ln221" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln221_fu_701_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="46.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
+    <node_objs xsi:type="cdfg:CdfgNode" id="90" name="empty" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="empty_fu_701_p1" contextFuncName="to_uint64" bitwidth="20" opcode="trunc" nodeLabel="46.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
@@ -647,7 +652,7 @@
       <dataOutputObjs>mul</dataOutputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="bound" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U424" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="47.0" m_display="0" m_delay="3.17" m_topoIndex="66" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="93" name="bound" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U422" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="47.0" m_display="0" m_delay="3.17" m_topoIndex="66" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
@@ -674,19 +679,14 @@
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>bb544</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="133" name="mul99" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U425" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="52.0" m_display="0" m_delay="3.17" m_topoIndex="98" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="133" name="mul99" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U424" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="50.0" m_display="0" m_delay="3.17" m_topoIndex="98" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="134" name="empty_86" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="empty_86_fu_818_p1" contextFuncName="to_uint64" bitwidth="9" opcode="trunc" nodeLabel="52.0" m_display="0" m_topoIndex="99" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
-      <dataInputObjs>mul</dataInputObjs>
-      <dataOutputObjs>mul</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="135" name="div101_cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="div101_cast_reg_1279" contextFuncName="read" bitwidth="30" opcode="partselect" nodeLabel="52.0" m_display="0" m_topoIndex="100" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="134" name="div101_cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="div101_cast_reg_1283" contextFuncName="read" bitwidth="30" opcode="partselect" nodeLabel="50.0" m_display="0" m_topoIndex="99" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
@@ -694,23 +694,28 @@
       <dataOutputObjs>call</dataOutputObjs>
       <constName>empty</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="136" name="cast2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="bound4_fu_839_p10" contextFuncName="to_uint64" bitwidth="62" opcode="zext" nodeLabel="52.0" m_display="0" m_topoIndex="101" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="135" name="empty_93" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="empty_93_fu_838_p1" contextFuncName="to_uint64" bitwidth="20" opcode="trunc" nodeLabel="50.0" m_display="0" m_topoIndex="100" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="137" name="cast3" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound4_fu_839_p00" contextFuncName="read" bitwidth="62" opcode="zext" nodeLabel="52.0" m_display="0" m_topoIndex="102" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="136" name="cast2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="bound4_fu_850_p10" contextFuncName="to_uint64" bitwidth="62" opcode="zext" nodeLabel="50.0" m_display="0" m_topoIndex="101" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="137" name="cast3" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound4_fu_850_p00" contextFuncName="read" bitwidth="62" opcode="zext" nodeLabel="50.0" m_display="0" m_topoIndex="102" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="138" name="bound4" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U426" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="52.0" m_display="0" m_delay="3.17" m_topoIndex="103" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="138" name="bound4" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U425" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="50.0" m_display="0" m_delay="3.17" m_topoIndex="103" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="139" name="br_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="52.0" m_display="0" m_delay="0.6" m_topoIndex="104" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="139" name="br_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="50.0" m_display="0" m_delay="0.6" m_topoIndex="104" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <controlInputObjs>bb544</controlInputObjs>
     </node_objs>
@@ -731,17 +736,17 @@
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>block_194</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="178" name="empty_88" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="empty_88_fu_942_p1" contextFuncName="read" bitwidth="9" opcode="trunc" nodeLabel="57.0" m_display="0" m_topoIndex="135" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="178" name="empty_95" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="empty_95_fu_964_p1" contextFuncName="read" bitwidth="20" opcode="trunc" nodeLabel="53.0" m_display="0" m_topoIndex="135" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="179" name="empty_89" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="empty_89_fu_946_p1" contextFuncName="read" bitwidth="9" opcode="trunc" nodeLabel="57.0" m_display="0" m_topoIndex="136" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="179" name="empty_96" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="empty_96_fu_968_p1" contextFuncName="read" bitwidth="20" opcode="trunc" nodeLabel="53.0" m_display="0" m_topoIndex="136" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="180" name="_ln521" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="grp_dataflow_parent_loop_proc20_fu_530" contextFuncName="read" opcode="call" nodeLabel="57.0" nodeLatency="1" m_display="0" m_topoIndex="137" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="180" name="_ln521" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="grp_dataflow_parent_loop_proc19_fu_530" contextFuncName="read" opcode="call" nodeLabel="53.0" nodeLatency="1" m_display="0" m_topoIndex="137" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>partselect</dataInputObjs>
       <dataInputObjs>partselect</dataInputObjs>
@@ -769,32 +774,32 @@
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>alloca</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
-      <constName>dataflow_parent_loop_proc20</constName>
+      <constName>dataflow_parent_loop_proc19</constName>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="181" name="mul152" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U427" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="57.0" m_display="0" m_delay="3.17" m_topoIndex="138" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="181" name="mul152" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="mul_32s_32s_32_1_1_U427" contextFuncName="to_uint64" bitwidth="32" opcode="mul" nodeLabel="53.0" m_display="0" m_delay="3.17" m_topoIndex="138" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>trunc</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="182" name="trunc_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln290_fu_954_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="57.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
-      <dataInputObjs>mul</dataInputObjs>
-      <dataOutputObjs>mul</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="183" name="cast9" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="bound11_fu_962_p10" contextFuncName="to_uint64" bitwidth="62" opcode="zext" nodeLabel="57.0" m_display="0" m_topoIndex="140" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="182" name="empty_97" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="empty_97_fu_976_p1" contextFuncName="to_uint64" bitwidth="20" opcode="trunc" nodeLabel="53.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="184" name="bound11" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U428" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="57.0" m_display="0" m_delay="3.17" m_topoIndex="141" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="183" name="cast9" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="bound11_fu_984_p10" contextFuncName="to_uint64" bitwidth="62" opcode="zext" nodeLabel="53.0" m_display="0" m_topoIndex="140" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
+      <dataInputObjs>mul</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="184" name="bound11" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_30ns_32ns_62_1_1_U428" contextFuncName="read" bitwidth="62" opcode="mul" nodeLabel="53.0" m_display="0" m_delay="3.17" m_topoIndex="141" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="185" name="br_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="58.0" m_display="0" m_delay="0.6" m_topoIndex="142" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="185" name="br_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="54.0" m_display="0" m_delay="0.6" m_topoIndex="142" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <controlInputObjs>block_194</controlInputObjs>
     </node_objs>
@@ -811,14 +816,14 @@
   <blocks id="240" name="._crit_edge309.loopexit" type="BlockType">
     <controlInputObjs>block_194</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="239" name="_ln305" lineNumber="305" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="ret" nodeLabel="64.0" m_display="0" m_topoIndex="188" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="239" name="_ln305" lineNumber="305" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="ret" nodeLabel="57.0" m_display="0" m_topoIndex="188" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="305" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
     </node_objs>
     <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
       <validLinenumbers>305</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1150" pipe_depth="2" RegionName="VITIS_LOOP_212_1">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1127" pipe_depth="2" RegionName="VITIS_LOOP_212_1">
     <basic_blocks id="69" name="bb548" type="BlockType">
       <controlInputObjs>bb549</controlInputObjs>
       <controlInputObjs>bb548.split</controlInputObjs>
@@ -884,14 +889,14 @@
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="bias_l2_0_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="bias_l2_0_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="bias_l2_0_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="1.15" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="bias_l2_0_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="0.59" m_topoIndex="50" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
@@ -902,14 +907,14 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="bias_l2_1_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="bias_l2_1_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="bias_l2_1_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="1.15" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="bias_l2_1_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="0.59" m_topoIndex="53" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
@@ -920,14 +925,14 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="bias_l2_2_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="bias_l2_2_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="bias_l2_2_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="1.15" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="bias_l2_2_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="0.59" m_topoIndex="56" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
@@ -938,14 +943,14 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bias_l2_3_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="bias_l2_3_addr" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="45.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="bias_l2_3_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="1.15" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="bias_l2_3_addr_write_ln217" lineNumber="217" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="45.0" m_display="0" m_delay="0.59" m_topoIndex="59" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="217" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
@@ -965,7 +970,7 @@
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1151" pipe_depth="4" RegionName="VITIS_LOOP_221_3_VITIS_LOOP_223_4">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1128" pipe_depth="2" RegionName="VITIS_LOOP_221_3_VITIS_LOOP_223_4">
     <basic_blocks id="103" name="bb546" type="BlockType">
       <controlInputObjs>._crit_edge377.loopexit</controlInputObjs>
       <controlInputObjs>._crit_edge360.loopexit</controlInputObjs>
@@ -1059,12 +1064,12 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="trunc_ln221_1" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln221_1_fu_755_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="48.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="trunc_ln221" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln221_fu_755_p1" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="48.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="weight_in_V_read" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="256" opcode="read" nodeLabel="51.0" m_display="0" m_delay="1.59" m_topoIndex="83" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="weight_in_V_read" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="256" opcode="read" nodeLabel="49.0" m_display="0" m_delay="1.59" m_topoIndex="83" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
         <dataInputObjs>weight_in_V</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
@@ -1072,24 +1077,24 @@
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="empty" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_1089_p0" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="48.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="empty_92" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul81_cast_fu_763_p0" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="48.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="mul81" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U429" contextFuncName="Conv_sysarr" bitwidth="9" opcode="mul" nodeLabel="48.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="80" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="mul81_cast" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U423" contextFuncName="Conv_sysarr" bitwidth="20" opcode="mul" nodeLabel="48.0" m_display="0" m_delay="2.32" m_topoIndex="80" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="kcrs" lineNumber="221" originalName="kcrs" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U429" contextFuncName="Conv_sysarr" bitwidth="9" opcode="add" nodeLabel="50.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="82" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="kcrs" lineNumber="221" originalName="kcrs" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="kcrs_fu_768_p2" contextFuncName="Conv_sysarr" bitwidth="20" opcode="add" nodeLabel="48.0" m_display="0" m_delay="0.8" m_topoIndex="81" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="117" name="idxprom92" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom92_fu_769_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="51.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="117" name="idxprom92" lineNumber="221" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom92_fu_780_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="49.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="221" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -1097,84 +1102,84 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="trunc_ln708_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_0_d0" contextFuncName="to_uint64" bitwidth="8" opcode="trunc" nodeLabel="51.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="trunc_ln708_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_0_d0" contextFuncName="to_uint64" bitwidth="8" opcode="trunc" nodeLabel="49.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="weight_l2_0_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="51.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="weight_l2_0_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="49.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="120" name="weight_l2_0_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="51.0" m_display="0" m_delay="1.15" m_topoIndex="87" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="120" name="weight_l2_0_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="49.0" m_display="0" m_delay="1.15" m_topoIndex="87" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="p_Result_10_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_1_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="51.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="p_Result_10_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_1_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="49.0" m_display="0" m_topoIndex="88" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="122" name="weight_l2_1_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="51.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="122" name="weight_l2_1_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="49.0" m_display="0" m_topoIndex="89" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="123" name="weight_l2_1_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="51.0" m_display="0" m_delay="1.15" m_topoIndex="90" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="123" name="weight_l2_1_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="49.0" m_display="0" m_delay="1.15" m_topoIndex="90" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="124" name="p_Result_10_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_2_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="51.0" m_display="0" m_topoIndex="91" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="124" name="p_Result_10_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_2_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="49.0" m_display="0" m_topoIndex="91" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="125" name="weight_l2_2_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="51.0" m_display="0" m_topoIndex="92" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="125" name="weight_l2_2_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="49.0" m_display="0" m_topoIndex="92" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="126" name="weight_l2_2_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="51.0" m_display="0" m_delay="1.15" m_topoIndex="93" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="126" name="weight_l2_2_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="49.0" m_display="0" m_delay="1.15" m_topoIndex="93" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="127" name="p_Result_10_3" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_3_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="51.0" m_display="0" m_topoIndex="94" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="127" name="p_Result_10_3" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="weight_l2_3_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="49.0" m_display="0" m_topoIndex="94" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="weight_l2_3_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="51.0" m_display="0" m_topoIndex="95" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="128" name="weight_l2_3_addr" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="49.0" m_display="0" m_topoIndex="95" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="129" name="weight_l2_3_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="51.0" m_display="0" m_delay="1.15" m_topoIndex="96" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="129" name="weight_l2_3_addr_write_ln229" lineNumber="229" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="49.0" m_display="0" m_delay="1.15" m_topoIndex="96" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="229" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="130" name="add_ln223" lineNumber="223" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln223_fu_763_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="48.0" m_display="0" m_delay="0.86" m_topoIndex="81" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="130" name="add_ln223" lineNumber="223" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln223_fu_774_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="48.0" m_display="0" m_delay="0.86" m_topoIndex="82" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="223" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="131" name="br_ln0" opcode="br" nodeLabel="51.0" m_display="0" m_topoIndex="97" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="131" name="br_ln0" opcode="br" nodeLabel="49.0" m_display="0" m_topoIndex="97" m_clusterGroupNumber="-1">
         <controlInputObjs>bb546</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h">
@@ -1190,7 +1195,7 @@
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1152" pipe_depth="4" RegionName="VITIS_LOOP_234_6_VITIS_LOOP_236_7">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1129" pipe_depth="2" RegionName="VITIS_LOOP_234_6_VITIS_LOOP_236_7">
     <basic_blocks id="148" name="bb544" type="BlockType">
       <controlInputObjs>._crit_edge369.loopexit</controlInputObjs>
       <controlInputObjs>._crit_edge343.loopexit</controlInputObjs>
@@ -1198,7 +1203,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>codeRepl</controlOutputObjs>
       <controlOutputObjs>._crit_edge343.loopexit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="141" name="indvar_flatten6" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="62" opcode="phi" nodeLabel="53.0" m_display="0" m_topoIndex="105" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="141" name="indvar_flatten6" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="62" opcode="phi" nodeLabel="51.0" m_display="0" m_topoIndex="105" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1207,7 +1212,7 @@
         <controlInputObjs>._crit_edge343.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="wh" lineNumber="234" originalName="wh" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="phi" nodeLabel="53.0" m_display="0" m_topoIndex="106" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="142" name="wh" lineNumber="234" originalName="wh" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="phi" nodeLabel="51.0" m_display="0" m_topoIndex="106" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
@@ -1216,7 +1221,7 @@
         <controlInputObjs>._crit_edge343.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="143" name="co" lineNumber="236" originalName="co" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="30" opcode="phi" nodeLabel="53.0" m_display="0" m_topoIndex="107" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="143" name="co" lineNumber="236" originalName="co" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="30" opcode="phi" nodeLabel="51.0" m_display="0" m_topoIndex="107" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="236" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1225,19 +1230,19 @@
         <controlInputObjs>._crit_edge343.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="145" name="icmp_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln234_fu_845_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="53.0" m_display="0" m_delay="1.05" m_topoIndex="108" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="145" name="icmp_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln234_fu_856_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="51.0" m_display="0" m_delay="1.05" m_topoIndex="108" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="146" name="add_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln234_fu_850_p2" contextFuncName="Conv_sysarr" bitwidth="62" opcode="add" nodeLabel="53.0" m_display="0" m_delay="1.12" m_topoIndex="109" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="146" name="add_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln234_fu_861_p2" contextFuncName="Conv_sysarr" bitwidth="62" opcode="add" nodeLabel="51.0" m_display="0" m_delay="1.12" m_topoIndex="109" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="147" name="br_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="53.0" m_display="0" m_topoIndex="110" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="147" name="br_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="51.0" m_display="0" m_topoIndex="110" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>._crit_edge343.loopexit</controlInputObjs>
@@ -1255,14 +1260,14 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>bb544</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="151" name="icmp_ln236" lineNumber="236" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln236_fu_856_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="53.0" m_display="0" m_delay="0.83" m_topoIndex="111" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="151" name="icmp_ln236" lineNumber="236" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln236_fu_867_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="51.0" m_display="0" m_delay="0.83" m_topoIndex="111" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="236" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <dataOutputObjs>select</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="152" name="select_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln234_fu_861_p3" contextFuncName="Conv_sysarr" bitwidth="30" opcode="select" nodeLabel="53.0" m_display="0" m_delay="0.27" m_topoIndex="112" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="152" name="select_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln234_fu_872_p3" contextFuncName="Conv_sysarr" bitwidth="30" opcode="select" nodeLabel="51.0" m_display="0" m_delay="0.27" m_topoIndex="112" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
@@ -1270,13 +1275,13 @@
         <dataOutputObjs>add</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="add_ln234_1" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln234_1_fu_869_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="53.0" m_display="0" m_delay="0.88" m_topoIndex="113" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="153" name="add_ln234_1" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln234_1_fu_880_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="51.0" m_display="0" m_delay="0.88" m_topoIndex="113" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="154" name="select_ln234_1" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln234_1_fu_875_p3" contextFuncName="Conv_sysarr" bitwidth="32" opcode="select" nodeLabel="53.0" m_display="0" m_delay="0.22" m_topoIndex="114" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="154" name="select_ln234_1" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln234_1_fu_886_p3" contextFuncName="Conv_sysarr" bitwidth="32" opcode="select" nodeLabel="51.0" m_display="0" m_delay="0.22" m_topoIndex="114" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -1284,12 +1289,12 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="trunc_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln234_fu_883_p1" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="53.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="155" name="trunc_ln234" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln234_fu_894_p1" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="51.0" m_display="0" m_topoIndex="115" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="158" name="data_in_V_read" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="256" opcode="read" nodeLabel="56.0" m_display="0" m_delay="1.59" m_topoIndex="120" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="158" name="data_in_V_read" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="256" opcode="read" nodeLabel="52.0" m_display="0" m_delay="1.59" m_topoIndex="120" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
         <dataInputObjs>data_in_V</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
@@ -1297,24 +1302,24 @@
         <dataOutputObjs>partselect</dataOutputObjs>
         <dataOutputObjs>partselect</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="empty_87" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_1096_p0" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="53.0" m_display="0" m_topoIndex="116" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="159" name="empty_94" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul116_cast_fu_902_p0" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="51.0" m_display="0" m_topoIndex="116" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="160" name="mul116" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U430" contextFuncName="Conv_sysarr" bitwidth="9" opcode="mul" nodeLabel="53.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="117" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="160" name="mul116_cast" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U426" contextFuncName="Conv_sysarr" bitwidth="20" opcode="mul" nodeLabel="51.0" m_display="0" m_delay="2.32" m_topoIndex="117" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="add117" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U430" contextFuncName="Conv_sysarr" bitwidth="9" opcode="add" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="119" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="161" name="add117" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add117_fu_907_p2" contextFuncName="Conv_sysarr" bitwidth="20" opcode="add" nodeLabel="51.0" m_display="0" m_delay="0.8" m_topoIndex="118" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="162" name="idxprom118" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom118_fu_897_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="56.0" m_display="0" m_topoIndex="121" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="162" name="idxprom118" lineNumber="234" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom118_fu_919_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="52.0" m_display="0" m_topoIndex="121" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="234" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -1322,84 +1327,84 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="163" name="trunc_ln708_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_0_d0" contextFuncName="to_uint64" bitwidth="8" opcode="trunc" nodeLabel="56.0" m_display="0" m_topoIndex="122" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="163" name="trunc_ln708_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_0_d0" contextFuncName="to_uint64" bitwidth="8" opcode="trunc" nodeLabel="52.0" m_display="0" m_topoIndex="122" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="164" name="data_l2_0_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="56.0" m_display="0" m_topoIndex="123" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="164" name="data_l2_0_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="52.0" m_display="0" m_topoIndex="123" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="165" name="data_l2_0_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="56.0" m_display="0" m_delay="1.15" m_topoIndex="124" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="165" name="data_l2_0_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="52.0" m_display="0" m_delay="1.15" m_topoIndex="124" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="166" name="p_Result_11_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_1_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="56.0" m_display="0" m_topoIndex="125" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="166" name="p_Result_11_1" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_1_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="52.0" m_display="0" m_topoIndex="125" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="167" name="data_l2_1_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="56.0" m_display="0" m_topoIndex="126" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="167" name="data_l2_1_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="52.0" m_display="0" m_topoIndex="126" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="168" name="data_l2_1_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="56.0" m_display="0" m_delay="1.15" m_topoIndex="127" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="168" name="data_l2_1_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="52.0" m_display="0" m_delay="1.15" m_topoIndex="127" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="169" name="p_Result_11_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_2_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="56.0" m_display="0" m_topoIndex="128" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="169" name="p_Result_11_2" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_2_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="52.0" m_display="0" m_topoIndex="128" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="170" name="data_l2_2_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="56.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="170" name="data_l2_2_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="52.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="171" name="data_l2_2_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="56.0" m_display="0" m_delay="1.15" m_topoIndex="130" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="171" name="data_l2_2_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="52.0" m_display="0" m_delay="1.15" m_topoIndex="130" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="172" name="p_Result_11_3" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_3_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="56.0" m_display="0" m_topoIndex="131" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="172" name="p_Result_11_3" lineNumber="708" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="data_l2_3_d0" contextFuncName="to_uint64" bitwidth="8" opcode="partselect" nodeLabel="52.0" m_display="0" m_topoIndex="131" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="708" fileDirectory="/home/sumin/workspace/hls_test" functionName="to_uint64"/>
         <dataInputObjs>read</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="173" name="data_l2_3_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="56.0" m_display="0" m_topoIndex="132" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="173" name="data_l2_3_addr" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="52.0" m_display="0" m_topoIndex="132" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="174" name="data_l2_3_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="56.0" m_display="0" m_delay="1.15" m_topoIndex="133" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="174" name="data_l2_3_addr_write_ln241" lineNumber="241" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="store" nodeLabel="52.0" m_display="0" m_delay="1.15" m_topoIndex="133" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="241" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="175" name="add_ln236" lineNumber="236" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln236_fu_891_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="53.0" m_display="0" m_delay="0.86" m_topoIndex="118" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="175" name="add_ln236" lineNumber="236" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln236_fu_913_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="51.0" m_display="0" m_delay="0.86" m_topoIndex="119" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="236" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="176" name="br_ln0" opcode="br" nodeLabel="56.0" m_display="0" m_topoIndex="134" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="176" name="br_ln0" opcode="br" nodeLabel="52.0" m_display="0" m_topoIndex="134" m_clusterGroupNumber="-1">
         <controlInputObjs>bb544</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h">
@@ -1415,7 +1420,7 @@
       </fileValidLineNumbers>
     </basic_blocks>
   </regions>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1153" pipe_depth="5" RegionName="VITIS_LOOP_290_9_VITIS_LOOP_292_10">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="1130" pipe_depth="2" RegionName="VITIS_LOOP_290_9_VITIS_LOOP_292_10">
     <basic_blocks id="194" name="block_194" type="BlockType">
       <controlInputObjs>codeRepl</controlInputObjs>
       <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
@@ -1423,7 +1428,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>._crit_edge309.loopexit</controlOutputObjs>
       <controlOutputObjs>._crit_edge.loopexit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="187" name="indvar_flatten13" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="62" opcode="phi" nodeLabel="59.0" m_display="0" m_topoIndex="143" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="187" name="indvar_flatten13" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="62" opcode="phi" nodeLabel="55.0" m_display="0" m_topoIndex="143" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1432,7 +1437,7 @@
         <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="188" name="wh_1" lineNumber="290" originalName="wh" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="phi" nodeLabel="61.0" m_display="0" m_topoIndex="153" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="188" name="wh_1" lineNumber="290" originalName="wh" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="phi" nodeLabel="55.0" m_display="0" m_topoIndex="144" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
@@ -1441,7 +1446,7 @@
         <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="189" name="ko_2" lineNumber="292" originalName="ko" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="30" opcode="phi" nodeLabel="59.0" m_display="0" m_topoIndex="144" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="189" name="ko_2" lineNumber="292" originalName="ko" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="30" opcode="phi" nodeLabel="55.0" m_display="0" m_topoIndex="145" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="292" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -1450,19 +1455,19 @@
         <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="191" name="icmp_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln290_fu_967_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="59.0" m_display="0" m_delay="1.05" m_topoIndex="145" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="191" name="icmp_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln290_fu_989_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="55.0" m_display="0" m_delay="1.05" m_topoIndex="146" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="192" name="add_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln290_fu_972_p2" contextFuncName="Conv_sysarr" bitwidth="62" opcode="add" nodeLabel="59.0" m_display="0" m_delay="1.12" m_topoIndex="146" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="192" name="add_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln290_fu_994_p2" contextFuncName="Conv_sysarr" bitwidth="62" opcode="add" nodeLabel="55.0" m_display="0" m_delay="1.12" m_topoIndex="147" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="193" name="br_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="59.0" m_display="0" m_topoIndex="147" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="193" name="br_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="br" nodeLabel="55.0" m_display="0" m_topoIndex="148" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>._crit_edge.loopexit</controlInputObjs>
@@ -1480,14 +1485,14 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>block_194</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="197" name="icmp_ln292" lineNumber="292" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln292_fu_978_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="59.0" m_display="0" m_delay="0.83" m_topoIndex="148" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="197" name="icmp_ln292" lineNumber="292" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln292_fu_1000_p2" contextFuncName="Conv_sysarr" bitwidth="1" opcode="icmp" nodeLabel="55.0" m_display="0" m_delay="0.83" m_topoIndex="149" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="292" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <dataOutputObjs>select</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="198" name="select_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln290_fu_983_p3" contextFuncName="Conv_sysarr" bitwidth="30" opcode="select" nodeLabel="59.0" m_display="0" m_delay="0.27" m_topoIndex="149" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="198" name="select_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln290_fu_1005_p3" contextFuncName="Conv_sysarr" bitwidth="30" opcode="select" nodeLabel="55.0" m_display="0" m_delay="0.27" m_topoIndex="150" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
@@ -1496,13 +1501,13 @@
         <dataOutputObjs>add</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="199" name="add_ln290_1" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln290_1_fu_1001_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="61.0" m_display="0" m_delay="0.88" m_topoIndex="154" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="199" name="add_ln290_1" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln290_1_fu_1013_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="55.0" m_display="0" m_delay="0.88" m_topoIndex="151" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="200" name="select_ln290_1" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln290_1_fu_1007_p3" contextFuncName="Conv_sysarr" bitwidth="32" opcode="select" nodeLabel="61.0" m_display="0" m_delay="0.22" m_topoIndex="155" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="200" name="select_ln290_1" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln290_1_fu_1019_p3" contextFuncName="Conv_sysarr" bitwidth="32" opcode="select" nodeLabel="55.0" m_display="0" m_delay="0.22" m_topoIndex="152" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -1510,12 +1515,12 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="201" name="trunc_ln290_1" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_1103_p2" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="61.0" m_display="0" m_topoIndex="156" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="201" name="trunc_ln290" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln290_fu_1027_p1" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="55.0" m_display="0" m_topoIndex="153" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="203" name="ko_4_cast128" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ko_4_cast128_fu_1018_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="62.0" m_display="0" m_topoIndex="158" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="203" name="ko_4_cast128" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ko_4_cast128_fu_1031_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="55.0" m_display="0" m_topoIndex="154" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -1523,24 +1528,24 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="205" name="empty_90" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_1103_p0" contextFuncName="Conv_sysarr" bitwidth="9" opcode="trunc" nodeLabel="59.0" m_display="0" m_topoIndex="150" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="205" name="empty_98" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul161_cast_fu_1043_p0" contextFuncName="Conv_sysarr" bitwidth="20" opcode="trunc" nodeLabel="55.0" m_display="0" m_topoIndex="155" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="206" name="mul161" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U431" contextFuncName="Conv_sysarr" bitwidth="9" opcode="mul" nodeLabel="59.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="151" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="206" name="mul161_cast" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U429" contextFuncName="Conv_sysarr" bitwidth="20" opcode="mul" nodeLabel="55.0" m_display="0" m_delay="2.32" m_topoIndex="156" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="207" name="add162" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U431" contextFuncName="Conv_sysarr" bitwidth="9" opcode="add" nodeLabel="61.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="157" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="207" name="add162" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add162_fu_1048_p2" contextFuncName="Conv_sysarr" bitwidth="20" opcode="add" nodeLabel="55.0" m_display="0" m_delay="0.8" m_topoIndex="157" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="208" name="idxprom163" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom163_fu_1025_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="62.0" m_display="0" m_topoIndex="159" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="208" name="idxprom163" lineNumber="290" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom163_fu_1054_p1" contextFuncName="Conv_sysarr" bitwidth="64" opcode="zext" nodeLabel="55.0" m_display="0" m_topoIndex="158" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="290" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
@@ -1548,147 +1553,147 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="209" name="output_l2_0_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="160" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="209" name="output_l2_0_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="159" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="210" name="output_l2_0_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="161" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="210" name="output_l2_0_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="160" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="211" name="bias_l2_0_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="162" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="211" name="bias_l2_0_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="161" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="212" name="bias_l2_0_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="163" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="212" name="bias_l2_0_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="0.59" m_topoIndex="162" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="213" name="sext_ln298" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_fu_1032_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="63.0" m_display="0" m_topoIndex="176" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="213" name="sext_ln298" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_fu_1068_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="56.0" m_display="0" m_topoIndex="176" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="214" name="add_ln298" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_fu_1036_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="63.0" m_display="0" m_delay="0.88" m_topoIndex="177" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="214" name="add_ln298" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_fu_1072_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="56.0" m_display="0" m_delay="0.88" m_topoIndex="177" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="215" name="output_l2_1_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="164" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="215" name="output_l2_1_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="163" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="216" name="output_l2_1_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="165" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="216" name="output_l2_1_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="164" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="217" name="bias_l2_1_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="166" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="217" name="bias_l2_1_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="165" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="218" name="bias_l2_1_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="167" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="218" name="bias_l2_1_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="0.59" m_topoIndex="166" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="219" name="sext_ln298_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_1_fu_1042_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="63.0" m_display="0" m_topoIndex="178" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="219" name="sext_ln298_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_1_fu_1078_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="56.0" m_display="0" m_topoIndex="178" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="220" name="add_ln298_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_1_fu_1046_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="63.0" m_display="0" m_delay="0.88" m_topoIndex="179" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="220" name="add_ln298_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_1_fu_1082_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="56.0" m_display="0" m_delay="0.88" m_topoIndex="179" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="221" name="output_l2_2_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="168" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="221" name="output_l2_2_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="167" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="222" name="output_l2_2_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="169" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="222" name="output_l2_2_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="168" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="223" name="bias_l2_2_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="170" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="223" name="bias_l2_2_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="169" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="224" name="bias_l2_2_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="171" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="224" name="bias_l2_2_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="0.59" m_topoIndex="170" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="225" name="sext_ln298_2" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_2_fu_1052_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="63.0" m_display="0" m_topoIndex="180" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="225" name="sext_ln298_2" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_2_fu_1088_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="56.0" m_display="0" m_topoIndex="180" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="226" name="add_ln298_2" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_2_fu_1056_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="63.0" m_display="0" m_delay="0.88" m_topoIndex="181" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="226" name="add_ln298_2" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_2_fu_1092_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="56.0" m_display="0" m_delay="0.88" m_topoIndex="181" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="227" name="output_l2_3_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="172" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="227" name="output_l2_3_addr" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="171" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="228" name="output_l2_3_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="173" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="228" name="output_l2_3_load" lineNumber="297" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="32" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="172" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="297" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="229" name="bias_l2_3_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="getelementptr" nodeLabel="62.0" m_display="0" m_topoIndex="174" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="229" name="bias_l2_3_addr_1" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="4" opcode="getelementptr" nodeLabel="55.0" m_display="0" m_topoIndex="173" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>alloca</dataInputObjs>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="230" name="bias_l2_3_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="62.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="175" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="230" name="bias_l2_3_load" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="8" opcode="load" nodeLabel="55.0" nodeLatency="1" m_display="0" m_delay="0.59" m_topoIndex="174" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>sext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="231" name="sext_ln298_3" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_3_fu_1062_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="63.0" m_display="0" m_topoIndex="182" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="231" name="sext_ln298_3" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="sext_ln298_3_fu_1098_p1" contextFuncName="Conv_sysarr" bitwidth="32" opcode="sext" nodeLabel="56.0" m_display="0" m_topoIndex="182" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="232" name="add_ln298_3" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_3_fu_1066_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="63.0" m_display="0" m_delay="0.88" m_topoIndex="183" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="232" name="add_ln298_3" lineNumber="298" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln298_3_fu_1102_p2" contextFuncName="Conv_sysarr" bitwidth="32" opcode="add" nodeLabel="56.0" m_display="0" m_delay="0.88" m_topoIndex="183" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="298" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>sext</dataInputObjs>
         <dataOutputObjs>bitconcatenate</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="233" name="p_Result_12_3" lineNumber="391" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="p_Result_12_3_fu_1072_p5" contextFuncName="operator_assign" bitwidth="128" opcode="bitconcatenate" nodeLabel="63.0" m_display="0" m_topoIndex="184" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="233" name="p_Result_12_3" lineNumber="391" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="p_Result_12_3_fu_1108_p5" contextFuncName="operator_assign" bitwidth="128" opcode="bitconcatenate" nodeLabel="56.0" m_display="0" m_topoIndex="184" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="391" fileDirectory="/home/sumin/workspace/hls_test" functionName="operator="/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -1696,23 +1701,23 @@
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="234" name="p_Result_12_3_cast" lineNumber="391" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="conv_out_V_din" contextFuncName="operator_assign" bitwidth="256" opcode="zext" nodeLabel="63.0" m_display="0" m_topoIndex="185" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="234" name="p_Result_12_3_cast" lineNumber="391" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" fileDirectory=".." rtlName="conv_out_V_din" contextFuncName="operator_assign" bitwidth="256" opcode="zext" nodeLabel="56.0" m_display="0" m_topoIndex="185" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h" linenumber="391" fileDirectory="/home/sumin/workspace/hls_test" functionName="operator="/>
         <dataInputObjs>bitconcatenate</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="235" name="conv_out_V_write_ln543" lineNumber="543" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="write" opcode="write" nodeLabel="63.0" m_display="0" m_delay="1.59" m_topoIndex="186" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="235" name="conv_out_V_write_ln543" lineNumber="543" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="write" opcode="write" nodeLabel="56.0" m_display="0" m_delay="1.59" m_topoIndex="186" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="543" fileDirectory="/home/sumin/workspace/hls_test" functionName="write"/>
         <dataInputObjs>zext</dataInputObjs>
         <dataOutputObjs>conv_out_V</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="236" name="add_ln292" lineNumber="292" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln292_fu_995_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="59.0" m_display="0" m_delay="0.86" m_topoIndex="152" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="236" name="add_ln292" lineNumber="292" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln292_fu_1062_p2" contextFuncName="Conv_sysarr" bitwidth="30" opcode="add" nodeLabel="55.0" m_display="0" m_delay="0.86" m_topoIndex="175" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="292" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="237" name="br_ln0" opcode="br" nodeLabel="63.0" m_display="0" m_topoIndex="187" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="237" name="br_ln0" opcode="br" nodeLabel="56.0" m_display="0" m_topoIndex="187" m_clusterGroupNumber="-1">
         <controlInputObjs>block_194</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h">
@@ -1787,189 +1792,179 @@
   <ScheduleInfo time="55"/>
   <ScheduleInfo time="56"/>
   <ScheduleInfo time="57"/>
-  <ScheduleInfo time="58"/>
-  <ScheduleInfo time="59"/>
-  <ScheduleInfo time="60"/>
-  <ScheduleInfo time="61"/>
-  <ScheduleInfo time="62"/>
-  <ScheduleInfo time="63"/>
-  <ScheduleInfo time="64"/>
+  <regnodes realName="cast1_reg_1249">
+    <nodeIds>92</nodeIds>
+  </regnodes>
+  <regnodes realName="C_reg_1139">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="bias_l2_0_addr_1_reg_1362">
+    <nodeIds>211</nodeIds>
+  </regnodes>
+  <regnodes realName="TILESIZE_H_reg_1192">
+    <nodeIds>53</nodeIds>
+  </regnodes>
+  <regnodes realName="ko_2_reg_519">
+    <nodeIds>189</nodeIds>
+  </regnodes>
   <regnodes realName="crs_reg_442">
     <nodeIds>97</nodeIds>
   </regnodes>
-  <regnodes realName="div101_cast_reg_1279">
-    <nodeIds>135</nodeIds>
+  <regnodes realName="TILES_S_reg_1225">
+    <nodeIds>60</nodeIds>
   </regnodes>
-  <regnodes realName="select_ln290_1_reg_1368">
-    <nodeIds>200</nodeIds>
+  <regnodes realName="bias_l2_1_addr_1_reg_1372">
+    <nodeIds>217</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln292_reg_1363">
-    <nodeIds>236</nodeIds>
+  <regnodes realName="WH_in_reg_1167">
+    <nodeIds>45</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln185_reg_1130">
-    <nodeIds>41</nodeIds>
+  <regnodes realName="kcrs_reg_1273">
+    <nodeIds>116</nodeIds>
   </regnodes>
-  <regnodes realName="div55_cast_reg_1111">
-    <nodeIds>61</nodeIds>
+  <regnodes realName="bias_l2_2_addr_1_reg_1382">
+    <nodeIds>223</nodeIds>
   </regnodes>
-  <regnodes realName="param_in_V_read_1_reg_1120">
-    <nodeIds>39</nodeIds>
+  <regnodes realName="add_ln212_reg_1234">
+    <nodeIds>67</nodeIds>
   </regnodes>
-  <regnodes realName="TILES_W_reg_1196">
-    <nodeIds>51</nodeIds>
+  <regnodes realName="icmp_ln212_reg_1230">
+    <nodeIds>66</nodeIds>
   </regnodes>
-  <regnodes realName="TILES_H_reg_1201">
-    <nodeIds>54</nodeIds>
+  <regnodes realName="TILESIZE_W_reg_1186">
+    <nodeIds>50</nodeIds>
   </regnodes>
-  <regnodes realName="output_l2_2_addr_reg_1398">
-    <nodeIds>221</nodeIds>
+  <regnodes realName="empty_97_reg_1333">
+    <nodeIds>182</nodeIds>
   </regnodes>
-  <regnodes realName="empty_87_reg_1309">
-    <nodeIds>159</nodeIds>
+  <regnodes realName="param_in_V_read_2_reg_1149">
+    <nodeIds>42</nodeIds>
   </regnodes>
-  <regnodes realName="output_l2_1_addr_reg_1388">
-    <nodeIds>215</nodeIds>
+  <regnodes realName="select_ln234_1_reg_1308">
+    <nodeIds>154</nodeIds>
   </regnodes>
-  <regnodes realName="output_l2_0_addr_reg_1378">
-    <nodeIds>209</nodeIds>
+  <regnodes realName="bias_l2_3_addr_1_reg_1392">
+    <nodeIds>229</nodeIds>
+  </regnodes>
+  <regnodes realName="bound_reg_1254">
+    <nodeIds>93</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln221_reg_1259">
+    <nodeIds>100</nodeIds>
   </regnodes>
   <regnodes realName="indvar_flatten_reg_431">
     <nodeIds>96</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln221_reg_1230">
-    <nodeIds>90</nodeIds>
-  </regnodes>
-  <regnodes realName="output_l2_3_addr_reg_1408">
-    <nodeIds>227</nodeIds>
-  </regnodes>
-  <regnodes realName="TILES_S_reg_1211">
-    <nodeIds>60</nodeIds>
-  </regnodes>
-  <regnodes realName="icmp_ln212_reg_1216">
-    <nodeIds>66</nodeIds>
-  </regnodes>
-  <regnodes realName="cast1_reg_1235">
-    <nodeIds>92</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_88_reg_1319">
-    <nodeIds>178</nodeIds>
-  </regnodes>
-  <regnodes realName="TILESIZE_S_reg_1190">
-    <nodeIds>59</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_86_reg_1274">
-    <nodeIds>134</nodeIds>
-  </regnodes>
-  <regnodes realName="TILES_R_reg_1206">
-    <nodeIds>57</nodeIds>
-  </regnodes>
-  <regnodes realName="trunc_ln191_reg_1167">
-    <nodeIds>48</nodeIds>
-  </regnodes>
-  <regnodes realName="bound_reg_1240">
-    <nodeIds>93</nodeIds>
-  </regnodes>
-  <regnodes realName="select_ln221_1_reg_1254">
+  <regnodes realName="select_ln221_1_reg_1268">
     <nodeIds>109</nodeIds>
   </regnodes>
-  <regnodes realName="bound11_reg_1334">
+  <regnodes realName="bound11_reg_1338">
     <nodeIds>184</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln234_reg_1304">
-    <nodeIds>155</nodeIds>
+  <regnodes realName="RS_reg_1173">
+    <nodeIds>47</nodeIds>
   </regnodes>
-  <regnodes realName="bias_l2_0_addr_1_reg_1383">
-    <nodeIds>211</nodeIds>
+  <regnodes realName="add_ln292_reg_1397">
+    <nodeIds>236</nodeIds>
   </regnodes>
-  <regnodes realName="TILESIZE_W_reg_1172">
-    <nodeIds>50</nodeIds>
+  <regnodes realName="add_ln221_reg_1263">
+    <nodeIds>101</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln221_reg_1245">
-    <nodeIds>100</nodeIds>
+  <regnodes realName="empty_reg_1244">
+    <nodeIds>90</nodeIds>
   </regnodes>
-  <regnodes realName="bias_l2_1_addr_1_reg_1393">
-    <nodeIds>217</nodeIds>
+  <regnodes realName="param_in_V_read_3_reg_1162">
+    <nodeIds>44</nodeIds>
   </regnodes>
-  <regnodes realName="TILESIZE_R_reg_1184">
-    <nodeIds>56</nodeIds>
+  <regnodes realName="div101_cast_reg_1283">
+    <nodeIds>134</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln234_reg_1290">
+  <regnodes realName="add117_reg_1313">
+    <nodeIds>161</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln234_reg_1299">
     <nodeIds>145</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln223_reg_1278">
+    <nodeIds>130</nodeIds>
+  </regnodes>
+  <regnodes realName="bound4_reg_1294">
+    <nodeIds>138</nodeIds>
+  </regnodes>
+  <regnodes realName="TILES_H_reg_1215">
+    <nodeIds>54</nodeIds>
+  </regnodes>
+  <regnodes realName="mul70_reg_1239">
+    <nodeIds>89</nodeIds>
+  </regnodes>
+  <regnodes realName="wh_1_reg_508">
+    <nodeIds>188</nodeIds>
+  </regnodes>
+  <regnodes realName="WH_reg_1154">
+    <nodeIds>43</nodeIds>
   </regnodes>
   <regnodes realName="wh_reg_475">
     <nodeIds>142</nodeIds>
   </regnodes>
-  <regnodes realName="bias_l2_3_addr_1_reg_1413">
-    <nodeIds>229</nodeIds>
+  <regnodes realName="empty_95_reg_1323">
+    <nodeIds>178</nodeIds>
   </regnodes>
-  <regnodes realName="empty_89_reg_1324">
+  <regnodes realName="output_l2_3_addr_reg_1387">
+    <nodeIds>227</nodeIds>
+  </regnodes>
+  <regnodes realName="div55_cast_reg_1125">
+    <nodeIds>61</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln290_reg_1343">
+    <nodeIds>191</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln234_reg_1303">
+    <nodeIds>146</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_96_reg_1328">
     <nodeIds>179</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln290_reg_1329">
-    <nodeIds>182</nodeIds>
+  <regnodes realName="TILES_W_reg_1210">
+    <nodeIds>51</nodeIds>
   </regnodes>
-  <regnodes realName="TILESIZE_H_reg_1178">
-    <nodeIds>53</nodeIds>
+  <regnodes realName="output_l2_2_addr_reg_1377">
+    <nodeIds>221</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln290_reg_1343">
+  <regnodes realName="output_l2_1_addr_reg_1367">
+    <nodeIds>215</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln290_reg_1347">
     <nodeIds>192</nodeIds>
   </regnodes>
-  <regnodes realName="bias_l2_2_addr_1_reg_1403">
-    <nodeIds>223</nodeIds>
+  <regnodes realName="empty_93_reg_1289">
+    <nodeIds>135</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln223_reg_1269">
-    <nodeIds>130</nodeIds>
+  <regnodes realName="output_l2_0_addr_reg_1357">
+    <nodeIds>209</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln236_reg_1314">
+  <regnodes realName="select_ln290_1_reg_1352">
+    <nodeIds>200</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln236_reg_1318">
     <nodeIds>175</nodeIds>
-  </regnodes>
-  <regnodes realName="param_in_V_read_3_reg_1148">
-    <nodeIds>44</nodeIds>
-  </regnodes>
-  <regnodes realName="WH_in_reg_1153">
-    <nodeIds>45</nodeIds>
-  </regnodes>
-  <regnodes realName="WH_reg_1140">
-    <nodeIds>43</nodeIds>
-  </regnodes>
-  <regnodes realName="select_ln234_1_reg_1299">
-    <nodeIds>154</nodeIds>
-  </regnodes>
-  <regnodes realName="C_reg_1125">
-    <nodeIds>40</nodeIds>
-  </regnodes>
-  <regnodes realName="bound4_reg_1285">
-    <nodeIds>138</nodeIds>
   </regnodes>
   <regnodes realName="indvar_flatten13_reg_497">
     <nodeIds>187</nodeIds>
   </regnodes>
-  <regnodes realName="ko_2_reg_508">
-    <nodeIds>189</nodeIds>
-  </regnodes>
-  <regnodes realName="RS_reg_1159">
-    <nodeIds>47</nodeIds>
-  </regnodes>
-  <regnodes realName="wh_1_reg_519">
-    <nodeIds>188</nodeIds>
+  <regnodes realName="TILESIZE_R_reg_1198">
+    <nodeIds>56</nodeIds>
   </regnodes>
   <regnodes realName="co_reg_486">
     <nodeIds>143</nodeIds>
   </regnodes>
-  <regnodes realName="select_ln290_reg_1353">
-    <nodeIds>198</nodeIds>
+  <regnodes realName="param_in_V_read_1_reg_1134">
+    <nodeIds>39</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln292_reg_1348">
-    <nodeIds>197</nodeIds>
+  <regnodes realName="trunc_ln191_reg_1181">
+    <nodeIds>48</nodeIds>
   </regnodes>
-  <regnodes realName="mul70_reg_1225">
-    <nodeIds>89</nodeIds>
-  </regnodes>
-  <regnodes realName="trunc_ln221_1_reg_1259">
-    <nodeIds>110</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_reg_1264">
-    <nodeIds>114</nodeIds>
+  <regnodes realName="trunc_ln185_reg_1144">
+    <nodeIds>41</nodeIds>
   </regnodes>
   <regnodes realName="ko_reg_419">
     <nodeIds>64</nodeIds>
@@ -1977,38 +1972,26 @@
   <regnodes realName="ko_1_reg_453">
     <nodeIds>98</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln290_1_reg_1373">
-    <nodeIds>201</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln221_reg_1249">
-    <nodeIds>101</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_90_reg_1358">
-    <nodeIds>205</nodeIds>
-  </regnodes>
-  <regnodes realName="icmp_ln290_reg_1339">
-    <nodeIds>191</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln212_reg_1220">
-    <nodeIds>67</nodeIds>
+  <regnodes realName="TILES_R_reg_1220">
+    <nodeIds>57</nodeIds>
   </regnodes>
   <regnodes realName="indvar_flatten6_reg_464">
     <nodeIds>141</nodeIds>
   </regnodes>
-  <regnodes realName="add_ln234_reg_1294">
-    <nodeIds>146</nodeIds>
-  </regnodes>
-  <regnodes realName="param_in_V_read_2_reg_1135">
-    <nodeIds>42</nodeIds>
+  <regnodes realName="TILESIZE_S_reg_1204">
+    <nodeIds>59</nodeIds>
   </regnodes>
   <expressionNodes realName="WH_fu_586">
     <nodeIds>43</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="add162_fu_1048">
+    <nodeIds>207</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul161_cast_fu_1043">
+    <nodeIds>206</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="data_l2_2_addr_gep_fu_319">
     <nodeIds>170</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln290_fu_967">
-    <nodeIds>191</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bias_l2_0_alloca_fu_104">
     <nodeIds>22</nodeIds>
@@ -2016,8 +1999,11 @@
   <expressionNodes realName="output_l2_0_addr_gep_fu_343">
     <nodeIds>209</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_87_fu_887">
-    <nodeIds>159</nodeIds>
+  <expressionNodes realName="ko_2_phi_fu_523">
+    <nodeIds>189</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="sext_ln298_1_fu_1078">
+    <nodeIds>219</nodeIds>
   </expressionNodes>
   <expressionNodes realName="output_l2_0_alloca_fu_152">
     <nodeIds>34</nodeIds>
@@ -2028,56 +2014,41 @@
   <expressionNodes realName="p_Result_9_1_fu_659">
     <nodeIds>77</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_fu_701">
+    <nodeIds>90</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add117_fu_907">
+    <nodeIds>161</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="data_l2_3_alloca_fu_148">
     <nodeIds>33</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="idxprom92_fu_769">
-    <nodeIds>117</nodeIds>
+  <expressionNodes realName="cast9_fu_980">
+    <nodeIds>183</nodeIds>
   </expressionNodes>
   <expressionNodes realName="trunc_ln708_fu_654">
     <nodeIds>74</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln290_fu_972">
-    <nodeIds>192</nodeIds>
+  <expressionNodes realName="p_Result_12_3_cast_fu_1120">
+    <nodeIds>234</nodeIds>
   </expressionNodes>
   <expressionNodes realName="crs_phi_fu_446">
     <nodeIds>97</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_11_2_fu_920">
-    <nodeIds>169</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln236_fu_891">
-    <nodeIds>175</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="data_l2_1_alloca_fu_140">
     <nodeIds>31</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_12_3_cast_fu_1084">
-    <nodeIds>234</nodeIds>
+  <expressionNodes realName="empty_94_fu_898">
+    <nodeIds>159</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln290_fu_954">
-    <nodeIds>182</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="ko_2_phi_fu_512">
-    <nodeIds>189</nodeIds>
+  <expressionNodes realName="icmp_ln292_fu_1000">
+    <nodeIds>197</nodeIds>
   </expressionNodes>
   <expressionNodes realName="cast_fu_705">
     <nodeIds>91</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="div101_cast_fu_822">
-    <nodeIds>135</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln292_fu_978">
-    <nodeIds>197</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="wh_1_phi_fu_523">
-    <nodeIds>188</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="add_ln221_1_fu_741">
     <nodeIds>108</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="p_Result_11_1_fu_909">
-    <nodeIds>166</nodeIds>
   </expressionNodes>
   <expressionNodes realName="output_l2_2_alloca_fu_160">
     <nodeIds>36</nodeIds>
@@ -2088,23 +2059,35 @@
   <expressionNodes realName="weight_l2_2_addr_gep_fu_271">
     <nodeIds>125</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_88_fu_942">
-    <nodeIds>178</nodeIds>
+  <expressionNodes realName="div101_cast_fu_829">
+    <nodeIds>134</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="idxprom163_fu_1025">
-    <nodeIds>208</nodeIds>
+  <expressionNodes realName="sext_ln298_fu_1068">
+    <nodeIds>213</nodeIds>
   </expressionNodes>
   <expressionNodes realName="wh_phi_fu_479">
     <nodeIds>142</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="mul99_fu_814">
-    <nodeIds>133</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln234_fu_883">
-    <nodeIds>155</nodeIds>
+  <expressionNodes realName="empty_96_fu_968">
+    <nodeIds>179</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bound_fu_711">
     <nodeIds>93</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul152_fu_972">
+    <nodeIds>181</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln708_1_fu_787">
+    <nodeIds>118</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln298_1_fu_1082">
+    <nodeIds>220</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="cast2_fu_842">
+    <nodeIds>136</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln236_fu_867">
+    <nodeIds>151</nodeIds>
   </expressionNodes>
   <expressionNodes realName="ko_phi_fu_423">
     <nodeIds>64</nodeIds>
@@ -2112,26 +2095,29 @@
   <expressionNodes realName="weight_l2_3_alloca_fu_132">
     <nodeIds>29</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="sext_ln298_3_fu_1062">
-    <nodeIds>231</nodeIds>
+  <expressionNodes realName="cast3_fu_846">
+    <nodeIds>137</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln708_2_fu_904">
-    <nodeIds>163</nodeIds>
+  <expressionNodes realName="idxprom92_fu_780">
+    <nodeIds>117</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln234_1_fu_869">
-    <nodeIds>153</nodeIds>
+  <expressionNodes realName="add_ln234_fu_861">
+    <nodeIds>146</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="wh_1_phi_fu_512">
+    <nodeIds>188</nodeIds>
   </expressionNodes>
   <expressionNodes realName="p_Result_9_2_fu_670">
     <nodeIds>80</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln223_fu_763">
-    <nodeIds>130</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="RS_fu_594">
     <nodeIds>47</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln290_1_fu_1014">
-    <nodeIds>201</nodeIds>
+  <expressionNodes realName="mul99_fu_825">
+    <nodeIds>133</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln234_fu_894">
+    <nodeIds>155</nodeIds>
   </expressionNodes>
   <expressionNodes realName="weight_l2_3_addr_gep_fu_283">
     <nodeIds>128</nodeIds>
@@ -2139,29 +2125,17 @@
   <expressionNodes realName="TILESIZE_W_fu_602">
     <nodeIds>50</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="cast2_fu_831">
-    <nodeIds>136</nodeIds>
+  <expressionNodes realName="trunc_ln221_fu_755">
+    <nodeIds>110</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_10_2_fu_792">
-    <nodeIds>124</nodeIds>
+  <expressionNodes realName="empty_92_fu_759">
+    <nodeIds>114</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_86_fu_818">
-    <nodeIds>134</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln236_fu_856">
-    <nodeIds>151</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln292_fu_995">
-    <nodeIds>236</nodeIds>
+  <expressionNodes realName="add_ln298_fu_1072">
+    <nodeIds>214</nodeIds>
   </expressionNodes>
   <expressionNodes realName="indvar_flatten13_phi_fu_501">
     <nodeIds>187</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln290_1_fu_1001">
-    <nodeIds>199</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln298_2_fu_1056">
-    <nodeIds>226</nodeIds>
   </expressionNodes>
   <expressionNodes realName="output_l2_2_addr_gep_fu_381">
     <nodeIds>221</nodeIds>
@@ -2175,26 +2149,35 @@
   <expressionNodes realName="add_ln212_fu_640">
     <nodeIds>67</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="sext_ln298_2_fu_1088">
+    <nodeIds>225</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="bias_l2_0_addr_1_gep_fu_355">
     <nodeIds>211</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="select_ln290_fu_983">
-    <nodeIds>198</nodeIds>
+  <expressionNodes realName="empty_95_fu_964">
+    <nodeIds>178</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="mul152_fu_950">
-    <nodeIds>181</nodeIds>
+  <expressionNodes realName="mul81_cast_fu_763">
+    <nodeIds>115</nodeIds>
   </expressionNodes>
   <expressionNodes realName="output_l2_1_alloca_fu_156">
     <nodeIds>35</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_11_3_fu_931">
-    <nodeIds>172</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="ko_1_phi_fu_457">
     <nodeIds>98</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="add_ln298_3_fu_1102">
+    <nodeIds>232</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="ko_4_cast128_fu_1031">
+    <nodeIds>203</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="trunc_ln191_fu_598">
     <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln290_1_fu_1013">
+    <nodeIds>199</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_0_addr_gep_fu_295">
     <nodeIds>164</nodeIds>
@@ -2202,17 +2185,11 @@
   <expressionNodes realName="indvar_flatten_phi_fu_435">
     <nodeIds>96</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="idxprom118_fu_897">
-    <nodeIds>162</nodeIds>
+  <expressionNodes realName="trunc_ln708_2_fu_926">
+    <nodeIds>163</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="icmp_ln234_fu_845">
-    <nodeIds>145</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln298_3_fu_1066">
-    <nodeIds>232</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="p_Result_10_1_fu_781">
-    <nodeIds>121</nodeIds>
+  <expressionNodes realName="empty_98_fu_1039">
+    <nodeIds>205</nodeIds>
   </expressionNodes>
   <expressionNodes realName="tmp_fu_692">
     <nodeIds>88</nodeIds>
@@ -2223,44 +2200,44 @@
   <expressionNodes realName="output_l2_1_addr_gep_fu_362">
     <nodeIds>215</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="sext_ln298_1_fu_1042">
-    <nodeIds>219</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="cast1_fu_708">
     <nodeIds>92</nodeIds>
   </expressionNodes>
   <expressionNodes realName="div55_cast_fu_568">
     <nodeIds>61</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="select_ln234_1_fu_875">
-    <nodeIds>154</nodeIds>
+  <expressionNodes realName="kcrs_fu_768">
+    <nodeIds>116</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bound4_fu_850">
+    <nodeIds>138</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_10_3_fu_814">
+    <nodeIds>127</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_1_addr_gep_fu_307">
     <nodeIds>167</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln708_1_fu_776">
-    <nodeIds>118</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="cast3_fu_835">
-    <nodeIds>137</nodeIds>
+  <expressionNodes realName="select_ln290_1_fu_1019">
+    <nodeIds>200</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_0_alloca_fu_136">
     <nodeIds>30</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="cast9_fu_958">
-    <nodeIds>183</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="trunc_ln185_fu_582">
     <nodeIds>41</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln234_fu_850">
-    <nodeIds>146</nodeIds>
+  <expressionNodes realName="add_ln292_fu_1062">
+    <nodeIds>236</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="bound11_fu_962">
-    <nodeIds>184</nodeIds>
+  <expressionNodes realName="p_Result_10_1_fu_792">
+    <nodeIds>121</nodeIds>
   </expressionNodes>
   <expressionNodes realName="p_Result_9_3_fu_681">
     <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln223_fu_774">
+    <nodeIds>130</nodeIds>
   </expressionNodes>
   <expressionNodes realName="select_ln221_fu_733">
     <nodeIds>107</nodeIds>
@@ -2277,35 +2254,41 @@
   <expressionNodes realName="icmp_ln221_fu_717">
     <nodeIds>100</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="add_ln234_1_fu_880">
+    <nodeIds>153</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="bias_l2_0_addr_gep_fu_199">
     <nodeIds>75</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="select_ln290_1_fu_1007">
-    <nodeIds>200</nodeIds>
+  <expressionNodes realName="select_ln234_1_fu_886">
+    <nodeIds>154</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_10_2_fu_803">
+    <nodeIds>124</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_11_3_fu_953">
+    <nodeIds>172</nodeIds>
   </expressionNodes>
   <expressionNodes realName="icmp_ln212_fu_635">
     <nodeIds>66</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="bound4_fu_839">
-    <nodeIds>138</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="weight_l2_2_alloca_fu_128">
     <nodeIds>28</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_11_1_fu_931">
+    <nodeIds>166</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln290_fu_1005">
+    <nodeIds>198</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln290_fu_989">
+    <nodeIds>191</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bias_l2_2_addr_gep_fu_223">
     <nodeIds>81</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bias_l2_3_addr_gep_fu_235">
     <nodeIds>84</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="select_ln234_fu_861">
-    <nodeIds>152</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="sext_ln298_fu_1032">
-    <nodeIds>213</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="ko_4_cast128_fu_1018">
-    <nodeIds>203</nodeIds>
   </expressionNodes>
   <expressionNodes realName="output_l2_3_addr_gep_fu_400">
     <nodeIds>227</nodeIds>
@@ -2316,8 +2299,17 @@
   <expressionNodes realName="output_l2_3_alloca_fu_164">
     <nodeIds>37</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="idxprom163_fu_1054">
+    <nodeIds>208</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="icmp_ln223_fu_728">
     <nodeIds>106</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_97_fu_976">
+    <nodeIds>182</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln290_fu_1027">
+    <nodeIds>201</nodeIds>
   </expressionNodes>
   <expressionNodes realName="weight_l2_1_alloca_fu_124">
     <nodeIds>27</nodeIds>
@@ -2325,23 +2317,32 @@
   <expressionNodes realName="bias_l2_2_addr_1_gep_fu_393">
     <nodeIds>223</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="idxprom118_fu_919">
+    <nodeIds>162</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="TILESIZE_H_fu_606">
     <nodeIds>53</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln298_1_fu_1046">
-    <nodeIds>220</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln298_fu_1036">
-    <nodeIds>214</nodeIds>
+  <expressionNodes realName="sext_ln298_3_fu_1098">
+    <nodeIds>231</nodeIds>
   </expressionNodes>
   <expressionNodes realName="weight_l2_0_addr_gep_fu_247">
     <nodeIds>119</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="empty_93_fu_838">
+    <nodeIds>135</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="bias_l2_3_alloca_fu_116">
     <nodeIds>25</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_12_3_fu_1072">
-    <nodeIds>233</nodeIds>
+  <expressionNodes realName="add_ln290_fu_994">
+    <nodeIds>192</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="p_Result_11_2_fu_942">
+    <nodeIds>169</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="select_ln234_fu_872">
+    <nodeIds>152</nodeIds>
   </expressionNodes>
   <expressionNodes realName="indvar_flatten6_phi_fu_468">
     <nodeIds>141</nodeIds>
@@ -2349,23 +2350,23 @@
   <expressionNodes realName="WH_in_fu_590">
     <nodeIds>45</nodeIds>
   </expressionNodes>
+  <expressionNodes realName="icmp_ln234_fu_856">
+    <nodeIds>145</nodeIds>
+  </expressionNodes>
   <expressionNodes realName="co_phi_fu_490">
     <nodeIds>143</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="sext_ln298_2_fu_1052">
-    <nodeIds>225</nodeIds>
   </expressionNodes>
   <expressionNodes realName="C_fu_578">
     <nodeIds>40</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_90_fu_991">
-    <nodeIds>205</nodeIds>
+  <expressionNodes realName="bound11_fu_984">
+    <nodeIds>184</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul116_cast_fu_902">
+    <nodeIds>160</nodeIds>
   </expressionNodes>
   <expressionNodes realName="weight_l2_1_addr_gep_fu_259">
     <nodeIds>122</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln221_1_fu_755">
-    <nodeIds>110</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bias_l2_3_addr_1_gep_fu_412">
     <nodeIds>229</nodeIds>
@@ -2373,8 +2374,8 @@
   <expressionNodes realName="weight_l2_0_alloca_fu_120">
     <nodeIds>26</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_89_fu_946">
-    <nodeIds>179</nodeIds>
+  <expressionNodes realName="p_Result_12_3_fu_1108">
+    <nodeIds>233</nodeIds>
   </expressionNodes>
   <expressionNodes realName="ko_cast_fu_646">
     <nodeIds>70</nodeIds>
@@ -2382,30 +2383,20 @@
   <expressionNodes realName="data_l2_2_alloca_fu_144">
     <nodeIds>32</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="p_Result_10_3_fu_803">
-    <nodeIds>127</nodeIds>
+  <expressionNodes realName="add_ln236_fu_913">
+    <nodeIds>175</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln221_fu_701">
-    <nodeIds>90</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_fu_759">
-    <nodeIds>114</nodeIds>
+  <expressionNodes realName="add_ln298_2_fu_1092">
+    <nodeIds>226</nodeIds>
   </expressionNodes>
   <expressionNodes realName="bias_l2_2_alloca_fu_112">
     <nodeIds>24</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_dataflow_parent_loop_proc20_fu_530">
-    <nodeIds>180</nodeIds>
-  </moduleNodes>
   <moduleNodes realName="grp_fu_618">
     <nodeIds>54</nodeIds>
   </moduleNodes>
   <moduleNodes realName="grp_fu_622">
     <nodeIds>57</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_1103">
-    <nodeIds>206</nodeIds>
-    <nodeIds>207</nodeIds>
   </moduleNodes>
   <moduleNodes realName="grp_fu_614">
     <nodeIds>51</nodeIds>
@@ -2413,13 +2404,8 @@
   <moduleNodes realName="grp_fu_630">
     <nodeIds>60</nodeIds>
   </moduleNodes>
-  <moduleNodes realName="grp_fu_1089">
-    <nodeIds>115</nodeIds>
-    <nodeIds>116</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_1096">
-    <nodeIds>160</nodeIds>
-    <nodeIds>161</nodeIds>
+  <moduleNodes realName="grp_dataflow_parent_loop_proc19_fu_530">
+    <nodeIds>180</nodeIds>
   </moduleNodes>
   <ioNodes realName="write_ln543_write_fu_192">
     <nodeIds>235</nodeIds>
@@ -2909,23 +2895,16 @@
       <operations id="109" stage="1" latency="1"/>
       <operations id="110" stage="1" latency="1"/>
       <operations id="114" stage="1" latency="1"/>
-      <operations id="115" stage="3" latency="3"/>
+      <operations id="115" stage="1" latency="1"/>
+      <operations id="116" stage="1" latency="1"/>
       <operations id="130" stage="1" latency="1"/>
     </states>
     <states id="50">
-      <operations id="115" stage="2" latency="3"/>
-    </states>
-    <states id="51">
-      <operations id="115" stage="1" latency="3"/>
-      <operations id="116" stage="2" latency="2"/>
-    </states>
-    <states id="52">
       <operations id="104" stage="1" latency="1"/>
       <operations id="105" stage="1" latency="1"/>
       <operations id="111" stage="1" latency="1"/>
       <operations id="112" stage="1" latency="1"/>
       <operations id="113" stage="1" latency="1"/>
-      <operations id="116" stage="1" latency="2"/>
       <operations id="117" stage="1" latency="1"/>
       <operations id="118" stage="1" latency="1"/>
       <operations id="119" stage="1" latency="1"/>
@@ -2941,7 +2920,7 @@
       <operations id="129" stage="1" latency="1"/>
       <operations id="131" stage="1" latency="1"/>
     </states>
-    <states id="53">
+    <states id="51">
       <operations id="133" stage="1" latency="1"/>
       <operations id="134" stage="1" latency="1"/>
       <operations id="135" stage="1" latency="1"/>
@@ -2950,7 +2929,7 @@
       <operations id="138" stage="1" latency="1"/>
       <operations id="139" stage="1" latency="1"/>
     </states>
-    <states id="54">
+    <states id="52">
       <operations id="141" stage="1" latency="1"/>
       <operations id="142" stage="1" latency="1"/>
       <operations id="143" stage="1" latency="1"/>
@@ -2964,23 +2943,16 @@
       <operations id="154" stage="1" latency="1"/>
       <operations id="155" stage="1" latency="1"/>
       <operations id="159" stage="1" latency="1"/>
-      <operations id="160" stage="3" latency="3"/>
+      <operations id="160" stage="1" latency="1"/>
+      <operations id="161" stage="1" latency="1"/>
       <operations id="175" stage="1" latency="1"/>
     </states>
-    <states id="55">
-      <operations id="160" stage="2" latency="3"/>
-    </states>
-    <states id="56">
-      <operations id="160" stage="1" latency="3"/>
-      <operations id="161" stage="2" latency="2"/>
-    </states>
-    <states id="57">
+    <states id="53">
       <operations id="149" stage="1" latency="1"/>
       <operations id="150" stage="1" latency="1"/>
       <operations id="156" stage="1" latency="1"/>
       <operations id="157" stage="1" latency="1"/>
       <operations id="158" stage="1" latency="1"/>
-      <operations id="161" stage="1" latency="2"/>
       <operations id="162" stage="1" latency="1"/>
       <operations id="163" stage="1" latency="1"/>
       <operations id="164" stage="1" latency="1"/>
@@ -2996,7 +2968,7 @@
       <operations id="174" stage="1" latency="1"/>
       <operations id="176" stage="1" latency="1"/>
     </states>
-    <states id="58">
+    <states id="54">
       <operations id="178" stage="1" latency="1"/>
       <operations id="179" stage="1" latency="1"/>
       <operations id="180" stage="2" latency="2"/>
@@ -3005,37 +2977,27 @@
       <operations id="183" stage="1" latency="1"/>
       <operations id="184" stage="1" latency="1"/>
     </states>
-    <states id="59">
+    <states id="55">
       <operations id="180" stage="1" latency="2"/>
       <operations id="185" stage="1" latency="1"/>
     </states>
-    <states id="60">
+    <states id="56">
       <operations id="187" stage="1" latency="1"/>
+      <operations id="188" stage="1" latency="1"/>
       <operations id="189" stage="1" latency="1"/>
+      <operations id="190" stage="1" latency="1"/>
       <operations id="191" stage="1" latency="1"/>
       <operations id="192" stage="1" latency="1"/>
       <operations id="193" stage="1" latency="1"/>
       <operations id="197" stage="1" latency="1"/>
       <operations id="198" stage="1" latency="1"/>
-      <operations id="205" stage="1" latency="1"/>
-      <operations id="206" stage="3" latency="3"/>
-      <operations id="236" stage="1" latency="1"/>
-    </states>
-    <states id="61">
-      <operations id="206" stage="2" latency="3"/>
-    </states>
-    <states id="62">
-      <operations id="188" stage="1" latency="1"/>
-      <operations id="190" stage="1" latency="1"/>
       <operations id="199" stage="1" latency="1"/>
       <operations id="200" stage="1" latency="1"/>
       <operations id="201" stage="1" latency="1"/>
-      <operations id="206" stage="1" latency="3"/>
-      <operations id="207" stage="2" latency="2"/>
-    </states>
-    <states id="63">
       <operations id="203" stage="1" latency="1"/>
-      <operations id="207" stage="1" latency="2"/>
+      <operations id="205" stage="1" latency="1"/>
+      <operations id="206" stage="1" latency="1"/>
+      <operations id="207" stage="1" latency="1"/>
       <operations id="208" stage="1" latency="1"/>
       <operations id="209" stage="1" latency="1"/>
       <operations id="210" stage="2" latency="2"/>
@@ -3053,8 +3015,9 @@
       <operations id="228" stage="2" latency="2"/>
       <operations id="229" stage="1" latency="1"/>
       <operations id="230" stage="2" latency="2"/>
+      <operations id="236" stage="1" latency="1"/>
     </states>
-    <states id="64">
+    <states id="57">
       <operations id="195" stage="1" latency="1"/>
       <operations id="196" stage="1" latency="1"/>
       <operations id="202" stage="1" latency="1"/>
@@ -3080,7 +3043,7 @@
       <operations id="235" stage="1" latency="1"/>
       <operations id="237" stage="1" latency="1"/>
     </states>
-    <states id="65">
+    <states id="58">
       <operations id="239" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
@@ -3221,13 +3184,13 @@
     <transitions inState="48" outState="49">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="53" outState="54">
+    <transitions inState="51" outState="52">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="58" outState="59">
+    <transitions inState="54" outState="55">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="59" outState="60">
+    <transitions inState="55" outState="56">
       <condition id="-1"/>
     </transitions>
     <transitions inState="46" outState="45">
@@ -3239,52 +3202,31 @@
     <transitions inState="45" outState="46">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="50" outState="51">
+    <transitions inState="50" outState="49">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="51" outState="52">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="52" outState="49">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="49" outState="53">
+    <transitions inState="49" outState="51">
       <condition id="-1"/>
     </transitions>
     <transitions inState="49" outState="50">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="55" outState="56">
+    <transitions inState="53" outState="52">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="52" outState="54">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="52" outState="53">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="57" outState="56">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="56" outState="58">
       <condition id="-1"/>
     </transitions>
     <transitions inState="56" outState="57">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="57" outState="54">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="54" outState="58">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="54" outState="55">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="60" outState="61">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="61" outState="62">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="63" outState="64">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="64" outState="60">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="62" outState="65">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="62" outState="63">
       <condition id="-1"/>
     </transitions>
   </fsm>
@@ -3314,7 +3256,7 @@
       <basicBlocks>95</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="5" mTag="VITIS_LOOP_221_3_VITIS_LOOP_223_4" mII="1" mDepth="4" mMinTripCount="144" mMaxTripCount="144" mMinLatency="146" mMaxLatency="146" mType="1">
+    <cfgRegions mId="5" mTag="VITIS_LOOP_221_3_VITIS_LOOP_223_4" mII="1" mDepth="2" mMinTripCount="144" mMaxTripCount="144" mMinLatency="144" mMaxLatency="144" mType="1">
       <basicBlocks>103</basicBlocks>
       <basicBlocks>132</basicBlocks>
       <mDfPipe/>
@@ -3323,7 +3265,7 @@
       <basicBlocks>140</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="7" mTag="VITIS_LOOP_234_6_VITIS_LOOP_236_7" mII="1" mDepth="4" mMinTripCount="81" mMaxTripCount="81" mMinLatency="83" mMaxLatency="83" mType="1">
+    <cfgRegions mId="7" mTag="VITIS_LOOP_234_6_VITIS_LOOP_236_7" mII="1" mDepth="2" mMinTripCount="81" mMaxTripCount="81" mMinLatency="81" mMaxLatency="81" mType="1">
       <basicBlocks>148</basicBlocks>
       <basicBlocks>177</basicBlocks>
       <mDfPipe/>
@@ -3332,7 +3274,7 @@
       <basicBlocks>186</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="9" mTag="VITIS_LOOP_290_9_VITIS_LOOP_292_10" mII="1" mDepth="5" mMinTripCount="196" mMaxTripCount="196" mMinLatency="199" mMaxLatency="199" mType="1">
+    <cfgRegions mId="9" mTag="VITIS_LOOP_290_9_VITIS_LOOP_292_10" mII="1" mDepth="2" mMinTripCount="196" mMaxTripCount="196" mMinLatency="196" mMaxLatency="196" mType="1">
       <basicBlocks>194</basicBlocks>
       <basicBlocks>238</basicBlocks>
       <mDfPipe/>

@@ -33,7 +33,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs class_id="7" tracking_level="0" version="0">
 					<count>0</count>
 					<item_version>0</item_version>
@@ -62,7 +62,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -91,7 +91,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -120,7 +120,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -145,7 +145,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -174,7 +174,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -203,7 +203,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -232,7 +232,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -323,7 +323,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -352,7 +352,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -381,7 +381,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -410,7 +410,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -493,7 +493,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -522,7 +522,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -551,7 +551,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -642,7 +642,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -671,7 +671,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -700,7 +700,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -729,7 +729,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -754,7 +754,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -801,7 +801,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -951,7 +951,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1001,7 +1001,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1051,7 +1051,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1301,7 +1301,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1351,7 +1351,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1401,7 +1401,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1451,7 +1451,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1697,7 +1697,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1746,7 +1746,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1893,7 +1893,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1942,7 +1942,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -1991,7 +1991,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2040,7 +2040,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2089,7 +2089,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2334,7 +2334,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2432,7 +2432,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2530,7 +2530,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2579,7 +2579,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>7</bitwidth>
+					<bitwidth>18</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2628,7 +2628,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2677,7 +2677,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2726,7 +2726,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -4368,7 +4368,7 @@
 					<Obj>
 						<type>2</type>
 						<id>221</id>
-						<name>dataflow_in_loop_LOOP_S_OUTER_entry25</name>
+						<name>dataflow_in_loop_LOOP_S_OUTER_entry24</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -4385,7 +4385,7 @@
 					<bitwidth>0</bitwidth>
 				</Value>
 				<const_type>6</const_type>
-				<content>&lt;constant:dataflow_in_loop_LOOP_S_OUTER.entry25&gt;</content>
+				<content>&lt;constant:dataflow_in_loop_LOOP_S_OUTER.entry24&gt;</content>
 			</item>
 			<item class_id_reference="16" object_id="_99">
 				<Value>
@@ -5971,7 +5971,7 @@
 					<item_version>0</item_version>
 					<item class_id="26" tracking_level="1" version="0" object_id="_299">
 						<type>0</type>
-						<name>dataflow_in_loop_LOOP_S_OUTER_entry25_U0</name>
+						<name>dataflow_in_loop_LOOP_S_OUTER_entry24_U0</name>
 						<ssdmobj_id>123</ssdmobj_id>
 						<pins class_id="27" tracking_level="0" version="0">
 							<count>35</count>
@@ -5984,7 +5984,7 @@
 								</port>
 								<inst class_id="30" tracking_level="1" version="0" object_id="_302">
 									<type>0</type>
-									<name>dataflow_in_loop_LOOP_S_OUTER_entry25_U0</name>
+									<name>dataflow_in_loop_LOOP_S_OUTER_entry24_U0</name>
 									<ssdmobj_id>123</ssdmobj_id>
 								</inst>
 							</item>
@@ -7084,7 +7084,7 @@
 						<ssdmobj_id>71</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_570">
@@ -7110,7 +7110,7 @@
 						<ssdmobj_id>70</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_575">
@@ -7136,7 +7136,7 @@
 						<ssdmobj_id>69</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_580">
@@ -7162,7 +7162,7 @@
 						<ssdmobj_id>68</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>7</bitwidth>
+						<bitwidth>18</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_585">
@@ -7188,7 +7188,7 @@
 						<ssdmobj_id>67</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_590">
@@ -7240,7 +7240,7 @@
 						<ssdmobj_id>65</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_600">
@@ -7292,7 +7292,7 @@
 						<ssdmobj_id>63</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_610">
@@ -7422,7 +7422,7 @@
 						<ssdmobj_id>58</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_635">
@@ -7448,7 +7448,7 @@
 						<ssdmobj_id>57</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>4</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>4</suggested_depth>
 						<source class_id_reference="28" object_id="_640">
@@ -7474,7 +7474,7 @@
 						<ssdmobj_id>56</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_645">
@@ -7500,7 +7500,7 @@
 						<ssdmobj_id>55</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>4</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>4</suggested_depth>
 						<source class_id_reference="28" object_id="_650">
@@ -7526,7 +7526,7 @@
 						<ssdmobj_id>54</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>2</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>2</suggested_depth>
 						<source class_id_reference="28" object_id="_655">
@@ -7604,7 +7604,7 @@
 						<ssdmobj_id>51</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>4</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>4</suggested_depth>
 						<source class_id_reference="28" object_id="_670">
@@ -7630,7 +7630,7 @@
 						<ssdmobj_id>50</ssdmobj_id>
 						<ctype>0</ctype>
 						<depth>3</depth>
-						<bitwidth>9</bitwidth>
+						<bitwidth>20</bitwidth>
 						<suggested_type>2</suggested_type>
 						<suggested_depth>3</suggested_depth>
 						<source class_id_reference="28" object_id="_675">

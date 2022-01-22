@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Sat Jan 22 00:49:08 KST 2022
+INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Sat Jan 22 01:12:59 KST 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -42,7 +42,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data/parts/arch.xml
-Command       ap_part_info done; 0.52 sec.
+Command       ap_part_info done; 0.6 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       ap_family_info -name virtexuplus -data info 
 Execute       add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
@@ -57,7 +57,7 @@ Execute         get_default_platform
 INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       get_default_platform 
-Command     set_part done; 0.55 sec.
+Command     set_part done; 0.63 sec.
 Execute     ap_part_info -data single -name xcu200-fsgd2104-2-e 
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data resources 
 Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
@@ -71,7 +71,7 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -default_slave_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 0.62 sec.
+Command   open_solution done; 0.71 sec.
 Execute   set_part xcu200-fsgd2104-2-e 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
 INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data:/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
@@ -144,29 +144,29 @@ Command       clang_tidy done; 0.28 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/all.directive.json -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.45 sec.
+Command       clang_tidy done; 0.41 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 0.3 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.8 seconds per iteration
+Command       clang_tidy done; 0.32 sec.
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.7 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 Execute       clang_tidy -errorcheck xilinx-label-all-loops /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.err.log 
 Command         ap_eval done; 0.46 sec.
 Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
-Command       clang_tidy done; 0.5 sec.
+Command       clang_tidy done; 0.51 sec.
 Execute       clang_tidy -errorcheck xilinx-top-parameters /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-top-parameters -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.err.log 
-Command         ap_eval done; 0.26 sec.
-Command       clang_tidy done; 0.26 sec.
+Command         ap_eval done; 0.24 sec.
+Command       clang_tidy done; 0.24 sec.
 Execute       clang_tidy -errorcheck xilinx-array-stream-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-array-stream-check -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.err.log 
 Command         ap_eval done; 0.25 sec.
 Command       clang_tidy done; 0.25 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_dbbuf.pp.0.cpp.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_dbbuf.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv_sysarr_dbbuf.pp.0.cpp.err.log 
-Command       ap_eval done; 0.24 sec.
+Command       ap_eval done; 0.23 sec.
 WARNING: [HLS 214-110] As the loop bound is not a constant or function argument, the compiler may not successfully process the dataflow loop: Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:257:38
 WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:268:23
 WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:275:32
@@ -202,7 +202,7 @@ Execute       send_msg_by_id WARNING @200-471@%s%s 31 Systolic_Array_PCNN_based/
 WARNING: [HLS 200-471] Dataflow form checks found 31 issue(s) in file Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp
 Execute       clang_tidy -errorcheck xilinx-warn-mayneed-no-ctor-attribute /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.diag.yml -header-filter=.* --checks=-*,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/conv_sysarr_dbbuf.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang-tidy.conv_sysarr_dbbuf.pp.0.cpp.err.log 
-Command         ap_eval done; 0.29 sec.
+Command         ap_eval done; 0.3 sec.
 Command       clang_tidy done; 0.3 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: compiling source code to llvm bc
@@ -225,9 +225,9 @@ INFO-FLOW:
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsm_39.bc /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/lib/libhlsmc++_39.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/llvm-link.a.g.ld.2.m1.bc.err.log 
-Command         ap_eval done; 1.37 sec.
+Command         ap_eval done; 1.34 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 1.37 sec.
+Command       run_link_or_opt done; 1.34 sec.
 Execute       run_link_or_opt -opt -out /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Conv_sysarr -reflow-float-conversion 
 Execute         ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=.* -pass-remarks-output=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.diag.yml /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=Conv_sysarr -reflow-float-conversion -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/opt.a.g.ld.3.fpc.bc.err.log 
 Command         ap_eval done; 0.44 sec.
@@ -276,7 +276,7 @@ Execute       get_config_interface -m_axi_alignment_byte_size
 Execute       get_config_compile -pragma_strict_mode 
 INFO-FLOW: Doing LTO.
 Execute       ap_eval exec -ignorestderr /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang -fsave-optimization-record -foptimization-record-file=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.a.g.ld.0.bc.diag.yml -fhls -mllvm -hls-top-function-name=Conv_sysarr -mllvm -hls-db-dir -mllvm /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -emit-llvm -c -mllvm -hls-bitcode-version=3.1 -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/top-io-fe.xml -mllvm -pass-remarks=supported-subset -mllvm -reflow-enable-interface-default-setting=false -mllvm -reflow-enable-slave-interface-default-setting=false -mllvm -gen-kernel-xml=false -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -x ir /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.lto.bc > /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.a.g.ld.0.bc.out.log 2> /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/clang.a.g.ld.0.bc.err.log 
-Command       ap_eval done; 0.32 sec.
+Command       ap_eval done; 0.31 sec.
 INFO: [HLS 214-131] Inlining function 'doSysArr(char const (*) [4], char const (*) [4], char (*) [4], int (*) [4], int (*) [4], int (*) [4], unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, bool)' into 'runSysArr(char const (*) [4], char const (*) [4], int (*) [4], int (*) [4], int, int, int, unsigned int, unsigned int, unsigned int, unsigned int, bool)' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:149:6)
 INFO: [HLS 214-131] Inlining function 'hls::stream<ap_axiu<128, 0, 0, 0>, 0>::read()' into 'Conv_sysarr(hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:182:23)
 INFO: [HLS 214-131] Inlining function 'hls::stream<ap_axiu<128, 0, 0, 0>, 0>::write(ap_axiu<128, 0, 0, 0> const&)' into 'Conv_sysarr(hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:300:13)
@@ -313,14 +313,14 @@ INFO: [HLS 214-178] Inlining function 'ap_axiu<128, 0, 0, 0>::operator=(ap_axiu<
 INFO: [HLS 214-178] Inlining function 'ap_axiu<128, 0, 0, 0>::operator=(ap_axiu<128, 0, 0, 0>&&)' into 'Conv_sysarr(hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:0)
 INFO: [HLS 214-178] Inlining function 'ap_axiu<128, 0, 0, 0>::operator=(ap_axiu<128, 0, 0, 0>&&)' into 'Conv_sysarr(hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&, hls::stream<ap_axiu<128, 0, 0, 0>, 0>&)' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:164:0)
 INFO-FLOW: DBG:CMD: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6769 ; free virtual = 59897
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6769 ; free virtual = 59897
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6577 ; free virtual = 59847
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6577 ; free virtual = 59847
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top Conv_sysarr -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.0.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6761 ; free virtual = 59891
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6570 ; free virtual = 59842
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.prechk.bc -f 
@@ -328,7 +328,7 @@ INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
 WARNING: [SYNCHK 200-23] /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_int_ref.h:708: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6753 ; free virtual = 59884
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6562 ; free virtual = 59834
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.g.1.bc to /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -351,7 +351,7 @@ INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_295_11' (Systolic_Array_PCNN_base
 INFO: [XFORM 203-101] Partitioning array 'bias_l2' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:167) in dimension 2 completely.
 INFO: [XFORM 203-101] Partitioning array 'weight_l2' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:168) in dimension 2 completely.
 INFO: [XFORM 203-101] Partitioning array 'data_l2' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:169) in dimension 2 completely.
-INFO: [XFORM 203-101] Partitioning array 'output_l2'  in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'output_l2' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:170) in dimension 2 completely.
 INFO: [XFORM 203-101] Partitioning array 'weight_regfile' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:265) in dimension 1 completely.
 INFO: [XFORM 203-101] Partitioning array 'data_l1' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:266) in dimension 2 completely.
 INFO: [XFORM 203-101] Partitioning array 'output_l1' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:267) in dimension 2 completely.
@@ -364,12 +364,12 @@ INFO: [XFORM 203-101] Partitioning array 'data_reg' (Systolic_Array_PCNN_based/c
 INFO: [XFORM 203-101] Partitioning array 'output_reg' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:129) in dimension 2 completely.
 INFO: [XFORM 203-721] Extract dataflow region from loop LOOP_S_OUTER (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:262)  of function 'Conv_sysarr'.
 INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_LOOP_S_OUTER', detected/extracted 5 process function(s): 
-	 'dataflow_in_loop_LOOP_S_OUTER.entry25'
+	 'dataflow_in_loop_LOOP_S_OUTER.entry24'
 	 'runWeight2Reg'
 	 'runDataL2toL1'
 	 'runSysArr'
 	 'runOutputL1toL2'.
-Command         transform done; 0.43 sec.
+Command         transform done; 0.48 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:137:27) to (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:105:28) in function 'runSysArr'... converting 7 basic blocks.
@@ -378,8 +378,8 @@ INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Arra
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:113:4) to (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:116:3) in function 'runSysArr'... converting 3 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:113:4) to (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:116:3) in function 'runSysArr'... converting 3 basic blocks.
 INFO: [XFORM 203-11] Balancing expressions in function 'runDataL2toL1' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:30)...6 expression(s) balanced.
-Command         transform done; 0.42 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6721 ; free virtual = 59853
+Command         transform done; 0.45 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6529 ; free virtual = 59803
 Execute         get_config_compile -enable_loop_extract 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin2 -bitwidthmin2 -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.2.bc -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
@@ -410,10 +410,10 @@ WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1[
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1[1]22'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1[2]23'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1[3]24'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.3'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.2'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.1'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.0'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_l1_local.2'.
 INFO: [HLS 200-472] Inferring partial write operation for 'output_l1_local.3' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:113:42)
 INFO: [HLS 200-472] Inferring partial write operation for 'output_l1[3]24' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:115:38)
 INFO: [HLS 200-472] Inferring partial write operation for 'output_l2[0]' (Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:60:46)
@@ -425,40 +425,40 @@ WARNING: [HLS 200-1449] Process runWeight2Reg has both a predecessor and reads a
 WARNING: [HLS 200-1449] Process runDataL2toL1 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process dataflow_in_loop_LOOP_S_OUTER has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc15 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc16 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc17 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
 WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc18 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
-WARNING: [HLS 200-1449] Process dataflow_parent_loop_proc19 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
-Command         transform done; 0.93 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6600 ; free virtual = 59733
+Command         transform done; 0.94 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6423 ; free virtual = 59697
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 1.97 sec.
-Command     elaborate done; 11.37 sec.
+Command       opt_and_import_c done; 2.07 sec.
+Command     elaborate done; 11.39 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
 INFO: [HLS 200-10] Synthesizing 'Conv_sysarr' ...
 Execute       ap_set_top_model Conv_sysarr 
-WARNING: [SYN 201-103] Legalizing function name 'dataflow_in_loop_LOOP_S_OUTER.entry25' to 'dataflow_in_loop_LOOP_S_OUTER_entry25'.
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_in_loop_LOOP_S_OUTER.entry24' to 'dataflow_in_loop_LOOP_S_OUTER_entry24'.
 Execute       get_model_list Conv_sysarr -filter all-wo-channel -topdown 
 Execute       preproc_iomode -model Conv_sysarr 
-Execute       preproc_iomode -model dataflow_parent_loop_proc20 
 Execute       preproc_iomode -model dataflow_parent_loop_proc19 
 Execute       preproc_iomode -model dataflow_parent_loop_proc18 
 Execute       preproc_iomode -model dataflow_parent_loop_proc17 
 Execute       preproc_iomode -model dataflow_parent_loop_proc16 
+Execute       preproc_iomode -model dataflow_parent_loop_proc15 
 Execute       preproc_iomode -model dataflow_parent_loop_proc 
 Execute       preproc_iomode -model dataflow_in_loop_LOOP_S_OUTER 
 Execute       preproc_iomode -model runOutputL1toL2 
 Execute       preproc_iomode -model runSysArr 
 Execute       preproc_iomode -model runDataL2toL1 
 Execute       preproc_iomode -model runWeight2Reg 
-Execute       preproc_iomode -model dataflow_in_loop_LOOP_S_OUTER.entry25 
+Execute       preproc_iomode -model dataflow_in_loop_LOOP_S_OUTER.entry24 
 Execute       get_model_list Conv_sysarr -filter all-wo-channel 
-INFO-FLOW: Model list for configure: dataflow_in_loop_LOOP_S_OUTER.entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
-INFO-FLOW: Configuring Module : dataflow_in_loop_LOOP_S_OUTER.entry25 ...
-Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry25 
-Execute       apply_spec_resource_limit dataflow_in_loop_LOOP_S_OUTER.entry25 
+INFO-FLOW: Model list for configure: dataflow_in_loop_LOOP_S_OUTER.entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
+INFO-FLOW: Configuring Module : dataflow_in_loop_LOOP_S_OUTER.entry24 ...
+Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry24 
+Execute       apply_spec_resource_limit dataflow_in_loop_LOOP_S_OUTER.entry24 
 INFO-FLOW: Configuring Module : runWeight2Reg ...
 Execute       set_default_model runWeight2Reg 
 Execute       apply_spec_resource_limit runWeight2Reg 
@@ -477,6 +477,9 @@ Execute       apply_spec_resource_limit dataflow_in_loop_LOOP_S_OUTER
 INFO-FLOW: Configuring Module : dataflow_parent_loop_proc ...
 Execute       set_default_model dataflow_parent_loop_proc 
 Execute       apply_spec_resource_limit dataflow_parent_loop_proc 
+INFO-FLOW: Configuring Module : dataflow_parent_loop_proc15 ...
+Execute       set_default_model dataflow_parent_loop_proc15 
+Execute       apply_spec_resource_limit dataflow_parent_loop_proc15 
 INFO-FLOW: Configuring Module : dataflow_parent_loop_proc16 ...
 Execute       set_default_model dataflow_parent_loop_proc16 
 Execute       apply_spec_resource_limit dataflow_parent_loop_proc16 
@@ -489,17 +492,14 @@ Execute       apply_spec_resource_limit dataflow_parent_loop_proc18
 INFO-FLOW: Configuring Module : dataflow_parent_loop_proc19 ...
 Execute       set_default_model dataflow_parent_loop_proc19 
 Execute       apply_spec_resource_limit dataflow_parent_loop_proc19 
-INFO-FLOW: Configuring Module : dataflow_parent_loop_proc20 ...
-Execute       set_default_model dataflow_parent_loop_proc20 
-Execute       apply_spec_resource_limit dataflow_parent_loop_proc20 
 INFO-FLOW: Configuring Module : Conv_sysarr ...
 Execute       set_default_model Conv_sysarr 
 Execute       apply_spec_resource_limit Conv_sysarr 
-INFO-FLOW: Model list for preprocess: dataflow_in_loop_LOOP_S_OUTER.entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
-INFO-FLOW: Preprocessing Module: dataflow_in_loop_LOOP_S_OUTER.entry25 ...
-Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry25 
-Execute       cdfg_preprocess -model dataflow_in_loop_LOOP_S_OUTER.entry25 
-Execute       rtl_gen_preprocess dataflow_in_loop_LOOP_S_OUTER.entry25 
+INFO-FLOW: Model list for preprocess: dataflow_in_loop_LOOP_S_OUTER.entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
+INFO-FLOW: Preprocessing Module: dataflow_in_loop_LOOP_S_OUTER.entry24 ...
+Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry24 
+Execute       cdfg_preprocess -model dataflow_in_loop_LOOP_S_OUTER.entry24 
+Execute       rtl_gen_preprocess dataflow_in_loop_LOOP_S_OUTER.entry24 
 INFO-FLOW: Preprocessing Module: runWeight2Reg ...
 Execute       set_default_model runWeight2Reg 
 Execute       cdfg_preprocess -model runWeight2Reg 
@@ -524,6 +524,10 @@ INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc ...
 Execute       set_default_model dataflow_parent_loop_proc 
 Execute       cdfg_preprocess -model dataflow_parent_loop_proc 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc 
+INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc15 ...
+Execute       set_default_model dataflow_parent_loop_proc15 
+Execute       cdfg_preprocess -model dataflow_parent_loop_proc15 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc15 
 INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc16 ...
 Execute       set_default_model dataflow_parent_loop_proc16 
 Execute       cdfg_preprocess -model dataflow_parent_loop_proc16 
@@ -540,50 +544,45 @@ INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc19 ...
 Execute       set_default_model dataflow_parent_loop_proc19 
 Execute       cdfg_preprocess -model dataflow_parent_loop_proc19 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc19 
-INFO-FLOW: Preprocessing Module: dataflow_parent_loop_proc20 ...
-Execute       set_default_model dataflow_parent_loop_proc20 
-Execute       cdfg_preprocess -model dataflow_parent_loop_proc20 
-Execute       rtl_gen_preprocess dataflow_parent_loop_proc20 
 INFO-FLOW: Preprocessing Module: Conv_sysarr ...
 Execute       set_default_model Conv_sysarr 
 Execute       cdfg_preprocess -model Conv_sysarr 
 Execute       rtl_gen_preprocess Conv_sysarr 
-INFO-FLOW: Model list for synthesis: dataflow_in_loop_LOOP_S_OUTER.entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
+INFO-FLOW: Model list for synthesis: dataflow_in_loop_LOOP_S_OUTER.entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_LOOP_S_OUTER_entry25' 
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_LOOP_S_OUTER_entry24' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry25 
-Execute       schedule -model dataflow_in_loop_LOOP_S_OUTER.entry25 
+Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry24 
+Execute       schedule -model dataflow_in_loop_LOOP_S_OUTER.entry24 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 12.17 seconds; current allocated memory: 259.562 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.verbose.sched.rpt 
+INFO: [HLS 200-111]  Elapsed time: 12.3 seconds; current allocated memory: 275.741 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.sched.adb -f 
-INFO-FLOW: Finish scheduling dataflow_in_loop_LOOP_S_OUTER.entry25.
-Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry25 
-Execute       bind -model dataflow_in_loop_LOOP_S_OUTER.entry25 
+Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_in_loop_LOOP_S_OUTER.entry24.
+Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER.entry24 
+Execute       bind -model dataflow_in_loop_LOOP_S_OUTER.entry24 
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 259.933 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.verbose.bind.rpt 
+INFO: [HLS 200-111]  Elapsed time: 0.01 seconds; current allocated memory: 276.111 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.bind.adb -f 
-INFO-FLOW: Finish binding dataflow_in_loop_LOOP_S_OUTER.entry25.
+Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_in_loop_LOOP_S_OUTER.entry24.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'runWeight2Reg' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       set_default_model runWeight2Reg 
 Execute       schedule -model runWeight2Reg 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=add93_i_i) to 3 in order to utilize available DSP registers.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 260.557 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 276.752 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -596,7 +595,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 261.506 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 277.697 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -608,14 +607,11 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model runDataL2toL1 
 Execute       schedule -model runDataL2toL1 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul6_i_i) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul3_i_i) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln32_1) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=add_ln32_1) to 3 in order to utilize available DSP registers.
 INFO: [SCHED 204-61] Pipelining loop 'LOOP_L2_H_IN_LOOP_L2_W_IN'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 261.780 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 277.933 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -628,7 +624,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 262.184 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 278.326 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -652,7 +648,7 @@ INFO: [SCHED 204-61] Pipelining loop 'LOOP_INPUT_ROW'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-11] Finished scheduling.
 Command       schedule done; 0.11 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 262.999 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 279.137 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -665,7 +661,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.06 seconds; current allocated memory: 264.095 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.08 seconds; current allocated memory: 280.212 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -677,12 +673,11 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model runOutputL1toL2 
 Execute       schedule -model runOutputL1toL2 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=add_ln51_1) to 3 in order to utilize available DSP registers.
 INFO: [HLS 200-486] Changing DSP48 latency (root=mul_ln51) to 3 in order to utilize available DSP registers.
 INFO: [SCHED 204-61] Pipelining loop 'LOOP_L2_H_LOOP_L2_W'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 264.314 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 280.437 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -695,7 +690,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.03 seconds; current allocated memory: 264.668 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.02 seconds; current allocated memory: 280.793 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -708,7 +703,7 @@ Execute       set_default_model dataflow_in_loop_LOOP_S_OUTER
 Execute       schedule -model dataflow_in_loop_LOOP_S_OUTER 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 264.991 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 281.118 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -721,8 +716,8 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.14 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 265.735 MB.
+Command       bind done; 0.15 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 281.861 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -735,7 +730,7 @@ Execute       set_default_model dataflow_parent_loop_proc
 Execute       schedule -model dataflow_parent_loop_proc 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 265.851 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 281.981 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -748,12 +743,38 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 266.053 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 282.183 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
 Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.bind.adb -f 
 INFO-FLOW: Finish binding dataflow_parent_loop_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model dataflow_parent_loop_proc15 
+Execute       schedule -model dataflow_parent_loop_proc15 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 282.311 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.verbose.sched.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.sched.adb -f 
+INFO-FLOW: Finish scheduling dataflow_parent_loop_proc15.
+Execute       set_default_model dataflow_parent_loop_proc15 
+Execute       bind -model dataflow_parent_loop_proc15 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 282.514 MB.
+Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.verbose.bind.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.bind.adb -f 
+INFO-FLOW: Finish binding dataflow_parent_loop_proc15.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc16' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -761,7 +782,7 @@ Execute       set_default_model dataflow_parent_loop_proc16
 Execute       schedule -model dataflow_parent_loop_proc16 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.09 seconds; current allocated memory: 266.182 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 282.641 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -774,7 +795,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 266.387 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 282.846 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -787,7 +808,7 @@ Execute       set_default_model dataflow_parent_loop_proc17
 Execute       schedule -model dataflow_parent_loop_proc17 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 266.513 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 282.944 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -800,7 +821,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 266.716 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 283.177 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -813,7 +834,7 @@ Execute       set_default_model dataflow_parent_loop_proc18
 Execute       schedule -model dataflow_parent_loop_proc18 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 266.813 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 283.275 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -826,7 +847,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 267.047 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 283.479 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -839,7 +860,7 @@ Execute       set_default_model dataflow_parent_loop_proc19
 Execute       schedule -model dataflow_parent_loop_proc19 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 267.144 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.12 seconds; current allocated memory: 283.575 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -852,57 +873,28 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 267.349 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 283.810 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
 Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.bind.adb -f 
 INFO-FLOW: Finish binding dataflow_parent_loop_proc19.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dataflow_parent_loop_proc20' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       set_default_model dataflow_parent_loop_proc20 
-Execute       schedule -model dataflow_parent_loop_proc20 
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 267.445 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.verbose.sched.rpt 
-Execute         AP::get_flow_target_display_name
-Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.sched.adb -f 
-INFO-FLOW: Finish scheduling dataflow_parent_loop_proc20.
-Execute       set_default_model dataflow_parent_loop_proc20 
-Execute       bind -model dataflow_parent_loop_proc20 
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 267.679 MB.
-Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.verbose.bind.rpt 
-Execute         AP::get_flow_target_display_name
-Execute           get_solution -flow_target 
-Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.bind.adb -f 
-INFO-FLOW: Finish binding dataflow_parent_loop_proc20.
-INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'Conv_sysarr' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       set_default_model Conv_sysarr 
 Execute       schedule -model Conv_sysarr 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul81) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul116) to 3 in order to utilize available DSP registers.
-INFO: [HLS 200-486] Changing DSP48 latency (root=mul161) to 3 in order to utilize available DSP registers.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_212_1'.
 INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_221_3_VITIS_LOOP_223_4'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_234_6_VITIS_LOOP_236_7'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_290_9_VITIS_LOOP_292_10'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 268.477 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 284.589 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -915,7 +907,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 269.569 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 285.638 MB.
 Execute       syn_report -verbosereport -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -924,44 +916,44 @@ Execute       db_write -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_bas
 INFO-FLOW: Finish binding Conv_sysarr.
 Execute       get_model_list Conv_sysarr -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
-Execute       rtl_gen_preprocess dataflow_in_loop_LOOP_S_OUTER.entry25 
+Execute       rtl_gen_preprocess dataflow_in_loop_LOOP_S_OUTER.entry24 
 Execute       rtl_gen_preprocess runWeight2Reg 
 Execute       rtl_gen_preprocess runDataL2toL1 
 Execute       rtl_gen_preprocess runSysArr 
 Execute       rtl_gen_preprocess runOutputL1toL2 
 Execute       rtl_gen_preprocess dataflow_in_loop_LOOP_S_OUTER 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc 
+Execute       rtl_gen_preprocess dataflow_parent_loop_proc15 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc16 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc17 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc18 
 Execute       rtl_gen_preprocess dataflow_parent_loop_proc19 
-Execute       rtl_gen_preprocess dataflow_parent_loop_proc20 
 Execute       rtl_gen_preprocess Conv_sysarr 
-INFO-FLOW: Model list for RTL generation: dataflow_in_loop_LOOP_S_OUTER.entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
+INFO-FLOW: Model list for RTL generation: dataflow_in_loop_LOOP_S_OUTER.entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_LOOP_S_OUTER_entry25' 
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_LOOP_S_OUTER_entry24' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model dataflow_in_loop_LOOP_S_OUTER.entry25 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_LOOP_S_OUTER_entry25'.
-INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 269.988 MB.
+Execute       create_rtl_model dataflow_in_loop_LOOP_S_OUTER.entry24 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_LOOP_S_OUTER_entry24'.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 286.053 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
-Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER.entry25 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry25 
-Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER.entry25 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry25 
-Execute       syn_report -csynth -model dataflow_in_loop_LOOP_S_OUTER.entry25 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_in_loop_LOOP_S_OUTER_entry25_csynth.rpt 
+Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER.entry24 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry24 
+Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER.entry24 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry24 
+Execute       syn_report -csynth -model dataflow_in_loop_LOOP_S_OUTER.entry24 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_in_loop_LOOP_S_OUTER_entry24_csynth.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model dataflow_in_loop_LOOP_S_OUTER.entry25 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_in_loop_LOOP_S_OUTER_entry25_csynth.xml 
+Execute       syn_report -rtlxml -model dataflow_in_loop_LOOP_S_OUTER.entry24 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_in_loop_LOOP_S_OUTER_entry24_csynth.xml 
 Execute         get_solution -flow_target
 Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model dataflow_in_loop_LOOP_S_OUTER.entry25 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.verbose.rpt 
+Execute       syn_report -verbosereport -model dataflow_in_loop_LOOP_S_OUTER.entry24 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Execute       db_write -model dataflow_in_loop_LOOP_S_OUTER.entry25 -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.adb 
-Execute       gen_tb_info dataflow_in_loop_LOOP_S_OUTER.entry25 -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25 
+Execute       db_write -model dataflow_in_loop_LOOP_S_OUTER.entry24 -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.adb 
+Execute       gen_tb_info dataflow_in_loop_LOOP_S_OUTER.entry24 -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'runWeight2Reg' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -970,12 +962,11 @@ Execute       get_config_rtl -module_auto_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model runWeight2Reg -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_9ns_9ns_9s_9ns_9_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_9s_9s_9_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mux_42_1_1_1': 16 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mux_42_8_1_1': 17 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'runWeight2Reg'.
-INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 272.956 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.05 seconds; current allocated memory: 289.023 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl runWeight2Reg -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_runWeight2Reg 
 Execute       gen_rtl runWeight2Reg -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_runWeight2Reg 
@@ -998,12 +989,11 @@ Execute       get_config_rtl -module_auto_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model runDataL2toL1 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_9ns_9s_9s_9ns_9_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_9s_9s_9ns_9_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_8ns_8_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_9s_9s_9_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'runDataL2toL1'.
-INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 276.923 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 292.952 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl runDataL2toL1 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_runDataL2toL1 
 Execute       gen_rtl runDataL2toL1 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_runDataL2toL1 
@@ -1032,7 +1022,7 @@ INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_8s_8s_16_1_1': 8 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'runSysArr'.
-INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 279.740 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.1 seconds; current allocated memory: 295.779 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl runSysArr -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_runSysArr 
 Execute       gen_rtl runSysArr -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_runSysArr 
@@ -1055,12 +1045,11 @@ Execute       get_config_rtl -module_auto_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model runOutputL1toL2 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.compgen.tcl 
-INFO: [RTGEN 206-100] Generating core module 'ama_addmuladd_9ns_9ns_9s_9ns_9_4_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_9s_9s_9ns_9_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_8s_8s_8ns_8_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_32ns_32ns_64_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_9s_9s_9_1_1': 3 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'runOutputL1toL2'.
-INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 284.383 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.19 seconds; current allocated memory: 300.494 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl runOutputL1toL2 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_runOutputL1toL2 
 Execute       gen_rtl runOutputL1toL2 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_runOutputL1toL2 
@@ -1084,7 +1073,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_in_loop_LOOP_S_OUTER -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_LOOP_S_OUTER'.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 288.318 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 304.409 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER 
 Execute       gen_rtl dataflow_in_loop_LOOP_S_OUTER -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER 
@@ -1097,6 +1086,7 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model dataflow_in_loop_LOOP_S_OUTER -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
+Command       syn_report done; 0.11 sec.
 Execute       db_write -model dataflow_in_loop_LOOP_S_OUTER -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.adb 
 Execute       gen_tb_info dataflow_in_loop_LOOP_S_OUTER -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1108,7 +1098,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_parent_loop_proc -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc'.
-INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 291.407 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.26 seconds; current allocated memory: 307.496 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_parent_loop_proc -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc 
 Execute       gen_rtl dataflow_parent_loop_proc -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc 
@@ -1124,6 +1114,30 @@ Execute           get_solution -flow_target
 Execute       db_write -model dataflow_parent_loop_proc -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.adb 
 Execute       gen_tb_info dataflow_parent_loop_proc -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc 
 INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_proc15' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model dataflow_parent_loop_proc15 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc15'.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 308.982 MB.
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
+Execute       gen_rtl dataflow_parent_loop_proc15 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc15 
+Execute       gen_rtl dataflow_parent_loop_proc15 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc15 
+Execute       syn_report -csynth -model dataflow_parent_loop_proc15 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_parent_loop_proc15_csynth.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       syn_report -rtlxml -model dataflow_parent_loop_proc15 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_parent_loop_proc15_csynth.xml 
+Execute         get_solution -flow_target
+Execute           get_solution -flow_target 
+Execute       syn_report -verbosereport -model dataflow_parent_loop_proc15 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.verbose.rpt 
+Execute         AP::get_flow_target_display_name
+Execute           get_solution -flow_target 
+Execute       db_write -model dataflow_parent_loop_proc15 -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.adb 
+Execute       gen_tb_info dataflow_parent_loop_proc15 -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15 
+INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_proc16' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
@@ -1132,7 +1146,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_parent_loop_proc16 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc16'.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 292.893 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 310.468 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_parent_loop_proc16 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc16 
 Execute       gen_rtl dataflow_parent_loop_proc16 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc16 
@@ -1156,7 +1170,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_parent_loop_proc17 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc17'.
-INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 294.379 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 311.957 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_parent_loop_proc17 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc17 
 Execute       gen_rtl dataflow_parent_loop_proc17 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc17 
@@ -1180,7 +1194,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_parent_loop_proc18 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc18'.
-INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 295.855 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.15 seconds; current allocated memory: 313.460 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_parent_loop_proc18 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc18 
 Execute       gen_rtl dataflow_parent_loop_proc18 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc18 
@@ -1204,7 +1218,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model dataflow_parent_loop_proc19 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc19'.
-INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 297.344 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 314.926 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dataflow_parent_loop_proc19 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc19 
 Execute       gen_rtl dataflow_parent_loop_proc19 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc19 
@@ -1220,30 +1234,6 @@ Execute           get_solution -flow_target
 Execute       db_write -model dataflow_parent_loop_proc19 -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.adb 
 Execute       gen_tb_info dataflow_parent_loop_proc19 -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_parent_loop_proc20' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-Execute       get_config_rtl -module_prefix 
-Execute       get_config_rtl -module_auto_prefix 
-Execute       get_config_rtl -module_prefix 
-Execute       get_config_rtl -module_auto_prefix 
-Execute       create_rtl_model dataflow_parent_loop_proc20 -top_prefix Conv_sysarr_ -sub_prefix Conv_sysarr_ -mg_file /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_parent_loop_proc20'.
-INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 298.827 MB.
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
-Execute       gen_rtl dataflow_parent_loop_proc20 -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr_dataflow_parent_loop_proc20 
-Execute       gen_rtl dataflow_parent_loop_proc20 -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr_dataflow_parent_loop_proc20 
-Execute       syn_report -csynth -model dataflow_parent_loop_proc20 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_parent_loop_proc20_csynth.rpt 
-Execute         AP::get_flow_target_display_name
-Execute           get_solution -flow_target 
-Execute       syn_report -rtlxml -model dataflow_parent_loop_proc20 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/report/dataflow_parent_loop_proc20_csynth.xml 
-Execute         get_solution -flow_target
-Execute           get_solution -flow_target 
-Execute       syn_report -verbosereport -model dataflow_parent_loop_proc20 -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.verbose.rpt 
-Execute         AP::get_flow_target_display_name
-Execute           get_solution -flow_target 
-Execute       db_write -model dataflow_parent_loop_proc20 -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.adb 
-Execute       gen_tb_info dataflow_parent_loop_proc20 -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20 
-INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'Conv_sysarr' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 Execute       get_config_rtl -module_prefix 
@@ -1256,12 +1246,12 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'Conv_sysarr/weight_in_V' t
 INFO: [RTGEN 206-500] Setting interface mode on port 'Conv_sysarr/data_in_V' to 'ap_fifo'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'Conv_sysarr/conv_out_V' to 'ap_fifo'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'Conv_sysarr' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'mac_muladd_9s_9s_9ns_9_4_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_30ns_32ns_62_1_1': 3 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'udiv_32s_32ns_32_36_seq_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'Conv_sysarr'.
-INFO: [HLS 200-111]  Elapsed time: 0.2 seconds; current allocated memory: 302.260 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 318.214 MB.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
 Execute       gen_rtl Conv_sysarr -istop -style xilinx -f -lang vhdl -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/vhdl/Conv_sysarr 
 Execute       gen_rtl Conv_sysarr -istop -style xilinx -f -lang vlog -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/syn/verilog/Conv_sysarr 
@@ -1274,12 +1264,12 @@ Execute           get_solution -flow_target
 Execute       syn_report -verbosereport -model Conv_sysarr -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.verbose.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
-Command       syn_report done; 0.19 sec.
+Command       syn_report done; 0.2 sec.
 Execute       db_write -model Conv_sysarr -f -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.adb 
 Execute       gen_tb_info Conv_sysarr -p /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr 
 Execute       export_constraint_db -f -tool general -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.constraint.tcl 
 Execute       syn_report -designview -model Conv_sysarr -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.design.xml 
-Command       syn_report done; 0.16 sec.
+Command       syn_report done; 0.17 sec.
 Execute       get_config_rtl -disable_wave_debug 
 Execute       syn_report -wcfg -model Conv_sysarr -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr_dataflow_ana.wcfg 
 Execute       syn_report -protoinst -model Conv_sysarr -o /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.protoinst 
@@ -1290,13 +1280,13 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       sc_get_portdomain Conv_sysarr 
-INFO-FLOW: Model list for RTL component generation: dataflow_in_loop_LOOP_S_OUTER.entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
-INFO-FLOW: Handling components in module [dataflow_in_loop_LOOP_S_OUTER_entry25] ... 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
+INFO-FLOW: Model list for RTL component generation: dataflow_in_loop_LOOP_S_OUTER.entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
+INFO-FLOW: Handling components in module [dataflow_in_loop_LOOP_S_OUTER_entry24] ... 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
 INFO-FLOW: Handling components in module [runWeight2Reg] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
-INFO-FLOW: Found component Conv_sysarr_mul_9s_9s_9_1_1.
-INFO-FLOW: Append model Conv_sysarr_mul_9s_9s_9_1_1
+INFO-FLOW: Found component Conv_sysarr_mul_20s_20s_20_1_1.
+INFO-FLOW: Append model Conv_sysarr_mul_20s_20s_20_1_1
 INFO-FLOW: Found component Conv_sysarr_mux_42_8_1_1.
 INFO-FLOW: Append model Conv_sysarr_mux_42_8_1_1
 INFO-FLOW: Found component Conv_sysarr_mux_42_1_1_1.
@@ -1307,16 +1297,12 @@ INFO-FLOW: Found component Conv_sysarr_mux_42_1_1_1.
 INFO-FLOW: Append model Conv_sysarr_mux_42_1_1_1
 INFO-FLOW: Found component Conv_sysarr_mux_42_1_1_1.
 INFO-FLOW: Append model Conv_sysarr_mux_42_1_1_1
-INFO-FLOW: Found component Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1.
-INFO-FLOW: Append model Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
 INFO-FLOW: Handling components in module [runDataL2toL1] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
 INFO-FLOW: Found component Conv_sysarr_mul_32ns_32ns_64_1_1.
 INFO-FLOW: Append model Conv_sysarr_mul_32ns_32ns_64_1_1
-INFO-FLOW: Found component Conv_sysarr_mac_muladd_9s_9s_9ns_9_4_1.
-INFO-FLOW: Append model Conv_sysarr_mac_muladd_9s_9s_9ns_9_4_1
-INFO-FLOW: Found component Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1.
-INFO-FLOW: Append model Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1
+INFO-FLOW: Found component Conv_sysarr_mac_muladd_8s_8s_8ns_8_4_1.
+INFO-FLOW: Append model Conv_sysarr_mac_muladd_8s_8s_8ns_8_4_1
 INFO-FLOW: Handling components in module [runSysArr] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.compgen.tcl 
 INFO-FLOW: Found component Conv_sysarr_mul_32s_32s_32_1_1.
@@ -1333,50 +1319,50 @@ INFO-FLOW: Handling components in module [runOutputL1toL2] ...
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.compgen.tcl 
 INFO-FLOW: Handling components in module [dataflow_in_loop_LOOP_S_OUTER] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.compgen.tcl 
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w7_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w7_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w18_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w18_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w32_d3_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w32_d3_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d3_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d3_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d4_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d4_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d2_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w32_d3_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w32_d3_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d4_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d4_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d2_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d3_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d3_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d3_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d3_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d4_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: Found component Conv_sysarr_fifo_w9_d3_S.
-INFO-FLOW: Append model Conv_sysarr_fifo_w9_d3_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d4_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: Found component Conv_sysarr_fifo_w20_d3_S.
+INFO-FLOW: Append model Conv_sysarr_fifo_w20_d3_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
@@ -1419,6 +1405,8 @@ INFO-FLOW: Found component Conv_sysarr_fifo_w32_d2_S.
 INFO-FLOW: Append model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: Handling components in module [dataflow_parent_loop_proc] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [dataflow_parent_loop_proc15] ... 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
 INFO-FLOW: Handling components in module [dataflow_parent_loop_proc16] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 INFO-FLOW: Handling components in module [dataflow_parent_loop_proc17] ... 
@@ -1427,8 +1415,6 @@ INFO-FLOW: Handling components in module [dataflow_parent_loop_proc18] ...
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 INFO-FLOW: Handling components in module [dataflow_parent_loop_proc19] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
-INFO-FLOW: Handling components in module [dataflow_parent_loop_proc20] ... 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
 INFO-FLOW: Handling components in module [Conv_sysarr] ... 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.compgen.tcl 
 INFO-FLOW: Found component Conv_sysarr_udiv_32s_32ns_32_36_seq_1.
@@ -1437,60 +1423,62 @@ INFO-FLOW: Found component Conv_sysarr_mul_30ns_32ns_62_1_1.
 INFO-FLOW: Append model Conv_sysarr_mul_30ns_32ns_62_1_1
 INFO-FLOW: Found component Conv_sysarr_bias_l2_0.
 INFO-FLOW: Append model Conv_sysarr_bias_l2_0
+INFO-FLOW: Found component Conv_sysarr_weight_l2_0.
+INFO-FLOW: Append model Conv_sysarr_weight_l2_0
+INFO-FLOW: Found component Conv_sysarr_data_l2_0.
+INFO-FLOW: Append model Conv_sysarr_data_l2_0
 INFO-FLOW: Found component Conv_sysarr_output_l2_0.
 INFO-FLOW: Append model Conv_sysarr_output_l2_0
-INFO-FLOW: Append model dataflow_in_loop_LOOP_S_OUTER_entry25
+INFO-FLOW: Append model dataflow_in_loop_LOOP_S_OUTER_entry24
 INFO-FLOW: Append model runWeight2Reg
 INFO-FLOW: Append model runDataL2toL1
 INFO-FLOW: Append model runSysArr
 INFO-FLOW: Append model runOutputL1toL2
 INFO-FLOW: Append model dataflow_in_loop_LOOP_S_OUTER
 INFO-FLOW: Append model dataflow_parent_loop_proc
+INFO-FLOW: Append model dataflow_parent_loop_proc15
 INFO-FLOW: Append model dataflow_parent_loop_proc16
 INFO-FLOW: Append model dataflow_parent_loop_proc17
 INFO-FLOW: Append model dataflow_parent_loop_proc18
 INFO-FLOW: Append model dataflow_parent_loop_proc19
-INFO-FLOW: Append model dataflow_parent_loop_proc20
 INFO-FLOW: Append model Conv_sysarr
 INFO-FLOW: Generating RTL model list ...
-INFO-FLOW: All models in this session: Conv_sysarr_mul_9s_9s_9_1_1 Conv_sysarr_mux_42_8_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1 Conv_sysarr_mul_32ns_32ns_64_1_1 Conv_sysarr_mac_muladd_9s_9s_9ns_9_4_1 Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1 Conv_sysarr_mul_32s_32s_32_1_1 Conv_sysarr_mul_8s_8s_16_1_1 Conv_sysarr_mac_muladd_8s_8s_32ns_32_2_1 Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1 Conv_sysarr_runSysArr_output_l1_local_3 Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w7_d2_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w9_d4_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w9_d4_S Conv_sysarr_fifo_w9_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w9_d4_S Conv_sysarr_fifo_w9_d3_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_udiv_32s_32ns_32_36_seq_1 Conv_sysarr_mul_30ns_32ns_62_1_1 Conv_sysarr_bias_l2_0 Conv_sysarr_output_l2_0 dataflow_in_loop_LOOP_S_OUTER_entry25 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 dataflow_parent_loop_proc20 Conv_sysarr
-INFO-FLOW: To file: write model Conv_sysarr_mul_9s_9s_9_1_1
+INFO-FLOW: All models in this session: Conv_sysarr_mul_20s_20s_20_1_1 Conv_sysarr_mux_42_8_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mux_42_1_1_1 Conv_sysarr_mul_32ns_32ns_64_1_1 Conv_sysarr_mac_muladd_8s_8s_8ns_8_4_1 Conv_sysarr_mul_32s_32s_32_1_1 Conv_sysarr_mul_8s_8s_16_1_1 Conv_sysarr_mac_muladd_8s_8s_32ns_32_2_1 Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1 Conv_sysarr_runSysArr_output_l1_local_3 Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w18_d2_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w20_d4_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w20_d4_S Conv_sysarr_fifo_w20_d2_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w32_d3_S Conv_sysarr_fifo_w20_d4_S Conv_sysarr_fifo_w20_d3_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w8_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_fifo_w32_d2_S Conv_sysarr_udiv_32s_32ns_32_36_seq_1 Conv_sysarr_mul_30ns_32ns_62_1_1 Conv_sysarr_bias_l2_0 Conv_sysarr_weight_l2_0 Conv_sysarr_data_l2_0 Conv_sysarr_output_l2_0 dataflow_in_loop_LOOP_S_OUTER_entry24 runWeight2Reg runDataL2toL1 runSysArr runOutputL1toL2 dataflow_in_loop_LOOP_S_OUTER dataflow_parent_loop_proc dataflow_parent_loop_proc15 dataflow_parent_loop_proc16 dataflow_parent_loop_proc17 dataflow_parent_loop_proc18 dataflow_parent_loop_proc19 Conv_sysarr
+INFO-FLOW: To file: write model Conv_sysarr_mul_20s_20s_20_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mux_42_8_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mux_42_1_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mux_42_1_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mux_42_1_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mux_42_1_1_1
-INFO-FLOW: To file: write model Conv_sysarr_ama_addmuladd_9ns_9ns_9s_9ns_9_4_1
 INFO-FLOW: To file: write model Conv_sysarr_mul_32ns_32ns_64_1_1
-INFO-FLOW: To file: write model Conv_sysarr_mac_muladd_9s_9s_9ns_9_4_1
-INFO-FLOW: To file: write model Conv_sysarr_ama_addmuladd_9ns_9s_9s_9ns_9_4_1
+INFO-FLOW: To file: write model Conv_sysarr_mac_muladd_8s_8s_8ns_8_4_1
 INFO-FLOW: To file: write model Conv_sysarr_mul_32s_32s_32_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mul_8s_8s_16_1_1
 INFO-FLOW: To file: write model Conv_sysarr_mac_muladd_8s_8s_32ns_32_2_1
 INFO-FLOW: To file: write model Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1
 INFO-FLOW: To file: write model Conv_sysarr_runSysArr_output_l1_local_3
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w7_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w18_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d3_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d3_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d3_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d3_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d3_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d4_S
-INFO-FLOW: To file: write model Conv_sysarr_fifo_w9_d3_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d4_S
+INFO-FLOW: To file: write model Conv_sysarr_fifo_w20_d3_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_fifo_w8_d2_S
@@ -1514,19 +1502,21 @@ INFO-FLOW: To file: write model Conv_sysarr_fifo_w32_d2_S
 INFO-FLOW: To file: write model Conv_sysarr_udiv_32s_32ns_32_36_seq_1
 INFO-FLOW: To file: write model Conv_sysarr_mul_30ns_32ns_62_1_1
 INFO-FLOW: To file: write model Conv_sysarr_bias_l2_0
+INFO-FLOW: To file: write model Conv_sysarr_weight_l2_0
+INFO-FLOW: To file: write model Conv_sysarr_data_l2_0
 INFO-FLOW: To file: write model Conv_sysarr_output_l2_0
-INFO-FLOW: To file: write model dataflow_in_loop_LOOP_S_OUTER_entry25
+INFO-FLOW: To file: write model dataflow_in_loop_LOOP_S_OUTER_entry24
 INFO-FLOW: To file: write model runWeight2Reg
 INFO-FLOW: To file: write model runDataL2toL1
 INFO-FLOW: To file: write model runSysArr
 INFO-FLOW: To file: write model runOutputL1toL2
 INFO-FLOW: To file: write model dataflow_in_loop_LOOP_S_OUTER
 INFO-FLOW: To file: write model dataflow_parent_loop_proc
+INFO-FLOW: To file: write model dataflow_parent_loop_proc15
 INFO-FLOW: To file: write model dataflow_parent_loop_proc16
 INFO-FLOW: To file: write model dataflow_parent_loop_proc17
 INFO-FLOW: To file: write model dataflow_parent_loop_proc18
 INFO-FLOW: To file: write model dataflow_parent_loop_proc19
-INFO-FLOW: To file: write model dataflow_parent_loop_proc20
 INFO-FLOW: To file: write model Conv_sysarr
 INFO-FLOW: Finished generating RTL model list.
 
@@ -1576,13 +1566,13 @@ Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-282] Generating pipelined core: 'Conv_sysarr_mul_9s_9s_9_1_1_Multiplier_0'
+INFO: [RTMG 210-282] Generating pipelined core: 'Conv_sysarr_mul_20s_20s_20_1_1_Multiplier_0'
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
@@ -1593,18 +1583,12 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-282] Generating pipelined core: 'Conv_sysarr_mul_32ns_32ns_64_1_1_Multiplier_1'
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
@@ -1642,31 +1626,31 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'p_c_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'p_c_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'p_c1_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'p_c1_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'ko_2_c_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ko_2_c_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'co_1_c_U(Conv_sysarr_fifo_w7_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'co_1_c_U(Conv_sysarr_fifo_w18_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'co_1_c2_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'co_1_c2_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'ro_c_U(Conv_sysarr_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'ro_c3_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ro_c3_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'so_c_U(Conv_sysarr_fifo_w32_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'so_c4_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'so_c4_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'p_c5_U(Conv_sysarr_fifo_w32_d2_S)' using Shift Registers.
@@ -1681,19 +1665,19 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet
 INFO: [RTMG 210-285] Implementing FIFO 'p_c8_U(Conv_sysarr_fifo_w32_d3_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'ho_c_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ho_c_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'ho_c9_U(Conv_sysarr_fifo_w9_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ho_c9_U(Conv_sysarr_fifo_w20_d4_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'wo_c_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'wo_c_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'wo_c10_U(Conv_sysarr_fifo_w9_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'wo_c10_U(Conv_sysarr_fifo_w20_d4_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'p_c11_U(Conv_sysarr_fifo_w9_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'p_c11_U(Conv_sysarr_fifo_w20_d2_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'p_c12_U(Conv_sysarr_fifo_w32_d3_S)' using Shift Registers.
@@ -1702,10 +1686,10 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet
 INFO: [RTMG 210-285] Implementing FIFO 'p_c13_U(Conv_sysarr_fifo_w32_d3_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'p_c14_U(Conv_sysarr_fifo_w9_d4_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'p_c14_U(Conv_sysarr_fifo_w20_d4_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-INFO: [RTMG 210-285] Implementing FIFO 'ko_2_c15_U(Conv_sysarr_fifo_w9_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'ko_2_c15_U(Conv_sysarr_fifo_w20_d3_S)' using Shift Registers.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'ro_c16_U(Conv_sysarr_fifo_w32_d2_S)' using Shift Registers.
@@ -1766,13 +1750,13 @@ INFO: [RTMG 210-285] Implementing FIFO 'p_c18_U(Conv_sysarr_fifo_w32_d2_S)' usin
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'p_c19_U(Conv_sysarr_fifo_w32_d2_S)' using Shift Registers.
-Command       ap_source done; 0.35 sec.
+Command       ap_source done; 0.37 sec.
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
@@ -1782,7 +1766,13 @@ Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-282] Generating pipelined core: 'Conv_sysarr_mul_30ns_32ns_62_1_1_Multiplier_4'
-INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_bias_l2_0_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_bias_l2_0_ram (RAM)' using distributed RAMs.
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_weight_l2_0_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_data_l2_0_ram (RAM)' using block RAMs.
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO: [RTMG 210-278] Implementing memory 'Conv_sysarr_output_l2_0_ram (RAM)' using block RAMs.
@@ -1825,7 +1815,7 @@ Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/so
 INFO-FLOW: DBG:CMD:       export_impl_rtl
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.compgen.tcl 
@@ -1840,26 +1830,26 @@ INFO: [HLS 200-741] Implementing PIPO Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.compgen.tcl 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.compgen.tcl 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
@@ -1889,7 +1879,7 @@ Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.compgen.tcl 
@@ -1904,11 +1894,11 @@ INFO: [HLS 200-741] Implementing PIPO Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.compgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.compgen.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.compgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.compgen.tcl 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
@@ -1932,18 +1922,18 @@ Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/so
 Execute       get_config_export -format 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info -quiet 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry25.tbgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER_entry24.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runWeight2Reg.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runDataL2toL1.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runSysArr.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/runOutputL1toL2.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_in_loop_LOOP_S_OUTER.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc.tbgen.tcl 
+Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc15.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc16.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc17.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc18.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc19.tbgen.tcl 
-Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/dataflow_parent_loop_proc20.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data names -quiet 
@@ -1958,17 +1948,17 @@ Execute       sc_get_clocks Conv_sysarr
 Execute       source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
 Execute       get_config_debug -directory 
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1562.242 ; gain = 1069.207 ; free physical = 6521 ; free virtual = 59677
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1680.176 ; gain = 1235.707 ; free physical = 6347 ; free virtual = 59644
 INFO: [VHDL 208-304] Generating VHDL RTL for Conv_sysarr.
 INFO: [VLOG 209-307] Generating Verilog RTL for Conv_sysarr.
 Execute       syn_report -model Conv_sysarr -printsummary 
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 157.73 MHz
-Command     autosyn done; 5.63 sec.
-Command   csynth_design done; 17 sec.
-Command ap_source done; 17.64 sec.
+INFO: [HLS 200-789] **** Estimated Fmax: 143.96 MHz
+Command     autosyn done; 5.82 sec.
+Command   csynth_design done; 17.21 sec.
+Command ap_source done; 17.96 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Sat Jan 22 00:49:31 KST 2022
+INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Sat Jan 22 01:14:11 KST 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -2012,7 +2002,7 @@ INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
 DBG:HLSDevice: Trying to load device library: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data/parts/arch.xml
-Command       ap_part_info done; 0.59 sec.
+Command       ap_part_info done; 0.54 sec.
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       ap_family_info -name virtexuplus -data info 
 Execute       add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
@@ -2027,7 +2017,7 @@ Execute         get_default_platform
 INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
 Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute       get_default_platform 
-Command     set_part done; 0.62 sec.
+Command     set_part done; 0.57 sec.
 Execute     ap_part_info -data single -name xcu200-fsgd2104-2-e 
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data resources 
 Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
@@ -2041,7 +2031,7 @@ Execute     get_config_interface -m_axi_max_widen_bitwidth
 Execute     get_config_interface -default_interface 
 Execute     get_config_interface -default_slave_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 0.71 sec.
+Command   open_solution done; 0.65 sec.
 Execute   set_part xcu200-fsgd2104-2-e 
 INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
 INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data:/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
@@ -2114,12 +2104,12 @@ Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info
 INFO-FLOW: TB processing: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp
 Execute     clang_tidy xilinx-tb-process /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp std=c++11 
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/test.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
-Command     clang_tidy done; 1.02 sec.
+Command     clang_tidy done; 0.99 sec.
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
 INFO-FLOW: TB processing: /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/conv_sysarr_dbbuf.cpp_pre.cpp
 Execute     clang_tidy xilinx-tb-process /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/conv_sysarr_dbbuf.cpp_pre.cpp.tb.cpp std=c++11 
 INFO-FLOW: exec /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/conv_sysarr_dbbuf.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
-Command     clang_tidy done; 0.88 sec.
+Command     clang_tidy done; 0.89 sec.
 Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/tb.status.tcl 
 Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
 Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.rtl_wrap.cfg.tcl 
@@ -2129,54 +2119,118 @@ Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solu
 Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
 Execute     source .run_sim.tcl 
-INFO: [COSIM 212-302] Starting C TB testing ... 
-Command     ap_source done; 0.11 sec.
-INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO-FLOW: Workspace /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1 opened at Sat Jan 22 14:46:29 KST 2022
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/dsp48.lib 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/virtexuplus/dsp48e2.hlp 
+Execute     source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus.gen 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/virtexuplus/virtexuplus_fpv7.gen 
+Execute       source /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xcu200-fsgd2104-2-e 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data:/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
+DBG:HLSDevice: Trying to load device library: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/lnx64.o/librdi_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data/parts/arch.xml
+Command       ap_part_info done; 0.53 sec.
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute       ap_family_info -name virtexuplus -data info 
+Execute       add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xcu200-fsgd2104-2-e 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data resources 
+Execute         config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute         ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute         config_chip_info -speed medium 
+Execute       add_library xilinx/virtexuplus/virtexuplus_fpv7 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute       get_default_platform 
+Command     set_part done; 0.56 sec.
+Execute     ap_part_info -data single -name xcu200-fsgd2104-2-e 
+Execute     ap_part_info -name xcu200-fsgd2104-2-e -data resources 
+Execute     config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
 Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
-INFO: [COSIM 212-12] Generating RTL test bench ...
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source ../tv/cdatafile/ref.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source ../tv/cdatafile/ref.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/Conv_sysarr.tbgen.tcl 
-INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
-Execute     source .run_sim.tcl 
-Execute       source check_sim.tcl 
-Execute       source .sim.status.tcl 
-INFO: [COSIM 212-323] Starting verilog simulation. 
-INFO: [COSIM 212-15] Starting XSIM ...
-INFO: [COSIM 212-316] Starting C post checking ...
-Command     ap_source done; 16 sec.
-INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
-Command   cosim_design done; 22.47 sec.
-Command ap_source done; 23.21 sec.
-Execute cleanup_all 
+Execute     config_chip_info -speed medium 
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     get_config_interface -m_axi_latency 
+Execute     get_config_interface -m_axi_alignment_byte_size 
+Execute     get_config_interface -m_axi_max_widen_bitwidth 
+Execute     get_config_interface -default_interface 
+Execute     get_config_interface -default_slave_interface 
+Execute     get_config_rtl -register_reset_num 
+Command   open_solution done; 0.65 sec.
+Execute   set_part xcu200-fsgd2104-2-e 
+INFO-FLOW: DBG:set_part: XILINX_VIVADO=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
+INFO-FLOW: DBG:set_part: RDI_DATADIR=/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/data:/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
+Execute     ap_part_info -name xcu200-fsgd2104-2-e -data single -quiet 
+Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute     ap_family_info -name virtexuplus -data info 
+Execute     add_library xilinx/virtexuplus/virtexuplus:xcu200:-fsgd2104:-2-e 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xcu200-fsgd2104-2-e 
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data resources 
+Execute       config_chip_info -resource {SLICE 147780} {LUT 1182240} {FF 2364480} {DSP 6840} {BRAM 4320} {URAM 960} {SLR 3} 
+Execute       ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute       config_chip_info -speed medium 
+Execute     add_library xilinx/virtexuplus/virtexuplus_fpv7 
+Execute       get_default_platform 
+Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute   source ./Systolic_Array_PCNN_based/solution1/directives.tcl 
+Execute     set_directive_top -name coreConv coreConv 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+Execute     set_directive_top -name Conv_sysarr Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+Execute     set_directive_top -name Conv_sysarr_dbbuf Conv_sysarr_dbbuf 
+INFO-FLOW: Setting directive 'TOP' name=coreConv 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr 
+INFO-FLOW: Setting directive 'TOP' name=Conv_sysarr_dbbuf 
+Execute   csim_design -O -quiet 
+Execute     source /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp 
+Execute     is_xip /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp 
+Execute     is_encrypted /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h 
+Execute     is_xip /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h 
+Execute     is_encrypted /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp 
+Execute     is_xip /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp 
+Execute     ap_part_info -name xcu200-fsgd2104-2-e -data info 
+Execute     source run_sim.tcl 

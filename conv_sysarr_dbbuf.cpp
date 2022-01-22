@@ -6,13 +6,13 @@
 
 #define ARRAY_K 4
 #define ARRAY_C 4
-#define   DATA_L2_SIZE 512
-#define WEIGHT_L2_SIZE 512
-#define OUTPUT_L2_SIZE 512
-#define   BIAS_L2_SIZE 512
-#define   DATA_L1_SIZE 512
-#define WEIGHT_L1_SIZE 512
-#define OUTPUT_L1_SIZE 512
+#define   DATA_L2_SIZE 817216
+#define WEIGHT_L2_SIZE 589824
+#define OUTPUT_L2_SIZE 802816
+#define   BIAS_L2_SIZE 16
+#define   DATA_L1_SIZE 196
+#define WEIGHT_L1_SIZE -1
+#define OUTPUT_L1_SIZE 196
 
 void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE (*weight_l2)[ARRAY_C], const uint C,
 		const uint RS, const uint ko, const uint co, const uint r, const uint s) {
@@ -203,7 +203,7 @@ void Conv_sysarr(
 	uint TILES_R = RS / TILESIZE_R;
 	uint TILES_S = RS / TILESIZE_S;
 
-	const uint input_rows = TILESIZE_H * TILESIZE_W + (ARRAY_K - 1) + (ARRAY_C - 1);
+	const uint input_rows = TILESIZE_H * TILESIZE_W + (ARRAY_K - 1) + (ARRAY_C - 1); // inner loop with sysarr bubble
 	const uint bubble = (ARRAY_K - 1) + (ARRAY_C - 1);
 	const uint bubble_h = bubble / TILESIZE_W;
 	const uint bubble_w = bubble % TILESIZE_W;

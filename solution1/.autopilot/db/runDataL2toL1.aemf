@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642780162000">
-  <ports id="1" name="data_l1_0" type="PortType" originalName="data_l1[0]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642781594000">
+  <ports id="1" name="data_l1_0" type="PortType" originalName="data_l1[0]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="196">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="2" name="data_l1_1" type="PortType" originalName="data_l1[1]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="2" name="data_l1_1" type="PortType" originalName="data_l1[1]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="196">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="3" name="data_l1_2" type="PortType" originalName="data_l1[2]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="3" name="data_l1_2" type="PortType" originalName="data_l1[2]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="196">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="4" name="data_l1_3" type="PortType" originalName="data_l1[3]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="4" name="data_l1_3" type="PortType" originalName="data_l1[3]" coreName="RAM" bitwidth="8" direction="DirOut" iftype="IfTypeRegister" arraysize="196">
     <dataInputObjs>getelementptr</dataInputObjs>
   </ports>
-  <ports id="5" name="data_l2_0" type="PortType" originalName="data_l2[0]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="5" name="data_l2_0" type="PortType" originalName="data_l2[0]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="6" name="data_l2_1" type="PortType" originalName="data_l2[1]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="6" name="data_l2_1" type="PortType" originalName="data_l2[1]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="7" name="data_l2_2" type="PortType" originalName="data_l2[2]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="7" name="data_l2_2" type="PortType" originalName="data_l2[2]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
-  <ports id="8" name="data_l2_3" type="PortType" originalName="data_l2[3]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="8" name="data_l2_3" type="PortType" originalName="data_l2[3]" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>getelementptr</dataOutputObjs>
   </ports>
   <ports id="9" name="empty_25" type="PortType" coreName="FIFO_SRL" bitwidth="32" iftype="IfTypeRom">
@@ -30,150 +30,153 @@
   <ports id="10" name="empty_26" type="PortType" coreName="FIFO_SRL" bitwidth="32" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="11" name="co_1" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="11" name="co_1" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="12" name="ho" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="12" name="ho" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="13" name="wo" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="13" name="wo" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="14" name="ro" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="14" name="ro" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="15" name="so" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="15" name="so" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="16" name="empty" type="PortType" coreName="FIFO_SRL" bitwidth="9" iftype="IfTypeRom">
+  <ports id="16" name="empty" type="PortType" coreName="FIFO_SRL" bitwidth="20" iftype="IfTypeRom">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <edges id="95" source_obj="//@ports.10" sink_obj="//@blocks.0/@node_objs.0"/>
-  <edges id="97" source_obj="//@ports.11" sink_obj="//@blocks.0/@node_objs.1"/>
-  <edges id="99" source_obj="//@ports.12" sink_obj="//@blocks.0/@node_objs.2"/>
-  <edges id="101" source_obj="//@ports.13" sink_obj="//@blocks.0/@node_objs.3"/>
-  <edges id="103" source_obj="//@ports.14" sink_obj="//@blocks.0/@node_objs.4"/>
-  <edges id="106" source_obj="//@ports.8" sink_obj="//@blocks.0/@node_objs.5"/>
-  <edges id="108" source_obj="//@ports.9" sink_obj="//@blocks.0/@node_objs.6"/>
-  <edges id="110" source_obj="//@ports.15" sink_obj="//@blocks.0/@node_objs.7"/>
-  <edges id="111" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.8"/>
-  <edges id="112" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.9"/>
-  <edges id="113" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.10"/>
-  <edges id="114" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.10"/>
-  <edges id="115" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.11"/>
-  <edges id="116" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@blocks.0/@node_objs.11"/>
-  <edges id="117" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.12"/>
-  <edges id="118" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.12"/>
-  <edges id="119" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.13"/>
-  <edges id="120" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.13"/>
-  <edges id="121" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="122" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.14"/>
-  <edges id="123" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.15"/>
-  <edges id="124" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.16"/>
-  <edges id="125" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@blocks.0/@node_objs.17"/>
-  <edges id="126" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.17"/>
-  <edges id="127" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.18"/>
-  <edges id="130" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="131" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="132" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
-  <edges id="135" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="136" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
-  <edges id="137" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
-  <edges id="139" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="140" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
-  <edges id="141" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
-  <edges id="142" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="143" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="144" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="147" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="148" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="149" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="150" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="151" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="152" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
-  <edges id="154" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
-  <edges id="157" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
-  <edges id="158" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
-  <edges id="159" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
-  <edges id="160" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
-  <edges id="161" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
-  <edges id="162" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
-  <edges id="163" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
-  <edges id="164" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
-  <edges id="165" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
-  <edges id="166" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
-  <edges id="167" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
-  <edges id="168" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
-  <edges id="169" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
-  <edges id="170" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
-  <edges id="171" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
-  <edges id="172" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
-  <edges id="173" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
-  <edges id="174" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
-  <edges id="175" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
-  <edges id="176" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
-  <edges id="177" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
-  <edges id="178" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
-  <edges id="179" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
-  <edges id="181" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
-  <edges id="182" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
-  <edges id="183" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@ports.0"/>
-  <edges id="185" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
-  <edges id="186" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
-  <edges id="187" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
-  <edges id="188" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
-  <edges id="190" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
-  <edges id="191" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
-  <edges id="192" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@ports.1"/>
-  <edges id="194" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
-  <edges id="195" source_obj="//@regions.0/@basic_blocks.1/@node_objs.20" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
-  <edges id="196" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
-  <edges id="197" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
-  <edges id="199" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
-  <edges id="200" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
-  <edges id="201" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@ports.2"/>
-  <edges id="203" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
-  <edges id="204" source_obj="//@regions.0/@basic_blocks.1/@node_objs.24" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
-  <edges id="205" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
-  <edges id="206" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
-  <edges id="208" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
-  <edges id="209" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
-  <edges id="210" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@ports.3"/>
-  <edges id="212" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
-  <edges id="213" source_obj="//@regions.0/@basic_blocks.1/@node_objs.28" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
-  <edges id="214" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
-  <edges id="216" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
-  <edges id="217" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
-  <edges id="392" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
-  <edges id="393" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
-  <edges id="394" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
-  <edges id="395" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
-  <blocks id="44" name="entry" type="BlockType">
+  <edges id="98" source_obj="//@ports.10" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="100" source_obj="//@ports.11" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="102" source_obj="//@ports.12" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="104" source_obj="//@ports.13" sink_obj="//@blocks.0/@node_objs.3"/>
+  <edges id="106" source_obj="//@ports.14" sink_obj="//@blocks.0/@node_objs.4"/>
+  <edges id="109" source_obj="//@ports.8" sink_obj="//@blocks.0/@node_objs.5"/>
+  <edges id="111" source_obj="//@ports.9" sink_obj="//@blocks.0/@node_objs.6"/>
+  <edges id="113" source_obj="//@ports.15" sink_obj="//@blocks.0/@node_objs.7"/>
+  <edges id="114" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.8"/>
+  <edges id="115" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.9"/>
+  <edges id="116" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="117" source_obj="//@blocks.0/@node_objs.9" sink_obj="//@blocks.0/@node_objs.10"/>
+  <edges id="118" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.11"/>
+  <edges id="119" source_obj="//@blocks.0/@node_objs.2" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="120" source_obj="//@blocks.0/@node_objs.11" sink_obj="//@blocks.0/@node_objs.12"/>
+  <edges id="121" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="122" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.13"/>
+  <edges id="123" source_obj="//@blocks.0/@node_objs.3" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="124" source_obj="//@blocks.0/@node_objs.10" sink_obj="//@blocks.0/@node_objs.14"/>
+  <edges id="125" source_obj="//@blocks.0/@node_objs.4" sink_obj="//@blocks.0/@node_objs.15"/>
+  <edges id="126" source_obj="//@blocks.0/@node_objs.12" sink_obj="//@blocks.0/@node_objs.15"/>
+  <edges id="127" source_obj="//@blocks.0/@node_objs.5" sink_obj="//@blocks.0/@node_objs.16"/>
+  <edges id="128" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@blocks.0/@node_objs.17"/>
+  <edges id="129" source_obj="//@blocks.0/@node_objs.16" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="130" source_obj="//@blocks.0/@node_objs.17" sink_obj="//@blocks.0/@node_objs.18"/>
+  <edges id="131" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.0/@node_objs.19"/>
+  <edges id="134" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="135" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="136" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="139" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="140" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="141" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1" is_back_edge="1"/>
+  <edges id="143" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="144" source_obj="//@regions.0/@basic_blocks.1/@node_objs.33" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <edges id="145" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <edges id="146" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="147" source_obj="//@blocks.0/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="148" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="151" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="152" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="153" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="154" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="155" source_obj="//@blocks.0/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="156" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="158" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="161" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="162" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="163" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="164" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="165" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="166" source_obj="//@blocks.0/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="168" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="169" source_obj="//@blocks.0/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="170" source_obj="//@blocks.0/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="171" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="173" source_obj="//@blocks.0/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="174" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="175" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="176" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="177" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="178" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="179" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="180" source_obj="//@blocks.0/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="181" source_obj="//@regions.0/@basic_blocks.1/@node_objs.13" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.14"/>
+  <edges id="182" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="183" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.15"/>
+  <edges id="184" source_obj="//@regions.0/@basic_blocks.1/@node_objs.15" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.16"/>
+  <edges id="185" source_obj="//@ports.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="187" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.17"/>
+  <edges id="188" source_obj="//@regions.0/@basic_blocks.1/@node_objs.17" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.18"/>
+  <edges id="189" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@ports.0"/>
+  <edges id="191" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.19"/>
+  <edges id="192" source_obj="//@regions.0/@basic_blocks.1/@node_objs.18" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
+  <edges id="193" source_obj="//@regions.0/@basic_blocks.1/@node_objs.19" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.20"/>
+  <edges id="194" source_obj="//@ports.5" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="196" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.21"/>
+  <edges id="197" source_obj="//@regions.0/@basic_blocks.1/@node_objs.21" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.22"/>
+  <edges id="198" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@ports.1"/>
+  <edges id="200" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.23"/>
+  <edges id="201" source_obj="//@regions.0/@basic_blocks.1/@node_objs.22" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="202" source_obj="//@regions.0/@basic_blocks.1/@node_objs.23" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.24"/>
+  <edges id="203" source_obj="//@ports.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
+  <edges id="205" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.25"/>
+  <edges id="206" source_obj="//@regions.0/@basic_blocks.1/@node_objs.25" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.26"/>
+  <edges id="207" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@ports.2"/>
+  <edges id="209" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.27"/>
+  <edges id="210" source_obj="//@regions.0/@basic_blocks.1/@node_objs.26" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
+  <edges id="211" source_obj="//@regions.0/@basic_blocks.1/@node_objs.27" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.28"/>
+  <edges id="212" source_obj="//@ports.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="214" source_obj="//@regions.0/@basic_blocks.1/@node_objs.14" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.29"/>
+  <edges id="215" source_obj="//@regions.0/@basic_blocks.1/@node_objs.29" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.30"/>
+  <edges id="216" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@ports.3"/>
+  <edges id="218" source_obj="//@regions.0/@basic_blocks.1/@node_objs.16" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.31"/>
+  <edges id="219" source_obj="//@regions.0/@basic_blocks.1/@node_objs.30" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="220" source_obj="//@regions.0/@basic_blocks.1/@node_objs.31" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.32"/>
+  <edges id="222" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.33"/>
+  <edges id="223" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.34"/>
+  <edges id="398" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="399" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="400" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="401" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <blocks id="45" name="entry" type="BlockType">
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>bb.i.i</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="co_1_read" lineNumber="249" originalName="co" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="25" name="co_1_read" lineNumber="249" originalName="co" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="1" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="249" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>co_1</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="ho_read" lineNumber="251" originalName="ho" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="2" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="26" name="ho_read" lineNumber="251" originalName="ho" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="2" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="251" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>ho</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="wo_read" lineNumber="253" originalName="wo" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="3" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="27" name="wo_read" lineNumber="253" originalName="wo" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="3" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="253" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>wo</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="ro_read" lineNumber="255" originalName="r" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="28" name="ro_read" lineNumber="255" originalName="r" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="4" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="255" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>ro</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="so_read" lineNumber="257" originalName="s" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="5" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="29" name="so_read" lineNumber="257" originalName="s" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="5" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="257" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>so</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
@@ -188,75 +191,79 @@
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>empty_26</dataInputObjs>
       <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
       <dataOutputObjs>zext</dataOutputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="WH_in_assign" lineNumber="521" originalName="WH_in" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="9" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="8" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="WH_in_assign" lineNumber="521" originalName="WH_in" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." contextFuncName="read" bitwidth="20" opcode="read" m_display="0" m_delay="1.45" m_topoIndex="8" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>empty</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="trunc_ln30" lineNumber="30" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln30_fu_259_p1" contextFuncName="runDataL2toL1" bitwidth="9" opcode="trunc" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
-      <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="30" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
-      <dataInputObjs>read</dataInputObjs>
-      <dataOutputObjs>mul</dataOutputObjs>
-      <dataOutputObjs>mul</dataOutputObjs>
-    </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="trunc_ln30_1" lineNumber="30" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_359_p1" contextFuncName="runDataL2toL1" bitwidth="9" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="trunc_ln30" lineNumber="30" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln30_fu_259_p1" contextFuncName="runDataL2toL1" bitwidth="8" opcode="trunc" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="30" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="mul3_i_i" lineNumber="251" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U94" contextFuncName="Conv_sysarr" bitwidth="9" opcode="mul" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="empty_43" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul3_cast_i_i_fu_267_p1" contextFuncName="read" bitwidth="20" opcode="trunc" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="mul3_cast_i_i" lineNumber="251" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U91" contextFuncName="Conv_sysarr" bitwidth="20" opcode="mul" m_display="0" m_delay="2.32" m_topoIndex="11" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="251" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="mul6_i_i" lineNumber="253" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U95" contextFuncName="Conv_sysarr" bitwidth="9" opcode="mul" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="12" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="empty_44" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul6_cast_i_i_fu_277_p1" contextFuncName="read" bitwidth="20" opcode="trunc" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
+      <dataInputObjs>read</dataInputObjs>
+      <dataOutputObjs>mul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="mul6_cast_i_i" lineNumber="253" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U92" contextFuncName="Conv_sysarr" bitwidth="20" opcode="mul" m_display="0" m_delay="2.32" m_topoIndex="13" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="253" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>trunc</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="mul9_i_i" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_9s_9s_9_1_1_U92" contextFuncName="read" bitwidth="9" opcode="mul" nodeLabel="3.0" m_display="0" m_delay="1.46" m_topoIndex="15" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="mul9_i_i" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U93" contextFuncName="read" bitwidth="20" opcode="mul" m_display="0" m_delay="2.32" m_topoIndex="14" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="38" name="tmp" lineNumber="255" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U94" contextFuncName="Conv_sysarr" bitwidth="9" opcode="add" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="13" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="tmp" lineNumber="255" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="tmp_fu_289_p2" contextFuncName="Conv_sysarr" bitwidth="20" opcode="add" m_display="0" m_delay="0.8" m_topoIndex="15" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="255" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="39" name="tmp2" lineNumber="257" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U95" contextFuncName="Conv_sysarr" bitwidth="9" opcode="add" nodeLabel="2.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="14" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="tmp2" lineNumber="257" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="tmp2_fu_295_p2" contextFuncName="Conv_sysarr" bitwidth="20" opcode="add" m_display="0" m_delay="0.8" m_topoIndex="16" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="257" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <dataInputObjs>read</dataInputObjs>
       <dataInputObjs>mul</dataInputObjs>
       <dataOutputObjs>add</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="40" name="cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound_fu_277_p00" contextFuncName="read" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="cast" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound_fu_309_p00" contextFuncName="read" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="cast1" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound_fu_277_p10" contextFuncName="read" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="cast1" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="bound_fu_309_p10" contextFuncName="read" bitwidth="64" opcode="zext" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>read</dataInputObjs>
       <dataOutputObjs>mul</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="bound" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_32ns_32ns_64_1_1_U93" contextFuncName="read" bitwidth="64" opcode="mul" nodeLabel="3.0" m_display="0" m_delay="3.17" m_topoIndex="18" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="bound" lineNumber="521" fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" fileDirectory=".." rtlName="mul_32ns_32ns_64_1_1_U94" contextFuncName="read" bitwidth="64" opcode="mul" m_display="0" m_delay="3.17" m_topoIndex="19" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/common/technology/autopilot/ap_axi_sdata.h" linenumber="521" fileDirectory="/home/sumin/workspace/hls_test" functionName="read"/>
       <dataInputObjs>zext</dataInputObjs>
       <dataInputObjs>zext</dataInputObjs>
       <dataOutputObjs>icmp</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="br_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="br" nodeLabel="3.0" m_display="0" m_delay="0.6" m_topoIndex="19" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="br_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="br" m_display="0" m_delay="0.6" m_topoIndex="20" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
       <controlInputObjs>bb.i.i</controlInputObjs>
@@ -275,25 +282,25 @@
       <validLinenumbers>521</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <blocks id="92" name=".exit" type="BlockType">
+  <blocks id="95" name=".exit" type="BlockType">
     <controlInputObjs>bb.i.i</controlInputObjs>
     <controlOutputObjs>br</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="91" name="_ln262" lineNumber="262" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="ret" nodeLabel="9.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="94" name="_ln262" lineNumber="262" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="Conv_sysarr" opcode="ret" nodeLabel="5.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
       <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="262" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
     </node_objs>
     <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
       <validLinenumbers>262</validLinenumbers>
     </fileValidLineNumbers>
   </blocks>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="313" pipe_depth="5" RegionName="LOOP_L2_H_IN_LOOP_L2_W_IN">
-    <basic_blocks id="52" name="bb.i.i" type="BlockType">
+  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" id="305" pipe_depth="4" RegionName="LOOP_L2_H_IN_LOOP_L2_W_IN">
+    <basic_blocks id="53" name="bb.i.i" type="BlockType">
       <controlInputObjs>entry</controlInputObjs>
       <controlInputObjs>._crit_edge.loopexit.i.i</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>.exit</controlOutputObjs>
       <controlOutputObjs>._crit_edge.loopexit.i.i</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="indvar_flatten" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="64" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="indvar_flatten" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="64" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
@@ -303,7 +310,7 @@
         <controlInputObjs>._crit_edge.loopexit.i.i</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="hi" lineNumber="32" originalName="hi" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="32" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="hi" lineNumber="32" originalName="hi" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>select</dataInputObjs>
@@ -313,7 +320,7 @@
         <controlInputObjs>._crit_edge.loopexit.i.i</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="wi" lineNumber="34" originalName="wi" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="32" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="wi" lineNumber="34" originalName="wi" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="34" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
@@ -323,21 +330,21 @@
         <controlInputObjs>._crit_edge.loopexit.i.i</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="icmp_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln32_fu_283_p2" contextFuncName="runDataL2toL1" bitwidth="1" opcode="icmp" nodeLabel="4.0" m_display="0" m_delay="1.06" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="icmp_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln32_fu_315_p2" contextFuncName="runDataL2toL1" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="1.06" m_topoIndex="24" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="add_ln32_2" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln32_2_fu_288_p2" contextFuncName="runDataL2toL1" bitwidth="64" opcode="add" nodeLabel="4.0" m_display="0" m_delay="1.14" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="add_ln32_2" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln32_2_fu_320_p2" contextFuncName="runDataL2toL1" bitwidth="64" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.14" m_topoIndex="25" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="br_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="br_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>icmp</dataInputObjs>
@@ -350,14 +357,14 @@
         <validLinenumbers>276</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="90" name="._crit_edge.loopexit.i.i" type="BlockType">
+    <basic_blocks id="93" name="._crit_edge.loopexit.i.i" type="BlockType">
       <controlInputObjs>bb.i.i</controlInputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>bb.i.i</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="icmp_ln34" lineNumber="34" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln34_fu_294_p2" contextFuncName="runDataL2toL1" bitwidth="1" opcode="icmp" nodeLabel="4.0" m_display="0" m_delay="0.85" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="icmp_ln34" lineNumber="34" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="icmp_ln34_fu_326_p2" contextFuncName="runDataL2toL1" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.85" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="34" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>phi</dataInputObjs>
@@ -365,23 +372,24 @@
         <dataOutputObjs>select</dataOutputObjs>
         <dataOutputObjs>select</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="select_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln32_fu_299_p3" contextFuncName="runDataL2toL1" bitwidth="32" opcode="select" nodeLabel="4.0" m_display="0" m_delay="0.22" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="select_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln32_fu_331_p3" contextFuncName="runDataL2toL1" bitwidth="32" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.22" m_topoIndex="28" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>icmp</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="add_ln32_3" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln32_3_fu_307_p2" contextFuncName="runDataL2toL1" bitwidth="32" opcode="add" nodeLabel="4.0" m_display="0" m_delay="0.88" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="add_ln32_3" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln32_3_fu_339_p2" contextFuncName="runDataL2toL1" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.88" m_topoIndex="29" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>select</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="select_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln32_1_fu_313_p3" contextFuncName="runDataL2toL1" bitwidth="32" opcode="select" nodeLabel="4.0" m_display="0" m_delay="0.22" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="select_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="select_ln32_1_fu_345_p3" contextFuncName="runDataL2toL1" bitwidth="32" opcode="select" nodeLabel="1.0" m_display="0" m_delay="0.22" m_topoIndex="30" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>icmp</dataInputObjs>
@@ -389,64 +397,75 @@
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="trunc_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln32_fu_321_p1" contextFuncName="runDataL2toL1" bitwidth="9" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="trunc_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="trunc_ln32_fu_353_p1" contextFuncName="runDataL2toL1" bitwidth="20" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
-        <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="add_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_373_p0" contextFuncName="runDataL2toL1" bitwidth="9" opcode="add" nodeLabel="4.0" m_display="0" m_delay="0.71" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="add_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln32_fu_357_p2" contextFuncName="runDataL2toL1" bitwidth="20" opcode="add" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="add_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9s_9s_9ns_9_4_1_U96" contextFuncName="runDataL2toL1" bitwidth="9" opcode="add" nodeLabel="4.0" m_display="0" m_delay="1.69" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="add_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_ln32_fu_367_p1" contextFuncName="runDataL2toL1" bitwidth="20" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.68" m_topoIndex="33" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>mul</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="mul_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9s_9s_9ns_9_4_1_U96" contextFuncName="runDataL2toL1" bitwidth="9" opcode="mul" nodeLabel="4.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="mul_ln32" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mul_20s_20s_20_1_1_U95" contextFuncName="runDataL2toL1" bitwidth="20" opcode="mul" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="34" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="mul_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U97" contextFuncName="runDataL2toL1" bitwidth="9" opcode="mul" nodeLabel="4.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="trunc_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="grp_fu_415_p1" contextFuncName="runDataL2toL1" bitwidth="8" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
+        <dataInputObjs>select</dataInputObjs>
+        <dataOutputObjs>mul</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="mul_ln32_1" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_8s_8s_8ns_8_4_1_U96" contextFuncName="runDataL2toL1" bitwidth="8" opcode="mul" nodeLabel="1.0" nodeLatency="2" m_display="0" m_delay="0.99" m_topoIndex="36" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="empty_40" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="empty_40_fu_330_p1" contextFuncName="runDataL2toL1" bitwidth="9" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="empty_45" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="empty_45_fu_376_p1" contextFuncName="runDataL2toL1" bitwidth="20" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="empty_46" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="empty_46_fu_380_p1" contextFuncName="runDataL2toL1" bitwidth="8" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
+        <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
+        <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="tmp3" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="ama_addmuladd_9ns_9s_9s_9ns_9_4_1_U96" contextFuncName="runDataL2toL1" bitwidth="9" opcode="add" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="tmp3" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="tmp3_fu_384_p2" contextFuncName="runDataL2toL1" bitwidth="20" opcode="add" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>mul</dataInputObjs>
         <dataInputObjs>trunc</dataInputObjs>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="add13_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add13_i_i_fu_340_p2" contextFuncName="runDataL2toL1" bitwidth="9" opcode="add" nodeLabel="7.0" m_display="0" m_delay="0.71" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="add13_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add13_i_i_fu_390_p2" contextFuncName="runDataL2toL1" bitwidth="20" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.68" m_topoIndex="40" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="idxprom_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom_i_i_fu_344_p1" contextFuncName="runDataL2toL1" bitwidth="64" opcode="zext" nodeLabel="7.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="idxprom_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom_i_i_fu_401_p1" contextFuncName="runDataL2toL1" bitwidth="64" opcode="zext" nodeLabel="3.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
@@ -455,14 +474,14 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="add17_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_9s_9s_9ns_9_4_1_U97" contextFuncName="runDataL2toL1" bitwidth="9" opcode="add" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="add17_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="mac_muladd_8s_8s_8ns_8_4_1_U96" contextFuncName="runDataL2toL1" bitwidth="8" opcode="add" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="0.64" m_topoIndex="43" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>trunc</dataInputObjs>
         <dataInputObjs>mul</dataInputObjs>
         <dataOutputObjs>zext</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="idxprom18_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom18_i_i_fu_352_p1" contextFuncName="runDataL2toL1" bitwidth="64" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="idxprom18_i_i" lineNumber="32" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="idxprom18_i_i_fu_408_p1" contextFuncName="runDataL2toL1" bitwidth="64" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="32" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>add</dataInputObjs>
@@ -471,7 +490,7 @@
         <dataOutputObjs>getelementptr</dataOutputObjs>
         <dataOutputObjs>getelementptr</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="data_l2_0_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="data_l2_0_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="20" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>data_l2_0</dataInputObjs>
@@ -479,13 +498,13 @@
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="data_l2_0_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="data_l2_0_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="45" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="data_l1_0_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="data_l1_0_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>zext</dataInputObjs>
@@ -493,13 +512,13 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="data_l1_0_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.15" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="data_l1_0_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="4.0" m_display="0" m_delay="1.15" m_topoIndex="54" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="data_l2_1_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="data_l2_1_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="20" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>data_l2_1</dataInputObjs>
@@ -507,13 +526,13 @@
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="77" name="data_l2_1_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="data_l2_1_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="47" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="data_l1_1_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="data_l1_1_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>zext</dataInputObjs>
@@ -521,13 +540,13 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="data_l1_1_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.15" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="data_l1_1_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="4.0" m_display="0" m_delay="1.15" m_topoIndex="56" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="80" name="data_l2_2_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="45" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="data_l2_2_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="20" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>data_l2_2</dataInputObjs>
@@ -535,13 +554,13 @@
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="data_l2_2_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="data_l2_2_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="49" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="data_l1_2_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="data_l1_2_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>zext</dataInputObjs>
@@ -549,13 +568,13 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="data_l1_2_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.15" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="data_l1_2_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="4.0" m_display="0" m_delay="1.15" m_topoIndex="58" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="data_l2_3_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="data_l2_3_addr" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="20" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>data_l2_3</dataInputObjs>
@@ -563,13 +582,13 @@
         <dataOutputObjs>load</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="data_l2_3_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="data_l2_3_load" lineNumber="42" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="1.15" m_topoIndex="51" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="42" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>getelementptr</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="data_l1_3_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="9" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="data_l1_3_addr" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" bitwidth="8" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>zext</dataInputObjs>
@@ -577,20 +596,20 @@
         <dataOutputObjs>store</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="data_l1_3_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.15" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="data_l1_3_addr_write_ln41" lineNumber="41" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." contextFuncName="runDataL2toL1" opcode="store" nodeLabel="4.0" m_display="0" m_delay="1.15" m_topoIndex="60" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="41" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>getelementptr</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="add_ln34" lineNumber="34" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln34_fu_334_p2" contextFuncName="runDataL2toL1" bitwidth="32" opcode="add" nodeLabel="4.0" m_display="0" m_delay="0.88" m_topoIndex="36" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="add_ln34" lineNumber="34" fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" fileDirectory=".." rtlName="add_ln34_fu_395_p2" contextFuncName="runDataL2toL1" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="0.88" m_topoIndex="41" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="276" fileDirectory="/home/sumin/workspace/hls_test" functionName="Conv_sysarr"/>
         <inlineStackInfo fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" linenumber="34" fileDirectory="/home/sumin/workspace/hls_test" functionName="runDataL2toL1"/>
         <dataInputObjs>select</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="br_ln0" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="br_ln0" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
         <controlInputObjs>bb.i.i</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp">
@@ -608,200 +627,192 @@
   <ScheduleInfo time="3"/>
   <ScheduleInfo time="4"/>
   <ScheduleInfo time="5"/>
-  <ScheduleInfo time="6"/>
-  <ScheduleInfo time="7"/>
-  <ScheduleInfo time="8"/>
-  <ScheduleInfo time="9"/>
-  <regnodes realName="select_ln32_1_reg_469">
-    <nodeIds>58</nodeIds>
+  <regnodes realName="bound_reg_452">
+    <nodeIds>43</nodeIds>
   </regnodes>
-  <regnodes realName="icmp_ln32_reg_460">
-    <nodeIds>49</nodeIds>
-  </regnodes>
-  <regnodes realName="hi_reg_237">
-    <nodeIds>46</nodeIds>
-  </regnodes>
-  <regnodes realName="co_1_read_reg_387">
-    <nodeIds>25</nodeIds>
-  </regnodes>
-  <regnodes realName="tmp2_reg_450">
+  <regnodes realName="tmp_reg_442">
     <nodeIds>39</nodeIds>
   </regnodes>
-  <regnodes realName="add17_i_i_reg_490">
-    <nodeIds>70</nodeIds>
-  </regnodes>
-  <regnodes realName="trunc_ln30_1_reg_435">
-    <nodeIds>34</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln34_reg_485">
-    <nodeIds>88</nodeIds>
-  </regnodes>
-  <regnodes realName="ro_read_reg_402">
-    <nodeIds>28</nodeIds>
-  </regnodes>
-  <regnodes realName="data_l2_3_addr_reg_510">
-    <nodeIds>84</nodeIds>
-  </regnodes>
-  <regnodes realName="data_l2_0_addr_reg_495">
-    <nodeIds>72</nodeIds>
-  </regnodes>
-  <regnodes realName="TILESIZE_W_assign_reg_417">
-    <nodeIds>31</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln32_2_reg_464">
-    <nodeIds>50</nodeIds>
-  </regnodes>
-  <regnodes realName="data_l2_2_addr_reg_505">
-    <nodeIds>80</nodeIds>
-  </regnodes>
   <regnodes realName="wi_reg_248">
+    <nodeIds>48</nodeIds>
+  </regnodes>
+  <regnodes realName="data_l2_3_addr_reg_506">
+    <nodeIds>87</nodeIds>
+  </regnodes>
+  <regnodes realName="hi_reg_237">
     <nodeIds>47</nodeIds>
   </regnodes>
-  <regnodes realName="empty_40_reg_479">
-    <nodeIds>66</nodeIds>
-  </regnodes>
-  <regnodes realName="WH_in_assign_reg_423">
-    <nodeIds>32</nodeIds>
-  </regnodes>
-  <regnodes realName="ho_read_reg_392">
-    <nodeIds>26</nodeIds>
-  </regnodes>
-  <regnodes realName="trunc_ln32_reg_474">
+  <regnodes realName="select_ln32_1_reg_466">
     <nodeIds>59</nodeIds>
   </regnodes>
-  <regnodes realName="trunc_ln30_reg_429">
-    <nodeIds>33</nodeIds>
-  </regnodes>
-  <regnodes realName="so_read_reg_407">
-    <nodeIds>29</nodeIds>
-  </regnodes>
-  <regnodes realName="bound_reg_455">
-    <nodeIds>42</nodeIds>
-  </regnodes>
-  <regnodes realName="wo_read_reg_397">
-    <nodeIds>27</nodeIds>
-  </regnodes>
-  <regnodes realName="indvar_flatten_reg_226">
-    <nodeIds>45</nodeIds>
-  </regnodes>
-  <regnodes realName="data_l2_1_addr_reg_500">
-    <nodeIds>76</nodeIds>
-  </regnodes>
-  <regnodes realName="TILESIZE_H_assign_reg_412">
-    <nodeIds>30</nodeIds>
-  </regnodes>
-  <regnodes realName="mul9_i_i_reg_440">
-    <nodeIds>37</nodeIds>
-  </regnodes>
-  <regnodes realName="tmp_reg_445">
+  <regnodes realName="mul9_i_i_reg_437">
     <nodeIds>38</nodeIds>
   </regnodes>
-  <expressionNodes realName="select_ln32_fu_299">
+  <regnodes realName="WH_in_assign_reg_427">
+    <nodeIds>32</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln32_reg_457">
+    <nodeIds>50</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln34_reg_486">
+    <nodeIds>91</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_46_reg_476">
+    <nodeIds>69</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln32_1_reg_471">
+    <nodeIds>64</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln32_2_reg_461">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="tmp2_reg_447">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="data_l2_0_addr_reg_491">
+    <nodeIds>75</nodeIds>
+  </regnodes>
+  <regnodes realName="indvar_flatten_reg_226">
+    <nodeIds>46</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln30_reg_432">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="add13_i_i_reg_481">
+    <nodeIds>71</nodeIds>
+  </regnodes>
+  <regnodes realName="TILESIZE_W_assign_reg_422">
+    <nodeIds>31</nodeIds>
+  </regnodes>
+  <regnodes realName="data_l2_2_addr_reg_501">
+    <nodeIds>83</nodeIds>
+  </regnodes>
+  <regnodes realName="data_l2_1_addr_reg_496">
+    <nodeIds>79</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln34_fu_326">
     <nodeIds>56</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln34_fu_334">
-    <nodeIds>88</nodeIds>
+  <expressionNodes realName="mul9_i_i_fu_283">
+    <nodeIds>38</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="icmp_ln32_fu_283">
-    <nodeIds>49</nodeIds>
+  <expressionNodes realName="empty_43_fu_263">
+    <nodeIds>34</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add13_i_i_fu_340">
-    <nodeIds>68</nodeIds>
+  <expressionNodes realName="select_ln32_fu_331">
+    <nodeIds>57</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="idxprom_i_i_fu_344">
+  <expressionNodes realName="add_ln32_fu_357">
+    <nodeIds>61</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln32_1_fu_372">
+    <nodeIds>64</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_46_fu_380">
     <nodeIds>69</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="mul9_i_i_fu_267">
-    <nodeIds>37</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="hi_phi_fu_241">
-    <nodeIds>46</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="data_l2_0_addr_gep_fu_118">
+  <expressionNodes realName="idxprom_i_i_fu_401">
     <nodeIds>72</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="idxprom18_i_i_fu_352">
-    <nodeIds>71</nodeIds>
+  <expressionNodes realName="tmp2_fu_295">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln32_3_fu_339">
+    <nodeIds>58</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="hi_phi_fu_241">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="data_l2_0_addr_gep_fu_118">
+    <nodeIds>75</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l1_0_addr_gep_fu_170">
-    <nodeIds>74</nodeIds>
+    <nodeIds>77</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln32_fu_321">
+  <expressionNodes realName="select_ln32_1_fu_345">
     <nodeIds>59</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="icmp_ln34_fu_294">
-    <nodeIds>55</nodeIds>
-  </expressionNodes>
   <expressionNodes realName="data_l1_3_addr_gep_fu_212">
-    <nodeIds>86</nodeIds>
+    <nodeIds>89</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="data_l1_2_addr_gep_fu_198">
-    <nodeIds>82</nodeIds>
+  <expressionNodes realName="mul_ln32_fu_367">
+    <nodeIds>63</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="cast1_fu_274">
+  <expressionNodes realName="cast1_fu_305">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln32_fu_315">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bound_fu_309">
+    <nodeIds>43</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="idxprom18_i_i_fu_408">
+    <nodeIds>74</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="mul6_cast_i_i_fu_277">
+    <nodeIds>37</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="cast_fu_301">
     <nodeIds>41</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln32_fu_325">
-    <nodeIds>60</nodeIds>
+  <expressionNodes realName="data_l1_2_addr_gep_fu_198">
+    <nodeIds>85</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_44_fu_273">
+    <nodeIds>36</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_289">
+    <nodeIds>39</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l1_1_addr_gep_fu_184">
-    <nodeIds>78</nodeIds>
+    <nodeIds>81</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_1_addr_gep_fu_131">
-    <nodeIds>76</nodeIds>
+    <nodeIds>79</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_45_fu_376">
+    <nodeIds>68</nodeIds>
   </expressionNodes>
   <expressionNodes realName="trunc_ln30_fu_259">
     <nodeIds>33</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln32_3_fu_307">
-    <nodeIds>57</nodeIds>
+  <expressionNodes realName="add13_i_i_fu_390">
+    <nodeIds>71</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="bound_fu_277">
-    <nodeIds>42</nodeIds>
+  <expressionNodes realName="tmp3_fu_384">
+    <nodeIds>70</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_3_addr_gep_fu_157">
-    <nodeIds>84</nodeIds>
+    <nodeIds>87</nodeIds>
   </expressionNodes>
   <expressionNodes realName="wi_phi_fu_252">
-    <nodeIds>47</nodeIds>
+    <nodeIds>48</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="empty_40_fu_330">
-    <nodeIds>66</nodeIds>
+  <expressionNodes realName="add_ln32_1_fu_362">
+    <nodeIds>62</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="select_ln32_1_fu_313">
-    <nodeIds>58</nodeIds>
+  <expressionNodes realName="add_ln32_2_fu_320">
+    <nodeIds>51</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln32_2_fu_288">
-    <nodeIds>50</nodeIds>
+  <expressionNodes realName="trunc_ln32_fu_353">
+    <nodeIds>60</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="trunc_ln30_1_fu_263">
-    <nodeIds>34</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="cast_fu_271">
-    <nodeIds>40</nodeIds>
+  <expressionNodes realName="add_ln34_fu_395">
+    <nodeIds>91</nodeIds>
   </expressionNodes>
   <expressionNodes realName="indvar_flatten_phi_fu_230">
-    <nodeIds>45</nodeIds>
+    <nodeIds>46</nodeIds>
   </expressionNodes>
   <expressionNodes realName="data_l2_2_addr_gep_fu_144">
-    <nodeIds>80</nodeIds>
+    <nodeIds>83</nodeIds>
   </expressionNodes>
-  <moduleNodes realName="grp_fu_381">
-    <nodeIds>63</nodeIds>
-    <nodeIds>70</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_359">
+  <expressionNodes realName="mul3_cast_i_i_fu_267">
     <nodeIds>35</nodeIds>
-    <nodeIds>38</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_366">
-    <nodeIds>36</nodeIds>
-    <nodeIds>39</nodeIds>
-  </moduleNodes>
-  <moduleNodes realName="grp_fu_373">
-    <nodeIds>61</nodeIds>
-    <nodeIds>62</nodeIds>
-    <nodeIds>67</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_415">
+    <nodeIds>65</nodeIds>
+    <nodeIds>73</nodeIds>
   </moduleNodes>
   <ioNodes realName="TILESIZE_W_assign_read_fu_106">
     <nodeIds>31</nodeIds>
@@ -828,28 +839,28 @@
     <nodeIds>27</nodeIds>
   </ioNodes>
   <memoryPorts dataString="data_l1_0">
-    <nodeIds>75</nodeIds>
+    <nodeIds>78</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l1_1">
-    <nodeIds>79</nodeIds>
+    <nodeIds>82</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l1_2">
-    <nodeIds>83</nodeIds>
+    <nodeIds>86</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l1_3">
-    <nodeIds>87</nodeIds>
+    <nodeIds>90</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l2_0">
-    <nodeIds>73</nodeIds>
+    <nodeIds>76</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l2_1">
-    <nodeIds>77</nodeIds>
+    <nodeIds>80</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l2_2">
-    <nodeIds>81</nodeIds>
+    <nodeIds>84</nodeIds>
   </memoryPorts>
   <memoryPorts dataString="data_l2_3">
-    <nodeIds>85</nodeIds>
+    <nodeIds>88</nodeIds>
   </memoryPorts>
   <ioPorts name="co_1">
     <contents name="read">
@@ -858,42 +869,42 @@
   </ioPorts>
   <ioPorts name="data_l1_0(p0)">
     <contents name="store">
-      <nodeIds>75</nodeIds>
+      <nodeIds>78</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l1_1(p0)">
     <contents name="store">
-      <nodeIds>79</nodeIds>
+      <nodeIds>82</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l1_2(p0)">
     <contents name="store">
-      <nodeIds>83</nodeIds>
+      <nodeIds>86</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l1_3(p0)">
     <contents name="store">
-      <nodeIds>87</nodeIds>
+      <nodeIds>90</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l2_0(p0)">
     <contents name="load">
-      <nodeIds>73</nodeIds>
+      <nodeIds>76</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l2_1(p0)">
     <contents name="load">
-      <nodeIds>77</nodeIds>
+      <nodeIds>80</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l2_2(p0)">
     <contents name="load">
-      <nodeIds>81</nodeIds>
+      <nodeIds>84</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="data_l2_3(p0)">
     <contents name="load">
-      <nodeIds>85</nodeIds>
+      <nodeIds>88</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="empty">
@@ -933,6 +944,14 @@
   </ioPorts>
   <fsm>
     <states id="1">
+      <operations id="17" stage="1" latency="1"/>
+      <operations id="18" stage="1" latency="1"/>
+      <operations id="19" stage="1" latency="1"/>
+      <operations id="20" stage="1" latency="1"/>
+      <operations id="21" stage="1" latency="1"/>
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
       <operations id="25" stage="1" latency="1"/>
       <operations id="26" stage="1" latency="1"/>
       <operations id="27" stage="1" latency="1"/>
@@ -943,107 +962,82 @@
       <operations id="32" stage="1" latency="1"/>
       <operations id="33" stage="1" latency="1"/>
       <operations id="34" stage="1" latency="1"/>
-      <operations id="35" stage="3" latency="3"/>
-      <operations id="36" stage="3" latency="3"/>
-    </states>
-    <states id="2">
-      <operations id="35" stage="2" latency="3"/>
-      <operations id="36" stage="2" latency="3"/>
-    </states>
-    <states id="3">
-      <operations id="35" stage="1" latency="3"/>
-      <operations id="36" stage="1" latency="3"/>
-      <operations id="38" stage="2" latency="2"/>
-      <operations id="39" stage="2" latency="2"/>
-    </states>
-    <states id="4">
-      <operations id="17" stage="1" latency="1"/>
-      <operations id="18" stage="1" latency="1"/>
-      <operations id="19" stage="1" latency="1"/>
-      <operations id="20" stage="1" latency="1"/>
-      <operations id="21" stage="1" latency="1"/>
-      <operations id="22" stage="1" latency="1"/>
-      <operations id="23" stage="1" latency="1"/>
-      <operations id="24" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="36" stage="1" latency="1"/>
       <operations id="37" stage="1" latency="1"/>
-      <operations id="38" stage="1" latency="2"/>
-      <operations id="39" stage="1" latency="2"/>
+      <operations id="38" stage="1" latency="1"/>
+      <operations id="39" stage="1" latency="1"/>
       <operations id="40" stage="1" latency="1"/>
       <operations id="41" stage="1" latency="1"/>
       <operations id="42" stage="1" latency="1"/>
       <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
     </states>
-    <states id="5">
-      <operations id="45" stage="1" latency="1"/>
+    <states id="2">
       <operations id="46" stage="1" latency="1"/>
       <operations id="47" stage="1" latency="1"/>
       <operations id="48" stage="1" latency="1"/>
       <operations id="49" stage="1" latency="1"/>
       <operations id="50" stage="1" latency="1"/>
       <operations id="51" stage="1" latency="1"/>
-      <operations id="55" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
       <operations id="56" stage="1" latency="1"/>
       <operations id="57" stage="1" latency="1"/>
       <operations id="58" stage="1" latency="1"/>
       <operations id="59" stage="1" latency="1"/>
       <operations id="60" stage="1" latency="1"/>
       <operations id="61" stage="1" latency="1"/>
-      <operations id="62" stage="3" latency="3"/>
-      <operations id="63" stage="3" latency="3"/>
-      <operations id="66" stage="1" latency="1"/>
-      <operations id="88" stage="1" latency="1"/>
-    </states>
-    <states id="6">
-      <operations id="62" stage="2" latency="3"/>
-      <operations id="63" stage="2" latency="3"/>
-    </states>
-    <states id="7">
-      <operations id="62" stage="1" latency="3"/>
-      <operations id="63" stage="1" latency="3"/>
-      <operations id="67" stage="2" latency="2"/>
-      <operations id="70" stage="2" latency="2"/>
-    </states>
-    <states id="8">
-      <operations id="67" stage="1" latency="2"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="64" stage="1" latency="1"/>
+      <operations id="65" stage="3" latency="3"/>
       <operations id="68" stage="1" latency="1"/>
       <operations id="69" stage="1" latency="1"/>
-      <operations id="70" stage="1" latency="2"/>
-      <operations id="72" stage="1" latency="1"/>
-      <operations id="73" stage="2" latency="2"/>
-      <operations id="76" stage="1" latency="1"/>
-      <operations id="77" stage="2" latency="2"/>
-      <operations id="80" stage="1" latency="1"/>
-      <operations id="81" stage="2" latency="2"/>
-      <operations id="84" stage="1" latency="1"/>
-      <operations id="85" stage="2" latency="2"/>
-    </states>
-    <states id="9">
-      <operations id="53" stage="1" latency="1"/>
-      <operations id="54" stage="1" latency="1"/>
-      <operations id="64" stage="1" latency="1"/>
-      <operations id="65" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
       <operations id="71" stage="1" latency="1"/>
-      <operations id="73" stage="1" latency="2"/>
-      <operations id="74" stage="1" latency="1"/>
-      <operations id="75" stage="1" latency="1"/>
-      <operations id="77" stage="1" latency="2"/>
-      <operations id="78" stage="1" latency="1"/>
-      <operations id="79" stage="1" latency="1"/>
-      <operations id="81" stage="1" latency="2"/>
-      <operations id="82" stage="1" latency="1"/>
-      <operations id="83" stage="1" latency="1"/>
-      <operations id="85" stage="1" latency="2"/>
-      <operations id="86" stage="1" latency="1"/>
-      <operations id="87" stage="1" latency="1"/>
-      <operations id="89" stage="1" latency="1"/>
-    </states>
-    <states id="10">
       <operations id="91" stage="1" latency="1"/>
     </states>
+    <states id="3">
+      <operations id="65" stage="2" latency="3"/>
+    </states>
+    <states id="4">
+      <operations id="65" stage="1" latency="3"/>
+      <operations id="72" stage="1" latency="1"/>
+      <operations id="73" stage="2" latency="2"/>
+      <operations id="75" stage="1" latency="1"/>
+      <operations id="76" stage="2" latency="2"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="80" stage="2" latency="2"/>
+      <operations id="83" stage="1" latency="1"/>
+      <operations id="84" stage="2" latency="2"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="88" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="67" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="2"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="2"/>
+      <operations id="77" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="80" stage="1" latency="2"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="2"/>
+      <operations id="85" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="88" stage="1" latency="2"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="92" stage="1" latency="1"/>
+    </states>
+    <states id="6">
+      <operations id="94" stage="1" latency="1"/>
+    </states>
     <transitions inState="1" outState="2">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="2" outState="3">
       <condition id="-1"/>
     </transitions>
     <transitions inState="3" outState="4">
@@ -1052,43 +1046,34 @@
     <transitions inState="4" outState="5">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="6" outState="7">
+    <transitions inState="5" outState="2">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="7" outState="8">
+    <transitions inState="2" outState="6">
       <condition id="-1"/>
     </transitions>
-    <transitions inState="8" outState="9">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="9" outState="5">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="5" outState="10">
-      <condition id="-1"/>
-    </transitions>
-    <transitions inState="5" outState="6">
+    <transitions inState="2" outState="3">
       <condition id="-1"/>
     </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="runDataL2toL1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="57" mMaxLatency="57">
+    <cfgRegions mId="1" mTag="runDataL2toL1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="53" mMaxLatency="53">
       <subRegions>2</subRegions>
       <subRegions>3</subRegions>
       <subRegions>4</subRegions>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="3" mMaxLatency="3">
-      <basicBlocks>44</basicBlocks>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>45</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
-    <cfgRegions mId="3" mTag="LOOP_L2_H_IN_LOOP_L2_W_IN" mII="1" mDepth="5" mMinTripCount="49" mMaxTripCount="49" mMinLatency="52" mMaxLatency="52" mType="1">
-      <basicBlocks>52</basicBlocks>
-      <basicBlocks>90</basicBlocks>
+    <cfgRegions mId="3" mTag="LOOP_L2_H_IN_LOOP_L2_W_IN" mII="1" mDepth="4" mMinTripCount="49" mMaxTripCount="49" mMinLatency="51" mMaxLatency="51" mType="1">
+      <basicBlocks>53</basicBlocks>
+      <basicBlocks>93</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
     <cfgRegions mId="4" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
-      <basicBlocks>92</basicBlocks>
+      <basicBlocks>95</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

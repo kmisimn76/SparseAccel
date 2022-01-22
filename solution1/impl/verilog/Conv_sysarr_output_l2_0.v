@@ -6,8 +6,8 @@
 module Conv_sysarr_output_l2_0_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 9;
-parameter MEM_SIZE = 512;
+parameter AWIDTH = 20;
+parameter MEM_SIZE = 802816;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -44,8 +44,8 @@ module Conv_sysarr_output_l2_0(
     q0);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd512;
-parameter AddressWidth = 32'd9;
+parameter AddressRange = 32'd802816;
+parameter AddressWidth = 32'd20;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

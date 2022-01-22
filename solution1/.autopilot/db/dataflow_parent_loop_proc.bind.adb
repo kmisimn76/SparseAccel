@@ -62,7 +62,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -91,7 +91,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -120,7 +120,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -149,7 +149,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>589824</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -174,7 +174,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -203,7 +203,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -232,7 +232,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -261,7 +261,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -323,7 +323,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -352,7 +352,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -381,7 +381,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -410,7 +410,7 @@
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>817216</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -493,7 +493,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -522,7 +522,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -551,7 +551,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -642,7 +642,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -671,7 +671,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -700,7 +700,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -729,7 +729,7 @@
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
-				<array_size>512</array_size>
+				<array_size>802816</array_size>
 				<bit_vecs>
 					<count>0</count>
 					<item_version>0</item_version>
@@ -754,7 +754,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -787,7 +787,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -895,7 +895,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -931,7 +931,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -967,7 +967,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1111,7 +1111,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1147,7 +1147,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1183,7 +1183,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -1219,7 +1219,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>20</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>

@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642780163000">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1642781595000">
   <ports id="1" name="TILES_S" type="PortType" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="2" name="weight_l2_0" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="2" name="weight_l2_0" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="589824">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="3" name="weight_l2_1" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="3" name="weight_l2_1" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="589824">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="4" name="weight_l2_2" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="4" name="weight_l2_2" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="589824">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="5" name="weight_l2_3" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="5" name="weight_l2_3" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="589824">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="6" name="p_read" type="PortType" bitwidth="9">
+  <ports id="6" name="p_read" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="7" name="p_read1" type="PortType" bitwidth="9">
+  <ports id="7" name="p_read1" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="8" name="ko_2" type="PortType" bitwidth="9">
+  <ports id="8" name="ko_2" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="9" name="co_1" type="PortType" bitwidth="9">
+  <ports id="9" name="co_1" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="10" name="ro" type="PortType" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="11" name="data_l2_0" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="11" name="data_l2_0" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="12" name="data_l2_1" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="12" name="data_l2_1" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="13" name="data_l2_2" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="13" name="data_l2_2" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
-  <ports id="14" name="data_l2_3" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="512">
+  <ports id="14" name="data_l2_3" type="PortType" coreName="RAM" bitwidth="8" iftype="IfTypeRegister" arraysize="817216">
     <dataOutputObjs>call</dataOutputObjs>
   </ports>
   <ports id="15" name="p_read2" type="PortType" bitwidth="32">
@@ -48,13 +48,13 @@
   <ports id="16" name="p_read3" type="PortType" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="17" name="ho" type="PortType" bitwidth="9">
+  <ports id="17" name="ho" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="18" name="wo" type="PortType" bitwidth="9">
+  <ports id="18" name="wo" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="19" name="p_read4" type="PortType" bitwidth="9">
+  <ports id="19" name="p_read4" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <ports id="20" name="p_read5" type="PortType" bitwidth="32">
@@ -63,19 +63,19 @@
   <ports id="21" name="p_read6" type="PortType" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="22" name="output_l2_0" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="22" name="output_l2_0" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="802816">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="23" name="output_l2_1" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="23" name="output_l2_1" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="802816">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="24" name="output_l2_2" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="24" name="output_l2_2" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="802816">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="25" name="output_l2_3" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="512">
+  <ports id="25" name="output_l2_3" type="PortType" coreName="RAM" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="802816">
     <dataInputObjs>call</dataInputObjs>
   </ports>
-  <ports id="26" name="p_read7" type="PortType" bitwidth="9">
+  <ports id="26" name="p_read7" type="PortType" bitwidth="20">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
   <edges id="63" source_obj="//@ports.25" sink_obj="//@blocks.0/@node_objs.0"/>
@@ -140,7 +140,7 @@
   <blocks id="47" name="newFuncRoot" type="BlockType">
     <controlOutputObjs>phi</controlOutputObjs>
     <controlOutputObjs>block_53</controlOutputObjs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_read720" bitwidth="9" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="32" name="p_read720" bitwidth="20" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read7</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
@@ -152,15 +152,15 @@
       <dataInputObjs>p_read5</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_read417" bitwidth="9" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="p_read417" bitwidth="20" opcode="read" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read4</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="wo_read" bitwidth="9" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="36" name="wo_read" bitwidth="20" opcode="read" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
       <dataInputObjs>wo</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="ho_read" bitwidth="9" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="ho_read" bitwidth="20" opcode="read" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
       <dataInputObjs>ho</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
@@ -176,19 +176,19 @@
       <dataInputObjs>ro</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="co_1_read" bitwidth="9" opcode="read" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="41" name="co_1_read" bitwidth="20" opcode="read" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
       <dataInputObjs>co_1</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="ko_2_read" bitwidth="9" opcode="read" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="42" name="ko_2_read" bitwidth="20" opcode="read" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
       <dataInputObjs>ko_2</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="p_read19" bitwidth="9" opcode="read" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="43" name="p_read19" bitwidth="20" opcode="read" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read1</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
-    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_read_22" bitwidth="9" opcode="read" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+    <node_objs xsi:type="cdfg:CdfgNode" id="44" name="p_read_22" bitwidth="20" opcode="read" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
       <dataInputObjs>p_read</dataInputObjs>
       <dataOutputObjs>call</dataOutputObjs>
     </node_objs>
