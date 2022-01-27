@@ -11,155 +11,165 @@ use IEEE.numeric_std.all;
 
 entity Conv_sysarr_dataflow_parent_loop_proc16 is
 port (
-    TILES_W : IN STD_LOGIC_VECTOR (31 downto 0);
-    TILES_R : IN STD_LOGIC_VECTOR (31 downto 0);
-    TILES_S : IN STD_LOGIC_VECTOR (31 downto 0);
-    weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce0 : OUT STD_LOGIC;
-    weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we0 : OUT STD_LOGIC;
-    weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce1 : OUT STD_LOGIC;
-    weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we1 : OUT STD_LOGIC;
-    weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce0 : OUT STD_LOGIC;
-    weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we0 : OUT STD_LOGIC;
-    weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce1 : OUT STD_LOGIC;
-    weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we1 : OUT STD_LOGIC;
-    weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce0 : OUT STD_LOGIC;
-    weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we0 : OUT STD_LOGIC;
-    weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce1 : OUT STD_LOGIC;
-    weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we1 : OUT STD_LOGIC;
-    weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce0 : OUT STD_LOGIC;
-    weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we0 : OUT STD_LOGIC;
-    weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce1 : OUT STD_LOGIC;
-    weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we1 : OUT STD_LOGIC;
-    p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-    ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-    co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    lshr_ln282_cast : IN STD_LOGIC_VECTOR (31 downto 0);
+    param_L1_TILENUM_S : IN STD_LOGIC_VECTOR (31 downto 0);
+    param : IN STD_LOGIC_VECTOR (1183 downto 0);
+    ko_1 : IN STD_LOGIC_VECTOR (11 downto 0);
+    co : IN STD_LOGIC_VECTOR (31 downto 0);
+    ho : IN STD_LOGIC_VECTOR (10 downto 0);
+    wo : IN STD_LOGIC_VECTOR (31 downto 0);
+    data_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_0_ce0 : OUT STD_LOGIC;
     data_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_we0 : OUT STD_LOGIC;
-    data_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_0_ce1 : OUT STD_LOGIC;
     data_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_we1 : OUT STD_LOGIC;
-    data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_1_ce0 : OUT STD_LOGIC;
     data_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_we0 : OUT STD_LOGIC;
-    data_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_1_ce1 : OUT STD_LOGIC;
     data_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_we1 : OUT STD_LOGIC;
-    data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_2_ce0 : OUT STD_LOGIC;
     data_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_we0 : OUT STD_LOGIC;
-    data_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_2_ce1 : OUT STD_LOGIC;
     data_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_we1 : OUT STD_LOGIC;
-    data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_3_ce0 : OUT STD_LOGIC;
     data_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_we0 : OUT STD_LOGIC;
-    data_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_3_ce1 : OUT STD_LOGIC;
     data_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_we1 : OUT STD_LOGIC;
-    p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-    ho : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_0_ce0 : OUT STD_LOGIC;
     output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_we0 : OUT STD_LOGIC;
-    output_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_0_ce1 : OUT STD_LOGIC;
     output_l2_0_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_we1 : OUT STD_LOGIC;
-    output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_1_ce0 : OUT STD_LOGIC;
     output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_we0 : OUT STD_LOGIC;
-    output_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_1_ce1 : OUT STD_LOGIC;
     output_l2_1_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_we1 : OUT STD_LOGIC;
-    output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_2_ce0 : OUT STD_LOGIC;
     output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_we0 : OUT STD_LOGIC;
-    output_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_2_ce1 : OUT STD_LOGIC;
     output_l2_2_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_we1 : OUT STD_LOGIC;
-    output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_3_ce0 : OUT STD_LOGIC;
     output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_we0 : OUT STD_LOGIC;
-    output_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_3_ce1 : OUT STD_LOGIC;
     output_l2_3_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_we1 : OUT STD_LOGIC;
-    p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
+    weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_0_ce0 : OUT STD_LOGIC;
+    weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_we0 : OUT STD_LOGIC;
+    weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_0_ce1 : OUT STD_LOGIC;
+    weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_we1 : OUT STD_LOGIC;
+    weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_1_ce0 : OUT STD_LOGIC;
+    weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_we0 : OUT STD_LOGIC;
+    weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_1_ce1 : OUT STD_LOGIC;
+    weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_we1 : OUT STD_LOGIC;
+    weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_2_ce0 : OUT STD_LOGIC;
+    weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_we0 : OUT STD_LOGIC;
+    weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_2_ce1 : OUT STD_LOGIC;
+    weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_we1 : OUT STD_LOGIC;
+    weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_3_ce0 : OUT STD_LOGIC;
+    weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_we0 : OUT STD_LOGIC;
+    weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_3_ce1 : OUT STD_LOGIC;
+    weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_we1 : OUT STD_LOGIC;
     ap_clk : IN STD_LOGIC;
     ap_rst : IN STD_LOGIC;
-    TILES_R_ap_vld : IN STD_LOGIC;
-    TILES_S_ap_vld : IN STD_LOGIC;
-    p_read_ap_vld : IN STD_LOGIC;
-    p_read1_ap_vld : IN STD_LOGIC;
-    ko_2_ap_vld : IN STD_LOGIC;
-    co_1_ap_vld : IN STD_LOGIC;
-    p_read2_ap_vld : IN STD_LOGIC;
-    p_read3_ap_vld : IN STD_LOGIC;
+    param_L1_TILENUM_S_ap_vld : IN STD_LOGIC;
+    param_ap_vld : IN STD_LOGIC;
+    ko_1_ap_vld : IN STD_LOGIC;
+    co_ap_vld : IN STD_LOGIC;
     ho_ap_vld : IN STD_LOGIC;
-    p_read4_ap_vld : IN STD_LOGIC;
-    p_read5_ap_vld : IN STD_LOGIC;
-    p_read6_ap_vld : IN STD_LOGIC;
-    p_read7_ap_vld : IN STD_LOGIC;
+    wo_ap_vld : IN STD_LOGIC;
+    data_l2_0_empty_n : IN STD_LOGIC;
+    data_l2_0_read : OUT STD_LOGIC;
+    data_l2_1_empty_n : IN STD_LOGIC;
+    data_l2_1_read : OUT STD_LOGIC;
+    data_l2_2_empty_n : IN STD_LOGIC;
+    data_l2_2_read : OUT STD_LOGIC;
+    data_l2_3_empty_n : IN STD_LOGIC;
+    data_l2_3_read : OUT STD_LOGIC;
+    output_l2_0_full_n : IN STD_LOGIC;
+    output_l2_0_write : OUT STD_LOGIC;
+    output_l2_1_full_n : IN STD_LOGIC;
+    output_l2_1_write : OUT STD_LOGIC;
+    output_l2_2_full_n : IN STD_LOGIC;
+    output_l2_2_write : OUT STD_LOGIC;
+    output_l2_3_full_n : IN STD_LOGIC;
+    output_l2_3_write : OUT STD_LOGIC;
+    weight_l2_0_empty_n : IN STD_LOGIC;
+    weight_l2_0_read : OUT STD_LOGIC;
+    weight_l2_1_empty_n : IN STD_LOGIC;
+    weight_l2_1_read : OUT STD_LOGIC;
+    weight_l2_2_empty_n : IN STD_LOGIC;
+    weight_l2_2_read : OUT STD_LOGIC;
+    weight_l2_3_empty_n : IN STD_LOGIC;
+    weight_l2_3_read : OUT STD_LOGIC;
     ap_start : IN STD_LOGIC;
     ap_done : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
@@ -169,120 +179,149 @@ end;
 
 
 architecture behav of Conv_sysarr_dataflow_parent_loop_proc16 is 
-    constant ap_const_lv20_0 : STD_LOGIC_VECTOR (19 downto 0) := "00000000000000000000";
+    constant ap_const_lv11_0 : STD_LOGIC_VECTOR (10 downto 0) := "00000000000";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
-    constant ap_const_lv32_14 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000010100";
+    constant ap_const_lv12_0 : STD_LOGIC_VECTOR (11 downto 0) := "000000000000";
+    constant ap_const_lv32_B : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000001011";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_boolean_1 : BOOLEAN := true;
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
     constant ap_const_lv8_1 : STD_LOGIC_VECTOR (7 downto 0) := "00000001";
 
 attribute shreg_extract : string;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_ce0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_ce1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_0_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_ce0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_ce1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_1_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_ce0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_ce1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_2_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_ce0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_ce1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_parent_loop_proc15_U0_weight_l2_3_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_wo : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_0_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_0_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_0_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_0_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_0_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_0_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_0_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_1_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_1_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_1_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_1_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_1_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_1_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_1_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_2_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_2_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_2_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_2_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_2_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_2_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_2_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_3_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_3_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_3_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_data_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_data_l2_3_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_3_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_data_l2_3_d1 : STD_LOGIC_VECTOR (7 downto 0);
     signal dataflow_parent_loop_proc15_U0_data_l2_3_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_ho : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_parent_loop_proc15_U0_output_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_0_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_0_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_0_d0 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_0_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_0_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_0_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_0_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_0_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_1_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_1_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_1_d0 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_1_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_1_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_1_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_1_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_1_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_2_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_2_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_2_d0 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_2_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_2_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_2_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_2_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_2_we1 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_3_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_3_ce0 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_3_d0 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_3_we0 : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_output_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
+    signal dataflow_parent_loop_proc15_U0_output_l2_3_address1 : STD_LOGIC_VECTOR (10 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_3_ce1 : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_output_l2_3_d1 : STD_LOGIC_VECTOR (31 downto 0);
     signal dataflow_parent_loop_proc15_U0_output_l2_3_we1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_ce0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_we0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_address1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_ce1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_d1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_we1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_ce0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_we0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_address1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_ce1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_d1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_we1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_ce0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_we0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_address1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_ce1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_d1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_we1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_ce0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_we0 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_address1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_ce1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_d1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_we1 : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_0_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_1_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_2_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_3_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_output_l2_0_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_output_l2_1_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_output_l2_2_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_output_l2_3_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_read : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_read : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_ap_start : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_ap_done : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_ap_ready : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_ap_idle : STD_LOGIC;
     signal dataflow_parent_loop_proc15_U0_ap_continue : STD_LOGIC;
-    signal dataflow_parent_loop_proc15_U0_TILES_R_ap_vld : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_param_L1_TILENUM_S_ap_vld : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_0_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_0_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_1_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_1_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_2_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_2_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_3_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_data_l2_3_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_0_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_1_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_2_write : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_full_n : STD_LOGIC;
+    signal dataflow_parent_loop_proc15_U0_weight_l2_3_write : STD_LOGIC;
     signal ap_sync_continue : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
@@ -294,155 +333,165 @@ attribute shreg_extract : string;
 
     component Conv_sysarr_dataflow_parent_loop_proc15 IS
     port (
-        TILES_R : IN STD_LOGIC_VECTOR (31 downto 0);
-        TILES_S : IN STD_LOGIC_VECTOR (31 downto 0);
-        weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_0_ce0 : OUT STD_LOGIC;
-        weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_we0 : OUT STD_LOGIC;
-        weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_0_ce1 : OUT STD_LOGIC;
-        weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_we1 : OUT STD_LOGIC;
-        weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_1_ce0 : OUT STD_LOGIC;
-        weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_we0 : OUT STD_LOGIC;
-        weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_1_ce1 : OUT STD_LOGIC;
-        weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_we1 : OUT STD_LOGIC;
-        weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_2_ce0 : OUT STD_LOGIC;
-        weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_we0 : OUT STD_LOGIC;
-        weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_2_ce1 : OUT STD_LOGIC;
-        weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_we1 : OUT STD_LOGIC;
-        weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_3_ce0 : OUT STD_LOGIC;
-        weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_we0 : OUT STD_LOGIC;
-        weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_3_ce1 : OUT STD_LOGIC;
-        weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_we1 : OUT STD_LOGIC;
-        p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-        ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-        co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        param_L1_TILENUM_S : IN STD_LOGIC_VECTOR (31 downto 0);
+        param : IN STD_LOGIC_VECTOR (1183 downto 0);
+        ko_1 : IN STD_LOGIC_VECTOR (11 downto 0);
+        co : IN STD_LOGIC_VECTOR (31 downto 0);
+        ro : IN STD_LOGIC_VECTOR (31 downto 0);
+        ho : IN STD_LOGIC_VECTOR (10 downto 0);
+        wo : IN STD_LOGIC_VECTOR (10 downto 0);
+        data_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_0_ce0 : OUT STD_LOGIC;
         data_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_0_we0 : OUT STD_LOGIC;
-        data_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_0_ce1 : OUT STD_LOGIC;
         data_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_0_we1 : OUT STD_LOGIC;
-        data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_1_ce0 : OUT STD_LOGIC;
         data_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_1_we0 : OUT STD_LOGIC;
-        data_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_1_ce1 : OUT STD_LOGIC;
         data_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_1_we1 : OUT STD_LOGIC;
-        data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_2_ce0 : OUT STD_LOGIC;
         data_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_2_we0 : OUT STD_LOGIC;
-        data_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_2_ce1 : OUT STD_LOGIC;
         data_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_2_we1 : OUT STD_LOGIC;
-        data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_3_ce0 : OUT STD_LOGIC;
         data_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_3_we0 : OUT STD_LOGIC;
-        data_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        data_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         data_l2_3_ce1 : OUT STD_LOGIC;
         data_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
         data_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
         data_l2_3_we1 : OUT STD_LOGIC;
-        p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-        ho : IN STD_LOGIC_VECTOR (19 downto 0);
-        wo : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_0_ce0 : OUT STD_LOGIC;
         output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_0_we0 : OUT STD_LOGIC;
-        output_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_0_ce1 : OUT STD_LOGIC;
         output_l2_0_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_0_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_0_we1 : OUT STD_LOGIC;
-        output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_1_ce0 : OUT STD_LOGIC;
         output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_1_we0 : OUT STD_LOGIC;
-        output_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_1_ce1 : OUT STD_LOGIC;
         output_l2_1_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_1_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_1_we1 : OUT STD_LOGIC;
-        output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_2_ce0 : OUT STD_LOGIC;
         output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_2_we0 : OUT STD_LOGIC;
-        output_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_2_ce1 : OUT STD_LOGIC;
         output_l2_2_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_2_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_2_we1 : OUT STD_LOGIC;
-        output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_3_ce0 : OUT STD_LOGIC;
         output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_3_we0 : OUT STD_LOGIC;
-        output_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_3_ce1 : OUT STD_LOGIC;
         output_l2_3_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
         output_l2_3_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
         output_l2_3_we1 : OUT STD_LOGIC;
-        p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
+        weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_0_ce0 : OUT STD_LOGIC;
+        weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_0_we0 : OUT STD_LOGIC;
+        weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_0_ce1 : OUT STD_LOGIC;
+        weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_0_we1 : OUT STD_LOGIC;
+        weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_1_ce0 : OUT STD_LOGIC;
+        weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_1_we0 : OUT STD_LOGIC;
+        weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_1_ce1 : OUT STD_LOGIC;
+        weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_1_we1 : OUT STD_LOGIC;
+        weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_2_ce0 : OUT STD_LOGIC;
+        weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_2_we0 : OUT STD_LOGIC;
+        weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_2_ce1 : OUT STD_LOGIC;
+        weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_2_we1 : OUT STD_LOGIC;
+        weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_3_ce0 : OUT STD_LOGIC;
+        weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_3_we0 : OUT STD_LOGIC;
+        weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_3_ce1 : OUT STD_LOGIC;
+        weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_3_we1 : OUT STD_LOGIC;
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
-        TILES_S_ap_vld : IN STD_LOGIC;
-        p_read_ap_vld : IN STD_LOGIC;
-        p_read1_ap_vld : IN STD_LOGIC;
-        ko_2_ap_vld : IN STD_LOGIC;
-        co_1_ap_vld : IN STD_LOGIC;
-        p_read2_ap_vld : IN STD_LOGIC;
-        p_read3_ap_vld : IN STD_LOGIC;
+        param_ap_vld : IN STD_LOGIC;
+        ko_1_ap_vld : IN STD_LOGIC;
+        co_ap_vld : IN STD_LOGIC;
+        ro_ap_vld : IN STD_LOGIC;
         ho_ap_vld : IN STD_LOGIC;
         wo_ap_vld : IN STD_LOGIC;
-        p_read4_ap_vld : IN STD_LOGIC;
-        p_read5_ap_vld : IN STD_LOGIC;
-        p_read6_ap_vld : IN STD_LOGIC;
-        p_read7_ap_vld : IN STD_LOGIC;
+        data_l2_0_empty_n : IN STD_LOGIC;
+        data_l2_0_read : OUT STD_LOGIC;
+        data_l2_1_empty_n : IN STD_LOGIC;
+        data_l2_1_read : OUT STD_LOGIC;
+        data_l2_2_empty_n : IN STD_LOGIC;
+        data_l2_2_read : OUT STD_LOGIC;
+        data_l2_3_empty_n : IN STD_LOGIC;
+        data_l2_3_read : OUT STD_LOGIC;
+        output_l2_0_full_n : IN STD_LOGIC;
+        output_l2_0_write : OUT STD_LOGIC;
+        output_l2_1_full_n : IN STD_LOGIC;
+        output_l2_1_write : OUT STD_LOGIC;
+        output_l2_2_full_n : IN STD_LOGIC;
+        output_l2_2_write : OUT STD_LOGIC;
+        output_l2_3_full_n : IN STD_LOGIC;
+        output_l2_3_write : OUT STD_LOGIC;
+        weight_l2_0_empty_n : IN STD_LOGIC;
+        weight_l2_0_read : OUT STD_LOGIC;
+        weight_l2_1_empty_n : IN STD_LOGIC;
+        weight_l2_1_read : OUT STD_LOGIC;
+        weight_l2_2_empty_n : IN STD_LOGIC;
+        weight_l2_2_read : OUT STD_LOGIC;
+        weight_l2_3_empty_n : IN STD_LOGIC;
+        weight_l2_3_read : OUT STD_LOGIC;
         ap_start : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
@@ -455,52 +504,13 @@ attribute shreg_extract : string;
 begin
     dataflow_parent_loop_proc15_U0 : component Conv_sysarr_dataflow_parent_loop_proc15
     port map (
-        TILES_R => TILES_R,
-        TILES_S => TILES_S,
-        weight_l2_0_address0 => dataflow_parent_loop_proc15_U0_weight_l2_0_address0,
-        weight_l2_0_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_0_ce0,
-        weight_l2_0_d0 => dataflow_parent_loop_proc15_U0_weight_l2_0_d0,
-        weight_l2_0_q0 => weight_l2_0_q0,
-        weight_l2_0_we0 => dataflow_parent_loop_proc15_U0_weight_l2_0_we0,
-        weight_l2_0_address1 => dataflow_parent_loop_proc15_U0_weight_l2_0_address1,
-        weight_l2_0_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_0_ce1,
-        weight_l2_0_d1 => dataflow_parent_loop_proc15_U0_weight_l2_0_d1,
-        weight_l2_0_q1 => ap_const_lv8_0,
-        weight_l2_0_we1 => dataflow_parent_loop_proc15_U0_weight_l2_0_we1,
-        weight_l2_1_address0 => dataflow_parent_loop_proc15_U0_weight_l2_1_address0,
-        weight_l2_1_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_1_ce0,
-        weight_l2_1_d0 => dataflow_parent_loop_proc15_U0_weight_l2_1_d0,
-        weight_l2_1_q0 => weight_l2_1_q0,
-        weight_l2_1_we0 => dataflow_parent_loop_proc15_U0_weight_l2_1_we0,
-        weight_l2_1_address1 => dataflow_parent_loop_proc15_U0_weight_l2_1_address1,
-        weight_l2_1_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_1_ce1,
-        weight_l2_1_d1 => dataflow_parent_loop_proc15_U0_weight_l2_1_d1,
-        weight_l2_1_q1 => ap_const_lv8_0,
-        weight_l2_1_we1 => dataflow_parent_loop_proc15_U0_weight_l2_1_we1,
-        weight_l2_2_address0 => dataflow_parent_loop_proc15_U0_weight_l2_2_address0,
-        weight_l2_2_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_2_ce0,
-        weight_l2_2_d0 => dataflow_parent_loop_proc15_U0_weight_l2_2_d0,
-        weight_l2_2_q0 => weight_l2_2_q0,
-        weight_l2_2_we0 => dataflow_parent_loop_proc15_U0_weight_l2_2_we0,
-        weight_l2_2_address1 => dataflow_parent_loop_proc15_U0_weight_l2_2_address1,
-        weight_l2_2_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_2_ce1,
-        weight_l2_2_d1 => dataflow_parent_loop_proc15_U0_weight_l2_2_d1,
-        weight_l2_2_q1 => ap_const_lv8_0,
-        weight_l2_2_we1 => dataflow_parent_loop_proc15_U0_weight_l2_2_we1,
-        weight_l2_3_address0 => dataflow_parent_loop_proc15_U0_weight_l2_3_address0,
-        weight_l2_3_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_3_ce0,
-        weight_l2_3_d0 => dataflow_parent_loop_proc15_U0_weight_l2_3_d0,
-        weight_l2_3_q0 => weight_l2_3_q0,
-        weight_l2_3_we0 => dataflow_parent_loop_proc15_U0_weight_l2_3_we0,
-        weight_l2_3_address1 => dataflow_parent_loop_proc15_U0_weight_l2_3_address1,
-        weight_l2_3_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_3_ce1,
-        weight_l2_3_d1 => dataflow_parent_loop_proc15_U0_weight_l2_3_d1,
-        weight_l2_3_q1 => ap_const_lv8_0,
-        weight_l2_3_we1 => dataflow_parent_loop_proc15_U0_weight_l2_3_we1,
-        p_read => p_read,
-        p_read1 => p_read1,
-        ko_2 => ko_2,
-        co_1 => co_1,
+        param_L1_TILENUM_S => param_L1_TILENUM_S,
+        param => param,
+        ko_1 => ko_1,
+        co => co,
+        ro => loop_dataflow_input_count,
+        ho => ho,
+        wo => dataflow_parent_loop_proc15_U0_wo,
         data_l2_0_address0 => dataflow_parent_loop_proc15_U0_data_l2_0_address0,
         data_l2_0_ce0 => dataflow_parent_loop_proc15_U0_data_l2_0_ce0,
         data_l2_0_d0 => dataflow_parent_loop_proc15_U0_data_l2_0_d0,
@@ -541,13 +551,6 @@ begin
         data_l2_3_d1 => dataflow_parent_loop_proc15_U0_data_l2_3_d1,
         data_l2_3_q1 => ap_const_lv8_0,
         data_l2_3_we1 => dataflow_parent_loop_proc15_U0_data_l2_3_we1,
-        p_read2 => p_read2,
-        p_read3 => p_read3,
-        ho => dataflow_parent_loop_proc15_U0_ho,
-        wo => loop_dataflow_input_count,
-        p_read4 => p_read4,
-        p_read5 => p_read5,
-        p_read6 => p_read6,
         output_l2_0_address0 => dataflow_parent_loop_proc15_U0_output_l2_0_address0,
         output_l2_0_ce0 => dataflow_parent_loop_proc15_U0_output_l2_0_ce0,
         output_l2_0_d0 => dataflow_parent_loop_proc15_U0_output_l2_0_d0,
@@ -588,22 +591,78 @@ begin
         output_l2_3_d1 => dataflow_parent_loop_proc15_U0_output_l2_3_d1,
         output_l2_3_q1 => ap_const_lv32_0,
         output_l2_3_we1 => dataflow_parent_loop_proc15_U0_output_l2_3_we1,
-        p_read7 => p_read7,
+        weight_l2_0_address0 => dataflow_parent_loop_proc15_U0_weight_l2_0_address0,
+        weight_l2_0_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_0_ce0,
+        weight_l2_0_d0 => dataflow_parent_loop_proc15_U0_weight_l2_0_d0,
+        weight_l2_0_q0 => weight_l2_0_q0,
+        weight_l2_0_we0 => dataflow_parent_loop_proc15_U0_weight_l2_0_we0,
+        weight_l2_0_address1 => dataflow_parent_loop_proc15_U0_weight_l2_0_address1,
+        weight_l2_0_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_0_ce1,
+        weight_l2_0_d1 => dataflow_parent_loop_proc15_U0_weight_l2_0_d1,
+        weight_l2_0_q1 => ap_const_lv8_0,
+        weight_l2_0_we1 => dataflow_parent_loop_proc15_U0_weight_l2_0_we1,
+        weight_l2_1_address0 => dataflow_parent_loop_proc15_U0_weight_l2_1_address0,
+        weight_l2_1_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_1_ce0,
+        weight_l2_1_d0 => dataflow_parent_loop_proc15_U0_weight_l2_1_d0,
+        weight_l2_1_q0 => weight_l2_1_q0,
+        weight_l2_1_we0 => dataflow_parent_loop_proc15_U0_weight_l2_1_we0,
+        weight_l2_1_address1 => dataflow_parent_loop_proc15_U0_weight_l2_1_address1,
+        weight_l2_1_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_1_ce1,
+        weight_l2_1_d1 => dataflow_parent_loop_proc15_U0_weight_l2_1_d1,
+        weight_l2_1_q1 => ap_const_lv8_0,
+        weight_l2_1_we1 => dataflow_parent_loop_proc15_U0_weight_l2_1_we1,
+        weight_l2_2_address0 => dataflow_parent_loop_proc15_U0_weight_l2_2_address0,
+        weight_l2_2_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_2_ce0,
+        weight_l2_2_d0 => dataflow_parent_loop_proc15_U0_weight_l2_2_d0,
+        weight_l2_2_q0 => weight_l2_2_q0,
+        weight_l2_2_we0 => dataflow_parent_loop_proc15_U0_weight_l2_2_we0,
+        weight_l2_2_address1 => dataflow_parent_loop_proc15_U0_weight_l2_2_address1,
+        weight_l2_2_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_2_ce1,
+        weight_l2_2_d1 => dataflow_parent_loop_proc15_U0_weight_l2_2_d1,
+        weight_l2_2_q1 => ap_const_lv8_0,
+        weight_l2_2_we1 => dataflow_parent_loop_proc15_U0_weight_l2_2_we1,
+        weight_l2_3_address0 => dataflow_parent_loop_proc15_U0_weight_l2_3_address0,
+        weight_l2_3_ce0 => dataflow_parent_loop_proc15_U0_weight_l2_3_ce0,
+        weight_l2_3_d0 => dataflow_parent_loop_proc15_U0_weight_l2_3_d0,
+        weight_l2_3_q0 => weight_l2_3_q0,
+        weight_l2_3_we0 => dataflow_parent_loop_proc15_U0_weight_l2_3_we0,
+        weight_l2_3_address1 => dataflow_parent_loop_proc15_U0_weight_l2_3_address1,
+        weight_l2_3_ce1 => dataflow_parent_loop_proc15_U0_weight_l2_3_ce1,
+        weight_l2_3_d1 => dataflow_parent_loop_proc15_U0_weight_l2_3_d1,
+        weight_l2_3_q1 => ap_const_lv8_0,
+        weight_l2_3_we1 => dataflow_parent_loop_proc15_U0_weight_l2_3_we1,
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        TILES_S_ap_vld => TILES_S_ap_vld,
-        p_read_ap_vld => p_read_ap_vld,
-        p_read1_ap_vld => p_read1_ap_vld,
-        ko_2_ap_vld => ko_2_ap_vld,
-        co_1_ap_vld => co_1_ap_vld,
-        p_read2_ap_vld => p_read2_ap_vld,
-        p_read3_ap_vld => p_read3_ap_vld,
+        param_ap_vld => param_ap_vld,
+        ko_1_ap_vld => ko_1_ap_vld,
+        co_ap_vld => co_ap_vld,
+        ro_ap_vld => ap_const_logic_0,
         ho_ap_vld => ho_ap_vld,
-        wo_ap_vld => ap_const_logic_0,
-        p_read4_ap_vld => p_read4_ap_vld,
-        p_read5_ap_vld => p_read5_ap_vld,
-        p_read6_ap_vld => p_read6_ap_vld,
-        p_read7_ap_vld => p_read7_ap_vld,
+        wo_ap_vld => wo_ap_vld,
+        data_l2_0_empty_n => ap_const_logic_0,
+        data_l2_0_read => dataflow_parent_loop_proc15_U0_data_l2_0_read,
+        data_l2_1_empty_n => ap_const_logic_0,
+        data_l2_1_read => dataflow_parent_loop_proc15_U0_data_l2_1_read,
+        data_l2_2_empty_n => ap_const_logic_0,
+        data_l2_2_read => dataflow_parent_loop_proc15_U0_data_l2_2_read,
+        data_l2_3_empty_n => ap_const_logic_0,
+        data_l2_3_read => dataflow_parent_loop_proc15_U0_data_l2_3_read,
+        output_l2_0_full_n => output_l2_0_full_n,
+        output_l2_0_write => dataflow_parent_loop_proc15_U0_output_l2_0_write,
+        output_l2_1_full_n => output_l2_1_full_n,
+        output_l2_1_write => dataflow_parent_loop_proc15_U0_output_l2_1_write,
+        output_l2_2_full_n => output_l2_2_full_n,
+        output_l2_2_write => dataflow_parent_loop_proc15_U0_output_l2_2_write,
+        output_l2_3_full_n => output_l2_3_full_n,
+        output_l2_3_write => dataflow_parent_loop_proc15_U0_output_l2_3_write,
+        weight_l2_0_empty_n => ap_const_logic_0,
+        weight_l2_0_read => dataflow_parent_loop_proc15_U0_weight_l2_0_read,
+        weight_l2_1_empty_n => ap_const_logic_0,
+        weight_l2_1_read => dataflow_parent_loop_proc15_U0_weight_l2_1_read,
+        weight_l2_2_empty_n => ap_const_logic_0,
+        weight_l2_2_read => dataflow_parent_loop_proc15_U0_weight_l2_2_read,
+        weight_l2_3_empty_n => ap_const_logic_0,
+        weight_l2_3_read => dataflow_parent_loop_proc15_U0_weight_l2_3_read,
         ap_start => dataflow_parent_loop_proc15_U0_ap_start,
         ap_done => dataflow_parent_loop_proc15_U0_ap_done,
         ap_ready => dataflow_parent_loop_proc15_U0_ap_ready,
@@ -678,40 +737,43 @@ begin
     ap_sync_continue <= ap_continue;
     ap_sync_done <= dataflow_parent_loop_proc15_U0_ap_done;
     ap_sync_ready <= dataflow_parent_loop_proc15_U0_ap_ready;
-    bound_minus_1 <= std_logic_vector(unsigned(TILES_W) - unsigned(ap_const_lv32_1));
+    bound_minus_1 <= std_logic_vector(unsigned(lshr_ln282_cast) - unsigned(ap_const_lv32_1));
     data_l2_0_address0 <= dataflow_parent_loop_proc15_U0_data_l2_0_address0;
-    data_l2_0_address1 <= ap_const_lv20_0;
+    data_l2_0_address1 <= ap_const_lv11_0;
     data_l2_0_ce0 <= dataflow_parent_loop_proc15_U0_data_l2_0_ce0;
     data_l2_0_ce1 <= ap_const_logic_0;
     data_l2_0_d0 <= ap_const_lv8_0;
     data_l2_0_d1 <= ap_const_lv8_0;
+    data_l2_0_read <= dataflow_parent_loop_proc15_U0_data_l2_0_write;
     data_l2_0_we0 <= ap_const_logic_0;
     data_l2_0_we1 <= ap_const_logic_0;
     data_l2_1_address0 <= dataflow_parent_loop_proc15_U0_data_l2_1_address0;
-    data_l2_1_address1 <= ap_const_lv20_0;
+    data_l2_1_address1 <= ap_const_lv11_0;
     data_l2_1_ce0 <= dataflow_parent_loop_proc15_U0_data_l2_1_ce0;
     data_l2_1_ce1 <= ap_const_logic_0;
     data_l2_1_d0 <= ap_const_lv8_0;
     data_l2_1_d1 <= ap_const_lv8_0;
+    data_l2_1_read <= dataflow_parent_loop_proc15_U0_data_l2_1_write;
     data_l2_1_we0 <= ap_const_logic_0;
     data_l2_1_we1 <= ap_const_logic_0;
     data_l2_2_address0 <= dataflow_parent_loop_proc15_U0_data_l2_2_address0;
-    data_l2_2_address1 <= ap_const_lv20_0;
+    data_l2_2_address1 <= ap_const_lv11_0;
     data_l2_2_ce0 <= dataflow_parent_loop_proc15_U0_data_l2_2_ce0;
     data_l2_2_ce1 <= ap_const_logic_0;
     data_l2_2_d0 <= ap_const_lv8_0;
     data_l2_2_d1 <= ap_const_lv8_0;
+    data_l2_2_read <= dataflow_parent_loop_proc15_U0_data_l2_2_write;
     data_l2_2_we0 <= ap_const_logic_0;
     data_l2_2_we1 <= ap_const_logic_0;
     data_l2_3_address0 <= dataflow_parent_loop_proc15_U0_data_l2_3_address0;
-    data_l2_3_address1 <= ap_const_lv20_0;
+    data_l2_3_address1 <= ap_const_lv11_0;
     data_l2_3_ce0 <= dataflow_parent_loop_proc15_U0_data_l2_3_ce0;
     data_l2_3_ce1 <= ap_const_logic_0;
     data_l2_3_d0 <= ap_const_lv8_0;
     data_l2_3_d1 <= ap_const_lv8_0;
+    data_l2_3_read <= dataflow_parent_loop_proc15_U0_data_l2_3_write;
     data_l2_3_we0 <= ap_const_logic_0;
     data_l2_3_we1 <= ap_const_logic_0;
-    dataflow_parent_loop_proc15_U0_TILES_R_ap_vld <= TILES_R_ap_vld;
 
     dataflow_parent_loop_proc15_U0_ap_continue_assign_proc : process(ap_continue, loop_dataflow_output_count, bound_minus_1)
     begin
@@ -723,12 +785,31 @@ begin
     end process;
 
     dataflow_parent_loop_proc15_U0_ap_start <= ap_start;
+    dataflow_parent_loop_proc15_U0_data_l2_0_full_n <= data_l2_0_empty_n;
+    dataflow_parent_loop_proc15_U0_data_l2_0_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_data_l2_1_full_n <= data_l2_1_empty_n;
+    dataflow_parent_loop_proc15_U0_data_l2_1_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_data_l2_2_full_n <= data_l2_2_empty_n;
+    dataflow_parent_loop_proc15_U0_data_l2_2_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_data_l2_3_full_n <= data_l2_3_empty_n;
+    dataflow_parent_loop_proc15_U0_data_l2_3_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_param_L1_TILENUM_S_ap_vld <= param_L1_TILENUM_S_ap_vld;
+    dataflow_parent_loop_proc15_U0_start_full_n <= ap_const_logic_1;
+    dataflow_parent_loop_proc15_U0_start_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_weight_l2_0_full_n <= weight_l2_0_empty_n;
+    dataflow_parent_loop_proc15_U0_weight_l2_0_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_weight_l2_1_full_n <= weight_l2_1_empty_n;
+    dataflow_parent_loop_proc15_U0_weight_l2_1_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_weight_l2_2_full_n <= weight_l2_2_empty_n;
+    dataflow_parent_loop_proc15_U0_weight_l2_2_write <= ap_const_logic_0;
+    dataflow_parent_loop_proc15_U0_weight_l2_3_full_n <= weight_l2_3_empty_n;
+    dataflow_parent_loop_proc15_U0_weight_l2_3_write <= ap_const_logic_0;
     
-    dataflow_parent_loop_proc15_U0_ho_proc : process(ho)
+    dataflow_parent_loop_proc15_U0_wo_proc : process(wo)
     variable vlo_cpy : STD_LOGIC_VECTOR(32+32 - 1 downto 0);
     variable vhi_cpy : STD_LOGIC_VECTOR(32+32 - 1 downto 0);
     variable v0_cpy : STD_LOGIC_VECTOR(32 - 1 downto 0);
-    variable dataflow_parent_loop_proc15_U0_ho_i : integer;
+    variable dataflow_parent_loop_proc15_U0_wo_i : integer;
     variable section : STD_LOGIC_VECTOR(32 - 1 downto 0);
     variable tmp_mask : STD_LOGIC_VECTOR(32 - 1 downto 0);
     variable resvalue, res_value, res_mask : STD_LOGIC_VECTOR(32 - 1 downto 0);
@@ -736,13 +817,13 @@ begin
         vlo_cpy := (others => '0');
         vlo_cpy(5 - 1 downto 0) := ap_const_lv32_0(5 - 1 downto 0);
         vhi_cpy := (others => '0');
-        vhi_cpy(5 - 1 downto 0) := ap_const_lv32_14(5 - 1 downto 0);
-        v0_cpy := ho;
+        vhi_cpy(5 - 1 downto 0) := ap_const_lv32_B(5 - 1 downto 0);
+        v0_cpy := wo;
         if (vlo_cpy(5 - 1 downto 0) > vhi_cpy(5 - 1 downto 0)) then
-            vhi_cpy(5-1 downto 0) := std_logic_vector(32-1-unsigned(ap_const_lv32_14(5-1 downto 0)));
+            vhi_cpy(5-1 downto 0) := std_logic_vector(32-1-unsigned(ap_const_lv32_B(5-1 downto 0)));
             vlo_cpy(5-1 downto 0) := std_logic_vector(32-1-unsigned(ap_const_lv32_0(5-1 downto 0)));
-            for dataflow_parent_loop_proc15_U0_ho_i in 0 to 32-1 loop
-                v0_cpy(dataflow_parent_loop_proc15_U0_ho_i) := ho(32-1-dataflow_parent_loop_proc15_U0_ho_i);
+            for dataflow_parent_loop_proc15_U0_wo_i in 0 to 32-1 loop
+                v0_cpy(dataflow_parent_loop_proc15_U0_wo_i) := wo(32-1-dataflow_parent_loop_proc15_U0_wo_i);
             end loop;
         end if;
         res_value := std_logic_vector(shift_right(unsigned(v0_cpy), to_integer(unsigned('0' & vlo_cpy(5-1 downto 0)))));
@@ -753,73 +834,79 @@ begin
         res_mask := std_logic_vector(shift_left(unsigned(tmp_mask),to_integer(unsigned('0' & section(31-1 downto 0)))));
         res_mask := res_mask(32-2 downto 0) & '0';
         resvalue := res_value and not res_mask;
-        dataflow_parent_loop_proc15_U0_ho <= resvalue(20-1 downto 0);
+        dataflow_parent_loop_proc15_U0_wo <= resvalue(11-1 downto 0);
     end process;
 
-    dataflow_parent_loop_proc15_U0_start_full_n <= ap_const_logic_1;
-    dataflow_parent_loop_proc15_U0_start_write <= ap_const_logic_0;
     output_l2_0_address0 <= dataflow_parent_loop_proc15_U0_output_l2_0_address0;
-    output_l2_0_address1 <= ap_const_lv20_0;
+    output_l2_0_address1 <= ap_const_lv11_0;
     output_l2_0_ce0 <= dataflow_parent_loop_proc15_U0_output_l2_0_ce0;
     output_l2_0_ce1 <= ap_const_logic_0;
     output_l2_0_d0 <= dataflow_parent_loop_proc15_U0_output_l2_0_d0;
     output_l2_0_d1 <= ap_const_lv32_0;
     output_l2_0_we0 <= dataflow_parent_loop_proc15_U0_output_l2_0_we0;
     output_l2_0_we1 <= ap_const_logic_0;
+    output_l2_0_write <= dataflow_parent_loop_proc15_U0_output_l2_0_write;
     output_l2_1_address0 <= dataflow_parent_loop_proc15_U0_output_l2_1_address0;
-    output_l2_1_address1 <= ap_const_lv20_0;
+    output_l2_1_address1 <= ap_const_lv11_0;
     output_l2_1_ce0 <= dataflow_parent_loop_proc15_U0_output_l2_1_ce0;
     output_l2_1_ce1 <= ap_const_logic_0;
     output_l2_1_d0 <= dataflow_parent_loop_proc15_U0_output_l2_1_d0;
     output_l2_1_d1 <= ap_const_lv32_0;
     output_l2_1_we0 <= dataflow_parent_loop_proc15_U0_output_l2_1_we0;
     output_l2_1_we1 <= ap_const_logic_0;
+    output_l2_1_write <= dataflow_parent_loop_proc15_U0_output_l2_1_write;
     output_l2_2_address0 <= dataflow_parent_loop_proc15_U0_output_l2_2_address0;
-    output_l2_2_address1 <= ap_const_lv20_0;
+    output_l2_2_address1 <= ap_const_lv11_0;
     output_l2_2_ce0 <= dataflow_parent_loop_proc15_U0_output_l2_2_ce0;
     output_l2_2_ce1 <= ap_const_logic_0;
     output_l2_2_d0 <= dataflow_parent_loop_proc15_U0_output_l2_2_d0;
     output_l2_2_d1 <= ap_const_lv32_0;
     output_l2_2_we0 <= dataflow_parent_loop_proc15_U0_output_l2_2_we0;
     output_l2_2_we1 <= ap_const_logic_0;
+    output_l2_2_write <= dataflow_parent_loop_proc15_U0_output_l2_2_write;
     output_l2_3_address0 <= dataflow_parent_loop_proc15_U0_output_l2_3_address0;
-    output_l2_3_address1 <= ap_const_lv20_0;
+    output_l2_3_address1 <= ap_const_lv11_0;
     output_l2_3_ce0 <= dataflow_parent_loop_proc15_U0_output_l2_3_ce0;
     output_l2_3_ce1 <= ap_const_logic_0;
     output_l2_3_d0 <= dataflow_parent_loop_proc15_U0_output_l2_3_d0;
     output_l2_3_d1 <= ap_const_lv32_0;
     output_l2_3_we0 <= dataflow_parent_loop_proc15_U0_output_l2_3_we0;
     output_l2_3_we1 <= ap_const_logic_0;
+    output_l2_3_write <= dataflow_parent_loop_proc15_U0_output_l2_3_write;
     weight_l2_0_address0 <= dataflow_parent_loop_proc15_U0_weight_l2_0_address0;
-    weight_l2_0_address1 <= ap_const_lv20_0;
+    weight_l2_0_address1 <= ap_const_lv12_0;
     weight_l2_0_ce0 <= dataflow_parent_loop_proc15_U0_weight_l2_0_ce0;
     weight_l2_0_ce1 <= ap_const_logic_0;
     weight_l2_0_d0 <= ap_const_lv8_0;
     weight_l2_0_d1 <= ap_const_lv8_0;
+    weight_l2_0_read <= dataflow_parent_loop_proc15_U0_weight_l2_0_write;
     weight_l2_0_we0 <= ap_const_logic_0;
     weight_l2_0_we1 <= ap_const_logic_0;
     weight_l2_1_address0 <= dataflow_parent_loop_proc15_U0_weight_l2_1_address0;
-    weight_l2_1_address1 <= ap_const_lv20_0;
+    weight_l2_1_address1 <= ap_const_lv12_0;
     weight_l2_1_ce0 <= dataflow_parent_loop_proc15_U0_weight_l2_1_ce0;
     weight_l2_1_ce1 <= ap_const_logic_0;
     weight_l2_1_d0 <= ap_const_lv8_0;
     weight_l2_1_d1 <= ap_const_lv8_0;
+    weight_l2_1_read <= dataflow_parent_loop_proc15_U0_weight_l2_1_write;
     weight_l2_1_we0 <= ap_const_logic_0;
     weight_l2_1_we1 <= ap_const_logic_0;
     weight_l2_2_address0 <= dataflow_parent_loop_proc15_U0_weight_l2_2_address0;
-    weight_l2_2_address1 <= ap_const_lv20_0;
+    weight_l2_2_address1 <= ap_const_lv12_0;
     weight_l2_2_ce0 <= dataflow_parent_loop_proc15_U0_weight_l2_2_ce0;
     weight_l2_2_ce1 <= ap_const_logic_0;
     weight_l2_2_d0 <= ap_const_lv8_0;
     weight_l2_2_d1 <= ap_const_lv8_0;
+    weight_l2_2_read <= dataflow_parent_loop_proc15_U0_weight_l2_2_write;
     weight_l2_2_we0 <= ap_const_logic_0;
     weight_l2_2_we1 <= ap_const_logic_0;
     weight_l2_3_address0 <= dataflow_parent_loop_proc15_U0_weight_l2_3_address0;
-    weight_l2_3_address1 <= ap_const_lv20_0;
+    weight_l2_3_address1 <= ap_const_lv12_0;
     weight_l2_3_ce0 <= dataflow_parent_loop_proc15_U0_weight_l2_3_ce0;
     weight_l2_3_ce1 <= ap_const_logic_0;
     weight_l2_3_d0 <= ap_const_lv8_0;
     weight_l2_3_d1 <= ap_const_lv8_0;
+    weight_l2_3_read <= dataflow_parent_loop_proc15_U0_weight_l2_3_write;
     weight_l2_3_we0 <= ap_const_logic_0;
     weight_l2_3_we1 <= ap_const_logic_0;
 end behav;

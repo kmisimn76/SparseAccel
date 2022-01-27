@@ -32,80 +32,89 @@ class AESL_RUNTIME_BC {
     fstream file_token;
     string mName;
 };
-unsigned int ap_apatb_param_in_V_cap_bc;
-static AESL_RUNTIME_BC __xlx_param_in_V_size_Reader("../tv/stream_size/stream_size_in_param_in_V.dat");
-unsigned int ap_apatb_bias_in_V_cap_bc;
-static AESL_RUNTIME_BC __xlx_bias_in_V_size_Reader("../tv/stream_size/stream_size_in_bias_in_V.dat");
-unsigned int ap_apatb_weight_in_V_cap_bc;
-static AESL_RUNTIME_BC __xlx_weight_in_V_size_Reader("../tv/stream_size/stream_size_in_weight_in_V.dat");
-unsigned int ap_apatb_data_in_V_cap_bc;
-static AESL_RUNTIME_BC __xlx_data_in_V_size_Reader("../tv/stream_size/stream_size_in_data_in_V.dat");
-unsigned int ap_apatb_conv_out_V_cap_bc;
-static AESL_RUNTIME_BC __xlx_conv_out_V_size_Reader("../tv/stream_size/stream_size_out_conv_out_V.dat");
-struct __cosim_s20__ { char data[32]; };
-extern "C" void Conv_sysarr(__cosim_s20__*, __cosim_s20__*, __cosim_s20__*, __cosim_s20__*, __cosim_s20__*);
-extern "C" void apatb_Conv_sysarr_hw(volatile void * __xlx_apatb_param_param_in, volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
-  // collect __xlx_param_in_tmp_vec
-  unsigned __xlx_param_in_V_tmp_Count = 0;
-  unsigned __xlx_param_in_V_read_Size = __xlx_param_in_V_size_Reader.read_size();
-  vector<__cosim_s20__> __xlx_param_in_tmp_vec;
-  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->empty() && __xlx_param_in_V_tmp_Count < __xlx_param_in_V_read_Size) {
-    __xlx_param_in_tmp_vec.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_param_in)->read());
-    __xlx_param_in_V_tmp_Count++;
+struct __cosim_s94__ { char data[148]; };
+extern "C" void Conv_sysarr(char*, char*, char*, int*, __cosim_s94__*, int, int, int, int);
+extern "C" void apatb_Conv_sysarr_hw(__cosim_s94__ __xlx_apatb_param_param, volatile void * __xlx_apatb_param_bias_in, volatile void * __xlx_apatb_param_weight_in, volatile void * __xlx_apatb_param_data_in, volatile void * __xlx_apatb_param_conv_out) {
+  // Collect __xlx_bias_in__tmp_vec
+  vector<sc_bv<8> >__xlx_bias_in__tmp_vec;
+  for (int j = 0, e = 1; j != e; ++j) {
+    __xlx_bias_in__tmp_vec.push_back(((char*)__xlx_apatb_param_bias_in)[j]);
   }
-  ap_apatb_param_in_V_cap_bc = __xlx_param_in_tmp_vec.size();
-  // store input buffer
-  __cosim_s20__* __xlx_param_in_input_buffer= new __cosim_s20__[__xlx_param_in_tmp_vec.size()];
-  for (int i = 0; i < __xlx_param_in_tmp_vec.size(); ++i) {
-    __xlx_param_in_input_buffer[i] = __xlx_param_in_tmp_vec[i];
+  int __xlx_size_param_bias_in = 1;
+  int __xlx_offset_param_bias_in = 0;
+  int __xlx_offset_byte_param_bias_in = 0*1;
+  char* __xlx_bias_in__input_buffer= new char[__xlx_bias_in__tmp_vec.size()];
+  for (int i = 0; i < __xlx_bias_in__tmp_vec.size(); ++i) {
+    __xlx_bias_in__input_buffer[i] = __xlx_bias_in__tmp_vec[i].range(7, 0).to_uint64();
   }
-  // collect __xlx_bias_in_tmp_vec
-  unsigned __xlx_bias_in_V_tmp_Count = 0;
-  unsigned __xlx_bias_in_V_read_Size = __xlx_bias_in_V_size_Reader.read_size();
-  vector<__cosim_s20__> __xlx_bias_in_tmp_vec;
-  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->empty() && __xlx_bias_in_V_tmp_Count < __xlx_bias_in_V_read_Size) {
-    __xlx_bias_in_tmp_vec.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_bias_in)->read());
-    __xlx_bias_in_V_tmp_Count++;
+  // Collect __xlx_weight_in__tmp_vec
+  vector<sc_bv<8> >__xlx_weight_in__tmp_vec;
+  for (int j = 0, e = 1; j != e; ++j) {
+    __xlx_weight_in__tmp_vec.push_back(((char*)__xlx_apatb_param_weight_in)[j]);
   }
-  ap_apatb_bias_in_V_cap_bc = __xlx_bias_in_tmp_vec.size();
-  // store input buffer
-  __cosim_s20__* __xlx_bias_in_input_buffer= new __cosim_s20__[__xlx_bias_in_tmp_vec.size()];
-  for (int i = 0; i < __xlx_bias_in_tmp_vec.size(); ++i) {
-    __xlx_bias_in_input_buffer[i] = __xlx_bias_in_tmp_vec[i];
+  int __xlx_size_param_weight_in = 1;
+  int __xlx_offset_param_weight_in = 0;
+  int __xlx_offset_byte_param_weight_in = 0*1;
+  char* __xlx_weight_in__input_buffer= new char[__xlx_weight_in__tmp_vec.size()];
+  for (int i = 0; i < __xlx_weight_in__tmp_vec.size(); ++i) {
+    __xlx_weight_in__input_buffer[i] = __xlx_weight_in__tmp_vec[i].range(7, 0).to_uint64();
   }
-  // collect __xlx_weight_in_tmp_vec
-  unsigned __xlx_weight_in_V_tmp_Count = 0;
-  unsigned __xlx_weight_in_V_read_Size = __xlx_weight_in_V_size_Reader.read_size();
-  vector<__cosim_s20__> __xlx_weight_in_tmp_vec;
-  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->empty() && __xlx_weight_in_V_tmp_Count < __xlx_weight_in_V_read_Size) {
-    __xlx_weight_in_tmp_vec.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_weight_in)->read());
-    __xlx_weight_in_V_tmp_Count++;
+  // Collect __xlx_data_in__tmp_vec
+  vector<sc_bv<8> >__xlx_data_in__tmp_vec;
+  for (int j = 0, e = 1; j != e; ++j) {
+    __xlx_data_in__tmp_vec.push_back(((char*)__xlx_apatb_param_data_in)[j]);
   }
-  ap_apatb_weight_in_V_cap_bc = __xlx_weight_in_tmp_vec.size();
-  // store input buffer
-  __cosim_s20__* __xlx_weight_in_input_buffer= new __cosim_s20__[__xlx_weight_in_tmp_vec.size()];
-  for (int i = 0; i < __xlx_weight_in_tmp_vec.size(); ++i) {
-    __xlx_weight_in_input_buffer[i] = __xlx_weight_in_tmp_vec[i];
+  int __xlx_size_param_data_in = 1;
+  int __xlx_offset_param_data_in = 0;
+  int __xlx_offset_byte_param_data_in = 0*1;
+  char* __xlx_data_in__input_buffer= new char[__xlx_data_in__tmp_vec.size()];
+  for (int i = 0; i < __xlx_data_in__tmp_vec.size(); ++i) {
+    __xlx_data_in__input_buffer[i] = __xlx_data_in__tmp_vec[i].range(7, 0).to_uint64();
   }
-  // collect __xlx_data_in_tmp_vec
-  unsigned __xlx_data_in_V_tmp_Count = 0;
-  unsigned __xlx_data_in_V_read_Size = __xlx_data_in_V_size_Reader.read_size();
-  vector<__cosim_s20__> __xlx_data_in_tmp_vec;
-  while (!((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->empty() && __xlx_data_in_V_tmp_Count < __xlx_data_in_V_read_Size) {
-    __xlx_data_in_tmp_vec.push_back(((hls::stream<__cosim_s20__>*)__xlx_apatb_param_data_in)->read());
-    __xlx_data_in_V_tmp_Count++;
+  // Collect __xlx_conv_out__tmp_vec
+  vector<sc_bv<32> >__xlx_conv_out__tmp_vec;
+  for (int j = 0, e = 1; j != e; ++j) {
+    __xlx_conv_out__tmp_vec.push_back(((int*)__xlx_apatb_param_conv_out)[j]);
   }
-  ap_apatb_data_in_V_cap_bc = __xlx_data_in_tmp_vec.size();
-  // store input buffer
-  __cosim_s20__* __xlx_data_in_input_buffer= new __cosim_s20__[__xlx_data_in_tmp_vec.size()];
-  for (int i = 0; i < __xlx_data_in_tmp_vec.size(); ++i) {
-    __xlx_data_in_input_buffer[i] = __xlx_data_in_tmp_vec[i];
+  int __xlx_size_param_conv_out = 1;
+  int __xlx_offset_param_conv_out = 0;
+  int __xlx_offset_byte_param_conv_out = 0*4;
+  int* __xlx_conv_out__input_buffer= new int[__xlx_conv_out__tmp_vec.size()];
+  for (int i = 0; i < __xlx_conv_out__tmp_vec.size(); ++i) {
+    __xlx_conv_out__input_buffer[i] = __xlx_conv_out__tmp_vec[i].range(31, 0).to_uint64();
   }
-  //Create input buffer for conv_out
-  ap_apatb_conv_out_V_cap_bc = __xlx_conv_out_V_size_Reader.read_size();
-  __cosim_s20__* __xlx_conv_out_input_buffer= new __cosim_s20__[ap_apatb_conv_out_V_cap_bc];
   // DUT call
-  Conv_sysarr(__xlx_param_in_input_buffer, __xlx_bias_in_input_buffer, __xlx_weight_in_input_buffer, __xlx_data_in_input_buffer, __xlx_conv_out_input_buffer);
-  for (unsigned i = 0; i <ap_apatb_conv_out_V_cap_bc; ++i)
-    ((hls::stream<__cosim_s20__>*)__xlx_apatb_param_conv_out)->write(__xlx_conv_out_input_buffer[i]);
+  Conv_sysarr(__xlx_bias_in__input_buffer, __xlx_weight_in__input_buffer, __xlx_data_in__input_buffer, __xlx_conv_out__input_buffer, &__xlx_apatb_param_param, __xlx_offset_byte_param_bias_in, __xlx_offset_byte_param_weight_in, __xlx_offset_byte_param_data_in, __xlx_offset_byte_param_conv_out);
+// print __xlx_apatb_param_bias_in
+  sc_bv<8>*__xlx_bias_in_output_buffer = new sc_bv<8>[__xlx_size_param_bias_in];
+  for (int i = 0; i < __xlx_size_param_bias_in; ++i) {
+    __xlx_bias_in_output_buffer[i] = __xlx_bias_in__input_buffer[i+__xlx_offset_param_bias_in];
+  }
+  for (int i = 0; i < __xlx_size_param_bias_in; ++i) {
+    ((char*)__xlx_apatb_param_bias_in)[i] = __xlx_bias_in_output_buffer[i].to_uint64();
+  }
+// print __xlx_apatb_param_weight_in
+  sc_bv<8>*__xlx_weight_in_output_buffer = new sc_bv<8>[__xlx_size_param_weight_in];
+  for (int i = 0; i < __xlx_size_param_weight_in; ++i) {
+    __xlx_weight_in_output_buffer[i] = __xlx_weight_in__input_buffer[i+__xlx_offset_param_weight_in];
+  }
+  for (int i = 0; i < __xlx_size_param_weight_in; ++i) {
+    ((char*)__xlx_apatb_param_weight_in)[i] = __xlx_weight_in_output_buffer[i].to_uint64();
+  }
+// print __xlx_apatb_param_data_in
+  sc_bv<8>*__xlx_data_in_output_buffer = new sc_bv<8>[__xlx_size_param_data_in];
+  for (int i = 0; i < __xlx_size_param_data_in; ++i) {
+    __xlx_data_in_output_buffer[i] = __xlx_data_in__input_buffer[i+__xlx_offset_param_data_in];
+  }
+  for (int i = 0; i < __xlx_size_param_data_in; ++i) {
+    ((char*)__xlx_apatb_param_data_in)[i] = __xlx_data_in_output_buffer[i].to_uint64();
+  }
+// print __xlx_apatb_param_conv_out
+  sc_bv<32>*__xlx_conv_out_output_buffer = new sc_bv<32>[__xlx_size_param_conv_out];
+  for (int i = 0; i < __xlx_size_param_conv_out; ++i) {
+    __xlx_conv_out_output_buffer[i] = __xlx_conv_out__input_buffer[i+__xlx_offset_param_conv_out];
+  }
+  for (int i = 0; i < __xlx_size_param_conv_out; ++i) {
+    ((int*)__xlx_apatb_param_conv_out)[i] = __xlx_conv_out_output_buffer[i].to_uint64();
+  }
 }

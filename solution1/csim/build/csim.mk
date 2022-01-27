@@ -53,7 +53,7 @@ IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E2__
 IFLAG += -Wno-unknown-pragmas 
-AP_ENABLE_OPTIMIZED := 1
+IFLAG += -g
 DFLAG += -D__xilinx_ip_top= -DAESL_TB
 CCFLAG += -Werror=return-type
 TOOLCHAIN += 
@@ -68,12 +68,12 @@ all: $(TARGET)
 
 $(ObjDir)/test.o: ../../../test.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../test.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/test.d
 
 $(ObjDir)/conv_sysarr_dbbuf.o: ../../../conv_sysarr_dbbuf.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../conv_sysarr_dbbuf.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) -DNDEBUG $< -o $@ ; \
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/conv_sysarr_dbbuf.d

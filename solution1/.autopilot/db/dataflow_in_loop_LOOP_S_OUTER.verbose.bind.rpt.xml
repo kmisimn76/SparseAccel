@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_in_loop_LOOP_S_OUTER'" level="0">
-<item name = "Date">Sat Jan 22 01:13:12 2022
+<item name = "Date">Thu Jan 27 10:53:50 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.947 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 5.508 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,18 +24,18 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, dataflow</column>
+<column name="">176, 176, 1.760 us, 1.760 us, 60, 60, dataflow</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_runSysArr_fu_374">runSysArr, ?, ?, ?, ?, ?, ?, none</column>
-<column name="grp_runWeight2Reg_fu_418">runWeight2Reg, 33, 33, 0.330 us, 0.330 us, 33, 33, none</column>
-<column name="grp_runDataL2toL1_fu_439">runDataL2toL1, 53, 53, 0.530 us, 0.530 us, 53, 53, none</column>
-<column name="grp_runOutputL1toL2_fu_463">runOutputL1toL2, 54, 54, 0.540 us, 0.540 us, 54, 54, none</column>
-<column name="call_ln262_dataflow_in_loop_LOOP_S_OUTER_entry24_fu_485">dataflow_in_loop_LOOP_S_OUTER_entry24, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="grp_runSysArr_fu_280">runSysArr, 59, 59, 0.590 us, 0.590 us, 59, 59, none</column>
+<column name="grp_runOutputL1toL2_fu_310">runOutputL1toL2, 57, 57, 0.570 us, 0.570 us, 57, 57, none</column>
+<column name="grp_runWeight2Reg_fu_341">runWeight2Reg, 56, 56, 0.560 us, 0.560 us, 56, 56, none</column>
+<column name="grp_runDataL2toL1_fu_363">runDataL2toL1, 57, 57, 0.570 us, 0.570 us, 57, 57, none</column>
+<column name="call_ln394_dataflow_in_loop_LOOP_S_OUTER_entry28_fu_385">dataflow_in_loop_LOOP_S_OUTER_entry28, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

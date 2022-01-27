@@ -7646,6 +7646,7 @@ using std::trunc;
 # 10 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
 
 
+
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_axi_sdata.h" 1
 # 87 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_axi_sdata.h"
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_int.h" 1
@@ -59402,9 +59403,9 @@ template<int D>
     qdma_axis(ap_uint<D> d = ap_uint<D>(), ap_uint<(D+7)/8> k = ap_uint<(D+7)/8>(), ap_uint<1> l = ap_uint<1>()) : data(d), keep(k), last(l) {}
     qdma_axis(const qdma_axis<D, 0, 0, 0> &d) : data(d.data), keep(d.keep), last(d.last) {}
   };
-# 13 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
-# 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_int.h" 1
 # 14 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+# 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_int.h" 1
+# 15 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/hls_stream.h" 1
 # 80 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/hls_stream.h"
 # 1 "/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/queue" 1 3
@@ -67317,7 +67318,8 @@ public:
   }
 };
 }
-# 15 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+# 16 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+
 
 
 typedef unsigned int uint;
@@ -67332,16 +67334,8 @@ typedef int MACTYPE;
 
 
 
+
 typedef ap_axiu<4*32,0,0,0> k2k_data;
-# 4 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp" 2
-
-
-void Conv_sysarr(
-        hls::stream<k2k_data> &param_in,
-        hls::stream<k2k_data> &bias_in,
-        hls::stream<k2k_data> &weight_in,
-        hls::stream<k2k_data> &data_in,
-        hls::stream<k2k_data> &conv_out);
 
 typedef struct {
     uint K;
@@ -67349,11 +67343,47 @@ typedef struct {
     uint WH;
     uint WH_in;
     uint RS;
+ uint L2_TILENUM_K;
+ uint L2_TILENUM_C;
+    uint L2_TILENUM_W;
+    uint L2_TILENUM_H;
+    uint L2_TILENUM_R;
+    uint L2_TILENUM_S;
+    uint K_L2;
+    uint C_L2;
+    uint W_L2;
+    uint H_L2;
+    uint W_in_L2;
+    uint H_in_L2;
+    uint R_L2;
+    uint S_L2;
+ uint L1_TILENUM_K;
+ uint L1_TILENUM_C;
+    uint L1_TILENUM_W;
+    uint L1_TILENUM_H;
+    uint L1_TILENUM_R;
+    uint L1_TILENUM_S;
+    uint K_L1;
+    uint C_L1;
+    uint W_L1;
+    uint H_L1;
+    uint W_in_L1;
+    uint H_in_L1;
+    uint R_L1;
+    uint S_L1;
     uint TILESIZE_W;
     uint TILESIZE_H;
     uint TILESIZE_R;
     uint TILESIZE_S;
 } NPU_PARAM;
+# 4 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp" 2
+# 50 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+void Conv_sysarr(
+        NPU_PARAM hw_param,
+  DPTYPE *bias_in,
+  DPTYPE *weight_in,
+  DPTYPE *data_in,
+  MACTYPE *conv_out);
 
 void conv_gold(
   NPU_PARAM param,
@@ -67388,6 +67418,16 @@ void conv_gold(
 
 }
 
+char bias[2048];
+char data[3268864];
+char weight[2359296];
+int gold[3211264];
+
+char bias_in[2048];
+char data_in[3268864];
+char weight_in[2359296];
+int conv_out[3211264];
+
 int conv_test(
   NPU_PARAM param,
   char *bias,
@@ -67396,71 +67436,44 @@ int conv_test(
   int *gold
   )
 {
-    hls::stream<k2k_data> param_in;
-    hls::stream<k2k_data> bias_in;
-    hls::stream<k2k_data> weight_in;
-    hls::stream<k2k_data> data_in;
-    hls::stream<k2k_data> conv_out;
-
-    k2k_data tmp;
-    tmp.data(31,0) = param.K;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.C;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.WH;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.WH_in;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.RS;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_W;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_H;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_R;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_S;
-    param_in.write(tmp);
-
  for (unsigned int ko = 0; ko < param.K/4; ko++) {
   for (unsigned int ki = 0; ki < 4; ki++) {
-   uint k = ko * 4 + ki;
-   int v = ki;
-   tmp.data((v+1)*8 -1, v*8) = bias[k];
-  }
-  bias_in.write(tmp);
- }
- for (unsigned int crs = 0; crs < param.C*param.RS*param.RS; crs++) {
-  for (unsigned int ko = 0; ko < param.K/4; ko++) {
-   for (unsigned int ki = 0; ki < 4; ki++) {
-    uint ptr = (ko*4 + ki)*param.C*param.RS*param.RS + crs;
-    int v = ki;
-    tmp.data((v+1)*8 -1, v*8) = weight[ptr];
-   }
-   weight_in.write(tmp);
+   uint ptr = (ko)*4 + ki;
+   uint l = (ko*4 +ki);
+   bias_in[ptr] = bias[l];
   }
  }
- for (unsigned int wh = 0; wh < param.WH_in*param.WH_in; wh++) {
+    for(int wh=0;wh<param.WH_in*param.WH_in;wh++) {
   for (unsigned int co = 0; co < param.C/4; co++) {
    for (unsigned int ci = 0; ci < 4; ci++) {
-    uint ptr = (co*4 +ci)*param.WH_in*param.WH_in + wh;
-    int v = ci;
-    tmp.data((v+1)*8 -1, v*8) = data[ptr];
+    uint ptr = (co*param.WH_in*param.WH_in+wh)*4 + ci;
+    uint l = (co*4 +ci)*param.WH_in*param.WH_in + wh;
+    data_in[ptr] = data[l];
    }
-   data_in.write(tmp);
   }
- }
+    }
+    for(int rsc=0;rsc<param.RS*param.RS*param.C;rsc++) {
+  for (unsigned int ko = 0; ko < param.K/4; ko++) {
+   for (unsigned int ki = 0; ki < 4; ki++) {
+    uint ptr = (ko*param.RS*param.RS*param.C+rsc)*4 + ki;
+    uint l = (ko*4 +ki)*param.RS*param.RS*param.C+rsc;
+    weight_in[ptr] = weight[l];
+   }
+  }
+    }
 
- Conv_sysarr(param_in, bias_in, weight_in, data_in, conv_out);
+ Conv_sysarr(
+   param,
+   bias_in, weight_in, data_in, conv_out);
 
     for(int wh=0;wh<param.WH*param.WH;wh++) {
   for (unsigned int ko = 0; ko < param.K/4; ko++) {
-   tmp = conv_out.read();
    for (unsigned int ki = 0; ki < 4; ki++) {
+    uint ptr = (ko*param.WH*param.WH+wh)*4 + ki;
     uint l = (ko*4 +ki)*param.WH*param.WH + wh;
     int v = ki;
-    int output = tmp.data((v+1)*32 -1, v*32);
-    if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]); return 1; }
+    int output = conv_out[ptr];
+    if(output != gold[l]) { printf("Error(%d or %d): %d (gold %d)\n", l, ptr, output, gold[l]); return 1; }
    }
   }
     }
@@ -67469,21 +67482,48 @@ int conv_test(
 
 int main()
 {
- char bias[2048];
- char data[2048];
- char weight[2048];
- int gold[2048];
 
  NPU_PARAM param;
- param.K = 512;
- param.C = 512;
- param.WH = 28;
- param.WH_in = 30;
+# 206 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+ {
+ param.K = 32;
+ param.C = 64;
+ param.WH = 14;
+ param.WH_in = 16;
  param.RS = 3;
- param.TILESIZE_W = 14;
- param.TILESIZE_H = 14;
+ param.L2_TILENUM_K = 1;
+ param.L2_TILENUM_C = 2;
+ param.L2_TILENUM_W = 1;
+ param.L2_TILENUM_H = 1;
+ param.L2_TILENUM_R = 1;
+ param.L2_TILENUM_S = 1;
+ param.K_L2 = 32;
+ param.C_L2 = 32;
+ param.W_L2 = 14;
+ param.H_L2 = 14;
+ param.W_in_L2 = 16;
+ param.H_in_L2 = 16;
+ param.R_L2 = 3;
+ param.S_L2 = 3;
+ param.L1_TILENUM_K = 8;
+ param.L1_TILENUM_C = 8;
+ param.L1_TILENUM_W = 2;
+ param.L1_TILENUM_H = 2;
+ param.L1_TILENUM_R = 3;
+ param.L1_TILENUM_S = 3;
+ param.K_L1 = 4;
+ param.C_L1 = 4;
+ param.W_L1 = 7;
+ param.H_L1 = 7;
+ param.W_in_L1 = 7;
+ param.H_in_L1 = 7;
+ param.R_L1 = 1;
+ param.S_L1 = 1;
+ param.TILESIZE_W = 7;
+ param.TILESIZE_H = 7;
  param.TILESIZE_R = 1;
  param.TILESIZE_S = 1;
+ }
 
     printf("Test Start\n");
 
@@ -67495,7 +67535,7 @@ int main()
     printf("Test Case 1 Complete\n");
 
 
- for(int k = 0; k < param.K; k++) bias[k] = k;
+ for(int k = 0; k < param.K; k++) bias[k] = k%256-128;
  for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = k%256-128;
  for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = 1;
     conv_gold(param,bias,weight,data,gold);
@@ -67503,7 +67543,7 @@ int main()
     printf("Test Case 2 Complete\n");
 
 
- for(int k = 0; k < param.K; k++) bias[k] = k;
+ for(int k = 0; k < param.K; k++) bias[k] = k%256-128;
  for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++) weight[k] = 1;
  for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++) data[k] = k%256-128;
     conv_gold(param,bias,weight,data,gold);

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr'" level="0">
-<item name = "Date">Sat Jan 22 01:13:14 2022
+<item name = "Date">Thu Jan 27 10:53:52 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.947 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,22 +24,23 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, none</column>
+<column name="">50081, 87713, 0.501 ms, 0.877 ms, 50082, 87714, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_parent_loop_proc19_fu_530">dataflow_parent_loop_proc19, ?, ?, ?, ?, ?, ?, none</column>
+<column name="grp_dataflow_parent_loop_proc_fu_235">dataflow_parent_loop_proc, 3124, 5476, 31.240 us, 54.760 us, 3124, 5476, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_212_1">4, 4, 2, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_221_3_VITIS_LOOP_223_4">144, 144, 2, 1, 1, 144, yes</column>
-<column name="- VITIS_LOOP_234_6_VITIS_LOOP_236_7">81, 81, 2, 1, 1, 81, yes</column>
-<column name="- VITIS_LOOP_290_9_VITIS_LOOP_292_10">196, 196, 2, 1, 1, 196, yes</column>
+<column name="- LOOP_K_MOST_OUTER">50080, 87712, 12520 ~ 21928, -, -, 4, no</column>
+<column name=" + LOOP_C_MOST_OUTER">12518, 21926, 12518 ~ 21926, -, -, 1, no</column>
+<column name="  ++ LOOP_H_MOST_OUTER">12516, 21924, 6258 ~ 10962, -, -, 2, no</column>
+<column name="   +++ LOOP_W_MOST_OUTER">6256, 10960, 3128 ~ 5480, -, -, 2, no</column>
+<column name="    ++++ LOOP_R_MOST_OUTER">3126, 5478, 3126 ~ 5478, -, -, 1, no</column>
 </table>
 </item>
 </section>

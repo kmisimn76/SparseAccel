@@ -4,8 +4,8 @@
 // ==============================================================
 
 extern "C" void AESL_WRAP_Conv_sysarr (
-hls::stream<int > param_in,
-hls::stream<int > bias_in,
-hls::stream<int > weight_in,
-hls::stream<int > data_in,
-hls::stream<int > conv_out);
+__cosim_s94__ param,
+volatile void* bias_in,
+volatile void* weight_in,
+volatile void* data_in,
+volatile void* conv_out);

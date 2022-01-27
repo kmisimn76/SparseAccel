@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_parent_loop_proc17'
 ================================================================
-* Date:           Sat Jan 22 01:13:13 2022
+* Date:           Thu Jan 27 10:53:50 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  | 10.00 ns | 6.947 ns |   2.70 ns  |
+    |ap_clk  | 10.00 ns | 5.508 ns |   2.70 ns  |
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |        ?|        ?|         ?|         ?|    ?|    ?|   none  |
+    |      900|      900| 9.000 us | 9.000 us |  900|  900|   none  |
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -41,7 +41,7 @@
         |                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
         |    Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
         +----------------+---------+---------+----------+-----------+-----------+------+----------+
-        |- LOOP_H_OUTER  |        ?|        ?|         ?|          -|          -|    10|    no    |
+        |- LOOP_W_OUTER  |      899|      899|       900|          -|          -|     1|    no    |
         +----------------+---------+---------+----------+-----------+-----------+------+----------+
 
 ============================================================
@@ -83,37 +83,30 @@ IsGatedGlobalClock: 0
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 0.60>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read717 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read7"   --->   Operation 4 'read' 'p_read717' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read616 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read6"   --->   Operation 5 'read' 'p_read616' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read515 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read5"   --->   Operation 6 'read' 'p_read515' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_read414 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read4"   --->   Operation 7 'read' 'p_read414' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_read313 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read3"   --->   Operation 8 'read' 'p_read313' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read212 = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %p_read2"   --->   Operation 9 'read' 'p_read212' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%co_1_read = read i30 @_ssdm_op_Read.ap_auto.i30, i30 %co_1"   --->   Operation 10 'read' 'co_1_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%ko_2_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %ko_2"   --->   Operation 11 'read' 'ko_2_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read19 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read1"   --->   Operation 12 'read' 'p_read19' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read_19 = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %p_read"   --->   Operation 13 'read' 'p_read_19' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%TILES_S_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %TILES_S"   --->   Operation 14 'read' 'TILES_S_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%TILES_R_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %TILES_R"   --->   Operation 15 'read' 'TILES_R_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%TILES_W_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %TILES_W"   --->   Operation 16 'read' 'TILES_W_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%TILES_H_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %TILES_H"   --->   Operation 17 'read' 'TILES_H_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%empty = trunc i30 %co_1_read"   --->   Operation 18 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 19 [1/1] (0.60ns)   --->   "%br_ln0 = br void"   --->   Operation 19 'br' 'br_ln0' <Predicate = true> <Delay = 0.60>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%ho_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %ho"   --->   Operation 4 'read' 'ho_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%co_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %co"   --->   Operation 5 'read' 'co_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%ko_1_read = read i12 @_ssdm_op_Read.ap_auto.i12, i12 %ko_1"   --->   Operation 6 'read' 'ko_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%param_read = read i1184 @_ssdm_op_Read.ap_auto.i1184, i1184 %param"   --->   Operation 7 'read' 'param_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%param_L1_TILENUM_S_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %param_L1_TILENUM_S"   --->   Operation 8 'read' 'param_L1_TILENUM_S_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%lshr_ln282_cast_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %lshr_ln282_cast"   --->   Operation 9 'read' 'lshr_ln282_cast_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%lshr_ln282_1_cast_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %lshr_ln282_1_cast"   --->   Operation 10 'read' 'lshr_ln282_1_cast_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%empty = trunc i32 %ho_read"   --->   Operation 11 'trunc' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.60ns)   --->   "%br_ln0 = br void"   --->   Operation 12 'br' 'br_ln0' <Predicate = true> <Delay = 0.60>
 
-State 2 <SV = 1> <Delay = 0.98>
-ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%ho = phi i32, void %newFuncRoot, i32 %ho_1, void %.split10"   --->   Operation 20 'phi' 'ho' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln251 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %ho, i32 %TILES_H" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 21 'specdataflowpipeline' 'specdataflowpipeline_ln251' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 22 [1/1] (0.85ns)   --->   "%icmp_ln251 = icmp_eq  i32 %ho, i32 %TILES_H_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 22 'icmp' 'icmp_ln251' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 23 [1/1] (0.88ns)   --->   "%ho_1 = add i32 %ho, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 23 'add' 'ho_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln251 = br i1 %icmp_ln251, void %.split10, void %._crit_edge327.loopexit.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 24 'br' 'br_ln251' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 25 [2/2] (0.00ns)   --->   "%call_ln251 = call void @dataflow_parent_loop_proc16, i32 %TILES_W_read, i32 %TILES_R_read, i32 %TILES_S_read, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i20 %p_read_19, i20 %p_read19, i20 %ko_2_read, i20 %empty, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read212, i32 %p_read313, i32 %ho, i20 %p_read414, i32 %p_read515, i32 %p_read616, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i20 %p_read717, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 25 'call' 'call_ln251' <Predicate = (!icmp_ln251)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 26 'ret' 'ret_ln0' <Predicate = (icmp_ln251)> <Delay = 0.00>
+State 2 <SV = 1> <Delay = 1.06>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%wo = phi i32, void %entry, i32 %wo_1, void %.split11.i"   --->   Operation 13 'phi' 'wo' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.85ns)   --->   "%icmp_ln361 = icmp_eq  i32 %wo, i32 %lshr_ln282_1_cast_read" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 14 'icmp' 'icmp_ln361' <Predicate = true> <Delay = 0.85> <CoreInst = "Cmp">   --->   Core 10 'Cmp' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln361 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %wo, i32 %lshr_ln282_1_cast" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 15 'specdataflowpipeline' 'specdataflowpipeline_ln361' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.88ns)   --->   "%wo_1 = add i32 %wo, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 16 'add' 'wo_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln361 = br i1 %icmp_ln361, void %.split11.i, void %dataflow_parent_loop_proc17.exit" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 17 'br' 'br_ln361' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [2/2] (0.00ns)   --->   "%call_ln361 = call void @dataflow_parent_loop_proc16, i32 %lshr_ln282_cast_read, i32 %param_L1_TILENUM_S_read, i1184 %param_read, i12 %ko_1_read, i32 %co_read, i11 %empty, i32 %wo, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 18 'call' 'call_ln361' <Predicate = (!icmp_ln361)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 19 'ret' 'ret_ln0' <Predicate = (icmp_ln361)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 0.00>
-ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%speclooptripcount_ln251 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 27 'speclooptripcount' 'speclooptripcount_ln251' <Predicate = (!icmp_ln251)> <Delay = 0.00>
-ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%specloopname_ln251 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 28 'specloopname' 'specloopname_ln251' <Predicate = (!icmp_ln251)> <Delay = 0.00>
-ST_3 : Operation 29 [1/2] (0.00ns)   --->   "%call_ln251 = call void @dataflow_parent_loop_proc16, i32 %TILES_W_read, i32 %TILES_R_read, i32 %TILES_S_read, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i20 %p_read_19, i20 %p_read19, i20 %ko_2_read, i20 %empty, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %p_read212, i32 %p_read313, i32 %ho, i20 %p_read414, i32 %p_read515, i32 %p_read616, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i20 %p_read717, i32 %output_l1_local_3, i32 %output_l1_local_2, i32 %output_l1_local_1, i32 %output_l1_local_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251]   --->   Operation 29 'call' 'call_ln251' <Predicate = (!icmp_ln251)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
-ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 30 'br' 'br_ln0' <Predicate = (!icmp_ln251)> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%speclooptripcount_ln361 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 20 'speclooptripcount' 'speclooptripcount_ln361' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (0.00ns)   --->   "%specloopname_ln361 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 21 'specloopname' 'specloopname_ln361' <Predicate = (!icmp_ln361)> <Delay = 0.00>
+ST_3 : Operation 22 [1/2] (0.00ns)   --->   "%call_ln361 = call void @dataflow_parent_loop_proc16, i32 %lshr_ln282_cast_read, i32 %param_L1_TILENUM_S_read, i1184 %param_read, i12 %ko_1_read, i32 %co_read, i11 %empty, i32 %wo, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361]   --->   Operation 22 'call' 'call_ln361' <Predicate = (!icmp_ln361)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 23 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 23 'br' 'br_ln0' <Predicate = (!icmp_ln361)> <Delay = 0.00>
 
 
 ============================================================
@@ -123,13 +116,13 @@ Target clock period: 10ns, clock uncertainty: 2.7ns.
 
  <State 1>: 0.603ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('ho') with incoming values : ('ho', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251) [49]  (0.603 ns)
+	multiplexor before 'phi' operation ('wo') with incoming values : ('wo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361) [35]  (0.603 ns)
 
- <State 2>: 0.981ns
+ <State 2>: 1.07ns
 The critical path consists of the following:
-	'phi' operation ('ho') with incoming values : ('ho', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251) [49]  (0 ns)
-	'add' operation ('ho', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:251) [52]  (0.88 ns)
-	blocking operation 0.101 ns on control path)
+	'phi' operation ('wo') with incoming values : ('wo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361) [35]  (0 ns)
+	'add' operation ('wo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:361) [38]  (0.88 ns)
+	blocking operation 0.189 ns on control path)
 
  <State 3>: 0ns
 The critical path consists of the following:

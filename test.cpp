@@ -2,25 +2,57 @@
 #include <stdio.h>
 #include "hw_param.h"
 
-
-void Conv_sysarr(
-        hls::stream<k2k_data> &param_in,
-        hls::stream<k2k_data> &bias_in,
-        hls::stream<k2k_data> &weight_in,
-        hls::stream<k2k_data> &data_in,
-        hls::stream<k2k_data> &conv_out);
-
+#define ARRAY_K 4
+#define ARRAY_C 4
+/*
 typedef struct {
     uint K;
     uint C;
     uint WH;
     uint WH_in;
     uint RS;
+	uint L2_TILENUM_K;///
+	uint L2_TILENUM_C;
+    uint L2_TILENUM_W; // W Size of a tile
+    uint L2_TILENUM_H;
+    uint L2_TILENUM_R;
+    uint L2_TILENUM_S;
+    uint K_L2;
+    uint C_L2;
+    uint W_L2;
+    uint H_L2;
+    uint W_in_L2;
+    uint H_in_L2;
+    uint R_L2;
+    uint S_L2;
+	uint L1_TILENUM_K;///
+	uint L1_TILENUM_C;
+    uint L1_TILENUM_W; // W Size of a tile
+    uint L1_TILENUM_H;
+    uint L1_TILENUM_R;
+    uint L1_TILENUM_S;
+    uint K_L1;
+    uint C_L1;
+    uint W_L1;
+    uint H_L1;
+    uint W_in_L1;
+    uint H_in_L1;
+    uint R_L1;
+    uint S_L1;
     uint TILESIZE_W; // W Size of a tile
     uint TILESIZE_H;
-    uint TILESIZE_R;
-    uint TILESIZE_S;
+    uint TILESIZE_R; //must be 1
+    uint TILESIZE_S; //must be 1
 } NPU_PARAM;
+*/
+
+
+void Conv_sysarr(
+        NPU_PARAM hw_param,
+		DPTYPE *bias_in,
+		DPTYPE *weight_in,
+		DPTYPE *data_in,
+		MACTYPE *conv_out);
 
 void conv_gold(
 		NPU_PARAM param,
@@ -55,6 +87,16 @@ void conv_gold(
 	//printf("\n");
 }
 
+char bias[2048];
+char data[3268864];
+char weight[2359296];
+int gold[3211264];
+
+char bias_in[2048];
+char data_in[3268864];
+char weight_in[2359296];
+int conv_out[3211264];
+
 int conv_test(
 		NPU_PARAM param,
 		char *bias,
@@ -63,71 +105,44 @@ int conv_test(
 		int *gold
 		)
 {
-    hls::stream<k2k_data> param_in;
-    hls::stream<k2k_data> bias_in;
-    hls::stream<k2k_data> weight_in;
-    hls::stream<k2k_data> data_in;
-    hls::stream<k2k_data> conv_out;
-
-    k2k_data tmp;
-    tmp.data(31,0) = param.K;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.C;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.WH;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.WH_in;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.RS;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_W;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_H;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_R;
-    param_in.write(tmp);
-    tmp.data(31,0) = param.TILESIZE_S;
-    param_in.write(tmp);
-
 	for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
 		for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
-			uint k = ko * VEC_SIZE + ki;
-			int v = ki;
-			tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = bias[k];
-		}
-		bias_in.write(tmp);
-	}
-	for (unsigned int crs = 0; crs < param.C*param.RS*param.RS; crs++) {
-		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
-			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
-				uint ptr = (ko*VEC_SIZE + ki)*param.C*param.RS*param.RS + crs;
-				int v = ki;
-				tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = weight[ptr];
-			}
-			weight_in.write(tmp);
+			uint ptr = (ko)*VEC_SIZE + ki;
+			uint l = (ko*VEC_SIZE+ki);
+			bias_in[ptr] = bias[l];
 		}
 	}
-	for (unsigned int wh = 0; wh < param.WH_in*param.WH_in; wh++) {
+    for(int wh=0;wh<param.WH_in*param.WH_in;wh++) {
 		for (unsigned int co = 0; co < param.C/VEC_SIZE; co++) {
 			for (unsigned int ci = 0; ci < VEC_SIZE; ci++) {
-				uint ptr = (co*VEC_SIZE+ci)*param.WH_in*param.WH_in + wh;
-				int v = ci;
-				tmp.data((v+1)*DP_WIDTH-1, v*DP_WIDTH) = data[ptr];
+				uint ptr = (co*param.WH_in*param.WH_in+wh)*VEC_SIZE + ci;
+				uint l = (co*VEC_SIZE+ci)*param.WH_in*param.WH_in + wh;
+				data_in[ptr] = data[l];
 			}
-			data_in.write(tmp);
 		}
-	}
+    }
+    for(int rsc=0;rsc<param.RS*param.RS*param.C;rsc++) {
+		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
+			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+				uint ptr = (ko*param.RS*param.RS*param.C+rsc)*VEC_SIZE + ki;
+				uint l = (ko*VEC_SIZE+ki)*param.RS*param.RS*param.C+rsc;
+				weight_in[ptr] = weight[l];
+			}
+		}
+    }
 
-	Conv_sysarr(param_in, bias_in, weight_in, data_in, conv_out); //Conv sys arr
+	Conv_sysarr(
+			param,
+			bias_in, weight_in, data_in, conv_out); //Conv sys arr
 
     for(int wh=0;wh<param.WH*param.WH;wh++) {
 		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
-			tmp = conv_out.read();
 			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+				uint ptr = (ko*param.WH*param.WH+wh)*VEC_SIZE + ki;
 				uint l = (ko*VEC_SIZE+ki)*param.WH*param.WH + wh;
 				int v = ki;
-				int output = tmp.data((v+1)*MAC_WIDTH-1, v*MAC_WIDTH);
-				if(output != gold[l]) { printf("Error(%d): %d (gold %d)\n", l, output, gold[l]);  return 1; }
+				int output = conv_out[ptr];
+				if(output != gold[l]) { printf("Error(%d or %d): %d (gold %d)\n", l, ptr, output, gold[l]);  return 1; }
 			}
 		}
     }
@@ -136,21 +151,97 @@ int conv_test(
 
 int main()
 {
-	char bias[2048];
-	char data[2048];
-	char weight[2048];
-	int gold[2048];
 
 	NPU_PARAM param;
+	/*{
 	param.K = 512;
 	param.C = 512;
 	param.WH = 28;
 	param.WH_in = 30;
 	param.RS = 3;
-	param.TILESIZE_W = 14;
-	param.TILESIZE_H = 14;
+	param.TILESIZE_W = 28;
+	param.TILESIZE_H = 28;
 	param.TILESIZE_R = 1;
 	param.TILESIZE_S = 1;
+	}*/
+	/*{
+	param.K = 16;
+	param.C = 4;
+	param.WH = 14;
+	param.WH_in = 16;
+	param.RS = 3;
+	param.L2_TILENUM_K = 4; ///
+	param.L2_TILENUM_C = 1;
+	param.L2_TILENUM_W = 2;
+	param.L2_TILENUM_H = 2;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = 4;
+	param.C_L2 = 4;
+	param.W_L2 = 7;
+	param.H_L2 = 7;
+	param.W_in_L2 = 9; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 9;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 1; ///
+	param.L1_TILENUM_C = 1;
+	param.L1_TILENUM_W = 1;
+	param.L1_TILENUM_H = 1;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = 4;
+	param.C_L1 = 4;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}*/
+	{
+	param.K = 32;
+	param.C = 64;
+	param.WH = 14;
+	param.WH_in = 16;
+	param.RS = 3;
+	param.L2_TILENUM_K = 1; ///
+	param.L2_TILENUM_C = 2;
+	param.L2_TILENUM_W = 1;
+	param.L2_TILENUM_H = 1;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = 32;
+	param.C_L2 = 32;
+	param.W_L2 = 14;
+	param.H_L2 = 14;
+	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 16;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 8; ///
+	param.L1_TILENUM_C = 8;
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = 4;
+	param.C_L1 = 4;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}
 
     printf("Test Start\n");
     //TEST CASE 1
@@ -162,7 +253,7 @@ int main()
     printf("Test Case 1 Complete\n");
 
     //TEST CASE 2
-	for(int k = 0; k < param.K; k++)								bias[k]		= k;
+	for(int k = 0; k < param.K; k++)								bias[k]		= k%256-128;
 	for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= k%256-128;
 	for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
     conv_gold(param,bias,weight,data,gold);
@@ -170,7 +261,7 @@ int main()
     printf("Test Case 2 Complete\n");
 
     //TEST CASE 3
-	for(int k = 0; k < param.K; k++)								bias[k]		= k;
+	for(int k = 0; k < param.K; k++)								bias[k]		= k%256-128;
 	for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
 	for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= k%256-128;
     conv_gold(param,bias,weight,data,gold);

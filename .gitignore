@@ -1,0 +1,7 @@
+HW_imple/conv*
+HW_imple/v++*
+HW_imple/*.log
+HW_imple/_x
+HW_imple/_x/*
+HW_imple/_x/**
+solution1/*

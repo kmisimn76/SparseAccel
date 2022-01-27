@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'runSysArr'" level="0">
-<item name = "Date">Sat Jan 22 01:13:12 2022
+<item name = "Date">Thu Jan 27 10:53:49 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, none</column>
+<column name="">59, 59, 0.590 us, 0.590 us, 59, 59, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,8 +35,8 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_R_INNER_LOOP_S_INNER">?, ?, ?, -, -, 100, no</column>
-<column name=" + LOOP_INPUT_ROW">?, ?, 2, 1, 1, ?, yes</column>
+<column name="- LOOP_R_INNER_LOOP_S_INNER">58, 58, 58, -, -, 1, no</column>
+<column name=" + LOOP_INPUT_ROW">55, 55, 2, 1, 1, 55, yes</column>
 </table>
 </item>
 </section>

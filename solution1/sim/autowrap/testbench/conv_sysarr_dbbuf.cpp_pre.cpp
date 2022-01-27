@@ -4,6 +4,7 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
 # 1 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+
 # 1 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 1
 
 
@@ -7642,6 +7643,7 @@ using std::scalbn;
 using std::tgamma;
 using std::trunc;
 # 10 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+
 
 
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_axi_sdata.h" 1
@@ -59400,9 +59402,9 @@ template<int D>
     qdma_axis(ap_uint<D> d = ap_uint<D>(), ap_uint<(D+7)/8> k = ap_uint<(D+7)/8>(), ap_uint<1> l = ap_uint<1>()) : data(d), keep(k), last(l) {}
     qdma_axis(const qdma_axis<D, 0, 0, 0> &d) : data(d.data), keep(d.keep), last(d.last) {}
   };
-# 13 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
-# 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_int.h" 1
 # 14 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+# 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_int.h" 1
+# 15 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
 # 1 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/hls_stream.h" 1
 # 80 "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/hls_stream.h"
 # 1 "/home/sumin/tools/Xilinx/Vivado/Vivado/2020.1/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/queue" 1 3
@@ -67315,7 +67317,8 @@ public:
   }
 };
 }
-# 15 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+# 16 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h" 2
+
 
 
 typedef unsigned int uint;
@@ -67330,24 +67333,65 @@ typedef int MACTYPE;
 
 
 
+
 typedef ap_axiu<4*32,0,0,0> k2k_data;
-# 2 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" 2
-# 17 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+
+typedef struct {
+    uint K;
+    uint C;
+    uint WH;
+    uint WH_in;
+    uint RS;
+ uint L2_TILENUM_K;
+ uint L2_TILENUM_C;
+    uint L2_TILENUM_W;
+    uint L2_TILENUM_H;
+    uint L2_TILENUM_R;
+    uint L2_TILENUM_S;
+    uint K_L2;
+    uint C_L2;
+    uint W_L2;
+    uint H_L2;
+    uint W_in_L2;
+    uint H_in_L2;
+    uint R_L2;
+    uint S_L2;
+ uint L1_TILENUM_K;
+ uint L1_TILENUM_C;
+    uint L1_TILENUM_W;
+    uint L1_TILENUM_H;
+    uint L1_TILENUM_R;
+    uint L1_TILENUM_S;
+    uint K_L1;
+    uint C_L1;
+    uint W_L1;
+    uint H_L1;
+    uint W_in_L1;
+    uint H_in_L1;
+    uint R_L1;
+    uint S_L1;
+    uint TILESIZE_W;
+    uint TILESIZE_H;
+    uint TILESIZE_R;
+    uint TILESIZE_S;
+} NPU_PARAM;
+# 3 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" 2
+# 67 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 void runWeight2Reg(DPTYPE weight_regfile[4][4], DPTYPE (*weight_l2)[4], const uint C,
-  const uint RS, const uint ko, const uint co, const uint r, const uint s) {
+  const uint R, const uint S, const uint ko, const uint co, const uint r, const uint s) {
  for (int ci = 0; ci < 4; ci++) {
    for (int ki = 0; ki < 4; ki++) {
 
    int k = (ko * 4 + ki);
    int c = (co * 4 + ci);
-   weight_regfile[ki][ci] = weight_l2[ko * C * RS
-     * RS + c * RS * RS + r * RS + s][ki];
+   weight_regfile[ki][ci] = weight_l2[ko * C * R
+     * S + c * R * S + r * S + s][ki];
   }
  }
 }
 
 void runDataL2toL1(DPTYPE (*data_l1)[4], DPTYPE (*data_l2)[4], uint TILESIZE_H,
-  uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint WH_in) {
+  uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
  LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
 #pragma HLS loop_tripcount min=7 max=7
   LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
@@ -67358,15 +67402,17 @@ void runDataL2toL1(DPTYPE (*data_l1)[4], DPTYPE (*data_l2)[4], uint TILESIZE_H,
     int h = (ho * TILESIZE_H + hi) + r;
     int w = (wo * TILESIZE_W + wi) + s;
     data_l1[hi * TILESIZE_W + wi][ci] =
-      data_l2[co * WH_in * WH_in + h * WH_in + w][ci];
+      data_l2[co * H_in * W_in + h * W_in + w][ci];
    }
   }
  }
 }
 
 
-void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4],
-  uint TILESIZE_H, uint TILESIZE_W, uint ko, uint ho, uint wo, uint WH) {
+void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4], MACTYPE (*output_l2_reduction)[4],
+  uint TILESIZE_H, uint TILESIZE_W, uint ko, uint ho, uint wo, uint W, uint H, bool isFirst) {
+#pragma HLS dependence variable=output_l2
+#pragma HLS dependence variable=output_l2_reduction
  LOOP_L2_H: for (int hi = 0; hi < TILESIZE_H; hi++) {
 #pragma HLS loop_tripcount min=7 max=7
   LOOP_L2_W: for (int wi = 0; wi < TILESIZE_W; wi++) {
@@ -67376,8 +67422,14 @@ void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4],
     int k = (ko * 4 + ki);
     int h = (ho * TILESIZE_H + hi);
     int w = (wo * TILESIZE_W + wi);
-    output_l2[ko * WH * WH + h * WH + w][ki] =
-      output_l1[hi * TILESIZE_W + wi][ki];
+    if(isFirst)
+     output_l2_reduction[ko * H * W + h * W + w][ki]
+      = output_l1[hi * TILESIZE_W + wi][ki];
+    else
+     output_l2_reduction[ko * H * W + h * W + w][ki]
+      += output_l1[hi * TILESIZE_W + wi][ki];
+    output_l2[ko * H * W + h * W + w][ki]
+      = output_l2_reduction[ko * H * W + h * W + w][ki];
    }
   }
  }
@@ -67426,12 +67478,7 @@ void doSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
 
 
 
-
-
-   MACTYPE tmp = (isFirst)?(0):(output_l1_local[(i - 4 + 1) - ki][ki]);
-   output_l1_local[(i - 4 + 1) - ki][ki] =
-         tmp + output_reg[ki][(4 - 1)];
-   output_l1[((i - 4 + 1) - ki)][ki] = output_l1_local[(i - 4 + 1) - ki][ki];
+   output_l1[((i - 4 + 1) - ki)][ki] = output_reg[ki][(4 - 1)];
   }
  }
 }
@@ -67449,16 +67496,17 @@ void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete
  LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
-#pragma HLS LOOP_TRIPCOUNT max=10 min=10
+#pragma HLS LOOP_TRIPCOUNT max=1 min=1
   LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
-#pragma HLS LOOP_TRIPCOUNT max=10 min=10
+#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 #pragma HLS loop_flatten
-   LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) { {
+   LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) {
+#pragma HLS LOOP_TRIPCOUNT max=55 min=55
+    {
 
 
 
 
-#pragma HLS LOOP_TRIPCOUNT max=10000 min=10000
 #pragma HLS DEPENDENCE variable=output_l1
 #pragma HLS DEPENDENCE variable=output_l1_local
 #pragma HLS pipeline rewind
@@ -67475,68 +67523,83 @@ void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
  }
 }
 
+DPTYPE bias_l2[8][4];
+DPTYPE weight_l2[2304][4];
+DPTYPE data_l2[2048][4];
+MACTYPE output_l2[1568][4];
+MACTYPE output_l2_reduction[1568][4];
+
 void Conv_sysarr(
-  hls::stream<k2k_data> &param_in,
-  hls::stream<k2k_data> &bias_in,
-  hls::stream<k2k_data> &weight_in,
-  hls::stream<k2k_data> &data_in,
-  hls::stream<k2k_data> &conv_out) {
+  NPU_PARAM param,
+  DPTYPE *bias_in,
+  DPTYPE *weight_in,
+  DPTYPE *data_in,
+  MACTYPE *conv_out) {
 #pragma HLS expression_balance
 
- DPTYPE bias_l2[16][4];
- DPTYPE weight_l2[589824][4];
- DPTYPE data_l2[817216][4];
- MACTYPE output_l2[802816][4];
 
-
-# 172 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 227 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=bias_l2 dim=2 complete
-# 172 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 227 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 173 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 228 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=weight_l2 dim=2 complete
-# 173 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 228 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 174 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 229 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=data_l2 dim=2 complete
-# 174 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 229 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
-# 175 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 230 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 #pragma HLS ARRAY_PARTITION variable=output_l2 dim=2 complete
-# 175 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+# 230 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
 
- k2k_data param_tmp;
- k2k_data bias_tmp;
- k2k_data weight_tmp;
- k2k_data input_tmp;
+# 231 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
+#pragma HLS ARRAY_PARTITION variable=output_l2_reduction dim=2 complete
+# 231 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 
- param_tmp = param_in.read();
- uint K = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint C = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint WH = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint WH_in = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint RS = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint TILESIZE_W = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint TILESIZE_H = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint TILESIZE_R = (uint) param_tmp.data(31, 0);
- param_tmp = param_in.read();
- uint TILESIZE_S = (uint) param_tmp.data(31, 0);
 
- uint TILES_W = WH / TILESIZE_W;
- uint TILES_H = WH / TILESIZE_H;
- uint TILES_R = RS / TILESIZE_R;
- uint TILES_S = RS / TILESIZE_S;
+ uint K = param.K;
+ uint C = param.C;
+ uint WH = param.WH;
+ uint WH_in = param.WH_in;
+ uint RS = param.RS;
+ uint L2_TILENUM_K = param.L2_TILENUM_K;
+ uint L2_TILENUM_C = param.L2_TILENUM_C;
+ uint L2_TILENUM_W = param.L2_TILENUM_W;
+ uint L2_TILENUM_H = param.L2_TILENUM_H;
+ uint L2_TILENUM_R = param.L2_TILENUM_R;
+ uint L2_TILENUM_S = param.L2_TILENUM_S;
+ uint K_L2 = param.K_L2;
+ uint C_L2 = param.C_L2;
+ uint W_L2 = param.W_L2;
+ uint H_L2 = param.H_L2;
+ uint W_in_L2 = param.W_in_L2;
+ uint H_in_L2 = param.H_in_L2;
+ uint R_L2 = param.R_L2;
+ uint S_L2 = param.S_L2;
+ uint L1_TILENUM_K = param.L1_TILENUM_K;
+ uint L1_TILENUM_C = param.L1_TILENUM_C;
+ uint L1_TILENUM_W = param.L1_TILENUM_W;
+ uint L1_TILENUM_H = param.L1_TILENUM_H;
+ uint L1_TILENUM_R = param.L1_TILENUM_R;
+ uint L1_TILENUM_S = param.L1_TILENUM_S;
+ uint K_L1 = param.K_L1;
+ uint C_L1 = param.C_L1;
+ uint W_L1 = param.W_L1;
+ uint H_L1 = param.H_L1;
+ uint W_in_L1 = param.W_in_L1;
+ uint H_in_L1 = param.H_in_L1;
+ uint R_L1 = param.R_L1;
+ uint S_L1 = param.S_L1;
+ uint TILESIZE_W =param.TILESIZE_W;
+ uint TILESIZE_H =param.TILESIZE_H;
+ uint TILESIZE_R =param.TILESIZE_R;
+ uint TILESIZE_S =param.TILESIZE_S;
 
  const uint input_rows = TILESIZE_H * TILESIZE_W + (4 - 1) + (4 - 1);
  const uint bubble = (4 - 1) + (4 - 1);
@@ -67544,96 +67607,153 @@ void Conv_sysarr(
  const uint bubble_w = bubble % TILESIZE_W;
 
 
- for (unsigned int ko = 0; ko < K/4; ko++) {
+ LOOP_K_MOST_OUTER: for (int kmo = 0; kmo < L2_TILENUM_K; kmo++) {
 #pragma HLS loop_tripcount min=4 max=4
-  bias_tmp = bias_in.read();
-  for (unsigned int ki = 0; ki < 4; ki++) {
-   unsigned int v = ki;
-   bias_l2[ko][ki] = (DPTYPE) bias_tmp.data((v+1)*8 -1, v*8);
-  }
- }
-
- for (unsigned int crs = 0; crs < C * RS * RS; crs++) {
-#pragma HLS loop_tripcount min=36 max=36
-  for (unsigned int ko = 0; ko < K / 4; ko++) {
-#pragma HLS loop_tripcount min=4 max=4
-   weight_tmp = weight_in.read();
-   for (unsigned int ki = 0; ki < 4; ki++) {
-    unsigned int kcrs = ko*C*RS*RS + crs;
-    unsigned int v = ki;
-    weight_l2[kcrs][ki] = (DPTYPE) weight_tmp.data((v+1)*8 -1, v*8);
-   }
-  }
- }
-
- for(unsigned int wh = 0; wh < WH_in * WH_in; wh++) {
-#pragma HLS loop_tripcount min=81 max=81
-  for (unsigned int co = 0; co < C/4; co++) {
+ LOOP_C_MOST_OUTER: for (int cmo = 0; cmo < L2_TILENUM_C; cmo++) {
 #pragma HLS loop_tripcount min=1 max=1
-   input_tmp = data_in.read();
-   for(unsigned int ci = 0; ci < 4; ci++) {
-    unsigned int v = ci;
-    data_l2[co*WH_in * WH_in + wh][ci] = (DPTYPE) input_tmp.data((v+1)*8 -1, v*8);
+ LOOP_H_MOST_OUTER: for (int hmo = 0; hmo < L2_TILENUM_H; hmo++) {
+#pragma HLS loop_tripcount min=2 max=2
+ LOOP_W_MOST_OUTER: for (int wmo = 0; wmo < L2_TILENUM_W; wmo++) {
+#pragma HLS loop_tripcount min=2 max=2
+ LOOP_R_MOST_OUTER: for (int rmo = 0; rmo < L2_TILENUM_R; rmo++) {
+#pragma HLS loop_tripcount min=1 max=1
+ LOOP_S_MOST_OUTER: for (int smo = 0; smo < L2_TILENUM_S; smo++) {
+#pragma HLS loop_tripcount min=1 max=1
+#pragma HLS dataflow
+#pragma HLS stable variable=conv_out
+#pragma HLS stable variable=bias_in
+#pragma HLS stable variable=weight_in
+#pragma HLS stable variable=data_in
+#pragma HLS stable variable=output_l2
+#pragma HLS stable variable=output_l2_reduction
+#pragma HLS stable variable=data_l2
+#pragma HLS stable variable=weight_l2
+
+
+
+
+
+  BIAS_DRAM_READ: for (unsigned int ko = 0; ko < K_L2/4; ko++) {
+#pragma HLS loop_tripcount min=1 max=1
+   for (unsigned int ki = 0; ki < 4; ki++) {
+#pragma HLS unroll
+    unsigned int global_k = (kmo*(K_L2/4) + ko)*4 + ki;
+    unsigned int v = ki;
+    bias_l2[ko][ki] = bias_in[global_k];
    }
   }
- }
 
-
- LOOP_K_OUTER: for (int ko = 0; ko < K / 4; ko++) {
+  WEIGHT_DRAM_READ: for (unsigned int c = 0; c < C_L2; c++) {
 #pragma HLS loop_tripcount min=4 max=4
-  LOOP_C_OUTER: for (int co = 0; co < C / 4; co++) {
-#pragma HLS loop_tripcount min=10 max=10
-   LOOP_H_OUTER: for (int ho = 0; ho < TILES_H; ho++) {
-#pragma HLS loop_tripcount min=10 max=10
-    LOOP_W_OUTER: for (int wo = 0; wo < TILES_W; wo++) {
-#pragma HLS loop_tripcount min=10 max=10
-     LOOP_R_OUTER: for (int ro = 0; ro < TILES_R; ro++) {
+   for (unsigned int r = 0; r < R_L2; r++) {
 #pragma HLS loop_tripcount min=3 max=3
-      LOOP_S_OUTER: for (int so = 0; so < TILES_S; so++) {
+    for (unsigned int s = 0; s < S_L2; s++) {
+#pragma HLS loop_tripcount min=3 max=3
+     for (unsigned int ko = 0; ko < K_L2 / 4; ko++) {
+#pragma HLS loop_tripcount min=1 max=1
+      for (unsigned int ki = 0; ki < 4; ki++) {
+#pragma HLS unroll
+       unsigned int global_kcrs = ((kmo*(K_L2/4)+ko)*C*RS*RS + (cmo*C_L2+c)*RS*RS + (rmo*R_L2+r)*RS + (smo*S_L2 + s))*4 + ki;
+       unsigned int kcrs = ko*C_L2*R_L2*S_L2 + c*R_L2*S_L2 + r*S_L2 + s;
+       unsigned int v = ki;
+       weight_l2[kcrs][ki] = weight_in[global_kcrs];
+      }
+     }
+    }
+   }
+  }
 
+  INPUT_DRAM_READ: for(unsigned int h = 0; h < H_in_L2; h++) {
+#pragma HLS loop_tripcount min=9 max=9
+   for(unsigned int w = 0; w < W_in_L2; w++) {
+#pragma HLS loop_tripcount min=9 max=9
+    for (unsigned int co = 0; co < C_L2/4; co++) {
+#pragma HLS loop_tripcount min=1 max=1
+     for(unsigned int ci = 0; ci < 4; ci++) {
+#pragma HLS unroll
+      unsigned int global_chw = ((cmo*(C_L2/4)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*4 + ci;
+      unsigned int chw = co*H_in_L2*W_in_L2 + h*W_in_L2 + w;
+      unsigned int v = ci;
+      data_l2[chw][ci] = data_in[global_chw];
+     }
+    }
+   }
+  }
+
+  LOOP_K_OUTER: for (int ko = 0; ko < L1_TILENUM_K; ko++) {
+#pragma HLS loop_tripcount min=1 max=1
+  LOOP_C_OUTER: for (int co = 0; co < L1_TILENUM_C; co++) {
+#pragma HLS loop_tripcount min=1 max=1
+  LOOP_H_OUTER: for (int ho = 0; ho < L1_TILENUM_H; ho++) {
+#pragma HLS loop_tripcount min=1 max=1
+  LOOP_W_OUTER: for (int wo = 0; wo < L1_TILENUM_W; wo++) {
+#pragma HLS loop_tripcount min=1 max=1
+  LOOP_R_OUTER: for (int ro = 0; ro < L1_TILENUM_R; ro++) {
 #pragma HLS loop_tripcount min=3 max=3
+  LOOP_S_OUTER: for (int so = 0; so < L1_TILENUM_S; so++) {
+#pragma HLS loop_tripcount min=3 max=3
+
+#pragma HLS stable variable=output_l2
+#pragma HLS stable variable=output_l2_reduction
+#pragma HLS stable variable=data_l2
+#pragma HLS stable variable=weight_l2
 #pragma HLS dataflow
-       bool isFirst;
-       if(ro==0 && so==0) isFirst = true;
-       else isFirst = false;
 
-       DPTYPE weight_regfile[4][4];
-       DPTYPE data_l1[196][4];
-       MACTYPE output_l1[196][4];
-       static MACTYPE output_l1_local[196][4];
+   bool isFirst;
+   if(co==0 && ro==0 && so==0) isFirst = true;
+   else isFirst = false;
+
+   DPTYPE weight_regfile[4][4];
+   DPTYPE data_l1[49][4];
+   MACTYPE output_l1[49][4];
+   static MACTYPE output_l1_local[49][4];
 #pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
 #pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
 
 
-       runWeight2Reg(weight_regfile, weight_l2, C, RS, ko, co, ro, so);
-       runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, WH_in);
-       runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
-          input_rows,
-          bubble_h, bubble_w,
-          TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
-       runOutputL1toL2(output_l1, output_l2, TILESIZE_H, TILESIZE_W, ko, ho, wo, WH);
-      }
-     }
+   runWeight2Reg(weight_regfile, weight_l2, C_L2, R_L2, S_L2, ko, co, ro, so);
+   runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, W_in_L2, H_in_L2);
+   runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
+      input_rows,
+      bubble_h, bubble_w,
+      TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+   runOutputL1toL2(output_l1, output_l2, output_l2_reduction, TILESIZE_H, TILESIZE_W, ko, ho, wo, W_L2, H_L2, isFirst);
+  }
+  }
+  }
+  }
+  }
+  }
 
+  bool isFirst;
+  if(cmo==0 && rmo==0 && smo==0) isFirst = true;
+  else isFirst = false;
+  OUTPUT_DRAM_WRITE: for (unsigned int h = 0; h < H_L2; h++) {
+#pragma HLS loop_tripcount min=7 max=7
+   for (unsigned int w = 0; w < W_L2; w++) {
+#pragma HLS loop_tripcount min=7 max=7
+    for (unsigned int ko = 0; ko < (K_L2 / 4); ko++) {
+#pragma HLS loop_tripcount min=1 max=1
+     for (unsigned int ki = 0; ki < 4; ki++) {
+#pragma HLS unroll
+      unsigned int global_khw = ((kmo*(K_L2/4)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*4 + ki;
+      unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
+      unsigned int v = ki;
+      if(isFirst)
+       conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
+      else
+       conv_out[global_khw] += output_l2[khw][ki];
+     }
     }
    }
   }
  }
-
- for (unsigned int wh = 0; wh < WH * WH; wh++) {
-#pragma HLS loop_tripcount min=49 max=49
-  for (unsigned int ko = 0; ko < (K / 4); ko++) {
-#pragma HLS loop_tripcount min=4 max=4
-   k2k_data output_tmp;
-   for (unsigned int ki = 0; ki < 4; ki++) {
-    unsigned int v = ki;
-    output_tmp.data((v+1)*32 -1, v*32) = output_l2[ko * WH * WH + wh][ki]
-                 + bias_l2[ko][ki];
-   }
-   conv_out.write(output_tmp);
-  }
+ }
+ }
+ }
+ }
  }
 
  printf("Kernel coreConv compelete !!!\n");

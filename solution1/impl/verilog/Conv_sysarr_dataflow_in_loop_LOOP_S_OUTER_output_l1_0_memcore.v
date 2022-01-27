@@ -6,8 +6,8 @@
 module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
 parameter DWIDTH = 32;
-parameter AWIDTH = 9;
-parameter MEM_SIZE = 392;
+parameter AWIDTH = 7;
+parameter MEM_SIZE = 98;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -64,8 +64,8 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore(
     q1);
 
 parameter DataWidth = 32'd32;
-parameter AddressRange = 32'd392;
-parameter AddressWidth = 32'd9;
+parameter AddressRange = 32'd98;
+parameter AddressWidth = 32'd7;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

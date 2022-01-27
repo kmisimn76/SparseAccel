@@ -11,8 +11,8 @@ entity Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 32; 
-            AWIDTH     : integer := 9; 
-            MEM_SIZE    : integer := 392
+            AWIDTH     : integer := 7; 
+            MEM_SIZE    : integer := 98
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -102,8 +102,8 @@ use IEEE.std_logic_1164.all;
 entity Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore is
     generic (
         DataWidth : INTEGER := 32;
-        AddressRange : INTEGER := 392;
-        AddressWidth : INTEGER := 9);
+        AddressRange : INTEGER := 98;
+        AddressWidth : INTEGER := 7);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

@@ -4,7 +4,7 @@
 // ==============================================================
 `timescale 1 ns / 1 ps
 
-(* use_dsp = "yes" *) module Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_2(
+(* use_dsp = "yes" *) module Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_9(
     input  [8 - 1:0] in0,
     input  [8 - 1:0] in1,
     input  [32 - 1:0] in2,
@@ -46,7 +46,7 @@ output[dout_WIDTH - 1:0] dout;
 
 
 
-Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_2 Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_2_U(
+Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_9 Conv_sysarr_mac_muladd_8s_8s_32ns_32_1_1_DSP48_9_U(
     .in0( din0 ),
     .in1( din1 ),
     .in2( din2 ),

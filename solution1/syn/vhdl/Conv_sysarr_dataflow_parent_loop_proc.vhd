@@ -11,155 +11,209 @@ use IEEE.numeric_std.all;
 
 entity Conv_sysarr_dataflow_parent_loop_proc is
 port (
-    TILES_S : IN STD_LOGIC_VECTOR (31 downto 0);
-    weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce0 : OUT STD_LOGIC;
-    weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we0 : OUT STD_LOGIC;
-    weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce1 : OUT STD_LOGIC;
-    weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we1 : OUT STD_LOGIC;
-    weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce0 : OUT STD_LOGIC;
-    weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we0 : OUT STD_LOGIC;
-    weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce1 : OUT STD_LOGIC;
-    weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we1 : OUT STD_LOGIC;
-    weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce0 : OUT STD_LOGIC;
-    weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we0 : OUT STD_LOGIC;
-    weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce1 : OUT STD_LOGIC;
-    weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we1 : OUT STD_LOGIC;
-    weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce0 : OUT STD_LOGIC;
-    weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we0 : OUT STD_LOGIC;
-    weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce1 : OUT STD_LOGIC;
-    weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we1 : OUT STD_LOGIC;
-    p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-    ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-    co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
-    ro : IN STD_LOGIC_VECTOR (31 downto 0);
-    data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_0_ce0 : OUT STD_LOGIC;
-    data_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_0_we0 : OUT STD_LOGIC;
-    data_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_0_ce1 : OUT STD_LOGIC;
-    data_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_0_we1 : OUT STD_LOGIC;
-    data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_1_ce0 : OUT STD_LOGIC;
-    data_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_1_we0 : OUT STD_LOGIC;
-    data_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_1_ce1 : OUT STD_LOGIC;
-    data_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_1_we1 : OUT STD_LOGIC;
-    data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_2_ce0 : OUT STD_LOGIC;
-    data_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_2_we0 : OUT STD_LOGIC;
-    data_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_2_ce1 : OUT STD_LOGIC;
-    data_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_2_we1 : OUT STD_LOGIC;
-    data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_3_ce0 : OUT STD_LOGIC;
-    data_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_3_we0 : OUT STD_LOGIC;
-    data_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    data_l2_3_ce1 : OUT STD_LOGIC;
-    data_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    data_l2_3_we1 : OUT STD_LOGIC;
-    p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-    ho : IN STD_LOGIC_VECTOR (19 downto 0);
-    wo : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_0_ce0 : OUT STD_LOGIC;
-    output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_we0 : OUT STD_LOGIC;
-    output_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_0_ce1 : OUT STD_LOGIC;
-    output_l2_0_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_we1 : OUT STD_LOGIC;
-    output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_1_ce0 : OUT STD_LOGIC;
-    output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_1_we0 : OUT STD_LOGIC;
-    output_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_1_ce1 : OUT STD_LOGIC;
-    output_l2_1_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_1_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_1_we1 : OUT STD_LOGIC;
-    output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_2_ce0 : OUT STD_LOGIC;
-    output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_2_we0 : OUT STD_LOGIC;
-    output_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_2_ce1 : OUT STD_LOGIC;
-    output_l2_2_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_2_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_2_we1 : OUT STD_LOGIC;
-    output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_3_ce0 : OUT STD_LOGIC;
-    output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_3_we0 : OUT STD_LOGIC;
-    output_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    output_l2_3_ce1 : OUT STD_LOGIC;
-    output_l2_3_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_3_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_3_we1 : OUT STD_LOGIC;
-    p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
+    param_L2_TILENUM_S : IN STD_LOGIC_VECTOR (31 downto 0);
+    param : IN STD_LOGIC_VECTOR (1183 downto 0);
+    kmo : IN STD_LOGIC_VECTOR (29 downto 0);
+    bias_in : IN STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem0_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem0_AWREADY : IN STD_LOGIC;
+    m_axi_gmem0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_WVALID : OUT STD_LOGIC;
+    m_axi_gmem0_WREADY : IN STD_LOGIC;
+    m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_WLAST : OUT STD_LOGIC;
+    m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem0_ARREADY : IN STD_LOGIC;
+    m_axi_gmem0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_RVALID : IN STD_LOGIC;
+    m_axi_gmem0_RREADY : OUT STD_LOGIC;
+    m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem0_RLAST : IN STD_LOGIC;
+    m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_BVALID : IN STD_LOGIC;
+    m_axi_gmem0_BREADY : OUT STD_LOGIC;
+    m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    cmo : IN STD_LOGIC_VECTOR (31 downto 0);
+    rmo : IN STD_LOGIC_VECTOR (31 downto 0);
+    weight_in : IN STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem1_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem1_AWREADY : IN STD_LOGIC;
+    m_axi_gmem1_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem1_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem1_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem1_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem1_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_WVALID : OUT STD_LOGIC;
+    m_axi_gmem1_WREADY : IN STD_LOGIC;
+    m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_WLAST : OUT STD_LOGIC;
+    m_axi_gmem1_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem1_ARREADY : IN STD_LOGIC;
+    m_axi_gmem1_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem1_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem1_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem1_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem1_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem1_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_RVALID : IN STD_LOGIC;
+    m_axi_gmem1_RREADY : OUT STD_LOGIC;
+    m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem1_RLAST : IN STD_LOGIC;
+    m_axi_gmem1_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_BVALID : IN STD_LOGIC;
+    m_axi_gmem1_BREADY : OUT STD_LOGIC;
+    m_axi_gmem1_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem1_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem1_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    hmo : IN STD_LOGIC_VECTOR (29 downto 0);
+    wmo : IN STD_LOGIC_VECTOR (29 downto 0);
+    data_in : IN STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem2_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem2_AWREADY : IN STD_LOGIC;
+    m_axi_gmem2_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem2_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem2_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_WVALID : OUT STD_LOGIC;
+    m_axi_gmem2_WREADY : IN STD_LOGIC;
+    m_axi_gmem2_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem2_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_WLAST : OUT STD_LOGIC;
+    m_axi_gmem2_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem2_ARREADY : IN STD_LOGIC;
+    m_axi_gmem2_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem2_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem2_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem2_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem2_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_RVALID : IN STD_LOGIC;
+    m_axi_gmem2_RREADY : OUT STD_LOGIC;
+    m_axi_gmem2_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+    m_axi_gmem2_RLAST : IN STD_LOGIC;
+    m_axi_gmem2_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_BVALID : IN STD_LOGIC;
+    m_axi_gmem2_BREADY : OUT STD_LOGIC;
+    m_axi_gmem2_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem2_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem2_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_AWVALID : OUT STD_LOGIC;
+    m_axi_gmem3_AWREADY : IN STD_LOGIC;
+    m_axi_gmem3_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem3_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem3_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem3_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem3_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_WVALID : OUT STD_LOGIC;
+    m_axi_gmem3_WREADY : IN STD_LOGIC;
+    m_axi_gmem3_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem3_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_WLAST : OUT STD_LOGIC;
+    m_axi_gmem3_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_ARVALID : OUT STD_LOGIC;
+    m_axi_gmem3_ARREADY : IN STD_LOGIC;
+    m_axi_gmem3_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+    m_axi_gmem3_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem3_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem3_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+    m_axi_gmem3_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+    m_axi_gmem3_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_RVALID : IN STD_LOGIC;
+    m_axi_gmem3_RREADY : OUT STD_LOGIC;
+    m_axi_gmem3_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+    m_axi_gmem3_RLAST : IN STD_LOGIC;
+    m_axi_gmem3_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_BVALID : IN STD_LOGIC;
+    m_axi_gmem3_BREADY : OUT STD_LOGIC;
+    m_axi_gmem3_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+    m_axi_gmem3_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+    m_axi_gmem3_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+    conv_out : IN STD_LOGIC_VECTOR (63 downto 0);
     ap_clk : IN STD_LOGIC;
     ap_rst : IN STD_LOGIC;
-    p_read_ap_vld : IN STD_LOGIC;
-    p_read1_ap_vld : IN STD_LOGIC;
-    ko_2_ap_vld : IN STD_LOGIC;
-    co_1_ap_vld : IN STD_LOGIC;
-    ro_ap_vld : IN STD_LOGIC;
-    p_read2_ap_vld : IN STD_LOGIC;
-    p_read3_ap_vld : IN STD_LOGIC;
-    ho_ap_vld : IN STD_LOGIC;
-    wo_ap_vld : IN STD_LOGIC;
-    p_read4_ap_vld : IN STD_LOGIC;
-    p_read5_ap_vld : IN STD_LOGIC;
-    p_read6_ap_vld : IN STD_LOGIC;
-    p_read7_ap_vld : IN STD_LOGIC;
+    param_ap_vld : IN STD_LOGIC;
+    kmo_ap_vld : IN STD_LOGIC;
+    bias_in_ap_vld : IN STD_LOGIC;
+    cmo_ap_vld : IN STD_LOGIC;
+    rmo_ap_vld : IN STD_LOGIC;
+    weight_in_ap_vld : IN STD_LOGIC;
+    hmo_ap_vld : IN STD_LOGIC;
+    wmo_ap_vld : IN STD_LOGIC;
+    data_in_ap_vld : IN STD_LOGIC;
+    conv_out_ap_vld : IN STD_LOGIC;
     ap_start : IN STD_LOGIC;
     ap_done : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
@@ -169,278 +223,373 @@ end;
 
 
 architecture behav of Conv_sysarr_dataflow_parent_loop_proc is 
-    constant ap_const_lv20_0 : STD_LOGIC_VECTOR (19 downto 0) := "00000000000000000000";
     constant ap_const_logic_0 : STD_LOGIC := '0';
-    constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
-    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_logic_1 : STD_LOGIC := '1';
     constant ap_const_boolean_1 : BOOLEAN := true;
+    constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     constant ap_const_lv32_1 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000001";
+    constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
+    constant ap_const_lv1_0 : STD_LOGIC_VECTOR (0 downto 0) := "0";
+    constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
+    constant ap_const_lv64_0 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000000";
+    constant ap_const_lv64_1 : STD_LOGIC_VECTOR (63 downto 0) := "0000000000000000000000000000000000000000000000000000000000000001";
+    constant ap_const_lv3_0 : STD_LOGIC_VECTOR (2 downto 0) := "000";
+    constant ap_const_lv3_1 : STD_LOGIC_VECTOR (2 downto 0) := "001";
+    constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
+    constant ap_const_lv4_1 : STD_LOGIC_VECTOR (3 downto 0) := "0001";
+    constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
     constant ap_const_lv8_1 : STD_LOGIC_VECTOR (7 downto 0) := "00000001";
 
 attribute shreg_extract : string;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address1 : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we1 : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_ap_start : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_ap_done : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WDATA : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WSTRB : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WLAST : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_RREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_BREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WDATA : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WSTRB : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WLAST : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_RREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_BREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WDATA : STD_LOGIC_VECTOR (7 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WSTRB : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WLAST : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_RREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_BREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WDATA : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WSTRB : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WLAST : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARVALID : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARADDR : STD_LOGIC_VECTOR (63 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARID : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLEN : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARSIZE : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARBURST : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLOCK : STD_LOGIC_VECTOR (1 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARCACHE : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARPROT : STD_LOGIC_VECTOR (2 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARQOS : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARREGION : STD_LOGIC_VECTOR (3 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARUSER : STD_LOGIC_VECTOR (0 downto 0);
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_RREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_BREADY : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_start : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_idle : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue : STD_LOGIC;
     signal ap_sync_continue : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
     signal loop_dataflow_input_count : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal loop_dataflow_output_count : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
     signal bound_minus_1 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_start_full_n : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_U0_start_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_start_full_n : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_MOST_OUTER_U0_start_write : STD_LOGIC;
 
-    component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER IS
+    component Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER IS
     port (
+        param : IN STD_LOGIC_VECTOR (1183 downto 0);
+        kmo : IN STD_LOGIC_VECTOR (29 downto 0);
+        bias_in : IN STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem0_AWREADY : IN STD_LOGIC;
+        m_axi_gmem0_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem0_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem0_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_WVALID : OUT STD_LOGIC;
+        m_axi_gmem0_WREADY : IN STD_LOGIC;
+        m_axi_gmem0_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem0_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_WLAST : OUT STD_LOGIC;
+        m_axi_gmem0_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem0_ARREADY : IN STD_LOGIC;
+        m_axi_gmem0_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem0_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem0_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem0_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem0_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem0_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_RVALID : IN STD_LOGIC;
+        m_axi_gmem0_RREADY : OUT STD_LOGIC;
+        m_axi_gmem0_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem0_RLAST : IN STD_LOGIC;
+        m_axi_gmem0_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_BVALID : IN STD_LOGIC;
+        m_axi_gmem0_BREADY : OUT STD_LOGIC;
+        m_axi_gmem0_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem0_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem0_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        cmo : IN STD_LOGIC_VECTOR (31 downto 0);
+        rmo : IN STD_LOGIC_VECTOR (31 downto 0);
+        smo : IN STD_LOGIC_VECTOR (31 downto 0);
+        weight_in : IN STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem1_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem1_AWREADY : IN STD_LOGIC;
+        m_axi_gmem1_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem1_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem1_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem1_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem1_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_WVALID : OUT STD_LOGIC;
+        m_axi_gmem1_WREADY : IN STD_LOGIC;
+        m_axi_gmem1_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem1_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_WLAST : OUT STD_LOGIC;
+        m_axi_gmem1_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem1_ARREADY : IN STD_LOGIC;
+        m_axi_gmem1_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem1_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem1_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem1_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem1_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem1_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_RVALID : IN STD_LOGIC;
+        m_axi_gmem1_RREADY : OUT STD_LOGIC;
+        m_axi_gmem1_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem1_RLAST : IN STD_LOGIC;
+        m_axi_gmem1_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_BVALID : IN STD_LOGIC;
+        m_axi_gmem1_BREADY : OUT STD_LOGIC;
+        m_axi_gmem1_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem1_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem1_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        hmo : IN STD_LOGIC_VECTOR (29 downto 0);
+        wmo : IN STD_LOGIC_VECTOR (29 downto 0);
+        data_in : IN STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem2_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem2_AWREADY : IN STD_LOGIC;
+        m_axi_gmem2_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem2_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_WVALID : OUT STD_LOGIC;
+        m_axi_gmem2_WREADY : IN STD_LOGIC;
+        m_axi_gmem2_WDATA : OUT STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem2_WSTRB : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_WLAST : OUT STD_LOGIC;
+        m_axi_gmem2_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem2_ARREADY : IN STD_LOGIC;
+        m_axi_gmem2_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem2_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem2_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem2_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem2_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_RVALID : IN STD_LOGIC;
+        m_axi_gmem2_RREADY : OUT STD_LOGIC;
+        m_axi_gmem2_RDATA : IN STD_LOGIC_VECTOR (7 downto 0);
+        m_axi_gmem2_RLAST : IN STD_LOGIC;
+        m_axi_gmem2_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_BVALID : IN STD_LOGIC;
+        m_axi_gmem2_BREADY : OUT STD_LOGIC;
+        m_axi_gmem2_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem2_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem2_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_AWVALID : OUT STD_LOGIC;
+        m_axi_gmem3_AWREADY : IN STD_LOGIC;
+        m_axi_gmem3_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem3_AWID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_AWLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem3_AWSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem3_AWBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_AWLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_AWCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_AWPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem3_AWQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_AWREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_AWUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_WVALID : OUT STD_LOGIC;
+        m_axi_gmem3_WREADY : IN STD_LOGIC;
+        m_axi_gmem3_WDATA : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem3_WSTRB : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_WLAST : OUT STD_LOGIC;
+        m_axi_gmem3_WID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_WUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_ARVALID : OUT STD_LOGIC;
+        m_axi_gmem3_ARREADY : IN STD_LOGIC;
+        m_axi_gmem3_ARADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
+        m_axi_gmem3_ARID : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_ARLEN : OUT STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem3_ARSIZE : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem3_ARBURST : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_ARLOCK : OUT STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_ARCACHE : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_ARPROT : OUT STD_LOGIC_VECTOR (2 downto 0);
+        m_axi_gmem3_ARQOS : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_ARREGION : OUT STD_LOGIC_VECTOR (3 downto 0);
+        m_axi_gmem3_ARUSER : OUT STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_RVALID : IN STD_LOGIC;
+        m_axi_gmem3_RREADY : OUT STD_LOGIC;
+        m_axi_gmem3_RDATA : IN STD_LOGIC_VECTOR (31 downto 0);
+        m_axi_gmem3_RLAST : IN STD_LOGIC;
+        m_axi_gmem3_RID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_RUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_RRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_BVALID : IN STD_LOGIC;
+        m_axi_gmem3_BREADY : OUT STD_LOGIC;
+        m_axi_gmem3_BRESP : IN STD_LOGIC_VECTOR (1 downto 0);
+        m_axi_gmem3_BID : IN STD_LOGIC_VECTOR (0 downto 0);
+        m_axi_gmem3_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
+        conv_out : IN STD_LOGIC_VECTOR (63 downto 0);
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
-        weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_0_ce0 : OUT STD_LOGIC;
-        weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_we0 : OUT STD_LOGIC;
-        weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_0_ce1 : OUT STD_LOGIC;
-        weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_0_we1 : OUT STD_LOGIC;
-        weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_1_ce0 : OUT STD_LOGIC;
-        weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_we0 : OUT STD_LOGIC;
-        weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_1_ce1 : OUT STD_LOGIC;
-        weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_we1 : OUT STD_LOGIC;
-        weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_2_ce0 : OUT STD_LOGIC;
-        weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_we0 : OUT STD_LOGIC;
-        weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_2_ce1 : OUT STD_LOGIC;
-        weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_we1 : OUT STD_LOGIC;
-        weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_3_ce0 : OUT STD_LOGIC;
-        weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_we0 : OUT STD_LOGIC;
-        weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_3_ce1 : OUT STD_LOGIC;
-        weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_we1 : OUT STD_LOGIC;
-        p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-        ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-        co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
-        ro : IN STD_LOGIC_VECTOR (31 downto 0);
-        so : IN STD_LOGIC_VECTOR (31 downto 0);
-        data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_0_ce0 : OUT STD_LOGIC;
-        data_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_0_we0 : OUT STD_LOGIC;
-        data_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_0_ce1 : OUT STD_LOGIC;
-        data_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_0_we1 : OUT STD_LOGIC;
-        data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_1_ce0 : OUT STD_LOGIC;
-        data_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_1_we0 : OUT STD_LOGIC;
-        data_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_1_ce1 : OUT STD_LOGIC;
-        data_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_1_we1 : OUT STD_LOGIC;
-        data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_2_ce0 : OUT STD_LOGIC;
-        data_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_2_we0 : OUT STD_LOGIC;
-        data_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_2_ce1 : OUT STD_LOGIC;
-        data_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_2_we1 : OUT STD_LOGIC;
-        data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_3_ce0 : OUT STD_LOGIC;
-        data_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_3_we0 : OUT STD_LOGIC;
-        data_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_3_ce1 : OUT STD_LOGIC;
-        data_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_3_we1 : OUT STD_LOGIC;
-        p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-        ho : IN STD_LOGIC_VECTOR (19 downto 0);
-        wo : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_0_ce0 : OUT STD_LOGIC;
-        output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_we0 : OUT STD_LOGIC;
-        output_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_0_ce1 : OUT STD_LOGIC;
-        output_l2_0_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_we1 : OUT STD_LOGIC;
-        output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_1_ce0 : OUT STD_LOGIC;
-        output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_1_we0 : OUT STD_LOGIC;
-        output_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_1_ce1 : OUT STD_LOGIC;
-        output_l2_1_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_1_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_1_we1 : OUT STD_LOGIC;
-        output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_2_ce0 : OUT STD_LOGIC;
-        output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_2_we0 : OUT STD_LOGIC;
-        output_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_2_ce1 : OUT STD_LOGIC;
-        output_l2_2_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_2_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_2_we1 : OUT STD_LOGIC;
-        output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_3_ce0 : OUT STD_LOGIC;
-        output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_3_we0 : OUT STD_LOGIC;
-        output_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        output_l2_3_ce1 : OUT STD_LOGIC;
-        output_l2_3_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_3_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_3_we1 : OUT STD_LOGIC;
-        p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read_ap_vld : IN STD_LOGIC;
-        p_read1_ap_vld : IN STD_LOGIC;
-        ko_2_ap_vld : IN STD_LOGIC;
-        co_1_ap_vld : IN STD_LOGIC;
-        ro_ap_vld : IN STD_LOGIC;
-        so_ap_vld : IN STD_LOGIC;
-        p_read2_ap_vld : IN STD_LOGIC;
-        p_read3_ap_vld : IN STD_LOGIC;
-        ho_ap_vld : IN STD_LOGIC;
-        wo_ap_vld : IN STD_LOGIC;
-        p_read4_ap_vld : IN STD_LOGIC;
-        p_read5_ap_vld : IN STD_LOGIC;
-        p_read6_ap_vld : IN STD_LOGIC;
-        p_read7_ap_vld : IN STD_LOGIC;
+        param_ap_vld : IN STD_LOGIC;
+        kmo_ap_vld : IN STD_LOGIC;
+        bias_in_ap_vld : IN STD_LOGIC;
+        cmo_ap_vld : IN STD_LOGIC;
+        rmo_ap_vld : IN STD_LOGIC;
+        smo_ap_vld : IN STD_LOGIC;
+        weight_in_ap_vld : IN STD_LOGIC;
+        hmo_ap_vld : IN STD_LOGIC;
+        wmo_ap_vld : IN STD_LOGIC;
+        data_in_ap_vld : IN STD_LOGIC;
+        conv_out_ap_vld : IN STD_LOGIC;
         ap_start : IN STD_LOGIC;
         ap_done : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
@@ -451,163 +600,217 @@ attribute shreg_extract : string;
 
 
 begin
-    dataflow_in_loop_LOOP_S_OUTER_U0 : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER
+    dataflow_in_loop_LOOP_S_MOST_OUTER_U0 : component Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER
     port map (
+        param => param,
+        kmo => kmo,
+        bias_in => bias_in,
+        m_axi_gmem0_AWVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWVALID,
+        m_axi_gmem0_AWREADY => ap_const_logic_0,
+        m_axi_gmem0_AWADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWADDR,
+        m_axi_gmem0_AWID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWID,
+        m_axi_gmem0_AWLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWLEN,
+        m_axi_gmem0_AWSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWSIZE,
+        m_axi_gmem0_AWBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWBURST,
+        m_axi_gmem0_AWLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWLOCK,
+        m_axi_gmem0_AWCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWCACHE,
+        m_axi_gmem0_AWPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWPROT,
+        m_axi_gmem0_AWQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWQOS,
+        m_axi_gmem0_AWREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWREGION,
+        m_axi_gmem0_AWUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_AWUSER,
+        m_axi_gmem0_WVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WVALID,
+        m_axi_gmem0_WREADY => ap_const_logic_0,
+        m_axi_gmem0_WDATA => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WDATA,
+        m_axi_gmem0_WSTRB => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WSTRB,
+        m_axi_gmem0_WLAST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WLAST,
+        m_axi_gmem0_WID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WID,
+        m_axi_gmem0_WUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_WUSER,
+        m_axi_gmem0_ARVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARVALID,
+        m_axi_gmem0_ARREADY => m_axi_gmem0_ARREADY,
+        m_axi_gmem0_ARADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARADDR,
+        m_axi_gmem0_ARID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARID,
+        m_axi_gmem0_ARLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLEN,
+        m_axi_gmem0_ARSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARSIZE,
+        m_axi_gmem0_ARBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARBURST,
+        m_axi_gmem0_ARLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLOCK,
+        m_axi_gmem0_ARCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARCACHE,
+        m_axi_gmem0_ARPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARPROT,
+        m_axi_gmem0_ARQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARQOS,
+        m_axi_gmem0_ARREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARREGION,
+        m_axi_gmem0_ARUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARUSER,
+        m_axi_gmem0_RVALID => m_axi_gmem0_RVALID,
+        m_axi_gmem0_RREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_RREADY,
+        m_axi_gmem0_RDATA => m_axi_gmem0_RDATA,
+        m_axi_gmem0_RLAST => m_axi_gmem0_RLAST,
+        m_axi_gmem0_RID => m_axi_gmem0_RID,
+        m_axi_gmem0_RUSER => m_axi_gmem0_RUSER,
+        m_axi_gmem0_RRESP => m_axi_gmem0_RRESP,
+        m_axi_gmem0_BVALID => ap_const_logic_0,
+        m_axi_gmem0_BREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_BREADY,
+        m_axi_gmem0_BRESP => ap_const_lv2_0,
+        m_axi_gmem0_BID => ap_const_lv1_0,
+        m_axi_gmem0_BUSER => ap_const_lv1_0,
+        cmo => cmo,
+        rmo => rmo,
+        smo => loop_dataflow_input_count,
+        weight_in => weight_in,
+        m_axi_gmem1_AWVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWVALID,
+        m_axi_gmem1_AWREADY => ap_const_logic_0,
+        m_axi_gmem1_AWADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWADDR,
+        m_axi_gmem1_AWID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWID,
+        m_axi_gmem1_AWLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWLEN,
+        m_axi_gmem1_AWSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWSIZE,
+        m_axi_gmem1_AWBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWBURST,
+        m_axi_gmem1_AWLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWLOCK,
+        m_axi_gmem1_AWCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWCACHE,
+        m_axi_gmem1_AWPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWPROT,
+        m_axi_gmem1_AWQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWQOS,
+        m_axi_gmem1_AWREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWREGION,
+        m_axi_gmem1_AWUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWUSER,
+        m_axi_gmem1_WVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WVALID,
+        m_axi_gmem1_WREADY => ap_const_logic_0,
+        m_axi_gmem1_WDATA => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WDATA,
+        m_axi_gmem1_WSTRB => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WSTRB,
+        m_axi_gmem1_WLAST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WLAST,
+        m_axi_gmem1_WID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WID,
+        m_axi_gmem1_WUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_WUSER,
+        m_axi_gmem1_ARVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARVALID,
+        m_axi_gmem1_ARREADY => m_axi_gmem1_ARREADY,
+        m_axi_gmem1_ARADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARADDR,
+        m_axi_gmem1_ARID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARID,
+        m_axi_gmem1_ARLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLEN,
+        m_axi_gmem1_ARSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARSIZE,
+        m_axi_gmem1_ARBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARBURST,
+        m_axi_gmem1_ARLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLOCK,
+        m_axi_gmem1_ARCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARCACHE,
+        m_axi_gmem1_ARPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARPROT,
+        m_axi_gmem1_ARQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARQOS,
+        m_axi_gmem1_ARREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARREGION,
+        m_axi_gmem1_ARUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARUSER,
+        m_axi_gmem1_RVALID => m_axi_gmem1_RVALID,
+        m_axi_gmem1_RREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_RREADY,
+        m_axi_gmem1_RDATA => m_axi_gmem1_RDATA,
+        m_axi_gmem1_RLAST => m_axi_gmem1_RLAST,
+        m_axi_gmem1_RID => m_axi_gmem1_RID,
+        m_axi_gmem1_RUSER => m_axi_gmem1_RUSER,
+        m_axi_gmem1_RRESP => m_axi_gmem1_RRESP,
+        m_axi_gmem1_BVALID => ap_const_logic_0,
+        m_axi_gmem1_BREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_BREADY,
+        m_axi_gmem1_BRESP => ap_const_lv2_0,
+        m_axi_gmem1_BID => ap_const_lv1_0,
+        m_axi_gmem1_BUSER => ap_const_lv1_0,
+        hmo => hmo,
+        wmo => wmo,
+        data_in => data_in,
+        m_axi_gmem2_AWVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWVALID,
+        m_axi_gmem2_AWREADY => ap_const_logic_0,
+        m_axi_gmem2_AWADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWADDR,
+        m_axi_gmem2_AWID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWID,
+        m_axi_gmem2_AWLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWLEN,
+        m_axi_gmem2_AWSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWSIZE,
+        m_axi_gmem2_AWBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWBURST,
+        m_axi_gmem2_AWLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWLOCK,
+        m_axi_gmem2_AWCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWCACHE,
+        m_axi_gmem2_AWPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWPROT,
+        m_axi_gmem2_AWQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWQOS,
+        m_axi_gmem2_AWREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWREGION,
+        m_axi_gmem2_AWUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_AWUSER,
+        m_axi_gmem2_WVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WVALID,
+        m_axi_gmem2_WREADY => ap_const_logic_0,
+        m_axi_gmem2_WDATA => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WDATA,
+        m_axi_gmem2_WSTRB => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WSTRB,
+        m_axi_gmem2_WLAST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WLAST,
+        m_axi_gmem2_WID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WID,
+        m_axi_gmem2_WUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_WUSER,
+        m_axi_gmem2_ARVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARVALID,
+        m_axi_gmem2_ARREADY => m_axi_gmem2_ARREADY,
+        m_axi_gmem2_ARADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARADDR,
+        m_axi_gmem2_ARID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARID,
+        m_axi_gmem2_ARLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLEN,
+        m_axi_gmem2_ARSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARSIZE,
+        m_axi_gmem2_ARBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARBURST,
+        m_axi_gmem2_ARLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLOCK,
+        m_axi_gmem2_ARCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARCACHE,
+        m_axi_gmem2_ARPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARPROT,
+        m_axi_gmem2_ARQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARQOS,
+        m_axi_gmem2_ARREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARREGION,
+        m_axi_gmem2_ARUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARUSER,
+        m_axi_gmem2_RVALID => m_axi_gmem2_RVALID,
+        m_axi_gmem2_RREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_RREADY,
+        m_axi_gmem2_RDATA => m_axi_gmem2_RDATA,
+        m_axi_gmem2_RLAST => m_axi_gmem2_RLAST,
+        m_axi_gmem2_RID => m_axi_gmem2_RID,
+        m_axi_gmem2_RUSER => m_axi_gmem2_RUSER,
+        m_axi_gmem2_RRESP => m_axi_gmem2_RRESP,
+        m_axi_gmem2_BVALID => ap_const_logic_0,
+        m_axi_gmem2_BREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_BREADY,
+        m_axi_gmem2_BRESP => ap_const_lv2_0,
+        m_axi_gmem2_BID => ap_const_lv1_0,
+        m_axi_gmem2_BUSER => ap_const_lv1_0,
+        m_axi_gmem3_AWVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWVALID,
+        m_axi_gmem3_AWREADY => m_axi_gmem3_AWREADY,
+        m_axi_gmem3_AWADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWADDR,
+        m_axi_gmem3_AWID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWID,
+        m_axi_gmem3_AWLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLEN,
+        m_axi_gmem3_AWSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWSIZE,
+        m_axi_gmem3_AWBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWBURST,
+        m_axi_gmem3_AWLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLOCK,
+        m_axi_gmem3_AWCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWCACHE,
+        m_axi_gmem3_AWPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWPROT,
+        m_axi_gmem3_AWQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWQOS,
+        m_axi_gmem3_AWREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWREGION,
+        m_axi_gmem3_AWUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWUSER,
+        m_axi_gmem3_WVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WVALID,
+        m_axi_gmem3_WREADY => m_axi_gmem3_WREADY,
+        m_axi_gmem3_WDATA => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WDATA,
+        m_axi_gmem3_WSTRB => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WSTRB,
+        m_axi_gmem3_WLAST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WLAST,
+        m_axi_gmem3_WID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WID,
+        m_axi_gmem3_WUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WUSER,
+        m_axi_gmem3_ARVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARVALID,
+        m_axi_gmem3_ARREADY => m_axi_gmem3_ARREADY,
+        m_axi_gmem3_ARADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARADDR,
+        m_axi_gmem3_ARID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARID,
+        m_axi_gmem3_ARLEN => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLEN,
+        m_axi_gmem3_ARSIZE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARSIZE,
+        m_axi_gmem3_ARBURST => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARBURST,
+        m_axi_gmem3_ARLOCK => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLOCK,
+        m_axi_gmem3_ARCACHE => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARCACHE,
+        m_axi_gmem3_ARPROT => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARPROT,
+        m_axi_gmem3_ARQOS => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARQOS,
+        m_axi_gmem3_ARREGION => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARREGION,
+        m_axi_gmem3_ARUSER => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARUSER,
+        m_axi_gmem3_RVALID => m_axi_gmem3_RVALID,
+        m_axi_gmem3_RREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_RREADY,
+        m_axi_gmem3_RDATA => m_axi_gmem3_RDATA,
+        m_axi_gmem3_RLAST => m_axi_gmem3_RLAST,
+        m_axi_gmem3_RID => m_axi_gmem3_RID,
+        m_axi_gmem3_RUSER => m_axi_gmem3_RUSER,
+        m_axi_gmem3_RRESP => m_axi_gmem3_RRESP,
+        m_axi_gmem3_BVALID => m_axi_gmem3_BVALID,
+        m_axi_gmem3_BREADY => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_BREADY,
+        m_axi_gmem3_BRESP => m_axi_gmem3_BRESP,
+        m_axi_gmem3_BID => m_axi_gmem3_BID,
+        m_axi_gmem3_BUSER => m_axi_gmem3_BUSER,
+        conv_out => conv_out,
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        weight_l2_0_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0,
-        weight_l2_0_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce0,
-        weight_l2_0_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d0,
-        weight_l2_0_q0 => weight_l2_0_q0,
-        weight_l2_0_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we0,
-        weight_l2_0_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address1,
-        weight_l2_0_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce1,
-        weight_l2_0_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d1,
-        weight_l2_0_q1 => ap_const_lv8_0,
-        weight_l2_0_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we1,
-        weight_l2_1_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0,
-        weight_l2_1_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0,
-        weight_l2_1_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d0,
-        weight_l2_1_q0 => weight_l2_1_q0,
-        weight_l2_1_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we0,
-        weight_l2_1_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address1,
-        weight_l2_1_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce1,
-        weight_l2_1_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d1,
-        weight_l2_1_q1 => ap_const_lv8_0,
-        weight_l2_1_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we1,
-        weight_l2_2_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0,
-        weight_l2_2_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0,
-        weight_l2_2_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d0,
-        weight_l2_2_q0 => weight_l2_2_q0,
-        weight_l2_2_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we0,
-        weight_l2_2_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address1,
-        weight_l2_2_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce1,
-        weight_l2_2_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d1,
-        weight_l2_2_q1 => ap_const_lv8_0,
-        weight_l2_2_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we1,
-        weight_l2_3_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0,
-        weight_l2_3_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0,
-        weight_l2_3_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d0,
-        weight_l2_3_q0 => weight_l2_3_q0,
-        weight_l2_3_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we0,
-        weight_l2_3_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address1,
-        weight_l2_3_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce1,
-        weight_l2_3_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d1,
-        weight_l2_3_q1 => ap_const_lv8_0,
-        weight_l2_3_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we1,
-        p_read => p_read,
-        p_read1 => p_read1,
-        ko_2 => ko_2,
-        co_1 => co_1,
-        ro => ro,
-        so => loop_dataflow_input_count,
-        data_l2_0_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address0,
-        data_l2_0_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce0,
-        data_l2_0_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d0,
-        data_l2_0_q0 => data_l2_0_q0,
-        data_l2_0_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we0,
-        data_l2_0_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address1,
-        data_l2_0_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce1,
-        data_l2_0_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d1,
-        data_l2_0_q1 => ap_const_lv8_0,
-        data_l2_0_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we1,
-        data_l2_1_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0,
-        data_l2_1_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0,
-        data_l2_1_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d0,
-        data_l2_1_q0 => data_l2_1_q0,
-        data_l2_1_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we0,
-        data_l2_1_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address1,
-        data_l2_1_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce1,
-        data_l2_1_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d1,
-        data_l2_1_q1 => ap_const_lv8_0,
-        data_l2_1_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we1,
-        data_l2_2_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0,
-        data_l2_2_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0,
-        data_l2_2_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d0,
-        data_l2_2_q0 => data_l2_2_q0,
-        data_l2_2_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we0,
-        data_l2_2_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address1,
-        data_l2_2_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce1,
-        data_l2_2_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d1,
-        data_l2_2_q1 => ap_const_lv8_0,
-        data_l2_2_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we1,
-        data_l2_3_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0,
-        data_l2_3_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0,
-        data_l2_3_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d0,
-        data_l2_3_q0 => data_l2_3_q0,
-        data_l2_3_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we0,
-        data_l2_3_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address1,
-        data_l2_3_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce1,
-        data_l2_3_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d1,
-        data_l2_3_q1 => ap_const_lv8_0,
-        data_l2_3_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we1,
-        p_read2 => p_read2,
-        p_read3 => p_read3,
-        ho => ho,
-        wo => wo,
-        p_read4 => p_read4,
-        p_read5 => p_read5,
-        p_read6 => p_read6,
-        output_l2_0_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0,
-        output_l2_0_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce0,
-        output_l2_0_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d0,
-        output_l2_0_q0 => ap_const_lv32_0,
-        output_l2_0_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we0,
-        output_l2_0_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address1,
-        output_l2_0_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce1,
-        output_l2_0_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d1,
-        output_l2_0_q1 => ap_const_lv32_0,
-        output_l2_0_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we1,
-        output_l2_1_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0,
-        output_l2_1_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0,
-        output_l2_1_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0,
-        output_l2_1_q0 => ap_const_lv32_0,
-        output_l2_1_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0,
-        output_l2_1_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address1,
-        output_l2_1_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce1,
-        output_l2_1_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d1,
-        output_l2_1_q1 => ap_const_lv32_0,
-        output_l2_1_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we1,
-        output_l2_2_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0,
-        output_l2_2_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0,
-        output_l2_2_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0,
-        output_l2_2_q0 => ap_const_lv32_0,
-        output_l2_2_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0,
-        output_l2_2_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address1,
-        output_l2_2_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce1,
-        output_l2_2_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d1,
-        output_l2_2_q1 => ap_const_lv32_0,
-        output_l2_2_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we1,
-        output_l2_3_address0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0,
-        output_l2_3_ce0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0,
-        output_l2_3_d0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0,
-        output_l2_3_q0 => ap_const_lv32_0,
-        output_l2_3_we0 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0,
-        output_l2_3_address1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address1,
-        output_l2_3_ce1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce1,
-        output_l2_3_d1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d1,
-        output_l2_3_q1 => ap_const_lv32_0,
-        output_l2_3_we1 => dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we1,
-        p_read7 => p_read7,
-        p_read_ap_vld => p_read_ap_vld,
-        p_read1_ap_vld => p_read1_ap_vld,
-        ko_2_ap_vld => ko_2_ap_vld,
-        co_1_ap_vld => co_1_ap_vld,
-        ro_ap_vld => ro_ap_vld,
-        so_ap_vld => ap_const_logic_0,
-        p_read2_ap_vld => p_read2_ap_vld,
-        p_read3_ap_vld => p_read3_ap_vld,
-        ho_ap_vld => ho_ap_vld,
-        wo_ap_vld => wo_ap_vld,
-        p_read4_ap_vld => p_read4_ap_vld,
-        p_read5_ap_vld => p_read5_ap_vld,
-        p_read6_ap_vld => p_read6_ap_vld,
-        p_read7_ap_vld => p_read7_ap_vld,
-        ap_start => dataflow_in_loop_LOOP_S_OUTER_U0_ap_start,
-        ap_done => dataflow_in_loop_LOOP_S_OUTER_U0_ap_done,
-        ap_ready => dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready,
-        ap_idle => dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle,
-        ap_continue => dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue);
+        param_ap_vld => param_ap_vld,
+        kmo_ap_vld => kmo_ap_vld,
+        bias_in_ap_vld => bias_in_ap_vld,
+        cmo_ap_vld => cmo_ap_vld,
+        rmo_ap_vld => rmo_ap_vld,
+        smo_ap_vld => ap_const_logic_0,
+        weight_in_ap_vld => weight_in_ap_vld,
+        hmo_ap_vld => hmo_ap_vld,
+        wmo_ap_vld => wmo_ap_vld,
+        data_in_ap_vld => data_in_ap_vld,
+        conv_out_ap_vld => conv_out_ap_vld,
+        ap_start => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_start,
+        ap_done => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done,
+        ap_ready => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready,
+        ap_idle => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_idle,
+        ap_continue => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue);
 
 
 
@@ -619,9 +822,9 @@ begin
             if (ap_rst = '1') then
                 loop_dataflow_input_count <= ap_const_lv32_0;
             else
-                if ((not((loop_dataflow_input_count = bound_minus_1)) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready = ap_const_logic_1))) then 
+                if ((not((loop_dataflow_input_count = bound_minus_1)) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready = ap_const_logic_1))) then 
                     loop_dataflow_input_count <= std_logic_vector(unsigned(loop_dataflow_input_count) + unsigned(ap_const_lv32_1));
-                elsif (((loop_dataflow_input_count = bound_minus_1) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready = ap_const_logic_1))) then 
+                elsif (((loop_dataflow_input_count = bound_minus_1) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready = ap_const_logic_1))) then 
                     loop_dataflow_input_count <= ap_const_lv32_0;
                 end if; 
             end if;
@@ -635,9 +838,9 @@ begin
             if (ap_rst = '1') then
                 loop_dataflow_output_count <= ap_const_lv32_0;
             else
-                if ((not((loop_dataflow_output_count = bound_minus_1)) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done = ap_const_logic_1))) then 
+                if ((not((loop_dataflow_output_count = bound_minus_1)) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done = ap_const_logic_1))) then 
                     loop_dataflow_output_count <= std_logic_vector(unsigned(loop_dataflow_output_count) + unsigned(ap_const_lv32_1));
-                elsif (((loop_dataflow_output_count = bound_minus_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done = ap_const_logic_1))) then 
+                elsif (((loop_dataflow_output_count = bound_minus_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done = ap_const_logic_1))) then 
                     loop_dataflow_output_count <= ap_const_lv32_0;
                 end if; 
             end if;
@@ -645,9 +848,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(dataflow_in_loop_LOOP_S_OUTER_U0_ap_done, loop_dataflow_output_count, bound_minus_1)
+    ap_done_assign_proc : process(dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done, loop_dataflow_output_count, bound_minus_1)
     begin
-        if (((loop_dataflow_output_count = bound_minus_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done = ap_const_logic_1))) then 
+        if (((loop_dataflow_output_count = bound_minus_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done = ap_const_logic_1))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_const_logic_0;
@@ -655,9 +858,9 @@ begin
     end process;
 
 
-    ap_idle_assign_proc : process(dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle, ap_start, loop_dataflow_output_count)
+    ap_idle_assign_proc : process(dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_idle, ap_start, loop_dataflow_output_count)
     begin
-        if (((loop_dataflow_output_count = ap_const_lv32_0) and (ap_start = ap_const_logic_0) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle = ap_const_logic_1))) then 
+        if (((loop_dataflow_output_count = ap_const_lv32_0) and (ap_start = ap_const_logic_0) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_idle = ap_const_logic_1))) then 
             ap_idle <= ap_const_logic_1;
         else 
             ap_idle <= ap_const_logic_0;
@@ -665,9 +868,9 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready, ap_start, loop_dataflow_input_count, bound_minus_1)
+    ap_ready_assign_proc : process(dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready, ap_start, loop_dataflow_input_count, bound_minus_1)
     begin
-        if (((loop_dataflow_input_count = bound_minus_1) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready = ap_const_logic_1))) then 
+        if (((loop_dataflow_input_count = bound_minus_1) and (ap_start = ap_const_logic_1) and (dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready = ap_const_logic_1))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
@@ -675,116 +878,148 @@ begin
     end process;
 
     ap_sync_continue <= ap_continue;
-    ap_sync_done <= dataflow_in_loop_LOOP_S_OUTER_U0_ap_done;
-    ap_sync_ready <= dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready;
-    bound_minus_1 <= std_logic_vector(unsigned(TILES_S) - unsigned(ap_const_lv32_1));
-    data_l2_0_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address0;
-    data_l2_0_address1 <= ap_const_lv20_0;
-    data_l2_0_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce0;
-    data_l2_0_ce1 <= ap_const_logic_0;
-    data_l2_0_d0 <= ap_const_lv8_0;
-    data_l2_0_d1 <= ap_const_lv8_0;
-    data_l2_0_we0 <= ap_const_logic_0;
-    data_l2_0_we1 <= ap_const_logic_0;
-    data_l2_1_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0;
-    data_l2_1_address1 <= ap_const_lv20_0;
-    data_l2_1_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0;
-    data_l2_1_ce1 <= ap_const_logic_0;
-    data_l2_1_d0 <= ap_const_lv8_0;
-    data_l2_1_d1 <= ap_const_lv8_0;
-    data_l2_1_we0 <= ap_const_logic_0;
-    data_l2_1_we1 <= ap_const_logic_0;
-    data_l2_2_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0;
-    data_l2_2_address1 <= ap_const_lv20_0;
-    data_l2_2_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0;
-    data_l2_2_ce1 <= ap_const_logic_0;
-    data_l2_2_d0 <= ap_const_lv8_0;
-    data_l2_2_d1 <= ap_const_lv8_0;
-    data_l2_2_we0 <= ap_const_logic_0;
-    data_l2_2_we1 <= ap_const_logic_0;
-    data_l2_3_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0;
-    data_l2_3_address1 <= ap_const_lv20_0;
-    data_l2_3_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0;
-    data_l2_3_ce1 <= ap_const_logic_0;
-    data_l2_3_d0 <= ap_const_lv8_0;
-    data_l2_3_d1 <= ap_const_lv8_0;
-    data_l2_3_we0 <= ap_const_logic_0;
-    data_l2_3_we1 <= ap_const_logic_0;
+    ap_sync_done <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_done;
+    ap_sync_ready <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_ready;
+    bound_minus_1 <= std_logic_vector(unsigned(param_L2_TILENUM_S) - unsigned(ap_const_lv32_1));
 
-    dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue_assign_proc : process(ap_continue, loop_dataflow_output_count, bound_minus_1)
+    dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue_assign_proc : process(ap_continue, loop_dataflow_output_count, bound_minus_1)
     begin
         if ((not((loop_dataflow_output_count = bound_minus_1)) or (ap_continue = ap_const_logic_1))) then 
-            dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue <= ap_const_logic_1;
+            dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue <= ap_const_logic_1;
         else 
-            dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue <= ap_const_logic_0;
+            dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_continue <= ap_const_logic_0;
         end if; 
     end process;
 
-    dataflow_in_loop_LOOP_S_OUTER_U0_ap_start <= ap_start;
-    dataflow_in_loop_LOOP_S_OUTER_U0_start_full_n <= ap_const_logic_1;
-    dataflow_in_loop_LOOP_S_OUTER_U0_start_write <= ap_const_logic_0;
-    output_l2_0_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0;
-    output_l2_0_address1 <= ap_const_lv20_0;
-    output_l2_0_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce0;
-    output_l2_0_ce1 <= ap_const_logic_0;
-    output_l2_0_d0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d0;
-    output_l2_0_d1 <= ap_const_lv32_0;
-    output_l2_0_we0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we0;
-    output_l2_0_we1 <= ap_const_logic_0;
-    output_l2_1_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0;
-    output_l2_1_address1 <= ap_const_lv20_0;
-    output_l2_1_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0;
-    output_l2_1_ce1 <= ap_const_logic_0;
-    output_l2_1_d0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0;
-    output_l2_1_d1 <= ap_const_lv32_0;
-    output_l2_1_we0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0;
-    output_l2_1_we1 <= ap_const_logic_0;
-    output_l2_2_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0;
-    output_l2_2_address1 <= ap_const_lv20_0;
-    output_l2_2_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0;
-    output_l2_2_ce1 <= ap_const_logic_0;
-    output_l2_2_d0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0;
-    output_l2_2_d1 <= ap_const_lv32_0;
-    output_l2_2_we0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0;
-    output_l2_2_we1 <= ap_const_logic_0;
-    output_l2_3_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0;
-    output_l2_3_address1 <= ap_const_lv20_0;
-    output_l2_3_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0;
-    output_l2_3_ce1 <= ap_const_logic_0;
-    output_l2_3_d0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0;
-    output_l2_3_d1 <= ap_const_lv32_0;
-    output_l2_3_we0 <= dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0;
-    output_l2_3_we1 <= ap_const_logic_0;
-    weight_l2_0_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0;
-    weight_l2_0_address1 <= ap_const_lv20_0;
-    weight_l2_0_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce0;
-    weight_l2_0_ce1 <= ap_const_logic_0;
-    weight_l2_0_d0 <= ap_const_lv8_0;
-    weight_l2_0_d1 <= ap_const_lv8_0;
-    weight_l2_0_we0 <= ap_const_logic_0;
-    weight_l2_0_we1 <= ap_const_logic_0;
-    weight_l2_1_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0;
-    weight_l2_1_address1 <= ap_const_lv20_0;
-    weight_l2_1_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0;
-    weight_l2_1_ce1 <= ap_const_logic_0;
-    weight_l2_1_d0 <= ap_const_lv8_0;
-    weight_l2_1_d1 <= ap_const_lv8_0;
-    weight_l2_1_we0 <= ap_const_logic_0;
-    weight_l2_1_we1 <= ap_const_logic_0;
-    weight_l2_2_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0;
-    weight_l2_2_address1 <= ap_const_lv20_0;
-    weight_l2_2_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0;
-    weight_l2_2_ce1 <= ap_const_logic_0;
-    weight_l2_2_d0 <= ap_const_lv8_0;
-    weight_l2_2_d1 <= ap_const_lv8_0;
-    weight_l2_2_we0 <= ap_const_logic_0;
-    weight_l2_2_we1 <= ap_const_logic_0;
-    weight_l2_3_address0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0;
-    weight_l2_3_address1 <= ap_const_lv20_0;
-    weight_l2_3_ce0 <= dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0;
-    weight_l2_3_ce1 <= ap_const_logic_0;
-    weight_l2_3_d0 <= ap_const_lv8_0;
-    weight_l2_3_d1 <= ap_const_lv8_0;
-    weight_l2_3_we0 <= ap_const_logic_0;
-    weight_l2_3_we1 <= ap_const_logic_0;
+    dataflow_in_loop_LOOP_S_MOST_OUTER_U0_ap_start <= ap_start;
+    dataflow_in_loop_LOOP_S_MOST_OUTER_U0_start_full_n <= ap_const_logic_1;
+    dataflow_in_loop_LOOP_S_MOST_OUTER_U0_start_write <= ap_const_logic_0;
+    m_axi_gmem0_ARADDR <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARADDR;
+    m_axi_gmem0_ARBURST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARBURST;
+    m_axi_gmem0_ARCACHE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARCACHE;
+    m_axi_gmem0_ARID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARID;
+    m_axi_gmem0_ARLEN <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLEN;
+    m_axi_gmem0_ARLOCK <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARLOCK;
+    m_axi_gmem0_ARPROT <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARPROT;
+    m_axi_gmem0_ARQOS <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARQOS;
+    m_axi_gmem0_ARREGION <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARREGION;
+    m_axi_gmem0_ARSIZE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARSIZE;
+    m_axi_gmem0_ARUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARUSER;
+    m_axi_gmem0_ARVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_ARVALID;
+    m_axi_gmem0_AWADDR <= ap_const_lv64_0;
+    m_axi_gmem0_AWBURST <= ap_const_lv2_0;
+    m_axi_gmem0_AWCACHE <= ap_const_lv4_0;
+    m_axi_gmem0_AWID <= ap_const_lv1_0;
+    m_axi_gmem0_AWLEN <= ap_const_lv32_0;
+    m_axi_gmem0_AWLOCK <= ap_const_lv2_0;
+    m_axi_gmem0_AWPROT <= ap_const_lv3_0;
+    m_axi_gmem0_AWQOS <= ap_const_lv4_0;
+    m_axi_gmem0_AWREGION <= ap_const_lv4_0;
+    m_axi_gmem0_AWSIZE <= ap_const_lv3_0;
+    m_axi_gmem0_AWUSER <= ap_const_lv1_0;
+    m_axi_gmem0_AWVALID <= ap_const_logic_0;
+    m_axi_gmem0_BREADY <= ap_const_logic_0;
+    m_axi_gmem0_RREADY <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem0_RREADY;
+    m_axi_gmem0_WDATA <= ap_const_lv8_0;
+    m_axi_gmem0_WID <= ap_const_lv1_0;
+    m_axi_gmem0_WLAST <= ap_const_logic_0;
+    m_axi_gmem0_WSTRB <= ap_const_lv1_0;
+    m_axi_gmem0_WUSER <= ap_const_lv1_0;
+    m_axi_gmem0_WVALID <= ap_const_logic_0;
+    m_axi_gmem1_ARADDR <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARADDR;
+    m_axi_gmem1_ARBURST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARBURST;
+    m_axi_gmem1_ARCACHE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARCACHE;
+    m_axi_gmem1_ARID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARID;
+    m_axi_gmem1_ARLEN <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLEN;
+    m_axi_gmem1_ARLOCK <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARLOCK;
+    m_axi_gmem1_ARPROT <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARPROT;
+    m_axi_gmem1_ARQOS <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARQOS;
+    m_axi_gmem1_ARREGION <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARREGION;
+    m_axi_gmem1_ARSIZE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARSIZE;
+    m_axi_gmem1_ARUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARUSER;
+    m_axi_gmem1_ARVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_ARVALID;
+    m_axi_gmem1_AWADDR <= ap_const_lv64_0;
+    m_axi_gmem1_AWBURST <= ap_const_lv2_0;
+    m_axi_gmem1_AWCACHE <= ap_const_lv4_0;
+    m_axi_gmem1_AWID <= ap_const_lv1_0;
+    m_axi_gmem1_AWLEN <= ap_const_lv32_0;
+    m_axi_gmem1_AWLOCK <= ap_const_lv2_0;
+    m_axi_gmem1_AWPROT <= ap_const_lv3_0;
+    m_axi_gmem1_AWQOS <= ap_const_lv4_0;
+    m_axi_gmem1_AWREGION <= ap_const_lv4_0;
+    m_axi_gmem1_AWSIZE <= ap_const_lv3_0;
+    m_axi_gmem1_AWUSER <= ap_const_lv1_0;
+    m_axi_gmem1_AWVALID <= ap_const_logic_0;
+    m_axi_gmem1_BREADY <= ap_const_logic_0;
+    m_axi_gmem1_RREADY <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_RREADY;
+    m_axi_gmem1_WDATA <= ap_const_lv8_0;
+    m_axi_gmem1_WID <= ap_const_lv1_0;
+    m_axi_gmem1_WLAST <= ap_const_logic_0;
+    m_axi_gmem1_WSTRB <= ap_const_lv1_0;
+    m_axi_gmem1_WUSER <= ap_const_lv1_0;
+    m_axi_gmem1_WVALID <= ap_const_logic_0;
+    m_axi_gmem2_ARADDR <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARADDR;
+    m_axi_gmem2_ARBURST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARBURST;
+    m_axi_gmem2_ARCACHE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARCACHE;
+    m_axi_gmem2_ARID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARID;
+    m_axi_gmem2_ARLEN <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLEN;
+    m_axi_gmem2_ARLOCK <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARLOCK;
+    m_axi_gmem2_ARPROT <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARPROT;
+    m_axi_gmem2_ARQOS <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARQOS;
+    m_axi_gmem2_ARREGION <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARREGION;
+    m_axi_gmem2_ARSIZE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARSIZE;
+    m_axi_gmem2_ARUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARUSER;
+    m_axi_gmem2_ARVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_ARVALID;
+    m_axi_gmem2_AWADDR <= ap_const_lv64_0;
+    m_axi_gmem2_AWBURST <= ap_const_lv2_0;
+    m_axi_gmem2_AWCACHE <= ap_const_lv4_0;
+    m_axi_gmem2_AWID <= ap_const_lv1_0;
+    m_axi_gmem2_AWLEN <= ap_const_lv32_0;
+    m_axi_gmem2_AWLOCK <= ap_const_lv2_0;
+    m_axi_gmem2_AWPROT <= ap_const_lv3_0;
+    m_axi_gmem2_AWQOS <= ap_const_lv4_0;
+    m_axi_gmem2_AWREGION <= ap_const_lv4_0;
+    m_axi_gmem2_AWSIZE <= ap_const_lv3_0;
+    m_axi_gmem2_AWUSER <= ap_const_lv1_0;
+    m_axi_gmem2_AWVALID <= ap_const_logic_0;
+    m_axi_gmem2_BREADY <= ap_const_logic_0;
+    m_axi_gmem2_RREADY <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem2_RREADY;
+    m_axi_gmem2_WDATA <= ap_const_lv8_0;
+    m_axi_gmem2_WID <= ap_const_lv1_0;
+    m_axi_gmem2_WLAST <= ap_const_logic_0;
+    m_axi_gmem2_WSTRB <= ap_const_lv1_0;
+    m_axi_gmem2_WUSER <= ap_const_lv1_0;
+    m_axi_gmem2_WVALID <= ap_const_logic_0;
+    m_axi_gmem3_ARADDR <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARADDR;
+    m_axi_gmem3_ARBURST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARBURST;
+    m_axi_gmem3_ARCACHE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARCACHE;
+    m_axi_gmem3_ARID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARID;
+    m_axi_gmem3_ARLEN <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLEN;
+    m_axi_gmem3_ARLOCK <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARLOCK;
+    m_axi_gmem3_ARPROT <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARPROT;
+    m_axi_gmem3_ARQOS <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARQOS;
+    m_axi_gmem3_ARREGION <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARREGION;
+    m_axi_gmem3_ARSIZE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARSIZE;
+    m_axi_gmem3_ARUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARUSER;
+    m_axi_gmem3_ARVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_ARVALID;
+    m_axi_gmem3_AWADDR <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWADDR;
+    m_axi_gmem3_AWBURST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWBURST;
+    m_axi_gmem3_AWCACHE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWCACHE;
+    m_axi_gmem3_AWID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWID;
+    m_axi_gmem3_AWLEN <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLEN;
+    m_axi_gmem3_AWLOCK <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWLOCK;
+    m_axi_gmem3_AWPROT <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWPROT;
+    m_axi_gmem3_AWQOS <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWQOS;
+    m_axi_gmem3_AWREGION <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWREGION;
+    m_axi_gmem3_AWSIZE <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWSIZE;
+    m_axi_gmem3_AWUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWUSER;
+    m_axi_gmem3_AWVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_AWVALID;
+    m_axi_gmem3_BREADY <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_BREADY;
+    m_axi_gmem3_RREADY <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_RREADY;
+    m_axi_gmem3_WDATA <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WDATA;
+    m_axi_gmem3_WID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WID;
+    m_axi_gmem3_WLAST <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WLAST;
+    m_axi_gmem3_WSTRB <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WSTRB;
+    m_axi_gmem3_WUSER <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WUSER;
+    m_axi_gmem3_WVALID <= dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem3_WVALID;
 end behav;

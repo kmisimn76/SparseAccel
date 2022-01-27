@@ -5,7 +5,9 @@
     <downStreamTool>
         <DownStreamTool name="vivado"/>
     </downStreamTool>
-    <config/>
+    <config>
+        <config_export format="xo" rtl="verilog"/>
+    </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="Alveo U200 Data Center Accelerator Card (xcu200-fsgd2104-2-e) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="true" showDetailDesignViewer="false">
             <Platform>xilinx/virtexuplus/virtexuplus</Platform>
@@ -38,7 +40,7 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="true" rtlCombo="verilog">
+    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="xo" rtl="verilog" rtlButton="true" rtlCombo="verilog">
         <Format formatName="ip_catalog"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
@@ -47,7 +49,7 @@
         <Format formatName="xo"/>
     </ExportDesign>
     <Simulation>
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="all" enableDataflowProfiling="false" name="cosim" optimizeCompile="true" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="false">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="all" enableDataflowProfiling="true" name="cosim" optimizeCompile="true" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="true">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>

@@ -13,155 +13,165 @@ entity Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER is
 port (
     ap_clk : IN STD_LOGIC;
     ap_rst : IN STD_LOGIC;
-    weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce0 : OUT STD_LOGIC;
-    weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we0 : OUT STD_LOGIC;
-    weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_0_ce1 : OUT STD_LOGIC;
-    weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_0_we1 : OUT STD_LOGIC;
-    weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce0 : OUT STD_LOGIC;
-    weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we0 : OUT STD_LOGIC;
-    weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_1_ce1 : OUT STD_LOGIC;
-    weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_1_we1 : OUT STD_LOGIC;
-    weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce0 : OUT STD_LOGIC;
-    weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we0 : OUT STD_LOGIC;
-    weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_2_ce1 : OUT STD_LOGIC;
-    weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_2_we1 : OUT STD_LOGIC;
-    weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce0 : OUT STD_LOGIC;
-    weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we0 : OUT STD_LOGIC;
-    weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
-    weight_l2_3_ce1 : OUT STD_LOGIC;
-    weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    weight_l2_3_we1 : OUT STD_LOGIC;
-    p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-    ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-    co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
+    param : IN STD_LOGIC_VECTOR (1183 downto 0);
+    ko_1 : IN STD_LOGIC_VECTOR (11 downto 0);
+    co : IN STD_LOGIC_VECTOR (31 downto 0);
     ro : IN STD_LOGIC_VECTOR (31 downto 0);
     so : IN STD_LOGIC_VECTOR (31 downto 0);
-    data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    ho : IN STD_LOGIC_VECTOR (10 downto 0);
+    wo : IN STD_LOGIC_VECTOR (10 downto 0);
+    data_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_0_ce0 : OUT STD_LOGIC;
     data_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_we0 : OUT STD_LOGIC;
-    data_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_0_ce1 : OUT STD_LOGIC;
     data_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_0_we1 : OUT STD_LOGIC;
-    data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_1_ce0 : OUT STD_LOGIC;
     data_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_we0 : OUT STD_LOGIC;
-    data_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_1_ce1 : OUT STD_LOGIC;
     data_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_1_we1 : OUT STD_LOGIC;
-    data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_2_ce0 : OUT STD_LOGIC;
     data_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_we0 : OUT STD_LOGIC;
-    data_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_2_ce1 : OUT STD_LOGIC;
     data_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_2_we1 : OUT STD_LOGIC;
-    data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_3_ce0 : OUT STD_LOGIC;
     data_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_we0 : OUT STD_LOGIC;
-    data_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    data_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     data_l2_3_ce1 : OUT STD_LOGIC;
     data_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
     data_l2_3_we1 : OUT STD_LOGIC;
-    p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-    ho : IN STD_LOGIC_VECTOR (19 downto 0);
-    wo : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-    p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-    output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_0_ce0 : OUT STD_LOGIC;
     output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_we0 : OUT STD_LOGIC;
-    output_l2_0_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_0_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_0_ce1 : OUT STD_LOGIC;
     output_l2_0_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_0_we1 : OUT STD_LOGIC;
-    output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_1_ce0 : OUT STD_LOGIC;
     output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_we0 : OUT STD_LOGIC;
-    output_l2_1_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_1_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_1_ce1 : OUT STD_LOGIC;
     output_l2_1_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_1_we1 : OUT STD_LOGIC;
-    output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_2_ce0 : OUT STD_LOGIC;
     output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_we0 : OUT STD_LOGIC;
-    output_l2_2_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_2_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_2_ce1 : OUT STD_LOGIC;
     output_l2_2_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_2_we1 : OUT STD_LOGIC;
-    output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_3_ce0 : OUT STD_LOGIC;
     output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_we0 : OUT STD_LOGIC;
-    output_l2_3_address1 : OUT STD_LOGIC_VECTOR (19 downto 0);
+    output_l2_3_address1 : OUT STD_LOGIC_VECTOR (10 downto 0);
     output_l2_3_ce1 : OUT STD_LOGIC;
     output_l2_3_d1 : OUT STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_q1 : IN STD_LOGIC_VECTOR (31 downto 0);
     output_l2_3_we1 : OUT STD_LOGIC;
-    p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
-    p_read_ap_vld : IN STD_LOGIC;
-    p_read1_ap_vld : IN STD_LOGIC;
-    ko_2_ap_vld : IN STD_LOGIC;
-    co_1_ap_vld : IN STD_LOGIC;
+    weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_0_ce0 : OUT STD_LOGIC;
+    weight_l2_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_we0 : OUT STD_LOGIC;
+    weight_l2_0_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_0_ce1 : OUT STD_LOGIC;
+    weight_l2_0_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_0_we1 : OUT STD_LOGIC;
+    weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_1_ce0 : OUT STD_LOGIC;
+    weight_l2_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_we0 : OUT STD_LOGIC;
+    weight_l2_1_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_1_ce1 : OUT STD_LOGIC;
+    weight_l2_1_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_1_we1 : OUT STD_LOGIC;
+    weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_2_ce0 : OUT STD_LOGIC;
+    weight_l2_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_we0 : OUT STD_LOGIC;
+    weight_l2_2_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_2_ce1 : OUT STD_LOGIC;
+    weight_l2_2_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_2_we1 : OUT STD_LOGIC;
+    weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_3_ce0 : OUT STD_LOGIC;
+    weight_l2_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_we0 : OUT STD_LOGIC;
+    weight_l2_3_address1 : OUT STD_LOGIC_VECTOR (11 downto 0);
+    weight_l2_3_ce1 : OUT STD_LOGIC;
+    weight_l2_3_d1 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    weight_l2_3_we1 : OUT STD_LOGIC;
+    param_ap_vld : IN STD_LOGIC;
+    ko_1_ap_vld : IN STD_LOGIC;
+    co_ap_vld : IN STD_LOGIC;
     ro_ap_vld : IN STD_LOGIC;
     so_ap_vld : IN STD_LOGIC;
-    p_read2_ap_vld : IN STD_LOGIC;
-    p_read3_ap_vld : IN STD_LOGIC;
     ho_ap_vld : IN STD_LOGIC;
     wo_ap_vld : IN STD_LOGIC;
-    p_read4_ap_vld : IN STD_LOGIC;
-    p_read5_ap_vld : IN STD_LOGIC;
-    p_read6_ap_vld : IN STD_LOGIC;
-    p_read7_ap_vld : IN STD_LOGIC;
     ap_start : IN STD_LOGIC;
+    weight_l2_0_empty_n : IN STD_LOGIC;
+    weight_l2_0_read : OUT STD_LOGIC;
+    weight_l2_1_empty_n : IN STD_LOGIC;
+    weight_l2_1_read : OUT STD_LOGIC;
+    weight_l2_2_empty_n : IN STD_LOGIC;
+    weight_l2_2_read : OUT STD_LOGIC;
+    weight_l2_3_empty_n : IN STD_LOGIC;
+    weight_l2_3_read : OUT STD_LOGIC;
+    data_l2_0_empty_n : IN STD_LOGIC;
+    data_l2_0_read : OUT STD_LOGIC;
+    data_l2_1_empty_n : IN STD_LOGIC;
+    data_l2_1_read : OUT STD_LOGIC;
+    data_l2_2_empty_n : IN STD_LOGIC;
+    data_l2_2_read : OUT STD_LOGIC;
+    data_l2_3_empty_n : IN STD_LOGIC;
+    data_l2_3_read : OUT STD_LOGIC;
+    output_l2_0_full_n : IN STD_LOGIC;
+    output_l2_0_write : OUT STD_LOGIC;
+    output_l2_1_full_n : IN STD_LOGIC;
+    output_l2_1_write : OUT STD_LOGIC;
+    output_l2_2_full_n : IN STD_LOGIC;
+    output_l2_2_write : OUT STD_LOGIC;
+    output_l2_3_full_n : IN STD_LOGIC;
+    output_l2_3_write : OUT STD_LOGIC;
     ap_done : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
@@ -171,10 +181,11 @@ end;
 
 architecture behav of Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER is 
     constant ap_const_logic_1 : STD_LOGIC := '1';
-    constant ap_const_lv20_0 : STD_LOGIC_VECTOR (19 downto 0) := "00000000000000000000";
+    constant ap_const_lv11_0 : STD_LOGIC_VECTOR (10 downto 0) := "00000000000";
     constant ap_const_logic_0 : STD_LOGIC := '0';
     constant ap_const_lv8_0 : STD_LOGIC_VECTOR (7 downto 0) := "00000000";
     constant ap_const_lv32_0 : STD_LOGIC_VECTOR (31 downto 0) := "00000000000000000000000000000000";
+    constant ap_const_lv12_0 : STD_LOGIC_VECTOR (11 downto 0) := "000000000000";
     constant ap_const_lv2_0 : STD_LOGIC_VECTOR (1 downto 0) := "00";
     constant ap_const_lv2_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
     constant ap_const_boolean_1 : BOOLEAN := true;
@@ -196,74 +207,61 @@ attribute shreg_extract : string;
     signal output_l1_2_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal output_l1_3_i_q0 : STD_LOGIC_VECTOR (31 downto 0);
     signal output_l1_3_t_q0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_start : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_done : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_continue : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_idle : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_din : STD_LOGIC_VECTOR (17 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_write : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_done : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din : STD_LOGIC_VECTOR (1183 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din : STD_LOGIC_VECTOR (1119 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din : STD_LOGIC_VECTOR (11 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write : STD_LOGIC;
     signal runWeight2Reg_U0_ap_start : STD_LOGIC;
     signal runWeight2Reg_U0_ap_done : STD_LOGIC;
     signal runWeight2Reg_U0_ap_continue : STD_LOGIC;
     signal runWeight2Reg_U0_ap_idle : STD_LOGIC;
     signal runWeight2Reg_U0_ap_ready : STD_LOGIC;
-    signal runWeight2Reg_U0_weight_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runWeight2Reg_U0_weight_l2_0_ce0 : STD_LOGIC;
-    signal runWeight2Reg_U0_weight_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runWeight2Reg_U0_weight_l2_1_ce0 : STD_LOGIC;
-    signal runWeight2Reg_U0_weight_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runWeight2Reg_U0_weight_l2_2_ce0 : STD_LOGIC;
-    signal runWeight2Reg_U0_weight_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runWeight2Reg_U0_weight_l2_3_ce0 : STD_LOGIC;
-    signal runWeight2Reg_U0_empty_19_read : STD_LOGIC;
-    signal runWeight2Reg_U0_empty_read : STD_LOGIC;
-    signal runWeight2Reg_U0_ko_2_read : STD_LOGIC;
-    signal runWeight2Reg_U0_co_1_read : STD_LOGIC;
+    signal runWeight2Reg_U0_param_read : STD_LOGIC;
+    signal runWeight2Reg_U0_ko_1_read : STD_LOGIC;
+    signal runWeight2Reg_U0_co_read : STD_LOGIC;
     signal runWeight2Reg_U0_ro_read : STD_LOGIC;
     signal runWeight2Reg_U0_so_read : STD_LOGIC;
-    signal runWeight2Reg_U0_ko_2_out_din : STD_LOGIC_VECTOR (19 downto 0);
-    signal runWeight2Reg_U0_ko_2_out_write : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_0_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal runWeight2Reg_U0_weight_l2_0_ce0 : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_1_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal runWeight2Reg_U0_weight_l2_1_ce0 : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_2_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal runWeight2Reg_U0_weight_l2_2_ce0 : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_3_address0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal runWeight2Reg_U0_weight_l2_3_ce0 : STD_LOGIC;
+    signal runWeight2Reg_U0_param_out_din : STD_LOGIC_VECTOR (1183 downto 0);
+    signal runWeight2Reg_U0_param_out_write : STD_LOGIC;
+    signal runWeight2Reg_U0_ko_1_out_din : STD_LOGIC_VECTOR (10 downto 0);
+    signal runWeight2Reg_U0_ko_1_out_write : STD_LOGIC;
+    signal runWeight2Reg_U0_co_out_din : STD_LOGIC_VECTOR (31 downto 0);
+    signal runWeight2Reg_U0_co_out_write : STD_LOGIC;
     signal runWeight2Reg_U0_ro_out_din : STD_LOGIC_VECTOR (31 downto 0);
     signal runWeight2Reg_U0_ro_out_write : STD_LOGIC;
     signal runWeight2Reg_U0_so_out_din : STD_LOGIC_VECTOR (31 downto 0);
@@ -284,6 +282,14 @@ attribute shreg_extract : string;
     signal runWeight2Reg_U0_ap_return_13 : STD_LOGIC_VECTOR (7 downto 0);
     signal runWeight2Reg_U0_ap_return_14 : STD_LOGIC_VECTOR (7 downto 0);
     signal runWeight2Reg_U0_ap_return_15 : STD_LOGIC_VECTOR (7 downto 0);
+    signal runWeight2Reg_U0_weight_l2_0_full_n : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_0_write : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_1_full_n : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_1_write : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_2_full_n : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_2_write : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_3_full_n : STD_LOGIC;
+    signal runWeight2Reg_U0_weight_l2_3_write : STD_LOGIC;
     signal ap_channel_done_weight_regfile_3_3 : STD_LOGIC;
     signal weight_regfile_3_3_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_weight_regfile_3_3 : STD_LOGIC := '0';
@@ -353,52 +359,58 @@ attribute shreg_extract : string;
     signal runDataL2toL1_U0_ap_continue : STD_LOGIC;
     signal runDataL2toL1_U0_ap_idle : STD_LOGIC;
     signal runDataL2toL1_U0_ap_ready : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_0_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_0_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_0_we0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_0_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_1_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_1_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_1_we0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_1_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_2_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_2_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_2_we0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_2_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_3_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l1_3_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_3_we0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_3_d0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runDataL2toL1_U0_data_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runDataL2toL1_U0_data_l2_0_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runDataL2toL1_U0_data_l2_1_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runDataL2toL1_U0_data_l2_2_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
-    signal runDataL2toL1_U0_data_l2_3_ce0 : STD_LOGIC;
-    signal runDataL2toL1_U0_empty_25_read : STD_LOGIC;
-    signal runDataL2toL1_U0_empty_26_read : STD_LOGIC;
-    signal runDataL2toL1_U0_co_1_read : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_017_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runDataL2toL1_U0_data_l1_017_i_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_017_i_we0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_017_i_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal runDataL2toL1_U0_data_l1_118_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runDataL2toL1_U0_data_l1_118_i_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_118_i_we0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_118_i_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal runDataL2toL1_U0_data_l1_219_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runDataL2toL1_U0_data_l1_219_i_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_219_i_we0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_219_i_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal runDataL2toL1_U0_data_l1_320_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runDataL2toL1_U0_data_l1_320_i_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_320_i_we0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_320_i_d0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal runDataL2toL1_U0_param_read : STD_LOGIC;
+    signal runDataL2toL1_U0_co_read : STD_LOGIC;
     signal runDataL2toL1_U0_ho_read : STD_LOGIC;
     signal runDataL2toL1_U0_wo_read : STD_LOGIC;
     signal runDataL2toL1_U0_ro_read : STD_LOGIC;
     signal runDataL2toL1_U0_so_read : STD_LOGIC;
-    signal runDataL2toL1_U0_empty_read : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_0_address0 : STD_LOGIC_VECTOR (10 downto 0);
+    signal runDataL2toL1_U0_data_l2_0_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_1_address0 : STD_LOGIC_VECTOR (10 downto 0);
+    signal runDataL2toL1_U0_data_l2_1_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_2_address0 : STD_LOGIC_VECTOR (10 downto 0);
+    signal runDataL2toL1_U0_data_l2_2_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_3_address0 : STD_LOGIC_VECTOR (10 downto 0);
+    signal runDataL2toL1_U0_data_l2_3_ce0 : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_0_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_0_write : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_1_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_1_write : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_2_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_2_write : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_3_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l2_3_write : STD_LOGIC;
     signal ap_channel_done_data_l1_3 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_3_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_320_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_data_l1_3 : STD_LOGIC := '0';
     signal ap_sync_channel_write_data_l1_3 : STD_LOGIC;
     signal ap_channel_done_data_l1_2 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_2_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_219_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_data_l1_2 : STD_LOGIC := '0';
     signal ap_sync_channel_write_data_l1_2 : STD_LOGIC;
     signal ap_channel_done_data_l1_1 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_1_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_118_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_data_l1_1 : STD_LOGIC := '0';
     signal ap_sync_channel_write_data_l1_1 : STD_LOGIC;
     signal ap_channel_done_data_l1_0 : STD_LOGIC;
-    signal runDataL2toL1_U0_data_l1_0_full_n : STD_LOGIC;
+    signal runDataL2toL1_U0_data_l1_017_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_data_l1_0 : STD_LOGIC := '0';
     signal ap_sync_channel_write_data_l1_0 : STD_LOGIC;
     signal runSysArr_U0_ap_start : STD_LOGIC;
@@ -406,54 +418,47 @@ attribute shreg_extract : string;
     signal runSysArr_U0_ap_continue : STD_LOGIC;
     signal runSysArr_U0_ap_idle : STD_LOGIC;
     signal runSysArr_U0_ap_ready : STD_LOGIC;
-    signal runSysArr_U0_data_l1_017_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_data_l1_017_ce0 : STD_LOGIC;
-    signal runSysArr_U0_data_l1_118_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_data_l1_118_ce0 : STD_LOGIC;
-    signal runSysArr_U0_data_l1_219_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_data_l1_219_ce0 : STD_LOGIC;
-    signal runSysArr_U0_data_l1_320_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_data_l1_320_ce0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_021_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_output_l1_021_ce0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_021_we0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_021_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_output_l1_122_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_output_l1_122_ce0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_122_we0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_122_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_output_l1_223_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_output_l1_223_ce0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_223_we0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_223_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_output_l1_324_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runSysArr_U0_output_l1_324_ce0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_324_we0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_324_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_empty_20_read : STD_LOGIC;
-    signal runSysArr_U0_empty_21_read : STD_LOGIC;
-    signal runSysArr_U0_empty_22_read : STD_LOGIC;
-    signal runSysArr_U0_empty_read : STD_LOGIC;
-    signal runSysArr_U0_so_read : STD_LOGIC;
-    signal runSysArr_U0_ro_read : STD_LOGIC;
-    signal runSysArr_U0_p_out_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_p_out_write : STD_LOGIC;
-    signal runSysArr_U0_p_out1_din : STD_LOGIC_VECTOR (31 downto 0);
-    signal runSysArr_U0_p_out1_write : STD_LOGIC;
+    signal runSysArr_U0_data_l1_017_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_data_l1_017_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_data_l1_118_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_data_l1_118_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_data_l1_219_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_data_l1_219_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_data_l1_320_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_data_l1_320_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_021_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_output_l1_021_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_021_i_we0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_021_i_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal runSysArr_U0_output_l1_122_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_output_l1_122_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_122_i_we0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_122_i_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal runSysArr_U0_output_l1_223_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_output_l1_223_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_223_i_we0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_223_i_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal runSysArr_U0_output_l1_324_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runSysArr_U0_output_l1_324_i_ce0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_324_i_we0 : STD_LOGIC;
+    signal runSysArr_U0_output_l1_324_i_d0 : STD_LOGIC_VECTOR (31 downto 0);
+    signal runSysArr_U0_param_read : STD_LOGIC;
+    signal runSysArr_U0_param_out_din : STD_LOGIC_VECTOR (1119 downto 0);
+    signal runSysArr_U0_param_out_write : STD_LOGIC;
     signal ap_channel_done_output_l1_3 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_324_full_n : STD_LOGIC;
+    signal runSysArr_U0_output_l1_324_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_output_l1_3 : STD_LOGIC := '0';
     signal ap_sync_channel_write_output_l1_3 : STD_LOGIC;
     signal ap_channel_done_output_l1_2 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_223_full_n : STD_LOGIC;
+    signal runSysArr_U0_output_l1_223_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_output_l1_2 : STD_LOGIC := '0';
     signal ap_sync_channel_write_output_l1_2 : STD_LOGIC;
     signal ap_channel_done_output_l1_1 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_122_full_n : STD_LOGIC;
+    signal runSysArr_U0_output_l1_122_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_output_l1_1 : STD_LOGIC := '0';
     signal ap_sync_channel_write_output_l1_1 : STD_LOGIC;
     signal ap_channel_done_output_l1_0 : STD_LOGIC;
-    signal runSysArr_U0_output_l1_021_full_n : STD_LOGIC;
+    signal runSysArr_U0_output_l1_021_i_full_n : STD_LOGIC;
     signal ap_sync_reg_channel_write_output_l1_0 : STD_LOGIC := '0';
     signal ap_sync_channel_write_output_l1_0 : STD_LOGIC;
     signal runOutputL1toL2_U0_ap_start : STD_LOGIC;
@@ -461,36 +466,45 @@ attribute shreg_extract : string;
     signal runOutputL1toL2_U0_ap_continue : STD_LOGIC;
     signal runOutputL1toL2_U0_ap_idle : STD_LOGIC;
     signal runOutputL1toL2_U0_ap_ready : STD_LOGIC;
-    signal runOutputL1toL2_U0_output_l1_0_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runOutputL1toL2_U0_output_l1_0_ce0 : STD_LOGIC;
-    signal runOutputL1toL2_U0_output_l1_1_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runOutputL1toL2_U0_output_l1_1_ce0 : STD_LOGIC;
-    signal runOutputL1toL2_U0_output_l1_2_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runOutputL1toL2_U0_output_l1_2_ce0 : STD_LOGIC;
-    signal runOutputL1toL2_U0_output_l1_3_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal runOutputL1toL2_U0_output_l1_3_ce0 : STD_LOGIC;
-    signal runOutputL1toL2_U0_output_l2_0_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal runOutputL1toL2_U0_output_l1_021_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runOutputL1toL2_U0_output_l1_021_i_ce0 : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l1_122_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runOutputL1toL2_U0_output_l1_122_i_ce0 : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l1_223_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runOutputL1toL2_U0_output_l1_223_i_ce0 : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l1_324_i_address0 : STD_LOGIC_VECTOR (5 downto 0);
+    signal runOutputL1toL2_U0_output_l1_324_i_ce0 : STD_LOGIC;
+    signal runOutputL1toL2_U0_param_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_ko_1_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_ho_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_wo_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_ro_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_co_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_so_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_0_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal runOutputL1toL2_U0_output_l2_0_ce0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_0_we0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_0_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runOutputL1toL2_U0_output_l2_1_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal runOutputL1toL2_U0_output_l2_1_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal runOutputL1toL2_U0_output_l2_1_ce0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_1_we0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_1_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runOutputL1toL2_U0_output_l2_2_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal runOutputL1toL2_U0_output_l2_2_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal runOutputL1toL2_U0_output_l2_2_ce0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_2_we0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_2_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runOutputL1toL2_U0_output_l2_3_address0 : STD_LOGIC_VECTOR (19 downto 0);
+    signal runOutputL1toL2_U0_output_l2_3_address0 : STD_LOGIC_VECTOR (10 downto 0);
     signal runOutputL1toL2_U0_output_l2_3_ce0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_3_we0 : STD_LOGIC;
     signal runOutputL1toL2_U0_output_l2_3_d0 : STD_LOGIC_VECTOR (31 downto 0);
-    signal runOutputL1toL2_U0_empty_23_read : STD_LOGIC;
-    signal runOutputL1toL2_U0_empty_24_read : STD_LOGIC;
-    signal runOutputL1toL2_U0_ko_2_read : STD_LOGIC;
-    signal runOutputL1toL2_U0_ho_read : STD_LOGIC;
-    signal runOutputL1toL2_U0_wo_read : STD_LOGIC;
-    signal runOutputL1toL2_U0_empty_read : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_0_full_n : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_0_write : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_1_full_n : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_1_write : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_2_full_n : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_2_write : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_3_full_n : STD_LOGIC;
+    signal runOutputL1toL2_U0_output_l2_3_write : STD_LOGIC;
     signal ap_sync_continue : STD_LOGIC;
     signal data_l1_0_i_full_n : STD_LOGIC;
     signal data_l1_0_t_empty_n : STD_LOGIC;
@@ -508,78 +522,60 @@ attribute shreg_extract : string;
     signal output_l1_2_t_empty_n : STD_LOGIC;
     signal output_l1_3_i_full_n : STD_LOGIC;
     signal output_l1_3_t_empty_n : STD_LOGIC;
-    signal p_c_full_n : STD_LOGIC;
-    signal p_c_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal p_c_empty_n : STD_LOGIC;
-    signal p_c1_full_n : STD_LOGIC;
-    signal p_c1_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal p_c1_empty_n : STD_LOGIC;
-    signal ko_2_c_full_n : STD_LOGIC;
-    signal ko_2_c_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal ko_2_c_empty_n : STD_LOGIC;
-    signal co_1_c_full_n : STD_LOGIC;
-    signal co_1_c_dout : STD_LOGIC_VECTOR (17 downto 0);
-    signal co_1_c_empty_n : STD_LOGIC;
-    signal co_1_c2_full_n : STD_LOGIC;
-    signal co_1_c2_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal co_1_c2_empty_n : STD_LOGIC;
+    signal param_c_full_n : STD_LOGIC;
+    signal param_c_dout : STD_LOGIC_VECTOR (1183 downto 0);
+    signal param_c_empty_n : STD_LOGIC;
+    signal param_c1_full_n : STD_LOGIC;
+    signal param_c1_dout : STD_LOGIC_VECTOR (1119 downto 0);
+    signal param_c1_empty_n : STD_LOGIC;
+    signal ko_1_c_full_n : STD_LOGIC;
+    signal ko_1_c_dout : STD_LOGIC_VECTOR (11 downto 0);
+    signal ko_1_c_empty_n : STD_LOGIC;
+    signal co_c_full_n : STD_LOGIC;
+    signal co_c_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal co_c_empty_n : STD_LOGIC;
+    signal co_c2_full_n : STD_LOGIC;
+    signal co_c2_dout : STD_LOGIC_VECTOR (10 downto 0);
+    signal co_c2_empty_n : STD_LOGIC;
     signal ro_c_full_n : STD_LOGIC;
     signal ro_c_dout : STD_LOGIC_VECTOR (31 downto 0);
     signal ro_c_empty_n : STD_LOGIC;
     signal ro_c3_full_n : STD_LOGIC;
-    signal ro_c3_dout : STD_LOGIC_VECTOR (19 downto 0);
+    signal ro_c3_dout : STD_LOGIC_VECTOR (10 downto 0);
     signal ro_c3_empty_n : STD_LOGIC;
     signal so_c_full_n : STD_LOGIC;
     signal so_c_dout : STD_LOGIC_VECTOR (31 downto 0);
     signal so_c_empty_n : STD_LOGIC;
     signal so_c4_full_n : STD_LOGIC;
-    signal so_c4_dout : STD_LOGIC_VECTOR (19 downto 0);
+    signal so_c4_dout : STD_LOGIC_VECTOR (10 downto 0);
     signal so_c4_empty_n : STD_LOGIC;
-    signal p_c5_full_n : STD_LOGIC;
-    signal p_c5_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c5_empty_n : STD_LOGIC;
-    signal p_c6_full_n : STD_LOGIC;
-    signal p_c6_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c6_empty_n : STD_LOGIC;
-    signal p_c7_full_n : STD_LOGIC;
-    signal p_c7_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c7_empty_n : STD_LOGIC;
-    signal p_c8_full_n : STD_LOGIC;
-    signal p_c8_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c8_empty_n : STD_LOGIC;
     signal ho_c_full_n : STD_LOGIC;
-    signal ho_c_dout : STD_LOGIC_VECTOR (19 downto 0);
+    signal ho_c_dout : STD_LOGIC_VECTOR (10 downto 0);
     signal ho_c_empty_n : STD_LOGIC;
-    signal ho_c9_full_n : STD_LOGIC;
-    signal ho_c9_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal ho_c9_empty_n : STD_LOGIC;
+    signal ho_c5_full_n : STD_LOGIC;
+    signal ho_c5_dout : STD_LOGIC_VECTOR (10 downto 0);
+    signal ho_c5_empty_n : STD_LOGIC;
     signal wo_c_full_n : STD_LOGIC;
-    signal wo_c_dout : STD_LOGIC_VECTOR (19 downto 0);
+    signal wo_c_dout : STD_LOGIC_VECTOR (10 downto 0);
     signal wo_c_empty_n : STD_LOGIC;
-    signal wo_c10_full_n : STD_LOGIC;
-    signal wo_c10_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal wo_c10_empty_n : STD_LOGIC;
-    signal p_c11_full_n : STD_LOGIC;
-    signal p_c11_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal p_c11_empty_n : STD_LOGIC;
-    signal p_c12_full_n : STD_LOGIC;
-    signal p_c12_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c12_empty_n : STD_LOGIC;
-    signal p_c13_full_n : STD_LOGIC;
-    signal p_c13_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c13_empty_n : STD_LOGIC;
-    signal p_c14_full_n : STD_LOGIC;
-    signal p_c14_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal p_c14_empty_n : STD_LOGIC;
-    signal ko_2_c15_full_n : STD_LOGIC;
-    signal ko_2_c15_dout : STD_LOGIC_VECTOR (19 downto 0);
-    signal ko_2_c15_empty_n : STD_LOGIC;
-    signal ro_c16_full_n : STD_LOGIC;
-    signal ro_c16_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal ro_c16_empty_n : STD_LOGIC;
-    signal so_c17_full_n : STD_LOGIC;
-    signal so_c17_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal so_c17_empty_n : STD_LOGIC;
+    signal wo_c6_full_n : STD_LOGIC;
+    signal wo_c6_dout : STD_LOGIC_VECTOR (10 downto 0);
+    signal wo_c6_empty_n : STD_LOGIC;
+    signal param_c7_full_n : STD_LOGIC;
+    signal param_c7_dout : STD_LOGIC_VECTOR (1183 downto 0);
+    signal param_c7_empty_n : STD_LOGIC;
+    signal ko_1_c8_full_n : STD_LOGIC;
+    signal ko_1_c8_dout : STD_LOGIC_VECTOR (10 downto 0);
+    signal ko_1_c8_empty_n : STD_LOGIC;
+    signal co_c9_full_n : STD_LOGIC;
+    signal co_c9_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal co_c9_empty_n : STD_LOGIC;
+    signal ro_c10_full_n : STD_LOGIC;
+    signal ro_c10_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal ro_c10_empty_n : STD_LOGIC;
+    signal so_c11_full_n : STD_LOGIC;
+    signal so_c11_dout : STD_LOGIC_VECTOR (31 downto 0);
+    signal so_c11_empty_n : STD_LOGIC;
     signal weight_regfile_0_0_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal weight_regfile_0_0_empty_n : STD_LOGIC;
     signal weight_regfile_0_1_dout : STD_LOGIC_VECTOR (7 downto 0);
@@ -612,25 +608,22 @@ attribute shreg_extract : string;
     signal weight_regfile_3_2_empty_n : STD_LOGIC;
     signal weight_regfile_3_3_dout : STD_LOGIC_VECTOR (7 downto 0);
     signal weight_regfile_3_3_empty_n : STD_LOGIC;
-    signal p_c18_full_n : STD_LOGIC;
-    signal p_c18_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c18_empty_n : STD_LOGIC;
-    signal p_c19_full_n : STD_LOGIC;
-    signal p_c19_dout : STD_LOGIC_VECTOR (31 downto 0);
-    signal p_c19_empty_n : STD_LOGIC;
+    signal param_c12_full_n : STD_LOGIC;
+    signal param_c12_dout : STD_LOGIC_VECTOR (1119 downto 0);
+    signal param_c12_empty_n : STD_LOGIC;
     signal ap_sync_done : STD_LOGIC;
     signal ap_sync_ready : STD_LOGIC;
-    signal ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready : STD_LOGIC := '0';
-    signal ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count : STD_LOGIC_VECTOR (1 downto 0) := "00";
+    signal ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready : STD_LOGIC := '0';
+    signal ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count : STD_LOGIC_VECTOR (1 downto 0) := "00";
     signal ap_sync_reg_runWeight2Reg_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_runWeight2Reg_U0_ap_ready : STD_LOGIC;
     signal runWeight2Reg_U0_ap_ready_count : STD_LOGIC_VECTOR (1 downto 0) := "00";
     signal ap_sync_reg_runDataL2toL1_U0_ap_ready : STD_LOGIC := '0';
     signal ap_sync_runDataL2toL1_U0_ap_ready : STD_LOGIC;
     signal runDataL2toL1_U0_ap_ready_count : STD_LOGIC_VECTOR (1 downto 0) := "00";
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_start_full_n : STD_LOGIC;
-    signal dataflow_in_loop_LOOP_S_OUTER_entry24_U0_start_write : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_full_n : STD_LOGIC;
+    signal dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_write : STD_LOGIC;
     signal runWeight2Reg_U0_start_full_n : STD_LOGIC;
     signal runWeight2Reg_U0_start_write : STD_LOGIC;
     signal runDataL2toL1_U0_start_full_n : STD_LOGIC;
@@ -640,7 +633,7 @@ attribute shreg_extract : string;
     signal runOutputL1toL2_U0_start_full_n : STD_LOGIC;
     signal runOutputL1toL2_U0_start_write : STD_LOGIC;
 
-    component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry24 IS
+    component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry28 IS
     port (
         ap_clk : IN STD_LOGIC;
         ap_rst : IN STD_LOGIC;
@@ -649,83 +642,52 @@ attribute shreg_extract : string;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        p_read : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read1 : IN STD_LOGIC_VECTOR (19 downto 0);
-        ko_2 : IN STD_LOGIC_VECTOR (19 downto 0);
-        co_1 : IN STD_LOGIC_VECTOR (19 downto 0);
+        param : IN STD_LOGIC_VECTOR (1183 downto 0);
+        ko_1 : IN STD_LOGIC_VECTOR (11 downto 0);
+        co : IN STD_LOGIC_VECTOR (31 downto 0);
         ro : IN STD_LOGIC_VECTOR (31 downto 0);
         so : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read2 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read3 : IN STD_LOGIC_VECTOR (31 downto 0);
-        ho : IN STD_LOGIC_VECTOR (19 downto 0);
-        wo : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read4 : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_read5 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read6 : IN STD_LOGIC_VECTOR (31 downto 0);
-        p_read7 : IN STD_LOGIC_VECTOR (19 downto 0);
-        p_out_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        p_out_full_n : IN STD_LOGIC;
-        p_out_write : OUT STD_LOGIC;
-        p_out1_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        p_out1_full_n : IN STD_LOGIC;
-        p_out1_write : OUT STD_LOGIC;
-        ko_2_out_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        ko_2_out_full_n : IN STD_LOGIC;
-        ko_2_out_write : OUT STD_LOGIC;
-        co_1_out_din : OUT STD_LOGIC_VECTOR (17 downto 0);
-        co_1_out_full_n : IN STD_LOGIC;
-        co_1_out_write : OUT STD_LOGIC;
-        co_1_out2_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        co_1_out2_full_n : IN STD_LOGIC;
-        co_1_out2_write : OUT STD_LOGIC;
+        ho : IN STD_LOGIC_VECTOR (10 downto 0);
+        wo : IN STD_LOGIC_VECTOR (10 downto 0);
+        param_out_din : OUT STD_LOGIC_VECTOR (1183 downto 0);
+        param_out_full_n : IN STD_LOGIC;
+        param_out_write : OUT STD_LOGIC;
+        param_out1_din : OUT STD_LOGIC_VECTOR (1119 downto 0);
+        param_out1_full_n : IN STD_LOGIC;
+        param_out1_write : OUT STD_LOGIC;
+        ko_1_out_din : OUT STD_LOGIC_VECTOR (11 downto 0);
+        ko_1_out_full_n : IN STD_LOGIC;
+        ko_1_out_write : OUT STD_LOGIC;
+        co_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        co_out_full_n : IN STD_LOGIC;
+        co_out_write : OUT STD_LOGIC;
+        co_out2_din : OUT STD_LOGIC_VECTOR (10 downto 0);
+        co_out2_full_n : IN STD_LOGIC;
+        co_out2_write : OUT STD_LOGIC;
         ro_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         ro_out_full_n : IN STD_LOGIC;
         ro_out_write : OUT STD_LOGIC;
-        ro_out3_din : OUT STD_LOGIC_VECTOR (19 downto 0);
+        ro_out3_din : OUT STD_LOGIC_VECTOR (10 downto 0);
         ro_out3_full_n : IN STD_LOGIC;
         ro_out3_write : OUT STD_LOGIC;
         so_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         so_out_full_n : IN STD_LOGIC;
         so_out_write : OUT STD_LOGIC;
-        so_out4_din : OUT STD_LOGIC_VECTOR (19 downto 0);
+        so_out4_din : OUT STD_LOGIC_VECTOR (10 downto 0);
         so_out4_full_n : IN STD_LOGIC;
         so_out4_write : OUT STD_LOGIC;
-        p_out5_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out5_full_n : IN STD_LOGIC;
-        p_out5_write : OUT STD_LOGIC;
-        p_out6_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out6_full_n : IN STD_LOGIC;
-        p_out6_write : OUT STD_LOGIC;
-        p_out7_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out7_full_n : IN STD_LOGIC;
-        p_out7_write : OUT STD_LOGIC;
-        p_out8_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out8_full_n : IN STD_LOGIC;
-        p_out8_write : OUT STD_LOGIC;
-        ho_out_din : OUT STD_LOGIC_VECTOR (19 downto 0);
+        ho_out_din : OUT STD_LOGIC_VECTOR (10 downto 0);
         ho_out_full_n : IN STD_LOGIC;
         ho_out_write : OUT STD_LOGIC;
-        ho_out9_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        ho_out9_full_n : IN STD_LOGIC;
-        ho_out9_write : OUT STD_LOGIC;
-        wo_out_din : OUT STD_LOGIC_VECTOR (19 downto 0);
+        ho_out5_din : OUT STD_LOGIC_VECTOR (10 downto 0);
+        ho_out5_full_n : IN STD_LOGIC;
+        ho_out5_write : OUT STD_LOGIC;
+        wo_out_din : OUT STD_LOGIC_VECTOR (10 downto 0);
         wo_out_full_n : IN STD_LOGIC;
         wo_out_write : OUT STD_LOGIC;
-        wo_out10_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        wo_out10_full_n : IN STD_LOGIC;
-        wo_out10_write : OUT STD_LOGIC;
-        p_out11_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        p_out11_full_n : IN STD_LOGIC;
-        p_out11_write : OUT STD_LOGIC;
-        p_out12_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out12_full_n : IN STD_LOGIC;
-        p_out12_write : OUT STD_LOGIC;
-        p_out13_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out13_full_n : IN STD_LOGIC;
-        p_out13_write : OUT STD_LOGIC;
-        p_out14_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        p_out14_full_n : IN STD_LOGIC;
-        p_out14_write : OUT STD_LOGIC );
+        wo_out6_din : OUT STD_LOGIC_VECTOR (10 downto 0);
+        wo_out6_full_n : IN STD_LOGIC;
+        wo_out6_write : OUT STD_LOGIC );
     end component;
 
 
@@ -738,39 +700,42 @@ attribute shreg_extract : string;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_0_ce0 : OUT STD_LOGIC;
-        weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_1_ce0 : OUT STD_LOGIC;
-        weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_2_ce0 : OUT STD_LOGIC;
-        weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        weight_l2_3_ce0 : OUT STD_LOGIC;
-        weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        empty_19_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        empty_19_empty_n : IN STD_LOGIC;
-        empty_19_read : OUT STD_LOGIC;
-        empty_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        empty_empty_n : IN STD_LOGIC;
-        empty_read : OUT STD_LOGIC;
-        ko_2_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        ko_2_empty_n : IN STD_LOGIC;
-        ko_2_read : OUT STD_LOGIC;
-        co_1_dout : IN STD_LOGIC_VECTOR (17 downto 0);
-        co_1_empty_n : IN STD_LOGIC;
-        co_1_read : OUT STD_LOGIC;
+        param_dout : IN STD_LOGIC_VECTOR (1183 downto 0);
+        param_empty_n : IN STD_LOGIC;
+        param_read : OUT STD_LOGIC;
+        ko_1_dout : IN STD_LOGIC_VECTOR (11 downto 0);
+        ko_1_empty_n : IN STD_LOGIC;
+        ko_1_read : OUT STD_LOGIC;
+        co_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        co_empty_n : IN STD_LOGIC;
+        co_read : OUT STD_LOGIC;
         ro_dout : IN STD_LOGIC_VECTOR (31 downto 0);
         ro_empty_n : IN STD_LOGIC;
         ro_read : OUT STD_LOGIC;
         so_dout : IN STD_LOGIC_VECTOR (31 downto 0);
         so_empty_n : IN STD_LOGIC;
         so_read : OUT STD_LOGIC;
-        ko_2_out_din : OUT STD_LOGIC_VECTOR (19 downto 0);
-        ko_2_out_full_n : IN STD_LOGIC;
-        ko_2_out_write : OUT STD_LOGIC;
+        weight_l2_0_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_0_ce0 : OUT STD_LOGIC;
+        weight_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_1_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_1_ce0 : OUT STD_LOGIC;
+        weight_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_2_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_2_ce0 : OUT STD_LOGIC;
+        weight_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        weight_l2_3_address0 : OUT STD_LOGIC_VECTOR (11 downto 0);
+        weight_l2_3_ce0 : OUT STD_LOGIC;
+        weight_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        param_out_din : OUT STD_LOGIC_VECTOR (1183 downto 0);
+        param_out_full_n : IN STD_LOGIC;
+        param_out_write : OUT STD_LOGIC;
+        ko_1_out_din : OUT STD_LOGIC_VECTOR (10 downto 0);
+        ko_1_out_full_n : IN STD_LOGIC;
+        ko_1_out_write : OUT STD_LOGIC;
+        co_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
+        co_out_full_n : IN STD_LOGIC;
+        co_out_write : OUT STD_LOGIC;
         ro_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
         ro_out_full_n : IN STD_LOGIC;
         ro_out_write : OUT STD_LOGIC;
@@ -805,58 +770,52 @@ attribute shreg_extract : string;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        data_l1_0_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_0_ce0 : OUT STD_LOGIC;
-        data_l1_0_we0 : OUT STD_LOGIC;
-        data_l1_0_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_1_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_1_ce0 : OUT STD_LOGIC;
-        data_l1_1_we0 : OUT STD_LOGIC;
-        data_l1_1_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_2_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_2_ce0 : OUT STD_LOGIC;
-        data_l1_2_we0 : OUT STD_LOGIC;
-        data_l1_2_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_3_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_3_ce0 : OUT STD_LOGIC;
-        data_l1_3_we0 : OUT STD_LOGIC;
-        data_l1_3_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_0_ce0 : OUT STD_LOGIC;
-        data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_1_ce0 : OUT STD_LOGIC;
-        data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_2_ce0 : OUT STD_LOGIC;
-        data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
-        data_l2_3_ce0 : OUT STD_LOGIC;
-        data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        empty_25_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_25_empty_n : IN STD_LOGIC;
-        empty_25_read : OUT STD_LOGIC;
-        empty_26_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_26_empty_n : IN STD_LOGIC;
-        empty_26_read : OUT STD_LOGIC;
-        co_1_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        co_1_empty_n : IN STD_LOGIC;
-        co_1_read : OUT STD_LOGIC;
-        ho_dout : IN STD_LOGIC_VECTOR (19 downto 0);
+        data_l1_017_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_017_i_ce0 : OUT STD_LOGIC;
+        data_l1_017_i_we0 : OUT STD_LOGIC;
+        data_l1_017_i_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_118_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_118_i_ce0 : OUT STD_LOGIC;
+        data_l1_118_i_we0 : OUT STD_LOGIC;
+        data_l1_118_i_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_219_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_219_i_ce0 : OUT STD_LOGIC;
+        data_l1_219_i_we0 : OUT STD_LOGIC;
+        data_l1_219_i_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_320_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_320_i_ce0 : OUT STD_LOGIC;
+        data_l1_320_i_we0 : OUT STD_LOGIC;
+        data_l1_320_i_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+        param_dout : IN STD_LOGIC_VECTOR (1119 downto 0);
+        param_empty_n : IN STD_LOGIC;
+        param_read : OUT STD_LOGIC;
+        co_dout : IN STD_LOGIC_VECTOR (10 downto 0);
+        co_empty_n : IN STD_LOGIC;
+        co_read : OUT STD_LOGIC;
+        ho_dout : IN STD_LOGIC_VECTOR (10 downto 0);
         ho_empty_n : IN STD_LOGIC;
         ho_read : OUT STD_LOGIC;
-        wo_dout : IN STD_LOGIC_VECTOR (19 downto 0);
+        wo_dout : IN STD_LOGIC_VECTOR (10 downto 0);
         wo_empty_n : IN STD_LOGIC;
         wo_read : OUT STD_LOGIC;
-        ro_dout : IN STD_LOGIC_VECTOR (19 downto 0);
+        ro_dout : IN STD_LOGIC_VECTOR (10 downto 0);
         ro_empty_n : IN STD_LOGIC;
         ro_read : OUT STD_LOGIC;
-        so_dout : IN STD_LOGIC_VECTOR (19 downto 0);
+        so_dout : IN STD_LOGIC_VECTOR (10 downto 0);
         so_empty_n : IN STD_LOGIC;
         so_read : OUT STD_LOGIC;
-        empty_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        empty_empty_n : IN STD_LOGIC;
-        empty_read : OUT STD_LOGIC );
+        data_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
+        data_l2_0_ce0 : OUT STD_LOGIC;
+        data_l2_0_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
+        data_l2_1_ce0 : OUT STD_LOGIC;
+        data_l2_1_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
+        data_l2_2_ce0 : OUT STD_LOGIC;
+        data_l2_2_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
+        data_l2_3_ce0 : OUT STD_LOGIC;
+        data_l2_3_q0 : IN STD_LOGIC_VECTOR (7 downto 0) );
     end component;
 
 
@@ -885,58 +844,40 @@ attribute shreg_extract : string;
         p_read13 : IN STD_LOGIC_VECTOR (7 downto 0);
         p_read14 : IN STD_LOGIC_VECTOR (7 downto 0);
         p_read15 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_017_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_017_ce0 : OUT STD_LOGIC;
-        data_l1_017_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_118_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_118_ce0 : OUT STD_LOGIC;
-        data_l1_118_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_219_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_219_ce0 : OUT STD_LOGIC;
-        data_l1_219_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_320_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        data_l1_320_ce0 : OUT STD_LOGIC;
-        data_l1_320_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_021_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_021_ce0 : OUT STD_LOGIC;
-        output_l1_021_we0 : OUT STD_LOGIC;
-        output_l1_021_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_122_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_122_ce0 : OUT STD_LOGIC;
-        output_l1_122_we0 : OUT STD_LOGIC;
-        output_l1_122_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_223_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_223_ce0 : OUT STD_LOGIC;
-        output_l1_223_we0 : OUT STD_LOGIC;
-        output_l1_223_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_324_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_324_ce0 : OUT STD_LOGIC;
-        output_l1_324_we0 : OUT STD_LOGIC;
-        output_l1_324_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        empty_20_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_20_empty_n : IN STD_LOGIC;
-        empty_20_read : OUT STD_LOGIC;
-        empty_21_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_21_empty_n : IN STD_LOGIC;
-        empty_21_read : OUT STD_LOGIC;
-        empty_22_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_22_empty_n : IN STD_LOGIC;
-        empty_22_read : OUT STD_LOGIC;
-        empty_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_empty_n : IN STD_LOGIC;
-        empty_read : OUT STD_LOGIC;
-        so_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        so_empty_n : IN STD_LOGIC;
-        so_read : OUT STD_LOGIC;
-        ro_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        ro_empty_n : IN STD_LOGIC;
-        ro_read : OUT STD_LOGIC;
-        p_out_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out_full_n : IN STD_LOGIC;
-        p_out_write : OUT STD_LOGIC;
-        p_out1_din : OUT STD_LOGIC_VECTOR (31 downto 0);
-        p_out1_full_n : IN STD_LOGIC;
-        p_out1_write : OUT STD_LOGIC );
+        data_l1_017_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_017_i_ce0 : OUT STD_LOGIC;
+        data_l1_017_i_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_118_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_118_i_ce0 : OUT STD_LOGIC;
+        data_l1_118_i_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_219_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_219_i_ce0 : OUT STD_LOGIC;
+        data_l1_219_i_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        data_l1_320_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        data_l1_320_i_ce0 : OUT STD_LOGIC;
+        data_l1_320_i_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        output_l1_021_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_021_i_ce0 : OUT STD_LOGIC;
+        output_l1_021_i_we0 : OUT STD_LOGIC;
+        output_l1_021_i_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_122_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_122_i_ce0 : OUT STD_LOGIC;
+        output_l1_122_i_we0 : OUT STD_LOGIC;
+        output_l1_122_i_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_223_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_223_i_ce0 : OUT STD_LOGIC;
+        output_l1_223_i_we0 : OUT STD_LOGIC;
+        output_l1_223_i_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_324_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_324_i_ce0 : OUT STD_LOGIC;
+        output_l1_324_i_we0 : OUT STD_LOGIC;
+        output_l1_324_i_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
+        param_dout : IN STD_LOGIC_VECTOR (1183 downto 0);
+        param_empty_n : IN STD_LOGIC;
+        param_read : OUT STD_LOGIC;
+        param_out_din : OUT STD_LOGIC_VECTOR (1119 downto 0);
+        param_out_full_n : IN STD_LOGIC;
+        param_out_write : OUT STD_LOGIC );
     end component;
 
 
@@ -949,52 +890,55 @@ attribute shreg_extract : string;
         ap_continue : IN STD_LOGIC;
         ap_idle : OUT STD_LOGIC;
         ap_ready : OUT STD_LOGIC;
-        output_l1_0_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_0_ce0 : OUT STD_LOGIC;
-        output_l1_0_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_1_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_1_ce0 : OUT STD_LOGIC;
-        output_l1_1_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_2_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_2_ce0 : OUT STD_LOGIC;
-        output_l1_2_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l1_3_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        output_l1_3_ce0 : OUT STD_LOGIC;
-        output_l1_3_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_0_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l1_021_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_021_i_ce0 : OUT STD_LOGIC;
+        output_l1_021_i_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_122_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_122_i_ce0 : OUT STD_LOGIC;
+        output_l1_122_i_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_223_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_223_i_ce0 : OUT STD_LOGIC;
+        output_l1_223_i_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        output_l1_324_i_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
+        output_l1_324_i_ce0 : OUT STD_LOGIC;
+        output_l1_324_i_q0 : IN STD_LOGIC_VECTOR (31 downto 0);
+        param_dout : IN STD_LOGIC_VECTOR (1119 downto 0);
+        param_empty_n : IN STD_LOGIC;
+        param_read : OUT STD_LOGIC;
+        ko_1_dout : IN STD_LOGIC_VECTOR (10 downto 0);
+        ko_1_empty_n : IN STD_LOGIC;
+        ko_1_read : OUT STD_LOGIC;
+        ho_dout : IN STD_LOGIC_VECTOR (10 downto 0);
+        ho_empty_n : IN STD_LOGIC;
+        ho_read : OUT STD_LOGIC;
+        wo_dout : IN STD_LOGIC_VECTOR (10 downto 0);
+        wo_empty_n : IN STD_LOGIC;
+        wo_read : OUT STD_LOGIC;
+        ro_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        ro_empty_n : IN STD_LOGIC;
+        ro_read : OUT STD_LOGIC;
+        co_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        co_empty_n : IN STD_LOGIC;
+        co_read : OUT STD_LOGIC;
+        so_dout : IN STD_LOGIC_VECTOR (31 downto 0);
+        so_empty_n : IN STD_LOGIC;
+        so_read : OUT STD_LOGIC;
+        output_l2_0_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_0_ce0 : OUT STD_LOGIC;
         output_l2_0_we0 : OUT STD_LOGIC;
         output_l2_0_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_1_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_1_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_1_ce0 : OUT STD_LOGIC;
         output_l2_1_we0 : OUT STD_LOGIC;
         output_l2_1_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_2_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_2_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_2_ce0 : OUT STD_LOGIC;
         output_l2_2_we0 : OUT STD_LOGIC;
         output_l2_2_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        output_l2_3_address0 : OUT STD_LOGIC_VECTOR (19 downto 0);
+        output_l2_3_address0 : OUT STD_LOGIC_VECTOR (10 downto 0);
         output_l2_3_ce0 : OUT STD_LOGIC;
         output_l2_3_we0 : OUT STD_LOGIC;
-        output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        empty_23_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_23_empty_n : IN STD_LOGIC;
-        empty_23_read : OUT STD_LOGIC;
-        empty_24_dout : IN STD_LOGIC_VECTOR (31 downto 0);
-        empty_24_empty_n : IN STD_LOGIC;
-        empty_24_read : OUT STD_LOGIC;
-        ko_2_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        ko_2_empty_n : IN STD_LOGIC;
-        ko_2_read : OUT STD_LOGIC;
-        ho_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        ho_empty_n : IN STD_LOGIC;
-        ho_read : OUT STD_LOGIC;
-        wo_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        wo_empty_n : IN STD_LOGIC;
-        wo_read : OUT STD_LOGIC;
-        empty_dout : IN STD_LOGIC_VECTOR (19 downto 0);
-        empty_empty_n : IN STD_LOGIC;
-        empty_read : OUT STD_LOGIC );
+        output_l2_3_d0 : OUT STD_LOGIC_VECTOR (31 downto 0) );
     end component;
 
 
@@ -1006,12 +950,12 @@ attribute shreg_extract : string;
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        i_address0 : IN STD_LOGIC_VECTOR (5 downto 0);
         i_ce0 : IN STD_LOGIC;
         i_we0 : IN STD_LOGIC;
         i_d0 : IN STD_LOGIC_VECTOR (7 downto 0);
         i_q0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        t_address0 : IN STD_LOGIC_VECTOR (5 downto 0);
         t_ce0 : IN STD_LOGIC;
         t_we0 : IN STD_LOGIC;
         t_d0 : IN STD_LOGIC_VECTOR (7 downto 0);
@@ -1033,12 +977,12 @@ attribute shreg_extract : string;
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
-        i_address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        i_address0 : IN STD_LOGIC_VECTOR (5 downto 0);
         i_ce0 : IN STD_LOGIC;
         i_we0 : IN STD_LOGIC;
         i_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
         i_q0 : OUT STD_LOGIC_VECTOR (31 downto 0);
-        t_address0 : IN STD_LOGIC_VECTOR (7 downto 0);
+        t_address0 : IN STD_LOGIC_VECTOR (5 downto 0);
         t_ce0 : IN STD_LOGIC;
         t_we0 : IN STD_LOGIC;
         t_d0 : IN STD_LOGIC_VECTOR (31 downto 0);
@@ -1052,31 +996,46 @@ attribute shreg_extract : string;
     end component;
 
 
-    component Conv_sysarr_fifo_w20_d2_S IS
+    component Conv_sysarr_fifo_w1184_d2_S IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (19 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (1183 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (19 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (1183 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
 
 
-    component Conv_sysarr_fifo_w18_d2_S IS
+    component Conv_sysarr_fifo_w1120_d2_S IS
     port (
         clk : IN STD_LOGIC;
         reset : IN STD_LOGIC;
         if_read_ce : IN STD_LOGIC;
         if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (17 downto 0);
+        if_din : IN STD_LOGIC_VECTOR (1119 downto 0);
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (17 downto 0);
+        if_dout : OUT STD_LOGIC_VECTOR (1119 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component Conv_sysarr_fifo_w12_d2_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (11 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (11 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
@@ -1097,6 +1056,51 @@ attribute shreg_extract : string;
     end component;
 
 
+    component Conv_sysarr_fifo_w11_d2_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (10 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (10 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component Conv_sysarr_fifo_w11_d4_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (10 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (10 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
+    component Conv_sysarr_fifo_w11_d3_S IS
+    port (
+        clk : IN STD_LOGIC;
+        reset : IN STD_LOGIC;
+        if_read_ce : IN STD_LOGIC;
+        if_write_ce : IN STD_LOGIC;
+        if_din : IN STD_LOGIC_VECTOR (10 downto 0);
+        if_full_n : OUT STD_LOGIC;
+        if_write : IN STD_LOGIC;
+        if_dout : OUT STD_LOGIC_VECTOR (10 downto 0);
+        if_empty_n : OUT STD_LOGIC;
+        if_read : IN STD_LOGIC );
+    end component;
+
+
     component Conv_sysarr_fifo_w32_d3_S IS
     port (
         clk : IN STD_LOGIC;
@@ -1107,36 +1111,6 @@ attribute shreg_extract : string;
         if_full_n : OUT STD_LOGIC;
         if_write : IN STD_LOGIC;
         if_dout : OUT STD_LOGIC_VECTOR (31 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC );
-    end component;
-
-
-    component Conv_sysarr_fifo_w20_d4_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (19 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (19 downto 0);
-        if_empty_n : OUT STD_LOGIC;
-        if_read : IN STD_LOGIC );
-    end component;
-
-
-    component Conv_sysarr_fifo_w20_d3_S IS
-    port (
-        clk : IN STD_LOGIC;
-        reset : IN STD_LOGIC;
-        if_read_ce : IN STD_LOGIC;
-        if_write_ce : IN STD_LOGIC;
-        if_din : IN STD_LOGIC_VECTOR (19 downto 0);
-        if_full_n : OUT STD_LOGIC;
-        if_write : IN STD_LOGIC;
-        if_dout : OUT STD_LOGIC_VECTOR (19 downto 0);
         if_empty_n : OUT STD_LOGIC;
         if_read : IN STD_LOGIC );
     end component;
@@ -1162,18 +1136,18 @@ begin
     data_l1_0_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0
     generic map (
         DataWidth => 8,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runDataL2toL1_U0_data_l1_0_address0,
-        i_ce0 => runDataL2toL1_U0_data_l1_0_ce0,
-        i_we0 => runDataL2toL1_U0_data_l1_0_we0,
-        i_d0 => runDataL2toL1_U0_data_l1_0_d0,
+        i_address0 => runDataL2toL1_U0_data_l1_017_i_address0,
+        i_ce0 => runDataL2toL1_U0_data_l1_017_i_ce0,
+        i_we0 => runDataL2toL1_U0_data_l1_017_i_we0,
+        i_d0 => runDataL2toL1_U0_data_l1_017_i_d0,
         i_q0 => data_l1_0_i_q0,
-        t_address0 => runSysArr_U0_data_l1_017_address0,
-        t_ce0 => runSysArr_U0_data_l1_017_ce0,
+        t_address0 => runSysArr_U0_data_l1_017_i_address0,
+        t_ce0 => runSysArr_U0_data_l1_017_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv8_0,
         t_q0 => data_l1_0_t_q0,
@@ -1187,18 +1161,18 @@ begin
     data_l1_1_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0
     generic map (
         DataWidth => 8,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runDataL2toL1_U0_data_l1_1_address0,
-        i_ce0 => runDataL2toL1_U0_data_l1_1_ce0,
-        i_we0 => runDataL2toL1_U0_data_l1_1_we0,
-        i_d0 => runDataL2toL1_U0_data_l1_1_d0,
+        i_address0 => runDataL2toL1_U0_data_l1_118_i_address0,
+        i_ce0 => runDataL2toL1_U0_data_l1_118_i_ce0,
+        i_we0 => runDataL2toL1_U0_data_l1_118_i_we0,
+        i_d0 => runDataL2toL1_U0_data_l1_118_i_d0,
         i_q0 => data_l1_1_i_q0,
-        t_address0 => runSysArr_U0_data_l1_118_address0,
-        t_ce0 => runSysArr_U0_data_l1_118_ce0,
+        t_address0 => runSysArr_U0_data_l1_118_i_address0,
+        t_ce0 => runSysArr_U0_data_l1_118_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv8_0,
         t_q0 => data_l1_1_t_q0,
@@ -1212,18 +1186,18 @@ begin
     data_l1_2_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0
     generic map (
         DataWidth => 8,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runDataL2toL1_U0_data_l1_2_address0,
-        i_ce0 => runDataL2toL1_U0_data_l1_2_ce0,
-        i_we0 => runDataL2toL1_U0_data_l1_2_we0,
-        i_d0 => runDataL2toL1_U0_data_l1_2_d0,
+        i_address0 => runDataL2toL1_U0_data_l1_219_i_address0,
+        i_ce0 => runDataL2toL1_U0_data_l1_219_i_ce0,
+        i_we0 => runDataL2toL1_U0_data_l1_219_i_we0,
+        i_d0 => runDataL2toL1_U0_data_l1_219_i_d0,
         i_q0 => data_l1_2_i_q0,
-        t_address0 => runSysArr_U0_data_l1_219_address0,
-        t_ce0 => runSysArr_U0_data_l1_219_ce0,
+        t_address0 => runSysArr_U0_data_l1_219_i_address0,
+        t_ce0 => runSysArr_U0_data_l1_219_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv8_0,
         t_q0 => data_l1_2_t_q0,
@@ -1237,18 +1211,18 @@ begin
     data_l1_3_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0
     generic map (
         DataWidth => 8,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runDataL2toL1_U0_data_l1_3_address0,
-        i_ce0 => runDataL2toL1_U0_data_l1_3_ce0,
-        i_we0 => runDataL2toL1_U0_data_l1_3_we0,
-        i_d0 => runDataL2toL1_U0_data_l1_3_d0,
+        i_address0 => runDataL2toL1_U0_data_l1_320_i_address0,
+        i_ce0 => runDataL2toL1_U0_data_l1_320_i_ce0,
+        i_we0 => runDataL2toL1_U0_data_l1_320_i_we0,
+        i_d0 => runDataL2toL1_U0_data_l1_320_i_d0,
         i_q0 => data_l1_3_i_q0,
-        t_address0 => runSysArr_U0_data_l1_320_address0,
-        t_ce0 => runSysArr_U0_data_l1_320_ce0,
+        t_address0 => runSysArr_U0_data_l1_320_i_address0,
+        t_ce0 => runSysArr_U0_data_l1_320_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv8_0,
         t_q0 => data_l1_3_t_q0,
@@ -1262,18 +1236,18 @@ begin
     output_l1_0_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0
     generic map (
         DataWidth => 32,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runSysArr_U0_output_l1_021_address0,
-        i_ce0 => runSysArr_U0_output_l1_021_ce0,
-        i_we0 => runSysArr_U0_output_l1_021_we0,
-        i_d0 => runSysArr_U0_output_l1_021_d0,
+        i_address0 => runSysArr_U0_output_l1_021_i_address0,
+        i_ce0 => runSysArr_U0_output_l1_021_i_ce0,
+        i_we0 => runSysArr_U0_output_l1_021_i_we0,
+        i_d0 => runSysArr_U0_output_l1_021_i_d0,
         i_q0 => output_l1_0_i_q0,
-        t_address0 => runOutputL1toL2_U0_output_l1_0_address0,
-        t_ce0 => runOutputL1toL2_U0_output_l1_0_ce0,
+        t_address0 => runOutputL1toL2_U0_output_l1_021_i_address0,
+        t_ce0 => runOutputL1toL2_U0_output_l1_021_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv32_0,
         t_q0 => output_l1_0_t_q0,
@@ -1287,18 +1261,18 @@ begin
     output_l1_1_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0
     generic map (
         DataWidth => 32,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runSysArr_U0_output_l1_122_address0,
-        i_ce0 => runSysArr_U0_output_l1_122_ce0,
-        i_we0 => runSysArr_U0_output_l1_122_we0,
-        i_d0 => runSysArr_U0_output_l1_122_d0,
+        i_address0 => runSysArr_U0_output_l1_122_i_address0,
+        i_ce0 => runSysArr_U0_output_l1_122_i_ce0,
+        i_we0 => runSysArr_U0_output_l1_122_i_we0,
+        i_d0 => runSysArr_U0_output_l1_122_i_d0,
         i_q0 => output_l1_1_i_q0,
-        t_address0 => runOutputL1toL2_U0_output_l1_1_address0,
-        t_ce0 => runOutputL1toL2_U0_output_l1_1_ce0,
+        t_address0 => runOutputL1toL2_U0_output_l1_122_i_address0,
+        t_ce0 => runOutputL1toL2_U0_output_l1_122_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv32_0,
         t_q0 => output_l1_1_t_q0,
@@ -1312,18 +1286,18 @@ begin
     output_l1_2_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0
     generic map (
         DataWidth => 32,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runSysArr_U0_output_l1_223_address0,
-        i_ce0 => runSysArr_U0_output_l1_223_ce0,
-        i_we0 => runSysArr_U0_output_l1_223_we0,
-        i_d0 => runSysArr_U0_output_l1_223_d0,
+        i_address0 => runSysArr_U0_output_l1_223_i_address0,
+        i_ce0 => runSysArr_U0_output_l1_223_i_ce0,
+        i_we0 => runSysArr_U0_output_l1_223_i_we0,
+        i_d0 => runSysArr_U0_output_l1_223_i_d0,
         i_q0 => output_l1_2_i_q0,
-        t_address0 => runOutputL1toL2_U0_output_l1_2_address0,
-        t_ce0 => runOutputL1toL2_U0_output_l1_2_ce0,
+        t_address0 => runOutputL1toL2_U0_output_l1_223_i_address0,
+        t_ce0 => runOutputL1toL2_U0_output_l1_223_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv32_0,
         t_q0 => output_l1_2_t_q0,
@@ -1337,18 +1311,18 @@ begin
     output_l1_3_U : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0
     generic map (
         DataWidth => 32,
-        AddressRange => 196,
-        AddressWidth => 8)
+        AddressRange => 49,
+        AddressWidth => 6)
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        i_address0 => runSysArr_U0_output_l1_324_address0,
-        i_ce0 => runSysArr_U0_output_l1_324_ce0,
-        i_we0 => runSysArr_U0_output_l1_324_we0,
-        i_d0 => runSysArr_U0_output_l1_324_d0,
+        i_address0 => runSysArr_U0_output_l1_324_i_address0,
+        i_ce0 => runSysArr_U0_output_l1_324_i_ce0,
+        i_we0 => runSysArr_U0_output_l1_324_i_we0,
+        i_d0 => runSysArr_U0_output_l1_324_i_d0,
         i_q0 => output_l1_3_i_q0,
-        t_address0 => runOutputL1toL2_U0_output_l1_3_address0,
-        t_ce0 => runOutputL1toL2_U0_output_l1_3_ce0,
+        t_address0 => runOutputL1toL2_U0_output_l1_324_i_address0,
+        t_ce0 => runOutputL1toL2_U0_output_l1_324_i_ce0,
         t_we0 => ap_const_logic_0,
         t_d0 => ap_const_lv32_0,
         t_q0 => output_l1_3_t_q0,
@@ -1359,92 +1333,61 @@ begin
         t_empty_n => output_l1_3_t_empty_n,
         t_read => runOutputL1toL2_U0_ap_ready);
 
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0 : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry24
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0 : component Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry28
     port map (
         ap_clk => ap_clk,
         ap_rst => ap_rst,
-        ap_start => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_start,
-        ap_done => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_done,
-        ap_continue => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_continue,
-        ap_idle => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_idle,
-        ap_ready => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready,
-        p_read => p_read,
-        p_read1 => p_read1,
-        ko_2 => ko_2,
-        co_1 => co_1,
+        ap_start => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start,
+        ap_done => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_done,
+        ap_continue => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue,
+        ap_idle => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle,
+        ap_ready => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready,
+        param => param,
+        ko_1 => ko_1,
+        co => co,
         ro => ro,
         so => so,
-        p_read2 => p_read2,
-        p_read3 => p_read3,
         ho => ho,
         wo => wo,
-        p_read4 => p_read4,
-        p_read5 => p_read5,
-        p_read6 => p_read6,
-        p_read7 => p_read7,
-        p_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_din,
-        p_out_full_n => p_c_full_n,
-        p_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_write,
-        p_out1_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_din,
-        p_out1_full_n => p_c1_full_n,
-        p_out1_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_write,
-        ko_2_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_din,
-        ko_2_out_full_n => ko_2_c_full_n,
-        ko_2_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_write,
-        co_1_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_din,
-        co_1_out_full_n => co_1_c_full_n,
-        co_1_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_write,
-        co_1_out2_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_din,
-        co_1_out2_full_n => co_1_c2_full_n,
-        co_1_out2_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_write,
-        ro_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_din,
+        param_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din,
+        param_out_full_n => param_c_full_n,
+        param_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write,
+        param_out1_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din,
+        param_out1_full_n => param_c1_full_n,
+        param_out1_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write,
+        ko_1_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din,
+        ko_1_out_full_n => ko_1_c_full_n,
+        ko_1_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write,
+        co_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din,
+        co_out_full_n => co_c_full_n,
+        co_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write,
+        co_out2_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din,
+        co_out2_full_n => co_c2_full_n,
+        co_out2_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write,
+        ro_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din,
         ro_out_full_n => ro_c_full_n,
-        ro_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_write,
-        ro_out3_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_din,
+        ro_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write,
+        ro_out3_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din,
         ro_out3_full_n => ro_c3_full_n,
-        ro_out3_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_write,
-        so_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_din,
+        ro_out3_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write,
+        so_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din,
         so_out_full_n => so_c_full_n,
-        so_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_write,
-        so_out4_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_din,
+        so_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write,
+        so_out4_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din,
         so_out4_full_n => so_c4_full_n,
-        so_out4_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_write,
-        p_out5_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_din,
-        p_out5_full_n => p_c5_full_n,
-        p_out5_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_write,
-        p_out6_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_din,
-        p_out6_full_n => p_c6_full_n,
-        p_out6_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_write,
-        p_out7_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_din,
-        p_out7_full_n => p_c7_full_n,
-        p_out7_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_write,
-        p_out8_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_din,
-        p_out8_full_n => p_c8_full_n,
-        p_out8_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_write,
-        ho_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_din,
+        so_out4_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write,
+        ho_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din,
         ho_out_full_n => ho_c_full_n,
-        ho_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_write,
-        ho_out9_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_din,
-        ho_out9_full_n => ho_c9_full_n,
-        ho_out9_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_write,
-        wo_out_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_din,
+        ho_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write,
+        ho_out5_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din,
+        ho_out5_full_n => ho_c5_full_n,
+        ho_out5_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write,
+        wo_out_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din,
         wo_out_full_n => wo_c_full_n,
-        wo_out_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_write,
-        wo_out10_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_din,
-        wo_out10_full_n => wo_c10_full_n,
-        wo_out10_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_write,
-        p_out11_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_din,
-        p_out11_full_n => p_c11_full_n,
-        p_out11_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_write,
-        p_out12_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_din,
-        p_out12_full_n => p_c12_full_n,
-        p_out12_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_write,
-        p_out13_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_din,
-        p_out13_full_n => p_c13_full_n,
-        p_out13_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_write,
-        p_out14_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_din,
-        p_out14_full_n => p_c14_full_n,
-        p_out14_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_write);
+        wo_out_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write,
+        wo_out6_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din,
+        wo_out6_full_n => wo_c6_full_n,
+        wo_out6_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write);
 
     runWeight2Reg_U0 : component Conv_sysarr_runWeight2Reg
     port map (
@@ -1455,6 +1398,21 @@ begin
         ap_continue => runWeight2Reg_U0_ap_continue,
         ap_idle => runWeight2Reg_U0_ap_idle,
         ap_ready => runWeight2Reg_U0_ap_ready,
+        param_dout => param_c_dout,
+        param_empty_n => param_c_empty_n,
+        param_read => runWeight2Reg_U0_param_read,
+        ko_1_dout => ko_1_c_dout,
+        ko_1_empty_n => ko_1_c_empty_n,
+        ko_1_read => runWeight2Reg_U0_ko_1_read,
+        co_dout => co_c_dout,
+        co_empty_n => co_c_empty_n,
+        co_read => runWeight2Reg_U0_co_read,
+        ro_dout => ro_c_dout,
+        ro_empty_n => ro_c_empty_n,
+        ro_read => runWeight2Reg_U0_ro_read,
+        so_dout => so_c_dout,
+        so_empty_n => so_c_empty_n,
+        so_read => runWeight2Reg_U0_so_read,
         weight_l2_0_address0 => runWeight2Reg_U0_weight_l2_0_address0,
         weight_l2_0_ce0 => runWeight2Reg_U0_weight_l2_0_ce0,
         weight_l2_0_q0 => weight_l2_0_q0,
@@ -1467,32 +1425,20 @@ begin
         weight_l2_3_address0 => runWeight2Reg_U0_weight_l2_3_address0,
         weight_l2_3_ce0 => runWeight2Reg_U0_weight_l2_3_ce0,
         weight_l2_3_q0 => weight_l2_3_q0,
-        empty_19_dout => p_c_dout,
-        empty_19_empty_n => p_c_empty_n,
-        empty_19_read => runWeight2Reg_U0_empty_19_read,
-        empty_dout => p_c1_dout,
-        empty_empty_n => p_c1_empty_n,
-        empty_read => runWeight2Reg_U0_empty_read,
-        ko_2_dout => ko_2_c_dout,
-        ko_2_empty_n => ko_2_c_empty_n,
-        ko_2_read => runWeight2Reg_U0_ko_2_read,
-        co_1_dout => co_1_c_dout,
-        co_1_empty_n => co_1_c_empty_n,
-        co_1_read => runWeight2Reg_U0_co_1_read,
-        ro_dout => ro_c_dout,
-        ro_empty_n => ro_c_empty_n,
-        ro_read => runWeight2Reg_U0_ro_read,
-        so_dout => so_c_dout,
-        so_empty_n => so_c_empty_n,
-        so_read => runWeight2Reg_U0_so_read,
-        ko_2_out_din => runWeight2Reg_U0_ko_2_out_din,
-        ko_2_out_full_n => ko_2_c15_full_n,
-        ko_2_out_write => runWeight2Reg_U0_ko_2_out_write,
+        param_out_din => runWeight2Reg_U0_param_out_din,
+        param_out_full_n => param_c7_full_n,
+        param_out_write => runWeight2Reg_U0_param_out_write,
+        ko_1_out_din => runWeight2Reg_U0_ko_1_out_din,
+        ko_1_out_full_n => ko_1_c8_full_n,
+        ko_1_out_write => runWeight2Reg_U0_ko_1_out_write,
+        co_out_din => runWeight2Reg_U0_co_out_din,
+        co_out_full_n => co_c9_full_n,
+        co_out_write => runWeight2Reg_U0_co_out_write,
         ro_out_din => runWeight2Reg_U0_ro_out_din,
-        ro_out_full_n => ro_c16_full_n,
+        ro_out_full_n => ro_c10_full_n,
         ro_out_write => runWeight2Reg_U0_ro_out_write,
         so_out_din => runWeight2Reg_U0_so_out_din,
-        so_out_full_n => so_c17_full_n,
+        so_out_full_n => so_c11_full_n,
         so_out_write => runWeight2Reg_U0_so_out_write,
         ap_return_0 => runWeight2Reg_U0_ap_return_0,
         ap_return_1 => runWeight2Reg_U0_ap_return_1,
@@ -1520,43 +1466,28 @@ begin
         ap_continue => runDataL2toL1_U0_ap_continue,
         ap_idle => runDataL2toL1_U0_ap_idle,
         ap_ready => runDataL2toL1_U0_ap_ready,
-        data_l1_0_address0 => runDataL2toL1_U0_data_l1_0_address0,
-        data_l1_0_ce0 => runDataL2toL1_U0_data_l1_0_ce0,
-        data_l1_0_we0 => runDataL2toL1_U0_data_l1_0_we0,
-        data_l1_0_d0 => runDataL2toL1_U0_data_l1_0_d0,
-        data_l1_1_address0 => runDataL2toL1_U0_data_l1_1_address0,
-        data_l1_1_ce0 => runDataL2toL1_U0_data_l1_1_ce0,
-        data_l1_1_we0 => runDataL2toL1_U0_data_l1_1_we0,
-        data_l1_1_d0 => runDataL2toL1_U0_data_l1_1_d0,
-        data_l1_2_address0 => runDataL2toL1_U0_data_l1_2_address0,
-        data_l1_2_ce0 => runDataL2toL1_U0_data_l1_2_ce0,
-        data_l1_2_we0 => runDataL2toL1_U0_data_l1_2_we0,
-        data_l1_2_d0 => runDataL2toL1_U0_data_l1_2_d0,
-        data_l1_3_address0 => runDataL2toL1_U0_data_l1_3_address0,
-        data_l1_3_ce0 => runDataL2toL1_U0_data_l1_3_ce0,
-        data_l1_3_we0 => runDataL2toL1_U0_data_l1_3_we0,
-        data_l1_3_d0 => runDataL2toL1_U0_data_l1_3_d0,
-        data_l2_0_address0 => runDataL2toL1_U0_data_l2_0_address0,
-        data_l2_0_ce0 => runDataL2toL1_U0_data_l2_0_ce0,
-        data_l2_0_q0 => data_l2_0_q0,
-        data_l2_1_address0 => runDataL2toL1_U0_data_l2_1_address0,
-        data_l2_1_ce0 => runDataL2toL1_U0_data_l2_1_ce0,
-        data_l2_1_q0 => data_l2_1_q0,
-        data_l2_2_address0 => runDataL2toL1_U0_data_l2_2_address0,
-        data_l2_2_ce0 => runDataL2toL1_U0_data_l2_2_ce0,
-        data_l2_2_q0 => data_l2_2_q0,
-        data_l2_3_address0 => runDataL2toL1_U0_data_l2_3_address0,
-        data_l2_3_ce0 => runDataL2toL1_U0_data_l2_3_ce0,
-        data_l2_3_q0 => data_l2_3_q0,
-        empty_25_dout => p_c5_dout,
-        empty_25_empty_n => p_c5_empty_n,
-        empty_25_read => runDataL2toL1_U0_empty_25_read,
-        empty_26_dout => p_c7_dout,
-        empty_26_empty_n => p_c7_empty_n,
-        empty_26_read => runDataL2toL1_U0_empty_26_read,
-        co_1_dout => co_1_c2_dout,
-        co_1_empty_n => co_1_c2_empty_n,
-        co_1_read => runDataL2toL1_U0_co_1_read,
+        data_l1_017_i_address0 => runDataL2toL1_U0_data_l1_017_i_address0,
+        data_l1_017_i_ce0 => runDataL2toL1_U0_data_l1_017_i_ce0,
+        data_l1_017_i_we0 => runDataL2toL1_U0_data_l1_017_i_we0,
+        data_l1_017_i_d0 => runDataL2toL1_U0_data_l1_017_i_d0,
+        data_l1_118_i_address0 => runDataL2toL1_U0_data_l1_118_i_address0,
+        data_l1_118_i_ce0 => runDataL2toL1_U0_data_l1_118_i_ce0,
+        data_l1_118_i_we0 => runDataL2toL1_U0_data_l1_118_i_we0,
+        data_l1_118_i_d0 => runDataL2toL1_U0_data_l1_118_i_d0,
+        data_l1_219_i_address0 => runDataL2toL1_U0_data_l1_219_i_address0,
+        data_l1_219_i_ce0 => runDataL2toL1_U0_data_l1_219_i_ce0,
+        data_l1_219_i_we0 => runDataL2toL1_U0_data_l1_219_i_we0,
+        data_l1_219_i_d0 => runDataL2toL1_U0_data_l1_219_i_d0,
+        data_l1_320_i_address0 => runDataL2toL1_U0_data_l1_320_i_address0,
+        data_l1_320_i_ce0 => runDataL2toL1_U0_data_l1_320_i_ce0,
+        data_l1_320_i_we0 => runDataL2toL1_U0_data_l1_320_i_we0,
+        data_l1_320_i_d0 => runDataL2toL1_U0_data_l1_320_i_d0,
+        param_dout => param_c1_dout,
+        param_empty_n => param_c1_empty_n,
+        param_read => runDataL2toL1_U0_param_read,
+        co_dout => co_c2_dout,
+        co_empty_n => co_c2_empty_n,
+        co_read => runDataL2toL1_U0_co_read,
         ho_dout => ho_c_dout,
         ho_empty_n => ho_c_empty_n,
         ho_read => runDataL2toL1_U0_ho_read,
@@ -1569,9 +1500,18 @@ begin
         so_dout => so_c4_dout,
         so_empty_n => so_c4_empty_n,
         so_read => runDataL2toL1_U0_so_read,
-        empty_dout => p_c11_dout,
-        empty_empty_n => p_c11_empty_n,
-        empty_read => runDataL2toL1_U0_empty_read);
+        data_l2_0_address0 => runDataL2toL1_U0_data_l2_0_address0,
+        data_l2_0_ce0 => runDataL2toL1_U0_data_l2_0_ce0,
+        data_l2_0_q0 => data_l2_0_q0,
+        data_l2_1_address0 => runDataL2toL1_U0_data_l2_1_address0,
+        data_l2_1_ce0 => runDataL2toL1_U0_data_l2_1_ce0,
+        data_l2_1_q0 => data_l2_1_q0,
+        data_l2_2_address0 => runDataL2toL1_U0_data_l2_2_address0,
+        data_l2_2_ce0 => runDataL2toL1_U0_data_l2_2_ce0,
+        data_l2_2_q0 => data_l2_2_q0,
+        data_l2_3_address0 => runDataL2toL1_U0_data_l2_3_address0,
+        data_l2_3_ce0 => runDataL2toL1_U0_data_l2_3_ce0,
+        data_l2_3_q0 => data_l2_3_q0);
 
     runSysArr_U0 : component Conv_sysarr_runSysArr
     port map (
@@ -1598,58 +1538,40 @@ begin
         p_read13 => weight_regfile_3_1_dout,
         p_read14 => weight_regfile_3_2_dout,
         p_read15 => weight_regfile_3_3_dout,
-        data_l1_017_address0 => runSysArr_U0_data_l1_017_address0,
-        data_l1_017_ce0 => runSysArr_U0_data_l1_017_ce0,
-        data_l1_017_q0 => data_l1_0_t_q0,
-        data_l1_118_address0 => runSysArr_U0_data_l1_118_address0,
-        data_l1_118_ce0 => runSysArr_U0_data_l1_118_ce0,
-        data_l1_118_q0 => data_l1_1_t_q0,
-        data_l1_219_address0 => runSysArr_U0_data_l1_219_address0,
-        data_l1_219_ce0 => runSysArr_U0_data_l1_219_ce0,
-        data_l1_219_q0 => data_l1_2_t_q0,
-        data_l1_320_address0 => runSysArr_U0_data_l1_320_address0,
-        data_l1_320_ce0 => runSysArr_U0_data_l1_320_ce0,
-        data_l1_320_q0 => data_l1_3_t_q0,
-        output_l1_021_address0 => runSysArr_U0_output_l1_021_address0,
-        output_l1_021_ce0 => runSysArr_U0_output_l1_021_ce0,
-        output_l1_021_we0 => runSysArr_U0_output_l1_021_we0,
-        output_l1_021_d0 => runSysArr_U0_output_l1_021_d0,
-        output_l1_122_address0 => runSysArr_U0_output_l1_122_address0,
-        output_l1_122_ce0 => runSysArr_U0_output_l1_122_ce0,
-        output_l1_122_we0 => runSysArr_U0_output_l1_122_we0,
-        output_l1_122_d0 => runSysArr_U0_output_l1_122_d0,
-        output_l1_223_address0 => runSysArr_U0_output_l1_223_address0,
-        output_l1_223_ce0 => runSysArr_U0_output_l1_223_ce0,
-        output_l1_223_we0 => runSysArr_U0_output_l1_223_we0,
-        output_l1_223_d0 => runSysArr_U0_output_l1_223_d0,
-        output_l1_324_address0 => runSysArr_U0_output_l1_324_address0,
-        output_l1_324_ce0 => runSysArr_U0_output_l1_324_ce0,
-        output_l1_324_we0 => runSysArr_U0_output_l1_324_we0,
-        output_l1_324_d0 => runSysArr_U0_output_l1_324_d0,
-        empty_20_dout => p_c8_dout,
-        empty_20_empty_n => p_c8_empty_n,
-        empty_20_read => runSysArr_U0_empty_20_read,
-        empty_21_dout => p_c6_dout,
-        empty_21_empty_n => p_c6_empty_n,
-        empty_21_read => runSysArr_U0_empty_21_read,
-        empty_22_dout => p_c12_dout,
-        empty_22_empty_n => p_c12_empty_n,
-        empty_22_read => runSysArr_U0_empty_22_read,
-        empty_dout => p_c13_dout,
-        empty_empty_n => p_c13_empty_n,
-        empty_read => runSysArr_U0_empty_read,
-        so_dout => so_c17_dout,
-        so_empty_n => so_c17_empty_n,
-        so_read => runSysArr_U0_so_read,
-        ro_dout => ro_c16_dout,
-        ro_empty_n => ro_c16_empty_n,
-        ro_read => runSysArr_U0_ro_read,
-        p_out_din => runSysArr_U0_p_out_din,
-        p_out_full_n => p_c18_full_n,
-        p_out_write => runSysArr_U0_p_out_write,
-        p_out1_din => runSysArr_U0_p_out1_din,
-        p_out1_full_n => p_c19_full_n,
-        p_out1_write => runSysArr_U0_p_out1_write);
+        data_l1_017_i_address0 => runSysArr_U0_data_l1_017_i_address0,
+        data_l1_017_i_ce0 => runSysArr_U0_data_l1_017_i_ce0,
+        data_l1_017_i_q0 => data_l1_0_t_q0,
+        data_l1_118_i_address0 => runSysArr_U0_data_l1_118_i_address0,
+        data_l1_118_i_ce0 => runSysArr_U0_data_l1_118_i_ce0,
+        data_l1_118_i_q0 => data_l1_1_t_q0,
+        data_l1_219_i_address0 => runSysArr_U0_data_l1_219_i_address0,
+        data_l1_219_i_ce0 => runSysArr_U0_data_l1_219_i_ce0,
+        data_l1_219_i_q0 => data_l1_2_t_q0,
+        data_l1_320_i_address0 => runSysArr_U0_data_l1_320_i_address0,
+        data_l1_320_i_ce0 => runSysArr_U0_data_l1_320_i_ce0,
+        data_l1_320_i_q0 => data_l1_3_t_q0,
+        output_l1_021_i_address0 => runSysArr_U0_output_l1_021_i_address0,
+        output_l1_021_i_ce0 => runSysArr_U0_output_l1_021_i_ce0,
+        output_l1_021_i_we0 => runSysArr_U0_output_l1_021_i_we0,
+        output_l1_021_i_d0 => runSysArr_U0_output_l1_021_i_d0,
+        output_l1_122_i_address0 => runSysArr_U0_output_l1_122_i_address0,
+        output_l1_122_i_ce0 => runSysArr_U0_output_l1_122_i_ce0,
+        output_l1_122_i_we0 => runSysArr_U0_output_l1_122_i_we0,
+        output_l1_122_i_d0 => runSysArr_U0_output_l1_122_i_d0,
+        output_l1_223_i_address0 => runSysArr_U0_output_l1_223_i_address0,
+        output_l1_223_i_ce0 => runSysArr_U0_output_l1_223_i_ce0,
+        output_l1_223_i_we0 => runSysArr_U0_output_l1_223_i_we0,
+        output_l1_223_i_d0 => runSysArr_U0_output_l1_223_i_d0,
+        output_l1_324_i_address0 => runSysArr_U0_output_l1_324_i_address0,
+        output_l1_324_i_ce0 => runSysArr_U0_output_l1_324_i_ce0,
+        output_l1_324_i_we0 => runSysArr_U0_output_l1_324_i_we0,
+        output_l1_324_i_d0 => runSysArr_U0_output_l1_324_i_d0,
+        param_dout => param_c7_dout,
+        param_empty_n => param_c7_empty_n,
+        param_read => runSysArr_U0_param_read,
+        param_out_din => runSysArr_U0_param_out_din,
+        param_out_full_n => param_c12_full_n,
+        param_out_write => runSysArr_U0_param_out_write);
 
     runOutputL1toL2_U0 : component Conv_sysarr_runOutputL1toL2
     port map (
@@ -1660,18 +1582,39 @@ begin
         ap_continue => runOutputL1toL2_U0_ap_continue,
         ap_idle => runOutputL1toL2_U0_ap_idle,
         ap_ready => runOutputL1toL2_U0_ap_ready,
-        output_l1_0_address0 => runOutputL1toL2_U0_output_l1_0_address0,
-        output_l1_0_ce0 => runOutputL1toL2_U0_output_l1_0_ce0,
-        output_l1_0_q0 => output_l1_0_t_q0,
-        output_l1_1_address0 => runOutputL1toL2_U0_output_l1_1_address0,
-        output_l1_1_ce0 => runOutputL1toL2_U0_output_l1_1_ce0,
-        output_l1_1_q0 => output_l1_1_t_q0,
-        output_l1_2_address0 => runOutputL1toL2_U0_output_l1_2_address0,
-        output_l1_2_ce0 => runOutputL1toL2_U0_output_l1_2_ce0,
-        output_l1_2_q0 => output_l1_2_t_q0,
-        output_l1_3_address0 => runOutputL1toL2_U0_output_l1_3_address0,
-        output_l1_3_ce0 => runOutputL1toL2_U0_output_l1_3_ce0,
-        output_l1_3_q0 => output_l1_3_t_q0,
+        output_l1_021_i_address0 => runOutputL1toL2_U0_output_l1_021_i_address0,
+        output_l1_021_i_ce0 => runOutputL1toL2_U0_output_l1_021_i_ce0,
+        output_l1_021_i_q0 => output_l1_0_t_q0,
+        output_l1_122_i_address0 => runOutputL1toL2_U0_output_l1_122_i_address0,
+        output_l1_122_i_ce0 => runOutputL1toL2_U0_output_l1_122_i_ce0,
+        output_l1_122_i_q0 => output_l1_1_t_q0,
+        output_l1_223_i_address0 => runOutputL1toL2_U0_output_l1_223_i_address0,
+        output_l1_223_i_ce0 => runOutputL1toL2_U0_output_l1_223_i_ce0,
+        output_l1_223_i_q0 => output_l1_2_t_q0,
+        output_l1_324_i_address0 => runOutputL1toL2_U0_output_l1_324_i_address0,
+        output_l1_324_i_ce0 => runOutputL1toL2_U0_output_l1_324_i_ce0,
+        output_l1_324_i_q0 => output_l1_3_t_q0,
+        param_dout => param_c12_dout,
+        param_empty_n => param_c12_empty_n,
+        param_read => runOutputL1toL2_U0_param_read,
+        ko_1_dout => ko_1_c8_dout,
+        ko_1_empty_n => ko_1_c8_empty_n,
+        ko_1_read => runOutputL1toL2_U0_ko_1_read,
+        ho_dout => ho_c5_dout,
+        ho_empty_n => ho_c5_empty_n,
+        ho_read => runOutputL1toL2_U0_ho_read,
+        wo_dout => wo_c6_dout,
+        wo_empty_n => wo_c6_empty_n,
+        wo_read => runOutputL1toL2_U0_wo_read,
+        ro_dout => ro_c10_dout,
+        ro_empty_n => ro_c10_empty_n,
+        ro_read => runOutputL1toL2_U0_ro_read,
+        co_dout => co_c9_dout,
+        co_empty_n => co_c9_empty_n,
+        co_read => runOutputL1toL2_U0_co_read,
+        so_dout => so_c11_dout,
+        so_empty_n => so_c11_empty_n,
+        so_read => runOutputL1toL2_U0_so_read,
         output_l2_0_address0 => runOutputL1toL2_U0_output_l2_0_address0,
         output_l2_0_ce0 => runOutputL1toL2_U0_output_l2_0_ce0,
         output_l2_0_we0 => runOutputL1toL2_U0_output_l2_0_we0,
@@ -1687,90 +1630,72 @@ begin
         output_l2_3_address0 => runOutputL1toL2_U0_output_l2_3_address0,
         output_l2_3_ce0 => runOutputL1toL2_U0_output_l2_3_ce0,
         output_l2_3_we0 => runOutputL1toL2_U0_output_l2_3_we0,
-        output_l2_3_d0 => runOutputL1toL2_U0_output_l2_3_d0,
-        empty_23_dout => p_c19_dout,
-        empty_23_empty_n => p_c19_empty_n,
-        empty_23_read => runOutputL1toL2_U0_empty_23_read,
-        empty_24_dout => p_c18_dout,
-        empty_24_empty_n => p_c18_empty_n,
-        empty_24_read => runOutputL1toL2_U0_empty_24_read,
-        ko_2_dout => ko_2_c15_dout,
-        ko_2_empty_n => ko_2_c15_empty_n,
-        ko_2_read => runOutputL1toL2_U0_ko_2_read,
-        ho_dout => ho_c9_dout,
-        ho_empty_n => ho_c9_empty_n,
-        ho_read => runOutputL1toL2_U0_ho_read,
-        wo_dout => wo_c10_dout,
-        wo_empty_n => wo_c10_empty_n,
-        wo_read => runOutputL1toL2_U0_wo_read,
-        empty_dout => p_c14_dout,
-        empty_empty_n => p_c14_empty_n,
-        empty_read => runOutputL1toL2_U0_empty_read);
+        output_l2_3_d0 => runOutputL1toL2_U0_output_l2_3_d0);
 
-    p_c_U : component Conv_sysarr_fifo_w20_d2_S
+    param_c_U : component Conv_sysarr_fifo_w1184_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_din,
-        if_full_n => p_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out_write,
-        if_dout => p_c_dout,
-        if_empty_n => p_c_empty_n,
-        if_read => runWeight2Reg_U0_empty_19_read);
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din,
+        if_full_n => param_c_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write,
+        if_dout => param_c_dout,
+        if_empty_n => param_c_empty_n,
+        if_read => runWeight2Reg_U0_param_read);
 
-    p_c1_U : component Conv_sysarr_fifo_w20_d2_S
+    param_c1_U : component Conv_sysarr_fifo_w1120_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_din,
-        if_full_n => p_c1_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out1_write,
-        if_dout => p_c1_dout,
-        if_empty_n => p_c1_empty_n,
-        if_read => runWeight2Reg_U0_empty_read);
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din,
+        if_full_n => param_c1_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write,
+        if_dout => param_c1_dout,
+        if_empty_n => param_c1_empty_n,
+        if_read => runDataL2toL1_U0_param_read);
 
-    ko_2_c_U : component Conv_sysarr_fifo_w20_d2_S
+    ko_1_c_U : component Conv_sysarr_fifo_w12_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_din,
-        if_full_n => ko_2_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ko_2_out_write,
-        if_dout => ko_2_c_dout,
-        if_empty_n => ko_2_c_empty_n,
-        if_read => runWeight2Reg_U0_ko_2_read);
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din,
+        if_full_n => ko_1_c_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write,
+        if_dout => ko_1_c_dout,
+        if_empty_n => ko_1_c_empty_n,
+        if_read => runWeight2Reg_U0_ko_1_read);
 
-    co_1_c_U : component Conv_sysarr_fifo_w18_d2_S
+    co_c_U : component Conv_sysarr_fifo_w32_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_din,
-        if_full_n => co_1_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out_write,
-        if_dout => co_1_c_dout,
-        if_empty_n => co_1_c_empty_n,
-        if_read => runWeight2Reg_U0_co_1_read);
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din,
+        if_full_n => co_c_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write,
+        if_dout => co_c_dout,
+        if_empty_n => co_c_empty_n,
+        if_read => runWeight2Reg_U0_co_read);
 
-    co_1_c2_U : component Conv_sysarr_fifo_w20_d2_S
+    co_c2_U : component Conv_sysarr_fifo_w11_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_din,
-        if_full_n => co_1_c2_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_co_1_out2_write,
-        if_dout => co_1_c2_dout,
-        if_empty_n => co_1_c2_empty_n,
-        if_read => runDataL2toL1_U0_co_1_read);
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din,
+        if_full_n => co_c2_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write,
+        if_dout => co_c2_dout,
+        if_empty_n => co_c2_empty_n,
+        if_read => runDataL2toL1_U0_co_read);
 
     ro_c_U : component Conv_sysarr_fifo_w32_d2_S
     port map (
@@ -1778,22 +1703,22 @@ begin
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din,
         if_full_n => ro_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write,
         if_dout => ro_c_dout,
         if_empty_n => ro_c_empty_n,
         if_read => runWeight2Reg_U0_ro_read);
 
-    ro_c3_U : component Conv_sysarr_fifo_w20_d2_S
+    ro_c3_U : component Conv_sysarr_fifo_w11_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din,
         if_full_n => ro_c3_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ro_out3_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write,
         if_dout => ro_c3_dout,
         if_empty_n => ro_c3_empty_n,
         if_read => runDataL2toL1_U0_ro_read);
@@ -1804,220 +1729,142 @@ begin
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din,
         if_full_n => so_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write,
         if_dout => so_c_dout,
         if_empty_n => so_c_empty_n,
         if_read => runWeight2Reg_U0_so_read);
 
-    so_c4_U : component Conv_sysarr_fifo_w20_d2_S
+    so_c4_U : component Conv_sysarr_fifo_w11_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din,
         if_full_n => so_c4_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_so_out4_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write,
         if_dout => so_c4_dout,
         if_empty_n => so_c4_empty_n,
         if_read => runDataL2toL1_U0_so_read);
 
-    p_c5_U : component Conv_sysarr_fifo_w32_d2_S
+    ho_c_U : component Conv_sysarr_fifo_w11_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_din,
-        if_full_n => p_c5_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out5_write,
-        if_dout => p_c5_dout,
-        if_empty_n => p_c5_empty_n,
-        if_read => runDataL2toL1_U0_empty_25_read);
-
-    p_c6_U : component Conv_sysarr_fifo_w32_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_din,
-        if_full_n => p_c6_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out6_write,
-        if_dout => p_c6_dout,
-        if_empty_n => p_c6_empty_n,
-        if_read => runSysArr_U0_empty_21_read);
-
-    p_c7_U : component Conv_sysarr_fifo_w32_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_din,
-        if_full_n => p_c7_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out7_write,
-        if_dout => p_c7_dout,
-        if_empty_n => p_c7_empty_n,
-        if_read => runDataL2toL1_U0_empty_26_read);
-
-    p_c8_U : component Conv_sysarr_fifo_w32_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_din,
-        if_full_n => p_c8_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out8_write,
-        if_dout => p_c8_dout,
-        if_empty_n => p_c8_empty_n,
-        if_read => runSysArr_U0_empty_20_read);
-
-    ho_c_U : component Conv_sysarr_fifo_w20_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din,
         if_full_n => ho_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write,
         if_dout => ho_c_dout,
         if_empty_n => ho_c_empty_n,
         if_read => runDataL2toL1_U0_ho_read);
 
-    ho_c9_U : component Conv_sysarr_fifo_w20_d4_S
+    ho_c5_U : component Conv_sysarr_fifo_w11_d4_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_din,
-        if_full_n => ho_c9_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ho_out9_write,
-        if_dout => ho_c9_dout,
-        if_empty_n => ho_c9_empty_n,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din,
+        if_full_n => ho_c5_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write,
+        if_dout => ho_c5_dout,
+        if_empty_n => ho_c5_empty_n,
         if_read => runOutputL1toL2_U0_ho_read);
 
-    wo_c_U : component Conv_sysarr_fifo_w20_d2_S
+    wo_c_U : component Conv_sysarr_fifo_w11_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_din,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din,
         if_full_n => wo_c_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out_write,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write,
         if_dout => wo_c_dout,
         if_empty_n => wo_c_empty_n,
         if_read => runDataL2toL1_U0_wo_read);
 
-    wo_c10_U : component Conv_sysarr_fifo_w20_d4_S
+    wo_c6_U : component Conv_sysarr_fifo_w11_d4_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_din,
-        if_full_n => wo_c10_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_wo_out10_write,
-        if_dout => wo_c10_dout,
-        if_empty_n => wo_c10_empty_n,
+        if_din => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din,
+        if_full_n => wo_c6_full_n,
+        if_write => dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write,
+        if_dout => wo_c6_dout,
+        if_empty_n => wo_c6_empty_n,
         if_read => runOutputL1toL2_U0_wo_read);
 
-    p_c11_U : component Conv_sysarr_fifo_w20_d2_S
+    param_c7_U : component Conv_sysarr_fifo_w1184_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_din,
-        if_full_n => p_c11_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out11_write,
-        if_dout => p_c11_dout,
-        if_empty_n => p_c11_empty_n,
-        if_read => runDataL2toL1_U0_empty_read);
+        if_din => runWeight2Reg_U0_param_out_din,
+        if_full_n => param_c7_full_n,
+        if_write => runWeight2Reg_U0_param_out_write,
+        if_dout => param_c7_dout,
+        if_empty_n => param_c7_empty_n,
+        if_read => runSysArr_U0_param_read);
 
-    p_c12_U : component Conv_sysarr_fifo_w32_d3_S
+    ko_1_c8_U : component Conv_sysarr_fifo_w11_d3_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_din,
-        if_full_n => p_c12_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out12_write,
-        if_dout => p_c12_dout,
-        if_empty_n => p_c12_empty_n,
-        if_read => runSysArr_U0_empty_22_read);
+        if_din => runWeight2Reg_U0_ko_1_out_din,
+        if_full_n => ko_1_c8_full_n,
+        if_write => runWeight2Reg_U0_ko_1_out_write,
+        if_dout => ko_1_c8_dout,
+        if_empty_n => ko_1_c8_empty_n,
+        if_read => runOutputL1toL2_U0_ko_1_read);
 
-    p_c13_U : component Conv_sysarr_fifo_w32_d3_S
+    co_c9_U : component Conv_sysarr_fifo_w32_d3_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_din,
-        if_full_n => p_c13_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out13_write,
-        if_dout => p_c13_dout,
-        if_empty_n => p_c13_empty_n,
-        if_read => runSysArr_U0_empty_read);
+        if_din => runWeight2Reg_U0_co_out_din,
+        if_full_n => co_c9_full_n,
+        if_write => runWeight2Reg_U0_co_out_write,
+        if_dout => co_c9_dout,
+        if_empty_n => co_c9_empty_n,
+        if_read => runOutputL1toL2_U0_co_read);
 
-    p_c14_U : component Conv_sysarr_fifo_w20_d4_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_din,
-        if_full_n => p_c14_full_n,
-        if_write => dataflow_in_loop_LOOP_S_OUTER_entry24_U0_p_out14_write,
-        if_dout => p_c14_dout,
-        if_empty_n => p_c14_empty_n,
-        if_read => runOutputL1toL2_U0_empty_read);
-
-    ko_2_c15_U : component Conv_sysarr_fifo_w20_d3_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => runWeight2Reg_U0_ko_2_out_din,
-        if_full_n => ko_2_c15_full_n,
-        if_write => runWeight2Reg_U0_ko_2_out_write,
-        if_dout => ko_2_c15_dout,
-        if_empty_n => ko_2_c15_empty_n,
-        if_read => runOutputL1toL2_U0_ko_2_read);
-
-    ro_c16_U : component Conv_sysarr_fifo_w32_d2_S
+    ro_c10_U : component Conv_sysarr_fifo_w32_d3_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
         if_din => runWeight2Reg_U0_ro_out_din,
-        if_full_n => ro_c16_full_n,
+        if_full_n => ro_c10_full_n,
         if_write => runWeight2Reg_U0_ro_out_write,
-        if_dout => ro_c16_dout,
-        if_empty_n => ro_c16_empty_n,
-        if_read => runSysArr_U0_ro_read);
+        if_dout => ro_c10_dout,
+        if_empty_n => ro_c10_empty_n,
+        if_read => runOutputL1toL2_U0_ro_read);
 
-    so_c17_U : component Conv_sysarr_fifo_w32_d2_S
+    so_c11_U : component Conv_sysarr_fifo_w32_d3_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
         if_din => runWeight2Reg_U0_so_out_din,
-        if_full_n => so_c17_full_n,
+        if_full_n => so_c11_full_n,
         if_write => runWeight2Reg_U0_so_out_write,
-        if_dout => so_c17_dout,
-        if_empty_n => so_c17_empty_n,
-        if_read => runSysArr_U0_so_read);
+        if_dout => so_c11_dout,
+        if_empty_n => so_c11_empty_n,
+        if_read => runOutputL1toL2_U0_so_read);
 
     weight_regfile_0_0_U : component Conv_sysarr_fifo_w8_d2_S
     port map (
@@ -2227,31 +2074,18 @@ begin
         if_empty_n => weight_regfile_3_3_empty_n,
         if_read => runSysArr_U0_ap_ready);
 
-    p_c18_U : component Conv_sysarr_fifo_w32_d2_S
+    param_c12_U : component Conv_sysarr_fifo_w1120_d2_S
     port map (
         clk => ap_clk,
         reset => ap_rst,
         if_read_ce => ap_const_logic_1,
         if_write_ce => ap_const_logic_1,
-        if_din => runSysArr_U0_p_out_din,
-        if_full_n => p_c18_full_n,
-        if_write => runSysArr_U0_p_out_write,
-        if_dout => p_c18_dout,
-        if_empty_n => p_c18_empty_n,
-        if_read => runOutputL1toL2_U0_empty_24_read);
-
-    p_c19_U : component Conv_sysarr_fifo_w32_d2_S
-    port map (
-        clk => ap_clk,
-        reset => ap_rst,
-        if_read_ce => ap_const_logic_1,
-        if_write_ce => ap_const_logic_1,
-        if_din => runSysArr_U0_p_out1_din,
-        if_full_n => p_c19_full_n,
-        if_write => runSysArr_U0_p_out1_write,
-        if_dout => p_c19_dout,
-        if_empty_n => p_c19_empty_n,
-        if_read => runOutputL1toL2_U0_empty_23_read);
+        if_din => runSysArr_U0_param_out_din,
+        if_full_n => param_c12_full_n,
+        if_write => runSysArr_U0_param_out_write,
+        if_dout => param_c12_dout,
+        if_empty_n => param_c12_empty_n,
+        if_read => runOutputL1toL2_U0_param_read);
 
 
 
@@ -2641,16 +2475,16 @@ begin
     end process;
 
 
-    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_assign_proc : process(ap_clk)
+    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_assign_proc : process(ap_clk)
     begin
         if (ap_clk'event and ap_clk =  '1') then
             if (ap_rst = '1') then
-                ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready <= ap_const_logic_0;
+                ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= ap_const_logic_0;
             else
                 if (((ap_sync_ready and ap_start) = ap_const_logic_1)) then 
-                    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready <= ap_const_logic_0;
+                    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= ap_const_logic_0;
                 else 
-                    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready;
+                    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready;
                 end if; 
             end if;
         end if;
@@ -2689,13 +2523,13 @@ begin
     end process;
 
 
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count_assign_proc : process (ap_clk)
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready = ap_const_logic_0) and (ap_sync_ready = ap_const_logic_1))) then 
-                dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count <= std_logic_vector(unsigned(dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count) - unsigned(ap_const_lv2_1));
-            elsif (((dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready = ap_const_logic_1) and (ap_sync_ready = ap_const_logic_0))) then 
-                dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count <= std_logic_vector(unsigned(dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready_count) + unsigned(ap_const_lv2_1));
+            if (((dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready = ap_const_logic_0) and (ap_sync_ready = ap_const_logic_1))) then 
+                dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count <= std_logic_vector(unsigned(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count) - unsigned(ap_const_lv2_1));
+            elsif (((dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready = ap_const_logic_1) and (ap_sync_ready = ap_const_logic_0))) then 
+                dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count <= std_logic_vector(unsigned(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count) + unsigned(ap_const_lv2_1));
             end if; 
         end if;
     end process;
@@ -2746,16 +2580,16 @@ begin
     ap_channel_done_weight_regfile_3_2 <= (runWeight2Reg_U0_ap_done and (ap_sync_reg_channel_write_weight_regfile_3_2 xor ap_const_logic_1));
     ap_channel_done_weight_regfile_3_3 <= (runWeight2Reg_U0_ap_done and (ap_sync_reg_channel_write_weight_regfile_3_3 xor ap_const_logic_1));
     ap_done <= runOutputL1toL2_U0_ap_done;
-    ap_idle <= (runWeight2Reg_U0_ap_idle and runSysArr_U0_ap_idle and runOutputL1toL2_U0_ap_idle and runDataL2toL1_U0_ap_idle and (output_l1_3_t_empty_n xor ap_const_logic_1) and (output_l1_2_t_empty_n xor ap_const_logic_1) and (output_l1_1_t_empty_n xor ap_const_logic_1) and (output_l1_0_t_empty_n xor ap_const_logic_1) and (data_l1_3_t_empty_n xor ap_const_logic_1) and (data_l1_2_t_empty_n xor ap_const_logic_1) and (data_l1_1_t_empty_n xor ap_const_logic_1) and (data_l1_0_t_empty_n xor ap_const_logic_1) and (weight_regfile_3_3_empty_n xor ap_const_logic_1) and (weight_regfile_3_2_empty_n xor ap_const_logic_1) and (weight_regfile_3_1_empty_n xor ap_const_logic_1) and (weight_regfile_3_0_empty_n xor ap_const_logic_1) and (weight_regfile_2_3_empty_n xor ap_const_logic_1) and (weight_regfile_2_2_empty_n xor ap_const_logic_1) and (weight_regfile_2_1_empty_n xor ap_const_logic_1) and (weight_regfile_2_0_empty_n xor ap_const_logic_1) and (weight_regfile_1_3_empty_n xor ap_const_logic_1) and (weight_regfile_1_2_empty_n xor ap_const_logic_1) and (weight_regfile_1_1_empty_n xor ap_const_logic_1) and (weight_regfile_1_0_empty_n xor ap_const_logic_1) and (weight_regfile_0_3_empty_n xor ap_const_logic_1) and (weight_regfile_0_2_empty_n xor ap_const_logic_1) and (weight_regfile_0_1_empty_n xor ap_const_logic_1) and (weight_regfile_0_0_empty_n xor ap_const_logic_1) and dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_idle);
+    ap_idle <= (runWeight2Reg_U0_ap_idle and runSysArr_U0_ap_idle and runOutputL1toL2_U0_ap_idle and runDataL2toL1_U0_ap_idle and (output_l1_3_t_empty_n xor ap_const_logic_1) and (output_l1_2_t_empty_n xor ap_const_logic_1) and (output_l1_1_t_empty_n xor ap_const_logic_1) and (output_l1_0_t_empty_n xor ap_const_logic_1) and (data_l1_3_t_empty_n xor ap_const_logic_1) and (data_l1_2_t_empty_n xor ap_const_logic_1) and (data_l1_1_t_empty_n xor ap_const_logic_1) and (data_l1_0_t_empty_n xor ap_const_logic_1) and (weight_regfile_3_3_empty_n xor ap_const_logic_1) and (weight_regfile_3_2_empty_n xor ap_const_logic_1) and (weight_regfile_3_1_empty_n xor ap_const_logic_1) and (weight_regfile_3_0_empty_n xor ap_const_logic_1) and (weight_regfile_2_3_empty_n xor ap_const_logic_1) and (weight_regfile_2_2_empty_n xor ap_const_logic_1) and (weight_regfile_2_1_empty_n xor ap_const_logic_1) and (weight_regfile_2_0_empty_n xor ap_const_logic_1) and (weight_regfile_1_3_empty_n xor ap_const_logic_1) and (weight_regfile_1_2_empty_n xor ap_const_logic_1) and (weight_regfile_1_1_empty_n xor ap_const_logic_1) and (weight_regfile_1_0_empty_n xor ap_const_logic_1) and (weight_regfile_0_3_empty_n xor ap_const_logic_1) and (weight_regfile_0_2_empty_n xor ap_const_logic_1) and (weight_regfile_0_1_empty_n xor ap_const_logic_1) and (weight_regfile_0_0_empty_n xor ap_const_logic_1) and dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle);
     ap_ready <= ap_sync_ready;
-    ap_sync_channel_write_data_l1_0 <= ((runDataL2toL1_U0_data_l1_0_full_n and ap_channel_done_data_l1_0) or ap_sync_reg_channel_write_data_l1_0);
-    ap_sync_channel_write_data_l1_1 <= ((runDataL2toL1_U0_data_l1_1_full_n and ap_channel_done_data_l1_1) or ap_sync_reg_channel_write_data_l1_1);
-    ap_sync_channel_write_data_l1_2 <= ((runDataL2toL1_U0_data_l1_2_full_n and ap_channel_done_data_l1_2) or ap_sync_reg_channel_write_data_l1_2);
-    ap_sync_channel_write_data_l1_3 <= ((runDataL2toL1_U0_data_l1_3_full_n and ap_channel_done_data_l1_3) or ap_sync_reg_channel_write_data_l1_3);
-    ap_sync_channel_write_output_l1_0 <= ((runSysArr_U0_output_l1_021_full_n and ap_channel_done_output_l1_0) or ap_sync_reg_channel_write_output_l1_0);
-    ap_sync_channel_write_output_l1_1 <= ((runSysArr_U0_output_l1_122_full_n and ap_channel_done_output_l1_1) or ap_sync_reg_channel_write_output_l1_1);
-    ap_sync_channel_write_output_l1_2 <= ((runSysArr_U0_output_l1_223_full_n and ap_channel_done_output_l1_2) or ap_sync_reg_channel_write_output_l1_2);
-    ap_sync_channel_write_output_l1_3 <= ((runSysArr_U0_output_l1_324_full_n and ap_channel_done_output_l1_3) or ap_sync_reg_channel_write_output_l1_3);
+    ap_sync_channel_write_data_l1_0 <= ((runDataL2toL1_U0_data_l1_017_i_full_n and ap_channel_done_data_l1_0) or ap_sync_reg_channel_write_data_l1_0);
+    ap_sync_channel_write_data_l1_1 <= ((runDataL2toL1_U0_data_l1_118_i_full_n and ap_channel_done_data_l1_1) or ap_sync_reg_channel_write_data_l1_1);
+    ap_sync_channel_write_data_l1_2 <= ((runDataL2toL1_U0_data_l1_219_i_full_n and ap_channel_done_data_l1_2) or ap_sync_reg_channel_write_data_l1_2);
+    ap_sync_channel_write_data_l1_3 <= ((runDataL2toL1_U0_data_l1_320_i_full_n and ap_channel_done_data_l1_3) or ap_sync_reg_channel_write_data_l1_3);
+    ap_sync_channel_write_output_l1_0 <= ((runSysArr_U0_output_l1_021_i_full_n and ap_channel_done_output_l1_0) or ap_sync_reg_channel_write_output_l1_0);
+    ap_sync_channel_write_output_l1_1 <= ((runSysArr_U0_output_l1_122_i_full_n and ap_channel_done_output_l1_1) or ap_sync_reg_channel_write_output_l1_1);
+    ap_sync_channel_write_output_l1_2 <= ((runSysArr_U0_output_l1_223_i_full_n and ap_channel_done_output_l1_2) or ap_sync_reg_channel_write_output_l1_2);
+    ap_sync_channel_write_output_l1_3 <= ((runSysArr_U0_output_l1_324_i_full_n and ap_channel_done_output_l1_3) or ap_sync_reg_channel_write_output_l1_3);
     ap_sync_channel_write_weight_regfile_0_0 <= ((weight_regfile_0_0_full_n and ap_channel_done_weight_regfile_0_0) or ap_sync_reg_channel_write_weight_regfile_0_0);
     ap_sync_channel_write_weight_regfile_0_1 <= ((weight_regfile_0_1_full_n and ap_channel_done_weight_regfile_0_1) or ap_sync_reg_channel_write_weight_regfile_0_1);
     ap_sync_channel_write_weight_regfile_0_2 <= ((weight_regfile_0_2_full_n and ap_channel_done_weight_regfile_0_2) or ap_sync_reg_channel_write_weight_regfile_0_2);
@@ -2773,133 +2607,169 @@ begin
     ap_sync_channel_write_weight_regfile_3_2 <= ((weight_regfile_3_2_full_n and ap_channel_done_weight_regfile_3_2) or ap_sync_reg_channel_write_weight_regfile_3_2);
     ap_sync_channel_write_weight_regfile_3_3 <= ((weight_regfile_3_3_full_n and ap_channel_done_weight_regfile_3_3) or ap_sync_reg_channel_write_weight_regfile_3_3);
     ap_sync_continue <= ap_continue;
-    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready <= (dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready or ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready);
+    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready or ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready);
     ap_sync_done <= runOutputL1toL2_U0_ap_done;
-    ap_sync_ready <= (ap_sync_runWeight2Reg_U0_ap_ready and ap_sync_runDataL2toL1_U0_ap_ready and ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready);
+    ap_sync_ready <= (ap_sync_runWeight2Reg_U0_ap_ready and ap_sync_runDataL2toL1_U0_ap_ready and ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready);
     ap_sync_runDataL2toL1_U0_ap_ready <= (runDataL2toL1_U0_ap_ready or ap_sync_reg_runDataL2toL1_U0_ap_ready);
     ap_sync_runWeight2Reg_U0_ap_ready <= (runWeight2Reg_U0_ap_ready or ap_sync_reg_runWeight2Reg_U0_ap_ready);
     data_l2_0_address0 <= runDataL2toL1_U0_data_l2_0_address0;
-    data_l2_0_address1 <= ap_const_lv20_0;
+    data_l2_0_address1 <= ap_const_lv11_0;
     data_l2_0_ce0 <= runDataL2toL1_U0_data_l2_0_ce0;
     data_l2_0_ce1 <= ap_const_logic_0;
     data_l2_0_d0 <= ap_const_lv8_0;
     data_l2_0_d1 <= ap_const_lv8_0;
+    data_l2_0_read <= runDataL2toL1_U0_data_l2_0_write;
     data_l2_0_we0 <= ap_const_logic_0;
     data_l2_0_we1 <= ap_const_logic_0;
     data_l2_1_address0 <= runDataL2toL1_U0_data_l2_1_address0;
-    data_l2_1_address1 <= ap_const_lv20_0;
+    data_l2_1_address1 <= ap_const_lv11_0;
     data_l2_1_ce0 <= runDataL2toL1_U0_data_l2_1_ce0;
     data_l2_1_ce1 <= ap_const_logic_0;
     data_l2_1_d0 <= ap_const_lv8_0;
     data_l2_1_d1 <= ap_const_lv8_0;
+    data_l2_1_read <= runDataL2toL1_U0_data_l2_1_write;
     data_l2_1_we0 <= ap_const_logic_0;
     data_l2_1_we1 <= ap_const_logic_0;
     data_l2_2_address0 <= runDataL2toL1_U0_data_l2_2_address0;
-    data_l2_2_address1 <= ap_const_lv20_0;
+    data_l2_2_address1 <= ap_const_lv11_0;
     data_l2_2_ce0 <= runDataL2toL1_U0_data_l2_2_ce0;
     data_l2_2_ce1 <= ap_const_logic_0;
     data_l2_2_d0 <= ap_const_lv8_0;
     data_l2_2_d1 <= ap_const_lv8_0;
+    data_l2_2_read <= runDataL2toL1_U0_data_l2_2_write;
     data_l2_2_we0 <= ap_const_logic_0;
     data_l2_2_we1 <= ap_const_logic_0;
     data_l2_3_address0 <= runDataL2toL1_U0_data_l2_3_address0;
-    data_l2_3_address1 <= ap_const_lv20_0;
+    data_l2_3_address1 <= ap_const_lv11_0;
     data_l2_3_ce0 <= runDataL2toL1_U0_data_l2_3_ce0;
     data_l2_3_ce1 <= ap_const_logic_0;
     data_l2_3_d0 <= ap_const_lv8_0;
     data_l2_3_d1 <= ap_const_lv8_0;
+    data_l2_3_read <= runDataL2toL1_U0_data_l2_3_write;
     data_l2_3_we0 <= ap_const_logic_0;
     data_l2_3_we1 <= ap_const_logic_0;
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_continue <= ap_const_logic_1;
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_start <= ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry24_U0_ap_ready xor ap_const_logic_1) and ap_start);
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0_start_full_n <= ap_const_logic_1;
-    dataflow_in_loop_LOOP_S_OUTER_entry24_U0_start_write <= ap_const_logic_0;
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue <= ap_const_logic_1;
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start <= ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready xor ap_const_logic_1) and ap_start);
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_full_n <= ap_const_logic_1;
+    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_write <= ap_const_logic_0;
     output_l2_0_address0 <= runOutputL1toL2_U0_output_l2_0_address0;
-    output_l2_0_address1 <= ap_const_lv20_0;
+    output_l2_0_address1 <= ap_const_lv11_0;
     output_l2_0_ce0 <= runOutputL1toL2_U0_output_l2_0_ce0;
     output_l2_0_ce1 <= ap_const_logic_0;
     output_l2_0_d0 <= runOutputL1toL2_U0_output_l2_0_d0;
     output_l2_0_d1 <= ap_const_lv32_0;
     output_l2_0_we0 <= runOutputL1toL2_U0_output_l2_0_we0;
     output_l2_0_we1 <= ap_const_logic_0;
+    output_l2_0_write <= runOutputL1toL2_U0_output_l2_0_write;
     output_l2_1_address0 <= runOutputL1toL2_U0_output_l2_1_address0;
-    output_l2_1_address1 <= ap_const_lv20_0;
+    output_l2_1_address1 <= ap_const_lv11_0;
     output_l2_1_ce0 <= runOutputL1toL2_U0_output_l2_1_ce0;
     output_l2_1_ce1 <= ap_const_logic_0;
     output_l2_1_d0 <= runOutputL1toL2_U0_output_l2_1_d0;
     output_l2_1_d1 <= ap_const_lv32_0;
     output_l2_1_we0 <= runOutputL1toL2_U0_output_l2_1_we0;
     output_l2_1_we1 <= ap_const_logic_0;
+    output_l2_1_write <= runOutputL1toL2_U0_output_l2_1_write;
     output_l2_2_address0 <= runOutputL1toL2_U0_output_l2_2_address0;
-    output_l2_2_address1 <= ap_const_lv20_0;
+    output_l2_2_address1 <= ap_const_lv11_0;
     output_l2_2_ce0 <= runOutputL1toL2_U0_output_l2_2_ce0;
     output_l2_2_ce1 <= ap_const_logic_0;
     output_l2_2_d0 <= runOutputL1toL2_U0_output_l2_2_d0;
     output_l2_2_d1 <= ap_const_lv32_0;
     output_l2_2_we0 <= runOutputL1toL2_U0_output_l2_2_we0;
     output_l2_2_we1 <= ap_const_logic_0;
+    output_l2_2_write <= runOutputL1toL2_U0_output_l2_2_write;
     output_l2_3_address0 <= runOutputL1toL2_U0_output_l2_3_address0;
-    output_l2_3_address1 <= ap_const_lv20_0;
+    output_l2_3_address1 <= ap_const_lv11_0;
     output_l2_3_ce0 <= runOutputL1toL2_U0_output_l2_3_ce0;
     output_l2_3_ce1 <= ap_const_logic_0;
     output_l2_3_d0 <= runOutputL1toL2_U0_output_l2_3_d0;
     output_l2_3_d1 <= ap_const_lv32_0;
     output_l2_3_we0 <= runOutputL1toL2_U0_output_l2_3_we0;
     output_l2_3_we1 <= ap_const_logic_0;
+    output_l2_3_write <= runOutputL1toL2_U0_output_l2_3_write;
     runDataL2toL1_U0_ap_continue <= (ap_sync_channel_write_data_l1_3 and ap_sync_channel_write_data_l1_2 and ap_sync_channel_write_data_l1_1 and ap_sync_channel_write_data_l1_0);
     runDataL2toL1_U0_ap_start <= ((ap_sync_reg_runDataL2toL1_U0_ap_ready xor ap_const_logic_1) and ap_start);
-    runDataL2toL1_U0_data_l1_0_full_n <= data_l1_0_i_full_n;
-    runDataL2toL1_U0_data_l1_1_full_n <= data_l1_1_i_full_n;
-    runDataL2toL1_U0_data_l1_2_full_n <= data_l1_2_i_full_n;
-    runDataL2toL1_U0_data_l1_3_full_n <= data_l1_3_i_full_n;
+    runDataL2toL1_U0_data_l1_017_i_full_n <= data_l1_0_i_full_n;
+    runDataL2toL1_U0_data_l1_118_i_full_n <= data_l1_1_i_full_n;
+    runDataL2toL1_U0_data_l1_219_i_full_n <= data_l1_2_i_full_n;
+    runDataL2toL1_U0_data_l1_320_i_full_n <= data_l1_3_i_full_n;
+    runDataL2toL1_U0_data_l2_0_full_n <= data_l2_0_empty_n;
+    runDataL2toL1_U0_data_l2_0_write <= ap_const_logic_0;
+    runDataL2toL1_U0_data_l2_1_full_n <= data_l2_1_empty_n;
+    runDataL2toL1_U0_data_l2_1_write <= ap_const_logic_0;
+    runDataL2toL1_U0_data_l2_2_full_n <= data_l2_2_empty_n;
+    runDataL2toL1_U0_data_l2_2_write <= ap_const_logic_0;
+    runDataL2toL1_U0_data_l2_3_full_n <= data_l2_3_empty_n;
+    runDataL2toL1_U0_data_l2_3_write <= ap_const_logic_0;
     runDataL2toL1_U0_start_full_n <= ap_const_logic_1;
     runDataL2toL1_U0_start_write <= ap_const_logic_0;
     runOutputL1toL2_U0_ap_continue <= ap_continue;
     runOutputL1toL2_U0_ap_start <= (output_l1_3_t_empty_n and output_l1_2_t_empty_n and output_l1_1_t_empty_n and output_l1_0_t_empty_n);
+    runOutputL1toL2_U0_output_l2_0_full_n <= output_l2_0_full_n;
+    runOutputL1toL2_U0_output_l2_0_write <= ap_const_logic_0;
+    runOutputL1toL2_U0_output_l2_1_full_n <= output_l2_1_full_n;
+    runOutputL1toL2_U0_output_l2_1_write <= ap_const_logic_0;
+    runOutputL1toL2_U0_output_l2_2_full_n <= output_l2_2_full_n;
+    runOutputL1toL2_U0_output_l2_2_write <= ap_const_logic_0;
+    runOutputL1toL2_U0_output_l2_3_full_n <= output_l2_3_full_n;
+    runOutputL1toL2_U0_output_l2_3_write <= ap_const_logic_0;
     runOutputL1toL2_U0_start_full_n <= ap_const_logic_1;
     runOutputL1toL2_U0_start_write <= ap_const_logic_0;
     runSysArr_U0_ap_continue <= (ap_sync_channel_write_output_l1_3 and ap_sync_channel_write_output_l1_2 and ap_sync_channel_write_output_l1_1 and ap_sync_channel_write_output_l1_0);
     runSysArr_U0_ap_start <= (weight_regfile_3_3_empty_n and weight_regfile_3_2_empty_n and weight_regfile_3_1_empty_n and weight_regfile_3_0_empty_n and weight_regfile_2_3_empty_n and weight_regfile_2_2_empty_n and weight_regfile_2_1_empty_n and weight_regfile_2_0_empty_n and weight_regfile_1_3_empty_n and weight_regfile_1_2_empty_n and weight_regfile_1_1_empty_n and weight_regfile_1_0_empty_n and weight_regfile_0_3_empty_n and weight_regfile_0_2_empty_n and weight_regfile_0_1_empty_n and weight_regfile_0_0_empty_n and data_l1_3_t_empty_n and data_l1_2_t_empty_n and data_l1_1_t_empty_n and data_l1_0_t_empty_n);
-    runSysArr_U0_output_l1_021_full_n <= output_l1_0_i_full_n;
-    runSysArr_U0_output_l1_122_full_n <= output_l1_1_i_full_n;
-    runSysArr_U0_output_l1_223_full_n <= output_l1_2_i_full_n;
-    runSysArr_U0_output_l1_324_full_n <= output_l1_3_i_full_n;
+    runSysArr_U0_output_l1_021_i_full_n <= output_l1_0_i_full_n;
+    runSysArr_U0_output_l1_122_i_full_n <= output_l1_1_i_full_n;
+    runSysArr_U0_output_l1_223_i_full_n <= output_l1_2_i_full_n;
+    runSysArr_U0_output_l1_324_i_full_n <= output_l1_3_i_full_n;
     runSysArr_U0_start_full_n <= ap_const_logic_1;
     runSysArr_U0_start_write <= ap_const_logic_0;
     runWeight2Reg_U0_ap_continue <= (ap_sync_channel_write_weight_regfile_3_3 and ap_sync_channel_write_weight_regfile_3_2 and ap_sync_channel_write_weight_regfile_3_1 and ap_sync_channel_write_weight_regfile_3_0 and ap_sync_channel_write_weight_regfile_2_3 and ap_sync_channel_write_weight_regfile_2_2 and ap_sync_channel_write_weight_regfile_2_1 and ap_sync_channel_write_weight_regfile_2_0 and ap_sync_channel_write_weight_regfile_1_3 and ap_sync_channel_write_weight_regfile_1_2 and ap_sync_channel_write_weight_regfile_1_1 and ap_sync_channel_write_weight_regfile_1_0 and ap_sync_channel_write_weight_regfile_0_3 and ap_sync_channel_write_weight_regfile_0_2 and ap_sync_channel_write_weight_regfile_0_1 and ap_sync_channel_write_weight_regfile_0_0);
     runWeight2Reg_U0_ap_start <= ((ap_sync_reg_runWeight2Reg_U0_ap_ready xor ap_const_logic_1) and ap_start);
     runWeight2Reg_U0_start_full_n <= ap_const_logic_1;
     runWeight2Reg_U0_start_write <= ap_const_logic_0;
+    runWeight2Reg_U0_weight_l2_0_full_n <= weight_l2_0_empty_n;
+    runWeight2Reg_U0_weight_l2_0_write <= ap_const_logic_0;
+    runWeight2Reg_U0_weight_l2_1_full_n <= weight_l2_1_empty_n;
+    runWeight2Reg_U0_weight_l2_1_write <= ap_const_logic_0;
+    runWeight2Reg_U0_weight_l2_2_full_n <= weight_l2_2_empty_n;
+    runWeight2Reg_U0_weight_l2_2_write <= ap_const_logic_0;
+    runWeight2Reg_U0_weight_l2_3_full_n <= weight_l2_3_empty_n;
+    runWeight2Reg_U0_weight_l2_3_write <= ap_const_logic_0;
     weight_l2_0_address0 <= runWeight2Reg_U0_weight_l2_0_address0;
-    weight_l2_0_address1 <= ap_const_lv20_0;
+    weight_l2_0_address1 <= ap_const_lv12_0;
     weight_l2_0_ce0 <= runWeight2Reg_U0_weight_l2_0_ce0;
     weight_l2_0_ce1 <= ap_const_logic_0;
     weight_l2_0_d0 <= ap_const_lv8_0;
     weight_l2_0_d1 <= ap_const_lv8_0;
+    weight_l2_0_read <= runWeight2Reg_U0_weight_l2_0_write;
     weight_l2_0_we0 <= ap_const_logic_0;
     weight_l2_0_we1 <= ap_const_logic_0;
     weight_l2_1_address0 <= runWeight2Reg_U0_weight_l2_1_address0;
-    weight_l2_1_address1 <= ap_const_lv20_0;
+    weight_l2_1_address1 <= ap_const_lv12_0;
     weight_l2_1_ce0 <= runWeight2Reg_U0_weight_l2_1_ce0;
     weight_l2_1_ce1 <= ap_const_logic_0;
     weight_l2_1_d0 <= ap_const_lv8_0;
     weight_l2_1_d1 <= ap_const_lv8_0;
+    weight_l2_1_read <= runWeight2Reg_U0_weight_l2_1_write;
     weight_l2_1_we0 <= ap_const_logic_0;
     weight_l2_1_we1 <= ap_const_logic_0;
     weight_l2_2_address0 <= runWeight2Reg_U0_weight_l2_2_address0;
-    weight_l2_2_address1 <= ap_const_lv20_0;
+    weight_l2_2_address1 <= ap_const_lv12_0;
     weight_l2_2_ce0 <= runWeight2Reg_U0_weight_l2_2_ce0;
     weight_l2_2_ce1 <= ap_const_logic_0;
     weight_l2_2_d0 <= ap_const_lv8_0;
     weight_l2_2_d1 <= ap_const_lv8_0;
+    weight_l2_2_read <= runWeight2Reg_U0_weight_l2_2_write;
     weight_l2_2_we0 <= ap_const_logic_0;
     weight_l2_2_we1 <= ap_const_logic_0;
     weight_l2_3_address0 <= runWeight2Reg_U0_weight_l2_3_address0;
-    weight_l2_3_address1 <= ap_const_lv20_0;
+    weight_l2_3_address1 <= ap_const_lv12_0;
     weight_l2_3_ce0 <= runWeight2Reg_U0_weight_l2_3_ce0;
     weight_l2_3_ce1 <= ap_const_logic_0;
     weight_l2_3_d0 <= ap_const_lv8_0;
     weight_l2_3_d1 <= ap_const_lv8_0;
+    weight_l2_3_read <= runWeight2Reg_U0_weight_l2_3_write;
     weight_l2_3_we0 <= ap_const_logic_0;
     weight_l2_3_we1 <= ap_const_logic_0;
 end behav;

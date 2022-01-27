@@ -1,0 +1,9 @@
+<root versionMajor="1" versionMinor="5">
+    <kernel name="Conv_sysarr" language="c" vlnv="xilinx.com:hls:Conv_sysarr:1.0" attributes="" hash="" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" compileOptions="" profileType="none" hwControlProtocol="ap_ctrl_hs" interrupt="true">
+        <ports/>
+        <args/>
+        <compileWorkGroupSize x="1" y="1" z="1"/>
+        <maxWorkGroupSize x="1" y="1" z="1"/>
+    </kernel>
+</root>
+

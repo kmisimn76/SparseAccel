@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc16'" level="0">
-<item name = "Date">Sat Jan 22 01:13:15 2022
+<item name = "Date">Thu Jan 27 10:53:54 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.947 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 5.508 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">?, ?, ?, ?, ?, ?, none</column>
+<column name="">898, 898, 8.980 us, 8.980 us, 898, 898, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="dataflow_parent_loop_proc15_U0">dataflow_parent_loop_proc15, ?, ?, ?, ?, ?, ?, none</column>
+<column name="dataflow_parent_loop_proc15_U0">dataflow_parent_loop_proc15, 298, 298, 2.980 us, 2.980 us, 298, 298, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_W_OUTER">?, ?, ?, -, -, 10, no</column>
+<column name="- LOOP_R_OUTER">897, 897, 300, -, -, 3, no</column>
 </table>
 </item>
 </section>
@@ -51,12 +51,12 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 117, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">20, 47, 6822, 7483, -</column>
+<column name="Instance">24, 40, 6053, 6455, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18, -</column>
 <column name="Register">-, -, 64, -, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">1, 2, ~0, 1, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">1, 1, ~0, 1, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
 <specialColumn name="Utilization (%)">~0, ~0, ~0, ~0, 0</specialColumn>
 </table>
@@ -65,7 +65,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="dataflow_parent_loop_proc15_U0">dataflow_parent_loop_proc15, 20, 47, 6822, 7483, 0</column>
+<column name="dataflow_parent_loop_proc15_U0">dataflow_parent_loop_proc15, 24, 40, 6053, 6455, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -106,155 +106,165 @@
 <section name = "Interface" level="0">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
-<column name="TILES_W">in, 32, ap_none, TILES_W, scalar</column>
-<column name="TILES_R">in, 32, ap_none, TILES_R, scalar</column>
-<column name="TILES_R_ap_vld">in, 1, ap_none, TILES_R, scalar</column>
-<column name="TILES_S">in, 32, ap_none, TILES_S, scalar</column>
-<column name="TILES_S_ap_vld">in, 1, ap_none, TILES_S, scalar</column>
-<column name="weight_l2_0_address0">out, 20, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_ce0">out, 1, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_d0">out, 8, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_q0">in, 8, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_we0">out, 1, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_address1">out, 20, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_ce1">out, 1, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_d1">out, 8, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_q1">in, 8, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_0_we1">out, 1, ap_memory, weight_l2_0, array</column>
-<column name="weight_l2_1_address0">out, 20, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_ce0">out, 1, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_d0">out, 8, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_q0">in, 8, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_we0">out, 1, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_address1">out, 20, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_ce1">out, 1, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_d1">out, 8, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_q1">in, 8, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_1_we1">out, 1, ap_memory, weight_l2_1, array</column>
-<column name="weight_l2_2_address0">out, 20, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_ce0">out, 1, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_d0">out, 8, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_q0">in, 8, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_we0">out, 1, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_address1">out, 20, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_ce1">out, 1, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_d1">out, 8, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_q1">in, 8, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_2_we1">out, 1, ap_memory, weight_l2_2, array</column>
-<column name="weight_l2_3_address0">out, 20, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_ce0">out, 1, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_d0">out, 8, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_q0">in, 8, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_we0">out, 1, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_address1">out, 20, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_ce1">out, 1, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_d1">out, 8, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_q1">in, 8, ap_memory, weight_l2_3, array</column>
-<column name="weight_l2_3_we1">out, 1, ap_memory, weight_l2_3, array</column>
-<column name="p_read">in, 20, ap_none, p_read, scalar</column>
-<column name="p_read_ap_vld">in, 1, ap_none, p_read, scalar</column>
-<column name="p_read1">in, 20, ap_none, p_read1, scalar</column>
-<column name="p_read1_ap_vld">in, 1, ap_none, p_read1, scalar</column>
-<column name="ko_2">in, 20, ap_none, ko_2, scalar</column>
-<column name="ko_2_ap_vld">in, 1, ap_none, ko_2, scalar</column>
-<column name="co_1">in, 20, ap_none, co_1, scalar</column>
-<column name="co_1_ap_vld">in, 1, ap_none, co_1, scalar</column>
-<column name="data_l2_0_address0">out, 20, ap_memory, data_l2_0, array</column>
+<column name="lshr_ln282_cast">in, 32, ap_none, lshr_ln282_cast, scalar</column>
+<column name="param_L1_TILENUM_S">in, 32, ap_none, param_L1_TILENUM_S, scalar</column>
+<column name="param_L1_TILENUM_S_ap_vld">in, 1, ap_none, param_L1_TILENUM_S, scalar</column>
+<column name="param">in, 1184, ap_none, param, scalar</column>
+<column name="param_ap_vld">in, 1, ap_none, param, scalar</column>
+<column name="ko_1">in, 12, ap_none, ko_1, scalar</column>
+<column name="ko_1_ap_vld">in, 1, ap_none, ko_1, scalar</column>
+<column name="co">in, 32, ap_none, co, scalar</column>
+<column name="co_ap_vld">in, 1, ap_none, co, scalar</column>
+<column name="ho">in, 11, ap_none, ho, scalar</column>
+<column name="ho_ap_vld">in, 1, ap_none, ho, scalar</column>
+<column name="wo">in, 32, ap_none, wo, scalar</column>
+<column name="wo_ap_vld">in, 1, ap_none, wo, scalar</column>
+<column name="data_l2_0_address0">out, 11, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_ce0">out, 1, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_d0">out, 8, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_q0">in, 8, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_we0">out, 1, ap_memory, data_l2_0, array</column>
-<column name="data_l2_0_address1">out, 20, ap_memory, data_l2_0, array</column>
+<column name="data_l2_0_address1">out, 11, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_ce1">out, 1, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_d1">out, 8, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_q1">in, 8, ap_memory, data_l2_0, array</column>
 <column name="data_l2_0_we1">out, 1, ap_memory, data_l2_0, array</column>
-<column name="data_l2_1_address0">out, 20, ap_memory, data_l2_1, array</column>
+<column name="data_l2_1_address0">out, 11, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_ce0">out, 1, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_d0">out, 8, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_q0">in, 8, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_we0">out, 1, ap_memory, data_l2_1, array</column>
-<column name="data_l2_1_address1">out, 20, ap_memory, data_l2_1, array</column>
+<column name="data_l2_1_address1">out, 11, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_ce1">out, 1, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_d1">out, 8, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_q1">in, 8, ap_memory, data_l2_1, array</column>
 <column name="data_l2_1_we1">out, 1, ap_memory, data_l2_1, array</column>
-<column name="data_l2_2_address0">out, 20, ap_memory, data_l2_2, array</column>
+<column name="data_l2_2_address0">out, 11, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_ce0">out, 1, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_d0">out, 8, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_q0">in, 8, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_we0">out, 1, ap_memory, data_l2_2, array</column>
-<column name="data_l2_2_address1">out, 20, ap_memory, data_l2_2, array</column>
+<column name="data_l2_2_address1">out, 11, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_ce1">out, 1, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_d1">out, 8, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_q1">in, 8, ap_memory, data_l2_2, array</column>
 <column name="data_l2_2_we1">out, 1, ap_memory, data_l2_2, array</column>
-<column name="data_l2_3_address0">out, 20, ap_memory, data_l2_3, array</column>
+<column name="data_l2_3_address0">out, 11, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_ce0">out, 1, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_d0">out, 8, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_q0">in, 8, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_we0">out, 1, ap_memory, data_l2_3, array</column>
-<column name="data_l2_3_address1">out, 20, ap_memory, data_l2_3, array</column>
+<column name="data_l2_3_address1">out, 11, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_ce1">out, 1, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_d1">out, 8, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_q1">in, 8, ap_memory, data_l2_3, array</column>
 <column name="data_l2_3_we1">out, 1, ap_memory, data_l2_3, array</column>
-<column name="p_read2">in, 32, ap_none, p_read2, scalar</column>
-<column name="p_read2_ap_vld">in, 1, ap_none, p_read2, scalar</column>
-<column name="p_read3">in, 32, ap_none, p_read3, scalar</column>
-<column name="p_read3_ap_vld">in, 1, ap_none, p_read3, scalar</column>
-<column name="ho">in, 32, ap_none, ho, scalar</column>
-<column name="ho_ap_vld">in, 1, ap_none, ho, scalar</column>
-<column name="p_read4">in, 20, ap_none, p_read4, scalar</column>
-<column name="p_read4_ap_vld">in, 1, ap_none, p_read4, scalar</column>
-<column name="p_read5">in, 32, ap_none, p_read5, scalar</column>
-<column name="p_read5_ap_vld">in, 1, ap_none, p_read5, scalar</column>
-<column name="p_read6">in, 32, ap_none, p_read6, scalar</column>
-<column name="p_read6_ap_vld">in, 1, ap_none, p_read6, scalar</column>
-<column name="output_l2_0_address0">out, 20, ap_memory, output_l2_0, array</column>
+<column name="output_l2_0_address0">out, 11, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_ce0">out, 1, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_d0">out, 32, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_q0">in, 32, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_we0">out, 1, ap_memory, output_l2_0, array</column>
-<column name="output_l2_0_address1">out, 20, ap_memory, output_l2_0, array</column>
+<column name="output_l2_0_address1">out, 11, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_ce1">out, 1, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_d1">out, 32, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_q1">in, 32, ap_memory, output_l2_0, array</column>
 <column name="output_l2_0_we1">out, 1, ap_memory, output_l2_0, array</column>
-<column name="output_l2_1_address0">out, 20, ap_memory, output_l2_1, array</column>
+<column name="output_l2_1_address0">out, 11, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_ce0">out, 1, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_d0">out, 32, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_q0">in, 32, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_we0">out, 1, ap_memory, output_l2_1, array</column>
-<column name="output_l2_1_address1">out, 20, ap_memory, output_l2_1, array</column>
+<column name="output_l2_1_address1">out, 11, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_ce1">out, 1, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_d1">out, 32, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_q1">in, 32, ap_memory, output_l2_1, array</column>
 <column name="output_l2_1_we1">out, 1, ap_memory, output_l2_1, array</column>
-<column name="output_l2_2_address0">out, 20, ap_memory, output_l2_2, array</column>
+<column name="output_l2_2_address0">out, 11, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_ce0">out, 1, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_d0">out, 32, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_q0">in, 32, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_we0">out, 1, ap_memory, output_l2_2, array</column>
-<column name="output_l2_2_address1">out, 20, ap_memory, output_l2_2, array</column>
+<column name="output_l2_2_address1">out, 11, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_ce1">out, 1, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_d1">out, 32, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_q1">in, 32, ap_memory, output_l2_2, array</column>
 <column name="output_l2_2_we1">out, 1, ap_memory, output_l2_2, array</column>
-<column name="output_l2_3_address0">out, 20, ap_memory, output_l2_3, array</column>
+<column name="output_l2_3_address0">out, 11, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_ce0">out, 1, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_d0">out, 32, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_q0">in, 32, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_we0">out, 1, ap_memory, output_l2_3, array</column>
-<column name="output_l2_3_address1">out, 20, ap_memory, output_l2_3, array</column>
+<column name="output_l2_3_address1">out, 11, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_ce1">out, 1, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_d1">out, 32, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_q1">in, 32, ap_memory, output_l2_3, array</column>
 <column name="output_l2_3_we1">out, 1, ap_memory, output_l2_3, array</column>
-<column name="p_read7">in, 20, ap_none, p_read7, scalar</column>
-<column name="p_read7_ap_vld">in, 1, ap_none, p_read7, scalar</column>
+<column name="weight_l2_0_address0">out, 12, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_ce0">out, 1, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_d0">out, 8, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_q0">in, 8, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_we0">out, 1, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_address1">out, 12, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_ce1">out, 1, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_d1">out, 8, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_q1">in, 8, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_0_we1">out, 1, ap_memory, weight_l2_0, array</column>
+<column name="weight_l2_1_address0">out, 12, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_ce0">out, 1, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_d0">out, 8, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_q0">in, 8, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_we0">out, 1, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_address1">out, 12, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_ce1">out, 1, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_d1">out, 8, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_q1">in, 8, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_1_we1">out, 1, ap_memory, weight_l2_1, array</column>
+<column name="weight_l2_2_address0">out, 12, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_ce0">out, 1, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_d0">out, 8, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_q0">in, 8, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_we0">out, 1, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_address1">out, 12, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_ce1">out, 1, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_d1">out, 8, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_q1">in, 8, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_2_we1">out, 1, ap_memory, weight_l2_2, array</column>
+<column name="weight_l2_3_address0">out, 12, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_ce0">out, 1, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_d0">out, 8, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_q0">in, 8, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_we0">out, 1, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_address1">out, 12, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_ce1">out, 1, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_d1">out, 8, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_q1">in, 8, ap_memory, weight_l2_3, array</column>
+<column name="weight_l2_3_we1">out, 1, ap_memory, weight_l2_3, array</column>
 <column name="ap_clk">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
 <column name="ap_rst">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_0_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_0_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_1_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_1_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_2_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_2_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_3_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="data_l2_3_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_0_full_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_0_write">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_1_full_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_1_write">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_2_full_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_2_write">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_3_full_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="output_l2_3_write">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_0_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_0_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_1_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_1_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_2_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_2_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_3_empty_n">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
+<column name="weight_l2_3_read">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
 <column name="ap_start">in, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
 <column name="ap_done">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
 <column name="ap_ready">out, 1, ap_ctrl_hs, dataflow_parent_loop_proc16, return value</column>
