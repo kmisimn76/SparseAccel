@@ -48,20 +48,22 @@
         <Format formatName="pcore" use_netlist="none"/>
         <Format formatName="xo"/>
     </ExportDesign>
-    <Simulation>
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="all" enableDataflowProfiling="true" name="cosim" optimizeCompile="true" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="true">
+    <Simulation argv="">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="auto" waveDebug="false" ldflags="" mflags="" compiledLibrary="">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>
         </SimFlow>
     </Simulation>
+    <clockList>
+        <clock name="default" default="false" period="10"/>
+    </clockList>
     <name>
         <value string="solution1"/>
     </name>
     <project>
         <value string="Systolic_Array_PCNN_based"/>
     </project>
-    <flowTarget value="vivado"/>
     <targetInfo>
         <TargetInfo value="xcu200:-fsgd2104:-2-e"/>
     </targetInfo>
@@ -69,8 +71,6 @@
         <library name="DefaultPlatform" value="xilinx/virtexuplus/virtexuplus"/>
         <library name="DefaultPlatform" value="xilinx/virtexuplus/virtexuplus_fpv7"/>
     </libraryList>
-    <clockList>
-        <clock name="default" default="false" period="10"/>
-    </clockList>
+    <flowTarget value="vivado"/>
 </solution>
 

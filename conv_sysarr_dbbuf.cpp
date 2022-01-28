@@ -1,8 +1,8 @@
 
 #include "hw_param.h"
 
-#define ARRAY_K 4
-#define ARRAY_C 4
+#define ARRAY_K 16
+#define ARRAY_C 16
 /*
 typedef struct {
     uint K;

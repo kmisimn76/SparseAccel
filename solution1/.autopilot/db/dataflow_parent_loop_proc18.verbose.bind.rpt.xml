@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc18'" level="0">
-<item name = "Date">Thu Jan 27 10:53:50 2022
+<item name = "Date">Sat Jan 29 01:57:42 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">902, 902, 9.020 us, 9.020 us, 902, 902, none</column>
+<column name="">2780, 2780, 27.800 us, 27.800 us, 2780, 2780, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_parent_loop_proc17_fu_126">dataflow_parent_loop_proc17, 900, 900, 9.000 us, 9.000 us, 900, 900, none</column>
+<column name="grp_dataflow_parent_loop_proc17_fu_174">dataflow_parent_loop_proc17, 2778, 2778, 27.780 us, 27.780 us, 2778, 2778, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_H_OUTER">901, 901, 902, -, -, 1, no</column>
+<column name="- LOOP_H_OUTER">2779, 2779, 2780, -, -, 1, no</column>
 </table>
 </item>
 </section>

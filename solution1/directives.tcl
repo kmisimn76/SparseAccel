@@ -3,6 +3,4 @@
 ## Please DO NOT edit it.
 ## Copyright (C) 1986-2020 Xilinx, Inc. All Rights Reserved.
 ############################################################
-set_directive_top -name coreConv "coreConv"
 set_directive_top -name Conv_sysarr "Conv_sysarr"
-set_directive_top -name Conv_sysarr_dbbuf "Conv_sysarr_dbbuf"

@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'dataflow_parent_loop_proc'
 ================================================================
-* Date:           Thu Jan 27 10:53:52 2022
+* Date:           Sat Jan 29 01:57:48 2022
 
 * Version:        2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)
 * Project:        Systolic_Array_PCNN_based
@@ -29,7 +29,7 @@
     |  Latency (cycles) |   Latency (absolute)  |   Interval  | Pipeline|
     |   min   |   max   |    min    |    max    |  min |  max |   Type  |
     +---------+---------+-----------+-----------+------+------+---------+
-    |     3124|     5476| 31.240 us | 54.760 us |  3124|  5476|   none  |
+    |     5002|     7354| 50.020 us | 73.540 us |  5002|  7354|   none  |
     +---------+---------+-----------+-----------+------+------+---------+
 
     + Detail: 
@@ -41,7 +41,7 @@
         |                     |  Latency (cycles) |  Iteration  |  Initiation Interval  | Trip |          |
         |      Loop Name      |   min   |   max   |   Latency   |  achieved |   target  | Count| Pipelined|
         +---------------------+---------+---------+-------------+-----------+-----------+------+----------+
-        |- LOOP_S_MOST_OUTER  |     3123|     5475| 3124 ~ 5476 |          -|          -|     1|    no    |
+        |- LOOP_S_MOST_OUTER  |     5001|     7353| 5002 ~ 7354 |          -|          -|     1|    no    |
         +---------------------+---------+---------+-------------+-----------+-----------+------+----------+
 
 ============================================================
@@ -87,10 +87,10 @@ ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablec
 ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %gmem1, void"   --->   Operation 5 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i8 %gmem2, void"   --->   Operation 6 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specstablecontent_ln0 = specstablecontent void @_ssdm_op_SpecStableContent, i32 %gmem3, void"   --->   Operation 7 'specstablecontent' 'specstablecontent_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem3, void @empty_8, i32, i32, void @empty_11, i32, i32, void @empty_11, void @empty_11, void @empty_11, i32, i32, i32, i32, void @empty_11, void @empty_11"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem2, void @empty_8, i32, i32, void @empty_11, i32, i32, void @empty_11, void @empty_11, void @empty_11, i32, i32, i32, i32, void @empty_11, void @empty_11"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem1, void @empty_8, i32, i32, void @empty_11, i32, i32, void @empty_11, void @empty_11, void @empty_11, i32, i32, i32, i32, void @empty_11, void @empty_11"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem0, void @empty_8, i32, i32, void @empty_11, i32, i32, void @empty_11, void @empty_11, void @empty_11, i32, i32, i32, i32, void @empty_11, void @empty_11"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %gmem3, void @empty_29, i32, i32, void @empty_20, i32, i32, void @empty_20, void @empty_20, void @empty_20, i32, i32, i32, i32, void @empty_20, void @empty_20"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem2, void @empty_29, i32, i32, void @empty_20, i32, i32, void @empty_20, void @empty_20, void @empty_20, i32, i32, i32, i32, void @empty_20, void @empty_20"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem1, void @empty_29, i32, i32, void @empty_20, i32, i32, void @empty_20, void @empty_20, void @empty_20, i32, i32, i32, i32, void @empty_20, void @empty_20"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem0, void @empty_29, i32, i32, void @empty_20, i32, i32, void @empty_20, void @empty_20, void @empty_20, i32, i32, i32, i32, void @empty_20, void @empty_20"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%conv_out_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %conv_out"   --->   Operation 12 'read' 'conv_out_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%data_in_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %data_in"   --->   Operation 13 'read' 'data_in_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%wmo_read = read i30 @_ssdm_op_Read.ap_auto.i30, i30 %wmo"   --->   Operation 14 'read' 'wmo_read' <Predicate = true> <Delay = 0.00>
@@ -110,13 +110,13 @@ ST_2 : Operation 25 [1/1] (0.85ns)   --->   "%icmp_ln292 = icmp_eq  i32 %smo, i3
 ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln292 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32, i32, void @dataflow_parent_loop_str, i32 %smo, i32 %param_L2_TILENUM_S" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 26 'specdataflowpipeline' 'specdataflowpipeline_ln292' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 27 [1/1] (0.88ns)   --->   "%smo_1 = add i32 %smo, i32" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 27 'add' 'smo_1' <Predicate = true> <Delay = 0.88> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.88> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%br_ln292 = br i1 %icmp_ln292, void %.split, void %.exitStub" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 28 'br' 'br_ln292' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 29 [2/2] (0.00ns)   --->   "%call_ln292 = call void @dataflow_in_loop_LOOP_S_MOST_OUTER, i1184 %param_read, i30 %kmo_read, i64 %bias_in_read, i8 %gmem0, i32 %cmo_read, i32 %rmo_read, i32 %smo, i64 %weight_in_read, i8 %gmem1, i30 %hmo_read, i30 %wmo_read, i64 %data_in_read, i8 %gmem2, i32 %gmem3, i64 %conv_out_read, i8 %bias_l2_0, i8 %bias_l2_1, i8 %bias_l2_2, i8 %bias_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 29 'call' 'call_ln292' <Predicate = (!icmp_ln292)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 29 [2/2] (0.00ns)   --->   "%call_ln292 = call void @dataflow_in_loop_LOOP_S_MOST_OUTER, i1184 %param_read, i30 %kmo_read, i64 %bias_in_read, i8 %gmem0, i32 %cmo_read, i32 %rmo_read, i32 %smo, i64 %weight_in_read, i8 %gmem1, i30 %hmo_read, i30 %wmo_read, i64 %data_in_read, i8 %gmem2, i32 %gmem3, i64 %conv_out_read, i8 %bias_l2_0, i8 %bias_l2_1, i8 %bias_l2_2, i8 %bias_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3, i32 %output_l2_reduction_4, i32 %output_l2_4, i32 %output_l2_reduction_5, i32 %output_l2_5, i32 %output_l2_reduction_6, i32 %output_l2_6, i32 %output_l2_reduction_7, i32 %output_l2_7, i32 %output_l2_reduction_8, i32 %output_l2_8, i32 %output_l2_reduction_9, i32 %output_l2_9, i32 %output_l2_reduction_10, i32 %output_l2_10, i32 %output_l2_reduction_11, i32 %output_l2_11, i32 %output_l2_reduction_12, i32 %output_l2_12, i32 %output_l2_reduction_13, i32 %output_l2_13, i32 %output_l2_reduction_14, i32 %output_l2_14, i32 %output_l2_reduction_15, i32 %output_l2_15, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 29 'call' 'call_ln292' <Predicate = (!icmp_ln292)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 30 'ret' 'ret_ln0' <Predicate = (icmp_ln292)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 0.00>
 ST_3 : Operation 31 [1/1] (0.00ns)   --->   "%speclooptripcount_ln298 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64, i64, i64" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:298]   --->   Operation 31 'speclooptripcount' 'speclooptripcount_ln298' <Predicate = (!icmp_ln292)> <Delay = 0.00>
-ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%specloopname_ln298 = specloopname void @_ssdm_op_SpecLoopName, void @empty_21" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:298]   --->   Operation 32 'specloopname' 'specloopname_ln298' <Predicate = (!icmp_ln292)> <Delay = 0.00>
-ST_3 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln292 = call void @dataflow_in_loop_LOOP_S_MOST_OUTER, i1184 %param_read, i30 %kmo_read, i64 %bias_in_read, i8 %gmem0, i32 %cmo_read, i32 %rmo_read, i32 %smo, i64 %weight_in_read, i8 %gmem1, i30 %hmo_read, i30 %wmo_read, i64 %data_in_read, i8 %gmem2, i32 %gmem3, i64 %conv_out_read, i8 %bias_l2_0, i8 %bias_l2_1, i8 %bias_l2_2, i8 %bias_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 33 'call' 'call_ln292' <Predicate = (!icmp_ln292)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%specloopname_ln298 = specloopname void @_ssdm_op_SpecLoopName, void @empty_8" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:298]   --->   Operation 32 'specloopname' 'specloopname_ln298' <Predicate = (!icmp_ln292)> <Delay = 0.00>
+ST_3 : Operation 33 [1/2] (0.00ns)   --->   "%call_ln292 = call void @dataflow_in_loop_LOOP_S_MOST_OUTER, i1184 %param_read, i30 %kmo_read, i64 %bias_in_read, i8 %gmem0, i32 %cmo_read, i32 %rmo_read, i32 %smo, i64 %weight_in_read, i8 %gmem1, i30 %hmo_read, i30 %wmo_read, i64 %data_in_read, i8 %gmem2, i32 %gmem3, i64 %conv_out_read, i8 %bias_l2_0, i8 %bias_l2_1, i8 %bias_l2_2, i8 %bias_l2_3, i8 %weight_l2_0, i8 %weight_l2_1, i8 %weight_l2_2, i8 %weight_l2_3, i8 %data_l2_0, i8 %data_l2_1, i8 %data_l2_2, i8 %data_l2_3, i32 %output_l2_reduction_0, i32 %output_l2_reduction_1, i32 %output_l2_reduction_2, i32 %output_l2_reduction_3, i32 %output_l2_reduction_4, i32 %output_l2_4, i32 %output_l2_reduction_5, i32 %output_l2_5, i32 %output_l2_reduction_6, i32 %output_l2_6, i32 %output_l2_reduction_7, i32 %output_l2_7, i32 %output_l2_reduction_8, i32 %output_l2_8, i32 %output_l2_reduction_9, i32 %output_l2_9, i32 %output_l2_reduction_10, i32 %output_l2_10, i32 %output_l2_reduction_11, i32 %output_l2_11, i32 %output_l2_reduction_12, i32 %output_l2_12, i32 %output_l2_reduction_13, i32 %output_l2_13, i32 %output_l2_reduction_14, i32 %output_l2_14, i32 %output_l2_reduction_15, i32 %output_l2_15, i32 %output_l2_0, i32 %output_l2_1, i32 %output_l2_2, i32 %output_l2_3" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 33 'call' 'call_ln292' <Predicate = (!icmp_ln292)> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
 ST_3 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln292 = br void" [Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292]   --->   Operation 34 'br' 'br_ln292' <Predicate = (!icmp_ln292)> <Delay = 0.00>
 
 
@@ -127,12 +127,12 @@ Target clock period: 10ns, clock uncertainty: 2.7ns.
 
  <State 1>: 0.603ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('smo') with incoming values : ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [61]  (0.603 ns)
+	multiplexor before 'phi' operation ('smo') with incoming values : ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [85]  (0.603 ns)
 
  <State 2>: 1.07ns
 The critical path consists of the following:
-	'phi' operation ('smo') with incoming values : ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [61]  (0 ns)
-	'add' operation ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [64]  (0.88 ns)
+	'phi' operation ('smo') with incoming values : ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [85]  (0 ns)
+	'add' operation ('smo', Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp:292) [88]  (0.88 ns)
 	blocking operation 0.189 ns on control path)
 
  <State 3>: 0ns

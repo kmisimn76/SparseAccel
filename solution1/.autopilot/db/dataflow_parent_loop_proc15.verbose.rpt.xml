@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'dataflow_parent_loop_proc15'" level="0">
-<item name = "Date">Thu Jan 27 10:53:54 2022
+<item name = "Date">Sat Jan 29 01:58:00 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,19 +24,19 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">298, 298, 2.980 us, 2.980 us, 298, 298, none</column>
+<column name="">924, 924, 9.240 us, 9.240 us, 924, 924, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="dataflow_in_loop_LOOP_S_OUTER_U0">dataflow_in_loop_LOOP_S_OUTER, 176, 176, 1.760 us, 1.760 us, 60, 60, dataflow</column>
+<column name="dataflow_in_loop_LOOP_S_OUTER_U0">dataflow_in_loop_LOOP_S_OUTER, 386, 386, 3.860 us, 3.860 us, 268, 268, dataflow</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_S_OUTER">297, 297, 178, -, -, 3, no</column>
+<column name="- LOOP_S_OUTER">923, 923, 388, -, -, 3, no</column>
 </table>
 </item>
 </section>
@@ -51,21 +51,21 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 117, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">24, 40, 5989, 6320, -</column>
+<column name="Instance">144, 76, 41443, 73444, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 18, -</column>
 <column name="Register">-, -, 64, -, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">1, 1, ~0, 1, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">10, 3, 5, 18, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
-<specialColumn name="Utilization (%)">~0, ~0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Utilization (%)">3, 1, 1, 6, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="dataflow_in_loop_LOOP_S_OUTER_U0">dataflow_in_loop_LOOP_S_OUTER, 24, 40, 5989, 6320, 0</column>
+<column name="dataflow_in_loop_LOOP_S_OUTER_U0">dataflow_in_loop_LOOP_S_OUTER, 144, 76, 41443, 73444, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">

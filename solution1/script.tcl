@@ -5,15 +5,15 @@
 ############################################################
 open_project Systolic_Array_PCNN_based
 set_top Conv_sysarr
-add_files Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp
 add_files Systolic_Array_PCNN_based/hw_param.h
+add_files Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp
 add_files -tb Systolic_Array_PCNN_based/test.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1" -flow_target vivado
 set_part {xcu200-fsgd2104-2-e}
 create_clock -period 10 -name default
-config_export -format ip_catalog -rtl verilog
+config_export -format xo -rtl verilog
 source "./Systolic_Array_PCNN_based/solution1/directives.tcl"
 csim_design -clean
 csynth_design
-cosim_design -O -wave_debug -enable_dataflow_profiling -trace_level all
+cosim_design -O
 export_design -rtl verilog -format xo

@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'Conv_sysarr'" level="0">
-<item name = "Date">Thu Jan 27 10:53:56 2022
+<item name = "Date">Sat Jan 29 01:58:10 2022
 </item>
 <item name = "Version">2020.1 (Build 2902540 on Wed May 27 20:16:15 MDT 2020)</item>
 <item name = "Project">Systolic_Array_PCNN_based</item>
@@ -24,23 +24,23 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">50081, 87713, 0.501 ms, 0.877 ms, 50082, 87714, none</column>
+<column name="">80129, 117761, 0.801 ms, 1.178 ms, 80130, 117762, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_dataflow_parent_loop_proc_fu_235">dataflow_parent_loop_proc, 3124, 5476, 31.240 us, 54.760 us, 3124, 5476, none</column>
+<column name="grp_dataflow_parent_loop_proc_fu_283">dataflow_parent_loop_proc, 5002, 7354, 50.020 us, 73.540 us, 5002, 7354, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- LOOP_K_MOST_OUTER">50080, 87712, 12520 ~ 21928, -, -, 4, no</column>
-<column name=" + LOOP_C_MOST_OUTER">12518, 21926, 12518 ~ 21926, -, -, 1, no</column>
-<column name="  ++ LOOP_H_MOST_OUTER">12516, 21924, 6258 ~ 10962, -, -, 2, no</column>
-<column name="   +++ LOOP_W_MOST_OUTER">6256, 10960, 3128 ~ 5480, -, -, 2, no</column>
-<column name="    ++++ LOOP_R_MOST_OUTER">3126, 5478, 3126 ~ 5478, -, -, 1, no</column>
+<column name="- LOOP_K_MOST_OUTER">80128, 117760, 20032 ~ 29440, -, -, 4, no</column>
+<column name=" + LOOP_C_MOST_OUTER">20030, 29438, 20030 ~ 29438, -, -, 1, no</column>
+<column name="  ++ LOOP_H_MOST_OUTER">20028, 29436, 10014 ~ 14718, -, -, 2, no</column>
+<column name="   +++ LOOP_W_MOST_OUTER">10012, 14716, 5006 ~ 7358, -, -, 2, no</column>
+<column name="    ++++ LOOP_R_MOST_OUTER">5004, 7356, 5004 ~ 7356, -, -, 1, no</column>
 </table>
 </item>
 </section>
@@ -55,14 +55,14 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 299, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">88, 98, 17133, 17393, -</column>
+<column name="Instance">208, 134, 52587, 84517, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 185, -</column>
 <column name="Register">-, -, 868, -, -</column>
 <specialColumn name="Available SLR">1440, 2280, 788160, 394080, 320</specialColumn>
-<specialColumn name="Utilization SLR (%)">6, 4, 2, 4, 0</specialColumn>
+<specialColumn name="Utilization SLR (%)">14, 5, 6, 21, 0</specialColumn>
 <specialColumn name="Available">4320, 6840, 2364480, 1182240, 960</specialColumn>
-<specialColumn name="Utilization (%)">2, 1, ~0, 1, 0</specialColumn>
+<specialColumn name="Utilization (%)">4, 1, 2, 7, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -70,7 +70,7 @@
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="control_s_axi_U">control_s_axi, 0, 0, 310, 552, 0</column>
-<column name="grp_dataflow_parent_loop_proc_fu_235">dataflow_parent_loop_proc, 80, 98, 14667, 14161, 0</column>
+<column name="grp_dataflow_parent_loop_proc_fu_283">dataflow_parent_loop_proc, 200, 134, 50121, 81285, 0</column>
 <column name="gmem0_m_axi_U">gmem0_m_axi, 2, 0, 548, 700, 0</column>
 <column name="gmem1_m_axi_U">gmem1_m_axi, 2, 0, 548, 700, 0</column>
 <column name="gmem2_m_axi_U">gmem2_m_axi, 2, 0, 548, 700, 0</column>
@@ -91,24 +91,24 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="cmo_1_fu_380_p2">+, 0, 0, 39, 32, 1</column>
-<column name="hmo_1_fu_395_p2">+, 0, 0, 39, 1, 32</column>
-<column name="kmo_1_fu_369_p2">+, 0, 0, 39, 1, 32</column>
-<column name="rmo_1_fu_421_p2">+, 0, 0, 39, 32, 1</column>
-<column name="wmo_1_fu_410_p2">+, 0, 0, 39, 1, 32</column>
-<column name="icmp_ln282_fu_364_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln284_fu_375_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln286_fu_390_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln288_fu_405_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="icmp_ln290_fu_416_p2">icmp, 0, 0, 20, 32, 32</column>
-<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_235_ap_done">or, 0, 0, 2, 1, 1</column>
-<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_235_ap_ready">or, 0, 0, 2, 1, 1</column>
+<column name="cmo_1_fu_476_p2">+, 0, 0, 39, 32, 1</column>
+<column name="hmo_1_fu_491_p2">+, 0, 0, 39, 1, 32</column>
+<column name="kmo_1_fu_465_p2">+, 0, 0, 39, 1, 32</column>
+<column name="rmo_1_fu_517_p2">+, 0, 0, 39, 32, 1</column>
+<column name="wmo_1_fu_506_p2">+, 0, 0, 39, 1, 32</column>
+<column name="icmp_ln282_fu_460_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_ln284_fu_471_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_ln286_fu_486_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_ln288_fu_501_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="icmp_ln290_fu_512_p2">icmp, 0, 0, 20, 32, 32</column>
+<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_283_ap_done">or, 0, 0, 2, 1, 1</column>
+<column name="ap_sync_grp_dataflow_parent_loop_proc_fu_283_ap_ready">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">41, 8, 1, 8</column>
-<column name="cmo_reg_189">9, 2, 32, 64</column>
+<column name="cmo_reg_237">9, 2, 32, 64</column>
 <column name="gmem0_ARVALID">9, 2, 1, 2</column>
 <column name="gmem0_RREADY">9, 2, 1, 2</column>
 <column name="gmem1_ARVALID">9, 2, 1, 2</column>
@@ -120,41 +120,41 @@
 <column name="gmem3_BREADY">9, 2, 1, 2</column>
 <column name="gmem3_RREADY">9, 2, 1, 2</column>
 <column name="gmem3_WVALID">9, 2, 1, 2</column>
-<column name="hmo_reg_201">9, 2, 32, 64</column>
-<column name="kmo_reg_178">9, 2, 32, 64</column>
-<column name="rmo_reg_223">9, 2, 32, 64</column>
-<column name="wmo_reg_212">9, 2, 32, 64</column>
+<column name="hmo_reg_249">9, 2, 32, 64</column>
+<column name="kmo_reg_226">9, 2, 32, 64</column>
+<column name="rmo_reg_271">9, 2, 32, 64</column>
+<column name="wmo_reg_260">9, 2, 32, 64</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">7, 0, 7, 0</column>
-<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_235_ap_done">1, 0, 1, 0</column>
-<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_235_ap_ready">1, 0, 1, 0</column>
-<column name="bias_in_read_reg_442">64, 0, 64, 0</column>
-<column name="cmo_1_reg_498">32, 0, 32, 0</column>
-<column name="cmo_reg_189">32, 0, 32, 0</column>
-<column name="conv_out_read_reg_427">64, 0, 64, 0</column>
-<column name="data_in_read_reg_432">64, 0, 64, 0</column>
-<column name="grp_dataflow_parent_loop_proc_fu_235_ap_start_reg">1, 0, 1, 0</column>
-<column name="hmo_1_reg_511">32, 0, 32, 0</column>
-<column name="hmo_reg_201">32, 0, 32, 0</column>
-<column name="kmo_1_reg_490">32, 0, 32, 0</column>
-<column name="kmo_reg_178">32, 0, 32, 0</column>
-<column name="param_L2_TILENUM_S_reg_452">32, 0, 32, 0</column>
-<column name="rmo_1_reg_532">32, 0, 32, 0</column>
-<column name="rmo_reg_223">32, 0, 32, 0</column>
-<column name="trunc_ln282_4_reg_462">32, 0, 32, 0</column>
-<column name="trunc_ln282_5_reg_467">32, 0, 32, 0</column>
-<column name="trunc_ln282_6_reg_472">32, 0, 32, 0</column>
-<column name="trunc_ln282_7_reg_477">32, 0, 32, 0</column>
-<column name="trunc_ln282_reg_482">30, 0, 30, 0</column>
-<column name="trunc_ln286_reg_503">30, 0, 30, 0</column>
-<column name="trunc_ln288_reg_516">30, 0, 30, 0</column>
-<column name="trunc_ln_reg_457">32, 0, 32, 0</column>
-<column name="weight_in_read_reg_437">64, 0, 64, 0</column>
-<column name="wmo_1_reg_524">32, 0, 32, 0</column>
-<column name="wmo_reg_212">32, 0, 32, 0</column>
+<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_283_ap_done">1, 0, 1, 0</column>
+<column name="ap_sync_reg_grp_dataflow_parent_loop_proc_fu_283_ap_ready">1, 0, 1, 0</column>
+<column name="bias_in_read_reg_538">64, 0, 64, 0</column>
+<column name="cmo_1_reg_594">32, 0, 32, 0</column>
+<column name="cmo_reg_237">32, 0, 32, 0</column>
+<column name="conv_out_read_reg_523">64, 0, 64, 0</column>
+<column name="data_in_read_reg_528">64, 0, 64, 0</column>
+<column name="grp_dataflow_parent_loop_proc_fu_283_ap_start_reg">1, 0, 1, 0</column>
+<column name="hmo_1_reg_607">32, 0, 32, 0</column>
+<column name="hmo_reg_249">32, 0, 32, 0</column>
+<column name="kmo_1_reg_586">32, 0, 32, 0</column>
+<column name="kmo_reg_226">32, 0, 32, 0</column>
+<column name="param_L2_TILENUM_S_reg_548">32, 0, 32, 0</column>
+<column name="rmo_1_reg_628">32, 0, 32, 0</column>
+<column name="rmo_reg_271">32, 0, 32, 0</column>
+<column name="trunc_ln282_4_reg_558">32, 0, 32, 0</column>
+<column name="trunc_ln282_5_reg_563">32, 0, 32, 0</column>
+<column name="trunc_ln282_6_reg_568">32, 0, 32, 0</column>
+<column name="trunc_ln282_7_reg_573">32, 0, 32, 0</column>
+<column name="trunc_ln282_reg_578">30, 0, 30, 0</column>
+<column name="trunc_ln286_reg_599">30, 0, 30, 0</column>
+<column name="trunc_ln288_reg_612">30, 0, 30, 0</column>
+<column name="trunc_ln_reg_553">32, 0, 32, 0</column>
+<column name="weight_in_read_reg_533">64, 0, 64, 0</column>
+<column name="wmo_1_reg_620">32, 0, 32, 0</column>
+<column name="wmo_reg_260">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

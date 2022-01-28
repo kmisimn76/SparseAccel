@@ -13437,7 +13437,7 @@ typedef int MACTYPE;
 
 
 
-typedef ap_axiu<4*32,0,0,0> k2k_data;
+typedef ap_axiu<16*32,0,0,0> k2k_data;
 
 typedef struct {
     uint K;
@@ -13482,28 +13482,28 @@ typedef struct {
 # 65 "Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"
 extern "C" {
 
-void runWeight2Reg(DPTYPE weight_regfile[4][4], DPTYPE (*weight_l2)[4], const uint C,
+void runWeight2Reg(DPTYPE weight_regfile[16][16], DPTYPE (*weight_l2)[16], const uint C,
   const uint R, const uint S, const uint ko, const uint co, const uint r, const uint s) {
- VITIS_LOOP_69_1: for (int ci = 0; ci < 4; ci++) {
-   VITIS_LOOP_70_2: for (int ki = 0; ki < 4; ki++) {
+ VITIS_LOOP_69_1: for (int ci = 0; ci < 16; ci++) {
+   VITIS_LOOP_70_2: for (int ki = 0; ki < 16; ki++) {
 
-   int k = (ko * 4 + ki);
-   int c = (co * 4 + ci);
+   int k = (ko * 16 + ki);
+   int c = (co * 16 + ci);
    weight_regfile[ki][ci] = weight_l2[ko * C * R
      * S + c * R * S + r * S + s][ki];
   }
  }
 }
 
-void runDataL2toL1(DPTYPE (*data_l1)[4], DPTYPE (*data_l2)[4], uint TILESIZE_H,
+void runDataL2toL1(DPTYPE (*data_l1)[16], DPTYPE (*data_l2)[16], uint TILESIZE_H,
   uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
  LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
 #pragma HLS loop_tripcount min=7 max=7
  LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
 #pragma HLS loop_tripcount min=7 max=7
- VITIS_LOOP_86_1: for (int ci = 0; ci < 4; ci++) {
+ VITIS_LOOP_86_1: for (int ci = 0; ci < 16; ci++) {
 #pragma HLS unroll
- int c = (co * 4 + ci);
+ int c = (co * 16 + ci);
     int h = (ho * TILESIZE_H + hi) + r;
     int w = (wo * TILESIZE_W + wi) + s;
     data_l1[hi * TILESIZE_W + wi][ci] =
@@ -13514,7 +13514,7 @@ void runDataL2toL1(DPTYPE (*data_l1)[4], DPTYPE (*data_l2)[4], uint TILESIZE_H,
 }
 
 
-void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4], MACTYPE (*output_l2_reduction)[4],
+void runOutputL1toL2(MACTYPE (*output_l1)[16], MACTYPE (*output_l2)[16], MACTYPE (*output_l2_reduction)[16],
   uint TILESIZE_H, uint TILESIZE_W, uint ko, uint ho, uint wo, uint W, uint H, bool isFirst) {
 #pragma HLS dependence variable=output_l2
 #pragma HLS dependence variable=output_l2_reduction
@@ -13522,9 +13522,9 @@ void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4], MACTYPE (
 #pragma HLS loop_tripcount min=7 max=7
  LOOP_L2_W: for (int wi = 0; wi < TILESIZE_W; wi++) {
 #pragma HLS loop_tripcount min=7 max=7
- VITIS_LOOP_107_1: for (int ki = 0; ki < 4; ki++) {
+ VITIS_LOOP_107_1: for (int ki = 0; ki < 16; ki++) {
 #pragma HLS unroll
- int k = (ko * 4 + ki);
+ int k = (ko * 16 + ki);
     int h = (ho * TILESIZE_H + hi);
     int w = (wo * TILESIZE_W + wi);
     if(isFirst)
@@ -13540,16 +13540,16 @@ void runOutputL1toL2(MACTYPE (*output_l1)[4], MACTYPE (*output_l2)[4], MACTYPE (
  }
 }
 
-void doSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
-  DPTYPE data_reg[4][4], MACTYPE output_reg[4][4],
-  MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1)[4],
+void doSysArr(const DPTYPE weight_regfile[16][16], const DPTYPE (*data_l1)[16],
+  DPTYPE data_reg[16][16], MACTYPE output_reg[16][16],
+  MACTYPE (*output_l1_local)[16], MACTYPE (*output_l1)[16],
   uint hi, uint wi, uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S, bool isFirst) {
 #pragma HLS inline
 
  int i = hi*TILESIZE_W + wi;
- DPTYPE input_data[4];
+ DPTYPE input_data[16];
 #pragma HLS array_partition variable=input_data complete
- VITIS_LOOP_134_1: for (int ci = 0; ci < 4; ci++) {
+ VITIS_LOOP_134_1: for (int ci = 0; ci < 16; ci++) {
 #pragma HLS unroll
 
 
@@ -13561,9 +13561,9 @@ void doSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
  }
 
 
- VITIS_LOOP_146_2: for (int ki = 4 - 1; ki >= 0; ki--) {
+ VITIS_LOOP_146_2: for (int ki = 16 - 1; ki >= 0; ki--) {
 #pragma HLS unroll
- VITIS_LOOP_148_3: for (int ci = 4 - 1; ci >= 0; ci--) {
+ VITIS_LOOP_148_3: for (int ci = 16 - 1; ci >= 0; ci--) {
 #pragma HLS unroll
  data_reg[ki][ci] =
      (ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
@@ -13576,28 +13576,28 @@ void doSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
  }
 
 
- VITIS_LOOP_161_4: for (int ki = 4 - 1; ki >= 0; ki--) {
+ VITIS_LOOP_161_4: for (int ki = 16 - 1; ki >= 0; ki--) {
 #pragma HLS unroll
- if ((i - 4 + 1) - ki >= 0 && (i - 4 + 1) - ki < TILESIZE_W * TILESIZE_H) {
+ if ((i - 16 + 1) - ki >= 0 && (i - 16 + 1) - ki < TILESIZE_W * TILESIZE_H) {
 
 
 
 
-   output_l1[((i - 4 + 1) - ki)][ki] = output_reg[ki][(4 - 1)];
+   output_l1[((i - 16 + 1) - ki)][ki] = output_reg[ki][(16 - 1)];
   }
  }
 }
 
-void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
-  MACTYPE (*output_l1_local)[4], MACTYPE (*output_l1)[4],
+void runSysArr(const DPTYPE weight_regfile[16][16], const DPTYPE (*data_l1)[16],
+  MACTYPE (*output_l1_local)[16], MACTYPE (*output_l1)[16],
   int input_rows,
   int bubble_h, int bubble_w,
   uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
   bool isFirst) {
 
- DPTYPE data_reg[4][4];
+ DPTYPE data_reg[16][16];
 #pragma HLS dependence variable=data_reg
- MACTYPE output_reg[4][4];
+ MACTYPE output_reg[16][16];
 #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete
  LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
@@ -13628,11 +13628,11 @@ void runSysArr(const DPTYPE weight_regfile[4][4], const DPTYPE (*data_l1)[4],
  }
 }
 
-DPTYPE bias_l2[8][4];
-DPTYPE weight_l2[2304][4];
-DPTYPE data_l2[2048][4];
-MACTYPE output_l2[1568][4];
-MACTYPE output_l2_reduction[1568][4];
+DPTYPE bias_l2[8][16];
+DPTYPE weight_l2[2304][16];
+DPTYPE data_l2[2048][16];
+MACTYPE output_l2[1568][16];
+MACTYPE output_l2_reduction[1568][16];
 
 __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
   NPU_PARAM param,
@@ -13694,8 +13694,8 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
  uint TILESIZE_R =param.TILESIZE_R;
  uint TILESIZE_S =param.TILESIZE_S;
 
- const uint input_rows = TILESIZE_H * TILESIZE_W + (4 - 1) + (4 - 1);
- const uint bubble = (4 - 1) + (4 - 1);
+ const uint input_rows = TILESIZE_H * TILESIZE_W + (16 - 1) + (16 - 1);
+ const uint bubble = (16 - 1) + (16 - 1);
  const uint bubble_h = bubble / TILESIZE_W;
  const uint bubble_w = bubble % TILESIZE_W;
 
@@ -13726,11 +13726,11 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
 
 
 
- BIAS_DRAM_READ: for (unsigned int ko = 0; ko < K_L2/4; ko++) {
+ BIAS_DRAM_READ: for (unsigned int ko = 0; ko < K_L2/16; ko++) {
 #pragma HLS loop_tripcount min=1 max=1
- VITIS_LOOP_310_1: for (unsigned int ki = 0; ki < 4; ki++) {
+ VITIS_LOOP_310_1: for (unsigned int ki = 0; ki < 16; ki++) {
 #pragma HLS unroll
- unsigned int global_k = (kmo*(K_L2/4) + ko)*4 + ki;
+ unsigned int global_k = (kmo*(K_L2/16) + ko)*16 + ki;
     unsigned int v = ki;
     bias_l2[ko][ki] = bias_in[global_k];
    }
@@ -13742,11 +13742,11 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
 #pragma HLS loop_tripcount min=3 max=3
  VITIS_LOOP_322_3: for (unsigned int s = 0; s < S_L2; s++) {
 #pragma HLS loop_tripcount min=3 max=3
- VITIS_LOOP_324_4: for (unsigned int ko = 0; ko < K_L2 / 4; ko++) {
+ VITIS_LOOP_324_4: for (unsigned int ko = 0; ko < K_L2 / 16; ko++) {
 #pragma HLS loop_tripcount min=1 max=1
- VITIS_LOOP_326_5: for (unsigned int ki = 0; ki < 4; ki++) {
+ VITIS_LOOP_326_5: for (unsigned int ki = 0; ki < 16; ki++) {
 #pragma HLS unroll
- unsigned int global_kcrs = ((kmo*(K_L2/4)+ko)*C*RS*RS + (cmo*C_L2+c)*RS*RS + (rmo*R_L2+r)*RS + (smo*S_L2 + s))*4 + ki;
+ unsigned int global_kcrs = ((kmo*(K_L2/16)+ko)*C*RS*RS + (cmo*C_L2+c)*RS*RS + (rmo*R_L2+r)*RS + (smo*S_L2 + s))*16 + ki;
        unsigned int kcrs = ko*C_L2*R_L2*S_L2 + c*R_L2*S_L2 + r*S_L2 + s;
        unsigned int v = ki;
        weight_l2[kcrs][ki] = weight_in[global_kcrs];
@@ -13760,11 +13760,11 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
 #pragma HLS loop_tripcount min=9 max=9
  VITIS_LOOP_340_6: for(unsigned int w = 0; w < W_in_L2; w++) {
 #pragma HLS loop_tripcount min=9 max=9
- VITIS_LOOP_342_7: for (unsigned int co = 0; co < C_L2/4; co++) {
+ VITIS_LOOP_342_7: for (unsigned int co = 0; co < C_L2/16; co++) {
 #pragma HLS loop_tripcount min=1 max=1
- VITIS_LOOP_344_8: for(unsigned int ci = 0; ci < 4; ci++) {
+ VITIS_LOOP_344_8: for(unsigned int ci = 0; ci < 16; ci++) {
 #pragma HLS unroll
- unsigned int global_chw = ((cmo*(C_L2/4)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*4 + ci;
+ unsigned int global_chw = ((cmo*(C_L2/16)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*16 + ci;
       unsigned int chw = co*H_in_L2*W_in_L2 + h*W_in_L2 + w;
       unsigned int v = ci;
       data_l2[chw][ci] = data_in[global_chw];
@@ -13796,10 +13796,10 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
    if(co==0 && ro==0 && so==0) isFirst = true;
    else isFirst = false;
 
-   DPTYPE weight_regfile[4][4];
-   DPTYPE data_l1[49][4];
-   MACTYPE output_l1[49][4];
-   static MACTYPE output_l1_local[49][4];
+   DPTYPE weight_regfile[16][16];
+   DPTYPE data_l1[49][16];
+   MACTYPE output_l1[49][16];
+   static MACTYPE output_l1_local[49][16];
 #pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete
 #pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 #pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
@@ -13827,11 +13827,11 @@ __attribute__((sdx_kernel("Conv_sysarr", 0))) void Conv_sysarr(
 #pragma HLS loop_tripcount min=7 max=7
  VITIS_LOOP_407_9: for (unsigned int w = 0; w < W_L2; w++) {
 #pragma HLS loop_tripcount min=7 max=7
- VITIS_LOOP_409_10: for (unsigned int ko = 0; ko < (K_L2 / 4); ko++) {
+ VITIS_LOOP_409_10: for (unsigned int ko = 0; ko < (K_L2 / 16); ko++) {
 #pragma HLS loop_tripcount min=1 max=1
- VITIS_LOOP_411_11: for (unsigned int ki = 0; ki < 4; ki++) {
+ VITIS_LOOP_411_11: for (unsigned int ki = 0; ki < 16; ki++) {
 #pragma HLS unroll
- unsigned int global_khw = ((kmo*(K_L2/4)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*4 + ki;
+ unsigned int global_khw = ((kmo*(K_L2/16)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*16 + ki;
       unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
       unsigned int v = ki;
       if(isFirst)
