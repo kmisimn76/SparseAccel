@@ -59,6 +59,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     								
                                 </option>
@@ -92,6 +94,8 @@
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     								
@@ -189,7 +193,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|solution1|solution2|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -257,6 +261,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     								
                                 </option>
@@ -280,6 +286,8 @@
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     								
@@ -367,7 +375,7 @@
                     					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.reference|.settings|solution1|solution2|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				

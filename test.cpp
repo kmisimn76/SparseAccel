@@ -2,8 +2,6 @@
 #include <stdio.h>
 #include "hw_param.h"
 
-#define ARRAY_K 16
-#define ARRAY_C 16
 /*
 typedef struct {
     uint K;
@@ -164,7 +162,7 @@ int main()
 	param.TILESIZE_R = 1;
 	param.TILESIZE_S = 1;
 	}*/
-	/*{
+	{
 	param.K = 16;
 	param.C = 4;
 	param.WH = 14;
@@ -202,8 +200,8 @@ int main()
 	param.TILESIZE_H = 7;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
-	}*/
-	{
+	}
+	/*{
 	param.K = 32;
 	param.C = 64;
 	param.WH = 14;
@@ -215,22 +213,22 @@ int main()
 	param.L2_TILENUM_H = 1;
 	param.L2_TILENUM_R = 1;
 	param.L2_TILENUM_S = 1;
-	param.K_L2 = 32;
-	param.C_L2 = 32;
+	param.K_L2 = ARRAY_K*8;
+	param.C_L2 = ARRAY_C*8;
 	param.W_L2 = 14;
 	param.H_L2 = 14;
 	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
 	param.H_in_L2 = 16;
 	param.R_L2 = 3;
 	param.S_L2 = 3;
-	param.L1_TILENUM_K = 2; ///
-	param.L1_TILENUM_C = 2;
+	param.L1_TILENUM_K = 8; ///
+	param.L1_TILENUM_C = 8;
 	param.L1_TILENUM_W = 2;
 	param.L1_TILENUM_H = 2;
 	param.L1_TILENUM_R = 3;
 	param.L1_TILENUM_S = 3;
-	param.K_L1 = 16;
-	param.C_L1 = 16;
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
 	param.W_L1 = 7;
 	param.H_L1 = 7;
 	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
@@ -241,7 +239,7 @@ int main()
 	param.TILESIZE_H = 7;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
-	}
+	}*/
 
     printf("Test Start\n");
     //TEST CASE 1

@@ -5,7 +5,7 @@
 `timescale 1 ns / 1 ps
 module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore_ram (addr0, ce0, d0, we0, q0, addr1, ce1, d1, we1, q1,  clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 16;
 parameter AWIDTH = 7;
 parameter MEM_SIZE = 98;
 
@@ -63,7 +63,7 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_memcore(
     d1,
     q1);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd16;
 parameter AddressRange = 32'd98;
 parameter AddressWidth = 32'd7;
 input reset;

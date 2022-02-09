@@ -25,36 +25,6 @@ module Conv_sysarr_dataflow_parent_loop_proc15 (
         data_l2_0_d1,
         data_l2_0_q1,
         data_l2_0_we1,
-        data_l2_1_address0,
-        data_l2_1_ce0,
-        data_l2_1_d0,
-        data_l2_1_q0,
-        data_l2_1_we0,
-        data_l2_1_address1,
-        data_l2_1_ce1,
-        data_l2_1_d1,
-        data_l2_1_q1,
-        data_l2_1_we1,
-        data_l2_2_address0,
-        data_l2_2_ce0,
-        data_l2_2_d0,
-        data_l2_2_q0,
-        data_l2_2_we0,
-        data_l2_2_address1,
-        data_l2_2_ce1,
-        data_l2_2_d1,
-        data_l2_2_q1,
-        data_l2_2_we1,
-        data_l2_3_address0,
-        data_l2_3_ce0,
-        data_l2_3_d0,
-        data_l2_3_q0,
-        data_l2_3_we0,
-        data_l2_3_address1,
-        data_l2_3_ce1,
-        data_l2_3_d1,
-        data_l2_3_q1,
-        data_l2_3_we1,
         output_l2_0_address0,
         output_l2_0_ce0,
         output_l2_0_d0,
@@ -65,36 +35,6 @@ module Conv_sysarr_dataflow_parent_loop_proc15 (
         output_l2_0_d1,
         output_l2_0_q1,
         output_l2_0_we1,
-        output_l2_1_address0,
-        output_l2_1_ce0,
-        output_l2_1_d0,
-        output_l2_1_q0,
-        output_l2_1_we0,
-        output_l2_1_address1,
-        output_l2_1_ce1,
-        output_l2_1_d1,
-        output_l2_1_q1,
-        output_l2_1_we1,
-        output_l2_2_address0,
-        output_l2_2_ce0,
-        output_l2_2_d0,
-        output_l2_2_q0,
-        output_l2_2_we0,
-        output_l2_2_address1,
-        output_l2_2_ce1,
-        output_l2_2_d1,
-        output_l2_2_q1,
-        output_l2_2_we1,
-        output_l2_3_address0,
-        output_l2_3_ce0,
-        output_l2_3_d0,
-        output_l2_3_q0,
-        output_l2_3_we0,
-        output_l2_3_address1,
-        output_l2_3_ce1,
-        output_l2_3_d1,
-        output_l2_3_q1,
-        output_l2_3_we1,
         weight_l2_0_address0,
         weight_l2_0_ce0,
         weight_l2_0_d0,
@@ -105,36 +45,6 @@ module Conv_sysarr_dataflow_parent_loop_proc15 (
         weight_l2_0_d1,
         weight_l2_0_q1,
         weight_l2_0_we1,
-        weight_l2_1_address0,
-        weight_l2_1_ce0,
-        weight_l2_1_d0,
-        weight_l2_1_q0,
-        weight_l2_1_we0,
-        weight_l2_1_address1,
-        weight_l2_1_ce1,
-        weight_l2_1_d1,
-        weight_l2_1_q1,
-        weight_l2_1_we1,
-        weight_l2_2_address0,
-        weight_l2_2_ce0,
-        weight_l2_2_d0,
-        weight_l2_2_q0,
-        weight_l2_2_we0,
-        weight_l2_2_address1,
-        weight_l2_2_ce1,
-        weight_l2_2_d1,
-        weight_l2_2_q1,
-        weight_l2_2_we1,
-        weight_l2_3_address0,
-        weight_l2_3_ce0,
-        weight_l2_3_d0,
-        weight_l2_3_q0,
-        weight_l2_3_we0,
-        weight_l2_3_address1,
-        weight_l2_3_ce1,
-        weight_l2_3_d1,
-        weight_l2_3_q1,
-        weight_l2_3_we1,
         ap_clk,
         ap_rst,
         param_ap_vld,
@@ -145,28 +55,10 @@ module Conv_sysarr_dataflow_parent_loop_proc15 (
         wo_ap_vld,
         data_l2_0_empty_n,
         data_l2_0_read,
-        data_l2_1_empty_n,
-        data_l2_1_read,
-        data_l2_2_empty_n,
-        data_l2_2_read,
-        data_l2_3_empty_n,
-        data_l2_3_read,
         output_l2_0_full_n,
         output_l2_0_write,
-        output_l2_1_full_n,
-        output_l2_1_write,
-        output_l2_2_full_n,
-        output_l2_2_write,
-        output_l2_3_full_n,
-        output_l2_3_write,
         weight_l2_0_empty_n,
         weight_l2_0_read,
-        weight_l2_1_empty_n,
-        weight_l2_1_read,
-        weight_l2_2_empty_n,
-        weight_l2_2_read,
-        weight_l2_3_empty_n,
-        weight_l2_3_read,
         ap_start,
         ap_done,
         ap_ready,
@@ -192,36 +84,6 @@ output   data_l2_0_ce1;
 output  [7:0] data_l2_0_d1;
 input  [7:0] data_l2_0_q1;
 output   data_l2_0_we1;
-output  [10:0] data_l2_1_address0;
-output   data_l2_1_ce0;
-output  [7:0] data_l2_1_d0;
-input  [7:0] data_l2_1_q0;
-output   data_l2_1_we0;
-output  [10:0] data_l2_1_address1;
-output   data_l2_1_ce1;
-output  [7:0] data_l2_1_d1;
-input  [7:0] data_l2_1_q1;
-output   data_l2_1_we1;
-output  [10:0] data_l2_2_address0;
-output   data_l2_2_ce0;
-output  [7:0] data_l2_2_d0;
-input  [7:0] data_l2_2_q0;
-output   data_l2_2_we0;
-output  [10:0] data_l2_2_address1;
-output   data_l2_2_ce1;
-output  [7:0] data_l2_2_d1;
-input  [7:0] data_l2_2_q1;
-output   data_l2_2_we1;
-output  [10:0] data_l2_3_address0;
-output   data_l2_3_ce0;
-output  [7:0] data_l2_3_d0;
-input  [7:0] data_l2_3_q0;
-output   data_l2_3_we0;
-output  [10:0] data_l2_3_address1;
-output   data_l2_3_ce1;
-output  [7:0] data_l2_3_d1;
-input  [7:0] data_l2_3_q1;
-output   data_l2_3_we1;
 output  [10:0] output_l2_0_address0;
 output   output_l2_0_ce0;
 output  [31:0] output_l2_0_d0;
@@ -232,36 +94,6 @@ output   output_l2_0_ce1;
 output  [31:0] output_l2_0_d1;
 input  [31:0] output_l2_0_q1;
 output   output_l2_0_we1;
-output  [10:0] output_l2_1_address0;
-output   output_l2_1_ce0;
-output  [31:0] output_l2_1_d0;
-input  [31:0] output_l2_1_q0;
-output   output_l2_1_we0;
-output  [10:0] output_l2_1_address1;
-output   output_l2_1_ce1;
-output  [31:0] output_l2_1_d1;
-input  [31:0] output_l2_1_q1;
-output   output_l2_1_we1;
-output  [10:0] output_l2_2_address0;
-output   output_l2_2_ce0;
-output  [31:0] output_l2_2_d0;
-input  [31:0] output_l2_2_q0;
-output   output_l2_2_we0;
-output  [10:0] output_l2_2_address1;
-output   output_l2_2_ce1;
-output  [31:0] output_l2_2_d1;
-input  [31:0] output_l2_2_q1;
-output   output_l2_2_we1;
-output  [10:0] output_l2_3_address0;
-output   output_l2_3_ce0;
-output  [31:0] output_l2_3_d0;
-input  [31:0] output_l2_3_q0;
-output   output_l2_3_we0;
-output  [10:0] output_l2_3_address1;
-output   output_l2_3_ce1;
-output  [31:0] output_l2_3_d1;
-input  [31:0] output_l2_3_q1;
-output   output_l2_3_we1;
 output  [11:0] weight_l2_0_address0;
 output   weight_l2_0_ce0;
 output  [7:0] weight_l2_0_d0;
@@ -272,36 +104,6 @@ output   weight_l2_0_ce1;
 output  [7:0] weight_l2_0_d1;
 input  [7:0] weight_l2_0_q1;
 output   weight_l2_0_we1;
-output  [11:0] weight_l2_1_address0;
-output   weight_l2_1_ce0;
-output  [7:0] weight_l2_1_d0;
-input  [7:0] weight_l2_1_q0;
-output   weight_l2_1_we0;
-output  [11:0] weight_l2_1_address1;
-output   weight_l2_1_ce1;
-output  [7:0] weight_l2_1_d1;
-input  [7:0] weight_l2_1_q1;
-output   weight_l2_1_we1;
-output  [11:0] weight_l2_2_address0;
-output   weight_l2_2_ce0;
-output  [7:0] weight_l2_2_d0;
-input  [7:0] weight_l2_2_q0;
-output   weight_l2_2_we0;
-output  [11:0] weight_l2_2_address1;
-output   weight_l2_2_ce1;
-output  [7:0] weight_l2_2_d1;
-input  [7:0] weight_l2_2_q1;
-output   weight_l2_2_we1;
-output  [11:0] weight_l2_3_address0;
-output   weight_l2_3_ce0;
-output  [7:0] weight_l2_3_d0;
-input  [7:0] weight_l2_3_q0;
-output   weight_l2_3_we0;
-output  [11:0] weight_l2_3_address1;
-output   weight_l2_3_ce1;
-output  [7:0] weight_l2_3_d1;
-input  [7:0] weight_l2_3_q1;
-output   weight_l2_3_we1;
 input   ap_clk;
 input   ap_rst;
 input   param_ap_vld;
@@ -312,28 +114,10 @@ input   ho_ap_vld;
 input   wo_ap_vld;
 input   data_l2_0_empty_n;
 output   data_l2_0_read;
-input   data_l2_1_empty_n;
-output   data_l2_1_read;
-input   data_l2_2_empty_n;
-output   data_l2_2_read;
-input   data_l2_3_empty_n;
-output   data_l2_3_read;
 input   output_l2_0_full_n;
 output   output_l2_0_write;
-input   output_l2_1_full_n;
-output   output_l2_1_write;
-input   output_l2_2_full_n;
-output   output_l2_2_write;
-input   output_l2_3_full_n;
-output   output_l2_3_write;
 input   weight_l2_0_empty_n;
 output   weight_l2_0_read;
-input   weight_l2_1_empty_n;
-output   weight_l2_1_read;
-input   weight_l2_2_empty_n;
-output   weight_l2_2_read;
-input   weight_l2_3_empty_n;
-output   weight_l2_3_read;
 input   ap_start;
 output   ap_done;
 output   ap_ready;
@@ -352,30 +136,6 @@ wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_address1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_ce1;
 wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we1;
 wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce0;
 wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d0;
@@ -384,30 +144,6 @@ wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce1;
 wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce1;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce1;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we1;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce1;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we1;
 wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce0;
 wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d0;
@@ -416,63 +152,18 @@ wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce1;
 wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we1;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we0;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we1;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we0;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we1;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d0;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we0;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce1;
-wire   [7:0] dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d1;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we1;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_ap_start;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_read;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_read;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_read;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_write;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_ap_done;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle;
 reg    dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_full_n;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_write;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_full_n;
 wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_write;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_write;
 wire    ap_sync_continue;
 wire    ap_sync_done;
 wire    ap_sync_ready;
@@ -508,36 +199,6 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER dataflow_in_loop_LOOP_S_OUTER_U0(
     .data_l2_0_d1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_d1),
     .data_l2_0_q1(8'd0),
     .data_l2_0_we1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_we1),
-    .data_l2_1_address0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0),
-    .data_l2_1_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0),
-    .data_l2_1_d0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d0),
-    .data_l2_1_q0(data_l2_1_q0),
-    .data_l2_1_we0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we0),
-    .data_l2_1_address1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address1),
-    .data_l2_1_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce1),
-    .data_l2_1_d1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_d1),
-    .data_l2_1_q1(8'd0),
-    .data_l2_1_we1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_we1),
-    .data_l2_2_address0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0),
-    .data_l2_2_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0),
-    .data_l2_2_d0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d0),
-    .data_l2_2_q0(data_l2_2_q0),
-    .data_l2_2_we0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we0),
-    .data_l2_2_address1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address1),
-    .data_l2_2_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce1),
-    .data_l2_2_d1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_d1),
-    .data_l2_2_q1(8'd0),
-    .data_l2_2_we1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_we1),
-    .data_l2_3_address0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0),
-    .data_l2_3_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0),
-    .data_l2_3_d0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d0),
-    .data_l2_3_q0(data_l2_3_q0),
-    .data_l2_3_we0(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we0),
-    .data_l2_3_address1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address1),
-    .data_l2_3_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce1),
-    .data_l2_3_d1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_d1),
-    .data_l2_3_q1(8'd0),
-    .data_l2_3_we1(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_we1),
     .output_l2_0_address0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0),
     .output_l2_0_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_ce0),
     .output_l2_0_d0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d0),
@@ -548,36 +209,6 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER dataflow_in_loop_LOOP_S_OUTER_U0(
     .output_l2_0_d1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_d1),
     .output_l2_0_q1(32'd0),
     .output_l2_0_we1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_we1),
-    .output_l2_1_address0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0),
-    .output_l2_1_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0),
-    .output_l2_1_d0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0),
-    .output_l2_1_q0(32'd0),
-    .output_l2_1_we0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0),
-    .output_l2_1_address1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address1),
-    .output_l2_1_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce1),
-    .output_l2_1_d1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d1),
-    .output_l2_1_q1(32'd0),
-    .output_l2_1_we1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we1),
-    .output_l2_2_address0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0),
-    .output_l2_2_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0),
-    .output_l2_2_d0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0),
-    .output_l2_2_q0(32'd0),
-    .output_l2_2_we0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0),
-    .output_l2_2_address1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address1),
-    .output_l2_2_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce1),
-    .output_l2_2_d1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d1),
-    .output_l2_2_q1(32'd0),
-    .output_l2_2_we1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we1),
-    .output_l2_3_address0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0),
-    .output_l2_3_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0),
-    .output_l2_3_d0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0),
-    .output_l2_3_q0(32'd0),
-    .output_l2_3_we0(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0),
-    .output_l2_3_address1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address1),
-    .output_l2_3_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce1),
-    .output_l2_3_d1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d1),
-    .output_l2_3_q1(32'd0),
-    .output_l2_3_we1(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we1),
     .weight_l2_0_address0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0),
     .weight_l2_0_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_ce0),
     .weight_l2_0_d0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d0),
@@ -588,36 +219,6 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER dataflow_in_loop_LOOP_S_OUTER_U0(
     .weight_l2_0_d1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_d1),
     .weight_l2_0_q1(8'd0),
     .weight_l2_0_we1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_we1),
-    .weight_l2_1_address0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0),
-    .weight_l2_1_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0),
-    .weight_l2_1_d0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d0),
-    .weight_l2_1_q0(weight_l2_1_q0),
-    .weight_l2_1_we0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we0),
-    .weight_l2_1_address1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address1),
-    .weight_l2_1_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce1),
-    .weight_l2_1_d1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_d1),
-    .weight_l2_1_q1(8'd0),
-    .weight_l2_1_we1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_we1),
-    .weight_l2_2_address0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0),
-    .weight_l2_2_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0),
-    .weight_l2_2_d0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d0),
-    .weight_l2_2_q0(weight_l2_2_q0),
-    .weight_l2_2_we0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we0),
-    .weight_l2_2_address1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address1),
-    .weight_l2_2_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce1),
-    .weight_l2_2_d1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_d1),
-    .weight_l2_2_q1(8'd0),
-    .weight_l2_2_we1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_we1),
-    .weight_l2_3_address0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0),
-    .weight_l2_3_ce0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0),
-    .weight_l2_3_d0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d0),
-    .weight_l2_3_q0(weight_l2_3_q0),
-    .weight_l2_3_we0(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we0),
-    .weight_l2_3_address1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address1),
-    .weight_l2_3_ce1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce1),
-    .weight_l2_3_d1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_d1),
-    .weight_l2_3_q1(8'd0),
-    .weight_l2_3_we1(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_we1),
     .param_ap_vld(param_ap_vld),
     .ko_1_ap_vld(ko_1_ap_vld),
     .co_ap_vld(co_ap_vld),
@@ -628,28 +229,10 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER dataflow_in_loop_LOOP_S_OUTER_U0(
     .ap_start(dataflow_in_loop_LOOP_S_OUTER_U0_ap_start),
     .weight_l2_0_empty_n(1'b0),
     .weight_l2_0_read(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_read),
-    .weight_l2_1_empty_n(1'b0),
-    .weight_l2_1_read(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_read),
-    .weight_l2_2_empty_n(1'b0),
-    .weight_l2_2_read(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_read),
-    .weight_l2_3_empty_n(1'b0),
-    .weight_l2_3_read(dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_read),
     .data_l2_0_empty_n(1'b0),
     .data_l2_0_read(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_read),
-    .data_l2_1_empty_n(1'b0),
-    .data_l2_1_read(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_read),
-    .data_l2_2_empty_n(1'b0),
-    .data_l2_2_read(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_read),
-    .data_l2_3_empty_n(1'b0),
-    .data_l2_3_read(dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_read),
     .output_l2_0_full_n(output_l2_0_full_n),
     .output_l2_0_write(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_write),
-    .output_l2_1_full_n(output_l2_1_full_n),
-    .output_l2_1_write(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_write),
-    .output_l2_2_full_n(output_l2_2_full_n),
-    .output_l2_2_write(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_write),
-    .output_l2_3_full_n(output_l2_3_full_n),
-    .output_l2_3_write(dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_write),
     .ap_done(dataflow_in_loop_LOOP_S_OUTER_U0_ap_done),
     .ap_ready(dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready),
     .ap_idle(dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle),
@@ -660,9 +243,9 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         loop_dataflow_input_count <= 32'd0;
     end else begin
-        if ((~(loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1))) begin
+        if ((~(loop_dataflow_input_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1) & (ap_start == 1'b1))) begin
             loop_dataflow_input_count <= (loop_dataflow_input_count + 32'd1);
-        end else if (((loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1))) begin
+        end else if (((dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1) & (loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1))) begin
             loop_dataflow_input_count <= 32'd0;
         end
     end
@@ -672,16 +255,16 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         loop_dataflow_output_count <= 32'd0;
     end else begin
-        if ((~(loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1))) begin
+        if ((~(loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue == 1'b1))) begin
             loop_dataflow_output_count <= (loop_dataflow_output_count + 32'd1);
-        end else if (((loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1))) begin
+        end else if (((dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1) & (loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_continue == 1'b1))) begin
             loop_dataflow_output_count <= 32'd0;
         end
     end
 end
 
 always @ (*) begin
-    if (((loop_dataflow_output_count == bound_minus_1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1))) begin
+    if (((dataflow_in_loop_LOOP_S_OUTER_U0_ap_done == 1'b1) & (loop_dataflow_output_count == bound_minus_1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -689,7 +272,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((loop_dataflow_output_count == 32'd0) & (ap_start == 1'b0) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle == 1'b1))) begin
+    if (((dataflow_in_loop_LOOP_S_OUTER_U0_ap_idle == 1'b1) & (loop_dataflow_output_count == 32'd0) & (ap_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -697,7 +280,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1))) begin
+    if (((dataflow_in_loop_LOOP_S_OUTER_U0_ap_ready == 1'b1) & (loop_dataflow_input_count == bound_minus_1) & (ap_start == 1'b1))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -738,77 +321,11 @@ assign data_l2_0_we0 = 1'b0;
 
 assign data_l2_0_we1 = 1'b0;
 
-assign data_l2_1_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_address0;
-
-assign data_l2_1_address1 = 11'd0;
-
-assign data_l2_1_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_ce0;
-
-assign data_l2_1_ce1 = 1'b0;
-
-assign data_l2_1_d0 = 8'd0;
-
-assign data_l2_1_d1 = 8'd0;
-
-assign data_l2_1_read = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_write;
-
-assign data_l2_1_we0 = 1'b0;
-
-assign data_l2_1_we1 = 1'b0;
-
-assign data_l2_2_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_address0;
-
-assign data_l2_2_address1 = 11'd0;
-
-assign data_l2_2_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_ce0;
-
-assign data_l2_2_ce1 = 1'b0;
-
-assign data_l2_2_d0 = 8'd0;
-
-assign data_l2_2_d1 = 8'd0;
-
-assign data_l2_2_read = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_write;
-
-assign data_l2_2_we0 = 1'b0;
-
-assign data_l2_2_we1 = 1'b0;
-
-assign data_l2_3_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_address0;
-
-assign data_l2_3_address1 = 11'd0;
-
-assign data_l2_3_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_ce0;
-
-assign data_l2_3_ce1 = 1'b0;
-
-assign data_l2_3_d0 = 8'd0;
-
-assign data_l2_3_d1 = 8'd0;
-
-assign data_l2_3_read = dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_write;
-
-assign data_l2_3_we0 = 1'b0;
-
-assign data_l2_3_we1 = 1'b0;
-
 assign dataflow_in_loop_LOOP_S_OUTER_U0_ap_start = ap_start;
 
 assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_full_n = data_l2_0_empty_n;
 
 assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_0_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_full_n = data_l2_1_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_1_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_full_n = data_l2_2_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_2_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_full_n = data_l2_3_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_data_l2_3_write = 1'b0;
 
 assign dataflow_in_loop_LOOP_S_OUTER_U0_start_full_n = 1'b1;
 
@@ -817,18 +334,6 @@ assign dataflow_in_loop_LOOP_S_OUTER_U0_start_write = 1'b0;
 assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_full_n = weight_l2_0_empty_n;
 
 assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_full_n = weight_l2_1_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_full_n = weight_l2_2_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_write = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_full_n = weight_l2_3_empty_n;
-
-assign dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_write = 1'b0;
 
 assign output_l2_0_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_address0;
 
@@ -848,60 +353,6 @@ assign output_l2_0_we1 = 1'b0;
 
 assign output_l2_0_write = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_0_write;
 
-assign output_l2_1_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_address0;
-
-assign output_l2_1_address1 = 11'd0;
-
-assign output_l2_1_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_ce0;
-
-assign output_l2_1_ce1 = 1'b0;
-
-assign output_l2_1_d0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_d0;
-
-assign output_l2_1_d1 = 32'd0;
-
-assign output_l2_1_we0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_we0;
-
-assign output_l2_1_we1 = 1'b0;
-
-assign output_l2_1_write = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_1_write;
-
-assign output_l2_2_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_address0;
-
-assign output_l2_2_address1 = 11'd0;
-
-assign output_l2_2_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_ce0;
-
-assign output_l2_2_ce1 = 1'b0;
-
-assign output_l2_2_d0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_d0;
-
-assign output_l2_2_d1 = 32'd0;
-
-assign output_l2_2_we0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_we0;
-
-assign output_l2_2_we1 = 1'b0;
-
-assign output_l2_2_write = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_2_write;
-
-assign output_l2_3_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_address0;
-
-assign output_l2_3_address1 = 11'd0;
-
-assign output_l2_3_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_ce0;
-
-assign output_l2_3_ce1 = 1'b0;
-
-assign output_l2_3_d0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_d0;
-
-assign output_l2_3_d1 = 32'd0;
-
-assign output_l2_3_we0 = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_we0;
-
-assign output_l2_3_we1 = 1'b0;
-
-assign output_l2_3_write = dataflow_in_loop_LOOP_S_OUTER_U0_output_l2_3_write;
-
 assign weight_l2_0_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_address0;
 
 assign weight_l2_0_address1 = 12'd0;
@@ -919,59 +370,5 @@ assign weight_l2_0_read = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_0_write;
 assign weight_l2_0_we0 = 1'b0;
 
 assign weight_l2_0_we1 = 1'b0;
-
-assign weight_l2_1_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_address0;
-
-assign weight_l2_1_address1 = 12'd0;
-
-assign weight_l2_1_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_ce0;
-
-assign weight_l2_1_ce1 = 1'b0;
-
-assign weight_l2_1_d0 = 8'd0;
-
-assign weight_l2_1_d1 = 8'd0;
-
-assign weight_l2_1_read = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_1_write;
-
-assign weight_l2_1_we0 = 1'b0;
-
-assign weight_l2_1_we1 = 1'b0;
-
-assign weight_l2_2_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_address0;
-
-assign weight_l2_2_address1 = 12'd0;
-
-assign weight_l2_2_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_ce0;
-
-assign weight_l2_2_ce1 = 1'b0;
-
-assign weight_l2_2_d0 = 8'd0;
-
-assign weight_l2_2_d1 = 8'd0;
-
-assign weight_l2_2_read = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_2_write;
-
-assign weight_l2_2_we0 = 1'b0;
-
-assign weight_l2_2_we1 = 1'b0;
-
-assign weight_l2_3_address0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_address0;
-
-assign weight_l2_3_address1 = 12'd0;
-
-assign weight_l2_3_ce0 = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_ce0;
-
-assign weight_l2_3_ce1 = 1'b0;
-
-assign weight_l2_3_d0 = 8'd0;
-
-assign weight_l2_3_d1 = 8'd0;
-
-assign weight_l2_3_read = dataflow_in_loop_LOOP_S_OUTER_U0_weight_l2_3_write;
-
-assign weight_l2_3_we0 = 1'b0;
-
-assign weight_l2_3_we1 = 1'b0;
 
 endmodule //Conv_sysarr_dataflow_parent_loop_proc15

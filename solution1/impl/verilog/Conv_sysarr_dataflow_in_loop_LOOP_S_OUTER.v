@@ -27,36 +27,6 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         data_l2_0_d1,
         data_l2_0_q1,
         data_l2_0_we1,
-        data_l2_1_address0,
-        data_l2_1_ce0,
-        data_l2_1_d0,
-        data_l2_1_q0,
-        data_l2_1_we0,
-        data_l2_1_address1,
-        data_l2_1_ce1,
-        data_l2_1_d1,
-        data_l2_1_q1,
-        data_l2_1_we1,
-        data_l2_2_address0,
-        data_l2_2_ce0,
-        data_l2_2_d0,
-        data_l2_2_q0,
-        data_l2_2_we0,
-        data_l2_2_address1,
-        data_l2_2_ce1,
-        data_l2_2_d1,
-        data_l2_2_q1,
-        data_l2_2_we1,
-        data_l2_3_address0,
-        data_l2_3_ce0,
-        data_l2_3_d0,
-        data_l2_3_q0,
-        data_l2_3_we0,
-        data_l2_3_address1,
-        data_l2_3_ce1,
-        data_l2_3_d1,
-        data_l2_3_q1,
-        data_l2_3_we1,
         output_l2_0_address0,
         output_l2_0_ce0,
         output_l2_0_d0,
@@ -67,36 +37,6 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         output_l2_0_d1,
         output_l2_0_q1,
         output_l2_0_we1,
-        output_l2_1_address0,
-        output_l2_1_ce0,
-        output_l2_1_d0,
-        output_l2_1_q0,
-        output_l2_1_we0,
-        output_l2_1_address1,
-        output_l2_1_ce1,
-        output_l2_1_d1,
-        output_l2_1_q1,
-        output_l2_1_we1,
-        output_l2_2_address0,
-        output_l2_2_ce0,
-        output_l2_2_d0,
-        output_l2_2_q0,
-        output_l2_2_we0,
-        output_l2_2_address1,
-        output_l2_2_ce1,
-        output_l2_2_d1,
-        output_l2_2_q1,
-        output_l2_2_we1,
-        output_l2_3_address0,
-        output_l2_3_ce0,
-        output_l2_3_d0,
-        output_l2_3_q0,
-        output_l2_3_we0,
-        output_l2_3_address1,
-        output_l2_3_ce1,
-        output_l2_3_d1,
-        output_l2_3_q1,
-        output_l2_3_we1,
         weight_l2_0_address0,
         weight_l2_0_ce0,
         weight_l2_0_d0,
@@ -107,36 +47,6 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         weight_l2_0_d1,
         weight_l2_0_q1,
         weight_l2_0_we1,
-        weight_l2_1_address0,
-        weight_l2_1_ce0,
-        weight_l2_1_d0,
-        weight_l2_1_q0,
-        weight_l2_1_we0,
-        weight_l2_1_address1,
-        weight_l2_1_ce1,
-        weight_l2_1_d1,
-        weight_l2_1_q1,
-        weight_l2_1_we1,
-        weight_l2_2_address0,
-        weight_l2_2_ce0,
-        weight_l2_2_d0,
-        weight_l2_2_q0,
-        weight_l2_2_we0,
-        weight_l2_2_address1,
-        weight_l2_2_ce1,
-        weight_l2_2_d1,
-        weight_l2_2_q1,
-        weight_l2_2_we1,
-        weight_l2_3_address0,
-        weight_l2_3_ce0,
-        weight_l2_3_d0,
-        weight_l2_3_q0,
-        weight_l2_3_we0,
-        weight_l2_3_address1,
-        weight_l2_3_ce1,
-        weight_l2_3_d1,
-        weight_l2_3_q1,
-        weight_l2_3_we1,
         param_ap_vld,
         ko_1_ap_vld,
         co_ap_vld,
@@ -147,28 +57,10 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         ap_start,
         weight_l2_0_empty_n,
         weight_l2_0_read,
-        weight_l2_1_empty_n,
-        weight_l2_1_read,
-        weight_l2_2_empty_n,
-        weight_l2_2_read,
-        weight_l2_3_empty_n,
-        weight_l2_3_read,
         data_l2_0_empty_n,
         data_l2_0_read,
-        data_l2_1_empty_n,
-        data_l2_1_read,
-        data_l2_2_empty_n,
-        data_l2_2_read,
-        data_l2_3_empty_n,
-        data_l2_3_read,
         output_l2_0_full_n,
         output_l2_0_write,
-        output_l2_1_full_n,
-        output_l2_1_write,
-        output_l2_2_full_n,
-        output_l2_2_write,
-        output_l2_3_full_n,
-        output_l2_3_write,
         ap_done,
         ap_ready,
         ap_idle,
@@ -195,36 +87,6 @@ output   data_l2_0_ce1;
 output  [7:0] data_l2_0_d1;
 input  [7:0] data_l2_0_q1;
 output   data_l2_0_we1;
-output  [10:0] data_l2_1_address0;
-output   data_l2_1_ce0;
-output  [7:0] data_l2_1_d0;
-input  [7:0] data_l2_1_q0;
-output   data_l2_1_we0;
-output  [10:0] data_l2_1_address1;
-output   data_l2_1_ce1;
-output  [7:0] data_l2_1_d1;
-input  [7:0] data_l2_1_q1;
-output   data_l2_1_we1;
-output  [10:0] data_l2_2_address0;
-output   data_l2_2_ce0;
-output  [7:0] data_l2_2_d0;
-input  [7:0] data_l2_2_q0;
-output   data_l2_2_we0;
-output  [10:0] data_l2_2_address1;
-output   data_l2_2_ce1;
-output  [7:0] data_l2_2_d1;
-input  [7:0] data_l2_2_q1;
-output   data_l2_2_we1;
-output  [10:0] data_l2_3_address0;
-output   data_l2_3_ce0;
-output  [7:0] data_l2_3_d0;
-input  [7:0] data_l2_3_q0;
-output   data_l2_3_we0;
-output  [10:0] data_l2_3_address1;
-output   data_l2_3_ce1;
-output  [7:0] data_l2_3_d1;
-input  [7:0] data_l2_3_q1;
-output   data_l2_3_we1;
 output  [10:0] output_l2_0_address0;
 output   output_l2_0_ce0;
 output  [31:0] output_l2_0_d0;
@@ -235,36 +97,6 @@ output   output_l2_0_ce1;
 output  [31:0] output_l2_0_d1;
 input  [31:0] output_l2_0_q1;
 output   output_l2_0_we1;
-output  [10:0] output_l2_1_address0;
-output   output_l2_1_ce0;
-output  [31:0] output_l2_1_d0;
-input  [31:0] output_l2_1_q0;
-output   output_l2_1_we0;
-output  [10:0] output_l2_1_address1;
-output   output_l2_1_ce1;
-output  [31:0] output_l2_1_d1;
-input  [31:0] output_l2_1_q1;
-output   output_l2_1_we1;
-output  [10:0] output_l2_2_address0;
-output   output_l2_2_ce0;
-output  [31:0] output_l2_2_d0;
-input  [31:0] output_l2_2_q0;
-output   output_l2_2_we0;
-output  [10:0] output_l2_2_address1;
-output   output_l2_2_ce1;
-output  [31:0] output_l2_2_d1;
-input  [31:0] output_l2_2_q1;
-output   output_l2_2_we1;
-output  [10:0] output_l2_3_address0;
-output   output_l2_3_ce0;
-output  [31:0] output_l2_3_d0;
-input  [31:0] output_l2_3_q0;
-output   output_l2_3_we0;
-output  [10:0] output_l2_3_address1;
-output   output_l2_3_ce1;
-output  [31:0] output_l2_3_d1;
-input  [31:0] output_l2_3_q1;
-output   output_l2_3_we1;
 output  [11:0] weight_l2_0_address0;
 output   weight_l2_0_ce0;
 output  [7:0] weight_l2_0_d0;
@@ -275,36 +107,6 @@ output   weight_l2_0_ce1;
 output  [7:0] weight_l2_0_d1;
 input  [7:0] weight_l2_0_q1;
 output   weight_l2_0_we1;
-output  [11:0] weight_l2_1_address0;
-output   weight_l2_1_ce0;
-output  [7:0] weight_l2_1_d0;
-input  [7:0] weight_l2_1_q0;
-output   weight_l2_1_we0;
-output  [11:0] weight_l2_1_address1;
-output   weight_l2_1_ce1;
-output  [7:0] weight_l2_1_d1;
-input  [7:0] weight_l2_1_q1;
-output   weight_l2_1_we1;
-output  [11:0] weight_l2_2_address0;
-output   weight_l2_2_ce0;
-output  [7:0] weight_l2_2_d0;
-input  [7:0] weight_l2_2_q0;
-output   weight_l2_2_we0;
-output  [11:0] weight_l2_2_address1;
-output   weight_l2_2_ce1;
-output  [7:0] weight_l2_2_d1;
-input  [7:0] weight_l2_2_q1;
-output   weight_l2_2_we1;
-output  [11:0] weight_l2_3_address0;
-output   weight_l2_3_ce0;
-output  [7:0] weight_l2_3_d0;
-input  [7:0] weight_l2_3_q0;
-output   weight_l2_3_we0;
-output  [11:0] weight_l2_3_address1;
-output   weight_l2_3_ce1;
-output  [7:0] weight_l2_3_d1;
-input  [7:0] weight_l2_3_q1;
-output   weight_l2_3_we1;
 input   param_ap_vld;
 input   ko_1_ap_vld;
 input   co_ap_vld;
@@ -315,28 +117,10 @@ input   wo_ap_vld;
 input   ap_start;
 input   weight_l2_0_empty_n;
 output   weight_l2_0_read;
-input   weight_l2_1_empty_n;
-output   weight_l2_1_read;
-input   weight_l2_2_empty_n;
-output   weight_l2_2_read;
-input   weight_l2_3_empty_n;
-output   weight_l2_3_read;
 input   data_l2_0_empty_n;
 output   data_l2_0_read;
-input   data_l2_1_empty_n;
-output   data_l2_1_read;
-input   data_l2_2_empty_n;
-output   data_l2_2_read;
-input   data_l2_3_empty_n;
-output   data_l2_3_read;
 input   output_l2_0_full_n;
 output   output_l2_0_write;
-input   output_l2_1_full_n;
-output   output_l2_1_write;
-input   output_l2_2_full_n;
-output   output_l2_2_write;
-input   output_l2_3_full_n;
-output   output_l2_3_write;
 output   ap_done;
 output   ap_ready;
 output   ap_idle;
@@ -344,99 +128,51 @@ input   ap_continue;
 
 wire   [7:0] data_l1_0_i_q0;
 wire   [7:0] data_l1_0_t_q0;
-wire   [7:0] data_l1_1_i_q0;
-wire   [7:0] data_l1_1_t_q0;
-wire   [7:0] data_l1_2_i_q0;
-wire   [7:0] data_l1_2_t_q0;
-wire   [7:0] data_l1_3_i_q0;
-wire   [7:0] data_l1_3_t_q0;
-wire   [0:0] data_l1_4_i_q0;
-wire   [0:0] data_l1_4_t_q0;
-wire   [0:0] data_l1_5_i_q0;
-wire   [0:0] data_l1_5_t_q0;
-wire   [0:0] data_l1_6_i_q0;
-wire   [0:0] data_l1_6_t_q0;
-wire   [0:0] data_l1_7_i_q0;
-wire   [0:0] data_l1_7_t_q0;
-wire   [0:0] data_l1_8_i_q0;
-wire   [0:0] data_l1_8_t_q0;
-wire   [0:0] data_l1_9_i_q0;
-wire   [0:0] data_l1_9_t_q0;
-wire   [0:0] data_l1_10_i_q0;
-wire   [0:0] data_l1_10_t_q0;
-wire   [0:0] data_l1_11_i_q0;
-wire   [0:0] data_l1_11_t_q0;
-wire   [0:0] data_l1_12_i_q0;
-wire   [0:0] data_l1_12_t_q0;
-wire   [0:0] data_l1_13_i_q0;
-wire   [0:0] data_l1_13_t_q0;
-wire   [0:0] data_l1_14_i_q0;
-wire   [0:0] data_l1_14_t_q0;
-wire   [0:0] data_l1_15_i_q0;
-wire   [0:0] data_l1_15_t_q0;
-wire   [31:0] output_l1_0_i_q0;
-wire   [31:0] output_l1_0_t_q0;
-wire   [31:0] output_l1_1_i_q0;
-wire   [31:0] output_l1_1_t_q0;
-wire   [31:0] output_l1_2_i_q0;
-wire   [31:0] output_l1_2_t_q0;
-wire   [31:0] output_l1_3_i_q0;
-wire   [31:0] output_l1_3_t_q0;
-wire   [31:0] output_l1_4_i_q0;
-wire   [31:0] output_l1_4_t_q0;
-wire   [31:0] output_l1_5_i_q0;
-wire   [31:0] output_l1_5_t_q0;
-wire   [31:0] output_l1_6_i_q0;
-wire   [31:0] output_l1_6_t_q0;
-wire   [31:0] output_l1_7_i_q0;
-wire   [31:0] output_l1_7_t_q0;
-wire   [31:0] output_l1_8_i_q0;
-wire   [31:0] output_l1_8_t_q0;
-wire   [31:0] output_l1_9_i_q0;
-wire   [31:0] output_l1_9_t_q0;
-wire   [31:0] output_l1_10_i_q0;
-wire   [31:0] output_l1_10_t_q0;
-wire   [31:0] output_l1_11_i_q0;
-wire   [31:0] output_l1_11_t_q0;
-wire   [31:0] output_l1_12_i_q0;
-wire   [31:0] output_l1_12_t_q0;
-wire   [31:0] output_l1_13_i_q0;
-wire   [31:0] output_l1_13_t_q0;
-wire   [31:0] output_l1_14_i_q0;
-wire   [31:0] output_l1_14_t_q0;
-wire   [31:0] output_l1_15_i_q0;
-wire   [31:0] output_l1_15_t_q0;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_done;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready;
-wire   [1183:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write;
-wire   [1119:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write;
+wire   [0:0] data_l1_1_i_q0;
+wire   [0:0] data_l1_1_t_q0;
+wire   [0:0] data_l1_2_i_q0;
+wire   [0:0] data_l1_2_t_q0;
+wire   [0:0] data_l1_3_i_q0;
+wire   [0:0] data_l1_3_t_q0;
+wire   [15:0] output_l1_0_i_q0;
+wire   [15:0] output_l1_0_t_q0;
+wire   [15:0] output_l1_1_i_q0;
+wire   [15:0] output_l1_1_t_q0;
+wire   [15:0] output_l1_2_i_q0;
+wire   [15:0] output_l1_2_t_q0;
+wire   [15:0] output_l1_3_i_q0;
+wire   [15:0] output_l1_3_t_q0;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_done;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
+wire   [1183:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write;
+wire   [1119:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write;
 wire    runWeight2Reg_U0_ap_start;
 wire    runWeight2Reg_U0_ap_done;
 wire    runWeight2Reg_U0_ap_continue;
@@ -449,12 +185,6 @@ wire    runWeight2Reg_U0_ro_read;
 wire    runWeight2Reg_U0_so_read;
 wire   [11:0] runWeight2Reg_U0_weight_l2_0_address0;
 wire    runWeight2Reg_U0_weight_l2_0_ce0;
-wire   [11:0] runWeight2Reg_U0_weight_l2_1_address0;
-wire    runWeight2Reg_U0_weight_l2_1_ce0;
-wire   [11:0] runWeight2Reg_U0_weight_l2_2_address0;
-wire    runWeight2Reg_U0_weight_l2_2_ce0;
-wire   [11:0] runWeight2Reg_U0_weight_l2_3_address0;
-wire    runWeight2Reg_U0_weight_l2_3_ce0;
 wire   [1183:0] runWeight2Reg_U0_param_out_din;
 wire    runWeight2Reg_U0_param_out_write;
 wire   [10:0] runWeight2Reg_U0_ko_1_out_din;
@@ -481,1070 +211,8 @@ wire   [7:0] runWeight2Reg_U0_ap_return_12;
 wire   [7:0] runWeight2Reg_U0_ap_return_13;
 wire   [7:0] runWeight2Reg_U0_ap_return_14;
 wire   [7:0] runWeight2Reg_U0_ap_return_15;
-wire   [7:0] runWeight2Reg_U0_ap_return_16;
-wire   [7:0] runWeight2Reg_U0_ap_return_17;
-wire   [7:0] runWeight2Reg_U0_ap_return_18;
-wire   [7:0] runWeight2Reg_U0_ap_return_19;
-wire   [7:0] runWeight2Reg_U0_ap_return_20;
-wire   [7:0] runWeight2Reg_U0_ap_return_21;
-wire   [7:0] runWeight2Reg_U0_ap_return_22;
-wire   [7:0] runWeight2Reg_U0_ap_return_23;
-wire   [7:0] runWeight2Reg_U0_ap_return_24;
-wire   [7:0] runWeight2Reg_U0_ap_return_25;
-wire   [7:0] runWeight2Reg_U0_ap_return_26;
-wire   [7:0] runWeight2Reg_U0_ap_return_27;
-wire   [7:0] runWeight2Reg_U0_ap_return_28;
-wire   [7:0] runWeight2Reg_U0_ap_return_29;
-wire   [7:0] runWeight2Reg_U0_ap_return_30;
-wire   [7:0] runWeight2Reg_U0_ap_return_31;
-wire   [7:0] runWeight2Reg_U0_ap_return_32;
-wire   [7:0] runWeight2Reg_U0_ap_return_33;
-wire   [7:0] runWeight2Reg_U0_ap_return_34;
-wire   [7:0] runWeight2Reg_U0_ap_return_35;
-wire   [7:0] runWeight2Reg_U0_ap_return_36;
-wire   [7:0] runWeight2Reg_U0_ap_return_37;
-wire   [7:0] runWeight2Reg_U0_ap_return_38;
-wire   [7:0] runWeight2Reg_U0_ap_return_39;
-wire   [7:0] runWeight2Reg_U0_ap_return_40;
-wire   [7:0] runWeight2Reg_U0_ap_return_41;
-wire   [7:0] runWeight2Reg_U0_ap_return_42;
-wire   [7:0] runWeight2Reg_U0_ap_return_43;
-wire   [7:0] runWeight2Reg_U0_ap_return_44;
-wire   [7:0] runWeight2Reg_U0_ap_return_45;
-wire   [7:0] runWeight2Reg_U0_ap_return_46;
-wire   [7:0] runWeight2Reg_U0_ap_return_47;
-wire   [7:0] runWeight2Reg_U0_ap_return_48;
-wire   [7:0] runWeight2Reg_U0_ap_return_49;
-wire   [7:0] runWeight2Reg_U0_ap_return_50;
-wire   [7:0] runWeight2Reg_U0_ap_return_51;
-wire   [7:0] runWeight2Reg_U0_ap_return_52;
-wire   [7:0] runWeight2Reg_U0_ap_return_53;
-wire   [7:0] runWeight2Reg_U0_ap_return_54;
-wire   [7:0] runWeight2Reg_U0_ap_return_55;
-wire   [7:0] runWeight2Reg_U0_ap_return_56;
-wire   [7:0] runWeight2Reg_U0_ap_return_57;
-wire   [7:0] runWeight2Reg_U0_ap_return_58;
-wire   [7:0] runWeight2Reg_U0_ap_return_59;
-wire   [7:0] runWeight2Reg_U0_ap_return_60;
-wire   [7:0] runWeight2Reg_U0_ap_return_61;
-wire   [7:0] runWeight2Reg_U0_ap_return_62;
-wire   [7:0] runWeight2Reg_U0_ap_return_63;
-wire   [7:0] runWeight2Reg_U0_ap_return_64;
-wire   [7:0] runWeight2Reg_U0_ap_return_65;
-wire   [7:0] runWeight2Reg_U0_ap_return_66;
-wire   [7:0] runWeight2Reg_U0_ap_return_67;
-wire   [7:0] runWeight2Reg_U0_ap_return_68;
-wire   [7:0] runWeight2Reg_U0_ap_return_69;
-wire   [7:0] runWeight2Reg_U0_ap_return_70;
-wire   [7:0] runWeight2Reg_U0_ap_return_71;
-wire   [7:0] runWeight2Reg_U0_ap_return_72;
-wire   [7:0] runWeight2Reg_U0_ap_return_73;
-wire   [7:0] runWeight2Reg_U0_ap_return_74;
-wire   [7:0] runWeight2Reg_U0_ap_return_75;
-wire   [7:0] runWeight2Reg_U0_ap_return_76;
-wire   [7:0] runWeight2Reg_U0_ap_return_77;
-wire   [7:0] runWeight2Reg_U0_ap_return_78;
-wire   [7:0] runWeight2Reg_U0_ap_return_79;
-wire   [7:0] runWeight2Reg_U0_ap_return_80;
-wire   [7:0] runWeight2Reg_U0_ap_return_81;
-wire   [7:0] runWeight2Reg_U0_ap_return_82;
-wire   [7:0] runWeight2Reg_U0_ap_return_83;
-wire   [7:0] runWeight2Reg_U0_ap_return_84;
-wire   [7:0] runWeight2Reg_U0_ap_return_85;
-wire   [7:0] runWeight2Reg_U0_ap_return_86;
-wire   [7:0] runWeight2Reg_U0_ap_return_87;
-wire   [7:0] runWeight2Reg_U0_ap_return_88;
-wire   [7:0] runWeight2Reg_U0_ap_return_89;
-wire   [7:0] runWeight2Reg_U0_ap_return_90;
-wire   [7:0] runWeight2Reg_U0_ap_return_91;
-wire   [7:0] runWeight2Reg_U0_ap_return_92;
-wire   [7:0] runWeight2Reg_U0_ap_return_93;
-wire   [7:0] runWeight2Reg_U0_ap_return_94;
-wire   [7:0] runWeight2Reg_U0_ap_return_95;
-wire   [7:0] runWeight2Reg_U0_ap_return_96;
-wire   [7:0] runWeight2Reg_U0_ap_return_97;
-wire   [7:0] runWeight2Reg_U0_ap_return_98;
-wire   [7:0] runWeight2Reg_U0_ap_return_99;
-wire   [7:0] runWeight2Reg_U0_ap_return_100;
-wire   [7:0] runWeight2Reg_U0_ap_return_101;
-wire   [7:0] runWeight2Reg_U0_ap_return_102;
-wire   [7:0] runWeight2Reg_U0_ap_return_103;
-wire   [7:0] runWeight2Reg_U0_ap_return_104;
-wire   [7:0] runWeight2Reg_U0_ap_return_105;
-wire   [7:0] runWeight2Reg_U0_ap_return_106;
-wire   [7:0] runWeight2Reg_U0_ap_return_107;
-wire   [7:0] runWeight2Reg_U0_ap_return_108;
-wire   [7:0] runWeight2Reg_U0_ap_return_109;
-wire   [7:0] runWeight2Reg_U0_ap_return_110;
-wire   [7:0] runWeight2Reg_U0_ap_return_111;
-wire   [7:0] runWeight2Reg_U0_ap_return_112;
-wire   [7:0] runWeight2Reg_U0_ap_return_113;
-wire   [7:0] runWeight2Reg_U0_ap_return_114;
-wire   [7:0] runWeight2Reg_U0_ap_return_115;
-wire   [7:0] runWeight2Reg_U0_ap_return_116;
-wire   [7:0] runWeight2Reg_U0_ap_return_117;
-wire   [7:0] runWeight2Reg_U0_ap_return_118;
-wire   [7:0] runWeight2Reg_U0_ap_return_119;
-wire   [7:0] runWeight2Reg_U0_ap_return_120;
-wire   [7:0] runWeight2Reg_U0_ap_return_121;
-wire   [7:0] runWeight2Reg_U0_ap_return_122;
-wire   [7:0] runWeight2Reg_U0_ap_return_123;
-wire   [7:0] runWeight2Reg_U0_ap_return_124;
-wire   [7:0] runWeight2Reg_U0_ap_return_125;
-wire   [7:0] runWeight2Reg_U0_ap_return_126;
-wire   [7:0] runWeight2Reg_U0_ap_return_127;
-wire   [7:0] runWeight2Reg_U0_ap_return_128;
-wire   [7:0] runWeight2Reg_U0_ap_return_129;
-wire   [7:0] runWeight2Reg_U0_ap_return_130;
-wire   [7:0] runWeight2Reg_U0_ap_return_131;
-wire   [7:0] runWeight2Reg_U0_ap_return_132;
-wire   [7:0] runWeight2Reg_U0_ap_return_133;
-wire   [7:0] runWeight2Reg_U0_ap_return_134;
-wire   [7:0] runWeight2Reg_U0_ap_return_135;
-wire   [7:0] runWeight2Reg_U0_ap_return_136;
-wire   [7:0] runWeight2Reg_U0_ap_return_137;
-wire   [7:0] runWeight2Reg_U0_ap_return_138;
-wire   [7:0] runWeight2Reg_U0_ap_return_139;
-wire   [7:0] runWeight2Reg_U0_ap_return_140;
-wire   [7:0] runWeight2Reg_U0_ap_return_141;
-wire   [7:0] runWeight2Reg_U0_ap_return_142;
-wire   [7:0] runWeight2Reg_U0_ap_return_143;
-wire   [7:0] runWeight2Reg_U0_ap_return_144;
-wire   [7:0] runWeight2Reg_U0_ap_return_145;
-wire   [7:0] runWeight2Reg_U0_ap_return_146;
-wire   [7:0] runWeight2Reg_U0_ap_return_147;
-wire   [7:0] runWeight2Reg_U0_ap_return_148;
-wire   [7:0] runWeight2Reg_U0_ap_return_149;
-wire   [7:0] runWeight2Reg_U0_ap_return_150;
-wire   [7:0] runWeight2Reg_U0_ap_return_151;
-wire   [7:0] runWeight2Reg_U0_ap_return_152;
-wire   [7:0] runWeight2Reg_U0_ap_return_153;
-wire   [7:0] runWeight2Reg_U0_ap_return_154;
-wire   [7:0] runWeight2Reg_U0_ap_return_155;
-wire   [7:0] runWeight2Reg_U0_ap_return_156;
-wire   [7:0] runWeight2Reg_U0_ap_return_157;
-wire   [7:0] runWeight2Reg_U0_ap_return_158;
-wire   [7:0] runWeight2Reg_U0_ap_return_159;
-wire   [7:0] runWeight2Reg_U0_ap_return_160;
-wire   [7:0] runWeight2Reg_U0_ap_return_161;
-wire   [7:0] runWeight2Reg_U0_ap_return_162;
-wire   [7:0] runWeight2Reg_U0_ap_return_163;
-wire   [7:0] runWeight2Reg_U0_ap_return_164;
-wire   [7:0] runWeight2Reg_U0_ap_return_165;
-wire   [7:0] runWeight2Reg_U0_ap_return_166;
-wire   [7:0] runWeight2Reg_U0_ap_return_167;
-wire   [7:0] runWeight2Reg_U0_ap_return_168;
-wire   [7:0] runWeight2Reg_U0_ap_return_169;
-wire   [7:0] runWeight2Reg_U0_ap_return_170;
-wire   [7:0] runWeight2Reg_U0_ap_return_171;
-wire   [7:0] runWeight2Reg_U0_ap_return_172;
-wire   [7:0] runWeight2Reg_U0_ap_return_173;
-wire   [7:0] runWeight2Reg_U0_ap_return_174;
-wire   [7:0] runWeight2Reg_U0_ap_return_175;
-wire   [7:0] runWeight2Reg_U0_ap_return_176;
-wire   [7:0] runWeight2Reg_U0_ap_return_177;
-wire   [7:0] runWeight2Reg_U0_ap_return_178;
-wire   [7:0] runWeight2Reg_U0_ap_return_179;
-wire   [7:0] runWeight2Reg_U0_ap_return_180;
-wire   [7:0] runWeight2Reg_U0_ap_return_181;
-wire   [7:0] runWeight2Reg_U0_ap_return_182;
-wire   [7:0] runWeight2Reg_U0_ap_return_183;
-wire   [7:0] runWeight2Reg_U0_ap_return_184;
-wire   [7:0] runWeight2Reg_U0_ap_return_185;
-wire   [7:0] runWeight2Reg_U0_ap_return_186;
-wire   [7:0] runWeight2Reg_U0_ap_return_187;
-wire   [7:0] runWeight2Reg_U0_ap_return_188;
-wire   [7:0] runWeight2Reg_U0_ap_return_189;
-wire   [7:0] runWeight2Reg_U0_ap_return_190;
-wire   [7:0] runWeight2Reg_U0_ap_return_191;
-wire   [7:0] runWeight2Reg_U0_ap_return_192;
-wire   [7:0] runWeight2Reg_U0_ap_return_193;
-wire   [7:0] runWeight2Reg_U0_ap_return_194;
-wire   [7:0] runWeight2Reg_U0_ap_return_195;
-wire   [7:0] runWeight2Reg_U0_ap_return_196;
-wire   [7:0] runWeight2Reg_U0_ap_return_197;
-wire   [7:0] runWeight2Reg_U0_ap_return_198;
-wire   [7:0] runWeight2Reg_U0_ap_return_199;
-wire   [7:0] runWeight2Reg_U0_ap_return_200;
-wire   [7:0] runWeight2Reg_U0_ap_return_201;
-wire   [7:0] runWeight2Reg_U0_ap_return_202;
-wire   [7:0] runWeight2Reg_U0_ap_return_203;
-wire   [7:0] runWeight2Reg_U0_ap_return_204;
-wire   [7:0] runWeight2Reg_U0_ap_return_205;
-wire   [7:0] runWeight2Reg_U0_ap_return_206;
-wire   [7:0] runWeight2Reg_U0_ap_return_207;
-wire   [7:0] runWeight2Reg_U0_ap_return_208;
-wire   [7:0] runWeight2Reg_U0_ap_return_209;
-wire   [7:0] runWeight2Reg_U0_ap_return_210;
-wire   [7:0] runWeight2Reg_U0_ap_return_211;
-wire   [7:0] runWeight2Reg_U0_ap_return_212;
-wire   [7:0] runWeight2Reg_U0_ap_return_213;
-wire   [7:0] runWeight2Reg_U0_ap_return_214;
-wire   [7:0] runWeight2Reg_U0_ap_return_215;
-wire   [7:0] runWeight2Reg_U0_ap_return_216;
-wire   [7:0] runWeight2Reg_U0_ap_return_217;
-wire   [7:0] runWeight2Reg_U0_ap_return_218;
-wire   [7:0] runWeight2Reg_U0_ap_return_219;
-wire   [7:0] runWeight2Reg_U0_ap_return_220;
-wire   [7:0] runWeight2Reg_U0_ap_return_221;
-wire   [7:0] runWeight2Reg_U0_ap_return_222;
-wire   [7:0] runWeight2Reg_U0_ap_return_223;
-wire   [7:0] runWeight2Reg_U0_ap_return_224;
-wire   [7:0] runWeight2Reg_U0_ap_return_225;
-wire   [7:0] runWeight2Reg_U0_ap_return_226;
-wire   [7:0] runWeight2Reg_U0_ap_return_227;
-wire   [7:0] runWeight2Reg_U0_ap_return_228;
-wire   [7:0] runWeight2Reg_U0_ap_return_229;
-wire   [7:0] runWeight2Reg_U0_ap_return_230;
-wire   [7:0] runWeight2Reg_U0_ap_return_231;
-wire   [7:0] runWeight2Reg_U0_ap_return_232;
-wire   [7:0] runWeight2Reg_U0_ap_return_233;
-wire   [7:0] runWeight2Reg_U0_ap_return_234;
-wire   [7:0] runWeight2Reg_U0_ap_return_235;
-wire   [7:0] runWeight2Reg_U0_ap_return_236;
-wire   [7:0] runWeight2Reg_U0_ap_return_237;
-wire   [7:0] runWeight2Reg_U0_ap_return_238;
-wire   [7:0] runWeight2Reg_U0_ap_return_239;
-wire   [7:0] runWeight2Reg_U0_ap_return_240;
-wire   [7:0] runWeight2Reg_U0_ap_return_241;
-wire   [7:0] runWeight2Reg_U0_ap_return_242;
-wire   [7:0] runWeight2Reg_U0_ap_return_243;
-wire   [7:0] runWeight2Reg_U0_ap_return_244;
-wire   [7:0] runWeight2Reg_U0_ap_return_245;
-wire   [7:0] runWeight2Reg_U0_ap_return_246;
-wire   [7:0] runWeight2Reg_U0_ap_return_247;
-wire   [7:0] runWeight2Reg_U0_ap_return_248;
-wire   [7:0] runWeight2Reg_U0_ap_return_249;
-wire   [7:0] runWeight2Reg_U0_ap_return_250;
-wire   [7:0] runWeight2Reg_U0_ap_return_251;
-wire   [7:0] runWeight2Reg_U0_ap_return_252;
-wire   [7:0] runWeight2Reg_U0_ap_return_253;
-wire   [7:0] runWeight2Reg_U0_ap_return_254;
-wire   [7:0] runWeight2Reg_U0_ap_return_255;
 wire    runWeight2Reg_U0_weight_l2_0_full_n;
 wire    runWeight2Reg_U0_weight_l2_0_write;
-wire    runWeight2Reg_U0_weight_l2_1_full_n;
-wire    runWeight2Reg_U0_weight_l2_1_write;
-wire    runWeight2Reg_U0_weight_l2_2_full_n;
-wire    runWeight2Reg_U0_weight_l2_2_write;
-wire    runWeight2Reg_U0_weight_l2_3_full_n;
-wire    runWeight2Reg_U0_weight_l2_3_write;
-wire    ap_channel_done_weight_regfile_15_15;
-wire    weight_regfile_15_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_15;
-wire    ap_sync_channel_write_weight_regfile_15_15;
-wire    ap_channel_done_weight_regfile_15_14;
-wire    weight_regfile_15_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_14;
-wire    ap_sync_channel_write_weight_regfile_15_14;
-wire    ap_channel_done_weight_regfile_15_13;
-wire    weight_regfile_15_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_13;
-wire    ap_sync_channel_write_weight_regfile_15_13;
-wire    ap_channel_done_weight_regfile_15_12;
-wire    weight_regfile_15_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_12;
-wire    ap_sync_channel_write_weight_regfile_15_12;
-wire    ap_channel_done_weight_regfile_15_11;
-wire    weight_regfile_15_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_11;
-wire    ap_sync_channel_write_weight_regfile_15_11;
-wire    ap_channel_done_weight_regfile_15_10;
-wire    weight_regfile_15_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_10;
-wire    ap_sync_channel_write_weight_regfile_15_10;
-wire    ap_channel_done_weight_regfile_15_9;
-wire    weight_regfile_15_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_9;
-wire    ap_sync_channel_write_weight_regfile_15_9;
-wire    ap_channel_done_weight_regfile_15_8;
-wire    weight_regfile_15_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_8;
-wire    ap_sync_channel_write_weight_regfile_15_8;
-wire    ap_channel_done_weight_regfile_15_7;
-wire    weight_regfile_15_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_7;
-wire    ap_sync_channel_write_weight_regfile_15_7;
-wire    ap_channel_done_weight_regfile_15_6;
-wire    weight_regfile_15_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_6;
-wire    ap_sync_channel_write_weight_regfile_15_6;
-wire    ap_channel_done_weight_regfile_15_5;
-wire    weight_regfile_15_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_5;
-wire    ap_sync_channel_write_weight_regfile_15_5;
-wire    ap_channel_done_weight_regfile_15_4;
-wire    weight_regfile_15_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_4;
-wire    ap_sync_channel_write_weight_regfile_15_4;
-wire    ap_channel_done_weight_regfile_15_3;
-wire    weight_regfile_15_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_3;
-wire    ap_sync_channel_write_weight_regfile_15_3;
-wire    ap_channel_done_weight_regfile_15_2;
-wire    weight_regfile_15_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_2;
-wire    ap_sync_channel_write_weight_regfile_15_2;
-wire    ap_channel_done_weight_regfile_15_1;
-wire    weight_regfile_15_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_1;
-wire    ap_sync_channel_write_weight_regfile_15_1;
-wire    ap_channel_done_weight_regfile_15_0;
-wire    weight_regfile_15_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_15_0;
-wire    ap_sync_channel_write_weight_regfile_15_0;
-wire    ap_channel_done_weight_regfile_14_15;
-wire    weight_regfile_14_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_15;
-wire    ap_sync_channel_write_weight_regfile_14_15;
-wire    ap_channel_done_weight_regfile_14_14;
-wire    weight_regfile_14_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_14;
-wire    ap_sync_channel_write_weight_regfile_14_14;
-wire    ap_channel_done_weight_regfile_14_13;
-wire    weight_regfile_14_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_13;
-wire    ap_sync_channel_write_weight_regfile_14_13;
-wire    ap_channel_done_weight_regfile_14_12;
-wire    weight_regfile_14_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_12;
-wire    ap_sync_channel_write_weight_regfile_14_12;
-wire    ap_channel_done_weight_regfile_14_11;
-wire    weight_regfile_14_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_11;
-wire    ap_sync_channel_write_weight_regfile_14_11;
-wire    ap_channel_done_weight_regfile_14_10;
-wire    weight_regfile_14_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_10;
-wire    ap_sync_channel_write_weight_regfile_14_10;
-wire    ap_channel_done_weight_regfile_14_9;
-wire    weight_regfile_14_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_9;
-wire    ap_sync_channel_write_weight_regfile_14_9;
-wire    ap_channel_done_weight_regfile_14_8;
-wire    weight_regfile_14_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_8;
-wire    ap_sync_channel_write_weight_regfile_14_8;
-wire    ap_channel_done_weight_regfile_14_7;
-wire    weight_regfile_14_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_7;
-wire    ap_sync_channel_write_weight_regfile_14_7;
-wire    ap_channel_done_weight_regfile_14_6;
-wire    weight_regfile_14_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_6;
-wire    ap_sync_channel_write_weight_regfile_14_6;
-wire    ap_channel_done_weight_regfile_14_5;
-wire    weight_regfile_14_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_5;
-wire    ap_sync_channel_write_weight_regfile_14_5;
-wire    ap_channel_done_weight_regfile_14_4;
-wire    weight_regfile_14_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_4;
-wire    ap_sync_channel_write_weight_regfile_14_4;
-wire    ap_channel_done_weight_regfile_14_3;
-wire    weight_regfile_14_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_3;
-wire    ap_sync_channel_write_weight_regfile_14_3;
-wire    ap_channel_done_weight_regfile_14_2;
-wire    weight_regfile_14_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_2;
-wire    ap_sync_channel_write_weight_regfile_14_2;
-wire    ap_channel_done_weight_regfile_14_1;
-wire    weight_regfile_14_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_1;
-wire    ap_sync_channel_write_weight_regfile_14_1;
-wire    ap_channel_done_weight_regfile_14_0;
-wire    weight_regfile_14_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_14_0;
-wire    ap_sync_channel_write_weight_regfile_14_0;
-wire    ap_channel_done_weight_regfile_13_15;
-wire    weight_regfile_13_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_15;
-wire    ap_sync_channel_write_weight_regfile_13_15;
-wire    ap_channel_done_weight_regfile_13_14;
-wire    weight_regfile_13_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_14;
-wire    ap_sync_channel_write_weight_regfile_13_14;
-wire    ap_channel_done_weight_regfile_13_13;
-wire    weight_regfile_13_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_13;
-wire    ap_sync_channel_write_weight_regfile_13_13;
-wire    ap_channel_done_weight_regfile_13_12;
-wire    weight_regfile_13_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_12;
-wire    ap_sync_channel_write_weight_regfile_13_12;
-wire    ap_channel_done_weight_regfile_13_11;
-wire    weight_regfile_13_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_11;
-wire    ap_sync_channel_write_weight_regfile_13_11;
-wire    ap_channel_done_weight_regfile_13_10;
-wire    weight_regfile_13_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_10;
-wire    ap_sync_channel_write_weight_regfile_13_10;
-wire    ap_channel_done_weight_regfile_13_9;
-wire    weight_regfile_13_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_9;
-wire    ap_sync_channel_write_weight_regfile_13_9;
-wire    ap_channel_done_weight_regfile_13_8;
-wire    weight_regfile_13_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_8;
-wire    ap_sync_channel_write_weight_regfile_13_8;
-wire    ap_channel_done_weight_regfile_13_7;
-wire    weight_regfile_13_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_7;
-wire    ap_sync_channel_write_weight_regfile_13_7;
-wire    ap_channel_done_weight_regfile_13_6;
-wire    weight_regfile_13_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_6;
-wire    ap_sync_channel_write_weight_regfile_13_6;
-wire    ap_channel_done_weight_regfile_13_5;
-wire    weight_regfile_13_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_5;
-wire    ap_sync_channel_write_weight_regfile_13_5;
-wire    ap_channel_done_weight_regfile_13_4;
-wire    weight_regfile_13_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_4;
-wire    ap_sync_channel_write_weight_regfile_13_4;
-wire    ap_channel_done_weight_regfile_13_3;
-wire    weight_regfile_13_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_3;
-wire    ap_sync_channel_write_weight_regfile_13_3;
-wire    ap_channel_done_weight_regfile_13_2;
-wire    weight_regfile_13_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_2;
-wire    ap_sync_channel_write_weight_regfile_13_2;
-wire    ap_channel_done_weight_regfile_13_1;
-wire    weight_regfile_13_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_1;
-wire    ap_sync_channel_write_weight_regfile_13_1;
-wire    ap_channel_done_weight_regfile_13_0;
-wire    weight_regfile_13_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_13_0;
-wire    ap_sync_channel_write_weight_regfile_13_0;
-wire    ap_channel_done_weight_regfile_12_15;
-wire    weight_regfile_12_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_15;
-wire    ap_sync_channel_write_weight_regfile_12_15;
-wire    ap_channel_done_weight_regfile_12_14;
-wire    weight_regfile_12_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_14;
-wire    ap_sync_channel_write_weight_regfile_12_14;
-wire    ap_channel_done_weight_regfile_12_13;
-wire    weight_regfile_12_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_13;
-wire    ap_sync_channel_write_weight_regfile_12_13;
-wire    ap_channel_done_weight_regfile_12_12;
-wire    weight_regfile_12_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_12;
-wire    ap_sync_channel_write_weight_regfile_12_12;
-wire    ap_channel_done_weight_regfile_12_11;
-wire    weight_regfile_12_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_11;
-wire    ap_sync_channel_write_weight_regfile_12_11;
-wire    ap_channel_done_weight_regfile_12_10;
-wire    weight_regfile_12_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_10;
-wire    ap_sync_channel_write_weight_regfile_12_10;
-wire    ap_channel_done_weight_regfile_12_9;
-wire    weight_regfile_12_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_9;
-wire    ap_sync_channel_write_weight_regfile_12_9;
-wire    ap_channel_done_weight_regfile_12_8;
-wire    weight_regfile_12_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_8;
-wire    ap_sync_channel_write_weight_regfile_12_8;
-wire    ap_channel_done_weight_regfile_12_7;
-wire    weight_regfile_12_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_7;
-wire    ap_sync_channel_write_weight_regfile_12_7;
-wire    ap_channel_done_weight_regfile_12_6;
-wire    weight_regfile_12_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_6;
-wire    ap_sync_channel_write_weight_regfile_12_6;
-wire    ap_channel_done_weight_regfile_12_5;
-wire    weight_regfile_12_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_5;
-wire    ap_sync_channel_write_weight_regfile_12_5;
-wire    ap_channel_done_weight_regfile_12_4;
-wire    weight_regfile_12_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_4;
-wire    ap_sync_channel_write_weight_regfile_12_4;
-wire    ap_channel_done_weight_regfile_12_3;
-wire    weight_regfile_12_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_3;
-wire    ap_sync_channel_write_weight_regfile_12_3;
-wire    ap_channel_done_weight_regfile_12_2;
-wire    weight_regfile_12_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_2;
-wire    ap_sync_channel_write_weight_regfile_12_2;
-wire    ap_channel_done_weight_regfile_12_1;
-wire    weight_regfile_12_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_1;
-wire    ap_sync_channel_write_weight_regfile_12_1;
-wire    ap_channel_done_weight_regfile_12_0;
-wire    weight_regfile_12_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_12_0;
-wire    ap_sync_channel_write_weight_regfile_12_0;
-wire    ap_channel_done_weight_regfile_11_15;
-wire    weight_regfile_11_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_15;
-wire    ap_sync_channel_write_weight_regfile_11_15;
-wire    ap_channel_done_weight_regfile_11_14;
-wire    weight_regfile_11_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_14;
-wire    ap_sync_channel_write_weight_regfile_11_14;
-wire    ap_channel_done_weight_regfile_11_13;
-wire    weight_regfile_11_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_13;
-wire    ap_sync_channel_write_weight_regfile_11_13;
-wire    ap_channel_done_weight_regfile_11_12;
-wire    weight_regfile_11_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_12;
-wire    ap_sync_channel_write_weight_regfile_11_12;
-wire    ap_channel_done_weight_regfile_11_11;
-wire    weight_regfile_11_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_11;
-wire    ap_sync_channel_write_weight_regfile_11_11;
-wire    ap_channel_done_weight_regfile_11_10;
-wire    weight_regfile_11_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_10;
-wire    ap_sync_channel_write_weight_regfile_11_10;
-wire    ap_channel_done_weight_regfile_11_9;
-wire    weight_regfile_11_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_9;
-wire    ap_sync_channel_write_weight_regfile_11_9;
-wire    ap_channel_done_weight_regfile_11_8;
-wire    weight_regfile_11_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_8;
-wire    ap_sync_channel_write_weight_regfile_11_8;
-wire    ap_channel_done_weight_regfile_11_7;
-wire    weight_regfile_11_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_7;
-wire    ap_sync_channel_write_weight_regfile_11_7;
-wire    ap_channel_done_weight_regfile_11_6;
-wire    weight_regfile_11_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_6;
-wire    ap_sync_channel_write_weight_regfile_11_6;
-wire    ap_channel_done_weight_regfile_11_5;
-wire    weight_regfile_11_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_5;
-wire    ap_sync_channel_write_weight_regfile_11_5;
-wire    ap_channel_done_weight_regfile_11_4;
-wire    weight_regfile_11_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_4;
-wire    ap_sync_channel_write_weight_regfile_11_4;
-wire    ap_channel_done_weight_regfile_11_3;
-wire    weight_regfile_11_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_3;
-wire    ap_sync_channel_write_weight_regfile_11_3;
-wire    ap_channel_done_weight_regfile_11_2;
-wire    weight_regfile_11_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_2;
-wire    ap_sync_channel_write_weight_regfile_11_2;
-wire    ap_channel_done_weight_regfile_11_1;
-wire    weight_regfile_11_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_1;
-wire    ap_sync_channel_write_weight_regfile_11_1;
-wire    ap_channel_done_weight_regfile_11_0;
-wire    weight_regfile_11_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_11_0;
-wire    ap_sync_channel_write_weight_regfile_11_0;
-wire    ap_channel_done_weight_regfile_10_15;
-wire    weight_regfile_10_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_15;
-wire    ap_sync_channel_write_weight_regfile_10_15;
-wire    ap_channel_done_weight_regfile_10_14;
-wire    weight_regfile_10_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_14;
-wire    ap_sync_channel_write_weight_regfile_10_14;
-wire    ap_channel_done_weight_regfile_10_13;
-wire    weight_regfile_10_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_13;
-wire    ap_sync_channel_write_weight_regfile_10_13;
-wire    ap_channel_done_weight_regfile_10_12;
-wire    weight_regfile_10_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_12;
-wire    ap_sync_channel_write_weight_regfile_10_12;
-wire    ap_channel_done_weight_regfile_10_11;
-wire    weight_regfile_10_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_11;
-wire    ap_sync_channel_write_weight_regfile_10_11;
-wire    ap_channel_done_weight_regfile_10_10;
-wire    weight_regfile_10_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_10;
-wire    ap_sync_channel_write_weight_regfile_10_10;
-wire    ap_channel_done_weight_regfile_10_9;
-wire    weight_regfile_10_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_9;
-wire    ap_sync_channel_write_weight_regfile_10_9;
-wire    ap_channel_done_weight_regfile_10_8;
-wire    weight_regfile_10_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_8;
-wire    ap_sync_channel_write_weight_regfile_10_8;
-wire    ap_channel_done_weight_regfile_10_7;
-wire    weight_regfile_10_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_7;
-wire    ap_sync_channel_write_weight_regfile_10_7;
-wire    ap_channel_done_weight_regfile_10_6;
-wire    weight_regfile_10_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_6;
-wire    ap_sync_channel_write_weight_regfile_10_6;
-wire    ap_channel_done_weight_regfile_10_5;
-wire    weight_regfile_10_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_5;
-wire    ap_sync_channel_write_weight_regfile_10_5;
-wire    ap_channel_done_weight_regfile_10_4;
-wire    weight_regfile_10_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_4;
-wire    ap_sync_channel_write_weight_regfile_10_4;
-wire    ap_channel_done_weight_regfile_10_3;
-wire    weight_regfile_10_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_3;
-wire    ap_sync_channel_write_weight_regfile_10_3;
-wire    ap_channel_done_weight_regfile_10_2;
-wire    weight_regfile_10_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_2;
-wire    ap_sync_channel_write_weight_regfile_10_2;
-wire    ap_channel_done_weight_regfile_10_1;
-wire    weight_regfile_10_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_1;
-wire    ap_sync_channel_write_weight_regfile_10_1;
-wire    ap_channel_done_weight_regfile_10_0;
-wire    weight_regfile_10_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_10_0;
-wire    ap_sync_channel_write_weight_regfile_10_0;
-wire    ap_channel_done_weight_regfile_9_15;
-wire    weight_regfile_9_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_15;
-wire    ap_sync_channel_write_weight_regfile_9_15;
-wire    ap_channel_done_weight_regfile_9_14;
-wire    weight_regfile_9_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_14;
-wire    ap_sync_channel_write_weight_regfile_9_14;
-wire    ap_channel_done_weight_regfile_9_13;
-wire    weight_regfile_9_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_13;
-wire    ap_sync_channel_write_weight_regfile_9_13;
-wire    ap_channel_done_weight_regfile_9_12;
-wire    weight_regfile_9_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_12;
-wire    ap_sync_channel_write_weight_regfile_9_12;
-wire    ap_channel_done_weight_regfile_9_11;
-wire    weight_regfile_9_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_11;
-wire    ap_sync_channel_write_weight_regfile_9_11;
-wire    ap_channel_done_weight_regfile_9_10;
-wire    weight_regfile_9_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_10;
-wire    ap_sync_channel_write_weight_regfile_9_10;
-wire    ap_channel_done_weight_regfile_9_9;
-wire    weight_regfile_9_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_9;
-wire    ap_sync_channel_write_weight_regfile_9_9;
-wire    ap_channel_done_weight_regfile_9_8;
-wire    weight_regfile_9_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_8;
-wire    ap_sync_channel_write_weight_regfile_9_8;
-wire    ap_channel_done_weight_regfile_9_7;
-wire    weight_regfile_9_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_7;
-wire    ap_sync_channel_write_weight_regfile_9_7;
-wire    ap_channel_done_weight_regfile_9_6;
-wire    weight_regfile_9_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_6;
-wire    ap_sync_channel_write_weight_regfile_9_6;
-wire    ap_channel_done_weight_regfile_9_5;
-wire    weight_regfile_9_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_5;
-wire    ap_sync_channel_write_weight_regfile_9_5;
-wire    ap_channel_done_weight_regfile_9_4;
-wire    weight_regfile_9_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_4;
-wire    ap_sync_channel_write_weight_regfile_9_4;
-wire    ap_channel_done_weight_regfile_9_3;
-wire    weight_regfile_9_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_3;
-wire    ap_sync_channel_write_weight_regfile_9_3;
-wire    ap_channel_done_weight_regfile_9_2;
-wire    weight_regfile_9_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_2;
-wire    ap_sync_channel_write_weight_regfile_9_2;
-wire    ap_channel_done_weight_regfile_9_1;
-wire    weight_regfile_9_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_1;
-wire    ap_sync_channel_write_weight_regfile_9_1;
-wire    ap_channel_done_weight_regfile_9_0;
-wire    weight_regfile_9_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_9_0;
-wire    ap_sync_channel_write_weight_regfile_9_0;
-wire    ap_channel_done_weight_regfile_8_15;
-wire    weight_regfile_8_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_15;
-wire    ap_sync_channel_write_weight_regfile_8_15;
-wire    ap_channel_done_weight_regfile_8_14;
-wire    weight_regfile_8_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_14;
-wire    ap_sync_channel_write_weight_regfile_8_14;
-wire    ap_channel_done_weight_regfile_8_13;
-wire    weight_regfile_8_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_13;
-wire    ap_sync_channel_write_weight_regfile_8_13;
-wire    ap_channel_done_weight_regfile_8_12;
-wire    weight_regfile_8_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_12;
-wire    ap_sync_channel_write_weight_regfile_8_12;
-wire    ap_channel_done_weight_regfile_8_11;
-wire    weight_regfile_8_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_11;
-wire    ap_sync_channel_write_weight_regfile_8_11;
-wire    ap_channel_done_weight_regfile_8_10;
-wire    weight_regfile_8_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_10;
-wire    ap_sync_channel_write_weight_regfile_8_10;
-wire    ap_channel_done_weight_regfile_8_9;
-wire    weight_regfile_8_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_9;
-wire    ap_sync_channel_write_weight_regfile_8_9;
-wire    ap_channel_done_weight_regfile_8_8;
-wire    weight_regfile_8_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_8;
-wire    ap_sync_channel_write_weight_regfile_8_8;
-wire    ap_channel_done_weight_regfile_8_7;
-wire    weight_regfile_8_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_7;
-wire    ap_sync_channel_write_weight_regfile_8_7;
-wire    ap_channel_done_weight_regfile_8_6;
-wire    weight_regfile_8_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_6;
-wire    ap_sync_channel_write_weight_regfile_8_6;
-wire    ap_channel_done_weight_regfile_8_5;
-wire    weight_regfile_8_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_5;
-wire    ap_sync_channel_write_weight_regfile_8_5;
-wire    ap_channel_done_weight_regfile_8_4;
-wire    weight_regfile_8_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_4;
-wire    ap_sync_channel_write_weight_regfile_8_4;
-wire    ap_channel_done_weight_regfile_8_3;
-wire    weight_regfile_8_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_3;
-wire    ap_sync_channel_write_weight_regfile_8_3;
-wire    ap_channel_done_weight_regfile_8_2;
-wire    weight_regfile_8_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_2;
-wire    ap_sync_channel_write_weight_regfile_8_2;
-wire    ap_channel_done_weight_regfile_8_1;
-wire    weight_regfile_8_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_1;
-wire    ap_sync_channel_write_weight_regfile_8_1;
-wire    ap_channel_done_weight_regfile_8_0;
-wire    weight_regfile_8_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_8_0;
-wire    ap_sync_channel_write_weight_regfile_8_0;
-wire    ap_channel_done_weight_regfile_7_15;
-wire    weight_regfile_7_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_15;
-wire    ap_sync_channel_write_weight_regfile_7_15;
-wire    ap_channel_done_weight_regfile_7_14;
-wire    weight_regfile_7_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_14;
-wire    ap_sync_channel_write_weight_regfile_7_14;
-wire    ap_channel_done_weight_regfile_7_13;
-wire    weight_regfile_7_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_13;
-wire    ap_sync_channel_write_weight_regfile_7_13;
-wire    ap_channel_done_weight_regfile_7_12;
-wire    weight_regfile_7_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_12;
-wire    ap_sync_channel_write_weight_regfile_7_12;
-wire    ap_channel_done_weight_regfile_7_11;
-wire    weight_regfile_7_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_11;
-wire    ap_sync_channel_write_weight_regfile_7_11;
-wire    ap_channel_done_weight_regfile_7_10;
-wire    weight_regfile_7_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_10;
-wire    ap_sync_channel_write_weight_regfile_7_10;
-wire    ap_channel_done_weight_regfile_7_9;
-wire    weight_regfile_7_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_9;
-wire    ap_sync_channel_write_weight_regfile_7_9;
-wire    ap_channel_done_weight_regfile_7_8;
-wire    weight_regfile_7_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_8;
-wire    ap_sync_channel_write_weight_regfile_7_8;
-wire    ap_channel_done_weight_regfile_7_7;
-wire    weight_regfile_7_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_7;
-wire    ap_sync_channel_write_weight_regfile_7_7;
-wire    ap_channel_done_weight_regfile_7_6;
-wire    weight_regfile_7_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_6;
-wire    ap_sync_channel_write_weight_regfile_7_6;
-wire    ap_channel_done_weight_regfile_7_5;
-wire    weight_regfile_7_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_5;
-wire    ap_sync_channel_write_weight_regfile_7_5;
-wire    ap_channel_done_weight_regfile_7_4;
-wire    weight_regfile_7_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_4;
-wire    ap_sync_channel_write_weight_regfile_7_4;
-wire    ap_channel_done_weight_regfile_7_3;
-wire    weight_regfile_7_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_3;
-wire    ap_sync_channel_write_weight_regfile_7_3;
-wire    ap_channel_done_weight_regfile_7_2;
-wire    weight_regfile_7_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_2;
-wire    ap_sync_channel_write_weight_regfile_7_2;
-wire    ap_channel_done_weight_regfile_7_1;
-wire    weight_regfile_7_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_1;
-wire    ap_sync_channel_write_weight_regfile_7_1;
-wire    ap_channel_done_weight_regfile_7_0;
-wire    weight_regfile_7_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_7_0;
-wire    ap_sync_channel_write_weight_regfile_7_0;
-wire    ap_channel_done_weight_regfile_6_15;
-wire    weight_regfile_6_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_15;
-wire    ap_sync_channel_write_weight_regfile_6_15;
-wire    ap_channel_done_weight_regfile_6_14;
-wire    weight_regfile_6_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_14;
-wire    ap_sync_channel_write_weight_regfile_6_14;
-wire    ap_channel_done_weight_regfile_6_13;
-wire    weight_regfile_6_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_13;
-wire    ap_sync_channel_write_weight_regfile_6_13;
-wire    ap_channel_done_weight_regfile_6_12;
-wire    weight_regfile_6_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_12;
-wire    ap_sync_channel_write_weight_regfile_6_12;
-wire    ap_channel_done_weight_regfile_6_11;
-wire    weight_regfile_6_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_11;
-wire    ap_sync_channel_write_weight_regfile_6_11;
-wire    ap_channel_done_weight_regfile_6_10;
-wire    weight_regfile_6_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_10;
-wire    ap_sync_channel_write_weight_regfile_6_10;
-wire    ap_channel_done_weight_regfile_6_9;
-wire    weight_regfile_6_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_9;
-wire    ap_sync_channel_write_weight_regfile_6_9;
-wire    ap_channel_done_weight_regfile_6_8;
-wire    weight_regfile_6_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_8;
-wire    ap_sync_channel_write_weight_regfile_6_8;
-wire    ap_channel_done_weight_regfile_6_7;
-wire    weight_regfile_6_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_7;
-wire    ap_sync_channel_write_weight_regfile_6_7;
-wire    ap_channel_done_weight_regfile_6_6;
-wire    weight_regfile_6_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_6;
-wire    ap_sync_channel_write_weight_regfile_6_6;
-wire    ap_channel_done_weight_regfile_6_5;
-wire    weight_regfile_6_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_5;
-wire    ap_sync_channel_write_weight_regfile_6_5;
-wire    ap_channel_done_weight_regfile_6_4;
-wire    weight_regfile_6_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_4;
-wire    ap_sync_channel_write_weight_regfile_6_4;
-wire    ap_channel_done_weight_regfile_6_3;
-wire    weight_regfile_6_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_3;
-wire    ap_sync_channel_write_weight_regfile_6_3;
-wire    ap_channel_done_weight_regfile_6_2;
-wire    weight_regfile_6_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_2;
-wire    ap_sync_channel_write_weight_regfile_6_2;
-wire    ap_channel_done_weight_regfile_6_1;
-wire    weight_regfile_6_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_1;
-wire    ap_sync_channel_write_weight_regfile_6_1;
-wire    ap_channel_done_weight_regfile_6_0;
-wire    weight_regfile_6_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_6_0;
-wire    ap_sync_channel_write_weight_regfile_6_0;
-wire    ap_channel_done_weight_regfile_5_15;
-wire    weight_regfile_5_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_15;
-wire    ap_sync_channel_write_weight_regfile_5_15;
-wire    ap_channel_done_weight_regfile_5_14;
-wire    weight_regfile_5_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_14;
-wire    ap_sync_channel_write_weight_regfile_5_14;
-wire    ap_channel_done_weight_regfile_5_13;
-wire    weight_regfile_5_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_13;
-wire    ap_sync_channel_write_weight_regfile_5_13;
-wire    ap_channel_done_weight_regfile_5_12;
-wire    weight_regfile_5_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_12;
-wire    ap_sync_channel_write_weight_regfile_5_12;
-wire    ap_channel_done_weight_regfile_5_11;
-wire    weight_regfile_5_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_11;
-wire    ap_sync_channel_write_weight_regfile_5_11;
-wire    ap_channel_done_weight_regfile_5_10;
-wire    weight_regfile_5_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_10;
-wire    ap_sync_channel_write_weight_regfile_5_10;
-wire    ap_channel_done_weight_regfile_5_9;
-wire    weight_regfile_5_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_9;
-wire    ap_sync_channel_write_weight_regfile_5_9;
-wire    ap_channel_done_weight_regfile_5_8;
-wire    weight_regfile_5_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_8;
-wire    ap_sync_channel_write_weight_regfile_5_8;
-wire    ap_channel_done_weight_regfile_5_7;
-wire    weight_regfile_5_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_7;
-wire    ap_sync_channel_write_weight_regfile_5_7;
-wire    ap_channel_done_weight_regfile_5_6;
-wire    weight_regfile_5_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_6;
-wire    ap_sync_channel_write_weight_regfile_5_6;
-wire    ap_channel_done_weight_regfile_5_5;
-wire    weight_regfile_5_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_5;
-wire    ap_sync_channel_write_weight_regfile_5_5;
-wire    ap_channel_done_weight_regfile_5_4;
-wire    weight_regfile_5_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_4;
-wire    ap_sync_channel_write_weight_regfile_5_4;
-wire    ap_channel_done_weight_regfile_5_3;
-wire    weight_regfile_5_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_3;
-wire    ap_sync_channel_write_weight_regfile_5_3;
-wire    ap_channel_done_weight_regfile_5_2;
-wire    weight_regfile_5_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_2;
-wire    ap_sync_channel_write_weight_regfile_5_2;
-wire    ap_channel_done_weight_regfile_5_1;
-wire    weight_regfile_5_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_1;
-wire    ap_sync_channel_write_weight_regfile_5_1;
-wire    ap_channel_done_weight_regfile_5_0;
-wire    weight_regfile_5_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_5_0;
-wire    ap_sync_channel_write_weight_regfile_5_0;
-wire    ap_channel_done_weight_regfile_4_15;
-wire    weight_regfile_4_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_15;
-wire    ap_sync_channel_write_weight_regfile_4_15;
-wire    ap_channel_done_weight_regfile_4_14;
-wire    weight_regfile_4_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_14;
-wire    ap_sync_channel_write_weight_regfile_4_14;
-wire    ap_channel_done_weight_regfile_4_13;
-wire    weight_regfile_4_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_13;
-wire    ap_sync_channel_write_weight_regfile_4_13;
-wire    ap_channel_done_weight_regfile_4_12;
-wire    weight_regfile_4_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_12;
-wire    ap_sync_channel_write_weight_regfile_4_12;
-wire    ap_channel_done_weight_regfile_4_11;
-wire    weight_regfile_4_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_11;
-wire    ap_sync_channel_write_weight_regfile_4_11;
-wire    ap_channel_done_weight_regfile_4_10;
-wire    weight_regfile_4_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_10;
-wire    ap_sync_channel_write_weight_regfile_4_10;
-wire    ap_channel_done_weight_regfile_4_9;
-wire    weight_regfile_4_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_9;
-wire    ap_sync_channel_write_weight_regfile_4_9;
-wire    ap_channel_done_weight_regfile_4_8;
-wire    weight_regfile_4_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_8;
-wire    ap_sync_channel_write_weight_regfile_4_8;
-wire    ap_channel_done_weight_regfile_4_7;
-wire    weight_regfile_4_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_7;
-wire    ap_sync_channel_write_weight_regfile_4_7;
-wire    ap_channel_done_weight_regfile_4_6;
-wire    weight_regfile_4_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_6;
-wire    ap_sync_channel_write_weight_regfile_4_6;
-wire    ap_channel_done_weight_regfile_4_5;
-wire    weight_regfile_4_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_5;
-wire    ap_sync_channel_write_weight_regfile_4_5;
-wire    ap_channel_done_weight_regfile_4_4;
-wire    weight_regfile_4_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_4;
-wire    ap_sync_channel_write_weight_regfile_4_4;
-wire    ap_channel_done_weight_regfile_4_3;
-wire    weight_regfile_4_3_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_3;
-wire    ap_sync_channel_write_weight_regfile_4_3;
-wire    ap_channel_done_weight_regfile_4_2;
-wire    weight_regfile_4_2_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_2;
-wire    ap_sync_channel_write_weight_regfile_4_2;
-wire    ap_channel_done_weight_regfile_4_1;
-wire    weight_regfile_4_1_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_1;
-wire    ap_sync_channel_write_weight_regfile_4_1;
-wire    ap_channel_done_weight_regfile_4_0;
-wire    weight_regfile_4_0_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_4_0;
-wire    ap_sync_channel_write_weight_regfile_4_0;
-wire    ap_channel_done_weight_regfile_3_15;
-wire    weight_regfile_3_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_15;
-wire    ap_sync_channel_write_weight_regfile_3_15;
-wire    ap_channel_done_weight_regfile_3_14;
-wire    weight_regfile_3_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_14;
-wire    ap_sync_channel_write_weight_regfile_3_14;
-wire    ap_channel_done_weight_regfile_3_13;
-wire    weight_regfile_3_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_13;
-wire    ap_sync_channel_write_weight_regfile_3_13;
-wire    ap_channel_done_weight_regfile_3_12;
-wire    weight_regfile_3_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_12;
-wire    ap_sync_channel_write_weight_regfile_3_12;
-wire    ap_channel_done_weight_regfile_3_11;
-wire    weight_regfile_3_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_11;
-wire    ap_sync_channel_write_weight_regfile_3_11;
-wire    ap_channel_done_weight_regfile_3_10;
-wire    weight_regfile_3_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_10;
-wire    ap_sync_channel_write_weight_regfile_3_10;
-wire    ap_channel_done_weight_regfile_3_9;
-wire    weight_regfile_3_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_9;
-wire    ap_sync_channel_write_weight_regfile_3_9;
-wire    ap_channel_done_weight_regfile_3_8;
-wire    weight_regfile_3_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_8;
-wire    ap_sync_channel_write_weight_regfile_3_8;
-wire    ap_channel_done_weight_regfile_3_7;
-wire    weight_regfile_3_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_7;
-wire    ap_sync_channel_write_weight_regfile_3_7;
-wire    ap_channel_done_weight_regfile_3_6;
-wire    weight_regfile_3_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_6;
-wire    ap_sync_channel_write_weight_regfile_3_6;
-wire    ap_channel_done_weight_regfile_3_5;
-wire    weight_regfile_3_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_5;
-wire    ap_sync_channel_write_weight_regfile_3_5;
-wire    ap_channel_done_weight_regfile_3_4;
-wire    weight_regfile_3_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_3_4;
-wire    ap_sync_channel_write_weight_regfile_3_4;
 wire    ap_channel_done_weight_regfile_3_3;
 wire    weight_regfile_3_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_3_3;
@@ -1561,54 +229,6 @@ wire    ap_channel_done_weight_regfile_3_0;
 wire    weight_regfile_3_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_3_0;
 wire    ap_sync_channel_write_weight_regfile_3_0;
-wire    ap_channel_done_weight_regfile_2_15;
-wire    weight_regfile_2_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_15;
-wire    ap_sync_channel_write_weight_regfile_2_15;
-wire    ap_channel_done_weight_regfile_2_14;
-wire    weight_regfile_2_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_14;
-wire    ap_sync_channel_write_weight_regfile_2_14;
-wire    ap_channel_done_weight_regfile_2_13;
-wire    weight_regfile_2_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_13;
-wire    ap_sync_channel_write_weight_regfile_2_13;
-wire    ap_channel_done_weight_regfile_2_12;
-wire    weight_regfile_2_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_12;
-wire    ap_sync_channel_write_weight_regfile_2_12;
-wire    ap_channel_done_weight_regfile_2_11;
-wire    weight_regfile_2_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_11;
-wire    ap_sync_channel_write_weight_regfile_2_11;
-wire    ap_channel_done_weight_regfile_2_10;
-wire    weight_regfile_2_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_10;
-wire    ap_sync_channel_write_weight_regfile_2_10;
-wire    ap_channel_done_weight_regfile_2_9;
-wire    weight_regfile_2_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_9;
-wire    ap_sync_channel_write_weight_regfile_2_9;
-wire    ap_channel_done_weight_regfile_2_8;
-wire    weight_regfile_2_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_8;
-wire    ap_sync_channel_write_weight_regfile_2_8;
-wire    ap_channel_done_weight_regfile_2_7;
-wire    weight_regfile_2_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_7;
-wire    ap_sync_channel_write_weight_regfile_2_7;
-wire    ap_channel_done_weight_regfile_2_6;
-wire    weight_regfile_2_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_6;
-wire    ap_sync_channel_write_weight_regfile_2_6;
-wire    ap_channel_done_weight_regfile_2_5;
-wire    weight_regfile_2_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_5;
-wire    ap_sync_channel_write_weight_regfile_2_5;
-wire    ap_channel_done_weight_regfile_2_4;
-wire    weight_regfile_2_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_2_4;
-wire    ap_sync_channel_write_weight_regfile_2_4;
 wire    ap_channel_done_weight_regfile_2_3;
 wire    weight_regfile_2_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_2_3;
@@ -1625,54 +245,6 @@ wire    ap_channel_done_weight_regfile_2_0;
 wire    weight_regfile_2_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_2_0;
 wire    ap_sync_channel_write_weight_regfile_2_0;
-wire    ap_channel_done_weight_regfile_1_15;
-wire    weight_regfile_1_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_15;
-wire    ap_sync_channel_write_weight_regfile_1_15;
-wire    ap_channel_done_weight_regfile_1_14;
-wire    weight_regfile_1_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_14;
-wire    ap_sync_channel_write_weight_regfile_1_14;
-wire    ap_channel_done_weight_regfile_1_13;
-wire    weight_regfile_1_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_13;
-wire    ap_sync_channel_write_weight_regfile_1_13;
-wire    ap_channel_done_weight_regfile_1_12;
-wire    weight_regfile_1_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_12;
-wire    ap_sync_channel_write_weight_regfile_1_12;
-wire    ap_channel_done_weight_regfile_1_11;
-wire    weight_regfile_1_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_11;
-wire    ap_sync_channel_write_weight_regfile_1_11;
-wire    ap_channel_done_weight_regfile_1_10;
-wire    weight_regfile_1_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_10;
-wire    ap_sync_channel_write_weight_regfile_1_10;
-wire    ap_channel_done_weight_regfile_1_9;
-wire    weight_regfile_1_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_9;
-wire    ap_sync_channel_write_weight_regfile_1_9;
-wire    ap_channel_done_weight_regfile_1_8;
-wire    weight_regfile_1_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_8;
-wire    ap_sync_channel_write_weight_regfile_1_8;
-wire    ap_channel_done_weight_regfile_1_7;
-wire    weight_regfile_1_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_7;
-wire    ap_sync_channel_write_weight_regfile_1_7;
-wire    ap_channel_done_weight_regfile_1_6;
-wire    weight_regfile_1_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_6;
-wire    ap_sync_channel_write_weight_regfile_1_6;
-wire    ap_channel_done_weight_regfile_1_5;
-wire    weight_regfile_1_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_5;
-wire    ap_sync_channel_write_weight_regfile_1_5;
-wire    ap_channel_done_weight_regfile_1_4;
-wire    weight_regfile_1_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_1_4;
-wire    ap_sync_channel_write_weight_regfile_1_4;
 wire    ap_channel_done_weight_regfile_1_3;
 wire    weight_regfile_1_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_1_3;
@@ -1689,54 +261,6 @@ wire    ap_channel_done_weight_regfile_1_0;
 wire    weight_regfile_1_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_1_0;
 wire    ap_sync_channel_write_weight_regfile_1_0;
-wire    ap_channel_done_weight_regfile_0_15;
-wire    weight_regfile_0_15_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_15;
-wire    ap_sync_channel_write_weight_regfile_0_15;
-wire    ap_channel_done_weight_regfile_0_14;
-wire    weight_regfile_0_14_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_14;
-wire    ap_sync_channel_write_weight_regfile_0_14;
-wire    ap_channel_done_weight_regfile_0_13;
-wire    weight_regfile_0_13_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_13;
-wire    ap_sync_channel_write_weight_regfile_0_13;
-wire    ap_channel_done_weight_regfile_0_12;
-wire    weight_regfile_0_12_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_12;
-wire    ap_sync_channel_write_weight_regfile_0_12;
-wire    ap_channel_done_weight_regfile_0_11;
-wire    weight_regfile_0_11_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_11;
-wire    ap_sync_channel_write_weight_regfile_0_11;
-wire    ap_channel_done_weight_regfile_0_10;
-wire    weight_regfile_0_10_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_10;
-wire    ap_sync_channel_write_weight_regfile_0_10;
-wire    ap_channel_done_weight_regfile_0_9;
-wire    weight_regfile_0_9_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_9;
-wire    ap_sync_channel_write_weight_regfile_0_9;
-wire    ap_channel_done_weight_regfile_0_8;
-wire    weight_regfile_0_8_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_8;
-wire    ap_sync_channel_write_weight_regfile_0_8;
-wire    ap_channel_done_weight_regfile_0_7;
-wire    weight_regfile_0_7_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_7;
-wire    ap_sync_channel_write_weight_regfile_0_7;
-wire    ap_channel_done_weight_regfile_0_6;
-wire    weight_regfile_0_6_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_6;
-wire    ap_sync_channel_write_weight_regfile_0_6;
-wire    ap_channel_done_weight_regfile_0_5;
-wire    weight_regfile_0_5_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_5;
-wire    ap_sync_channel_write_weight_regfile_0_5;
-wire    ap_channel_done_weight_regfile_0_4;
-wire    weight_regfile_0_4_full_n;
-reg    ap_sync_reg_channel_write_weight_regfile_0_4;
-wire    ap_sync_channel_write_weight_regfile_0_4;
 wire    ap_channel_done_weight_regfile_0_3;
 wire    weight_regfile_0_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_0_3;
@@ -1758,70 +282,22 @@ wire    runDataL2toL1_U0_ap_done;
 wire    runDataL2toL1_U0_ap_continue;
 wire    runDataL2toL1_U0_ap_idle;
 wire    runDataL2toL1_U0_ap_ready;
-wire   [5:0] runDataL2toL1_U0_data_l1_0257_i_address0;
-wire    runDataL2toL1_U0_data_l1_0257_i_ce0;
-wire    runDataL2toL1_U0_data_l1_0257_i_we0;
-wire   [7:0] runDataL2toL1_U0_data_l1_0257_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_1258_i_address0;
-wire    runDataL2toL1_U0_data_l1_1258_i_ce0;
-wire    runDataL2toL1_U0_data_l1_1258_i_we0;
-wire   [7:0] runDataL2toL1_U0_data_l1_1258_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_2259_i_address0;
-wire    runDataL2toL1_U0_data_l1_2259_i_ce0;
-wire    runDataL2toL1_U0_data_l1_2259_i_we0;
-wire   [7:0] runDataL2toL1_U0_data_l1_2259_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_3260_i_address0;
-wire    runDataL2toL1_U0_data_l1_3260_i_ce0;
-wire    runDataL2toL1_U0_data_l1_3260_i_we0;
-wire   [7:0] runDataL2toL1_U0_data_l1_3260_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_4261_i_address0;
-wire    runDataL2toL1_U0_data_l1_4261_i_ce0;
-wire    runDataL2toL1_U0_data_l1_4261_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_4261_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_5262_i_address0;
-wire    runDataL2toL1_U0_data_l1_5262_i_ce0;
-wire    runDataL2toL1_U0_data_l1_5262_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_5262_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_6263_i_address0;
-wire    runDataL2toL1_U0_data_l1_6263_i_ce0;
-wire    runDataL2toL1_U0_data_l1_6263_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_6263_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_7264_i_address0;
-wire    runDataL2toL1_U0_data_l1_7264_i_ce0;
-wire    runDataL2toL1_U0_data_l1_7264_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_7264_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_8265_i_address0;
-wire    runDataL2toL1_U0_data_l1_8265_i_ce0;
-wire    runDataL2toL1_U0_data_l1_8265_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_8265_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_9266_i_address0;
-wire    runDataL2toL1_U0_data_l1_9266_i_ce0;
-wire    runDataL2toL1_U0_data_l1_9266_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_9266_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_10267_i_address0;
-wire    runDataL2toL1_U0_data_l1_10267_i_ce0;
-wire    runDataL2toL1_U0_data_l1_10267_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_10267_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_11268_i_address0;
-wire    runDataL2toL1_U0_data_l1_11268_i_ce0;
-wire    runDataL2toL1_U0_data_l1_11268_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_11268_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_12269_i_address0;
-wire    runDataL2toL1_U0_data_l1_12269_i_ce0;
-wire    runDataL2toL1_U0_data_l1_12269_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_12269_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_13270_i_address0;
-wire    runDataL2toL1_U0_data_l1_13270_i_ce0;
-wire    runDataL2toL1_U0_data_l1_13270_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_13270_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_14271_i_address0;
-wire    runDataL2toL1_U0_data_l1_14271_i_ce0;
-wire    runDataL2toL1_U0_data_l1_14271_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_14271_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_15272_i_address0;
-wire    runDataL2toL1_U0_data_l1_15272_i_ce0;
-wire    runDataL2toL1_U0_data_l1_15272_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_15272_i_d0;
+wire   [5:0] runDataL2toL1_U0_data_l1_017_i_address0;
+wire    runDataL2toL1_U0_data_l1_017_i_ce0;
+wire    runDataL2toL1_U0_data_l1_017_i_we0;
+wire   [7:0] runDataL2toL1_U0_data_l1_017_i_d0;
+wire   [5:0] runDataL2toL1_U0_data_l1_118_i_address0;
+wire    runDataL2toL1_U0_data_l1_118_i_ce0;
+wire    runDataL2toL1_U0_data_l1_118_i_we0;
+wire   [0:0] runDataL2toL1_U0_data_l1_118_i_d0;
+wire   [5:0] runDataL2toL1_U0_data_l1_219_i_address0;
+wire    runDataL2toL1_U0_data_l1_219_i_ce0;
+wire    runDataL2toL1_U0_data_l1_219_i_we0;
+wire   [0:0] runDataL2toL1_U0_data_l1_219_i_d0;
+wire   [5:0] runDataL2toL1_U0_data_l1_320_i_address0;
+wire    runDataL2toL1_U0_data_l1_320_i_ce0;
+wire    runDataL2toL1_U0_data_l1_320_i_we0;
+wire   [0:0] runDataL2toL1_U0_data_l1_320_i_d0;
 wire    runDataL2toL1_U0_param_read;
 wire    runDataL2toL1_U0_co_read;
 wire    runDataL2toL1_U0_ho_read;
@@ -1830,250 +306,70 @@ wire    runDataL2toL1_U0_ro_read;
 wire    runDataL2toL1_U0_so_read;
 wire   [10:0] runDataL2toL1_U0_data_l2_0_address0;
 wire    runDataL2toL1_U0_data_l2_0_ce0;
-wire   [10:0] runDataL2toL1_U0_data_l2_1_address0;
-wire    runDataL2toL1_U0_data_l2_1_ce0;
-wire   [10:0] runDataL2toL1_U0_data_l2_2_address0;
-wire    runDataL2toL1_U0_data_l2_2_ce0;
-wire   [10:0] runDataL2toL1_U0_data_l2_3_address0;
-wire    runDataL2toL1_U0_data_l2_3_ce0;
 wire    runDataL2toL1_U0_data_l2_0_full_n;
 wire    runDataL2toL1_U0_data_l2_0_write;
-wire    runDataL2toL1_U0_data_l2_1_full_n;
-wire    runDataL2toL1_U0_data_l2_1_write;
-wire    runDataL2toL1_U0_data_l2_2_full_n;
-wire    runDataL2toL1_U0_data_l2_2_write;
-wire    runDataL2toL1_U0_data_l2_3_full_n;
-wire    runDataL2toL1_U0_data_l2_3_write;
-wire    ap_channel_done_data_l1_15;
-wire    runDataL2toL1_U0_data_l1_15272_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_15;
-wire    ap_sync_channel_write_data_l1_15;
-wire    ap_channel_done_data_l1_14;
-wire    runDataL2toL1_U0_data_l1_14271_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_14;
-wire    ap_sync_channel_write_data_l1_14;
-wire    ap_channel_done_data_l1_13;
-wire    runDataL2toL1_U0_data_l1_13270_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_13;
-wire    ap_sync_channel_write_data_l1_13;
-wire    ap_channel_done_data_l1_12;
-wire    runDataL2toL1_U0_data_l1_12269_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_12;
-wire    ap_sync_channel_write_data_l1_12;
-wire    ap_channel_done_data_l1_11;
-wire    runDataL2toL1_U0_data_l1_11268_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_11;
-wire    ap_sync_channel_write_data_l1_11;
-wire    ap_channel_done_data_l1_10;
-wire    runDataL2toL1_U0_data_l1_10267_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_10;
-wire    ap_sync_channel_write_data_l1_10;
-wire    ap_channel_done_data_l1_9;
-wire    runDataL2toL1_U0_data_l1_9266_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_9;
-wire    ap_sync_channel_write_data_l1_9;
-wire    ap_channel_done_data_l1_8;
-wire    runDataL2toL1_U0_data_l1_8265_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_8;
-wire    ap_sync_channel_write_data_l1_8;
-wire    ap_channel_done_data_l1_7;
-wire    runDataL2toL1_U0_data_l1_7264_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_7;
-wire    ap_sync_channel_write_data_l1_7;
-wire    ap_channel_done_data_l1_6;
-wire    runDataL2toL1_U0_data_l1_6263_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_6;
-wire    ap_sync_channel_write_data_l1_6;
-wire    ap_channel_done_data_l1_5;
-wire    runDataL2toL1_U0_data_l1_5262_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_5;
-wire    ap_sync_channel_write_data_l1_5;
-wire    ap_channel_done_data_l1_4;
-wire    runDataL2toL1_U0_data_l1_4261_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_4;
-wire    ap_sync_channel_write_data_l1_4;
 wire    ap_channel_done_data_l1_3;
-wire    runDataL2toL1_U0_data_l1_3260_i_full_n;
+wire    runDataL2toL1_U0_data_l1_320_i_full_n;
 reg    ap_sync_reg_channel_write_data_l1_3;
 wire    ap_sync_channel_write_data_l1_3;
 wire    ap_channel_done_data_l1_2;
-wire    runDataL2toL1_U0_data_l1_2259_i_full_n;
+wire    runDataL2toL1_U0_data_l1_219_i_full_n;
 reg    ap_sync_reg_channel_write_data_l1_2;
 wire    ap_sync_channel_write_data_l1_2;
 wire    ap_channel_done_data_l1_1;
-wire    runDataL2toL1_U0_data_l1_1258_i_full_n;
+wire    runDataL2toL1_U0_data_l1_118_i_full_n;
 reg    ap_sync_reg_channel_write_data_l1_1;
 wire    ap_sync_channel_write_data_l1_1;
 wire    ap_channel_done_data_l1_0;
-wire    runDataL2toL1_U0_data_l1_0257_i_full_n;
+wire    runDataL2toL1_U0_data_l1_017_i_full_n;
 reg    ap_sync_reg_channel_write_data_l1_0;
 wire    ap_sync_channel_write_data_l1_0;
-wire    runSysArr_U0_ap_start;
-wire    runSysArr_U0_ap_done;
-wire    runSysArr_U0_ap_continue;
-wire    runSysArr_U0_ap_idle;
-wire    runSysArr_U0_ap_ready;
-wire   [5:0] runSysArr_U0_data_l1_0257_i_address0;
-wire    runSysArr_U0_data_l1_0257_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_1258_i_address0;
-wire    runSysArr_U0_data_l1_1258_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_2259_i_address0;
-wire    runSysArr_U0_data_l1_2259_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_3260_i_address0;
-wire    runSysArr_U0_data_l1_3260_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_4261_i_address0;
-wire    runSysArr_U0_data_l1_4261_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_5262_i_address0;
-wire    runSysArr_U0_data_l1_5262_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_6263_i_address0;
-wire    runSysArr_U0_data_l1_6263_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_7264_i_address0;
-wire    runSysArr_U0_data_l1_7264_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_8265_i_address0;
-wire    runSysArr_U0_data_l1_8265_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_9266_i_address0;
-wire    runSysArr_U0_data_l1_9266_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_10267_i_address0;
-wire    runSysArr_U0_data_l1_10267_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_11268_i_address0;
-wire    runSysArr_U0_data_l1_11268_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_12269_i_address0;
-wire    runSysArr_U0_data_l1_12269_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_13270_i_address0;
-wire    runSysArr_U0_data_l1_13270_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_14271_i_address0;
-wire    runSysArr_U0_data_l1_14271_i_ce0;
-wire   [5:0] runSysArr_U0_data_l1_15272_i_address0;
-wire    runSysArr_U0_data_l1_15272_i_ce0;
-wire   [5:0] runSysArr_U0_output_l1_0273_i_address0;
-wire    runSysArr_U0_output_l1_0273_i_ce0;
-wire    runSysArr_U0_output_l1_0273_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_0273_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_1274_i_address0;
-wire    runSysArr_U0_output_l1_1274_i_ce0;
-wire    runSysArr_U0_output_l1_1274_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_1274_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_2275_i_address0;
-wire    runSysArr_U0_output_l1_2275_i_ce0;
-wire    runSysArr_U0_output_l1_2275_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_2275_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_3276_i_address0;
-wire    runSysArr_U0_output_l1_3276_i_ce0;
-wire    runSysArr_U0_output_l1_3276_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_3276_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_4277_i_address0;
-wire    runSysArr_U0_output_l1_4277_i_ce0;
-wire    runSysArr_U0_output_l1_4277_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_4277_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_5278_i_address0;
-wire    runSysArr_U0_output_l1_5278_i_ce0;
-wire    runSysArr_U0_output_l1_5278_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_5278_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_6279_i_address0;
-wire    runSysArr_U0_output_l1_6279_i_ce0;
-wire    runSysArr_U0_output_l1_6279_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_6279_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_7280_i_address0;
-wire    runSysArr_U0_output_l1_7280_i_ce0;
-wire    runSysArr_U0_output_l1_7280_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_7280_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_8281_i_address0;
-wire    runSysArr_U0_output_l1_8281_i_ce0;
-wire    runSysArr_U0_output_l1_8281_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_8281_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_9282_i_address0;
-wire    runSysArr_U0_output_l1_9282_i_ce0;
-wire    runSysArr_U0_output_l1_9282_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_9282_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_10283_i_address0;
-wire    runSysArr_U0_output_l1_10283_i_ce0;
-wire    runSysArr_U0_output_l1_10283_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_10283_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_11284_i_address0;
-wire    runSysArr_U0_output_l1_11284_i_ce0;
-wire    runSysArr_U0_output_l1_11284_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_11284_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_12285_i_address0;
-wire    runSysArr_U0_output_l1_12285_i_ce0;
-wire    runSysArr_U0_output_l1_12285_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_12285_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_13286_i_address0;
-wire    runSysArr_U0_output_l1_13286_i_ce0;
-wire    runSysArr_U0_output_l1_13286_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_13286_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_14287_i_address0;
-wire    runSysArr_U0_output_l1_14287_i_ce0;
-wire    runSysArr_U0_output_l1_14287_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_14287_i_d0;
-wire   [5:0] runSysArr_U0_output_l1_15288_i_address0;
-wire    runSysArr_U0_output_l1_15288_i_ce0;
-wire    runSysArr_U0_output_l1_15288_i_we0;
-wire   [31:0] runSysArr_U0_output_l1_15288_i_d0;
-wire    runSysArr_U0_param_read;
-wire   [1119:0] runSysArr_U0_param_out_din;
-wire    runSysArr_U0_param_out_write;
-wire    ap_channel_done_output_l1_15;
-wire    runSysArr_U0_output_l1_15288_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_15;
-wire    ap_sync_channel_write_output_l1_15;
-wire    ap_channel_done_output_l1_14;
-wire    runSysArr_U0_output_l1_14287_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_14;
-wire    ap_sync_channel_write_output_l1_14;
-wire    ap_channel_done_output_l1_13;
-wire    runSysArr_U0_output_l1_13286_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_13;
-wire    ap_sync_channel_write_output_l1_13;
-wire    ap_channel_done_output_l1_12;
-wire    runSysArr_U0_output_l1_12285_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_12;
-wire    ap_sync_channel_write_output_l1_12;
-wire    ap_channel_done_output_l1_11;
-wire    runSysArr_U0_output_l1_11284_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_11;
-wire    ap_sync_channel_write_output_l1_11;
-wire    ap_channel_done_output_l1_10;
-wire    runSysArr_U0_output_l1_10283_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_10;
-wire    ap_sync_channel_write_output_l1_10;
-wire    ap_channel_done_output_l1_9;
-wire    runSysArr_U0_output_l1_9282_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_9;
-wire    ap_sync_channel_write_output_l1_9;
-wire    ap_channel_done_output_l1_8;
-wire    runSysArr_U0_output_l1_8281_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_8;
-wire    ap_sync_channel_write_output_l1_8;
-wire    ap_channel_done_output_l1_7;
-wire    runSysArr_U0_output_l1_7280_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_7;
-wire    ap_sync_channel_write_output_l1_7;
-wire    ap_channel_done_output_l1_6;
-wire    runSysArr_U0_output_l1_6279_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_6;
-wire    ap_sync_channel_write_output_l1_6;
-wire    ap_channel_done_output_l1_5;
-wire    runSysArr_U0_output_l1_5278_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_5;
-wire    ap_sync_channel_write_output_l1_5;
-wire    ap_channel_done_output_l1_4;
-wire    runSysArr_U0_output_l1_4277_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_4;
-wire    ap_sync_channel_write_output_l1_4;
+wire    runSIMD_U0_ap_start;
+wire    runSIMD_U0_ap_done;
+wire    runSIMD_U0_ap_continue;
+wire    runSIMD_U0_ap_idle;
+wire    runSIMD_U0_ap_ready;
+wire   [5:0] runSIMD_U0_data_l1_017_i_address0;
+wire    runSIMD_U0_data_l1_017_i_ce0;
+wire   [5:0] runSIMD_U0_data_l1_118_i_address0;
+wire    runSIMD_U0_data_l1_118_i_ce0;
+wire   [5:0] runSIMD_U0_data_l1_219_i_address0;
+wire    runSIMD_U0_data_l1_219_i_ce0;
+wire   [5:0] runSIMD_U0_data_l1_320_i_address0;
+wire    runSIMD_U0_data_l1_320_i_ce0;
+wire   [5:0] runSIMD_U0_output_l1_021_i_address0;
+wire    runSIMD_U0_output_l1_021_i_ce0;
+wire    runSIMD_U0_output_l1_021_i_we0;
+wire   [15:0] runSIMD_U0_output_l1_021_i_d0;
+wire   [5:0] runSIMD_U0_output_l1_122_i_address0;
+wire    runSIMD_U0_output_l1_122_i_ce0;
+wire    runSIMD_U0_output_l1_122_i_we0;
+wire   [15:0] runSIMD_U0_output_l1_122_i_d0;
+wire   [5:0] runSIMD_U0_output_l1_223_i_address0;
+wire    runSIMD_U0_output_l1_223_i_ce0;
+wire    runSIMD_U0_output_l1_223_i_we0;
+wire   [15:0] runSIMD_U0_output_l1_223_i_d0;
+wire   [5:0] runSIMD_U0_output_l1_324_i_address0;
+wire    runSIMD_U0_output_l1_324_i_ce0;
+wire    runSIMD_U0_output_l1_324_i_we0;
+wire   [15:0] runSIMD_U0_output_l1_324_i_d0;
+wire    runSIMD_U0_param_read;
+wire   [1119:0] runSIMD_U0_param_out_din;
+wire    runSIMD_U0_param_out_write;
 wire    ap_channel_done_output_l1_3;
-wire    runSysArr_U0_output_l1_3276_i_full_n;
+wire    runSIMD_U0_output_l1_324_i_full_n;
 reg    ap_sync_reg_channel_write_output_l1_3;
 wire    ap_sync_channel_write_output_l1_3;
 wire    ap_channel_done_output_l1_2;
-wire    runSysArr_U0_output_l1_2275_i_full_n;
+wire    runSIMD_U0_output_l1_223_i_full_n;
 reg    ap_sync_reg_channel_write_output_l1_2;
 wire    ap_sync_channel_write_output_l1_2;
 wire    ap_channel_done_output_l1_1;
-wire    runSysArr_U0_output_l1_1274_i_full_n;
+wire    runSIMD_U0_output_l1_122_i_full_n;
 reg    ap_sync_reg_channel_write_output_l1_1;
 wire    ap_sync_channel_write_output_l1_1;
 wire    ap_channel_done_output_l1_0;
-wire    runSysArr_U0_output_l1_0273_i_full_n;
+wire    runSIMD_U0_output_l1_021_i_full_n;
 reg    ap_sync_reg_channel_write_output_l1_0;
 wire    ap_sync_channel_write_output_l1_0;
 wire    runOutputL1toL2_U0_ap_start;
@@ -2081,38 +377,14 @@ wire    runOutputL1toL2_U0_ap_done;
 wire    runOutputL1toL2_U0_ap_continue;
 wire    runOutputL1toL2_U0_ap_idle;
 wire    runOutputL1toL2_U0_ap_ready;
-wire   [5:0] runOutputL1toL2_U0_output_l1_0273_i_address0;
-wire    runOutputL1toL2_U0_output_l1_0273_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_1274_i_address0;
-wire    runOutputL1toL2_U0_output_l1_1274_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_2275_i_address0;
-wire    runOutputL1toL2_U0_output_l1_2275_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_3276_i_address0;
-wire    runOutputL1toL2_U0_output_l1_3276_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_4277_i_address0;
-wire    runOutputL1toL2_U0_output_l1_4277_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_5278_i_address0;
-wire    runOutputL1toL2_U0_output_l1_5278_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_6279_i_address0;
-wire    runOutputL1toL2_U0_output_l1_6279_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_7280_i_address0;
-wire    runOutputL1toL2_U0_output_l1_7280_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_8281_i_address0;
-wire    runOutputL1toL2_U0_output_l1_8281_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_9282_i_address0;
-wire    runOutputL1toL2_U0_output_l1_9282_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_10283_i_address0;
-wire    runOutputL1toL2_U0_output_l1_10283_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_11284_i_address0;
-wire    runOutputL1toL2_U0_output_l1_11284_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_12285_i_address0;
-wire    runOutputL1toL2_U0_output_l1_12285_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_13286_i_address0;
-wire    runOutputL1toL2_U0_output_l1_13286_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_14287_i_address0;
-wire    runOutputL1toL2_U0_output_l1_14287_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_15288_i_address0;
-wire    runOutputL1toL2_U0_output_l1_15288_i_ce0;
+wire   [5:0] runOutputL1toL2_U0_output_l1_021_i_address0;
+wire    runOutputL1toL2_U0_output_l1_021_i_ce0;
+wire   [5:0] runOutputL1toL2_U0_output_l1_122_i_address0;
+wire    runOutputL1toL2_U0_output_l1_122_i_ce0;
+wire   [5:0] runOutputL1toL2_U0_output_l1_223_i_address0;
+wire    runOutputL1toL2_U0_output_l1_223_i_ce0;
+wire   [5:0] runOutputL1toL2_U0_output_l1_324_i_address0;
+wire    runOutputL1toL2_U0_output_l1_324_i_ce0;
 wire    runOutputL1toL2_U0_param_read;
 wire    runOutputL1toL2_U0_ko_1_read;
 wire    runOutputL1toL2_U0_ho_read;
@@ -2124,26 +396,8 @@ wire   [10:0] runOutputL1toL2_U0_output_l2_0_address0;
 wire    runOutputL1toL2_U0_output_l2_0_ce0;
 wire    runOutputL1toL2_U0_output_l2_0_we0;
 wire   [31:0] runOutputL1toL2_U0_output_l2_0_d0;
-wire   [10:0] runOutputL1toL2_U0_output_l2_1_address0;
-wire    runOutputL1toL2_U0_output_l2_1_ce0;
-wire    runOutputL1toL2_U0_output_l2_1_we0;
-wire   [31:0] runOutputL1toL2_U0_output_l2_1_d0;
-wire   [10:0] runOutputL1toL2_U0_output_l2_2_address0;
-wire    runOutputL1toL2_U0_output_l2_2_ce0;
-wire    runOutputL1toL2_U0_output_l2_2_we0;
-wire   [31:0] runOutputL1toL2_U0_output_l2_2_d0;
-wire   [10:0] runOutputL1toL2_U0_output_l2_3_address0;
-wire    runOutputL1toL2_U0_output_l2_3_ce0;
-wire    runOutputL1toL2_U0_output_l2_3_we0;
-wire   [31:0] runOutputL1toL2_U0_output_l2_3_d0;
 wire    runOutputL1toL2_U0_output_l2_0_full_n;
 wire    runOutputL1toL2_U0_output_l2_0_write;
-wire    runOutputL1toL2_U0_output_l2_1_full_n;
-wire    runOutputL1toL2_U0_output_l2_1_write;
-wire    runOutputL1toL2_U0_output_l2_2_full_n;
-wire    runOutputL1toL2_U0_output_l2_2_write;
-wire    runOutputL1toL2_U0_output_l2_3_full_n;
-wire    runOutputL1toL2_U0_output_l2_3_write;
 wire    ap_sync_continue;
 wire    data_l1_0_i_full_n;
 wire    data_l1_0_t_empty_n;
@@ -2153,30 +407,6 @@ wire    data_l1_2_i_full_n;
 wire    data_l1_2_t_empty_n;
 wire    data_l1_3_i_full_n;
 wire    data_l1_3_t_empty_n;
-wire    data_l1_4_i_full_n;
-wire    data_l1_4_t_empty_n;
-wire    data_l1_5_i_full_n;
-wire    data_l1_5_t_empty_n;
-wire    data_l1_6_i_full_n;
-wire    data_l1_6_t_empty_n;
-wire    data_l1_7_i_full_n;
-wire    data_l1_7_t_empty_n;
-wire    data_l1_8_i_full_n;
-wire    data_l1_8_t_empty_n;
-wire    data_l1_9_i_full_n;
-wire    data_l1_9_t_empty_n;
-wire    data_l1_10_i_full_n;
-wire    data_l1_10_t_empty_n;
-wire    data_l1_11_i_full_n;
-wire    data_l1_11_t_empty_n;
-wire    data_l1_12_i_full_n;
-wire    data_l1_12_t_empty_n;
-wire    data_l1_13_i_full_n;
-wire    data_l1_13_t_empty_n;
-wire    data_l1_14_i_full_n;
-wire    data_l1_14_t_empty_n;
-wire    data_l1_15_i_full_n;
-wire    data_l1_15_t_empty_n;
 wire    output_l1_0_i_full_n;
 wire    output_l1_0_t_empty_n;
 wire    output_l1_1_i_full_n;
@@ -2185,30 +415,6 @@ wire    output_l1_2_i_full_n;
 wire    output_l1_2_t_empty_n;
 wire    output_l1_3_i_full_n;
 wire    output_l1_3_t_empty_n;
-wire    output_l1_4_i_full_n;
-wire    output_l1_4_t_empty_n;
-wire    output_l1_5_i_full_n;
-wire    output_l1_5_t_empty_n;
-wire    output_l1_6_i_full_n;
-wire    output_l1_6_t_empty_n;
-wire    output_l1_7_i_full_n;
-wire    output_l1_7_t_empty_n;
-wire    output_l1_8_i_full_n;
-wire    output_l1_8_t_empty_n;
-wire    output_l1_9_i_full_n;
-wire    output_l1_9_t_empty_n;
-wire    output_l1_10_i_full_n;
-wire    output_l1_10_t_empty_n;
-wire    output_l1_11_i_full_n;
-wire    output_l1_11_t_empty_n;
-wire    output_l1_12_i_full_n;
-wire    output_l1_12_t_empty_n;
-wire    output_l1_13_i_full_n;
-wire    output_l1_13_t_empty_n;
-wire    output_l1_14_i_full_n;
-wire    output_l1_14_t_empty_n;
-wire    output_l1_15_i_full_n;
-wire    output_l1_15_t_empty_n;
 wire    param_c_full_n;
 wire   [1183:0] param_c_dout;
 wire    param_c_empty_n;
@@ -2271,30 +477,6 @@ wire   [7:0] weight_regfile_0_2_dout;
 wire    weight_regfile_0_2_empty_n;
 wire   [7:0] weight_regfile_0_3_dout;
 wire    weight_regfile_0_3_empty_n;
-wire   [7:0] weight_regfile_0_4_dout;
-wire    weight_regfile_0_4_empty_n;
-wire   [7:0] weight_regfile_0_5_dout;
-wire    weight_regfile_0_5_empty_n;
-wire   [7:0] weight_regfile_0_6_dout;
-wire    weight_regfile_0_6_empty_n;
-wire   [7:0] weight_regfile_0_7_dout;
-wire    weight_regfile_0_7_empty_n;
-wire   [7:0] weight_regfile_0_8_dout;
-wire    weight_regfile_0_8_empty_n;
-wire   [7:0] weight_regfile_0_9_dout;
-wire    weight_regfile_0_9_empty_n;
-wire   [7:0] weight_regfile_0_10_dout;
-wire    weight_regfile_0_10_empty_n;
-wire   [7:0] weight_regfile_0_11_dout;
-wire    weight_regfile_0_11_empty_n;
-wire   [7:0] weight_regfile_0_12_dout;
-wire    weight_regfile_0_12_empty_n;
-wire   [7:0] weight_regfile_0_13_dout;
-wire    weight_regfile_0_13_empty_n;
-wire   [7:0] weight_regfile_0_14_dout;
-wire    weight_regfile_0_14_empty_n;
-wire   [7:0] weight_regfile_0_15_dout;
-wire    weight_regfile_0_15_empty_n;
 wire   [7:0] weight_regfile_1_0_dout;
 wire    weight_regfile_1_0_empty_n;
 wire   [7:0] weight_regfile_1_1_dout;
@@ -2303,30 +485,6 @@ wire   [7:0] weight_regfile_1_2_dout;
 wire    weight_regfile_1_2_empty_n;
 wire   [7:0] weight_regfile_1_3_dout;
 wire    weight_regfile_1_3_empty_n;
-wire   [7:0] weight_regfile_1_4_dout;
-wire    weight_regfile_1_4_empty_n;
-wire   [7:0] weight_regfile_1_5_dout;
-wire    weight_regfile_1_5_empty_n;
-wire   [7:0] weight_regfile_1_6_dout;
-wire    weight_regfile_1_6_empty_n;
-wire   [7:0] weight_regfile_1_7_dout;
-wire    weight_regfile_1_7_empty_n;
-wire   [7:0] weight_regfile_1_8_dout;
-wire    weight_regfile_1_8_empty_n;
-wire   [7:0] weight_regfile_1_9_dout;
-wire    weight_regfile_1_9_empty_n;
-wire   [7:0] weight_regfile_1_10_dout;
-wire    weight_regfile_1_10_empty_n;
-wire   [7:0] weight_regfile_1_11_dout;
-wire    weight_regfile_1_11_empty_n;
-wire   [7:0] weight_regfile_1_12_dout;
-wire    weight_regfile_1_12_empty_n;
-wire   [7:0] weight_regfile_1_13_dout;
-wire    weight_regfile_1_13_empty_n;
-wire   [7:0] weight_regfile_1_14_dout;
-wire    weight_regfile_1_14_empty_n;
-wire   [7:0] weight_regfile_1_15_dout;
-wire    weight_regfile_1_15_empty_n;
 wire   [7:0] weight_regfile_2_0_dout;
 wire    weight_regfile_2_0_empty_n;
 wire   [7:0] weight_regfile_2_1_dout;
@@ -2335,30 +493,6 @@ wire   [7:0] weight_regfile_2_2_dout;
 wire    weight_regfile_2_2_empty_n;
 wire   [7:0] weight_regfile_2_3_dout;
 wire    weight_regfile_2_3_empty_n;
-wire   [7:0] weight_regfile_2_4_dout;
-wire    weight_regfile_2_4_empty_n;
-wire   [7:0] weight_regfile_2_5_dout;
-wire    weight_regfile_2_5_empty_n;
-wire   [7:0] weight_regfile_2_6_dout;
-wire    weight_regfile_2_6_empty_n;
-wire   [7:0] weight_regfile_2_7_dout;
-wire    weight_regfile_2_7_empty_n;
-wire   [7:0] weight_regfile_2_8_dout;
-wire    weight_regfile_2_8_empty_n;
-wire   [7:0] weight_regfile_2_9_dout;
-wire    weight_regfile_2_9_empty_n;
-wire   [7:0] weight_regfile_2_10_dout;
-wire    weight_regfile_2_10_empty_n;
-wire   [7:0] weight_regfile_2_11_dout;
-wire    weight_regfile_2_11_empty_n;
-wire   [7:0] weight_regfile_2_12_dout;
-wire    weight_regfile_2_12_empty_n;
-wire   [7:0] weight_regfile_2_13_dout;
-wire    weight_regfile_2_13_empty_n;
-wire   [7:0] weight_regfile_2_14_dout;
-wire    weight_regfile_2_14_empty_n;
-wire   [7:0] weight_regfile_2_15_dout;
-wire    weight_regfile_2_15_empty_n;
 wire   [7:0] weight_regfile_3_0_dout;
 wire    weight_regfile_3_0_empty_n;
 wire   [7:0] weight_regfile_3_1_dout;
@@ -2367,731 +501,59 @@ wire   [7:0] weight_regfile_3_2_dout;
 wire    weight_regfile_3_2_empty_n;
 wire   [7:0] weight_regfile_3_3_dout;
 wire    weight_regfile_3_3_empty_n;
-wire   [7:0] weight_regfile_3_4_dout;
-wire    weight_regfile_3_4_empty_n;
-wire   [7:0] weight_regfile_3_5_dout;
-wire    weight_regfile_3_5_empty_n;
-wire   [7:0] weight_regfile_3_6_dout;
-wire    weight_regfile_3_6_empty_n;
-wire   [7:0] weight_regfile_3_7_dout;
-wire    weight_regfile_3_7_empty_n;
-wire   [7:0] weight_regfile_3_8_dout;
-wire    weight_regfile_3_8_empty_n;
-wire   [7:0] weight_regfile_3_9_dout;
-wire    weight_regfile_3_9_empty_n;
-wire   [7:0] weight_regfile_3_10_dout;
-wire    weight_regfile_3_10_empty_n;
-wire   [7:0] weight_regfile_3_11_dout;
-wire    weight_regfile_3_11_empty_n;
-wire   [7:0] weight_regfile_3_12_dout;
-wire    weight_regfile_3_12_empty_n;
-wire   [7:0] weight_regfile_3_13_dout;
-wire    weight_regfile_3_13_empty_n;
-wire   [7:0] weight_regfile_3_14_dout;
-wire    weight_regfile_3_14_empty_n;
-wire   [7:0] weight_regfile_3_15_dout;
-wire    weight_regfile_3_15_empty_n;
-wire   [7:0] weight_regfile_4_0_dout;
-wire    weight_regfile_4_0_empty_n;
-wire   [7:0] weight_regfile_4_1_dout;
-wire    weight_regfile_4_1_empty_n;
-wire   [7:0] weight_regfile_4_2_dout;
-wire    weight_regfile_4_2_empty_n;
-wire   [7:0] weight_regfile_4_3_dout;
-wire    weight_regfile_4_3_empty_n;
-wire   [7:0] weight_regfile_4_4_dout;
-wire    weight_regfile_4_4_empty_n;
-wire   [7:0] weight_regfile_4_5_dout;
-wire    weight_regfile_4_5_empty_n;
-wire   [7:0] weight_regfile_4_6_dout;
-wire    weight_regfile_4_6_empty_n;
-wire   [7:0] weight_regfile_4_7_dout;
-wire    weight_regfile_4_7_empty_n;
-wire   [7:0] weight_regfile_4_8_dout;
-wire    weight_regfile_4_8_empty_n;
-wire   [7:0] weight_regfile_4_9_dout;
-wire    weight_regfile_4_9_empty_n;
-wire   [7:0] weight_regfile_4_10_dout;
-wire    weight_regfile_4_10_empty_n;
-wire   [7:0] weight_regfile_4_11_dout;
-wire    weight_regfile_4_11_empty_n;
-wire   [7:0] weight_regfile_4_12_dout;
-wire    weight_regfile_4_12_empty_n;
-wire   [7:0] weight_regfile_4_13_dout;
-wire    weight_regfile_4_13_empty_n;
-wire   [7:0] weight_regfile_4_14_dout;
-wire    weight_regfile_4_14_empty_n;
-wire   [7:0] weight_regfile_4_15_dout;
-wire    weight_regfile_4_15_empty_n;
-wire   [7:0] weight_regfile_5_0_dout;
-wire    weight_regfile_5_0_empty_n;
-wire   [7:0] weight_regfile_5_1_dout;
-wire    weight_regfile_5_1_empty_n;
-wire   [7:0] weight_regfile_5_2_dout;
-wire    weight_regfile_5_2_empty_n;
-wire   [7:0] weight_regfile_5_3_dout;
-wire    weight_regfile_5_3_empty_n;
-wire   [7:0] weight_regfile_5_4_dout;
-wire    weight_regfile_5_4_empty_n;
-wire   [7:0] weight_regfile_5_5_dout;
-wire    weight_regfile_5_5_empty_n;
-wire   [7:0] weight_regfile_5_6_dout;
-wire    weight_regfile_5_6_empty_n;
-wire   [7:0] weight_regfile_5_7_dout;
-wire    weight_regfile_5_7_empty_n;
-wire   [7:0] weight_regfile_5_8_dout;
-wire    weight_regfile_5_8_empty_n;
-wire   [7:0] weight_regfile_5_9_dout;
-wire    weight_regfile_5_9_empty_n;
-wire   [7:0] weight_regfile_5_10_dout;
-wire    weight_regfile_5_10_empty_n;
-wire   [7:0] weight_regfile_5_11_dout;
-wire    weight_regfile_5_11_empty_n;
-wire   [7:0] weight_regfile_5_12_dout;
-wire    weight_regfile_5_12_empty_n;
-wire   [7:0] weight_regfile_5_13_dout;
-wire    weight_regfile_5_13_empty_n;
-wire   [7:0] weight_regfile_5_14_dout;
-wire    weight_regfile_5_14_empty_n;
-wire   [7:0] weight_regfile_5_15_dout;
-wire    weight_regfile_5_15_empty_n;
-wire   [7:0] weight_regfile_6_0_dout;
-wire    weight_regfile_6_0_empty_n;
-wire   [7:0] weight_regfile_6_1_dout;
-wire    weight_regfile_6_1_empty_n;
-wire   [7:0] weight_regfile_6_2_dout;
-wire    weight_regfile_6_2_empty_n;
-wire   [7:0] weight_regfile_6_3_dout;
-wire    weight_regfile_6_3_empty_n;
-wire   [7:0] weight_regfile_6_4_dout;
-wire    weight_regfile_6_4_empty_n;
-wire   [7:0] weight_regfile_6_5_dout;
-wire    weight_regfile_6_5_empty_n;
-wire   [7:0] weight_regfile_6_6_dout;
-wire    weight_regfile_6_6_empty_n;
-wire   [7:0] weight_regfile_6_7_dout;
-wire    weight_regfile_6_7_empty_n;
-wire   [7:0] weight_regfile_6_8_dout;
-wire    weight_regfile_6_8_empty_n;
-wire   [7:0] weight_regfile_6_9_dout;
-wire    weight_regfile_6_9_empty_n;
-wire   [7:0] weight_regfile_6_10_dout;
-wire    weight_regfile_6_10_empty_n;
-wire   [7:0] weight_regfile_6_11_dout;
-wire    weight_regfile_6_11_empty_n;
-wire   [7:0] weight_regfile_6_12_dout;
-wire    weight_regfile_6_12_empty_n;
-wire   [7:0] weight_regfile_6_13_dout;
-wire    weight_regfile_6_13_empty_n;
-wire   [7:0] weight_regfile_6_14_dout;
-wire    weight_regfile_6_14_empty_n;
-wire   [7:0] weight_regfile_6_15_dout;
-wire    weight_regfile_6_15_empty_n;
-wire   [7:0] weight_regfile_7_0_dout;
-wire    weight_regfile_7_0_empty_n;
-wire   [7:0] weight_regfile_7_1_dout;
-wire    weight_regfile_7_1_empty_n;
-wire   [7:0] weight_regfile_7_2_dout;
-wire    weight_regfile_7_2_empty_n;
-wire   [7:0] weight_regfile_7_3_dout;
-wire    weight_regfile_7_3_empty_n;
-wire   [7:0] weight_regfile_7_4_dout;
-wire    weight_regfile_7_4_empty_n;
-wire   [7:0] weight_regfile_7_5_dout;
-wire    weight_regfile_7_5_empty_n;
-wire   [7:0] weight_regfile_7_6_dout;
-wire    weight_regfile_7_6_empty_n;
-wire   [7:0] weight_regfile_7_7_dout;
-wire    weight_regfile_7_7_empty_n;
-wire   [7:0] weight_regfile_7_8_dout;
-wire    weight_regfile_7_8_empty_n;
-wire   [7:0] weight_regfile_7_9_dout;
-wire    weight_regfile_7_9_empty_n;
-wire   [7:0] weight_regfile_7_10_dout;
-wire    weight_regfile_7_10_empty_n;
-wire   [7:0] weight_regfile_7_11_dout;
-wire    weight_regfile_7_11_empty_n;
-wire   [7:0] weight_regfile_7_12_dout;
-wire    weight_regfile_7_12_empty_n;
-wire   [7:0] weight_regfile_7_13_dout;
-wire    weight_regfile_7_13_empty_n;
-wire   [7:0] weight_regfile_7_14_dout;
-wire    weight_regfile_7_14_empty_n;
-wire   [7:0] weight_regfile_7_15_dout;
-wire    weight_regfile_7_15_empty_n;
-wire   [7:0] weight_regfile_8_0_dout;
-wire    weight_regfile_8_0_empty_n;
-wire   [7:0] weight_regfile_8_1_dout;
-wire    weight_regfile_8_1_empty_n;
-wire   [7:0] weight_regfile_8_2_dout;
-wire    weight_regfile_8_2_empty_n;
-wire   [7:0] weight_regfile_8_3_dout;
-wire    weight_regfile_8_3_empty_n;
-wire   [7:0] weight_regfile_8_4_dout;
-wire    weight_regfile_8_4_empty_n;
-wire   [7:0] weight_regfile_8_5_dout;
-wire    weight_regfile_8_5_empty_n;
-wire   [7:0] weight_regfile_8_6_dout;
-wire    weight_regfile_8_6_empty_n;
-wire   [7:0] weight_regfile_8_7_dout;
-wire    weight_regfile_8_7_empty_n;
-wire   [7:0] weight_regfile_8_8_dout;
-wire    weight_regfile_8_8_empty_n;
-wire   [7:0] weight_regfile_8_9_dout;
-wire    weight_regfile_8_9_empty_n;
-wire   [7:0] weight_regfile_8_10_dout;
-wire    weight_regfile_8_10_empty_n;
-wire   [7:0] weight_regfile_8_11_dout;
-wire    weight_regfile_8_11_empty_n;
-wire   [7:0] weight_regfile_8_12_dout;
-wire    weight_regfile_8_12_empty_n;
-wire   [7:0] weight_regfile_8_13_dout;
-wire    weight_regfile_8_13_empty_n;
-wire   [7:0] weight_regfile_8_14_dout;
-wire    weight_regfile_8_14_empty_n;
-wire   [7:0] weight_regfile_8_15_dout;
-wire    weight_regfile_8_15_empty_n;
-wire   [7:0] weight_regfile_9_0_dout;
-wire    weight_regfile_9_0_empty_n;
-wire   [7:0] weight_regfile_9_1_dout;
-wire    weight_regfile_9_1_empty_n;
-wire   [7:0] weight_regfile_9_2_dout;
-wire    weight_regfile_9_2_empty_n;
-wire   [7:0] weight_regfile_9_3_dout;
-wire    weight_regfile_9_3_empty_n;
-wire   [7:0] weight_regfile_9_4_dout;
-wire    weight_regfile_9_4_empty_n;
-wire   [7:0] weight_regfile_9_5_dout;
-wire    weight_regfile_9_5_empty_n;
-wire   [7:0] weight_regfile_9_6_dout;
-wire    weight_regfile_9_6_empty_n;
-wire   [7:0] weight_regfile_9_7_dout;
-wire    weight_regfile_9_7_empty_n;
-wire   [7:0] weight_regfile_9_8_dout;
-wire    weight_regfile_9_8_empty_n;
-wire   [7:0] weight_regfile_9_9_dout;
-wire    weight_regfile_9_9_empty_n;
-wire   [7:0] weight_regfile_9_10_dout;
-wire    weight_regfile_9_10_empty_n;
-wire   [7:0] weight_regfile_9_11_dout;
-wire    weight_regfile_9_11_empty_n;
-wire   [7:0] weight_regfile_9_12_dout;
-wire    weight_regfile_9_12_empty_n;
-wire   [7:0] weight_regfile_9_13_dout;
-wire    weight_regfile_9_13_empty_n;
-wire   [7:0] weight_regfile_9_14_dout;
-wire    weight_regfile_9_14_empty_n;
-wire   [7:0] weight_regfile_9_15_dout;
-wire    weight_regfile_9_15_empty_n;
-wire   [7:0] weight_regfile_10_0_dout;
-wire    weight_regfile_10_0_empty_n;
-wire   [7:0] weight_regfile_10_1_dout;
-wire    weight_regfile_10_1_empty_n;
-wire   [7:0] weight_regfile_10_2_dout;
-wire    weight_regfile_10_2_empty_n;
-wire   [7:0] weight_regfile_10_3_dout;
-wire    weight_regfile_10_3_empty_n;
-wire   [7:0] weight_regfile_10_4_dout;
-wire    weight_regfile_10_4_empty_n;
-wire   [7:0] weight_regfile_10_5_dout;
-wire    weight_regfile_10_5_empty_n;
-wire   [7:0] weight_regfile_10_6_dout;
-wire    weight_regfile_10_6_empty_n;
-wire   [7:0] weight_regfile_10_7_dout;
-wire    weight_regfile_10_7_empty_n;
-wire   [7:0] weight_regfile_10_8_dout;
-wire    weight_regfile_10_8_empty_n;
-wire   [7:0] weight_regfile_10_9_dout;
-wire    weight_regfile_10_9_empty_n;
-wire   [7:0] weight_regfile_10_10_dout;
-wire    weight_regfile_10_10_empty_n;
-wire   [7:0] weight_regfile_10_11_dout;
-wire    weight_regfile_10_11_empty_n;
-wire   [7:0] weight_regfile_10_12_dout;
-wire    weight_regfile_10_12_empty_n;
-wire   [7:0] weight_regfile_10_13_dout;
-wire    weight_regfile_10_13_empty_n;
-wire   [7:0] weight_regfile_10_14_dout;
-wire    weight_regfile_10_14_empty_n;
-wire   [7:0] weight_regfile_10_15_dout;
-wire    weight_regfile_10_15_empty_n;
-wire   [7:0] weight_regfile_11_0_dout;
-wire    weight_regfile_11_0_empty_n;
-wire   [7:0] weight_regfile_11_1_dout;
-wire    weight_regfile_11_1_empty_n;
-wire   [7:0] weight_regfile_11_2_dout;
-wire    weight_regfile_11_2_empty_n;
-wire   [7:0] weight_regfile_11_3_dout;
-wire    weight_regfile_11_3_empty_n;
-wire   [7:0] weight_regfile_11_4_dout;
-wire    weight_regfile_11_4_empty_n;
-wire   [7:0] weight_regfile_11_5_dout;
-wire    weight_regfile_11_5_empty_n;
-wire   [7:0] weight_regfile_11_6_dout;
-wire    weight_regfile_11_6_empty_n;
-wire   [7:0] weight_regfile_11_7_dout;
-wire    weight_regfile_11_7_empty_n;
-wire   [7:0] weight_regfile_11_8_dout;
-wire    weight_regfile_11_8_empty_n;
-wire   [7:0] weight_regfile_11_9_dout;
-wire    weight_regfile_11_9_empty_n;
-wire   [7:0] weight_regfile_11_10_dout;
-wire    weight_regfile_11_10_empty_n;
-wire   [7:0] weight_regfile_11_11_dout;
-wire    weight_regfile_11_11_empty_n;
-wire   [7:0] weight_regfile_11_12_dout;
-wire    weight_regfile_11_12_empty_n;
-wire   [7:0] weight_regfile_11_13_dout;
-wire    weight_regfile_11_13_empty_n;
-wire   [7:0] weight_regfile_11_14_dout;
-wire    weight_regfile_11_14_empty_n;
-wire   [7:0] weight_regfile_11_15_dout;
-wire    weight_regfile_11_15_empty_n;
-wire   [7:0] weight_regfile_12_0_dout;
-wire    weight_regfile_12_0_empty_n;
-wire   [7:0] weight_regfile_12_1_dout;
-wire    weight_regfile_12_1_empty_n;
-wire   [7:0] weight_regfile_12_2_dout;
-wire    weight_regfile_12_2_empty_n;
-wire   [7:0] weight_regfile_12_3_dout;
-wire    weight_regfile_12_3_empty_n;
-wire   [7:0] weight_regfile_12_4_dout;
-wire    weight_regfile_12_4_empty_n;
-wire   [7:0] weight_regfile_12_5_dout;
-wire    weight_regfile_12_5_empty_n;
-wire   [7:0] weight_regfile_12_6_dout;
-wire    weight_regfile_12_6_empty_n;
-wire   [7:0] weight_regfile_12_7_dout;
-wire    weight_regfile_12_7_empty_n;
-wire   [7:0] weight_regfile_12_8_dout;
-wire    weight_regfile_12_8_empty_n;
-wire   [7:0] weight_regfile_12_9_dout;
-wire    weight_regfile_12_9_empty_n;
-wire   [7:0] weight_regfile_12_10_dout;
-wire    weight_regfile_12_10_empty_n;
-wire   [7:0] weight_regfile_12_11_dout;
-wire    weight_regfile_12_11_empty_n;
-wire   [7:0] weight_regfile_12_12_dout;
-wire    weight_regfile_12_12_empty_n;
-wire   [7:0] weight_regfile_12_13_dout;
-wire    weight_regfile_12_13_empty_n;
-wire   [7:0] weight_regfile_12_14_dout;
-wire    weight_regfile_12_14_empty_n;
-wire   [7:0] weight_regfile_12_15_dout;
-wire    weight_regfile_12_15_empty_n;
-wire   [7:0] weight_regfile_13_0_dout;
-wire    weight_regfile_13_0_empty_n;
-wire   [7:0] weight_regfile_13_1_dout;
-wire    weight_regfile_13_1_empty_n;
-wire   [7:0] weight_regfile_13_2_dout;
-wire    weight_regfile_13_2_empty_n;
-wire   [7:0] weight_regfile_13_3_dout;
-wire    weight_regfile_13_3_empty_n;
-wire   [7:0] weight_regfile_13_4_dout;
-wire    weight_regfile_13_4_empty_n;
-wire   [7:0] weight_regfile_13_5_dout;
-wire    weight_regfile_13_5_empty_n;
-wire   [7:0] weight_regfile_13_6_dout;
-wire    weight_regfile_13_6_empty_n;
-wire   [7:0] weight_regfile_13_7_dout;
-wire    weight_regfile_13_7_empty_n;
-wire   [7:0] weight_regfile_13_8_dout;
-wire    weight_regfile_13_8_empty_n;
-wire   [7:0] weight_regfile_13_9_dout;
-wire    weight_regfile_13_9_empty_n;
-wire   [7:0] weight_regfile_13_10_dout;
-wire    weight_regfile_13_10_empty_n;
-wire   [7:0] weight_regfile_13_11_dout;
-wire    weight_regfile_13_11_empty_n;
-wire   [7:0] weight_regfile_13_12_dout;
-wire    weight_regfile_13_12_empty_n;
-wire   [7:0] weight_regfile_13_13_dout;
-wire    weight_regfile_13_13_empty_n;
-wire   [7:0] weight_regfile_13_14_dout;
-wire    weight_regfile_13_14_empty_n;
-wire   [7:0] weight_regfile_13_15_dout;
-wire    weight_regfile_13_15_empty_n;
-wire   [7:0] weight_regfile_14_0_dout;
-wire    weight_regfile_14_0_empty_n;
-wire   [7:0] weight_regfile_14_1_dout;
-wire    weight_regfile_14_1_empty_n;
-wire   [7:0] weight_regfile_14_2_dout;
-wire    weight_regfile_14_2_empty_n;
-wire   [7:0] weight_regfile_14_3_dout;
-wire    weight_regfile_14_3_empty_n;
-wire   [7:0] weight_regfile_14_4_dout;
-wire    weight_regfile_14_4_empty_n;
-wire   [7:0] weight_regfile_14_5_dout;
-wire    weight_regfile_14_5_empty_n;
-wire   [7:0] weight_regfile_14_6_dout;
-wire    weight_regfile_14_6_empty_n;
-wire   [7:0] weight_regfile_14_7_dout;
-wire    weight_regfile_14_7_empty_n;
-wire   [7:0] weight_regfile_14_8_dout;
-wire    weight_regfile_14_8_empty_n;
-wire   [7:0] weight_regfile_14_9_dout;
-wire    weight_regfile_14_9_empty_n;
-wire   [7:0] weight_regfile_14_10_dout;
-wire    weight_regfile_14_10_empty_n;
-wire   [7:0] weight_regfile_14_11_dout;
-wire    weight_regfile_14_11_empty_n;
-wire   [7:0] weight_regfile_14_12_dout;
-wire    weight_regfile_14_12_empty_n;
-wire   [7:0] weight_regfile_14_13_dout;
-wire    weight_regfile_14_13_empty_n;
-wire   [7:0] weight_regfile_14_14_dout;
-wire    weight_regfile_14_14_empty_n;
-wire   [7:0] weight_regfile_14_15_dout;
-wire    weight_regfile_14_15_empty_n;
-wire   [7:0] weight_regfile_15_0_dout;
-wire    weight_regfile_15_0_empty_n;
-wire   [7:0] weight_regfile_15_1_dout;
-wire    weight_regfile_15_1_empty_n;
-wire   [7:0] weight_regfile_15_2_dout;
-wire    weight_regfile_15_2_empty_n;
-wire   [7:0] weight_regfile_15_3_dout;
-wire    weight_regfile_15_3_empty_n;
-wire   [7:0] weight_regfile_15_4_dout;
-wire    weight_regfile_15_4_empty_n;
-wire   [7:0] weight_regfile_15_5_dout;
-wire    weight_regfile_15_5_empty_n;
-wire   [7:0] weight_regfile_15_6_dout;
-wire    weight_regfile_15_6_empty_n;
-wire   [7:0] weight_regfile_15_7_dout;
-wire    weight_regfile_15_7_empty_n;
-wire   [7:0] weight_regfile_15_8_dout;
-wire    weight_regfile_15_8_empty_n;
-wire   [7:0] weight_regfile_15_9_dout;
-wire    weight_regfile_15_9_empty_n;
-wire   [7:0] weight_regfile_15_10_dout;
-wire    weight_regfile_15_10_empty_n;
-wire   [7:0] weight_regfile_15_11_dout;
-wire    weight_regfile_15_11_empty_n;
-wire   [7:0] weight_regfile_15_12_dout;
-wire    weight_regfile_15_12_empty_n;
-wire   [7:0] weight_regfile_15_13_dout;
-wire    weight_regfile_15_13_empty_n;
-wire   [7:0] weight_regfile_15_14_dout;
-wire    weight_regfile_15_14_empty_n;
-wire   [7:0] weight_regfile_15_15_dout;
-wire    weight_regfile_15_15_empty_n;
 wire    param_c12_full_n;
 wire   [1119:0] param_c12_dout;
 wire    param_c12_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-reg    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready;
-wire    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready;
-reg   [1:0] dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count;
+reg    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
+wire    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
+reg   [1:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count;
 reg    ap_sync_reg_runWeight2Reg_U0_ap_ready;
 wire    ap_sync_runWeight2Reg_U0_ap_ready;
 reg   [1:0] runWeight2Reg_U0_ap_ready_count;
 reg    ap_sync_reg_runDataL2toL1_U0_ap_ready;
 wire    ap_sync_runDataL2toL1_U0_ap_ready;
 reg   [1:0] runDataL2toL1_U0_ap_ready_count;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_write;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_full_n;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_write;
 wire    runWeight2Reg_U0_start_full_n;
 wire    runWeight2Reg_U0_start_write;
 wire    runDataL2toL1_U0_start_full_n;
 wire    runDataL2toL1_U0_start_write;
-wire    runSysArr_U0_start_full_n;
-wire    runSysArr_U0_start_write;
+wire    runSIMD_U0_start_full_n;
+wire    runSIMD_U0_start_write;
 wire    runOutputL1toL2_U0_start_full_n;
 wire    runOutputL1toL2_U0_start_write;
 
 // power-on initialization
 initial begin
-#0 ap_sync_reg_channel_write_weight_regfile_15_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_15_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_14_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_13_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_12_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_11_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_10_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_9_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_8_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_7_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_6_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_5_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_4 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_3 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_2 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_1 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_4_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_3_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_2_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_1_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_0 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_15 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_14 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_13 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_12 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_11 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_10 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_9 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_8 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_7 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_6 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_5 = 1'b0;
-#0 ap_sync_reg_channel_write_weight_regfile_0_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_0 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_15 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_14 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_13 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_12 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_11 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_10 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_9 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_8 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_7 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_6 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_5 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_4 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1_3 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1_2 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1_1 = 1'b0;
 #0 ap_sync_reg_channel_write_data_l1_0 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_15 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_14 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_13 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_12 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_11 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_10 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_9 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_8 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_7 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_6 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_5 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_4 = 1'b0;
 #0 ap_sync_reg_channel_write_output_l1_3 = 1'b0;
 #0 ap_sync_reg_channel_write_output_l1_2 = 1'b0;
 #0 ap_sync_reg_channel_write_output_l1_1 = 1'b0;
 #0 ap_sync_reg_channel_write_output_l1_0 = 1'b0;
-#0 ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready = 1'b0;
-#0 dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count = 2'd0;
+#0 ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready = 1'b0;
+#0 dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count = 2'd0;
 #0 ap_sync_reg_runWeight2Reg_U0_ap_ready = 1'b0;
 #0 runWeight2Reg_U0_ap_ready_count = 2'd0;
 #0 ap_sync_reg_runDataL2toL1_U0_ap_ready = 1'b0;
@@ -3105,13 +567,13 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0 #(
 data_l1_0_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_0257_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_0257_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_0257_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_0257_i_d0),
+    .i_address0(runDataL2toL1_U0_data_l1_017_i_address0),
+    .i_ce0(runDataL2toL1_U0_data_l1_017_i_ce0),
+    .i_we0(runDataL2toL1_U0_data_l1_017_i_we0),
+    .i_d0(runDataL2toL1_U0_data_l1_017_i_d0),
     .i_q0(data_l1_0_i_q0),
-    .t_address0(runSysArr_U0_data_l1_0257_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_0257_i_ce0),
+    .t_address0(runSIMD_U0_data_l1_017_i_address0),
+    .t_ce0(runSIMD_U0_data_l1_017_i_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
     .t_q0(data_l1_0_t_q0),
@@ -3120,400 +582,100 @@ data_l1_0_U(
     .i_full_n(data_l1_0_i_full_n),
     .i_write(ap_channel_done_data_l1_0),
     .t_empty_n(data_l1_0_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
+    .t_read(runSIMD_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0 #(
-    .DataWidth( 8 ),
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
+    .DataWidth( 1 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 data_l1_1_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_1258_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_1258_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_1258_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_1258_i_d0),
+    .i_address0(runDataL2toL1_U0_data_l1_118_i_address0),
+    .i_ce0(runDataL2toL1_U0_data_l1_118_i_ce0),
+    .i_we0(runDataL2toL1_U0_data_l1_118_i_we0),
+    .i_d0(runDataL2toL1_U0_data_l1_118_i_d0),
     .i_q0(data_l1_1_i_q0),
-    .t_address0(runSysArr_U0_data_l1_1258_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_1258_i_ce0),
+    .t_address0(runSIMD_U0_data_l1_118_i_address0),
+    .t_ce0(runSIMD_U0_data_l1_118_i_ce0),
     .t_we0(1'b0),
-    .t_d0(8'd0),
+    .t_d0(1'd0),
     .t_q0(data_l1_1_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(data_l1_1_i_full_n),
     .i_write(ap_channel_done_data_l1_1),
     .t_empty_n(data_l1_1_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
+    .t_read(runSIMD_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0 #(
-    .DataWidth( 8 ),
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
+    .DataWidth( 1 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 data_l1_2_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_2259_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_2259_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_2259_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_2259_i_d0),
+    .i_address0(runDataL2toL1_U0_data_l1_219_i_address0),
+    .i_ce0(runDataL2toL1_U0_data_l1_219_i_ce0),
+    .i_we0(runDataL2toL1_U0_data_l1_219_i_we0),
+    .i_d0(runDataL2toL1_U0_data_l1_219_i_d0),
     .i_q0(data_l1_2_i_q0),
-    .t_address0(runSysArr_U0_data_l1_2259_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_2259_i_ce0),
+    .t_address0(runSIMD_U0_data_l1_219_i_address0),
+    .t_ce0(runSIMD_U0_data_l1_219_i_ce0),
     .t_we0(1'b0),
-    .t_d0(8'd0),
+    .t_d0(1'd0),
     .t_q0(data_l1_2_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(data_l1_2_i_full_n),
     .i_write(ap_channel_done_data_l1_2),
     .t_empty_n(data_l1_2_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
+    .t_read(runSIMD_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0 #(
-    .DataWidth( 8 ),
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
+    .DataWidth( 1 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 data_l1_3_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_3260_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_3260_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_3260_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_3260_i_d0),
+    .i_address0(runDataL2toL1_U0_data_l1_320_i_address0),
+    .i_ce0(runDataL2toL1_U0_data_l1_320_i_ce0),
+    .i_we0(runDataL2toL1_U0_data_l1_320_i_we0),
+    .i_d0(runDataL2toL1_U0_data_l1_320_i_d0),
     .i_q0(data_l1_3_i_q0),
-    .t_address0(runSysArr_U0_data_l1_3260_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_3260_i_ce0),
+    .t_address0(runSIMD_U0_data_l1_320_i_address0),
+    .t_ce0(runSIMD_U0_data_l1_320_i_ce0),
     .t_we0(1'b0),
-    .t_d0(8'd0),
+    .t_d0(1'd0),
     .t_q0(data_l1_3_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
     .i_full_n(data_l1_3_i_full_n),
     .i_write(ap_channel_done_data_l1_3),
     .t_empty_n(data_l1_3_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_4261_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_4261_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_4261_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_4261_i_d0),
-    .i_q0(data_l1_4_i_q0),
-    .t_address0(runSysArr_U0_data_l1_4261_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_4261_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_4_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_4_i_full_n),
-    .i_write(ap_channel_done_data_l1_4),
-    .t_empty_n(data_l1_4_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_5262_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_5262_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_5262_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_5262_i_d0),
-    .i_q0(data_l1_5_i_q0),
-    .t_address0(runSysArr_U0_data_l1_5262_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_5262_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_5_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_5_i_full_n),
-    .i_write(ap_channel_done_data_l1_5),
-    .t_empty_n(data_l1_5_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_6263_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_6263_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_6263_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_6263_i_d0),
-    .i_q0(data_l1_6_i_q0),
-    .t_address0(runSysArr_U0_data_l1_6263_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_6263_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_6_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_6_i_full_n),
-    .i_write(ap_channel_done_data_l1_6),
-    .t_empty_n(data_l1_6_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_7264_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_7264_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_7264_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_7264_i_d0),
-    .i_q0(data_l1_7_i_q0),
-    .t_address0(runSysArr_U0_data_l1_7264_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_7264_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_7_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_7_i_full_n),
-    .i_write(ap_channel_done_data_l1_7),
-    .t_empty_n(data_l1_7_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_8265_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_8265_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_8265_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_8265_i_d0),
-    .i_q0(data_l1_8_i_q0),
-    .t_address0(runSysArr_U0_data_l1_8265_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_8265_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_8_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_8_i_full_n),
-    .i_write(ap_channel_done_data_l1_8),
-    .t_empty_n(data_l1_8_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_9266_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_9266_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_9266_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_9266_i_d0),
-    .i_q0(data_l1_9_i_q0),
-    .t_address0(runSysArr_U0_data_l1_9266_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_9266_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_9_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_9_i_full_n),
-    .i_write(ap_channel_done_data_l1_9),
-    .t_empty_n(data_l1_9_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_10267_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_10267_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_10267_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_10267_i_d0),
-    .i_q0(data_l1_10_i_q0),
-    .t_address0(runSysArr_U0_data_l1_10267_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_10267_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_10_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_10_i_full_n),
-    .i_write(ap_channel_done_data_l1_10),
-    .t_empty_n(data_l1_10_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_11268_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_11268_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_11268_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_11268_i_d0),
-    .i_q0(data_l1_11_i_q0),
-    .t_address0(runSysArr_U0_data_l1_11268_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_11268_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_11_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_11_i_full_n),
-    .i_write(ap_channel_done_data_l1_11),
-    .t_empty_n(data_l1_11_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_12269_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_12269_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_12269_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_12269_i_d0),
-    .i_q0(data_l1_12_i_q0),
-    .t_address0(runSysArr_U0_data_l1_12269_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_12269_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_12_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_12_i_full_n),
-    .i_write(ap_channel_done_data_l1_12),
-    .t_empty_n(data_l1_12_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_13270_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_13270_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_13270_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_13270_i_d0),
-    .i_q0(data_l1_13_i_q0),
-    .t_address0(runSysArr_U0_data_l1_13270_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_13270_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_13_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_13_i_full_n),
-    .i_write(ap_channel_done_data_l1_13),
-    .t_empty_n(data_l1_13_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_14271_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_14271_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_14271_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_14271_i_d0),
-    .i_q0(data_l1_14_i_q0),
-    .t_address0(runSysArr_U0_data_l1_14271_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_14271_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_14_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_14_i_full_n),
-    .i_write(ap_channel_done_data_l1_14),
-    .t_empty_n(data_l1_14_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_4 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_15272_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_15272_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_15272_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_15272_i_d0),
-    .i_q0(data_l1_15_i_q0),
-    .t_address0(runSysArr_U0_data_l1_15272_i_address0),
-    .t_ce0(runSysArr_U0_data_l1_15272_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_15_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(data_l1_15_i_full_n),
-    .i_write(ap_channel_done_data_l1_15),
-    .t_empty_n(data_l1_15_t_empty_n),
-    .t_read(runSysArr_U0_ap_ready)
+    .t_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
+    .DataWidth( 16 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 output_l1_0_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_0273_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_0273_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_0273_i_we0),
-    .i_d0(runSysArr_U0_output_l1_0273_i_d0),
+    .i_address0(runSIMD_U0_output_l1_021_i_address0),
+    .i_ce0(runSIMD_U0_output_l1_021_i_ce0),
+    .i_we0(runSIMD_U0_output_l1_021_i_we0),
+    .i_d0(runSIMD_U0_output_l1_021_i_d0),
     .i_q0(output_l1_0_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_0273_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_0273_i_ce0),
+    .t_address0(runOutputL1toL2_U0_output_l1_021_i_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_021_i_ce0),
     .t_we0(1'b0),
-    .t_d0(32'd0),
+    .t_d0(16'd0),
     .t_q0(output_l1_0_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
@@ -3524,21 +686,21 @@ output_l1_0_U(
 );
 
 Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
+    .DataWidth( 16 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 output_l1_1_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_1274_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_1274_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_1274_i_we0),
-    .i_d0(runSysArr_U0_output_l1_1274_i_d0),
+    .i_address0(runSIMD_U0_output_l1_122_i_address0),
+    .i_ce0(runSIMD_U0_output_l1_122_i_ce0),
+    .i_we0(runSIMD_U0_output_l1_122_i_we0),
+    .i_d0(runSIMD_U0_output_l1_122_i_d0),
     .i_q0(output_l1_1_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_1274_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_1274_i_ce0),
+    .t_address0(runOutputL1toL2_U0_output_l1_122_i_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_122_i_ce0),
     .t_we0(1'b0),
-    .t_d0(32'd0),
+    .t_d0(16'd0),
     .t_q0(output_l1_1_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
@@ -3549,21 +711,21 @@ output_l1_1_U(
 );
 
 Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
+    .DataWidth( 16 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 output_l1_2_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_2275_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_2275_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_2275_i_we0),
-    .i_d0(runSysArr_U0_output_l1_2275_i_d0),
+    .i_address0(runSIMD_U0_output_l1_223_i_address0),
+    .i_ce0(runSIMD_U0_output_l1_223_i_ce0),
+    .i_we0(runSIMD_U0_output_l1_223_i_we0),
+    .i_d0(runSIMD_U0_output_l1_223_i_d0),
     .i_q0(output_l1_2_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_2275_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_2275_i_ce0),
+    .t_address0(runOutputL1toL2_U0_output_l1_223_i_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_223_i_ce0),
     .t_we0(1'b0),
-    .t_d0(32'd0),
+    .t_d0(16'd0),
     .t_q0(output_l1_2_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
@@ -3574,21 +736,21 @@ output_l1_2_U(
 );
 
 Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
+    .DataWidth( 16 ),
     .AddressRange( 49 ),
     .AddressWidth( 6 ))
 output_l1_3_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_3276_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_3276_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_3276_i_we0),
-    .i_d0(runSysArr_U0_output_l1_3276_i_d0),
+    .i_address0(runSIMD_U0_output_l1_324_i_address0),
+    .i_ce0(runSIMD_U0_output_l1_324_i_ce0),
+    .i_we0(runSIMD_U0_output_l1_324_i_we0),
+    .i_d0(runSIMD_U0_output_l1_324_i_d0),
     .i_q0(output_l1_3_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_3276_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_3276_i_ce0),
+    .t_address0(runOutputL1toL2_U0_output_l1_324_i_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_324_i_ce0),
     .t_we0(1'b0),
-    .t_d0(32'd0),
+    .t_d0(16'd0),
     .t_q0(output_l1_3_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
@@ -3598,314 +760,14 @@ output_l1_3_U(
     .t_read(runOutputL1toL2_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_4277_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_4277_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_4277_i_we0),
-    .i_d0(runSysArr_U0_output_l1_4277_i_d0),
-    .i_q0(output_l1_4_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_4277_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_4277_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_4_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_4_i_full_n),
-    .i_write(ap_channel_done_output_l1_4),
-    .t_empty_n(output_l1_4_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_5278_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_5278_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_5278_i_we0),
-    .i_d0(runSysArr_U0_output_l1_5278_i_d0),
-    .i_q0(output_l1_5_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_5278_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_5278_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_5_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_5_i_full_n),
-    .i_write(ap_channel_done_output_l1_5),
-    .t_empty_n(output_l1_5_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_6279_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_6279_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_6279_i_we0),
-    .i_d0(runSysArr_U0_output_l1_6279_i_d0),
-    .i_q0(output_l1_6_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_6279_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_6279_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_6_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_6_i_full_n),
-    .i_write(ap_channel_done_output_l1_6),
-    .t_empty_n(output_l1_6_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_7280_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_7280_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_7280_i_we0),
-    .i_d0(runSysArr_U0_output_l1_7280_i_d0),
-    .i_q0(output_l1_7_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_7280_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_7280_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_7_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_7_i_full_n),
-    .i_write(ap_channel_done_output_l1_7),
-    .t_empty_n(output_l1_7_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_8281_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_8281_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_8281_i_we0),
-    .i_d0(runSysArr_U0_output_l1_8281_i_d0),
-    .i_q0(output_l1_8_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_8281_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_8281_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_8_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_8_i_full_n),
-    .i_write(ap_channel_done_output_l1_8),
-    .t_empty_n(output_l1_8_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_9282_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_9282_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_9282_i_we0),
-    .i_d0(runSysArr_U0_output_l1_9282_i_d0),
-    .i_q0(output_l1_9_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_9282_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_9282_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_9_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_9_i_full_n),
-    .i_write(ap_channel_done_output_l1_9),
-    .t_empty_n(output_l1_9_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_10283_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_10283_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_10283_i_we0),
-    .i_d0(runSysArr_U0_output_l1_10283_i_d0),
-    .i_q0(output_l1_10_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_10283_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_10283_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_10_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_10_i_full_n),
-    .i_write(ap_channel_done_output_l1_10),
-    .t_empty_n(output_l1_10_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_11284_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_11284_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_11284_i_we0),
-    .i_d0(runSysArr_U0_output_l1_11284_i_d0),
-    .i_q0(output_l1_11_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_11284_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_11284_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_11_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_11_i_full_n),
-    .i_write(ap_channel_done_output_l1_11),
-    .t_empty_n(output_l1_11_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_12285_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_12285_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_12285_i_we0),
-    .i_d0(runSysArr_U0_output_l1_12285_i_d0),
-    .i_q0(output_l1_12_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_12285_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_12285_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_12_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_12_i_full_n),
-    .i_write(ap_channel_done_output_l1_12),
-    .t_empty_n(output_l1_12_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_13286_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_13286_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_13286_i_we0),
-    .i_d0(runSysArr_U0_output_l1_13286_i_d0),
-    .i_q0(output_l1_13_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_13286_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_13286_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_13_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_13_i_full_n),
-    .i_write(ap_channel_done_output_l1_13),
-    .t_empty_n(output_l1_13_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_14287_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_14287_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_14287_i_we0),
-    .i_d0(runSysArr_U0_output_l1_14287_i_d0),
-    .i_q0(output_l1_14_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_14287_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_14287_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_14_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_14_i_full_n),
-    .i_write(ap_channel_done_output_l1_14),
-    .t_empty_n(output_l1_14_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
-    .DataWidth( 32 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .i_address0(runSysArr_U0_output_l1_15288_i_address0),
-    .i_ce0(runSysArr_U0_output_l1_15288_i_ce0),
-    .i_we0(runSysArr_U0_output_l1_15288_i_we0),
-    .i_d0(runSysArr_U0_output_l1_15288_i_d0),
-    .i_q0(output_l1_15_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_15288_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_15288_i_ce0),
-    .t_we0(1'b0),
-    .t_d0(32'd0),
-    .t_q0(output_l1_15_t_q0),
-    .i_ce(1'b1),
-    .t_ce(1'b1),
-    .i_full_n(output_l1_15_i_full_n),
-    .i_write(ap_channel_done_output_l1_15),
-    .t_empty_n(output_l1_15_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
-);
-
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry28 dataflow_in_loop_LOOP_S_OUTER_entry28_U0(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry33 dataflow_in_loop_LOOP_S_OUTER_entry33_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start),
-    .ap_done(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_done),
-    .ap_continue(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue),
-    .ap_idle(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle),
-    .ap_ready(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready),
+    .ap_start(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start),
+    .ap_done(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_done),
+    .ap_continue(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue),
+    .ap_idle(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle),
+    .ap_ready(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready),
     .param(param),
     .ko_1(ko_1),
     .co(co),
@@ -3913,45 +775,45 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry28 dataflow_in_loop_LOOP_S_OUTER_
     .so(so),
     .ho(ho),
     .wo(wo),
-    .param_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din),
+    .param_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din),
     .param_out_full_n(param_c_full_n),
-    .param_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write),
-    .param_out1_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din),
+    .param_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write),
+    .param_out1_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din),
     .param_out1_full_n(param_c1_full_n),
-    .param_out1_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write),
-    .ko_1_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din),
+    .param_out1_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write),
+    .ko_1_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din),
     .ko_1_out_full_n(ko_1_c_full_n),
-    .ko_1_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write),
-    .co_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din),
+    .ko_1_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write),
+    .co_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din),
     .co_out_full_n(co_c_full_n),
-    .co_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write),
-    .co_out2_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din),
+    .co_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write),
+    .co_out2_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din),
     .co_out2_full_n(co_c2_full_n),
-    .co_out2_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write),
-    .ro_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din),
+    .co_out2_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write),
+    .ro_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din),
     .ro_out_full_n(ro_c_full_n),
-    .ro_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write),
-    .ro_out3_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din),
+    .ro_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write),
+    .ro_out3_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din),
     .ro_out3_full_n(ro_c3_full_n),
-    .ro_out3_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write),
-    .so_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din),
+    .ro_out3_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write),
+    .so_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din),
     .so_out_full_n(so_c_full_n),
-    .so_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write),
-    .so_out4_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din),
+    .so_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write),
+    .so_out4_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din),
     .so_out4_full_n(so_c4_full_n),
-    .so_out4_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write),
-    .ho_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din),
+    .so_out4_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write),
+    .ho_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din),
     .ho_out_full_n(ho_c_full_n),
-    .ho_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write),
-    .ho_out5_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din),
+    .ho_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write),
+    .ho_out5_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din),
     .ho_out5_full_n(ho_c5_full_n),
-    .ho_out5_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write),
-    .wo_out_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din),
+    .ho_out5_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write),
+    .wo_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din),
     .wo_out_full_n(wo_c_full_n),
-    .wo_out_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write),
-    .wo_out6_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din),
+    .wo_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write),
+    .wo_out6_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din),
     .wo_out6_full_n(wo_c6_full_n),
-    .wo_out6_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write)
+    .wo_out6_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write)
 );
 
 Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
@@ -3980,15 +842,6 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .weight_l2_0_address0(runWeight2Reg_U0_weight_l2_0_address0),
     .weight_l2_0_ce0(runWeight2Reg_U0_weight_l2_0_ce0),
     .weight_l2_0_q0(weight_l2_0_q0),
-    .weight_l2_1_address0(runWeight2Reg_U0_weight_l2_1_address0),
-    .weight_l2_1_ce0(runWeight2Reg_U0_weight_l2_1_ce0),
-    .weight_l2_1_q0(weight_l2_1_q0),
-    .weight_l2_2_address0(runWeight2Reg_U0_weight_l2_2_address0),
-    .weight_l2_2_ce0(runWeight2Reg_U0_weight_l2_2_ce0),
-    .weight_l2_2_q0(weight_l2_2_q0),
-    .weight_l2_3_address0(runWeight2Reg_U0_weight_l2_3_address0),
-    .weight_l2_3_ce0(runWeight2Reg_U0_weight_l2_3_ce0),
-    .weight_l2_3_q0(weight_l2_3_q0),
     .param_out_din(runWeight2Reg_U0_param_out_din),
     .param_out_full_n(param_c7_full_n),
     .param_out_write(runWeight2Reg_U0_param_out_write),
@@ -4019,247 +872,7 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .ap_return_12(runWeight2Reg_U0_ap_return_12),
     .ap_return_13(runWeight2Reg_U0_ap_return_13),
     .ap_return_14(runWeight2Reg_U0_ap_return_14),
-    .ap_return_15(runWeight2Reg_U0_ap_return_15),
-    .ap_return_16(runWeight2Reg_U0_ap_return_16),
-    .ap_return_17(runWeight2Reg_U0_ap_return_17),
-    .ap_return_18(runWeight2Reg_U0_ap_return_18),
-    .ap_return_19(runWeight2Reg_U0_ap_return_19),
-    .ap_return_20(runWeight2Reg_U0_ap_return_20),
-    .ap_return_21(runWeight2Reg_U0_ap_return_21),
-    .ap_return_22(runWeight2Reg_U0_ap_return_22),
-    .ap_return_23(runWeight2Reg_U0_ap_return_23),
-    .ap_return_24(runWeight2Reg_U0_ap_return_24),
-    .ap_return_25(runWeight2Reg_U0_ap_return_25),
-    .ap_return_26(runWeight2Reg_U0_ap_return_26),
-    .ap_return_27(runWeight2Reg_U0_ap_return_27),
-    .ap_return_28(runWeight2Reg_U0_ap_return_28),
-    .ap_return_29(runWeight2Reg_U0_ap_return_29),
-    .ap_return_30(runWeight2Reg_U0_ap_return_30),
-    .ap_return_31(runWeight2Reg_U0_ap_return_31),
-    .ap_return_32(runWeight2Reg_U0_ap_return_32),
-    .ap_return_33(runWeight2Reg_U0_ap_return_33),
-    .ap_return_34(runWeight2Reg_U0_ap_return_34),
-    .ap_return_35(runWeight2Reg_U0_ap_return_35),
-    .ap_return_36(runWeight2Reg_U0_ap_return_36),
-    .ap_return_37(runWeight2Reg_U0_ap_return_37),
-    .ap_return_38(runWeight2Reg_U0_ap_return_38),
-    .ap_return_39(runWeight2Reg_U0_ap_return_39),
-    .ap_return_40(runWeight2Reg_U0_ap_return_40),
-    .ap_return_41(runWeight2Reg_U0_ap_return_41),
-    .ap_return_42(runWeight2Reg_U0_ap_return_42),
-    .ap_return_43(runWeight2Reg_U0_ap_return_43),
-    .ap_return_44(runWeight2Reg_U0_ap_return_44),
-    .ap_return_45(runWeight2Reg_U0_ap_return_45),
-    .ap_return_46(runWeight2Reg_U0_ap_return_46),
-    .ap_return_47(runWeight2Reg_U0_ap_return_47),
-    .ap_return_48(runWeight2Reg_U0_ap_return_48),
-    .ap_return_49(runWeight2Reg_U0_ap_return_49),
-    .ap_return_50(runWeight2Reg_U0_ap_return_50),
-    .ap_return_51(runWeight2Reg_U0_ap_return_51),
-    .ap_return_52(runWeight2Reg_U0_ap_return_52),
-    .ap_return_53(runWeight2Reg_U0_ap_return_53),
-    .ap_return_54(runWeight2Reg_U0_ap_return_54),
-    .ap_return_55(runWeight2Reg_U0_ap_return_55),
-    .ap_return_56(runWeight2Reg_U0_ap_return_56),
-    .ap_return_57(runWeight2Reg_U0_ap_return_57),
-    .ap_return_58(runWeight2Reg_U0_ap_return_58),
-    .ap_return_59(runWeight2Reg_U0_ap_return_59),
-    .ap_return_60(runWeight2Reg_U0_ap_return_60),
-    .ap_return_61(runWeight2Reg_U0_ap_return_61),
-    .ap_return_62(runWeight2Reg_U0_ap_return_62),
-    .ap_return_63(runWeight2Reg_U0_ap_return_63),
-    .ap_return_64(runWeight2Reg_U0_ap_return_64),
-    .ap_return_65(runWeight2Reg_U0_ap_return_65),
-    .ap_return_66(runWeight2Reg_U0_ap_return_66),
-    .ap_return_67(runWeight2Reg_U0_ap_return_67),
-    .ap_return_68(runWeight2Reg_U0_ap_return_68),
-    .ap_return_69(runWeight2Reg_U0_ap_return_69),
-    .ap_return_70(runWeight2Reg_U0_ap_return_70),
-    .ap_return_71(runWeight2Reg_U0_ap_return_71),
-    .ap_return_72(runWeight2Reg_U0_ap_return_72),
-    .ap_return_73(runWeight2Reg_U0_ap_return_73),
-    .ap_return_74(runWeight2Reg_U0_ap_return_74),
-    .ap_return_75(runWeight2Reg_U0_ap_return_75),
-    .ap_return_76(runWeight2Reg_U0_ap_return_76),
-    .ap_return_77(runWeight2Reg_U0_ap_return_77),
-    .ap_return_78(runWeight2Reg_U0_ap_return_78),
-    .ap_return_79(runWeight2Reg_U0_ap_return_79),
-    .ap_return_80(runWeight2Reg_U0_ap_return_80),
-    .ap_return_81(runWeight2Reg_U0_ap_return_81),
-    .ap_return_82(runWeight2Reg_U0_ap_return_82),
-    .ap_return_83(runWeight2Reg_U0_ap_return_83),
-    .ap_return_84(runWeight2Reg_U0_ap_return_84),
-    .ap_return_85(runWeight2Reg_U0_ap_return_85),
-    .ap_return_86(runWeight2Reg_U0_ap_return_86),
-    .ap_return_87(runWeight2Reg_U0_ap_return_87),
-    .ap_return_88(runWeight2Reg_U0_ap_return_88),
-    .ap_return_89(runWeight2Reg_U0_ap_return_89),
-    .ap_return_90(runWeight2Reg_U0_ap_return_90),
-    .ap_return_91(runWeight2Reg_U0_ap_return_91),
-    .ap_return_92(runWeight2Reg_U0_ap_return_92),
-    .ap_return_93(runWeight2Reg_U0_ap_return_93),
-    .ap_return_94(runWeight2Reg_U0_ap_return_94),
-    .ap_return_95(runWeight2Reg_U0_ap_return_95),
-    .ap_return_96(runWeight2Reg_U0_ap_return_96),
-    .ap_return_97(runWeight2Reg_U0_ap_return_97),
-    .ap_return_98(runWeight2Reg_U0_ap_return_98),
-    .ap_return_99(runWeight2Reg_U0_ap_return_99),
-    .ap_return_100(runWeight2Reg_U0_ap_return_100),
-    .ap_return_101(runWeight2Reg_U0_ap_return_101),
-    .ap_return_102(runWeight2Reg_U0_ap_return_102),
-    .ap_return_103(runWeight2Reg_U0_ap_return_103),
-    .ap_return_104(runWeight2Reg_U0_ap_return_104),
-    .ap_return_105(runWeight2Reg_U0_ap_return_105),
-    .ap_return_106(runWeight2Reg_U0_ap_return_106),
-    .ap_return_107(runWeight2Reg_U0_ap_return_107),
-    .ap_return_108(runWeight2Reg_U0_ap_return_108),
-    .ap_return_109(runWeight2Reg_U0_ap_return_109),
-    .ap_return_110(runWeight2Reg_U0_ap_return_110),
-    .ap_return_111(runWeight2Reg_U0_ap_return_111),
-    .ap_return_112(runWeight2Reg_U0_ap_return_112),
-    .ap_return_113(runWeight2Reg_U0_ap_return_113),
-    .ap_return_114(runWeight2Reg_U0_ap_return_114),
-    .ap_return_115(runWeight2Reg_U0_ap_return_115),
-    .ap_return_116(runWeight2Reg_U0_ap_return_116),
-    .ap_return_117(runWeight2Reg_U0_ap_return_117),
-    .ap_return_118(runWeight2Reg_U0_ap_return_118),
-    .ap_return_119(runWeight2Reg_U0_ap_return_119),
-    .ap_return_120(runWeight2Reg_U0_ap_return_120),
-    .ap_return_121(runWeight2Reg_U0_ap_return_121),
-    .ap_return_122(runWeight2Reg_U0_ap_return_122),
-    .ap_return_123(runWeight2Reg_U0_ap_return_123),
-    .ap_return_124(runWeight2Reg_U0_ap_return_124),
-    .ap_return_125(runWeight2Reg_U0_ap_return_125),
-    .ap_return_126(runWeight2Reg_U0_ap_return_126),
-    .ap_return_127(runWeight2Reg_U0_ap_return_127),
-    .ap_return_128(runWeight2Reg_U0_ap_return_128),
-    .ap_return_129(runWeight2Reg_U0_ap_return_129),
-    .ap_return_130(runWeight2Reg_U0_ap_return_130),
-    .ap_return_131(runWeight2Reg_U0_ap_return_131),
-    .ap_return_132(runWeight2Reg_U0_ap_return_132),
-    .ap_return_133(runWeight2Reg_U0_ap_return_133),
-    .ap_return_134(runWeight2Reg_U0_ap_return_134),
-    .ap_return_135(runWeight2Reg_U0_ap_return_135),
-    .ap_return_136(runWeight2Reg_U0_ap_return_136),
-    .ap_return_137(runWeight2Reg_U0_ap_return_137),
-    .ap_return_138(runWeight2Reg_U0_ap_return_138),
-    .ap_return_139(runWeight2Reg_U0_ap_return_139),
-    .ap_return_140(runWeight2Reg_U0_ap_return_140),
-    .ap_return_141(runWeight2Reg_U0_ap_return_141),
-    .ap_return_142(runWeight2Reg_U0_ap_return_142),
-    .ap_return_143(runWeight2Reg_U0_ap_return_143),
-    .ap_return_144(runWeight2Reg_U0_ap_return_144),
-    .ap_return_145(runWeight2Reg_U0_ap_return_145),
-    .ap_return_146(runWeight2Reg_U0_ap_return_146),
-    .ap_return_147(runWeight2Reg_U0_ap_return_147),
-    .ap_return_148(runWeight2Reg_U0_ap_return_148),
-    .ap_return_149(runWeight2Reg_U0_ap_return_149),
-    .ap_return_150(runWeight2Reg_U0_ap_return_150),
-    .ap_return_151(runWeight2Reg_U0_ap_return_151),
-    .ap_return_152(runWeight2Reg_U0_ap_return_152),
-    .ap_return_153(runWeight2Reg_U0_ap_return_153),
-    .ap_return_154(runWeight2Reg_U0_ap_return_154),
-    .ap_return_155(runWeight2Reg_U0_ap_return_155),
-    .ap_return_156(runWeight2Reg_U0_ap_return_156),
-    .ap_return_157(runWeight2Reg_U0_ap_return_157),
-    .ap_return_158(runWeight2Reg_U0_ap_return_158),
-    .ap_return_159(runWeight2Reg_U0_ap_return_159),
-    .ap_return_160(runWeight2Reg_U0_ap_return_160),
-    .ap_return_161(runWeight2Reg_U0_ap_return_161),
-    .ap_return_162(runWeight2Reg_U0_ap_return_162),
-    .ap_return_163(runWeight2Reg_U0_ap_return_163),
-    .ap_return_164(runWeight2Reg_U0_ap_return_164),
-    .ap_return_165(runWeight2Reg_U0_ap_return_165),
-    .ap_return_166(runWeight2Reg_U0_ap_return_166),
-    .ap_return_167(runWeight2Reg_U0_ap_return_167),
-    .ap_return_168(runWeight2Reg_U0_ap_return_168),
-    .ap_return_169(runWeight2Reg_U0_ap_return_169),
-    .ap_return_170(runWeight2Reg_U0_ap_return_170),
-    .ap_return_171(runWeight2Reg_U0_ap_return_171),
-    .ap_return_172(runWeight2Reg_U0_ap_return_172),
-    .ap_return_173(runWeight2Reg_U0_ap_return_173),
-    .ap_return_174(runWeight2Reg_U0_ap_return_174),
-    .ap_return_175(runWeight2Reg_U0_ap_return_175),
-    .ap_return_176(runWeight2Reg_U0_ap_return_176),
-    .ap_return_177(runWeight2Reg_U0_ap_return_177),
-    .ap_return_178(runWeight2Reg_U0_ap_return_178),
-    .ap_return_179(runWeight2Reg_U0_ap_return_179),
-    .ap_return_180(runWeight2Reg_U0_ap_return_180),
-    .ap_return_181(runWeight2Reg_U0_ap_return_181),
-    .ap_return_182(runWeight2Reg_U0_ap_return_182),
-    .ap_return_183(runWeight2Reg_U0_ap_return_183),
-    .ap_return_184(runWeight2Reg_U0_ap_return_184),
-    .ap_return_185(runWeight2Reg_U0_ap_return_185),
-    .ap_return_186(runWeight2Reg_U0_ap_return_186),
-    .ap_return_187(runWeight2Reg_U0_ap_return_187),
-    .ap_return_188(runWeight2Reg_U0_ap_return_188),
-    .ap_return_189(runWeight2Reg_U0_ap_return_189),
-    .ap_return_190(runWeight2Reg_U0_ap_return_190),
-    .ap_return_191(runWeight2Reg_U0_ap_return_191),
-    .ap_return_192(runWeight2Reg_U0_ap_return_192),
-    .ap_return_193(runWeight2Reg_U0_ap_return_193),
-    .ap_return_194(runWeight2Reg_U0_ap_return_194),
-    .ap_return_195(runWeight2Reg_U0_ap_return_195),
-    .ap_return_196(runWeight2Reg_U0_ap_return_196),
-    .ap_return_197(runWeight2Reg_U0_ap_return_197),
-    .ap_return_198(runWeight2Reg_U0_ap_return_198),
-    .ap_return_199(runWeight2Reg_U0_ap_return_199),
-    .ap_return_200(runWeight2Reg_U0_ap_return_200),
-    .ap_return_201(runWeight2Reg_U0_ap_return_201),
-    .ap_return_202(runWeight2Reg_U0_ap_return_202),
-    .ap_return_203(runWeight2Reg_U0_ap_return_203),
-    .ap_return_204(runWeight2Reg_U0_ap_return_204),
-    .ap_return_205(runWeight2Reg_U0_ap_return_205),
-    .ap_return_206(runWeight2Reg_U0_ap_return_206),
-    .ap_return_207(runWeight2Reg_U0_ap_return_207),
-    .ap_return_208(runWeight2Reg_U0_ap_return_208),
-    .ap_return_209(runWeight2Reg_U0_ap_return_209),
-    .ap_return_210(runWeight2Reg_U0_ap_return_210),
-    .ap_return_211(runWeight2Reg_U0_ap_return_211),
-    .ap_return_212(runWeight2Reg_U0_ap_return_212),
-    .ap_return_213(runWeight2Reg_U0_ap_return_213),
-    .ap_return_214(runWeight2Reg_U0_ap_return_214),
-    .ap_return_215(runWeight2Reg_U0_ap_return_215),
-    .ap_return_216(runWeight2Reg_U0_ap_return_216),
-    .ap_return_217(runWeight2Reg_U0_ap_return_217),
-    .ap_return_218(runWeight2Reg_U0_ap_return_218),
-    .ap_return_219(runWeight2Reg_U0_ap_return_219),
-    .ap_return_220(runWeight2Reg_U0_ap_return_220),
-    .ap_return_221(runWeight2Reg_U0_ap_return_221),
-    .ap_return_222(runWeight2Reg_U0_ap_return_222),
-    .ap_return_223(runWeight2Reg_U0_ap_return_223),
-    .ap_return_224(runWeight2Reg_U0_ap_return_224),
-    .ap_return_225(runWeight2Reg_U0_ap_return_225),
-    .ap_return_226(runWeight2Reg_U0_ap_return_226),
-    .ap_return_227(runWeight2Reg_U0_ap_return_227),
-    .ap_return_228(runWeight2Reg_U0_ap_return_228),
-    .ap_return_229(runWeight2Reg_U0_ap_return_229),
-    .ap_return_230(runWeight2Reg_U0_ap_return_230),
-    .ap_return_231(runWeight2Reg_U0_ap_return_231),
-    .ap_return_232(runWeight2Reg_U0_ap_return_232),
-    .ap_return_233(runWeight2Reg_U0_ap_return_233),
-    .ap_return_234(runWeight2Reg_U0_ap_return_234),
-    .ap_return_235(runWeight2Reg_U0_ap_return_235),
-    .ap_return_236(runWeight2Reg_U0_ap_return_236),
-    .ap_return_237(runWeight2Reg_U0_ap_return_237),
-    .ap_return_238(runWeight2Reg_U0_ap_return_238),
-    .ap_return_239(runWeight2Reg_U0_ap_return_239),
-    .ap_return_240(runWeight2Reg_U0_ap_return_240),
-    .ap_return_241(runWeight2Reg_U0_ap_return_241),
-    .ap_return_242(runWeight2Reg_U0_ap_return_242),
-    .ap_return_243(runWeight2Reg_U0_ap_return_243),
-    .ap_return_244(runWeight2Reg_U0_ap_return_244),
-    .ap_return_245(runWeight2Reg_U0_ap_return_245),
-    .ap_return_246(runWeight2Reg_U0_ap_return_246),
-    .ap_return_247(runWeight2Reg_U0_ap_return_247),
-    .ap_return_248(runWeight2Reg_U0_ap_return_248),
-    .ap_return_249(runWeight2Reg_U0_ap_return_249),
-    .ap_return_250(runWeight2Reg_U0_ap_return_250),
-    .ap_return_251(runWeight2Reg_U0_ap_return_251),
-    .ap_return_252(runWeight2Reg_U0_ap_return_252),
-    .ap_return_253(runWeight2Reg_U0_ap_return_253),
-    .ap_return_254(runWeight2Reg_U0_ap_return_254),
-    .ap_return_255(runWeight2Reg_U0_ap_return_255)
+    .ap_return_15(runWeight2Reg_U0_ap_return_15)
 );
 
 Conv_sysarr_runDataL2toL1 runDataL2toL1_U0(
@@ -4270,70 +883,22 @@ Conv_sysarr_runDataL2toL1 runDataL2toL1_U0(
     .ap_continue(runDataL2toL1_U0_ap_continue),
     .ap_idle(runDataL2toL1_U0_ap_idle),
     .ap_ready(runDataL2toL1_U0_ap_ready),
-    .data_l1_0257_i_address0(runDataL2toL1_U0_data_l1_0257_i_address0),
-    .data_l1_0257_i_ce0(runDataL2toL1_U0_data_l1_0257_i_ce0),
-    .data_l1_0257_i_we0(runDataL2toL1_U0_data_l1_0257_i_we0),
-    .data_l1_0257_i_d0(runDataL2toL1_U0_data_l1_0257_i_d0),
-    .data_l1_1258_i_address0(runDataL2toL1_U0_data_l1_1258_i_address0),
-    .data_l1_1258_i_ce0(runDataL2toL1_U0_data_l1_1258_i_ce0),
-    .data_l1_1258_i_we0(runDataL2toL1_U0_data_l1_1258_i_we0),
-    .data_l1_1258_i_d0(runDataL2toL1_U0_data_l1_1258_i_d0),
-    .data_l1_2259_i_address0(runDataL2toL1_U0_data_l1_2259_i_address0),
-    .data_l1_2259_i_ce0(runDataL2toL1_U0_data_l1_2259_i_ce0),
-    .data_l1_2259_i_we0(runDataL2toL1_U0_data_l1_2259_i_we0),
-    .data_l1_2259_i_d0(runDataL2toL1_U0_data_l1_2259_i_d0),
-    .data_l1_3260_i_address0(runDataL2toL1_U0_data_l1_3260_i_address0),
-    .data_l1_3260_i_ce0(runDataL2toL1_U0_data_l1_3260_i_ce0),
-    .data_l1_3260_i_we0(runDataL2toL1_U0_data_l1_3260_i_we0),
-    .data_l1_3260_i_d0(runDataL2toL1_U0_data_l1_3260_i_d0),
-    .data_l1_4261_i_address0(runDataL2toL1_U0_data_l1_4261_i_address0),
-    .data_l1_4261_i_ce0(runDataL2toL1_U0_data_l1_4261_i_ce0),
-    .data_l1_4261_i_we0(runDataL2toL1_U0_data_l1_4261_i_we0),
-    .data_l1_4261_i_d0(runDataL2toL1_U0_data_l1_4261_i_d0),
-    .data_l1_5262_i_address0(runDataL2toL1_U0_data_l1_5262_i_address0),
-    .data_l1_5262_i_ce0(runDataL2toL1_U0_data_l1_5262_i_ce0),
-    .data_l1_5262_i_we0(runDataL2toL1_U0_data_l1_5262_i_we0),
-    .data_l1_5262_i_d0(runDataL2toL1_U0_data_l1_5262_i_d0),
-    .data_l1_6263_i_address0(runDataL2toL1_U0_data_l1_6263_i_address0),
-    .data_l1_6263_i_ce0(runDataL2toL1_U0_data_l1_6263_i_ce0),
-    .data_l1_6263_i_we0(runDataL2toL1_U0_data_l1_6263_i_we0),
-    .data_l1_6263_i_d0(runDataL2toL1_U0_data_l1_6263_i_d0),
-    .data_l1_7264_i_address0(runDataL2toL1_U0_data_l1_7264_i_address0),
-    .data_l1_7264_i_ce0(runDataL2toL1_U0_data_l1_7264_i_ce0),
-    .data_l1_7264_i_we0(runDataL2toL1_U0_data_l1_7264_i_we0),
-    .data_l1_7264_i_d0(runDataL2toL1_U0_data_l1_7264_i_d0),
-    .data_l1_8265_i_address0(runDataL2toL1_U0_data_l1_8265_i_address0),
-    .data_l1_8265_i_ce0(runDataL2toL1_U0_data_l1_8265_i_ce0),
-    .data_l1_8265_i_we0(runDataL2toL1_U0_data_l1_8265_i_we0),
-    .data_l1_8265_i_d0(runDataL2toL1_U0_data_l1_8265_i_d0),
-    .data_l1_9266_i_address0(runDataL2toL1_U0_data_l1_9266_i_address0),
-    .data_l1_9266_i_ce0(runDataL2toL1_U0_data_l1_9266_i_ce0),
-    .data_l1_9266_i_we0(runDataL2toL1_U0_data_l1_9266_i_we0),
-    .data_l1_9266_i_d0(runDataL2toL1_U0_data_l1_9266_i_d0),
-    .data_l1_10267_i_address0(runDataL2toL1_U0_data_l1_10267_i_address0),
-    .data_l1_10267_i_ce0(runDataL2toL1_U0_data_l1_10267_i_ce0),
-    .data_l1_10267_i_we0(runDataL2toL1_U0_data_l1_10267_i_we0),
-    .data_l1_10267_i_d0(runDataL2toL1_U0_data_l1_10267_i_d0),
-    .data_l1_11268_i_address0(runDataL2toL1_U0_data_l1_11268_i_address0),
-    .data_l1_11268_i_ce0(runDataL2toL1_U0_data_l1_11268_i_ce0),
-    .data_l1_11268_i_we0(runDataL2toL1_U0_data_l1_11268_i_we0),
-    .data_l1_11268_i_d0(runDataL2toL1_U0_data_l1_11268_i_d0),
-    .data_l1_12269_i_address0(runDataL2toL1_U0_data_l1_12269_i_address0),
-    .data_l1_12269_i_ce0(runDataL2toL1_U0_data_l1_12269_i_ce0),
-    .data_l1_12269_i_we0(runDataL2toL1_U0_data_l1_12269_i_we0),
-    .data_l1_12269_i_d0(runDataL2toL1_U0_data_l1_12269_i_d0),
-    .data_l1_13270_i_address0(runDataL2toL1_U0_data_l1_13270_i_address0),
-    .data_l1_13270_i_ce0(runDataL2toL1_U0_data_l1_13270_i_ce0),
-    .data_l1_13270_i_we0(runDataL2toL1_U0_data_l1_13270_i_we0),
-    .data_l1_13270_i_d0(runDataL2toL1_U0_data_l1_13270_i_d0),
-    .data_l1_14271_i_address0(runDataL2toL1_U0_data_l1_14271_i_address0),
-    .data_l1_14271_i_ce0(runDataL2toL1_U0_data_l1_14271_i_ce0),
-    .data_l1_14271_i_we0(runDataL2toL1_U0_data_l1_14271_i_we0),
-    .data_l1_14271_i_d0(runDataL2toL1_U0_data_l1_14271_i_d0),
-    .data_l1_15272_i_address0(runDataL2toL1_U0_data_l1_15272_i_address0),
-    .data_l1_15272_i_ce0(runDataL2toL1_U0_data_l1_15272_i_ce0),
-    .data_l1_15272_i_we0(runDataL2toL1_U0_data_l1_15272_i_we0),
-    .data_l1_15272_i_d0(runDataL2toL1_U0_data_l1_15272_i_d0),
+    .data_l1_017_i_address0(runDataL2toL1_U0_data_l1_017_i_address0),
+    .data_l1_017_i_ce0(runDataL2toL1_U0_data_l1_017_i_ce0),
+    .data_l1_017_i_we0(runDataL2toL1_U0_data_l1_017_i_we0),
+    .data_l1_017_i_d0(runDataL2toL1_U0_data_l1_017_i_d0),
+    .data_l1_118_i_address0(runDataL2toL1_U0_data_l1_118_i_address0),
+    .data_l1_118_i_ce0(runDataL2toL1_U0_data_l1_118_i_ce0),
+    .data_l1_118_i_we0(runDataL2toL1_U0_data_l1_118_i_we0),
+    .data_l1_118_i_d0(runDataL2toL1_U0_data_l1_118_i_d0),
+    .data_l1_219_i_address0(runDataL2toL1_U0_data_l1_219_i_address0),
+    .data_l1_219_i_ce0(runDataL2toL1_U0_data_l1_219_i_ce0),
+    .data_l1_219_i_we0(runDataL2toL1_U0_data_l1_219_i_we0),
+    .data_l1_219_i_d0(runDataL2toL1_U0_data_l1_219_i_d0),
+    .data_l1_320_i_address0(runDataL2toL1_U0_data_l1_320_i_address0),
+    .data_l1_320_i_ce0(runDataL2toL1_U0_data_l1_320_i_ce0),
+    .data_l1_320_i_we0(runDataL2toL1_U0_data_l1_320_i_we0),
+    .data_l1_320_i_d0(runDataL2toL1_U0_data_l1_320_i_d0),
     .param_dout(param_c1_dout),
     .param_empty_n(param_c1_empty_n),
     .param_read(runDataL2toL1_U0_param_read),
@@ -4354,400 +919,67 @@ Conv_sysarr_runDataL2toL1 runDataL2toL1_U0(
     .so_read(runDataL2toL1_U0_so_read),
     .data_l2_0_address0(runDataL2toL1_U0_data_l2_0_address0),
     .data_l2_0_ce0(runDataL2toL1_U0_data_l2_0_ce0),
-    .data_l2_0_q0(data_l2_0_q0),
-    .data_l2_1_address0(runDataL2toL1_U0_data_l2_1_address0),
-    .data_l2_1_ce0(runDataL2toL1_U0_data_l2_1_ce0),
-    .data_l2_1_q0(data_l2_1_q0),
-    .data_l2_2_address0(runDataL2toL1_U0_data_l2_2_address0),
-    .data_l2_2_ce0(runDataL2toL1_U0_data_l2_2_ce0),
-    .data_l2_2_q0(data_l2_2_q0),
-    .data_l2_3_address0(runDataL2toL1_U0_data_l2_3_address0),
-    .data_l2_3_ce0(runDataL2toL1_U0_data_l2_3_ce0),
-    .data_l2_3_q0(data_l2_3_q0)
+    .data_l2_0_q0(data_l2_0_q0)
 );
 
-Conv_sysarr_runSysArr runSysArr_U0(
+Conv_sysarr_runSIMD runSIMD_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(runSysArr_U0_ap_start),
-    .ap_done(runSysArr_U0_ap_done),
-    .ap_continue(runSysArr_U0_ap_continue),
-    .ap_idle(runSysArr_U0_ap_idle),
-    .ap_ready(runSysArr_U0_ap_ready),
+    .ap_start(runSIMD_U0_ap_start),
+    .ap_done(runSIMD_U0_ap_done),
+    .ap_continue(runSIMD_U0_ap_continue),
+    .ap_idle(runSIMD_U0_ap_idle),
+    .ap_ready(runSIMD_U0_ap_ready),
     .p_read(weight_regfile_0_0_dout),
     .p_read1(weight_regfile_0_1_dout),
     .p_read2(weight_regfile_0_2_dout),
     .p_read3(weight_regfile_0_3_dout),
-    .p_read4(weight_regfile_0_4_dout),
-    .p_read5(weight_regfile_0_5_dout),
-    .p_read6(weight_regfile_0_6_dout),
-    .p_read7(weight_regfile_0_7_dout),
-    .p_read8(weight_regfile_0_8_dout),
-    .p_read9(weight_regfile_0_9_dout),
-    .p_read10(weight_regfile_0_10_dout),
-    .p_read11(weight_regfile_0_11_dout),
-    .p_read12(weight_regfile_0_12_dout),
-    .p_read13(weight_regfile_0_13_dout),
-    .p_read14(weight_regfile_0_14_dout),
-    .p_read15(weight_regfile_0_15_dout),
-    .p_read16(weight_regfile_1_0_dout),
-    .p_read17(weight_regfile_1_1_dout),
-    .p_read18(weight_regfile_1_2_dout),
-    .p_read19(weight_regfile_1_3_dout),
-    .p_read20(weight_regfile_1_4_dout),
-    .p_read21(weight_regfile_1_5_dout),
-    .p_read22(weight_regfile_1_6_dout),
-    .p_read23(weight_regfile_1_7_dout),
-    .p_read24(weight_regfile_1_8_dout),
-    .p_read25(weight_regfile_1_9_dout),
-    .p_read26(weight_regfile_1_10_dout),
-    .p_read27(weight_regfile_1_11_dout),
-    .p_read28(weight_regfile_1_12_dout),
-    .p_read29(weight_regfile_1_13_dout),
-    .p_read30(weight_regfile_1_14_dout),
-    .p_read31(weight_regfile_1_15_dout),
-    .p_read32(weight_regfile_2_0_dout),
-    .p_read33(weight_regfile_2_1_dout),
-    .p_read34(weight_regfile_2_2_dout),
-    .p_read35(weight_regfile_2_3_dout),
-    .p_read36(weight_regfile_2_4_dout),
-    .p_read37(weight_regfile_2_5_dout),
-    .p_read38(weight_regfile_2_6_dout),
-    .p_read39(weight_regfile_2_7_dout),
-    .p_read40(weight_regfile_2_8_dout),
-    .p_read41(weight_regfile_2_9_dout),
-    .p_read42(weight_regfile_2_10_dout),
-    .p_read43(weight_regfile_2_11_dout),
-    .p_read44(weight_regfile_2_12_dout),
-    .p_read45(weight_regfile_2_13_dout),
-    .p_read46(weight_regfile_2_14_dout),
-    .p_read47(weight_regfile_2_15_dout),
-    .p_read48(weight_regfile_3_0_dout),
-    .p_read49(weight_regfile_3_1_dout),
-    .p_read50(weight_regfile_3_2_dout),
-    .p_read51(weight_regfile_3_3_dout),
-    .p_read52(weight_regfile_3_4_dout),
-    .p_read53(weight_regfile_3_5_dout),
-    .p_read54(weight_regfile_3_6_dout),
-    .p_read55(weight_regfile_3_7_dout),
-    .p_read56(weight_regfile_3_8_dout),
-    .p_read57(weight_regfile_3_9_dout),
-    .p_read58(weight_regfile_3_10_dout),
-    .p_read59(weight_regfile_3_11_dout),
-    .p_read60(weight_regfile_3_12_dout),
-    .p_read61(weight_regfile_3_13_dout),
-    .p_read62(weight_regfile_3_14_dout),
-    .p_read63(weight_regfile_3_15_dout),
-    .p_read64(weight_regfile_4_0_dout),
-    .p_read65(weight_regfile_4_1_dout),
-    .p_read66(weight_regfile_4_2_dout),
-    .p_read67(weight_regfile_4_3_dout),
-    .p_read68(weight_regfile_4_4_dout),
-    .p_read69(weight_regfile_4_5_dout),
-    .p_read70(weight_regfile_4_6_dout),
-    .p_read71(weight_regfile_4_7_dout),
-    .p_read72(weight_regfile_4_8_dout),
-    .p_read73(weight_regfile_4_9_dout),
-    .p_read74(weight_regfile_4_10_dout),
-    .p_read75(weight_regfile_4_11_dout),
-    .p_read76(weight_regfile_4_12_dout),
-    .p_read77(weight_regfile_4_13_dout),
-    .p_read78(weight_regfile_4_14_dout),
-    .p_read79(weight_regfile_4_15_dout),
-    .p_read80(weight_regfile_5_0_dout),
-    .p_read81(weight_regfile_5_1_dout),
-    .p_read82(weight_regfile_5_2_dout),
-    .p_read83(weight_regfile_5_3_dout),
-    .p_read84(weight_regfile_5_4_dout),
-    .p_read85(weight_regfile_5_5_dout),
-    .p_read86(weight_regfile_5_6_dout),
-    .p_read87(weight_regfile_5_7_dout),
-    .p_read88(weight_regfile_5_8_dout),
-    .p_read89(weight_regfile_5_9_dout),
-    .p_read90(weight_regfile_5_10_dout),
-    .p_read91(weight_regfile_5_11_dout),
-    .p_read92(weight_regfile_5_12_dout),
-    .p_read93(weight_regfile_5_13_dout),
-    .p_read94(weight_regfile_5_14_dout),
-    .p_read95(weight_regfile_5_15_dout),
-    .p_read96(weight_regfile_6_0_dout),
-    .p_read97(weight_regfile_6_1_dout),
-    .p_read98(weight_regfile_6_2_dout),
-    .p_read99(weight_regfile_6_3_dout),
-    .p_read100(weight_regfile_6_4_dout),
-    .p_read101(weight_regfile_6_5_dout),
-    .p_read102(weight_regfile_6_6_dout),
-    .p_read103(weight_regfile_6_7_dout),
-    .p_read104(weight_regfile_6_8_dout),
-    .p_read105(weight_regfile_6_9_dout),
-    .p_read106(weight_regfile_6_10_dout),
-    .p_read107(weight_regfile_6_11_dout),
-    .p_read108(weight_regfile_6_12_dout),
-    .p_read109(weight_regfile_6_13_dout),
-    .p_read110(weight_regfile_6_14_dout),
-    .p_read111(weight_regfile_6_15_dout),
-    .p_read112(weight_regfile_7_0_dout),
-    .p_read113(weight_regfile_7_1_dout),
-    .p_read114(weight_regfile_7_2_dout),
-    .p_read115(weight_regfile_7_3_dout),
-    .p_read116(weight_regfile_7_4_dout),
-    .p_read117(weight_regfile_7_5_dout),
-    .p_read118(weight_regfile_7_6_dout),
-    .p_read119(weight_regfile_7_7_dout),
-    .p_read120(weight_regfile_7_8_dout),
-    .p_read121(weight_regfile_7_9_dout),
-    .p_read122(weight_regfile_7_10_dout),
-    .p_read123(weight_regfile_7_11_dout),
-    .p_read124(weight_regfile_7_12_dout),
-    .p_read125(weight_regfile_7_13_dout),
-    .p_read126(weight_regfile_7_14_dout),
-    .p_read127(weight_regfile_7_15_dout),
-    .p_read128(weight_regfile_8_0_dout),
-    .p_read129(weight_regfile_8_1_dout),
-    .p_read130(weight_regfile_8_2_dout),
-    .p_read131(weight_regfile_8_3_dout),
-    .p_read132(weight_regfile_8_4_dout),
-    .p_read133(weight_regfile_8_5_dout),
-    .p_read134(weight_regfile_8_6_dout),
-    .p_read135(weight_regfile_8_7_dout),
-    .p_read136(weight_regfile_8_8_dout),
-    .p_read137(weight_regfile_8_9_dout),
-    .p_read138(weight_regfile_8_10_dout),
-    .p_read139(weight_regfile_8_11_dout),
-    .p_read140(weight_regfile_8_12_dout),
-    .p_read141(weight_regfile_8_13_dout),
-    .p_read142(weight_regfile_8_14_dout),
-    .p_read143(weight_regfile_8_15_dout),
-    .p_read144(weight_regfile_9_0_dout),
-    .p_read145(weight_regfile_9_1_dout),
-    .p_read146(weight_regfile_9_2_dout),
-    .p_read147(weight_regfile_9_3_dout),
-    .p_read148(weight_regfile_9_4_dout),
-    .p_read149(weight_regfile_9_5_dout),
-    .p_read150(weight_regfile_9_6_dout),
-    .p_read151(weight_regfile_9_7_dout),
-    .p_read152(weight_regfile_9_8_dout),
-    .p_read153(weight_regfile_9_9_dout),
-    .p_read154(weight_regfile_9_10_dout),
-    .p_read155(weight_regfile_9_11_dout),
-    .p_read156(weight_regfile_9_12_dout),
-    .p_read157(weight_regfile_9_13_dout),
-    .p_read158(weight_regfile_9_14_dout),
-    .p_read159(weight_regfile_9_15_dout),
-    .p_read160(weight_regfile_10_0_dout),
-    .p_read161(weight_regfile_10_1_dout),
-    .p_read162(weight_regfile_10_2_dout),
-    .p_read163(weight_regfile_10_3_dout),
-    .p_read164(weight_regfile_10_4_dout),
-    .p_read165(weight_regfile_10_5_dout),
-    .p_read166(weight_regfile_10_6_dout),
-    .p_read167(weight_regfile_10_7_dout),
-    .p_read168(weight_regfile_10_8_dout),
-    .p_read169(weight_regfile_10_9_dout),
-    .p_read170(weight_regfile_10_10_dout),
-    .p_read171(weight_regfile_10_11_dout),
-    .p_read172(weight_regfile_10_12_dout),
-    .p_read173(weight_regfile_10_13_dout),
-    .p_read174(weight_regfile_10_14_dout),
-    .p_read175(weight_regfile_10_15_dout),
-    .p_read176(weight_regfile_11_0_dout),
-    .p_read177(weight_regfile_11_1_dout),
-    .p_read178(weight_regfile_11_2_dout),
-    .p_read179(weight_regfile_11_3_dout),
-    .p_read180(weight_regfile_11_4_dout),
-    .p_read181(weight_regfile_11_5_dout),
-    .p_read182(weight_regfile_11_6_dout),
-    .p_read183(weight_regfile_11_7_dout),
-    .p_read184(weight_regfile_11_8_dout),
-    .p_read185(weight_regfile_11_9_dout),
-    .p_read186(weight_regfile_11_10_dout),
-    .p_read187(weight_regfile_11_11_dout),
-    .p_read188(weight_regfile_11_12_dout),
-    .p_read189(weight_regfile_11_13_dout),
-    .p_read190(weight_regfile_11_14_dout),
-    .p_read191(weight_regfile_11_15_dout),
-    .p_read192(weight_regfile_12_0_dout),
-    .p_read193(weight_regfile_12_1_dout),
-    .p_read194(weight_regfile_12_2_dout),
-    .p_read195(weight_regfile_12_3_dout),
-    .p_read196(weight_regfile_12_4_dout),
-    .p_read197(weight_regfile_12_5_dout),
-    .p_read198(weight_regfile_12_6_dout),
-    .p_read199(weight_regfile_12_7_dout),
-    .p_read200(weight_regfile_12_8_dout),
-    .p_read201(weight_regfile_12_9_dout),
-    .p_read202(weight_regfile_12_10_dout),
-    .p_read203(weight_regfile_12_11_dout),
-    .p_read204(weight_regfile_12_12_dout),
-    .p_read205(weight_regfile_12_13_dout),
-    .p_read206(weight_regfile_12_14_dout),
-    .p_read207(weight_regfile_12_15_dout),
-    .p_read208(weight_regfile_13_0_dout),
-    .p_read209(weight_regfile_13_1_dout),
-    .p_read210(weight_regfile_13_2_dout),
-    .p_read211(weight_regfile_13_3_dout),
-    .p_read212(weight_regfile_13_4_dout),
-    .p_read213(weight_regfile_13_5_dout),
-    .p_read214(weight_regfile_13_6_dout),
-    .p_read215(weight_regfile_13_7_dout),
-    .p_read216(weight_regfile_13_8_dout),
-    .p_read217(weight_regfile_13_9_dout),
-    .p_read218(weight_regfile_13_10_dout),
-    .p_read219(weight_regfile_13_11_dout),
-    .p_read220(weight_regfile_13_12_dout),
-    .p_read221(weight_regfile_13_13_dout),
-    .p_read222(weight_regfile_13_14_dout),
-    .p_read223(weight_regfile_13_15_dout),
-    .p_read224(weight_regfile_14_0_dout),
-    .p_read225(weight_regfile_14_1_dout),
-    .p_read226(weight_regfile_14_2_dout),
-    .p_read227(weight_regfile_14_3_dout),
-    .p_read228(weight_regfile_14_4_dout),
-    .p_read229(weight_regfile_14_5_dout),
-    .p_read230(weight_regfile_14_6_dout),
-    .p_read231(weight_regfile_14_7_dout),
-    .p_read232(weight_regfile_14_8_dout),
-    .p_read233(weight_regfile_14_9_dout),
-    .p_read234(weight_regfile_14_10_dout),
-    .p_read235(weight_regfile_14_11_dout),
-    .p_read236(weight_regfile_14_12_dout),
-    .p_read237(weight_regfile_14_13_dout),
-    .p_read238(weight_regfile_14_14_dout),
-    .p_read239(weight_regfile_14_15_dout),
-    .p_read240(weight_regfile_15_0_dout),
-    .p_read241(weight_regfile_15_1_dout),
-    .p_read242(weight_regfile_15_2_dout),
-    .p_read243(weight_regfile_15_3_dout),
-    .p_read244(weight_regfile_15_4_dout),
-    .p_read245(weight_regfile_15_5_dout),
-    .p_read246(weight_regfile_15_6_dout),
-    .p_read247(weight_regfile_15_7_dout),
-    .p_read248(weight_regfile_15_8_dout),
-    .p_read249(weight_regfile_15_9_dout),
-    .p_read250(weight_regfile_15_10_dout),
-    .p_read251(weight_regfile_15_11_dout),
-    .p_read252(weight_regfile_15_12_dout),
-    .p_read253(weight_regfile_15_13_dout),
-    .p_read254(weight_regfile_15_14_dout),
-    .p_read255(weight_regfile_15_15_dout),
-    .data_l1_0257_i_address0(runSysArr_U0_data_l1_0257_i_address0),
-    .data_l1_0257_i_ce0(runSysArr_U0_data_l1_0257_i_ce0),
-    .data_l1_0257_i_q0(data_l1_0_t_q0),
-    .data_l1_1258_i_address0(runSysArr_U0_data_l1_1258_i_address0),
-    .data_l1_1258_i_ce0(runSysArr_U0_data_l1_1258_i_ce0),
-    .data_l1_1258_i_q0(data_l1_1_t_q0),
-    .data_l1_2259_i_address0(runSysArr_U0_data_l1_2259_i_address0),
-    .data_l1_2259_i_ce0(runSysArr_U0_data_l1_2259_i_ce0),
-    .data_l1_2259_i_q0(data_l1_2_t_q0),
-    .data_l1_3260_i_address0(runSysArr_U0_data_l1_3260_i_address0),
-    .data_l1_3260_i_ce0(runSysArr_U0_data_l1_3260_i_ce0),
-    .data_l1_3260_i_q0(data_l1_3_t_q0),
-    .data_l1_4261_i_address0(runSysArr_U0_data_l1_4261_i_address0),
-    .data_l1_4261_i_ce0(runSysArr_U0_data_l1_4261_i_ce0),
-    .data_l1_4261_i_q0(data_l1_4_t_q0),
-    .data_l1_5262_i_address0(runSysArr_U0_data_l1_5262_i_address0),
-    .data_l1_5262_i_ce0(runSysArr_U0_data_l1_5262_i_ce0),
-    .data_l1_5262_i_q0(data_l1_5_t_q0),
-    .data_l1_6263_i_address0(runSysArr_U0_data_l1_6263_i_address0),
-    .data_l1_6263_i_ce0(runSysArr_U0_data_l1_6263_i_ce0),
-    .data_l1_6263_i_q0(data_l1_6_t_q0),
-    .data_l1_7264_i_address0(runSysArr_U0_data_l1_7264_i_address0),
-    .data_l1_7264_i_ce0(runSysArr_U0_data_l1_7264_i_ce0),
-    .data_l1_7264_i_q0(data_l1_7_t_q0),
-    .data_l1_8265_i_address0(runSysArr_U0_data_l1_8265_i_address0),
-    .data_l1_8265_i_ce0(runSysArr_U0_data_l1_8265_i_ce0),
-    .data_l1_8265_i_q0(data_l1_8_t_q0),
-    .data_l1_9266_i_address0(runSysArr_U0_data_l1_9266_i_address0),
-    .data_l1_9266_i_ce0(runSysArr_U0_data_l1_9266_i_ce0),
-    .data_l1_9266_i_q0(data_l1_9_t_q0),
-    .data_l1_10267_i_address0(runSysArr_U0_data_l1_10267_i_address0),
-    .data_l1_10267_i_ce0(runSysArr_U0_data_l1_10267_i_ce0),
-    .data_l1_10267_i_q0(data_l1_10_t_q0),
-    .data_l1_11268_i_address0(runSysArr_U0_data_l1_11268_i_address0),
-    .data_l1_11268_i_ce0(runSysArr_U0_data_l1_11268_i_ce0),
-    .data_l1_11268_i_q0(data_l1_11_t_q0),
-    .data_l1_12269_i_address0(runSysArr_U0_data_l1_12269_i_address0),
-    .data_l1_12269_i_ce0(runSysArr_U0_data_l1_12269_i_ce0),
-    .data_l1_12269_i_q0(data_l1_12_t_q0),
-    .data_l1_13270_i_address0(runSysArr_U0_data_l1_13270_i_address0),
-    .data_l1_13270_i_ce0(runSysArr_U0_data_l1_13270_i_ce0),
-    .data_l1_13270_i_q0(data_l1_13_t_q0),
-    .data_l1_14271_i_address0(runSysArr_U0_data_l1_14271_i_address0),
-    .data_l1_14271_i_ce0(runSysArr_U0_data_l1_14271_i_ce0),
-    .data_l1_14271_i_q0(data_l1_14_t_q0),
-    .data_l1_15272_i_address0(runSysArr_U0_data_l1_15272_i_address0),
-    .data_l1_15272_i_ce0(runSysArr_U0_data_l1_15272_i_ce0),
-    .data_l1_15272_i_q0(data_l1_15_t_q0),
-    .output_l1_0273_i_address0(runSysArr_U0_output_l1_0273_i_address0),
-    .output_l1_0273_i_ce0(runSysArr_U0_output_l1_0273_i_ce0),
-    .output_l1_0273_i_we0(runSysArr_U0_output_l1_0273_i_we0),
-    .output_l1_0273_i_d0(runSysArr_U0_output_l1_0273_i_d0),
-    .output_l1_1274_i_address0(runSysArr_U0_output_l1_1274_i_address0),
-    .output_l1_1274_i_ce0(runSysArr_U0_output_l1_1274_i_ce0),
-    .output_l1_1274_i_we0(runSysArr_U0_output_l1_1274_i_we0),
-    .output_l1_1274_i_d0(runSysArr_U0_output_l1_1274_i_d0),
-    .output_l1_2275_i_address0(runSysArr_U0_output_l1_2275_i_address0),
-    .output_l1_2275_i_ce0(runSysArr_U0_output_l1_2275_i_ce0),
-    .output_l1_2275_i_we0(runSysArr_U0_output_l1_2275_i_we0),
-    .output_l1_2275_i_d0(runSysArr_U0_output_l1_2275_i_d0),
-    .output_l1_3276_i_address0(runSysArr_U0_output_l1_3276_i_address0),
-    .output_l1_3276_i_ce0(runSysArr_U0_output_l1_3276_i_ce0),
-    .output_l1_3276_i_we0(runSysArr_U0_output_l1_3276_i_we0),
-    .output_l1_3276_i_d0(runSysArr_U0_output_l1_3276_i_d0),
-    .output_l1_4277_i_address0(runSysArr_U0_output_l1_4277_i_address0),
-    .output_l1_4277_i_ce0(runSysArr_U0_output_l1_4277_i_ce0),
-    .output_l1_4277_i_we0(runSysArr_U0_output_l1_4277_i_we0),
-    .output_l1_4277_i_d0(runSysArr_U0_output_l1_4277_i_d0),
-    .output_l1_5278_i_address0(runSysArr_U0_output_l1_5278_i_address0),
-    .output_l1_5278_i_ce0(runSysArr_U0_output_l1_5278_i_ce0),
-    .output_l1_5278_i_we0(runSysArr_U0_output_l1_5278_i_we0),
-    .output_l1_5278_i_d0(runSysArr_U0_output_l1_5278_i_d0),
-    .output_l1_6279_i_address0(runSysArr_U0_output_l1_6279_i_address0),
-    .output_l1_6279_i_ce0(runSysArr_U0_output_l1_6279_i_ce0),
-    .output_l1_6279_i_we0(runSysArr_U0_output_l1_6279_i_we0),
-    .output_l1_6279_i_d0(runSysArr_U0_output_l1_6279_i_d0),
-    .output_l1_7280_i_address0(runSysArr_U0_output_l1_7280_i_address0),
-    .output_l1_7280_i_ce0(runSysArr_U0_output_l1_7280_i_ce0),
-    .output_l1_7280_i_we0(runSysArr_U0_output_l1_7280_i_we0),
-    .output_l1_7280_i_d0(runSysArr_U0_output_l1_7280_i_d0),
-    .output_l1_8281_i_address0(runSysArr_U0_output_l1_8281_i_address0),
-    .output_l1_8281_i_ce0(runSysArr_U0_output_l1_8281_i_ce0),
-    .output_l1_8281_i_we0(runSysArr_U0_output_l1_8281_i_we0),
-    .output_l1_8281_i_d0(runSysArr_U0_output_l1_8281_i_d0),
-    .output_l1_9282_i_address0(runSysArr_U0_output_l1_9282_i_address0),
-    .output_l1_9282_i_ce0(runSysArr_U0_output_l1_9282_i_ce0),
-    .output_l1_9282_i_we0(runSysArr_U0_output_l1_9282_i_we0),
-    .output_l1_9282_i_d0(runSysArr_U0_output_l1_9282_i_d0),
-    .output_l1_10283_i_address0(runSysArr_U0_output_l1_10283_i_address0),
-    .output_l1_10283_i_ce0(runSysArr_U0_output_l1_10283_i_ce0),
-    .output_l1_10283_i_we0(runSysArr_U0_output_l1_10283_i_we0),
-    .output_l1_10283_i_d0(runSysArr_U0_output_l1_10283_i_d0),
-    .output_l1_11284_i_address0(runSysArr_U0_output_l1_11284_i_address0),
-    .output_l1_11284_i_ce0(runSysArr_U0_output_l1_11284_i_ce0),
-    .output_l1_11284_i_we0(runSysArr_U0_output_l1_11284_i_we0),
-    .output_l1_11284_i_d0(runSysArr_U0_output_l1_11284_i_d0),
-    .output_l1_12285_i_address0(runSysArr_U0_output_l1_12285_i_address0),
-    .output_l1_12285_i_ce0(runSysArr_U0_output_l1_12285_i_ce0),
-    .output_l1_12285_i_we0(runSysArr_U0_output_l1_12285_i_we0),
-    .output_l1_12285_i_d0(runSysArr_U0_output_l1_12285_i_d0),
-    .output_l1_13286_i_address0(runSysArr_U0_output_l1_13286_i_address0),
-    .output_l1_13286_i_ce0(runSysArr_U0_output_l1_13286_i_ce0),
-    .output_l1_13286_i_we0(runSysArr_U0_output_l1_13286_i_we0),
-    .output_l1_13286_i_d0(runSysArr_U0_output_l1_13286_i_d0),
-    .output_l1_14287_i_address0(runSysArr_U0_output_l1_14287_i_address0),
-    .output_l1_14287_i_ce0(runSysArr_U0_output_l1_14287_i_ce0),
-    .output_l1_14287_i_we0(runSysArr_U0_output_l1_14287_i_we0),
-    .output_l1_14287_i_d0(runSysArr_U0_output_l1_14287_i_d0),
-    .output_l1_15288_i_address0(runSysArr_U0_output_l1_15288_i_address0),
-    .output_l1_15288_i_ce0(runSysArr_U0_output_l1_15288_i_ce0),
-    .output_l1_15288_i_we0(runSysArr_U0_output_l1_15288_i_we0),
-    .output_l1_15288_i_d0(runSysArr_U0_output_l1_15288_i_d0),
+    .p_read4(weight_regfile_1_0_dout),
+    .p_read5(weight_regfile_1_1_dout),
+    .p_read6(weight_regfile_1_2_dout),
+    .p_read7(weight_regfile_1_3_dout),
+    .p_read8(weight_regfile_2_0_dout),
+    .p_read9(weight_regfile_2_1_dout),
+    .p_read10(weight_regfile_2_2_dout),
+    .p_read11(weight_regfile_2_3_dout),
+    .p_read12(weight_regfile_3_0_dout),
+    .p_read13(weight_regfile_3_1_dout),
+    .p_read14(weight_regfile_3_2_dout),
+    .p_read15(weight_regfile_3_3_dout),
+    .data_l1_017_i_address0(runSIMD_U0_data_l1_017_i_address0),
+    .data_l1_017_i_ce0(runSIMD_U0_data_l1_017_i_ce0),
+    .data_l1_017_i_q0(data_l1_0_t_q0),
+    .data_l1_118_i_address0(runSIMD_U0_data_l1_118_i_address0),
+    .data_l1_118_i_ce0(runSIMD_U0_data_l1_118_i_ce0),
+    .data_l1_118_i_q0(data_l1_1_t_q0),
+    .data_l1_219_i_address0(runSIMD_U0_data_l1_219_i_address0),
+    .data_l1_219_i_ce0(runSIMD_U0_data_l1_219_i_ce0),
+    .data_l1_219_i_q0(data_l1_2_t_q0),
+    .data_l1_320_i_address0(runSIMD_U0_data_l1_320_i_address0),
+    .data_l1_320_i_ce0(runSIMD_U0_data_l1_320_i_ce0),
+    .data_l1_320_i_q0(data_l1_3_t_q0),
+    .output_l1_021_i_address0(runSIMD_U0_output_l1_021_i_address0),
+    .output_l1_021_i_ce0(runSIMD_U0_output_l1_021_i_ce0),
+    .output_l1_021_i_we0(runSIMD_U0_output_l1_021_i_we0),
+    .output_l1_021_i_d0(runSIMD_U0_output_l1_021_i_d0),
+    .output_l1_122_i_address0(runSIMD_U0_output_l1_122_i_address0),
+    .output_l1_122_i_ce0(runSIMD_U0_output_l1_122_i_ce0),
+    .output_l1_122_i_we0(runSIMD_U0_output_l1_122_i_we0),
+    .output_l1_122_i_d0(runSIMD_U0_output_l1_122_i_d0),
+    .output_l1_223_i_address0(runSIMD_U0_output_l1_223_i_address0),
+    .output_l1_223_i_ce0(runSIMD_U0_output_l1_223_i_ce0),
+    .output_l1_223_i_we0(runSIMD_U0_output_l1_223_i_we0),
+    .output_l1_223_i_d0(runSIMD_U0_output_l1_223_i_d0),
+    .output_l1_324_i_address0(runSIMD_U0_output_l1_324_i_address0),
+    .output_l1_324_i_ce0(runSIMD_U0_output_l1_324_i_ce0),
+    .output_l1_324_i_we0(runSIMD_U0_output_l1_324_i_we0),
+    .output_l1_324_i_d0(runSIMD_U0_output_l1_324_i_d0),
     .param_dout(param_c7_dout),
     .param_empty_n(param_c7_empty_n),
-    .param_read(runSysArr_U0_param_read),
-    .param_out_din(runSysArr_U0_param_out_din),
+    .param_read(runSIMD_U0_param_read),
+    .param_out_din(runSIMD_U0_param_out_din),
     .param_out_full_n(param_c12_full_n),
-    .param_out_write(runSysArr_U0_param_out_write)
+    .param_out_write(runSIMD_U0_param_out_write)
 );
 
 Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
@@ -4758,54 +990,18 @@ Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
     .ap_continue(runOutputL1toL2_U0_ap_continue),
     .ap_idle(runOutputL1toL2_U0_ap_idle),
     .ap_ready(runOutputL1toL2_U0_ap_ready),
-    .output_l1_0273_i_address0(runOutputL1toL2_U0_output_l1_0273_i_address0),
-    .output_l1_0273_i_ce0(runOutputL1toL2_U0_output_l1_0273_i_ce0),
-    .output_l1_0273_i_q0(output_l1_0_t_q0),
-    .output_l1_1274_i_address0(runOutputL1toL2_U0_output_l1_1274_i_address0),
-    .output_l1_1274_i_ce0(runOutputL1toL2_U0_output_l1_1274_i_ce0),
-    .output_l1_1274_i_q0(output_l1_1_t_q0),
-    .output_l1_2275_i_address0(runOutputL1toL2_U0_output_l1_2275_i_address0),
-    .output_l1_2275_i_ce0(runOutputL1toL2_U0_output_l1_2275_i_ce0),
-    .output_l1_2275_i_q0(output_l1_2_t_q0),
-    .output_l1_3276_i_address0(runOutputL1toL2_U0_output_l1_3276_i_address0),
-    .output_l1_3276_i_ce0(runOutputL1toL2_U0_output_l1_3276_i_ce0),
-    .output_l1_3276_i_q0(output_l1_3_t_q0),
-    .output_l1_4277_i_address0(runOutputL1toL2_U0_output_l1_4277_i_address0),
-    .output_l1_4277_i_ce0(runOutputL1toL2_U0_output_l1_4277_i_ce0),
-    .output_l1_4277_i_q0(output_l1_4_t_q0),
-    .output_l1_5278_i_address0(runOutputL1toL2_U0_output_l1_5278_i_address0),
-    .output_l1_5278_i_ce0(runOutputL1toL2_U0_output_l1_5278_i_ce0),
-    .output_l1_5278_i_q0(output_l1_5_t_q0),
-    .output_l1_6279_i_address0(runOutputL1toL2_U0_output_l1_6279_i_address0),
-    .output_l1_6279_i_ce0(runOutputL1toL2_U0_output_l1_6279_i_ce0),
-    .output_l1_6279_i_q0(output_l1_6_t_q0),
-    .output_l1_7280_i_address0(runOutputL1toL2_U0_output_l1_7280_i_address0),
-    .output_l1_7280_i_ce0(runOutputL1toL2_U0_output_l1_7280_i_ce0),
-    .output_l1_7280_i_q0(output_l1_7_t_q0),
-    .output_l1_8281_i_address0(runOutputL1toL2_U0_output_l1_8281_i_address0),
-    .output_l1_8281_i_ce0(runOutputL1toL2_U0_output_l1_8281_i_ce0),
-    .output_l1_8281_i_q0(output_l1_8_t_q0),
-    .output_l1_9282_i_address0(runOutputL1toL2_U0_output_l1_9282_i_address0),
-    .output_l1_9282_i_ce0(runOutputL1toL2_U0_output_l1_9282_i_ce0),
-    .output_l1_9282_i_q0(output_l1_9_t_q0),
-    .output_l1_10283_i_address0(runOutputL1toL2_U0_output_l1_10283_i_address0),
-    .output_l1_10283_i_ce0(runOutputL1toL2_U0_output_l1_10283_i_ce0),
-    .output_l1_10283_i_q0(output_l1_10_t_q0),
-    .output_l1_11284_i_address0(runOutputL1toL2_U0_output_l1_11284_i_address0),
-    .output_l1_11284_i_ce0(runOutputL1toL2_U0_output_l1_11284_i_ce0),
-    .output_l1_11284_i_q0(output_l1_11_t_q0),
-    .output_l1_12285_i_address0(runOutputL1toL2_U0_output_l1_12285_i_address0),
-    .output_l1_12285_i_ce0(runOutputL1toL2_U0_output_l1_12285_i_ce0),
-    .output_l1_12285_i_q0(output_l1_12_t_q0),
-    .output_l1_13286_i_address0(runOutputL1toL2_U0_output_l1_13286_i_address0),
-    .output_l1_13286_i_ce0(runOutputL1toL2_U0_output_l1_13286_i_ce0),
-    .output_l1_13286_i_q0(output_l1_13_t_q0),
-    .output_l1_14287_i_address0(runOutputL1toL2_U0_output_l1_14287_i_address0),
-    .output_l1_14287_i_ce0(runOutputL1toL2_U0_output_l1_14287_i_ce0),
-    .output_l1_14287_i_q0(output_l1_14_t_q0),
-    .output_l1_15288_i_address0(runOutputL1toL2_U0_output_l1_15288_i_address0),
-    .output_l1_15288_i_ce0(runOutputL1toL2_U0_output_l1_15288_i_ce0),
-    .output_l1_15288_i_q0(output_l1_15_t_q0),
+    .output_l1_021_i_address0(runOutputL1toL2_U0_output_l1_021_i_address0),
+    .output_l1_021_i_ce0(runOutputL1toL2_U0_output_l1_021_i_ce0),
+    .output_l1_021_i_q0(output_l1_0_t_q0),
+    .output_l1_122_i_address0(runOutputL1toL2_U0_output_l1_122_i_address0),
+    .output_l1_122_i_ce0(runOutputL1toL2_U0_output_l1_122_i_ce0),
+    .output_l1_122_i_q0(output_l1_1_t_q0),
+    .output_l1_223_i_address0(runOutputL1toL2_U0_output_l1_223_i_address0),
+    .output_l1_223_i_ce0(runOutputL1toL2_U0_output_l1_223_i_ce0),
+    .output_l1_223_i_q0(output_l1_2_t_q0),
+    .output_l1_324_i_address0(runOutputL1toL2_U0_output_l1_324_i_address0),
+    .output_l1_324_i_ce0(runOutputL1toL2_U0_output_l1_324_i_ce0),
+    .output_l1_324_i_q0(output_l1_3_t_q0),
     .param_dout(param_c12_dout),
     .param_empty_n(param_c12_empty_n),
     .param_read(runOutputL1toL2_U0_param_read),
@@ -4830,19 +1026,7 @@ Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
     .output_l2_0_address0(runOutputL1toL2_U0_output_l2_0_address0),
     .output_l2_0_ce0(runOutputL1toL2_U0_output_l2_0_ce0),
     .output_l2_0_we0(runOutputL1toL2_U0_output_l2_0_we0),
-    .output_l2_0_d0(runOutputL1toL2_U0_output_l2_0_d0),
-    .output_l2_1_address0(runOutputL1toL2_U0_output_l2_1_address0),
-    .output_l2_1_ce0(runOutputL1toL2_U0_output_l2_1_ce0),
-    .output_l2_1_we0(runOutputL1toL2_U0_output_l2_1_we0),
-    .output_l2_1_d0(runOutputL1toL2_U0_output_l2_1_d0),
-    .output_l2_2_address0(runOutputL1toL2_U0_output_l2_2_address0),
-    .output_l2_2_ce0(runOutputL1toL2_U0_output_l2_2_ce0),
-    .output_l2_2_we0(runOutputL1toL2_U0_output_l2_2_we0),
-    .output_l2_2_d0(runOutputL1toL2_U0_output_l2_2_d0),
-    .output_l2_3_address0(runOutputL1toL2_U0_output_l2_3_address0),
-    .output_l2_3_ce0(runOutputL1toL2_U0_output_l2_3_ce0),
-    .output_l2_3_we0(runOutputL1toL2_U0_output_l2_3_we0),
-    .output_l2_3_d0(runOutputL1toL2_U0_output_l2_3_d0)
+    .output_l2_0_d0(runOutputL1toL2_U0_output_l2_0_d0)
 );
 
 Conv_sysarr_fifo_w1184_d2_S param_c_U(
@@ -4850,9 +1034,9 @@ Conv_sysarr_fifo_w1184_d2_S param_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din),
     .if_full_n(param_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write),
     .if_dout(param_c_dout),
     .if_empty_n(param_c_empty_n),
     .if_read(runWeight2Reg_U0_param_read)
@@ -4863,9 +1047,9 @@ Conv_sysarr_fifo_w1120_d2_S param_c1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din),
     .if_full_n(param_c1_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_param_out1_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write),
     .if_dout(param_c1_dout),
     .if_empty_n(param_c1_empty_n),
     .if_read(runDataL2toL1_U0_param_read)
@@ -4876,9 +1060,9 @@ Conv_sysarr_fifo_w12_d2_S ko_1_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din),
     .if_full_n(ko_1_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ko_1_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write),
     .if_dout(ko_1_c_dout),
     .if_empty_n(ko_1_c_empty_n),
     .if_read(runWeight2Reg_U0_ko_1_read)
@@ -4889,9 +1073,9 @@ Conv_sysarr_fifo_w32_d2_S co_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din),
     .if_full_n(co_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write),
     .if_dout(co_c_dout),
     .if_empty_n(co_c_empty_n),
     .if_read(runWeight2Reg_U0_co_read)
@@ -4902,9 +1086,9 @@ Conv_sysarr_fifo_w11_d2_S co_c2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din),
     .if_full_n(co_c2_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_co_out2_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write),
     .if_dout(co_c2_dout),
     .if_empty_n(co_c2_empty_n),
     .if_read(runDataL2toL1_U0_co_read)
@@ -4915,9 +1099,9 @@ Conv_sysarr_fifo_w32_d2_S ro_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din),
     .if_full_n(ro_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write),
     .if_dout(ro_c_dout),
     .if_empty_n(ro_c_empty_n),
     .if_read(runWeight2Reg_U0_ro_read)
@@ -4928,9 +1112,9 @@ Conv_sysarr_fifo_w11_d2_S ro_c3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din),
     .if_full_n(ro_c3_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ro_out3_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write),
     .if_dout(ro_c3_dout),
     .if_empty_n(ro_c3_empty_n),
     .if_read(runDataL2toL1_U0_ro_read)
@@ -4941,9 +1125,9 @@ Conv_sysarr_fifo_w32_d2_S so_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din),
     .if_full_n(so_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write),
     .if_dout(so_c_dout),
     .if_empty_n(so_c_empty_n),
     .if_read(runWeight2Reg_U0_so_read)
@@ -4954,9 +1138,9 @@ Conv_sysarr_fifo_w11_d2_S so_c4_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din),
     .if_full_n(so_c4_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_so_out4_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write),
     .if_dout(so_c4_dout),
     .if_empty_n(so_c4_empty_n),
     .if_read(runDataL2toL1_U0_so_read)
@@ -4967,9 +1151,9 @@ Conv_sysarr_fifo_w11_d2_S ho_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din),
     .if_full_n(ho_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write),
     .if_dout(ho_c_dout),
     .if_empty_n(ho_c_empty_n),
     .if_read(runDataL2toL1_U0_ho_read)
@@ -4980,9 +1164,9 @@ Conv_sysarr_fifo_w11_d4_S ho_c5_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din),
     .if_full_n(ho_c5_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ho_out5_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write),
     .if_dout(ho_c5_dout),
     .if_empty_n(ho_c5_empty_n),
     .if_read(runOutputL1toL2_U0_ho_read)
@@ -4993,9 +1177,9 @@ Conv_sysarr_fifo_w11_d2_S wo_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din),
     .if_full_n(wo_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write),
     .if_dout(wo_c_dout),
     .if_empty_n(wo_c_empty_n),
     .if_read(runDataL2toL1_U0_wo_read)
@@ -5006,9 +1190,9 @@ Conv_sysarr_fifo_w11_d4_S wo_c6_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din),
     .if_full_n(wo_c6_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry28_U0_wo_out6_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write),
     .if_dout(wo_c6_dout),
     .if_empty_n(wo_c6_empty_n),
     .if_read(runOutputL1toL2_U0_wo_read)
@@ -5024,7 +1208,7 @@ Conv_sysarr_fifo_w1184_d2_S param_c7_U(
     .if_write(runWeight2Reg_U0_param_out_write),
     .if_dout(param_c7_dout),
     .if_empty_n(param_c7_empty_n),
-    .if_read(runSysArr_U0_param_read)
+    .if_read(runSIMD_U0_param_read)
 );
 
 Conv_sysarr_fifo_w11_d3_S ko_1_c8_U(
@@ -5089,7 +1273,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_0_U(
     .if_write(ap_channel_done_weight_regfile_0_0),
     .if_dout(weight_regfile_0_0_dout),
     .if_empty_n(weight_regfile_0_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_1_U(
@@ -5102,7 +1286,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_1_U(
     .if_write(ap_channel_done_weight_regfile_0_1),
     .if_dout(weight_regfile_0_1_dout),
     .if_empty_n(weight_regfile_0_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_2_U(
@@ -5115,7 +1299,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_2_U(
     .if_write(ap_channel_done_weight_regfile_0_2),
     .if_dout(weight_regfile_0_2_dout),
     .if_empty_n(weight_regfile_0_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_3_U(
@@ -5128,163 +1312,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_3_U(
     .if_write(ap_channel_done_weight_regfile_0_3),
     .if_dout(weight_regfile_0_3_dout),
     .if_empty_n(weight_regfile_0_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_4),
-    .if_full_n(weight_regfile_0_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_4),
-    .if_dout(weight_regfile_0_4_dout),
-    .if_empty_n(weight_regfile_0_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_5),
-    .if_full_n(weight_regfile_0_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_5),
-    .if_dout(weight_regfile_0_5_dout),
-    .if_empty_n(weight_regfile_0_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_6),
-    .if_full_n(weight_regfile_0_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_6),
-    .if_dout(weight_regfile_0_6_dout),
-    .if_empty_n(weight_regfile_0_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_7),
-    .if_full_n(weight_regfile_0_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_7),
-    .if_dout(weight_regfile_0_7_dout),
-    .if_empty_n(weight_regfile_0_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_8),
-    .if_full_n(weight_regfile_0_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_8),
-    .if_dout(weight_regfile_0_8_dout),
-    .if_empty_n(weight_regfile_0_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_9),
-    .if_full_n(weight_regfile_0_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_9),
-    .if_dout(weight_regfile_0_9_dout),
-    .if_empty_n(weight_regfile_0_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_10),
-    .if_full_n(weight_regfile_0_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_10),
-    .if_dout(weight_regfile_0_10_dout),
-    .if_empty_n(weight_regfile_0_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_11),
-    .if_full_n(weight_regfile_0_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_11),
-    .if_dout(weight_regfile_0_11_dout),
-    .if_empty_n(weight_regfile_0_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_12),
-    .if_full_n(weight_regfile_0_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_12),
-    .if_dout(weight_regfile_0_12_dout),
-    .if_empty_n(weight_regfile_0_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_13),
-    .if_full_n(weight_regfile_0_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_13),
-    .if_dout(weight_regfile_0_13_dout),
-    .if_empty_n(weight_regfile_0_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_14),
-    .if_full_n(weight_regfile_0_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_14),
-    .if_dout(weight_regfile_0_14_dout),
-    .if_empty_n(weight_regfile_0_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_0_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_15),
-    .if_full_n(weight_regfile_0_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_0_15),
-    .if_dout(weight_regfile_0_15_dout),
-    .if_empty_n(weight_regfile_0_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_0_U(
@@ -5292,12 +1320,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_16),
+    .if_din(runWeight2Reg_U0_ap_return_4),
     .if_full_n(weight_regfile_1_0_full_n),
     .if_write(ap_channel_done_weight_regfile_1_0),
     .if_dout(weight_regfile_1_0_dout),
     .if_empty_n(weight_regfile_1_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_1_U(
@@ -5305,12 +1333,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_17),
+    .if_din(runWeight2Reg_U0_ap_return_5),
     .if_full_n(weight_regfile_1_1_full_n),
     .if_write(ap_channel_done_weight_regfile_1_1),
     .if_dout(weight_regfile_1_1_dout),
     .if_empty_n(weight_regfile_1_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_2_U(
@@ -5318,12 +1346,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_18),
+    .if_din(runWeight2Reg_U0_ap_return_6),
     .if_full_n(weight_regfile_1_2_full_n),
     .if_write(ap_channel_done_weight_regfile_1_2),
     .if_dout(weight_regfile_1_2_dout),
     .if_empty_n(weight_regfile_1_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_3_U(
@@ -5331,168 +1359,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_19),
+    .if_din(runWeight2Reg_U0_ap_return_7),
     .if_full_n(weight_regfile_1_3_full_n),
     .if_write(ap_channel_done_weight_regfile_1_3),
     .if_dout(weight_regfile_1_3_dout),
     .if_empty_n(weight_regfile_1_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_20),
-    .if_full_n(weight_regfile_1_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_4),
-    .if_dout(weight_regfile_1_4_dout),
-    .if_empty_n(weight_regfile_1_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_21),
-    .if_full_n(weight_regfile_1_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_5),
-    .if_dout(weight_regfile_1_5_dout),
-    .if_empty_n(weight_regfile_1_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_22),
-    .if_full_n(weight_regfile_1_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_6),
-    .if_dout(weight_regfile_1_6_dout),
-    .if_empty_n(weight_regfile_1_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_23),
-    .if_full_n(weight_regfile_1_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_7),
-    .if_dout(weight_regfile_1_7_dout),
-    .if_empty_n(weight_regfile_1_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_24),
-    .if_full_n(weight_regfile_1_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_8),
-    .if_dout(weight_regfile_1_8_dout),
-    .if_empty_n(weight_regfile_1_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_25),
-    .if_full_n(weight_regfile_1_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_9),
-    .if_dout(weight_regfile_1_9_dout),
-    .if_empty_n(weight_regfile_1_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_26),
-    .if_full_n(weight_regfile_1_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_10),
-    .if_dout(weight_regfile_1_10_dout),
-    .if_empty_n(weight_regfile_1_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_27),
-    .if_full_n(weight_regfile_1_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_11),
-    .if_dout(weight_regfile_1_11_dout),
-    .if_empty_n(weight_regfile_1_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_28),
-    .if_full_n(weight_regfile_1_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_12),
-    .if_dout(weight_regfile_1_12_dout),
-    .if_empty_n(weight_regfile_1_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_29),
-    .if_full_n(weight_regfile_1_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_13),
-    .if_dout(weight_regfile_1_13_dout),
-    .if_empty_n(weight_regfile_1_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_30),
-    .if_full_n(weight_regfile_1_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_14),
-    .if_dout(weight_regfile_1_14_dout),
-    .if_empty_n(weight_regfile_1_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_1_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_31),
-    .if_full_n(weight_regfile_1_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_1_15),
-    .if_dout(weight_regfile_1_15_dout),
-    .if_empty_n(weight_regfile_1_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_0_U(
@@ -5500,12 +1372,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_32),
+    .if_din(runWeight2Reg_U0_ap_return_8),
     .if_full_n(weight_regfile_2_0_full_n),
     .if_write(ap_channel_done_weight_regfile_2_0),
     .if_dout(weight_regfile_2_0_dout),
     .if_empty_n(weight_regfile_2_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_1_U(
@@ -5513,12 +1385,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_33),
+    .if_din(runWeight2Reg_U0_ap_return_9),
     .if_full_n(weight_regfile_2_1_full_n),
     .if_write(ap_channel_done_weight_regfile_2_1),
     .if_dout(weight_regfile_2_1_dout),
     .if_empty_n(weight_regfile_2_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_2_U(
@@ -5526,12 +1398,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_34),
+    .if_din(runWeight2Reg_U0_ap_return_10),
     .if_full_n(weight_regfile_2_2_full_n),
     .if_write(ap_channel_done_weight_regfile_2_2),
     .if_dout(weight_regfile_2_2_dout),
     .if_empty_n(weight_regfile_2_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_3_U(
@@ -5539,168 +1411,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_35),
+    .if_din(runWeight2Reg_U0_ap_return_11),
     .if_full_n(weight_regfile_2_3_full_n),
     .if_write(ap_channel_done_weight_regfile_2_3),
     .if_dout(weight_regfile_2_3_dout),
     .if_empty_n(weight_regfile_2_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_36),
-    .if_full_n(weight_regfile_2_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_4),
-    .if_dout(weight_regfile_2_4_dout),
-    .if_empty_n(weight_regfile_2_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_37),
-    .if_full_n(weight_regfile_2_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_5),
-    .if_dout(weight_regfile_2_5_dout),
-    .if_empty_n(weight_regfile_2_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_38),
-    .if_full_n(weight_regfile_2_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_6),
-    .if_dout(weight_regfile_2_6_dout),
-    .if_empty_n(weight_regfile_2_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_39),
-    .if_full_n(weight_regfile_2_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_7),
-    .if_dout(weight_regfile_2_7_dout),
-    .if_empty_n(weight_regfile_2_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_40),
-    .if_full_n(weight_regfile_2_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_8),
-    .if_dout(weight_regfile_2_8_dout),
-    .if_empty_n(weight_regfile_2_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_41),
-    .if_full_n(weight_regfile_2_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_9),
-    .if_dout(weight_regfile_2_9_dout),
-    .if_empty_n(weight_regfile_2_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_42),
-    .if_full_n(weight_regfile_2_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_10),
-    .if_dout(weight_regfile_2_10_dout),
-    .if_empty_n(weight_regfile_2_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_43),
-    .if_full_n(weight_regfile_2_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_11),
-    .if_dout(weight_regfile_2_11_dout),
-    .if_empty_n(weight_regfile_2_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_44),
-    .if_full_n(weight_regfile_2_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_12),
-    .if_dout(weight_regfile_2_12_dout),
-    .if_empty_n(weight_regfile_2_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_45),
-    .if_full_n(weight_regfile_2_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_13),
-    .if_dout(weight_regfile_2_13_dout),
-    .if_empty_n(weight_regfile_2_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_46),
-    .if_full_n(weight_regfile_2_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_14),
-    .if_dout(weight_regfile_2_14_dout),
-    .if_empty_n(weight_regfile_2_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_2_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_47),
-    .if_full_n(weight_regfile_2_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_2_15),
-    .if_dout(weight_regfile_2_15_dout),
-    .if_empty_n(weight_regfile_2_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_0_U(
@@ -5708,12 +1424,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_48),
+    .if_din(runWeight2Reg_U0_ap_return_12),
     .if_full_n(weight_regfile_3_0_full_n),
     .if_write(ap_channel_done_weight_regfile_3_0),
     .if_dout(weight_regfile_3_0_dout),
     .if_empty_n(weight_regfile_3_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_1_U(
@@ -5721,12 +1437,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_49),
+    .if_din(runWeight2Reg_U0_ap_return_13),
     .if_full_n(weight_regfile_3_1_full_n),
     .if_write(ap_channel_done_weight_regfile_3_1),
     .if_dout(weight_regfile_3_1_dout),
     .if_empty_n(weight_regfile_3_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_2_U(
@@ -5734,12 +1450,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_50),
+    .if_din(runWeight2Reg_U0_ap_return_14),
     .if_full_n(weight_regfile_3_2_full_n),
     .if_write(ap_channel_done_weight_regfile_3_2),
     .if_dout(weight_regfile_3_2_dout),
     .if_empty_n(weight_regfile_3_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_3_U(
@@ -5747,2664 +1463,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_51),
+    .if_din(runWeight2Reg_U0_ap_return_15),
     .if_full_n(weight_regfile_3_3_full_n),
     .if_write(ap_channel_done_weight_regfile_3_3),
     .if_dout(weight_regfile_3_3_dout),
     .if_empty_n(weight_regfile_3_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_52),
-    .if_full_n(weight_regfile_3_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_4),
-    .if_dout(weight_regfile_3_4_dout),
-    .if_empty_n(weight_regfile_3_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_53),
-    .if_full_n(weight_regfile_3_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_5),
-    .if_dout(weight_regfile_3_5_dout),
-    .if_empty_n(weight_regfile_3_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_54),
-    .if_full_n(weight_regfile_3_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_6),
-    .if_dout(weight_regfile_3_6_dout),
-    .if_empty_n(weight_regfile_3_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_55),
-    .if_full_n(weight_regfile_3_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_7),
-    .if_dout(weight_regfile_3_7_dout),
-    .if_empty_n(weight_regfile_3_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_56),
-    .if_full_n(weight_regfile_3_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_8),
-    .if_dout(weight_regfile_3_8_dout),
-    .if_empty_n(weight_regfile_3_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_57),
-    .if_full_n(weight_regfile_3_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_9),
-    .if_dout(weight_regfile_3_9_dout),
-    .if_empty_n(weight_regfile_3_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_58),
-    .if_full_n(weight_regfile_3_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_10),
-    .if_dout(weight_regfile_3_10_dout),
-    .if_empty_n(weight_regfile_3_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_59),
-    .if_full_n(weight_regfile_3_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_11),
-    .if_dout(weight_regfile_3_11_dout),
-    .if_empty_n(weight_regfile_3_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_60),
-    .if_full_n(weight_regfile_3_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_12),
-    .if_dout(weight_regfile_3_12_dout),
-    .if_empty_n(weight_regfile_3_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_61),
-    .if_full_n(weight_regfile_3_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_13),
-    .if_dout(weight_regfile_3_13_dout),
-    .if_empty_n(weight_regfile_3_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_62),
-    .if_full_n(weight_regfile_3_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_14),
-    .if_dout(weight_regfile_3_14_dout),
-    .if_empty_n(weight_regfile_3_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_3_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_63),
-    .if_full_n(weight_regfile_3_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_3_15),
-    .if_dout(weight_regfile_3_15_dout),
-    .if_empty_n(weight_regfile_3_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_64),
-    .if_full_n(weight_regfile_4_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_0),
-    .if_dout(weight_regfile_4_0_dout),
-    .if_empty_n(weight_regfile_4_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_65),
-    .if_full_n(weight_regfile_4_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_1),
-    .if_dout(weight_regfile_4_1_dout),
-    .if_empty_n(weight_regfile_4_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_66),
-    .if_full_n(weight_regfile_4_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_2),
-    .if_dout(weight_regfile_4_2_dout),
-    .if_empty_n(weight_regfile_4_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_67),
-    .if_full_n(weight_regfile_4_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_3),
-    .if_dout(weight_regfile_4_3_dout),
-    .if_empty_n(weight_regfile_4_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_68),
-    .if_full_n(weight_regfile_4_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_4),
-    .if_dout(weight_regfile_4_4_dout),
-    .if_empty_n(weight_regfile_4_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_69),
-    .if_full_n(weight_regfile_4_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_5),
-    .if_dout(weight_regfile_4_5_dout),
-    .if_empty_n(weight_regfile_4_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_70),
-    .if_full_n(weight_regfile_4_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_6),
-    .if_dout(weight_regfile_4_6_dout),
-    .if_empty_n(weight_regfile_4_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_71),
-    .if_full_n(weight_regfile_4_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_7),
-    .if_dout(weight_regfile_4_7_dout),
-    .if_empty_n(weight_regfile_4_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_72),
-    .if_full_n(weight_regfile_4_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_8),
-    .if_dout(weight_regfile_4_8_dout),
-    .if_empty_n(weight_regfile_4_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_73),
-    .if_full_n(weight_regfile_4_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_9),
-    .if_dout(weight_regfile_4_9_dout),
-    .if_empty_n(weight_regfile_4_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_74),
-    .if_full_n(weight_regfile_4_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_10),
-    .if_dout(weight_regfile_4_10_dout),
-    .if_empty_n(weight_regfile_4_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_75),
-    .if_full_n(weight_regfile_4_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_11),
-    .if_dout(weight_regfile_4_11_dout),
-    .if_empty_n(weight_regfile_4_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_76),
-    .if_full_n(weight_regfile_4_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_12),
-    .if_dout(weight_regfile_4_12_dout),
-    .if_empty_n(weight_regfile_4_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_77),
-    .if_full_n(weight_regfile_4_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_13),
-    .if_dout(weight_regfile_4_13_dout),
-    .if_empty_n(weight_regfile_4_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_78),
-    .if_full_n(weight_regfile_4_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_14),
-    .if_dout(weight_regfile_4_14_dout),
-    .if_empty_n(weight_regfile_4_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_4_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_79),
-    .if_full_n(weight_regfile_4_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_4_15),
-    .if_dout(weight_regfile_4_15_dout),
-    .if_empty_n(weight_regfile_4_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_80),
-    .if_full_n(weight_regfile_5_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_0),
-    .if_dout(weight_regfile_5_0_dout),
-    .if_empty_n(weight_regfile_5_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_81),
-    .if_full_n(weight_regfile_5_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_1),
-    .if_dout(weight_regfile_5_1_dout),
-    .if_empty_n(weight_regfile_5_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_82),
-    .if_full_n(weight_regfile_5_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_2),
-    .if_dout(weight_regfile_5_2_dout),
-    .if_empty_n(weight_regfile_5_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_83),
-    .if_full_n(weight_regfile_5_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_3),
-    .if_dout(weight_regfile_5_3_dout),
-    .if_empty_n(weight_regfile_5_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_84),
-    .if_full_n(weight_regfile_5_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_4),
-    .if_dout(weight_regfile_5_4_dout),
-    .if_empty_n(weight_regfile_5_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_85),
-    .if_full_n(weight_regfile_5_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_5),
-    .if_dout(weight_regfile_5_5_dout),
-    .if_empty_n(weight_regfile_5_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_86),
-    .if_full_n(weight_regfile_5_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_6),
-    .if_dout(weight_regfile_5_6_dout),
-    .if_empty_n(weight_regfile_5_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_87),
-    .if_full_n(weight_regfile_5_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_7),
-    .if_dout(weight_regfile_5_7_dout),
-    .if_empty_n(weight_regfile_5_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_88),
-    .if_full_n(weight_regfile_5_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_8),
-    .if_dout(weight_regfile_5_8_dout),
-    .if_empty_n(weight_regfile_5_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_89),
-    .if_full_n(weight_regfile_5_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_9),
-    .if_dout(weight_regfile_5_9_dout),
-    .if_empty_n(weight_regfile_5_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_90),
-    .if_full_n(weight_regfile_5_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_10),
-    .if_dout(weight_regfile_5_10_dout),
-    .if_empty_n(weight_regfile_5_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_91),
-    .if_full_n(weight_regfile_5_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_11),
-    .if_dout(weight_regfile_5_11_dout),
-    .if_empty_n(weight_regfile_5_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_92),
-    .if_full_n(weight_regfile_5_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_12),
-    .if_dout(weight_regfile_5_12_dout),
-    .if_empty_n(weight_regfile_5_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_93),
-    .if_full_n(weight_regfile_5_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_13),
-    .if_dout(weight_regfile_5_13_dout),
-    .if_empty_n(weight_regfile_5_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_94),
-    .if_full_n(weight_regfile_5_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_14),
-    .if_dout(weight_regfile_5_14_dout),
-    .if_empty_n(weight_regfile_5_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_5_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_95),
-    .if_full_n(weight_regfile_5_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_5_15),
-    .if_dout(weight_regfile_5_15_dout),
-    .if_empty_n(weight_regfile_5_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_96),
-    .if_full_n(weight_regfile_6_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_0),
-    .if_dout(weight_regfile_6_0_dout),
-    .if_empty_n(weight_regfile_6_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_97),
-    .if_full_n(weight_regfile_6_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_1),
-    .if_dout(weight_regfile_6_1_dout),
-    .if_empty_n(weight_regfile_6_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_98),
-    .if_full_n(weight_regfile_6_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_2),
-    .if_dout(weight_regfile_6_2_dout),
-    .if_empty_n(weight_regfile_6_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_99),
-    .if_full_n(weight_regfile_6_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_3),
-    .if_dout(weight_regfile_6_3_dout),
-    .if_empty_n(weight_regfile_6_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_100),
-    .if_full_n(weight_regfile_6_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_4),
-    .if_dout(weight_regfile_6_4_dout),
-    .if_empty_n(weight_regfile_6_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_101),
-    .if_full_n(weight_regfile_6_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_5),
-    .if_dout(weight_regfile_6_5_dout),
-    .if_empty_n(weight_regfile_6_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_102),
-    .if_full_n(weight_regfile_6_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_6),
-    .if_dout(weight_regfile_6_6_dout),
-    .if_empty_n(weight_regfile_6_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_103),
-    .if_full_n(weight_regfile_6_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_7),
-    .if_dout(weight_regfile_6_7_dout),
-    .if_empty_n(weight_regfile_6_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_104),
-    .if_full_n(weight_regfile_6_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_8),
-    .if_dout(weight_regfile_6_8_dout),
-    .if_empty_n(weight_regfile_6_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_105),
-    .if_full_n(weight_regfile_6_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_9),
-    .if_dout(weight_regfile_6_9_dout),
-    .if_empty_n(weight_regfile_6_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_106),
-    .if_full_n(weight_regfile_6_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_10),
-    .if_dout(weight_regfile_6_10_dout),
-    .if_empty_n(weight_regfile_6_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_107),
-    .if_full_n(weight_regfile_6_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_11),
-    .if_dout(weight_regfile_6_11_dout),
-    .if_empty_n(weight_regfile_6_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_108),
-    .if_full_n(weight_regfile_6_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_12),
-    .if_dout(weight_regfile_6_12_dout),
-    .if_empty_n(weight_regfile_6_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_109),
-    .if_full_n(weight_regfile_6_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_13),
-    .if_dout(weight_regfile_6_13_dout),
-    .if_empty_n(weight_regfile_6_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_110),
-    .if_full_n(weight_regfile_6_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_14),
-    .if_dout(weight_regfile_6_14_dout),
-    .if_empty_n(weight_regfile_6_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_6_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_111),
-    .if_full_n(weight_regfile_6_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_6_15),
-    .if_dout(weight_regfile_6_15_dout),
-    .if_empty_n(weight_regfile_6_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_112),
-    .if_full_n(weight_regfile_7_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_0),
-    .if_dout(weight_regfile_7_0_dout),
-    .if_empty_n(weight_regfile_7_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_113),
-    .if_full_n(weight_regfile_7_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_1),
-    .if_dout(weight_regfile_7_1_dout),
-    .if_empty_n(weight_regfile_7_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_114),
-    .if_full_n(weight_regfile_7_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_2),
-    .if_dout(weight_regfile_7_2_dout),
-    .if_empty_n(weight_regfile_7_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_115),
-    .if_full_n(weight_regfile_7_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_3),
-    .if_dout(weight_regfile_7_3_dout),
-    .if_empty_n(weight_regfile_7_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_116),
-    .if_full_n(weight_regfile_7_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_4),
-    .if_dout(weight_regfile_7_4_dout),
-    .if_empty_n(weight_regfile_7_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_117),
-    .if_full_n(weight_regfile_7_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_5),
-    .if_dout(weight_regfile_7_5_dout),
-    .if_empty_n(weight_regfile_7_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_118),
-    .if_full_n(weight_regfile_7_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_6),
-    .if_dout(weight_regfile_7_6_dout),
-    .if_empty_n(weight_regfile_7_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_119),
-    .if_full_n(weight_regfile_7_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_7),
-    .if_dout(weight_regfile_7_7_dout),
-    .if_empty_n(weight_regfile_7_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_120),
-    .if_full_n(weight_regfile_7_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_8),
-    .if_dout(weight_regfile_7_8_dout),
-    .if_empty_n(weight_regfile_7_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_121),
-    .if_full_n(weight_regfile_7_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_9),
-    .if_dout(weight_regfile_7_9_dout),
-    .if_empty_n(weight_regfile_7_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_122),
-    .if_full_n(weight_regfile_7_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_10),
-    .if_dout(weight_regfile_7_10_dout),
-    .if_empty_n(weight_regfile_7_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_123),
-    .if_full_n(weight_regfile_7_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_11),
-    .if_dout(weight_regfile_7_11_dout),
-    .if_empty_n(weight_regfile_7_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_124),
-    .if_full_n(weight_regfile_7_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_12),
-    .if_dout(weight_regfile_7_12_dout),
-    .if_empty_n(weight_regfile_7_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_125),
-    .if_full_n(weight_regfile_7_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_13),
-    .if_dout(weight_regfile_7_13_dout),
-    .if_empty_n(weight_regfile_7_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_126),
-    .if_full_n(weight_regfile_7_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_14),
-    .if_dout(weight_regfile_7_14_dout),
-    .if_empty_n(weight_regfile_7_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_7_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_127),
-    .if_full_n(weight_regfile_7_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_7_15),
-    .if_dout(weight_regfile_7_15_dout),
-    .if_empty_n(weight_regfile_7_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_128),
-    .if_full_n(weight_regfile_8_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_0),
-    .if_dout(weight_regfile_8_0_dout),
-    .if_empty_n(weight_regfile_8_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_129),
-    .if_full_n(weight_regfile_8_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_1),
-    .if_dout(weight_regfile_8_1_dout),
-    .if_empty_n(weight_regfile_8_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_130),
-    .if_full_n(weight_regfile_8_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_2),
-    .if_dout(weight_regfile_8_2_dout),
-    .if_empty_n(weight_regfile_8_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_131),
-    .if_full_n(weight_regfile_8_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_3),
-    .if_dout(weight_regfile_8_3_dout),
-    .if_empty_n(weight_regfile_8_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_132),
-    .if_full_n(weight_regfile_8_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_4),
-    .if_dout(weight_regfile_8_4_dout),
-    .if_empty_n(weight_regfile_8_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_133),
-    .if_full_n(weight_regfile_8_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_5),
-    .if_dout(weight_regfile_8_5_dout),
-    .if_empty_n(weight_regfile_8_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_134),
-    .if_full_n(weight_regfile_8_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_6),
-    .if_dout(weight_regfile_8_6_dout),
-    .if_empty_n(weight_regfile_8_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_135),
-    .if_full_n(weight_regfile_8_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_7),
-    .if_dout(weight_regfile_8_7_dout),
-    .if_empty_n(weight_regfile_8_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_136),
-    .if_full_n(weight_regfile_8_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_8),
-    .if_dout(weight_regfile_8_8_dout),
-    .if_empty_n(weight_regfile_8_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_137),
-    .if_full_n(weight_regfile_8_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_9),
-    .if_dout(weight_regfile_8_9_dout),
-    .if_empty_n(weight_regfile_8_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_138),
-    .if_full_n(weight_regfile_8_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_10),
-    .if_dout(weight_regfile_8_10_dout),
-    .if_empty_n(weight_regfile_8_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_139),
-    .if_full_n(weight_regfile_8_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_11),
-    .if_dout(weight_regfile_8_11_dout),
-    .if_empty_n(weight_regfile_8_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_140),
-    .if_full_n(weight_regfile_8_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_12),
-    .if_dout(weight_regfile_8_12_dout),
-    .if_empty_n(weight_regfile_8_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_141),
-    .if_full_n(weight_regfile_8_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_13),
-    .if_dout(weight_regfile_8_13_dout),
-    .if_empty_n(weight_regfile_8_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_142),
-    .if_full_n(weight_regfile_8_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_14),
-    .if_dout(weight_regfile_8_14_dout),
-    .if_empty_n(weight_regfile_8_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_8_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_143),
-    .if_full_n(weight_regfile_8_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_8_15),
-    .if_dout(weight_regfile_8_15_dout),
-    .if_empty_n(weight_regfile_8_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_144),
-    .if_full_n(weight_regfile_9_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_0),
-    .if_dout(weight_regfile_9_0_dout),
-    .if_empty_n(weight_regfile_9_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_145),
-    .if_full_n(weight_regfile_9_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_1),
-    .if_dout(weight_regfile_9_1_dout),
-    .if_empty_n(weight_regfile_9_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_146),
-    .if_full_n(weight_regfile_9_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_2),
-    .if_dout(weight_regfile_9_2_dout),
-    .if_empty_n(weight_regfile_9_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_147),
-    .if_full_n(weight_regfile_9_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_3),
-    .if_dout(weight_regfile_9_3_dout),
-    .if_empty_n(weight_regfile_9_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_148),
-    .if_full_n(weight_regfile_9_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_4),
-    .if_dout(weight_regfile_9_4_dout),
-    .if_empty_n(weight_regfile_9_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_149),
-    .if_full_n(weight_regfile_9_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_5),
-    .if_dout(weight_regfile_9_5_dout),
-    .if_empty_n(weight_regfile_9_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_150),
-    .if_full_n(weight_regfile_9_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_6),
-    .if_dout(weight_regfile_9_6_dout),
-    .if_empty_n(weight_regfile_9_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_151),
-    .if_full_n(weight_regfile_9_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_7),
-    .if_dout(weight_regfile_9_7_dout),
-    .if_empty_n(weight_regfile_9_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_152),
-    .if_full_n(weight_regfile_9_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_8),
-    .if_dout(weight_regfile_9_8_dout),
-    .if_empty_n(weight_regfile_9_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_153),
-    .if_full_n(weight_regfile_9_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_9),
-    .if_dout(weight_regfile_9_9_dout),
-    .if_empty_n(weight_regfile_9_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_154),
-    .if_full_n(weight_regfile_9_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_10),
-    .if_dout(weight_regfile_9_10_dout),
-    .if_empty_n(weight_regfile_9_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_155),
-    .if_full_n(weight_regfile_9_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_11),
-    .if_dout(weight_regfile_9_11_dout),
-    .if_empty_n(weight_regfile_9_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_156),
-    .if_full_n(weight_regfile_9_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_12),
-    .if_dout(weight_regfile_9_12_dout),
-    .if_empty_n(weight_regfile_9_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_157),
-    .if_full_n(weight_regfile_9_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_13),
-    .if_dout(weight_regfile_9_13_dout),
-    .if_empty_n(weight_regfile_9_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_158),
-    .if_full_n(weight_regfile_9_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_14),
-    .if_dout(weight_regfile_9_14_dout),
-    .if_empty_n(weight_regfile_9_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_9_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_159),
-    .if_full_n(weight_regfile_9_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_9_15),
-    .if_dout(weight_regfile_9_15_dout),
-    .if_empty_n(weight_regfile_9_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_160),
-    .if_full_n(weight_regfile_10_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_0),
-    .if_dout(weight_regfile_10_0_dout),
-    .if_empty_n(weight_regfile_10_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_161),
-    .if_full_n(weight_regfile_10_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_1),
-    .if_dout(weight_regfile_10_1_dout),
-    .if_empty_n(weight_regfile_10_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_162),
-    .if_full_n(weight_regfile_10_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_2),
-    .if_dout(weight_regfile_10_2_dout),
-    .if_empty_n(weight_regfile_10_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_163),
-    .if_full_n(weight_regfile_10_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_3),
-    .if_dout(weight_regfile_10_3_dout),
-    .if_empty_n(weight_regfile_10_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_164),
-    .if_full_n(weight_regfile_10_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_4),
-    .if_dout(weight_regfile_10_4_dout),
-    .if_empty_n(weight_regfile_10_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_165),
-    .if_full_n(weight_regfile_10_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_5),
-    .if_dout(weight_regfile_10_5_dout),
-    .if_empty_n(weight_regfile_10_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_166),
-    .if_full_n(weight_regfile_10_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_6),
-    .if_dout(weight_regfile_10_6_dout),
-    .if_empty_n(weight_regfile_10_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_167),
-    .if_full_n(weight_regfile_10_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_7),
-    .if_dout(weight_regfile_10_7_dout),
-    .if_empty_n(weight_regfile_10_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_168),
-    .if_full_n(weight_regfile_10_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_8),
-    .if_dout(weight_regfile_10_8_dout),
-    .if_empty_n(weight_regfile_10_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_169),
-    .if_full_n(weight_regfile_10_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_9),
-    .if_dout(weight_regfile_10_9_dout),
-    .if_empty_n(weight_regfile_10_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_170),
-    .if_full_n(weight_regfile_10_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_10),
-    .if_dout(weight_regfile_10_10_dout),
-    .if_empty_n(weight_regfile_10_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_171),
-    .if_full_n(weight_regfile_10_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_11),
-    .if_dout(weight_regfile_10_11_dout),
-    .if_empty_n(weight_regfile_10_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_172),
-    .if_full_n(weight_regfile_10_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_12),
-    .if_dout(weight_regfile_10_12_dout),
-    .if_empty_n(weight_regfile_10_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_173),
-    .if_full_n(weight_regfile_10_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_13),
-    .if_dout(weight_regfile_10_13_dout),
-    .if_empty_n(weight_regfile_10_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_174),
-    .if_full_n(weight_regfile_10_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_14),
-    .if_dout(weight_regfile_10_14_dout),
-    .if_empty_n(weight_regfile_10_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_10_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_175),
-    .if_full_n(weight_regfile_10_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_10_15),
-    .if_dout(weight_regfile_10_15_dout),
-    .if_empty_n(weight_regfile_10_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_176),
-    .if_full_n(weight_regfile_11_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_0),
-    .if_dout(weight_regfile_11_0_dout),
-    .if_empty_n(weight_regfile_11_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_177),
-    .if_full_n(weight_regfile_11_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_1),
-    .if_dout(weight_regfile_11_1_dout),
-    .if_empty_n(weight_regfile_11_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_178),
-    .if_full_n(weight_regfile_11_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_2),
-    .if_dout(weight_regfile_11_2_dout),
-    .if_empty_n(weight_regfile_11_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_179),
-    .if_full_n(weight_regfile_11_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_3),
-    .if_dout(weight_regfile_11_3_dout),
-    .if_empty_n(weight_regfile_11_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_180),
-    .if_full_n(weight_regfile_11_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_4),
-    .if_dout(weight_regfile_11_4_dout),
-    .if_empty_n(weight_regfile_11_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_181),
-    .if_full_n(weight_regfile_11_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_5),
-    .if_dout(weight_regfile_11_5_dout),
-    .if_empty_n(weight_regfile_11_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_182),
-    .if_full_n(weight_regfile_11_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_6),
-    .if_dout(weight_regfile_11_6_dout),
-    .if_empty_n(weight_regfile_11_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_183),
-    .if_full_n(weight_regfile_11_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_7),
-    .if_dout(weight_regfile_11_7_dout),
-    .if_empty_n(weight_regfile_11_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_184),
-    .if_full_n(weight_regfile_11_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_8),
-    .if_dout(weight_regfile_11_8_dout),
-    .if_empty_n(weight_regfile_11_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_185),
-    .if_full_n(weight_regfile_11_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_9),
-    .if_dout(weight_regfile_11_9_dout),
-    .if_empty_n(weight_regfile_11_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_186),
-    .if_full_n(weight_regfile_11_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_10),
-    .if_dout(weight_regfile_11_10_dout),
-    .if_empty_n(weight_regfile_11_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_187),
-    .if_full_n(weight_regfile_11_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_11),
-    .if_dout(weight_regfile_11_11_dout),
-    .if_empty_n(weight_regfile_11_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_188),
-    .if_full_n(weight_regfile_11_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_12),
-    .if_dout(weight_regfile_11_12_dout),
-    .if_empty_n(weight_regfile_11_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_189),
-    .if_full_n(weight_regfile_11_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_13),
-    .if_dout(weight_regfile_11_13_dout),
-    .if_empty_n(weight_regfile_11_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_190),
-    .if_full_n(weight_regfile_11_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_14),
-    .if_dout(weight_regfile_11_14_dout),
-    .if_empty_n(weight_regfile_11_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_11_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_191),
-    .if_full_n(weight_regfile_11_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_11_15),
-    .if_dout(weight_regfile_11_15_dout),
-    .if_empty_n(weight_regfile_11_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_192),
-    .if_full_n(weight_regfile_12_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_0),
-    .if_dout(weight_regfile_12_0_dout),
-    .if_empty_n(weight_regfile_12_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_193),
-    .if_full_n(weight_regfile_12_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_1),
-    .if_dout(weight_regfile_12_1_dout),
-    .if_empty_n(weight_regfile_12_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_194),
-    .if_full_n(weight_regfile_12_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_2),
-    .if_dout(weight_regfile_12_2_dout),
-    .if_empty_n(weight_regfile_12_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_195),
-    .if_full_n(weight_regfile_12_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_3),
-    .if_dout(weight_regfile_12_3_dout),
-    .if_empty_n(weight_regfile_12_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_196),
-    .if_full_n(weight_regfile_12_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_4),
-    .if_dout(weight_regfile_12_4_dout),
-    .if_empty_n(weight_regfile_12_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_197),
-    .if_full_n(weight_regfile_12_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_5),
-    .if_dout(weight_regfile_12_5_dout),
-    .if_empty_n(weight_regfile_12_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_198),
-    .if_full_n(weight_regfile_12_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_6),
-    .if_dout(weight_regfile_12_6_dout),
-    .if_empty_n(weight_regfile_12_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_199),
-    .if_full_n(weight_regfile_12_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_7),
-    .if_dout(weight_regfile_12_7_dout),
-    .if_empty_n(weight_regfile_12_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_200),
-    .if_full_n(weight_regfile_12_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_8),
-    .if_dout(weight_regfile_12_8_dout),
-    .if_empty_n(weight_regfile_12_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_201),
-    .if_full_n(weight_regfile_12_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_9),
-    .if_dout(weight_regfile_12_9_dout),
-    .if_empty_n(weight_regfile_12_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_202),
-    .if_full_n(weight_regfile_12_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_10),
-    .if_dout(weight_regfile_12_10_dout),
-    .if_empty_n(weight_regfile_12_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_203),
-    .if_full_n(weight_regfile_12_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_11),
-    .if_dout(weight_regfile_12_11_dout),
-    .if_empty_n(weight_regfile_12_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_204),
-    .if_full_n(weight_regfile_12_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_12),
-    .if_dout(weight_regfile_12_12_dout),
-    .if_empty_n(weight_regfile_12_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_205),
-    .if_full_n(weight_regfile_12_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_13),
-    .if_dout(weight_regfile_12_13_dout),
-    .if_empty_n(weight_regfile_12_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_206),
-    .if_full_n(weight_regfile_12_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_14),
-    .if_dout(weight_regfile_12_14_dout),
-    .if_empty_n(weight_regfile_12_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_12_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_207),
-    .if_full_n(weight_regfile_12_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_12_15),
-    .if_dout(weight_regfile_12_15_dout),
-    .if_empty_n(weight_regfile_12_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_208),
-    .if_full_n(weight_regfile_13_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_0),
-    .if_dout(weight_regfile_13_0_dout),
-    .if_empty_n(weight_regfile_13_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_209),
-    .if_full_n(weight_regfile_13_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_1),
-    .if_dout(weight_regfile_13_1_dout),
-    .if_empty_n(weight_regfile_13_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_210),
-    .if_full_n(weight_regfile_13_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_2),
-    .if_dout(weight_regfile_13_2_dout),
-    .if_empty_n(weight_regfile_13_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_211),
-    .if_full_n(weight_regfile_13_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_3),
-    .if_dout(weight_regfile_13_3_dout),
-    .if_empty_n(weight_regfile_13_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_212),
-    .if_full_n(weight_regfile_13_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_4),
-    .if_dout(weight_regfile_13_4_dout),
-    .if_empty_n(weight_regfile_13_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_213),
-    .if_full_n(weight_regfile_13_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_5),
-    .if_dout(weight_regfile_13_5_dout),
-    .if_empty_n(weight_regfile_13_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_214),
-    .if_full_n(weight_regfile_13_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_6),
-    .if_dout(weight_regfile_13_6_dout),
-    .if_empty_n(weight_regfile_13_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_215),
-    .if_full_n(weight_regfile_13_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_7),
-    .if_dout(weight_regfile_13_7_dout),
-    .if_empty_n(weight_regfile_13_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_216),
-    .if_full_n(weight_regfile_13_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_8),
-    .if_dout(weight_regfile_13_8_dout),
-    .if_empty_n(weight_regfile_13_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_217),
-    .if_full_n(weight_regfile_13_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_9),
-    .if_dout(weight_regfile_13_9_dout),
-    .if_empty_n(weight_regfile_13_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_218),
-    .if_full_n(weight_regfile_13_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_10),
-    .if_dout(weight_regfile_13_10_dout),
-    .if_empty_n(weight_regfile_13_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_219),
-    .if_full_n(weight_regfile_13_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_11),
-    .if_dout(weight_regfile_13_11_dout),
-    .if_empty_n(weight_regfile_13_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_220),
-    .if_full_n(weight_regfile_13_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_12),
-    .if_dout(weight_regfile_13_12_dout),
-    .if_empty_n(weight_regfile_13_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_221),
-    .if_full_n(weight_regfile_13_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_13),
-    .if_dout(weight_regfile_13_13_dout),
-    .if_empty_n(weight_regfile_13_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_222),
-    .if_full_n(weight_regfile_13_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_14),
-    .if_dout(weight_regfile_13_14_dout),
-    .if_empty_n(weight_regfile_13_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_13_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_223),
-    .if_full_n(weight_regfile_13_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_13_15),
-    .if_dout(weight_regfile_13_15_dout),
-    .if_empty_n(weight_regfile_13_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_224),
-    .if_full_n(weight_regfile_14_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_0),
-    .if_dout(weight_regfile_14_0_dout),
-    .if_empty_n(weight_regfile_14_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_225),
-    .if_full_n(weight_regfile_14_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_1),
-    .if_dout(weight_regfile_14_1_dout),
-    .if_empty_n(weight_regfile_14_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_226),
-    .if_full_n(weight_regfile_14_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_2),
-    .if_dout(weight_regfile_14_2_dout),
-    .if_empty_n(weight_regfile_14_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_227),
-    .if_full_n(weight_regfile_14_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_3),
-    .if_dout(weight_regfile_14_3_dout),
-    .if_empty_n(weight_regfile_14_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_228),
-    .if_full_n(weight_regfile_14_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_4),
-    .if_dout(weight_regfile_14_4_dout),
-    .if_empty_n(weight_regfile_14_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_229),
-    .if_full_n(weight_regfile_14_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_5),
-    .if_dout(weight_regfile_14_5_dout),
-    .if_empty_n(weight_regfile_14_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_230),
-    .if_full_n(weight_regfile_14_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_6),
-    .if_dout(weight_regfile_14_6_dout),
-    .if_empty_n(weight_regfile_14_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_231),
-    .if_full_n(weight_regfile_14_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_7),
-    .if_dout(weight_regfile_14_7_dout),
-    .if_empty_n(weight_regfile_14_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_232),
-    .if_full_n(weight_regfile_14_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_8),
-    .if_dout(weight_regfile_14_8_dout),
-    .if_empty_n(weight_regfile_14_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_233),
-    .if_full_n(weight_regfile_14_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_9),
-    .if_dout(weight_regfile_14_9_dout),
-    .if_empty_n(weight_regfile_14_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_234),
-    .if_full_n(weight_regfile_14_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_10),
-    .if_dout(weight_regfile_14_10_dout),
-    .if_empty_n(weight_regfile_14_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_235),
-    .if_full_n(weight_regfile_14_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_11),
-    .if_dout(weight_regfile_14_11_dout),
-    .if_empty_n(weight_regfile_14_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_236),
-    .if_full_n(weight_regfile_14_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_12),
-    .if_dout(weight_regfile_14_12_dout),
-    .if_empty_n(weight_regfile_14_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_237),
-    .if_full_n(weight_regfile_14_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_13),
-    .if_dout(weight_regfile_14_13_dout),
-    .if_empty_n(weight_regfile_14_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_238),
-    .if_full_n(weight_regfile_14_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_14),
-    .if_dout(weight_regfile_14_14_dout),
-    .if_empty_n(weight_regfile_14_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_14_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_239),
-    .if_full_n(weight_regfile_14_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_14_15),
-    .if_dout(weight_regfile_14_15_dout),
-    .if_empty_n(weight_regfile_14_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_0_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_240),
-    .if_full_n(weight_regfile_15_0_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_0),
-    .if_dout(weight_regfile_15_0_dout),
-    .if_empty_n(weight_regfile_15_0_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_1_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_241),
-    .if_full_n(weight_regfile_15_1_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_1),
-    .if_dout(weight_regfile_15_1_dout),
-    .if_empty_n(weight_regfile_15_1_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_2_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_242),
-    .if_full_n(weight_regfile_15_2_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_2),
-    .if_dout(weight_regfile_15_2_dout),
-    .if_empty_n(weight_regfile_15_2_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_3_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_243),
-    .if_full_n(weight_regfile_15_3_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_3),
-    .if_dout(weight_regfile_15_3_dout),
-    .if_empty_n(weight_regfile_15_3_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_4_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_244),
-    .if_full_n(weight_regfile_15_4_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_4),
-    .if_dout(weight_regfile_15_4_dout),
-    .if_empty_n(weight_regfile_15_4_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_5_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_245),
-    .if_full_n(weight_regfile_15_5_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_5),
-    .if_dout(weight_regfile_15_5_dout),
-    .if_empty_n(weight_regfile_15_5_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_6_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_246),
-    .if_full_n(weight_regfile_15_6_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_6),
-    .if_dout(weight_regfile_15_6_dout),
-    .if_empty_n(weight_regfile_15_6_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_7_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_247),
-    .if_full_n(weight_regfile_15_7_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_7),
-    .if_dout(weight_regfile_15_7_dout),
-    .if_empty_n(weight_regfile_15_7_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_8_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_248),
-    .if_full_n(weight_regfile_15_8_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_8),
-    .if_dout(weight_regfile_15_8_dout),
-    .if_empty_n(weight_regfile_15_8_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_9_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_249),
-    .if_full_n(weight_regfile_15_9_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_9),
-    .if_dout(weight_regfile_15_9_dout),
-    .if_empty_n(weight_regfile_15_9_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_10_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_250),
-    .if_full_n(weight_regfile_15_10_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_10),
-    .if_dout(weight_regfile_15_10_dout),
-    .if_empty_n(weight_regfile_15_10_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_11_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_251),
-    .if_full_n(weight_regfile_15_11_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_11),
-    .if_dout(weight_regfile_15_11_dout),
-    .if_empty_n(weight_regfile_15_11_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_12_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_252),
-    .if_full_n(weight_regfile_15_12_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_12),
-    .if_dout(weight_regfile_15_12_dout),
-    .if_empty_n(weight_regfile_15_12_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_13_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_253),
-    .if_full_n(weight_regfile_15_13_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_13),
-    .if_dout(weight_regfile_15_13_dout),
-    .if_empty_n(weight_regfile_15_13_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_14_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_254),
-    .if_full_n(weight_regfile_15_14_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_14),
-    .if_dout(weight_regfile_15_14_dout),
-    .if_empty_n(weight_regfile_15_14_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
-);
-
-Conv_sysarr_fifo_w8_d2_S weight_regfile_15_15_U(
-    .clk(ap_clk),
-    .reset(ap_rst),
-    .if_read_ce(1'b1),
-    .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_255),
-    .if_full_n(weight_regfile_15_15_full_n),
-    .if_write(ap_channel_done_weight_regfile_15_15),
-    .if_dout(weight_regfile_15_15_dout),
-    .if_empty_n(weight_regfile_15_15_empty_n),
-    .if_read(runSysArr_U0_ap_ready)
+    .if_read(runSIMD_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w1120_d2_S param_c12_U(
@@ -8412,9 +1476,9 @@ Conv_sysarr_fifo_w1120_d2_S param_c12_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runSysArr_U0_param_out_din),
+    .if_din(runSIMD_U0_param_out_din),
     .if_full_n(param_c12_full_n),
-    .if_write(runSysArr_U0_param_out_write),
+    .if_write(runSIMD_U0_param_out_write),
     .if_dout(param_c12_dout),
     .if_empty_n(param_c12_empty_n),
     .if_read(runOutputL1toL2_U0_param_read)
@@ -8446,78 +1510,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_10 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_10 <= ap_sync_channel_write_data_l1_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_11 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_11 <= ap_sync_channel_write_data_l1_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_12 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_12 <= ap_sync_channel_write_data_l1_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_13 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_13 <= ap_sync_channel_write_data_l1_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_14 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_14 <= ap_sync_channel_write_data_l1_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_15 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_15 <= ap_sync_channel_write_data_l1_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_data_l1_2 <= 1'b0;
     end else begin
         if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
@@ -8542,81 +1534,9 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_4 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_4 <= ap_sync_channel_write_data_l1_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_5 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_5 <= ap_sync_channel_write_data_l1_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_6 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_6 <= ap_sync_channel_write_data_l1_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_7 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_7 <= ap_sync_channel_write_data_l1_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_8 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_8 <= ap_sync_channel_write_data_l1_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_9 <= 1'b0;
-    end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_data_l1_9 <= ap_sync_channel_write_data_l1_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_output_l1_0 <= 1'b0;
     end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
+        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_output_l1_0 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_output_l1_0 <= ap_sync_channel_write_output_l1_0;
@@ -8628,7 +1548,7 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_output_l1_1 <= 1'b0;
     end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
+        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_output_l1_1 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_output_l1_1 <= ap_sync_channel_write_output_l1_1;
@@ -8638,81 +1558,9 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_10 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_10 <= ap_sync_channel_write_output_l1_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_11 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_11 <= ap_sync_channel_write_output_l1_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_12 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_12 <= ap_sync_channel_write_output_l1_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_13 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_13 <= ap_sync_channel_write_output_l1_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_14 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_14 <= ap_sync_channel_write_output_l1_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_15 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_15 <= ap_sync_channel_write_output_l1_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_output_l1_2 <= 1'b0;
     end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
+        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_output_l1_2 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_output_l1_2 <= ap_sync_channel_write_output_l1_2;
@@ -8724,82 +1572,10 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_output_l1_3 <= 1'b0;
     end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
+        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
             ap_sync_reg_channel_write_output_l1_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_output_l1_3 <= ap_sync_channel_write_output_l1_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_4 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_4 <= ap_sync_channel_write_output_l1_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_5 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_5 <= ap_sync_channel_write_output_l1_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_6 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_6 <= ap_sync_channel_write_output_l1_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_7 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_7 <= ap_sync_channel_write_output_l1_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_8 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_8 <= ap_sync_channel_write_output_l1_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_9 <= 1'b0;
-    end else begin
-        if (((runSysArr_U0_ap_done & runSysArr_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_output_l1_9 <= ap_sync_channel_write_output_l1_9;
         end
     end
 end
@@ -8830,78 +1606,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_10 <= ap_sync_channel_write_weight_regfile_0_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_11 <= ap_sync_channel_write_weight_regfile_0_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_12 <= ap_sync_channel_write_weight_regfile_0_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_13 <= ap_sync_channel_write_weight_regfile_0_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_14 <= ap_sync_channel_write_weight_regfile_0_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_15 <= ap_sync_channel_write_weight_regfile_0_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_0_2 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -8920,1230 +1624,6 @@ always @ (posedge ap_clk) begin
             ap_sync_reg_channel_write_weight_regfile_0_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_weight_regfile_0_3 <= ap_sync_channel_write_weight_regfile_0_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_4 <= ap_sync_channel_write_weight_regfile_0_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_5 <= ap_sync_channel_write_weight_regfile_0_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_6 <= ap_sync_channel_write_weight_regfile_0_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_7 <= ap_sync_channel_write_weight_regfile_0_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_8 <= ap_sync_channel_write_weight_regfile_0_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_0_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_0_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_0_9 <= ap_sync_channel_write_weight_regfile_0_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_0 <= ap_sync_channel_write_weight_regfile_10_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_1 <= ap_sync_channel_write_weight_regfile_10_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_10 <= ap_sync_channel_write_weight_regfile_10_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_11 <= ap_sync_channel_write_weight_regfile_10_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_12 <= ap_sync_channel_write_weight_regfile_10_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_13 <= ap_sync_channel_write_weight_regfile_10_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_14 <= ap_sync_channel_write_weight_regfile_10_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_15 <= ap_sync_channel_write_weight_regfile_10_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_2 <= ap_sync_channel_write_weight_regfile_10_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_3 <= ap_sync_channel_write_weight_regfile_10_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_4 <= ap_sync_channel_write_weight_regfile_10_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_5 <= ap_sync_channel_write_weight_regfile_10_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_6 <= ap_sync_channel_write_weight_regfile_10_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_7 <= ap_sync_channel_write_weight_regfile_10_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_8 <= ap_sync_channel_write_weight_regfile_10_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_10_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_10_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_10_9 <= ap_sync_channel_write_weight_regfile_10_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_0 <= ap_sync_channel_write_weight_regfile_11_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_1 <= ap_sync_channel_write_weight_regfile_11_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_10 <= ap_sync_channel_write_weight_regfile_11_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_11 <= ap_sync_channel_write_weight_regfile_11_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_12 <= ap_sync_channel_write_weight_regfile_11_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_13 <= ap_sync_channel_write_weight_regfile_11_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_14 <= ap_sync_channel_write_weight_regfile_11_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_15 <= ap_sync_channel_write_weight_regfile_11_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_2 <= ap_sync_channel_write_weight_regfile_11_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_3 <= ap_sync_channel_write_weight_regfile_11_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_4 <= ap_sync_channel_write_weight_regfile_11_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_5 <= ap_sync_channel_write_weight_regfile_11_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_6 <= ap_sync_channel_write_weight_regfile_11_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_7 <= ap_sync_channel_write_weight_regfile_11_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_8 <= ap_sync_channel_write_weight_regfile_11_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_11_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_11_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_11_9 <= ap_sync_channel_write_weight_regfile_11_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_0 <= ap_sync_channel_write_weight_regfile_12_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_1 <= ap_sync_channel_write_weight_regfile_12_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_10 <= ap_sync_channel_write_weight_regfile_12_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_11 <= ap_sync_channel_write_weight_regfile_12_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_12 <= ap_sync_channel_write_weight_regfile_12_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_13 <= ap_sync_channel_write_weight_regfile_12_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_14 <= ap_sync_channel_write_weight_regfile_12_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_15 <= ap_sync_channel_write_weight_regfile_12_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_2 <= ap_sync_channel_write_weight_regfile_12_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_3 <= ap_sync_channel_write_weight_regfile_12_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_4 <= ap_sync_channel_write_weight_regfile_12_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_5 <= ap_sync_channel_write_weight_regfile_12_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_6 <= ap_sync_channel_write_weight_regfile_12_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_7 <= ap_sync_channel_write_weight_regfile_12_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_8 <= ap_sync_channel_write_weight_regfile_12_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_12_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_12_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_12_9 <= ap_sync_channel_write_weight_regfile_12_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_0 <= ap_sync_channel_write_weight_regfile_13_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_1 <= ap_sync_channel_write_weight_regfile_13_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_10 <= ap_sync_channel_write_weight_regfile_13_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_11 <= ap_sync_channel_write_weight_regfile_13_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_12 <= ap_sync_channel_write_weight_regfile_13_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_13 <= ap_sync_channel_write_weight_regfile_13_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_14 <= ap_sync_channel_write_weight_regfile_13_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_15 <= ap_sync_channel_write_weight_regfile_13_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_2 <= ap_sync_channel_write_weight_regfile_13_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_3 <= ap_sync_channel_write_weight_regfile_13_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_4 <= ap_sync_channel_write_weight_regfile_13_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_5 <= ap_sync_channel_write_weight_regfile_13_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_6 <= ap_sync_channel_write_weight_regfile_13_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_7 <= ap_sync_channel_write_weight_regfile_13_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_8 <= ap_sync_channel_write_weight_regfile_13_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_13_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_13_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_13_9 <= ap_sync_channel_write_weight_regfile_13_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_0 <= ap_sync_channel_write_weight_regfile_14_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_1 <= ap_sync_channel_write_weight_regfile_14_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_10 <= ap_sync_channel_write_weight_regfile_14_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_11 <= ap_sync_channel_write_weight_regfile_14_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_12 <= ap_sync_channel_write_weight_regfile_14_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_13 <= ap_sync_channel_write_weight_regfile_14_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_14 <= ap_sync_channel_write_weight_regfile_14_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_15 <= ap_sync_channel_write_weight_regfile_14_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_2 <= ap_sync_channel_write_weight_regfile_14_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_3 <= ap_sync_channel_write_weight_regfile_14_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_4 <= ap_sync_channel_write_weight_regfile_14_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_5 <= ap_sync_channel_write_weight_regfile_14_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_6 <= ap_sync_channel_write_weight_regfile_14_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_7 <= ap_sync_channel_write_weight_regfile_14_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_8 <= ap_sync_channel_write_weight_regfile_14_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_14_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_14_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_14_9 <= ap_sync_channel_write_weight_regfile_14_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_0 <= ap_sync_channel_write_weight_regfile_15_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_1 <= ap_sync_channel_write_weight_regfile_15_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_10 <= ap_sync_channel_write_weight_regfile_15_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_11 <= ap_sync_channel_write_weight_regfile_15_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_12 <= ap_sync_channel_write_weight_regfile_15_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_13 <= ap_sync_channel_write_weight_regfile_15_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_14 <= ap_sync_channel_write_weight_regfile_15_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_15 <= ap_sync_channel_write_weight_regfile_15_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_2 <= ap_sync_channel_write_weight_regfile_15_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_3 <= ap_sync_channel_write_weight_regfile_15_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_4 <= ap_sync_channel_write_weight_regfile_15_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_5 <= ap_sync_channel_write_weight_regfile_15_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_6 <= ap_sync_channel_write_weight_regfile_15_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_7 <= ap_sync_channel_write_weight_regfile_15_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_8 <= ap_sync_channel_write_weight_regfile_15_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_15_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_15_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_15_9 <= ap_sync_channel_write_weight_regfile_15_9;
         end
     end
 end
@@ -10174,78 +1654,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_10 <= ap_sync_channel_write_weight_regfile_1_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_11 <= ap_sync_channel_write_weight_regfile_1_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_12 <= ap_sync_channel_write_weight_regfile_1_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_13 <= ap_sync_channel_write_weight_regfile_1_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_14 <= ap_sync_channel_write_weight_regfile_1_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_15 <= ap_sync_channel_write_weight_regfile_1_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_1_2 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -10264,78 +1672,6 @@ always @ (posedge ap_clk) begin
             ap_sync_reg_channel_write_weight_regfile_1_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_weight_regfile_1_3 <= ap_sync_channel_write_weight_regfile_1_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_4 <= ap_sync_channel_write_weight_regfile_1_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_5 <= ap_sync_channel_write_weight_regfile_1_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_6 <= ap_sync_channel_write_weight_regfile_1_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_7 <= ap_sync_channel_write_weight_regfile_1_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_8 <= ap_sync_channel_write_weight_regfile_1_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_1_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_1_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_1_9 <= ap_sync_channel_write_weight_regfile_1_9;
         end
     end
 end
@@ -10366,78 +1702,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_10 <= ap_sync_channel_write_weight_regfile_2_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_11 <= ap_sync_channel_write_weight_regfile_2_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_12 <= ap_sync_channel_write_weight_regfile_2_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_13 <= ap_sync_channel_write_weight_regfile_2_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_14 <= ap_sync_channel_write_weight_regfile_2_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_15 <= ap_sync_channel_write_weight_regfile_2_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_2_2 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -10456,78 +1720,6 @@ always @ (posedge ap_clk) begin
             ap_sync_reg_channel_write_weight_regfile_2_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_weight_regfile_2_3 <= ap_sync_channel_write_weight_regfile_2_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_4 <= ap_sync_channel_write_weight_regfile_2_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_5 <= ap_sync_channel_write_weight_regfile_2_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_6 <= ap_sync_channel_write_weight_regfile_2_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_7 <= ap_sync_channel_write_weight_regfile_2_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_8 <= ap_sync_channel_write_weight_regfile_2_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_2_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_2_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_2_9 <= ap_sync_channel_write_weight_regfile_2_9;
         end
     end
 end
@@ -10558,78 +1750,6 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_10 <= ap_sync_channel_write_weight_regfile_3_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_11 <= ap_sync_channel_write_weight_regfile_3_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_12 <= ap_sync_channel_write_weight_regfile_3_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_13 <= ap_sync_channel_write_weight_regfile_3_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_14 <= ap_sync_channel_write_weight_regfile_3_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_15 <= ap_sync_channel_write_weight_regfile_3_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_3_2 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -10654,1236 +1774,12 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_4 <= ap_sync_channel_write_weight_regfile_3_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_5 <= ap_sync_channel_write_weight_regfile_3_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_6 <= ap_sync_channel_write_weight_regfile_3_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_7 <= ap_sync_channel_write_weight_regfile_3_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_8 <= ap_sync_channel_write_weight_regfile_3_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_3_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_3_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_3_9 <= ap_sync_channel_write_weight_regfile_3_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_0 <= ap_sync_channel_write_weight_regfile_4_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_1 <= ap_sync_channel_write_weight_regfile_4_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_10 <= ap_sync_channel_write_weight_regfile_4_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_11 <= ap_sync_channel_write_weight_regfile_4_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_12 <= ap_sync_channel_write_weight_regfile_4_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_13 <= ap_sync_channel_write_weight_regfile_4_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_14 <= ap_sync_channel_write_weight_regfile_4_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_15 <= ap_sync_channel_write_weight_regfile_4_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_2 <= ap_sync_channel_write_weight_regfile_4_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_3 <= ap_sync_channel_write_weight_regfile_4_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_4 <= ap_sync_channel_write_weight_regfile_4_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_5 <= ap_sync_channel_write_weight_regfile_4_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_6 <= ap_sync_channel_write_weight_regfile_4_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_7 <= ap_sync_channel_write_weight_regfile_4_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_8 <= ap_sync_channel_write_weight_regfile_4_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_4_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_4_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_4_9 <= ap_sync_channel_write_weight_regfile_4_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_0 <= ap_sync_channel_write_weight_regfile_5_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_1 <= ap_sync_channel_write_weight_regfile_5_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_10 <= ap_sync_channel_write_weight_regfile_5_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_11 <= ap_sync_channel_write_weight_regfile_5_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_12 <= ap_sync_channel_write_weight_regfile_5_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_13 <= ap_sync_channel_write_weight_regfile_5_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_14 <= ap_sync_channel_write_weight_regfile_5_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_15 <= ap_sync_channel_write_weight_regfile_5_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_2 <= ap_sync_channel_write_weight_regfile_5_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_3 <= ap_sync_channel_write_weight_regfile_5_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_4 <= ap_sync_channel_write_weight_regfile_5_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_5 <= ap_sync_channel_write_weight_regfile_5_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_6 <= ap_sync_channel_write_weight_regfile_5_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_7 <= ap_sync_channel_write_weight_regfile_5_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_8 <= ap_sync_channel_write_weight_regfile_5_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_5_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_5_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_5_9 <= ap_sync_channel_write_weight_regfile_5_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_0 <= ap_sync_channel_write_weight_regfile_6_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_1 <= ap_sync_channel_write_weight_regfile_6_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_10 <= ap_sync_channel_write_weight_regfile_6_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_11 <= ap_sync_channel_write_weight_regfile_6_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_12 <= ap_sync_channel_write_weight_regfile_6_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_13 <= ap_sync_channel_write_weight_regfile_6_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_14 <= ap_sync_channel_write_weight_regfile_6_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_15 <= ap_sync_channel_write_weight_regfile_6_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_2 <= ap_sync_channel_write_weight_regfile_6_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_3 <= ap_sync_channel_write_weight_regfile_6_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_4 <= ap_sync_channel_write_weight_regfile_6_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_5 <= ap_sync_channel_write_weight_regfile_6_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_6 <= ap_sync_channel_write_weight_regfile_6_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_7 <= ap_sync_channel_write_weight_regfile_6_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_8 <= ap_sync_channel_write_weight_regfile_6_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_6_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_6_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_6_9 <= ap_sync_channel_write_weight_regfile_6_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_0 <= ap_sync_channel_write_weight_regfile_7_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_1 <= ap_sync_channel_write_weight_regfile_7_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_10 <= ap_sync_channel_write_weight_regfile_7_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_11 <= ap_sync_channel_write_weight_regfile_7_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_12 <= ap_sync_channel_write_weight_regfile_7_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_13 <= ap_sync_channel_write_weight_regfile_7_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_14 <= ap_sync_channel_write_weight_regfile_7_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_15 <= ap_sync_channel_write_weight_regfile_7_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_2 <= ap_sync_channel_write_weight_regfile_7_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_3 <= ap_sync_channel_write_weight_regfile_7_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_4 <= ap_sync_channel_write_weight_regfile_7_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_5 <= ap_sync_channel_write_weight_regfile_7_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_6 <= ap_sync_channel_write_weight_regfile_7_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_7 <= ap_sync_channel_write_weight_regfile_7_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_8 <= ap_sync_channel_write_weight_regfile_7_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_7_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_7_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_7_9 <= ap_sync_channel_write_weight_regfile_7_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_0 <= ap_sync_channel_write_weight_regfile_8_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_1 <= ap_sync_channel_write_weight_regfile_8_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_10 <= ap_sync_channel_write_weight_regfile_8_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_11 <= ap_sync_channel_write_weight_regfile_8_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_12 <= ap_sync_channel_write_weight_regfile_8_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_13 <= ap_sync_channel_write_weight_regfile_8_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_14 <= ap_sync_channel_write_weight_regfile_8_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_15 <= ap_sync_channel_write_weight_regfile_8_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_2 <= ap_sync_channel_write_weight_regfile_8_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_3 <= ap_sync_channel_write_weight_regfile_8_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_4 <= ap_sync_channel_write_weight_regfile_8_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_5 <= ap_sync_channel_write_weight_regfile_8_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_6 <= ap_sync_channel_write_weight_regfile_8_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_7 <= ap_sync_channel_write_weight_regfile_8_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_8 <= ap_sync_channel_write_weight_regfile_8_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_8_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_8_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_8_9 <= ap_sync_channel_write_weight_regfile_8_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_0 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_0 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_0 <= ap_sync_channel_write_weight_regfile_9_0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_1 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_1 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_1 <= ap_sync_channel_write_weight_regfile_9_1;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_10 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_10 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_10 <= ap_sync_channel_write_weight_regfile_9_10;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_11 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_11 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_11 <= ap_sync_channel_write_weight_regfile_9_11;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_12 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_12 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_12 <= ap_sync_channel_write_weight_regfile_9_12;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_13 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_13 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_13 <= ap_sync_channel_write_weight_regfile_9_13;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_14 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_14 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_14 <= ap_sync_channel_write_weight_regfile_9_14;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_15 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_15 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_15 <= ap_sync_channel_write_weight_regfile_9_15;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_2 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_2 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_2 <= ap_sync_channel_write_weight_regfile_9_2;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_3 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_3 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_3 <= ap_sync_channel_write_weight_regfile_9_3;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_4 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_4 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_4 <= ap_sync_channel_write_weight_regfile_9_4;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_5 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_5 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_5 <= ap_sync_channel_write_weight_regfile_9_5;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_6 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_6 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_6 <= ap_sync_channel_write_weight_regfile_9_6;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_7 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_7 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_7 <= ap_sync_channel_write_weight_regfile_9_7;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_8 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_8 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_8 <= ap_sync_channel_write_weight_regfile_9_8;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_weight_regfile_9_9 <= 1'b0;
-    end else begin
-        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_weight_regfile_9_9 <= 1'b0;
-        end else begin
-            ap_sync_reg_channel_write_weight_regfile_9_9 <= ap_sync_channel_write_weight_regfile_9_9;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= 1'b0;
+        ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= 1'b0;
     end else begin
         if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= 1'b0;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= 1'b0;
         end else begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
         end
     end
 end
@@ -11913,17 +1809,17 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_sync_ready == 1'b1) & (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready == 1'b0))) begin
-        dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count - 2'd1);
-    end else if (((ap_sync_ready == 1'b0) & (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready == 1'b1))) begin
-        dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready_count + 2'd1);
+    if (((dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
+        dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count - 2'd1);
+    end else if (((dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
+        dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count + 2'd1);
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((ap_sync_ready == 1'b1) & (runDataL2toL1_U0_ap_ready == 1'b0))) begin
+    if (((runDataL2toL1_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
         runDataL2toL1_U0_ap_ready_count <= (runDataL2toL1_U0_ap_ready_count - 2'd1);
-    end else if (((ap_sync_ready == 1'b0) & (runDataL2toL1_U0_ap_ready == 1'b1))) begin
+    end else if (((runDataL2toL1_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
         runDataL2toL1_U0_ap_ready_count <= (runDataL2toL1_U0_ap_ready_count + 2'd1);
     end
 end
@@ -11940,1167 +1836,111 @@ assign ap_channel_done_data_l1_0 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_chan
 
 assign ap_channel_done_data_l1_1 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1 ^ 1'b1));
 
-assign ap_channel_done_data_l1_10 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_10 ^ 1'b1));
-
-assign ap_channel_done_data_l1_11 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_11 ^ 1'b1));
-
-assign ap_channel_done_data_l1_12 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_12 ^ 1'b1));
-
-assign ap_channel_done_data_l1_13 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_13 ^ 1'b1));
-
-assign ap_channel_done_data_l1_14 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_14 ^ 1'b1));
-
-assign ap_channel_done_data_l1_15 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_15 ^ 1'b1));
-
 assign ap_channel_done_data_l1_2 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_2 ^ 1'b1));
 
 assign ap_channel_done_data_l1_3 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_3 ^ 1'b1));
 
-assign ap_channel_done_data_l1_4 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_4 ^ 1'b1));
+assign ap_channel_done_output_l1_0 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0 ^ 1'b1));
 
-assign ap_channel_done_data_l1_5 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_5 ^ 1'b1));
+assign ap_channel_done_output_l1_1 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1 ^ 1'b1));
 
-assign ap_channel_done_data_l1_6 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_6 ^ 1'b1));
+assign ap_channel_done_output_l1_2 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_2 ^ 1'b1));
 
-assign ap_channel_done_data_l1_7 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_7 ^ 1'b1));
-
-assign ap_channel_done_data_l1_8 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_8 ^ 1'b1));
-
-assign ap_channel_done_data_l1_9 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_9 ^ 1'b1));
-
-assign ap_channel_done_output_l1_0 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0 ^ 1'b1));
-
-assign ap_channel_done_output_l1_1 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1 ^ 1'b1));
-
-assign ap_channel_done_output_l1_10 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_10 ^ 1'b1));
-
-assign ap_channel_done_output_l1_11 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_11 ^ 1'b1));
-
-assign ap_channel_done_output_l1_12 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_12 ^ 1'b1));
-
-assign ap_channel_done_output_l1_13 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_13 ^ 1'b1));
-
-assign ap_channel_done_output_l1_14 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_14 ^ 1'b1));
-
-assign ap_channel_done_output_l1_15 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_15 ^ 1'b1));
-
-assign ap_channel_done_output_l1_2 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_2 ^ 1'b1));
-
-assign ap_channel_done_output_l1_3 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_3 ^ 1'b1));
-
-assign ap_channel_done_output_l1_4 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_4 ^ 1'b1));
-
-assign ap_channel_done_output_l1_5 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_5 ^ 1'b1));
-
-assign ap_channel_done_output_l1_6 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_6 ^ 1'b1));
-
-assign ap_channel_done_output_l1_7 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_7 ^ 1'b1));
-
-assign ap_channel_done_output_l1_8 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_8 ^ 1'b1));
-
-assign ap_channel_done_output_l1_9 = (runSysArr_U0_ap_done & (ap_sync_reg_channel_write_output_l1_9 ^ 1'b1));
+assign ap_channel_done_output_l1_3 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_3 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_0_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_0_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_1 ^ 1'b1));
 
-assign ap_channel_done_weight_regfile_0_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_15 ^ 1'b1));
-
 assign ap_channel_done_weight_regfile_0_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_2 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_0_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_0_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_10_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_10_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_11_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_11_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_12_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_12_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_13_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_13_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_14_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_14_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_15_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_15_9 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_1_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_1_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_1 ^ 1'b1));
 
-assign ap_channel_done_weight_regfile_1_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_15 ^ 1'b1));
-
 assign ap_channel_done_weight_regfile_1_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_2 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_1_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_1_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_9 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_2_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_2_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_1 ^ 1'b1));
 
-assign ap_channel_done_weight_regfile_2_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_15 ^ 1'b1));
-
 assign ap_channel_done_weight_regfile_2_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_2 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_2_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_2_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_9 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_3_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_3_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_1 ^ 1'b1));
 
-assign ap_channel_done_weight_regfile_3_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_15 ^ 1'b1));
-
 assign ap_channel_done_weight_regfile_3_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_2 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_3_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_3 ^ 1'b1));
 
-assign ap_channel_done_weight_regfile_3_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_3_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_4_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_5_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_6_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_7_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_8_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_8_9 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_0 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_1 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_10 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_10 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_11 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_11 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_12 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_12 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_13 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_13 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_14 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_14 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_15 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_15 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_2 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_3 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_4 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_5 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_6 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_7 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_8 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_8 ^ 1'b1));
-
-assign ap_channel_done_weight_regfile_9_9 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_9_9 ^ 1'b1));
-
 assign ap_done = runOutputL1toL2_U0_ap_done;
 
-assign ap_idle = (runWeight2Reg_U0_ap_idle & runSysArr_U0_ap_idle & runOutputL1toL2_U0_ap_idle & runDataL2toL1_U0_ap_idle & (weight_regfile_15_15_empty_n ^ 1'b1) & (weight_regfile_15_14_empty_n ^ 1'b1) & (weight_regfile_15_13_empty_n ^ 1'b1) & (weight_regfile_15_12_empty_n ^ 1'b1) & (weight_regfile_15_11_empty_n ^ 1'b1) & (weight_regfile_15_10_empty_n ^ 1'b1) & (weight_regfile_15_9_empty_n ^ 1'b1) & (weight_regfile_15_8_empty_n ^ 1'b1) & (weight_regfile_15_7_empty_n ^ 1'b1) & (weight_regfile_15_6_empty_n ^ 1'b1) & (weight_regfile_15_5_empty_n ^ 1'b1) & (weight_regfile_15_4_empty_n ^ 1'b1) & (weight_regfile_15_3_empty_n ^ 1'b1) & (weight_regfile_15_2_empty_n ^ 1'b1) & (weight_regfile_15_1_empty_n ^ 1'b1) & (weight_regfile_15_0_empty_n ^ 1'b1) & (weight_regfile_14_15_empty_n ^ 1'b1) & (weight_regfile_14_14_empty_n ^ 1'b1) & (weight_regfile_14_13_empty_n ^ 1'b1) & (weight_regfile_14_12_empty_n ^ 1'b1) & (weight_regfile_14_11_empty_n ^ 1'b1) & (weight_regfile_14_10_empty_n ^ 1'b1) & (weight_regfile_14_9_empty_n ^ 1'b1) & (weight_regfile_14_8_empty_n ^ 1'b1) & (weight_regfile_14_7_empty_n ^ 1'b1) & (weight_regfile_14_6_empty_n ^ 1'b1) & (weight_regfile_14_5_empty_n ^ 1'b1) & (weight_regfile_14_4_empty_n ^ 1'b1) & (weight_regfile_14_3_empty_n ^ 1'b1) & (weight_regfile_14_2_empty_n ^ 1'b1) & (weight_regfile_14_1_empty_n ^ 1'b1) & (weight_regfile_14_0_empty_n ^ 1'b1) & (weight_regfile_13_15_empty_n ^ 1'b1) & (weight_regfile_13_14_empty_n ^ 1'b1) & (weight_regfile_13_13_empty_n ^ 1'b1) & (weight_regfile_13_12_empty_n ^ 1'b1) & (weight_regfile_13_11_empty_n ^ 1'b1) & (weight_regfile_13_10_empty_n ^ 1'b1) & (weight_regfile_13_9_empty_n ^ 1'b1) & (weight_regfile_13_8_empty_n ^ 1'b1) & (weight_regfile_13_7_empty_n ^ 1'b1) & (weight_regfile_13_6_empty_n ^ 1'b1) & (weight_regfile_13_5_empty_n ^ 1'b1) & (weight_regfile_13_4_empty_n ^ 1'b1) & (weight_regfile_13_3_empty_n ^ 1'b1) & (weight_regfile_13_2_empty_n ^ 1'b1) & (weight_regfile_13_1_empty_n ^ 1'b1) & (weight_regfile_13_0_empty_n ^ 1'b1) & (weight_regfile_12_15_empty_n ^ 1'b1) & (weight_regfile_12_14_empty_n ^ 1'b1) & (weight_regfile_12_13_empty_n ^ 1'b1) & (weight_regfile_12_12_empty_n ^ 1'b1) & (weight_regfile_12_11_empty_n ^ 1'b1) & (weight_regfile_12_10_empty_n ^ 1'b1) & (weight_regfile_12_9_empty_n ^ 1'b1) & (weight_regfile_12_8_empty_n ^ 1'b1) & (weight_regfile_12_7_empty_n ^ 1'b1) & (weight_regfile_12_6_empty_n ^ 1'b1) & (weight_regfile_12_5_empty_n ^ 1'b1) & (weight_regfile_12_4_empty_n ^ 1'b1) & (weight_regfile_12_3_empty_n ^ 1'b1) & (weight_regfile_12_2_empty_n ^ 1'b1) & (weight_regfile_12_1_empty_n ^ 1'b1) & (weight_regfile_12_0_empty_n ^ 1'b1) & (weight_regfile_11_15_empty_n ^ 1'b1) & (weight_regfile_11_14_empty_n ^ 1'b1) & (weight_regfile_11_13_empty_n ^ 1'b1) & (weight_regfile_11_12_empty_n ^ 1'b1) & (weight_regfile_11_11_empty_n ^ 1'b1) & (weight_regfile_11_10_empty_n ^ 1'b1) & (weight_regfile_11_9_empty_n ^ 1'b1) & (weight_regfile_11_8_empty_n ^ 1'b1) & (weight_regfile_11_7_empty_n ^ 1'b1) & (weight_regfile_11_6_empty_n ^ 1'b1) & (weight_regfile_11_5_empty_n ^ 1'b1) & (weight_regfile_11_4_empty_n ^ 1'b1) & (weight_regfile_11_3_empty_n ^ 1'b1) & (weight_regfile_11_2_empty_n ^ 1'b1) & (weight_regfile_11_1_empty_n ^ 1'b1) & (weight_regfile_11_0_empty_n ^ 1'b1) & (weight_regfile_10_15_empty_n ^ 1'b1) & (weight_regfile_10_14_empty_n ^ 1'b1) & (weight_regfile_10_13_empty_n ^ 1'b1) & (weight_regfile_10_12_empty_n ^ 1'b1) & (weight_regfile_10_11_empty_n ^ 1'b1) & (weight_regfile_10_10_empty_n ^ 1'b1) & (weight_regfile_10_9_empty_n ^ 1'b1) & (weight_regfile_10_8_empty_n ^ 1'b1) & (weight_regfile_10_7_empty_n ^ 1'b1) & (weight_regfile_10_6_empty_n ^ 1'b1) & (weight_regfile_10_5_empty_n ^ 1'b1) & (weight_regfile_10_4_empty_n ^ 1'b1) & (weight_regfile_10_3_empty_n ^ 1'b1) & (weight_regfile_10_2_empty_n ^ 1'b1) & (weight_regfile_10_1_empty_n ^ 1'b1) & (weight_regfile_10_0_empty_n ^ 1'b1) & (weight_regfile_9_15_empty_n ^ 1'b1) & (weight_regfile_9_14_empty_n ^ 1'b1) & (weight_regfile_9_13_empty_n ^ 1'b1) & (weight_regfile_9_12_empty_n ^ 1'b1) & (weight_regfile_9_11_empty_n ^ 1'b1) & (weight_regfile_9_10_empty_n ^ 1'b1) & (weight_regfile_9_9_empty_n ^ 1'b1) & (weight_regfile_9_8_empty_n ^ 1'b1) & (weight_regfile_9_7_empty_n ^ 1'b1) & (weight_regfile_9_6_empty_n ^ 1'b1) & (weight_regfile_9_5_empty_n ^ 1'b1) & (weight_regfile_9_4_empty_n ^ 1'b1) & (weight_regfile_9_3_empty_n ^ 1'b1) & (weight_regfile_9_2_empty_n ^ 1'b1) & (weight_regfile_9_1_empty_n ^ 1'b1) & (weight_regfile_9_0_empty_n ^ 1'b1) & (weight_regfile_8_15_empty_n ^ 1'b1) & (weight_regfile_8_14_empty_n ^ 1'b1) & (weight_regfile_8_13_empty_n ^ 1'b1) & (weight_regfile_8_12_empty_n ^ 1'b1) & (weight_regfile_8_11_empty_n ^ 1'b1) & (weight_regfile_8_10_empty_n ^ 1'b1) & (weight_regfile_8_9_empty_n ^ 1'b1) & (weight_regfile_8_8_empty_n ^ 1'b1) & (weight_regfile_8_7_empty_n ^ 1'b1) & (weight_regfile_8_6_empty_n ^ 1'b1) & (weight_regfile_8_5_empty_n ^ 1'b1) & (weight_regfile_8_4_empty_n ^ 1'b1) & (weight_regfile_8_3_empty_n ^ 1'b1) & (weight_regfile_8_2_empty_n ^ 1'b1) & (weight_regfile_8_1_empty_n ^ 1'b1) & (weight_regfile_8_0_empty_n ^ 1'b1) & (weight_regfile_7_15_empty_n ^ 1'b1) & (weight_regfile_7_14_empty_n ^ 1'b1) & (weight_regfile_7_13_empty_n ^ 1'b1) & (weight_regfile_7_12_empty_n ^ 1'b1) & (weight_regfile_7_11_empty_n ^ 1'b1) & (weight_regfile_7_10_empty_n ^ 1'b1) & (weight_regfile_7_9_empty_n ^ 1'b1) & (weight_regfile_7_8_empty_n ^ 1'b1) & (weight_regfile_7_7_empty_n ^ 1'b1) & (weight_regfile_7_6_empty_n ^ 1'b1) & (weight_regfile_7_5_empty_n ^ 1'b1) & (weight_regfile_7_4_empty_n ^ 1'b1) & (weight_regfile_7_3_empty_n ^ 1'b1) & (weight_regfile_7_2_empty_n ^ 1'b1) & (weight_regfile_7_1_empty_n ^ 1'b1) & (weight_regfile_7_0_empty_n ^ 1'b1) & (weight_regfile_6_15_empty_n ^ 1'b1) & (weight_regfile_6_14_empty_n ^ 1'b1) & (weight_regfile_6_13_empty_n ^ 1'b1) & (weight_regfile_6_12_empty_n ^ 1'b1) & (weight_regfile_6_11_empty_n ^ 1'b1) & (weight_regfile_6_10_empty_n ^ 1'b1) & (weight_regfile_6_9_empty_n ^ 1'b1) & (weight_regfile_6_8_empty_n ^ 1'b1) & (weight_regfile_6_7_empty_n ^ 1'b1) & (weight_regfile_6_6_empty_n ^ 1'b1) & (weight_regfile_6_5_empty_n ^ 1'b1) & (weight_regfile_6_4_empty_n ^ 1'b1) & (weight_regfile_6_3_empty_n ^ 1'b1) & (weight_regfile_6_2_empty_n ^ 1'b1) & (weight_regfile_6_1_empty_n ^ 1'b1) & (weight_regfile_6_0_empty_n ^ 1'b1) & (weight_regfile_5_15_empty_n ^ 1'b1) & (weight_regfile_5_14_empty_n ^ 1'b1) & (weight_regfile_5_13_empty_n ^ 1'b1) & (weight_regfile_5_12_empty_n ^ 1'b1) & (weight_regfile_5_11_empty_n ^ 1'b1) & (weight_regfile_5_10_empty_n ^ 1'b1) & (weight_regfile_5_9_empty_n ^ 1'b1) & (weight_regfile_5_8_empty_n ^ 1'b1) & (weight_regfile_5_7_empty_n ^ 1'b1) & (weight_regfile_5_6_empty_n ^ 1'b1) & (weight_regfile_5_5_empty_n ^ 1'b1) & (weight_regfile_5_4_empty_n ^ 1'b1) & (weight_regfile_5_3_empty_n ^ 1'b1) & (weight_regfile_5_2_empty_n ^ 1'b1) & (weight_regfile_5_1_empty_n ^ 1'b1) & (weight_regfile_5_0_empty_n ^ 1'b1) & (weight_regfile_4_15_empty_n ^ 1'b1) & (weight_regfile_4_14_empty_n ^ 1'b1) & (weight_regfile_4_13_empty_n ^ 1'b1) & (weight_regfile_4_12_empty_n ^ 1'b1) & (weight_regfile_4_11_empty_n ^ 1'b1) & (weight_regfile_4_10_empty_n ^ 1'b1) & (weight_regfile_4_9_empty_n ^ 1'b1) & (weight_regfile_4_8_empty_n ^ 1'b1) & (weight_regfile_4_7_empty_n ^ 1'b1) & (weight_regfile_4_6_empty_n ^ 1'b1) & (weight_regfile_4_5_empty_n ^ 1'b1) & (weight_regfile_4_4_empty_n ^ 1'b1) & (weight_regfile_4_3_empty_n ^ 1'b1) & (weight_regfile_4_2_empty_n ^ 1'b1) & (weight_regfile_4_1_empty_n ^ 1'b1) & (weight_regfile_4_0_empty_n ^ 1'b1) & (weight_regfile_3_15_empty_n ^ 1'b1) & (weight_regfile_3_14_empty_n ^ 1'b1) & (weight_regfile_3_13_empty_n ^ 1'b1) & (weight_regfile_3_12_empty_n ^ 1'b1) & (weight_regfile_3_11_empty_n ^ 1'b1) & (weight_regfile_3_10_empty_n ^ 1'b1) & (weight_regfile_3_9_empty_n ^ 1'b1) & (weight_regfile_3_8_empty_n ^ 1'b1) & (weight_regfile_3_7_empty_n ^ 1'b1) & (weight_regfile_3_6_empty_n ^ 1'b1) & (weight_regfile_3_5_empty_n ^ 1'b1) & (weight_regfile_3_4_empty_n ^ 1'b1) & (weight_regfile_3_3_empty_n ^ 1'b1) & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_15_empty_n ^ 1'b1) & (weight_regfile_2_14_empty_n ^ 1'b1) & (weight_regfile_2_13_empty_n ^ 1'b1) & (weight_regfile_2_12_empty_n ^ 1'b1) & (weight_regfile_2_11_empty_n ^ 1'b1) & (weight_regfile_2_10_empty_n ^ 1'b1) & (weight_regfile_2_9_empty_n ^ 1'b1) & (weight_regfile_2_8_empty_n ^ 1'b1) & (weight_regfile_2_7_empty_n ^ 1'b1) & (weight_regfile_2_6_empty_n ^ 1'b1) & (weight_regfile_2_5_empty_n ^ 1'b1) & (weight_regfile_2_4_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_15_empty_n ^ 1'b1) & (weight_regfile_1_14_empty_n ^ 1'b1) & (weight_regfile_1_13_empty_n ^ 1'b1) & (weight_regfile_1_12_empty_n ^ 1'b1) & (weight_regfile_1_11_empty_n ^ 1'b1) & (weight_regfile_1_10_empty_n ^ 1'b1) & (weight_regfile_1_9_empty_n ^ 1'b1) & (weight_regfile_1_8_empty_n ^ 1'b1) & (weight_regfile_1_7_empty_n ^ 1'b1) & (weight_regfile_1_6_empty_n ^ 1'b1) & (weight_regfile_1_5_empty_n ^ 1'b1) & (weight_regfile_1_4_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_15_empty_n ^ 1'b1) & (weight_regfile_0_14_empty_n ^ 1'b1) & (weight_regfile_0_13_empty_n ^ 1'b1) & (weight_regfile_0_12_empty_n ^ 1'b1) & (weight_regfile_0_11_empty_n ^ 1'b1) & (weight_regfile_0_10_empty_n ^ 1'b1) & (weight_regfile_0_9_empty_n ^ 1'b1) & (weight_regfile_0_8_empty_n ^ 1'b1) & (weight_regfile_0_7_empty_n ^ 1'b1) & (weight_regfile_0_6_empty_n ^ 1'b1) & (weight_regfile_0_5_empty_n ^ 1'b1) & (weight_regfile_0_4_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (output_l1_15_t_empty_n ^ 1'b1) & (output_l1_14_t_empty_n ^ 1'b1) & (output_l1_13_t_empty_n ^ 1'b1) & (output_l1_12_t_empty_n ^ 1'b1) & (output_l1_11_t_empty_n ^ 1'b1) & (output_l1_10_t_empty_n ^ 1'b1) & (output_l1_9_t_empty_n ^ 1'b1) & (output_l1_8_t_empty_n ^ 1'b1) & (output_l1_7_t_empty_n ^ 1'b1) & (output_l1_6_t_empty_n ^ 1'b1) & (output_l1_5_t_empty_n ^ 1'b1) & (output_l1_4_t_empty_n ^ 1'b1) & (output_l1_3_t_empty_n ^ 1'b1) & (output_l1_2_t_empty_n ^ 1'b1) & (output_l1_1_t_empty_n ^ 1'b1) & (output_l1_0_t_empty_n ^ 1'b1) & (data_l1_15_t_empty_n ^ 1'b1) & (data_l1_14_t_empty_n ^ 1'b1) & (data_l1_13_t_empty_n ^ 1'b1) & (data_l1_12_t_empty_n ^ 1'b1) & (data_l1_11_t_empty_n ^ 1'b1) & (data_l1_10_t_empty_n ^ 1'b1) & (data_l1_9_t_empty_n ^ 1'b1) & (data_l1_8_t_empty_n ^ 1'b1) & (data_l1_7_t_empty_n ^ 1'b1) & (data_l1_6_t_empty_n ^ 1'b1) & (data_l1_5_t_empty_n ^ 1'b1) & (data_l1_4_t_empty_n ^ 1'b1) & (data_l1_3_t_empty_n ^ 1'b1) & (data_l1_2_t_empty_n ^ 1'b1) & (data_l1_1_t_empty_n ^ 1'b1) & (data_l1_0_t_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_idle);
+assign ap_idle = (runWeight2Reg_U0_ap_idle & runSIMD_U0_ap_idle & runOutputL1toL2_U0_ap_idle & runDataL2toL1_U0_ap_idle & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (output_l1_3_t_empty_n ^ 1'b1) & (output_l1_2_t_empty_n ^ 1'b1) & (output_l1_1_t_empty_n ^ 1'b1) & (output_l1_0_t_empty_n ^ 1'b1) & (data_l1_3_t_empty_n ^ 1'b1) & (data_l1_2_t_empty_n ^ 1'b1) & (data_l1_1_t_empty_n ^ 1'b1) & (data_l1_0_t_empty_n ^ 1'b1) & (weight_regfile_3_3_empty_n ^ 1'b1) & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
-assign ap_sync_channel_write_data_l1_0 = ((runDataL2toL1_U0_data_l1_0257_i_full_n & ap_channel_done_data_l1_0) | ap_sync_reg_channel_write_data_l1_0);
+assign ap_sync_channel_write_data_l1_0 = ((runDataL2toL1_U0_data_l1_017_i_full_n & ap_channel_done_data_l1_0) | ap_sync_reg_channel_write_data_l1_0);
 
-assign ap_sync_channel_write_data_l1_1 = ((runDataL2toL1_U0_data_l1_1258_i_full_n & ap_channel_done_data_l1_1) | ap_sync_reg_channel_write_data_l1_1);
+assign ap_sync_channel_write_data_l1_1 = ((runDataL2toL1_U0_data_l1_118_i_full_n & ap_channel_done_data_l1_1) | ap_sync_reg_channel_write_data_l1_1);
 
-assign ap_sync_channel_write_data_l1_10 = ((runDataL2toL1_U0_data_l1_10267_i_full_n & ap_channel_done_data_l1_10) | ap_sync_reg_channel_write_data_l1_10);
+assign ap_sync_channel_write_data_l1_2 = ((runDataL2toL1_U0_data_l1_219_i_full_n & ap_channel_done_data_l1_2) | ap_sync_reg_channel_write_data_l1_2);
 
-assign ap_sync_channel_write_data_l1_11 = ((runDataL2toL1_U0_data_l1_11268_i_full_n & ap_channel_done_data_l1_11) | ap_sync_reg_channel_write_data_l1_11);
+assign ap_sync_channel_write_data_l1_3 = ((runDataL2toL1_U0_data_l1_320_i_full_n & ap_channel_done_data_l1_3) | ap_sync_reg_channel_write_data_l1_3);
 
-assign ap_sync_channel_write_data_l1_12 = ((runDataL2toL1_U0_data_l1_12269_i_full_n & ap_channel_done_data_l1_12) | ap_sync_reg_channel_write_data_l1_12);
+assign ap_sync_channel_write_output_l1_0 = ((runSIMD_U0_output_l1_021_i_full_n & ap_channel_done_output_l1_0) | ap_sync_reg_channel_write_output_l1_0);
 
-assign ap_sync_channel_write_data_l1_13 = ((runDataL2toL1_U0_data_l1_13270_i_full_n & ap_channel_done_data_l1_13) | ap_sync_reg_channel_write_data_l1_13);
+assign ap_sync_channel_write_output_l1_1 = ((runSIMD_U0_output_l1_122_i_full_n & ap_channel_done_output_l1_1) | ap_sync_reg_channel_write_output_l1_1);
 
-assign ap_sync_channel_write_data_l1_14 = ((runDataL2toL1_U0_data_l1_14271_i_full_n & ap_channel_done_data_l1_14) | ap_sync_reg_channel_write_data_l1_14);
+assign ap_sync_channel_write_output_l1_2 = ((runSIMD_U0_output_l1_223_i_full_n & ap_channel_done_output_l1_2) | ap_sync_reg_channel_write_output_l1_2);
 
-assign ap_sync_channel_write_data_l1_15 = ((runDataL2toL1_U0_data_l1_15272_i_full_n & ap_channel_done_data_l1_15) | ap_sync_reg_channel_write_data_l1_15);
-
-assign ap_sync_channel_write_data_l1_2 = ((runDataL2toL1_U0_data_l1_2259_i_full_n & ap_channel_done_data_l1_2) | ap_sync_reg_channel_write_data_l1_2);
-
-assign ap_sync_channel_write_data_l1_3 = ((runDataL2toL1_U0_data_l1_3260_i_full_n & ap_channel_done_data_l1_3) | ap_sync_reg_channel_write_data_l1_3);
-
-assign ap_sync_channel_write_data_l1_4 = ((runDataL2toL1_U0_data_l1_4261_i_full_n & ap_channel_done_data_l1_4) | ap_sync_reg_channel_write_data_l1_4);
-
-assign ap_sync_channel_write_data_l1_5 = ((runDataL2toL1_U0_data_l1_5262_i_full_n & ap_channel_done_data_l1_5) | ap_sync_reg_channel_write_data_l1_5);
-
-assign ap_sync_channel_write_data_l1_6 = ((runDataL2toL1_U0_data_l1_6263_i_full_n & ap_channel_done_data_l1_6) | ap_sync_reg_channel_write_data_l1_6);
-
-assign ap_sync_channel_write_data_l1_7 = ((runDataL2toL1_U0_data_l1_7264_i_full_n & ap_channel_done_data_l1_7) | ap_sync_reg_channel_write_data_l1_7);
-
-assign ap_sync_channel_write_data_l1_8 = ((runDataL2toL1_U0_data_l1_8265_i_full_n & ap_channel_done_data_l1_8) | ap_sync_reg_channel_write_data_l1_8);
-
-assign ap_sync_channel_write_data_l1_9 = ((runDataL2toL1_U0_data_l1_9266_i_full_n & ap_channel_done_data_l1_9) | ap_sync_reg_channel_write_data_l1_9);
-
-assign ap_sync_channel_write_output_l1_0 = ((runSysArr_U0_output_l1_0273_i_full_n & ap_channel_done_output_l1_0) | ap_sync_reg_channel_write_output_l1_0);
-
-assign ap_sync_channel_write_output_l1_1 = ((runSysArr_U0_output_l1_1274_i_full_n & ap_channel_done_output_l1_1) | ap_sync_reg_channel_write_output_l1_1);
-
-assign ap_sync_channel_write_output_l1_10 = ((runSysArr_U0_output_l1_10283_i_full_n & ap_channel_done_output_l1_10) | ap_sync_reg_channel_write_output_l1_10);
-
-assign ap_sync_channel_write_output_l1_11 = ((runSysArr_U0_output_l1_11284_i_full_n & ap_channel_done_output_l1_11) | ap_sync_reg_channel_write_output_l1_11);
-
-assign ap_sync_channel_write_output_l1_12 = ((runSysArr_U0_output_l1_12285_i_full_n & ap_channel_done_output_l1_12) | ap_sync_reg_channel_write_output_l1_12);
-
-assign ap_sync_channel_write_output_l1_13 = ((runSysArr_U0_output_l1_13286_i_full_n & ap_channel_done_output_l1_13) | ap_sync_reg_channel_write_output_l1_13);
-
-assign ap_sync_channel_write_output_l1_14 = ((runSysArr_U0_output_l1_14287_i_full_n & ap_channel_done_output_l1_14) | ap_sync_reg_channel_write_output_l1_14);
-
-assign ap_sync_channel_write_output_l1_15 = ((runSysArr_U0_output_l1_15288_i_full_n & ap_channel_done_output_l1_15) | ap_sync_reg_channel_write_output_l1_15);
-
-assign ap_sync_channel_write_output_l1_2 = ((runSysArr_U0_output_l1_2275_i_full_n & ap_channel_done_output_l1_2) | ap_sync_reg_channel_write_output_l1_2);
-
-assign ap_sync_channel_write_output_l1_3 = ((runSysArr_U0_output_l1_3276_i_full_n & ap_channel_done_output_l1_3) | ap_sync_reg_channel_write_output_l1_3);
-
-assign ap_sync_channel_write_output_l1_4 = ((runSysArr_U0_output_l1_4277_i_full_n & ap_channel_done_output_l1_4) | ap_sync_reg_channel_write_output_l1_4);
-
-assign ap_sync_channel_write_output_l1_5 = ((runSysArr_U0_output_l1_5278_i_full_n & ap_channel_done_output_l1_5) | ap_sync_reg_channel_write_output_l1_5);
-
-assign ap_sync_channel_write_output_l1_6 = ((runSysArr_U0_output_l1_6279_i_full_n & ap_channel_done_output_l1_6) | ap_sync_reg_channel_write_output_l1_6);
-
-assign ap_sync_channel_write_output_l1_7 = ((runSysArr_U0_output_l1_7280_i_full_n & ap_channel_done_output_l1_7) | ap_sync_reg_channel_write_output_l1_7);
-
-assign ap_sync_channel_write_output_l1_8 = ((runSysArr_U0_output_l1_8281_i_full_n & ap_channel_done_output_l1_8) | ap_sync_reg_channel_write_output_l1_8);
-
-assign ap_sync_channel_write_output_l1_9 = ((runSysArr_U0_output_l1_9282_i_full_n & ap_channel_done_output_l1_9) | ap_sync_reg_channel_write_output_l1_9);
+assign ap_sync_channel_write_output_l1_3 = ((runSIMD_U0_output_l1_324_i_full_n & ap_channel_done_output_l1_3) | ap_sync_reg_channel_write_output_l1_3);
 
 assign ap_sync_channel_write_weight_regfile_0_0 = ((weight_regfile_0_0_full_n & ap_channel_done_weight_regfile_0_0) | ap_sync_reg_channel_write_weight_regfile_0_0);
 
 assign ap_sync_channel_write_weight_regfile_0_1 = ((weight_regfile_0_1_full_n & ap_channel_done_weight_regfile_0_1) | ap_sync_reg_channel_write_weight_regfile_0_1);
 
-assign ap_sync_channel_write_weight_regfile_0_10 = ((weight_regfile_0_10_full_n & ap_channel_done_weight_regfile_0_10) | ap_sync_reg_channel_write_weight_regfile_0_10);
-
-assign ap_sync_channel_write_weight_regfile_0_11 = ((weight_regfile_0_11_full_n & ap_channel_done_weight_regfile_0_11) | ap_sync_reg_channel_write_weight_regfile_0_11);
-
-assign ap_sync_channel_write_weight_regfile_0_12 = ((weight_regfile_0_12_full_n & ap_channel_done_weight_regfile_0_12) | ap_sync_reg_channel_write_weight_regfile_0_12);
-
-assign ap_sync_channel_write_weight_regfile_0_13 = ((weight_regfile_0_13_full_n & ap_channel_done_weight_regfile_0_13) | ap_sync_reg_channel_write_weight_regfile_0_13);
-
-assign ap_sync_channel_write_weight_regfile_0_14 = ((weight_regfile_0_14_full_n & ap_channel_done_weight_regfile_0_14) | ap_sync_reg_channel_write_weight_regfile_0_14);
-
-assign ap_sync_channel_write_weight_regfile_0_15 = ((weight_regfile_0_15_full_n & ap_channel_done_weight_regfile_0_15) | ap_sync_reg_channel_write_weight_regfile_0_15);
-
 assign ap_sync_channel_write_weight_regfile_0_2 = ((weight_regfile_0_2_full_n & ap_channel_done_weight_regfile_0_2) | ap_sync_reg_channel_write_weight_regfile_0_2);
 
 assign ap_sync_channel_write_weight_regfile_0_3 = ((weight_regfile_0_3_full_n & ap_channel_done_weight_regfile_0_3) | ap_sync_reg_channel_write_weight_regfile_0_3);
-
-assign ap_sync_channel_write_weight_regfile_0_4 = ((weight_regfile_0_4_full_n & ap_channel_done_weight_regfile_0_4) | ap_sync_reg_channel_write_weight_regfile_0_4);
-
-assign ap_sync_channel_write_weight_regfile_0_5 = ((weight_regfile_0_5_full_n & ap_channel_done_weight_regfile_0_5) | ap_sync_reg_channel_write_weight_regfile_0_5);
-
-assign ap_sync_channel_write_weight_regfile_0_6 = ((weight_regfile_0_6_full_n & ap_channel_done_weight_regfile_0_6) | ap_sync_reg_channel_write_weight_regfile_0_6);
-
-assign ap_sync_channel_write_weight_regfile_0_7 = ((weight_regfile_0_7_full_n & ap_channel_done_weight_regfile_0_7) | ap_sync_reg_channel_write_weight_regfile_0_7);
-
-assign ap_sync_channel_write_weight_regfile_0_8 = ((weight_regfile_0_8_full_n & ap_channel_done_weight_regfile_0_8) | ap_sync_reg_channel_write_weight_regfile_0_8);
-
-assign ap_sync_channel_write_weight_regfile_0_9 = ((weight_regfile_0_9_full_n & ap_channel_done_weight_regfile_0_9) | ap_sync_reg_channel_write_weight_regfile_0_9);
-
-assign ap_sync_channel_write_weight_regfile_10_0 = ((weight_regfile_10_0_full_n & ap_channel_done_weight_regfile_10_0) | ap_sync_reg_channel_write_weight_regfile_10_0);
-
-assign ap_sync_channel_write_weight_regfile_10_1 = ((weight_regfile_10_1_full_n & ap_channel_done_weight_regfile_10_1) | ap_sync_reg_channel_write_weight_regfile_10_1);
-
-assign ap_sync_channel_write_weight_regfile_10_10 = ((weight_regfile_10_10_full_n & ap_channel_done_weight_regfile_10_10) | ap_sync_reg_channel_write_weight_regfile_10_10);
-
-assign ap_sync_channel_write_weight_regfile_10_11 = ((weight_regfile_10_11_full_n & ap_channel_done_weight_regfile_10_11) | ap_sync_reg_channel_write_weight_regfile_10_11);
-
-assign ap_sync_channel_write_weight_regfile_10_12 = ((weight_regfile_10_12_full_n & ap_channel_done_weight_regfile_10_12) | ap_sync_reg_channel_write_weight_regfile_10_12);
-
-assign ap_sync_channel_write_weight_regfile_10_13 = ((weight_regfile_10_13_full_n & ap_channel_done_weight_regfile_10_13) | ap_sync_reg_channel_write_weight_regfile_10_13);
-
-assign ap_sync_channel_write_weight_regfile_10_14 = ((weight_regfile_10_14_full_n & ap_channel_done_weight_regfile_10_14) | ap_sync_reg_channel_write_weight_regfile_10_14);
-
-assign ap_sync_channel_write_weight_regfile_10_15 = ((weight_regfile_10_15_full_n & ap_channel_done_weight_regfile_10_15) | ap_sync_reg_channel_write_weight_regfile_10_15);
-
-assign ap_sync_channel_write_weight_regfile_10_2 = ((weight_regfile_10_2_full_n & ap_channel_done_weight_regfile_10_2) | ap_sync_reg_channel_write_weight_regfile_10_2);
-
-assign ap_sync_channel_write_weight_regfile_10_3 = ((weight_regfile_10_3_full_n & ap_channel_done_weight_regfile_10_3) | ap_sync_reg_channel_write_weight_regfile_10_3);
-
-assign ap_sync_channel_write_weight_regfile_10_4 = ((weight_regfile_10_4_full_n & ap_channel_done_weight_regfile_10_4) | ap_sync_reg_channel_write_weight_regfile_10_4);
-
-assign ap_sync_channel_write_weight_regfile_10_5 = ((weight_regfile_10_5_full_n & ap_channel_done_weight_regfile_10_5) | ap_sync_reg_channel_write_weight_regfile_10_5);
-
-assign ap_sync_channel_write_weight_regfile_10_6 = ((weight_regfile_10_6_full_n & ap_channel_done_weight_regfile_10_6) | ap_sync_reg_channel_write_weight_regfile_10_6);
-
-assign ap_sync_channel_write_weight_regfile_10_7 = ((weight_regfile_10_7_full_n & ap_channel_done_weight_regfile_10_7) | ap_sync_reg_channel_write_weight_regfile_10_7);
-
-assign ap_sync_channel_write_weight_regfile_10_8 = ((weight_regfile_10_8_full_n & ap_channel_done_weight_regfile_10_8) | ap_sync_reg_channel_write_weight_regfile_10_8);
-
-assign ap_sync_channel_write_weight_regfile_10_9 = ((weight_regfile_10_9_full_n & ap_channel_done_weight_regfile_10_9) | ap_sync_reg_channel_write_weight_regfile_10_9);
-
-assign ap_sync_channel_write_weight_regfile_11_0 = ((weight_regfile_11_0_full_n & ap_channel_done_weight_regfile_11_0) | ap_sync_reg_channel_write_weight_regfile_11_0);
-
-assign ap_sync_channel_write_weight_regfile_11_1 = ((weight_regfile_11_1_full_n & ap_channel_done_weight_regfile_11_1) | ap_sync_reg_channel_write_weight_regfile_11_1);
-
-assign ap_sync_channel_write_weight_regfile_11_10 = ((weight_regfile_11_10_full_n & ap_channel_done_weight_regfile_11_10) | ap_sync_reg_channel_write_weight_regfile_11_10);
-
-assign ap_sync_channel_write_weight_regfile_11_11 = ((weight_regfile_11_11_full_n & ap_channel_done_weight_regfile_11_11) | ap_sync_reg_channel_write_weight_regfile_11_11);
-
-assign ap_sync_channel_write_weight_regfile_11_12 = ((weight_regfile_11_12_full_n & ap_channel_done_weight_regfile_11_12) | ap_sync_reg_channel_write_weight_regfile_11_12);
-
-assign ap_sync_channel_write_weight_regfile_11_13 = ((weight_regfile_11_13_full_n & ap_channel_done_weight_regfile_11_13) | ap_sync_reg_channel_write_weight_regfile_11_13);
-
-assign ap_sync_channel_write_weight_regfile_11_14 = ((weight_regfile_11_14_full_n & ap_channel_done_weight_regfile_11_14) | ap_sync_reg_channel_write_weight_regfile_11_14);
-
-assign ap_sync_channel_write_weight_regfile_11_15 = ((weight_regfile_11_15_full_n & ap_channel_done_weight_regfile_11_15) | ap_sync_reg_channel_write_weight_regfile_11_15);
-
-assign ap_sync_channel_write_weight_regfile_11_2 = ((weight_regfile_11_2_full_n & ap_channel_done_weight_regfile_11_2) | ap_sync_reg_channel_write_weight_regfile_11_2);
-
-assign ap_sync_channel_write_weight_regfile_11_3 = ((weight_regfile_11_3_full_n & ap_channel_done_weight_regfile_11_3) | ap_sync_reg_channel_write_weight_regfile_11_3);
-
-assign ap_sync_channel_write_weight_regfile_11_4 = ((weight_regfile_11_4_full_n & ap_channel_done_weight_regfile_11_4) | ap_sync_reg_channel_write_weight_regfile_11_4);
-
-assign ap_sync_channel_write_weight_regfile_11_5 = ((weight_regfile_11_5_full_n & ap_channel_done_weight_regfile_11_5) | ap_sync_reg_channel_write_weight_regfile_11_5);
-
-assign ap_sync_channel_write_weight_regfile_11_6 = ((weight_regfile_11_6_full_n & ap_channel_done_weight_regfile_11_6) | ap_sync_reg_channel_write_weight_regfile_11_6);
-
-assign ap_sync_channel_write_weight_regfile_11_7 = ((weight_regfile_11_7_full_n & ap_channel_done_weight_regfile_11_7) | ap_sync_reg_channel_write_weight_regfile_11_7);
-
-assign ap_sync_channel_write_weight_regfile_11_8 = ((weight_regfile_11_8_full_n & ap_channel_done_weight_regfile_11_8) | ap_sync_reg_channel_write_weight_regfile_11_8);
-
-assign ap_sync_channel_write_weight_regfile_11_9 = ((weight_regfile_11_9_full_n & ap_channel_done_weight_regfile_11_9) | ap_sync_reg_channel_write_weight_regfile_11_9);
-
-assign ap_sync_channel_write_weight_regfile_12_0 = ((weight_regfile_12_0_full_n & ap_channel_done_weight_regfile_12_0) | ap_sync_reg_channel_write_weight_regfile_12_0);
-
-assign ap_sync_channel_write_weight_regfile_12_1 = ((weight_regfile_12_1_full_n & ap_channel_done_weight_regfile_12_1) | ap_sync_reg_channel_write_weight_regfile_12_1);
-
-assign ap_sync_channel_write_weight_regfile_12_10 = ((weight_regfile_12_10_full_n & ap_channel_done_weight_regfile_12_10) | ap_sync_reg_channel_write_weight_regfile_12_10);
-
-assign ap_sync_channel_write_weight_regfile_12_11 = ((weight_regfile_12_11_full_n & ap_channel_done_weight_regfile_12_11) | ap_sync_reg_channel_write_weight_regfile_12_11);
-
-assign ap_sync_channel_write_weight_regfile_12_12 = ((weight_regfile_12_12_full_n & ap_channel_done_weight_regfile_12_12) | ap_sync_reg_channel_write_weight_regfile_12_12);
-
-assign ap_sync_channel_write_weight_regfile_12_13 = ((weight_regfile_12_13_full_n & ap_channel_done_weight_regfile_12_13) | ap_sync_reg_channel_write_weight_regfile_12_13);
-
-assign ap_sync_channel_write_weight_regfile_12_14 = ((weight_regfile_12_14_full_n & ap_channel_done_weight_regfile_12_14) | ap_sync_reg_channel_write_weight_regfile_12_14);
-
-assign ap_sync_channel_write_weight_regfile_12_15 = ((weight_regfile_12_15_full_n & ap_channel_done_weight_regfile_12_15) | ap_sync_reg_channel_write_weight_regfile_12_15);
-
-assign ap_sync_channel_write_weight_regfile_12_2 = ((weight_regfile_12_2_full_n & ap_channel_done_weight_regfile_12_2) | ap_sync_reg_channel_write_weight_regfile_12_2);
-
-assign ap_sync_channel_write_weight_regfile_12_3 = ((weight_regfile_12_3_full_n & ap_channel_done_weight_regfile_12_3) | ap_sync_reg_channel_write_weight_regfile_12_3);
-
-assign ap_sync_channel_write_weight_regfile_12_4 = ((weight_regfile_12_4_full_n & ap_channel_done_weight_regfile_12_4) | ap_sync_reg_channel_write_weight_regfile_12_4);
-
-assign ap_sync_channel_write_weight_regfile_12_5 = ((weight_regfile_12_5_full_n & ap_channel_done_weight_regfile_12_5) | ap_sync_reg_channel_write_weight_regfile_12_5);
-
-assign ap_sync_channel_write_weight_regfile_12_6 = ((weight_regfile_12_6_full_n & ap_channel_done_weight_regfile_12_6) | ap_sync_reg_channel_write_weight_regfile_12_6);
-
-assign ap_sync_channel_write_weight_regfile_12_7 = ((weight_regfile_12_7_full_n & ap_channel_done_weight_regfile_12_7) | ap_sync_reg_channel_write_weight_regfile_12_7);
-
-assign ap_sync_channel_write_weight_regfile_12_8 = ((weight_regfile_12_8_full_n & ap_channel_done_weight_regfile_12_8) | ap_sync_reg_channel_write_weight_regfile_12_8);
-
-assign ap_sync_channel_write_weight_regfile_12_9 = ((weight_regfile_12_9_full_n & ap_channel_done_weight_regfile_12_9) | ap_sync_reg_channel_write_weight_regfile_12_9);
-
-assign ap_sync_channel_write_weight_regfile_13_0 = ((weight_regfile_13_0_full_n & ap_channel_done_weight_regfile_13_0) | ap_sync_reg_channel_write_weight_regfile_13_0);
-
-assign ap_sync_channel_write_weight_regfile_13_1 = ((weight_regfile_13_1_full_n & ap_channel_done_weight_regfile_13_1) | ap_sync_reg_channel_write_weight_regfile_13_1);
-
-assign ap_sync_channel_write_weight_regfile_13_10 = ((weight_regfile_13_10_full_n & ap_channel_done_weight_regfile_13_10) | ap_sync_reg_channel_write_weight_regfile_13_10);
-
-assign ap_sync_channel_write_weight_regfile_13_11 = ((weight_regfile_13_11_full_n & ap_channel_done_weight_regfile_13_11) | ap_sync_reg_channel_write_weight_regfile_13_11);
-
-assign ap_sync_channel_write_weight_regfile_13_12 = ((weight_regfile_13_12_full_n & ap_channel_done_weight_regfile_13_12) | ap_sync_reg_channel_write_weight_regfile_13_12);
-
-assign ap_sync_channel_write_weight_regfile_13_13 = ((weight_regfile_13_13_full_n & ap_channel_done_weight_regfile_13_13) | ap_sync_reg_channel_write_weight_regfile_13_13);
-
-assign ap_sync_channel_write_weight_regfile_13_14 = ((weight_regfile_13_14_full_n & ap_channel_done_weight_regfile_13_14) | ap_sync_reg_channel_write_weight_regfile_13_14);
-
-assign ap_sync_channel_write_weight_regfile_13_15 = ((weight_regfile_13_15_full_n & ap_channel_done_weight_regfile_13_15) | ap_sync_reg_channel_write_weight_regfile_13_15);
-
-assign ap_sync_channel_write_weight_regfile_13_2 = ((weight_regfile_13_2_full_n & ap_channel_done_weight_regfile_13_2) | ap_sync_reg_channel_write_weight_regfile_13_2);
-
-assign ap_sync_channel_write_weight_regfile_13_3 = ((weight_regfile_13_3_full_n & ap_channel_done_weight_regfile_13_3) | ap_sync_reg_channel_write_weight_regfile_13_3);
-
-assign ap_sync_channel_write_weight_regfile_13_4 = ((weight_regfile_13_4_full_n & ap_channel_done_weight_regfile_13_4) | ap_sync_reg_channel_write_weight_regfile_13_4);
-
-assign ap_sync_channel_write_weight_regfile_13_5 = ((weight_regfile_13_5_full_n & ap_channel_done_weight_regfile_13_5) | ap_sync_reg_channel_write_weight_regfile_13_5);
-
-assign ap_sync_channel_write_weight_regfile_13_6 = ((weight_regfile_13_6_full_n & ap_channel_done_weight_regfile_13_6) | ap_sync_reg_channel_write_weight_regfile_13_6);
-
-assign ap_sync_channel_write_weight_regfile_13_7 = ((weight_regfile_13_7_full_n & ap_channel_done_weight_regfile_13_7) | ap_sync_reg_channel_write_weight_regfile_13_7);
-
-assign ap_sync_channel_write_weight_regfile_13_8 = ((weight_regfile_13_8_full_n & ap_channel_done_weight_regfile_13_8) | ap_sync_reg_channel_write_weight_regfile_13_8);
-
-assign ap_sync_channel_write_weight_regfile_13_9 = ((weight_regfile_13_9_full_n & ap_channel_done_weight_regfile_13_9) | ap_sync_reg_channel_write_weight_regfile_13_9);
-
-assign ap_sync_channel_write_weight_regfile_14_0 = ((weight_regfile_14_0_full_n & ap_channel_done_weight_regfile_14_0) | ap_sync_reg_channel_write_weight_regfile_14_0);
-
-assign ap_sync_channel_write_weight_regfile_14_1 = ((weight_regfile_14_1_full_n & ap_channel_done_weight_regfile_14_1) | ap_sync_reg_channel_write_weight_regfile_14_1);
-
-assign ap_sync_channel_write_weight_regfile_14_10 = ((weight_regfile_14_10_full_n & ap_channel_done_weight_regfile_14_10) | ap_sync_reg_channel_write_weight_regfile_14_10);
-
-assign ap_sync_channel_write_weight_regfile_14_11 = ((weight_regfile_14_11_full_n & ap_channel_done_weight_regfile_14_11) | ap_sync_reg_channel_write_weight_regfile_14_11);
-
-assign ap_sync_channel_write_weight_regfile_14_12 = ((weight_regfile_14_12_full_n & ap_channel_done_weight_regfile_14_12) | ap_sync_reg_channel_write_weight_regfile_14_12);
-
-assign ap_sync_channel_write_weight_regfile_14_13 = ((weight_regfile_14_13_full_n & ap_channel_done_weight_regfile_14_13) | ap_sync_reg_channel_write_weight_regfile_14_13);
-
-assign ap_sync_channel_write_weight_regfile_14_14 = ((weight_regfile_14_14_full_n & ap_channel_done_weight_regfile_14_14) | ap_sync_reg_channel_write_weight_regfile_14_14);
-
-assign ap_sync_channel_write_weight_regfile_14_15 = ((weight_regfile_14_15_full_n & ap_channel_done_weight_regfile_14_15) | ap_sync_reg_channel_write_weight_regfile_14_15);
-
-assign ap_sync_channel_write_weight_regfile_14_2 = ((weight_regfile_14_2_full_n & ap_channel_done_weight_regfile_14_2) | ap_sync_reg_channel_write_weight_regfile_14_2);
-
-assign ap_sync_channel_write_weight_regfile_14_3 = ((weight_regfile_14_3_full_n & ap_channel_done_weight_regfile_14_3) | ap_sync_reg_channel_write_weight_regfile_14_3);
-
-assign ap_sync_channel_write_weight_regfile_14_4 = ((weight_regfile_14_4_full_n & ap_channel_done_weight_regfile_14_4) | ap_sync_reg_channel_write_weight_regfile_14_4);
-
-assign ap_sync_channel_write_weight_regfile_14_5 = ((weight_regfile_14_5_full_n & ap_channel_done_weight_regfile_14_5) | ap_sync_reg_channel_write_weight_regfile_14_5);
-
-assign ap_sync_channel_write_weight_regfile_14_6 = ((weight_regfile_14_6_full_n & ap_channel_done_weight_regfile_14_6) | ap_sync_reg_channel_write_weight_regfile_14_6);
-
-assign ap_sync_channel_write_weight_regfile_14_7 = ((weight_regfile_14_7_full_n & ap_channel_done_weight_regfile_14_7) | ap_sync_reg_channel_write_weight_regfile_14_7);
-
-assign ap_sync_channel_write_weight_regfile_14_8 = ((weight_regfile_14_8_full_n & ap_channel_done_weight_regfile_14_8) | ap_sync_reg_channel_write_weight_regfile_14_8);
-
-assign ap_sync_channel_write_weight_regfile_14_9 = ((weight_regfile_14_9_full_n & ap_channel_done_weight_regfile_14_9) | ap_sync_reg_channel_write_weight_regfile_14_9);
-
-assign ap_sync_channel_write_weight_regfile_15_0 = ((weight_regfile_15_0_full_n & ap_channel_done_weight_regfile_15_0) | ap_sync_reg_channel_write_weight_regfile_15_0);
-
-assign ap_sync_channel_write_weight_regfile_15_1 = ((weight_regfile_15_1_full_n & ap_channel_done_weight_regfile_15_1) | ap_sync_reg_channel_write_weight_regfile_15_1);
-
-assign ap_sync_channel_write_weight_regfile_15_10 = ((weight_regfile_15_10_full_n & ap_channel_done_weight_regfile_15_10) | ap_sync_reg_channel_write_weight_regfile_15_10);
-
-assign ap_sync_channel_write_weight_regfile_15_11 = ((weight_regfile_15_11_full_n & ap_channel_done_weight_regfile_15_11) | ap_sync_reg_channel_write_weight_regfile_15_11);
-
-assign ap_sync_channel_write_weight_regfile_15_12 = ((weight_regfile_15_12_full_n & ap_channel_done_weight_regfile_15_12) | ap_sync_reg_channel_write_weight_regfile_15_12);
-
-assign ap_sync_channel_write_weight_regfile_15_13 = ((weight_regfile_15_13_full_n & ap_channel_done_weight_regfile_15_13) | ap_sync_reg_channel_write_weight_regfile_15_13);
-
-assign ap_sync_channel_write_weight_regfile_15_14 = ((weight_regfile_15_14_full_n & ap_channel_done_weight_regfile_15_14) | ap_sync_reg_channel_write_weight_regfile_15_14);
-
-assign ap_sync_channel_write_weight_regfile_15_15 = ((weight_regfile_15_15_full_n & ap_channel_done_weight_regfile_15_15) | ap_sync_reg_channel_write_weight_regfile_15_15);
-
-assign ap_sync_channel_write_weight_regfile_15_2 = ((weight_regfile_15_2_full_n & ap_channel_done_weight_regfile_15_2) | ap_sync_reg_channel_write_weight_regfile_15_2);
-
-assign ap_sync_channel_write_weight_regfile_15_3 = ((weight_regfile_15_3_full_n & ap_channel_done_weight_regfile_15_3) | ap_sync_reg_channel_write_weight_regfile_15_3);
-
-assign ap_sync_channel_write_weight_regfile_15_4 = ((weight_regfile_15_4_full_n & ap_channel_done_weight_regfile_15_4) | ap_sync_reg_channel_write_weight_regfile_15_4);
-
-assign ap_sync_channel_write_weight_regfile_15_5 = ((weight_regfile_15_5_full_n & ap_channel_done_weight_regfile_15_5) | ap_sync_reg_channel_write_weight_regfile_15_5);
-
-assign ap_sync_channel_write_weight_regfile_15_6 = ((weight_regfile_15_6_full_n & ap_channel_done_weight_regfile_15_6) | ap_sync_reg_channel_write_weight_regfile_15_6);
-
-assign ap_sync_channel_write_weight_regfile_15_7 = ((weight_regfile_15_7_full_n & ap_channel_done_weight_regfile_15_7) | ap_sync_reg_channel_write_weight_regfile_15_7);
-
-assign ap_sync_channel_write_weight_regfile_15_8 = ((weight_regfile_15_8_full_n & ap_channel_done_weight_regfile_15_8) | ap_sync_reg_channel_write_weight_regfile_15_8);
-
-assign ap_sync_channel_write_weight_regfile_15_9 = ((weight_regfile_15_9_full_n & ap_channel_done_weight_regfile_15_9) | ap_sync_reg_channel_write_weight_regfile_15_9);
 
 assign ap_sync_channel_write_weight_regfile_1_0 = ((weight_regfile_1_0_full_n & ap_channel_done_weight_regfile_1_0) | ap_sync_reg_channel_write_weight_regfile_1_0);
 
 assign ap_sync_channel_write_weight_regfile_1_1 = ((weight_regfile_1_1_full_n & ap_channel_done_weight_regfile_1_1) | ap_sync_reg_channel_write_weight_regfile_1_1);
 
-assign ap_sync_channel_write_weight_regfile_1_10 = ((weight_regfile_1_10_full_n & ap_channel_done_weight_regfile_1_10) | ap_sync_reg_channel_write_weight_regfile_1_10);
-
-assign ap_sync_channel_write_weight_regfile_1_11 = ((weight_regfile_1_11_full_n & ap_channel_done_weight_regfile_1_11) | ap_sync_reg_channel_write_weight_regfile_1_11);
-
-assign ap_sync_channel_write_weight_regfile_1_12 = ((weight_regfile_1_12_full_n & ap_channel_done_weight_regfile_1_12) | ap_sync_reg_channel_write_weight_regfile_1_12);
-
-assign ap_sync_channel_write_weight_regfile_1_13 = ((weight_regfile_1_13_full_n & ap_channel_done_weight_regfile_1_13) | ap_sync_reg_channel_write_weight_regfile_1_13);
-
-assign ap_sync_channel_write_weight_regfile_1_14 = ((weight_regfile_1_14_full_n & ap_channel_done_weight_regfile_1_14) | ap_sync_reg_channel_write_weight_regfile_1_14);
-
-assign ap_sync_channel_write_weight_regfile_1_15 = ((weight_regfile_1_15_full_n & ap_channel_done_weight_regfile_1_15) | ap_sync_reg_channel_write_weight_regfile_1_15);
-
 assign ap_sync_channel_write_weight_regfile_1_2 = ((weight_regfile_1_2_full_n & ap_channel_done_weight_regfile_1_2) | ap_sync_reg_channel_write_weight_regfile_1_2);
 
 assign ap_sync_channel_write_weight_regfile_1_3 = ((weight_regfile_1_3_full_n & ap_channel_done_weight_regfile_1_3) | ap_sync_reg_channel_write_weight_regfile_1_3);
-
-assign ap_sync_channel_write_weight_regfile_1_4 = ((weight_regfile_1_4_full_n & ap_channel_done_weight_regfile_1_4) | ap_sync_reg_channel_write_weight_regfile_1_4);
-
-assign ap_sync_channel_write_weight_regfile_1_5 = ((weight_regfile_1_5_full_n & ap_channel_done_weight_regfile_1_5) | ap_sync_reg_channel_write_weight_regfile_1_5);
-
-assign ap_sync_channel_write_weight_regfile_1_6 = ((weight_regfile_1_6_full_n & ap_channel_done_weight_regfile_1_6) | ap_sync_reg_channel_write_weight_regfile_1_6);
-
-assign ap_sync_channel_write_weight_regfile_1_7 = ((weight_regfile_1_7_full_n & ap_channel_done_weight_regfile_1_7) | ap_sync_reg_channel_write_weight_regfile_1_7);
-
-assign ap_sync_channel_write_weight_regfile_1_8 = ((weight_regfile_1_8_full_n & ap_channel_done_weight_regfile_1_8) | ap_sync_reg_channel_write_weight_regfile_1_8);
-
-assign ap_sync_channel_write_weight_regfile_1_9 = ((weight_regfile_1_9_full_n & ap_channel_done_weight_regfile_1_9) | ap_sync_reg_channel_write_weight_regfile_1_9);
 
 assign ap_sync_channel_write_weight_regfile_2_0 = ((weight_regfile_2_0_full_n & ap_channel_done_weight_regfile_2_0) | ap_sync_reg_channel_write_weight_regfile_2_0);
 
 assign ap_sync_channel_write_weight_regfile_2_1 = ((weight_regfile_2_1_full_n & ap_channel_done_weight_regfile_2_1) | ap_sync_reg_channel_write_weight_regfile_2_1);
 
-assign ap_sync_channel_write_weight_regfile_2_10 = ((weight_regfile_2_10_full_n & ap_channel_done_weight_regfile_2_10) | ap_sync_reg_channel_write_weight_regfile_2_10);
-
-assign ap_sync_channel_write_weight_regfile_2_11 = ((weight_regfile_2_11_full_n & ap_channel_done_weight_regfile_2_11) | ap_sync_reg_channel_write_weight_regfile_2_11);
-
-assign ap_sync_channel_write_weight_regfile_2_12 = ((weight_regfile_2_12_full_n & ap_channel_done_weight_regfile_2_12) | ap_sync_reg_channel_write_weight_regfile_2_12);
-
-assign ap_sync_channel_write_weight_regfile_2_13 = ((weight_regfile_2_13_full_n & ap_channel_done_weight_regfile_2_13) | ap_sync_reg_channel_write_weight_regfile_2_13);
-
-assign ap_sync_channel_write_weight_regfile_2_14 = ((weight_regfile_2_14_full_n & ap_channel_done_weight_regfile_2_14) | ap_sync_reg_channel_write_weight_regfile_2_14);
-
-assign ap_sync_channel_write_weight_regfile_2_15 = ((weight_regfile_2_15_full_n & ap_channel_done_weight_regfile_2_15) | ap_sync_reg_channel_write_weight_regfile_2_15);
-
 assign ap_sync_channel_write_weight_regfile_2_2 = ((weight_regfile_2_2_full_n & ap_channel_done_weight_regfile_2_2) | ap_sync_reg_channel_write_weight_regfile_2_2);
 
 assign ap_sync_channel_write_weight_regfile_2_3 = ((weight_regfile_2_3_full_n & ap_channel_done_weight_regfile_2_3) | ap_sync_reg_channel_write_weight_regfile_2_3);
-
-assign ap_sync_channel_write_weight_regfile_2_4 = ((weight_regfile_2_4_full_n & ap_channel_done_weight_regfile_2_4) | ap_sync_reg_channel_write_weight_regfile_2_4);
-
-assign ap_sync_channel_write_weight_regfile_2_5 = ((weight_regfile_2_5_full_n & ap_channel_done_weight_regfile_2_5) | ap_sync_reg_channel_write_weight_regfile_2_5);
-
-assign ap_sync_channel_write_weight_regfile_2_6 = ((weight_regfile_2_6_full_n & ap_channel_done_weight_regfile_2_6) | ap_sync_reg_channel_write_weight_regfile_2_6);
-
-assign ap_sync_channel_write_weight_regfile_2_7 = ((weight_regfile_2_7_full_n & ap_channel_done_weight_regfile_2_7) | ap_sync_reg_channel_write_weight_regfile_2_7);
-
-assign ap_sync_channel_write_weight_regfile_2_8 = ((weight_regfile_2_8_full_n & ap_channel_done_weight_regfile_2_8) | ap_sync_reg_channel_write_weight_regfile_2_8);
-
-assign ap_sync_channel_write_weight_regfile_2_9 = ((weight_regfile_2_9_full_n & ap_channel_done_weight_regfile_2_9) | ap_sync_reg_channel_write_weight_regfile_2_9);
 
 assign ap_sync_channel_write_weight_regfile_3_0 = ((weight_regfile_3_0_full_n & ap_channel_done_weight_regfile_3_0) | ap_sync_reg_channel_write_weight_regfile_3_0);
 
 assign ap_sync_channel_write_weight_regfile_3_1 = ((weight_regfile_3_1_full_n & ap_channel_done_weight_regfile_3_1) | ap_sync_reg_channel_write_weight_regfile_3_1);
 
-assign ap_sync_channel_write_weight_regfile_3_10 = ((weight_regfile_3_10_full_n & ap_channel_done_weight_regfile_3_10) | ap_sync_reg_channel_write_weight_regfile_3_10);
-
-assign ap_sync_channel_write_weight_regfile_3_11 = ((weight_regfile_3_11_full_n & ap_channel_done_weight_regfile_3_11) | ap_sync_reg_channel_write_weight_regfile_3_11);
-
-assign ap_sync_channel_write_weight_regfile_3_12 = ((weight_regfile_3_12_full_n & ap_channel_done_weight_regfile_3_12) | ap_sync_reg_channel_write_weight_regfile_3_12);
-
-assign ap_sync_channel_write_weight_regfile_3_13 = ((weight_regfile_3_13_full_n & ap_channel_done_weight_regfile_3_13) | ap_sync_reg_channel_write_weight_regfile_3_13);
-
-assign ap_sync_channel_write_weight_regfile_3_14 = ((weight_regfile_3_14_full_n & ap_channel_done_weight_regfile_3_14) | ap_sync_reg_channel_write_weight_regfile_3_14);
-
-assign ap_sync_channel_write_weight_regfile_3_15 = ((weight_regfile_3_15_full_n & ap_channel_done_weight_regfile_3_15) | ap_sync_reg_channel_write_weight_regfile_3_15);
-
 assign ap_sync_channel_write_weight_regfile_3_2 = ((weight_regfile_3_2_full_n & ap_channel_done_weight_regfile_3_2) | ap_sync_reg_channel_write_weight_regfile_3_2);
 
 assign ap_sync_channel_write_weight_regfile_3_3 = ((weight_regfile_3_3_full_n & ap_channel_done_weight_regfile_3_3) | ap_sync_reg_channel_write_weight_regfile_3_3);
 
-assign ap_sync_channel_write_weight_regfile_3_4 = ((weight_regfile_3_4_full_n & ap_channel_done_weight_regfile_3_4) | ap_sync_reg_channel_write_weight_regfile_3_4);
-
-assign ap_sync_channel_write_weight_regfile_3_5 = ((weight_regfile_3_5_full_n & ap_channel_done_weight_regfile_3_5) | ap_sync_reg_channel_write_weight_regfile_3_5);
-
-assign ap_sync_channel_write_weight_regfile_3_6 = ((weight_regfile_3_6_full_n & ap_channel_done_weight_regfile_3_6) | ap_sync_reg_channel_write_weight_regfile_3_6);
-
-assign ap_sync_channel_write_weight_regfile_3_7 = ((weight_regfile_3_7_full_n & ap_channel_done_weight_regfile_3_7) | ap_sync_reg_channel_write_weight_regfile_3_7);
-
-assign ap_sync_channel_write_weight_regfile_3_8 = ((weight_regfile_3_8_full_n & ap_channel_done_weight_regfile_3_8) | ap_sync_reg_channel_write_weight_regfile_3_8);
-
-assign ap_sync_channel_write_weight_regfile_3_9 = ((weight_regfile_3_9_full_n & ap_channel_done_weight_regfile_3_9) | ap_sync_reg_channel_write_weight_regfile_3_9);
-
-assign ap_sync_channel_write_weight_regfile_4_0 = ((weight_regfile_4_0_full_n & ap_channel_done_weight_regfile_4_0) | ap_sync_reg_channel_write_weight_regfile_4_0);
-
-assign ap_sync_channel_write_weight_regfile_4_1 = ((weight_regfile_4_1_full_n & ap_channel_done_weight_regfile_4_1) | ap_sync_reg_channel_write_weight_regfile_4_1);
-
-assign ap_sync_channel_write_weight_regfile_4_10 = ((weight_regfile_4_10_full_n & ap_channel_done_weight_regfile_4_10) | ap_sync_reg_channel_write_weight_regfile_4_10);
-
-assign ap_sync_channel_write_weight_regfile_4_11 = ((weight_regfile_4_11_full_n & ap_channel_done_weight_regfile_4_11) | ap_sync_reg_channel_write_weight_regfile_4_11);
-
-assign ap_sync_channel_write_weight_regfile_4_12 = ((weight_regfile_4_12_full_n & ap_channel_done_weight_regfile_4_12) | ap_sync_reg_channel_write_weight_regfile_4_12);
-
-assign ap_sync_channel_write_weight_regfile_4_13 = ((weight_regfile_4_13_full_n & ap_channel_done_weight_regfile_4_13) | ap_sync_reg_channel_write_weight_regfile_4_13);
-
-assign ap_sync_channel_write_weight_regfile_4_14 = ((weight_regfile_4_14_full_n & ap_channel_done_weight_regfile_4_14) | ap_sync_reg_channel_write_weight_regfile_4_14);
-
-assign ap_sync_channel_write_weight_regfile_4_15 = ((weight_regfile_4_15_full_n & ap_channel_done_weight_regfile_4_15) | ap_sync_reg_channel_write_weight_regfile_4_15);
-
-assign ap_sync_channel_write_weight_regfile_4_2 = ((weight_regfile_4_2_full_n & ap_channel_done_weight_regfile_4_2) | ap_sync_reg_channel_write_weight_regfile_4_2);
-
-assign ap_sync_channel_write_weight_regfile_4_3 = ((weight_regfile_4_3_full_n & ap_channel_done_weight_regfile_4_3) | ap_sync_reg_channel_write_weight_regfile_4_3);
-
-assign ap_sync_channel_write_weight_regfile_4_4 = ((weight_regfile_4_4_full_n & ap_channel_done_weight_regfile_4_4) | ap_sync_reg_channel_write_weight_regfile_4_4);
-
-assign ap_sync_channel_write_weight_regfile_4_5 = ((weight_regfile_4_5_full_n & ap_channel_done_weight_regfile_4_5) | ap_sync_reg_channel_write_weight_regfile_4_5);
-
-assign ap_sync_channel_write_weight_regfile_4_6 = ((weight_regfile_4_6_full_n & ap_channel_done_weight_regfile_4_6) | ap_sync_reg_channel_write_weight_regfile_4_6);
-
-assign ap_sync_channel_write_weight_regfile_4_7 = ((weight_regfile_4_7_full_n & ap_channel_done_weight_regfile_4_7) | ap_sync_reg_channel_write_weight_regfile_4_7);
-
-assign ap_sync_channel_write_weight_regfile_4_8 = ((weight_regfile_4_8_full_n & ap_channel_done_weight_regfile_4_8) | ap_sync_reg_channel_write_weight_regfile_4_8);
-
-assign ap_sync_channel_write_weight_regfile_4_9 = ((weight_regfile_4_9_full_n & ap_channel_done_weight_regfile_4_9) | ap_sync_reg_channel_write_weight_regfile_4_9);
-
-assign ap_sync_channel_write_weight_regfile_5_0 = ((weight_regfile_5_0_full_n & ap_channel_done_weight_regfile_5_0) | ap_sync_reg_channel_write_weight_regfile_5_0);
-
-assign ap_sync_channel_write_weight_regfile_5_1 = ((weight_regfile_5_1_full_n & ap_channel_done_weight_regfile_5_1) | ap_sync_reg_channel_write_weight_regfile_5_1);
-
-assign ap_sync_channel_write_weight_regfile_5_10 = ((weight_regfile_5_10_full_n & ap_channel_done_weight_regfile_5_10) | ap_sync_reg_channel_write_weight_regfile_5_10);
-
-assign ap_sync_channel_write_weight_regfile_5_11 = ((weight_regfile_5_11_full_n & ap_channel_done_weight_regfile_5_11) | ap_sync_reg_channel_write_weight_regfile_5_11);
-
-assign ap_sync_channel_write_weight_regfile_5_12 = ((weight_regfile_5_12_full_n & ap_channel_done_weight_regfile_5_12) | ap_sync_reg_channel_write_weight_regfile_5_12);
-
-assign ap_sync_channel_write_weight_regfile_5_13 = ((weight_regfile_5_13_full_n & ap_channel_done_weight_regfile_5_13) | ap_sync_reg_channel_write_weight_regfile_5_13);
-
-assign ap_sync_channel_write_weight_regfile_5_14 = ((weight_regfile_5_14_full_n & ap_channel_done_weight_regfile_5_14) | ap_sync_reg_channel_write_weight_regfile_5_14);
-
-assign ap_sync_channel_write_weight_regfile_5_15 = ((weight_regfile_5_15_full_n & ap_channel_done_weight_regfile_5_15) | ap_sync_reg_channel_write_weight_regfile_5_15);
-
-assign ap_sync_channel_write_weight_regfile_5_2 = ((weight_regfile_5_2_full_n & ap_channel_done_weight_regfile_5_2) | ap_sync_reg_channel_write_weight_regfile_5_2);
-
-assign ap_sync_channel_write_weight_regfile_5_3 = ((weight_regfile_5_3_full_n & ap_channel_done_weight_regfile_5_3) | ap_sync_reg_channel_write_weight_regfile_5_3);
-
-assign ap_sync_channel_write_weight_regfile_5_4 = ((weight_regfile_5_4_full_n & ap_channel_done_weight_regfile_5_4) | ap_sync_reg_channel_write_weight_regfile_5_4);
-
-assign ap_sync_channel_write_weight_regfile_5_5 = ((weight_regfile_5_5_full_n & ap_channel_done_weight_regfile_5_5) | ap_sync_reg_channel_write_weight_regfile_5_5);
-
-assign ap_sync_channel_write_weight_regfile_5_6 = ((weight_regfile_5_6_full_n & ap_channel_done_weight_regfile_5_6) | ap_sync_reg_channel_write_weight_regfile_5_6);
-
-assign ap_sync_channel_write_weight_regfile_5_7 = ((weight_regfile_5_7_full_n & ap_channel_done_weight_regfile_5_7) | ap_sync_reg_channel_write_weight_regfile_5_7);
-
-assign ap_sync_channel_write_weight_regfile_5_8 = ((weight_regfile_5_8_full_n & ap_channel_done_weight_regfile_5_8) | ap_sync_reg_channel_write_weight_regfile_5_8);
-
-assign ap_sync_channel_write_weight_regfile_5_9 = ((weight_regfile_5_9_full_n & ap_channel_done_weight_regfile_5_9) | ap_sync_reg_channel_write_weight_regfile_5_9);
-
-assign ap_sync_channel_write_weight_regfile_6_0 = ((weight_regfile_6_0_full_n & ap_channel_done_weight_regfile_6_0) | ap_sync_reg_channel_write_weight_regfile_6_0);
-
-assign ap_sync_channel_write_weight_regfile_6_1 = ((weight_regfile_6_1_full_n & ap_channel_done_weight_regfile_6_1) | ap_sync_reg_channel_write_weight_regfile_6_1);
-
-assign ap_sync_channel_write_weight_regfile_6_10 = ((weight_regfile_6_10_full_n & ap_channel_done_weight_regfile_6_10) | ap_sync_reg_channel_write_weight_regfile_6_10);
-
-assign ap_sync_channel_write_weight_regfile_6_11 = ((weight_regfile_6_11_full_n & ap_channel_done_weight_regfile_6_11) | ap_sync_reg_channel_write_weight_regfile_6_11);
-
-assign ap_sync_channel_write_weight_regfile_6_12 = ((weight_regfile_6_12_full_n & ap_channel_done_weight_regfile_6_12) | ap_sync_reg_channel_write_weight_regfile_6_12);
-
-assign ap_sync_channel_write_weight_regfile_6_13 = ((weight_regfile_6_13_full_n & ap_channel_done_weight_regfile_6_13) | ap_sync_reg_channel_write_weight_regfile_6_13);
-
-assign ap_sync_channel_write_weight_regfile_6_14 = ((weight_regfile_6_14_full_n & ap_channel_done_weight_regfile_6_14) | ap_sync_reg_channel_write_weight_regfile_6_14);
-
-assign ap_sync_channel_write_weight_regfile_6_15 = ((weight_regfile_6_15_full_n & ap_channel_done_weight_regfile_6_15) | ap_sync_reg_channel_write_weight_regfile_6_15);
-
-assign ap_sync_channel_write_weight_regfile_6_2 = ((weight_regfile_6_2_full_n & ap_channel_done_weight_regfile_6_2) | ap_sync_reg_channel_write_weight_regfile_6_2);
-
-assign ap_sync_channel_write_weight_regfile_6_3 = ((weight_regfile_6_3_full_n & ap_channel_done_weight_regfile_6_3) | ap_sync_reg_channel_write_weight_regfile_6_3);
-
-assign ap_sync_channel_write_weight_regfile_6_4 = ((weight_regfile_6_4_full_n & ap_channel_done_weight_regfile_6_4) | ap_sync_reg_channel_write_weight_regfile_6_4);
-
-assign ap_sync_channel_write_weight_regfile_6_5 = ((weight_regfile_6_5_full_n & ap_channel_done_weight_regfile_6_5) | ap_sync_reg_channel_write_weight_regfile_6_5);
-
-assign ap_sync_channel_write_weight_regfile_6_6 = ((weight_regfile_6_6_full_n & ap_channel_done_weight_regfile_6_6) | ap_sync_reg_channel_write_weight_regfile_6_6);
-
-assign ap_sync_channel_write_weight_regfile_6_7 = ((weight_regfile_6_7_full_n & ap_channel_done_weight_regfile_6_7) | ap_sync_reg_channel_write_weight_regfile_6_7);
-
-assign ap_sync_channel_write_weight_regfile_6_8 = ((weight_regfile_6_8_full_n & ap_channel_done_weight_regfile_6_8) | ap_sync_reg_channel_write_weight_regfile_6_8);
-
-assign ap_sync_channel_write_weight_regfile_6_9 = ((weight_regfile_6_9_full_n & ap_channel_done_weight_regfile_6_9) | ap_sync_reg_channel_write_weight_regfile_6_9);
-
-assign ap_sync_channel_write_weight_regfile_7_0 = ((weight_regfile_7_0_full_n & ap_channel_done_weight_regfile_7_0) | ap_sync_reg_channel_write_weight_regfile_7_0);
-
-assign ap_sync_channel_write_weight_regfile_7_1 = ((weight_regfile_7_1_full_n & ap_channel_done_weight_regfile_7_1) | ap_sync_reg_channel_write_weight_regfile_7_1);
-
-assign ap_sync_channel_write_weight_regfile_7_10 = ((weight_regfile_7_10_full_n & ap_channel_done_weight_regfile_7_10) | ap_sync_reg_channel_write_weight_regfile_7_10);
-
-assign ap_sync_channel_write_weight_regfile_7_11 = ((weight_regfile_7_11_full_n & ap_channel_done_weight_regfile_7_11) | ap_sync_reg_channel_write_weight_regfile_7_11);
-
-assign ap_sync_channel_write_weight_regfile_7_12 = ((weight_regfile_7_12_full_n & ap_channel_done_weight_regfile_7_12) | ap_sync_reg_channel_write_weight_regfile_7_12);
-
-assign ap_sync_channel_write_weight_regfile_7_13 = ((weight_regfile_7_13_full_n & ap_channel_done_weight_regfile_7_13) | ap_sync_reg_channel_write_weight_regfile_7_13);
-
-assign ap_sync_channel_write_weight_regfile_7_14 = ((weight_regfile_7_14_full_n & ap_channel_done_weight_regfile_7_14) | ap_sync_reg_channel_write_weight_regfile_7_14);
-
-assign ap_sync_channel_write_weight_regfile_7_15 = ((weight_regfile_7_15_full_n & ap_channel_done_weight_regfile_7_15) | ap_sync_reg_channel_write_weight_regfile_7_15);
-
-assign ap_sync_channel_write_weight_regfile_7_2 = ((weight_regfile_7_2_full_n & ap_channel_done_weight_regfile_7_2) | ap_sync_reg_channel_write_weight_regfile_7_2);
-
-assign ap_sync_channel_write_weight_regfile_7_3 = ((weight_regfile_7_3_full_n & ap_channel_done_weight_regfile_7_3) | ap_sync_reg_channel_write_weight_regfile_7_3);
-
-assign ap_sync_channel_write_weight_regfile_7_4 = ((weight_regfile_7_4_full_n & ap_channel_done_weight_regfile_7_4) | ap_sync_reg_channel_write_weight_regfile_7_4);
-
-assign ap_sync_channel_write_weight_regfile_7_5 = ((weight_regfile_7_5_full_n & ap_channel_done_weight_regfile_7_5) | ap_sync_reg_channel_write_weight_regfile_7_5);
-
-assign ap_sync_channel_write_weight_regfile_7_6 = ((weight_regfile_7_6_full_n & ap_channel_done_weight_regfile_7_6) | ap_sync_reg_channel_write_weight_regfile_7_6);
-
-assign ap_sync_channel_write_weight_regfile_7_7 = ((weight_regfile_7_7_full_n & ap_channel_done_weight_regfile_7_7) | ap_sync_reg_channel_write_weight_regfile_7_7);
-
-assign ap_sync_channel_write_weight_regfile_7_8 = ((weight_regfile_7_8_full_n & ap_channel_done_weight_regfile_7_8) | ap_sync_reg_channel_write_weight_regfile_7_8);
-
-assign ap_sync_channel_write_weight_regfile_7_9 = ((weight_regfile_7_9_full_n & ap_channel_done_weight_regfile_7_9) | ap_sync_reg_channel_write_weight_regfile_7_9);
-
-assign ap_sync_channel_write_weight_regfile_8_0 = ((weight_regfile_8_0_full_n & ap_channel_done_weight_regfile_8_0) | ap_sync_reg_channel_write_weight_regfile_8_0);
-
-assign ap_sync_channel_write_weight_regfile_8_1 = ((weight_regfile_8_1_full_n & ap_channel_done_weight_regfile_8_1) | ap_sync_reg_channel_write_weight_regfile_8_1);
-
-assign ap_sync_channel_write_weight_regfile_8_10 = ((weight_regfile_8_10_full_n & ap_channel_done_weight_regfile_8_10) | ap_sync_reg_channel_write_weight_regfile_8_10);
-
-assign ap_sync_channel_write_weight_regfile_8_11 = ((weight_regfile_8_11_full_n & ap_channel_done_weight_regfile_8_11) | ap_sync_reg_channel_write_weight_regfile_8_11);
-
-assign ap_sync_channel_write_weight_regfile_8_12 = ((weight_regfile_8_12_full_n & ap_channel_done_weight_regfile_8_12) | ap_sync_reg_channel_write_weight_regfile_8_12);
-
-assign ap_sync_channel_write_weight_regfile_8_13 = ((weight_regfile_8_13_full_n & ap_channel_done_weight_regfile_8_13) | ap_sync_reg_channel_write_weight_regfile_8_13);
-
-assign ap_sync_channel_write_weight_regfile_8_14 = ((weight_regfile_8_14_full_n & ap_channel_done_weight_regfile_8_14) | ap_sync_reg_channel_write_weight_regfile_8_14);
-
-assign ap_sync_channel_write_weight_regfile_8_15 = ((weight_regfile_8_15_full_n & ap_channel_done_weight_regfile_8_15) | ap_sync_reg_channel_write_weight_regfile_8_15);
-
-assign ap_sync_channel_write_weight_regfile_8_2 = ((weight_regfile_8_2_full_n & ap_channel_done_weight_regfile_8_2) | ap_sync_reg_channel_write_weight_regfile_8_2);
-
-assign ap_sync_channel_write_weight_regfile_8_3 = ((weight_regfile_8_3_full_n & ap_channel_done_weight_regfile_8_3) | ap_sync_reg_channel_write_weight_regfile_8_3);
-
-assign ap_sync_channel_write_weight_regfile_8_4 = ((weight_regfile_8_4_full_n & ap_channel_done_weight_regfile_8_4) | ap_sync_reg_channel_write_weight_regfile_8_4);
-
-assign ap_sync_channel_write_weight_regfile_8_5 = ((weight_regfile_8_5_full_n & ap_channel_done_weight_regfile_8_5) | ap_sync_reg_channel_write_weight_regfile_8_5);
-
-assign ap_sync_channel_write_weight_regfile_8_6 = ((weight_regfile_8_6_full_n & ap_channel_done_weight_regfile_8_6) | ap_sync_reg_channel_write_weight_regfile_8_6);
-
-assign ap_sync_channel_write_weight_regfile_8_7 = ((weight_regfile_8_7_full_n & ap_channel_done_weight_regfile_8_7) | ap_sync_reg_channel_write_weight_regfile_8_7);
-
-assign ap_sync_channel_write_weight_regfile_8_8 = ((weight_regfile_8_8_full_n & ap_channel_done_weight_regfile_8_8) | ap_sync_reg_channel_write_weight_regfile_8_8);
-
-assign ap_sync_channel_write_weight_regfile_8_9 = ((weight_regfile_8_9_full_n & ap_channel_done_weight_regfile_8_9) | ap_sync_reg_channel_write_weight_regfile_8_9);
-
-assign ap_sync_channel_write_weight_regfile_9_0 = ((weight_regfile_9_0_full_n & ap_channel_done_weight_regfile_9_0) | ap_sync_reg_channel_write_weight_regfile_9_0);
-
-assign ap_sync_channel_write_weight_regfile_9_1 = ((weight_regfile_9_1_full_n & ap_channel_done_weight_regfile_9_1) | ap_sync_reg_channel_write_weight_regfile_9_1);
-
-assign ap_sync_channel_write_weight_regfile_9_10 = ((weight_regfile_9_10_full_n & ap_channel_done_weight_regfile_9_10) | ap_sync_reg_channel_write_weight_regfile_9_10);
-
-assign ap_sync_channel_write_weight_regfile_9_11 = ((weight_regfile_9_11_full_n & ap_channel_done_weight_regfile_9_11) | ap_sync_reg_channel_write_weight_regfile_9_11);
-
-assign ap_sync_channel_write_weight_regfile_9_12 = ((weight_regfile_9_12_full_n & ap_channel_done_weight_regfile_9_12) | ap_sync_reg_channel_write_weight_regfile_9_12);
-
-assign ap_sync_channel_write_weight_regfile_9_13 = ((weight_regfile_9_13_full_n & ap_channel_done_weight_regfile_9_13) | ap_sync_reg_channel_write_weight_regfile_9_13);
-
-assign ap_sync_channel_write_weight_regfile_9_14 = ((weight_regfile_9_14_full_n & ap_channel_done_weight_regfile_9_14) | ap_sync_reg_channel_write_weight_regfile_9_14);
-
-assign ap_sync_channel_write_weight_regfile_9_15 = ((weight_regfile_9_15_full_n & ap_channel_done_weight_regfile_9_15) | ap_sync_reg_channel_write_weight_regfile_9_15);
-
-assign ap_sync_channel_write_weight_regfile_9_2 = ((weight_regfile_9_2_full_n & ap_channel_done_weight_regfile_9_2) | ap_sync_reg_channel_write_weight_regfile_9_2);
-
-assign ap_sync_channel_write_weight_regfile_9_3 = ((weight_regfile_9_3_full_n & ap_channel_done_weight_regfile_9_3) | ap_sync_reg_channel_write_weight_regfile_9_3);
-
-assign ap_sync_channel_write_weight_regfile_9_4 = ((weight_regfile_9_4_full_n & ap_channel_done_weight_regfile_9_4) | ap_sync_reg_channel_write_weight_regfile_9_4);
-
-assign ap_sync_channel_write_weight_regfile_9_5 = ((weight_regfile_9_5_full_n & ap_channel_done_weight_regfile_9_5) | ap_sync_reg_channel_write_weight_regfile_9_5);
-
-assign ap_sync_channel_write_weight_regfile_9_6 = ((weight_regfile_9_6_full_n & ap_channel_done_weight_regfile_9_6) | ap_sync_reg_channel_write_weight_regfile_9_6);
-
-assign ap_sync_channel_write_weight_regfile_9_7 = ((weight_regfile_9_7_full_n & ap_channel_done_weight_regfile_9_7) | ap_sync_reg_channel_write_weight_regfile_9_7);
-
-assign ap_sync_channel_write_weight_regfile_9_8 = ((weight_regfile_9_8_full_n & ap_channel_done_weight_regfile_9_8) | ap_sync_reg_channel_write_weight_regfile_9_8);
-
-assign ap_sync_channel_write_weight_regfile_9_9 = ((weight_regfile_9_9_full_n & ap_channel_done_weight_regfile_9_9) | ap_sync_reg_channel_write_weight_regfile_9_9);
-
 assign ap_sync_continue = ap_continue;
 
-assign ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready = (dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready);
+assign ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready = (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready);
 
 assign ap_sync_done = runOutputL1toL2_U0_ap_done;
 
-assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runDataL2toL1_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready);
+assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runDataL2toL1_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready);
 
 assign ap_sync_runDataL2toL1_U0_ap_ready = (runDataL2toL1_U0_ap_ready | ap_sync_reg_runDataL2toL1_U0_ap_ready);
 
@@ -13124,67 +1964,13 @@ assign data_l2_0_we0 = 1'b0;
 
 assign data_l2_0_we1 = 1'b0;
 
-assign data_l2_1_address0 = runDataL2toL1_U0_data_l2_1_address0;
+assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue = 1'b1;
 
-assign data_l2_1_address1 = 11'd0;
+assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready ^ 1'b1) & ap_start);
 
-assign data_l2_1_ce0 = runDataL2toL1_U0_data_l2_1_ce0;
+assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_full_n = 1'b1;
 
-assign data_l2_1_ce1 = 1'b0;
-
-assign data_l2_1_d0 = 8'd0;
-
-assign data_l2_1_d1 = 8'd0;
-
-assign data_l2_1_read = runDataL2toL1_U0_data_l2_1_write;
-
-assign data_l2_1_we0 = 1'b0;
-
-assign data_l2_1_we1 = 1'b0;
-
-assign data_l2_2_address0 = runDataL2toL1_U0_data_l2_2_address0;
-
-assign data_l2_2_address1 = 11'd0;
-
-assign data_l2_2_ce0 = runDataL2toL1_U0_data_l2_2_ce0;
-
-assign data_l2_2_ce1 = 1'b0;
-
-assign data_l2_2_d0 = 8'd0;
-
-assign data_l2_2_d1 = 8'd0;
-
-assign data_l2_2_read = runDataL2toL1_U0_data_l2_2_write;
-
-assign data_l2_2_we0 = 1'b0;
-
-assign data_l2_2_we1 = 1'b0;
-
-assign data_l2_3_address0 = runDataL2toL1_U0_data_l2_3_address0;
-
-assign data_l2_3_address1 = 11'd0;
-
-assign data_l2_3_ce0 = runDataL2toL1_U0_data_l2_3_ce0;
-
-assign data_l2_3_ce1 = 1'b0;
-
-assign data_l2_3_d0 = 8'd0;
-
-assign data_l2_3_d1 = 8'd0;
-
-assign data_l2_3_read = runDataL2toL1_U0_data_l2_3_write;
-
-assign data_l2_3_we0 = 1'b0;
-
-assign data_l2_3_we1 = 1'b0;
-
-assign dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_continue = 1'b1;
-
-assign dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry28_U0_ap_ready ^ 1'b1) & ap_start);
-
-assign dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_full_n = 1'b1;
-
-assign dataflow_in_loop_LOOP_S_OUTER_entry28_U0_start_write = 1'b0;
+assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_write = 1'b0;
 
 assign output_l2_0_address0 = runOutputL1toL2_U0_output_l2_0_address0;
 
@@ -13204,111 +1990,21 @@ assign output_l2_0_we1 = 1'b0;
 
 assign output_l2_0_write = runOutputL1toL2_U0_output_l2_0_write;
 
-assign output_l2_1_address0 = runOutputL1toL2_U0_output_l2_1_address0;
-
-assign output_l2_1_address1 = 11'd0;
-
-assign output_l2_1_ce0 = runOutputL1toL2_U0_output_l2_1_ce0;
-
-assign output_l2_1_ce1 = 1'b0;
-
-assign output_l2_1_d0 = runOutputL1toL2_U0_output_l2_1_d0;
-
-assign output_l2_1_d1 = 32'd0;
-
-assign output_l2_1_we0 = runOutputL1toL2_U0_output_l2_1_we0;
-
-assign output_l2_1_we1 = 1'b0;
-
-assign output_l2_1_write = runOutputL1toL2_U0_output_l2_1_write;
-
-assign output_l2_2_address0 = runOutputL1toL2_U0_output_l2_2_address0;
-
-assign output_l2_2_address1 = 11'd0;
-
-assign output_l2_2_ce0 = runOutputL1toL2_U0_output_l2_2_ce0;
-
-assign output_l2_2_ce1 = 1'b0;
-
-assign output_l2_2_d0 = runOutputL1toL2_U0_output_l2_2_d0;
-
-assign output_l2_2_d1 = 32'd0;
-
-assign output_l2_2_we0 = runOutputL1toL2_U0_output_l2_2_we0;
-
-assign output_l2_2_we1 = 1'b0;
-
-assign output_l2_2_write = runOutputL1toL2_U0_output_l2_2_write;
-
-assign output_l2_3_address0 = runOutputL1toL2_U0_output_l2_3_address0;
-
-assign output_l2_3_address1 = 11'd0;
-
-assign output_l2_3_ce0 = runOutputL1toL2_U0_output_l2_3_ce0;
-
-assign output_l2_3_ce1 = 1'b0;
-
-assign output_l2_3_d0 = runOutputL1toL2_U0_output_l2_3_d0;
-
-assign output_l2_3_d1 = 32'd0;
-
-assign output_l2_3_we0 = runOutputL1toL2_U0_output_l2_3_we0;
-
-assign output_l2_3_we1 = 1'b0;
-
-assign output_l2_3_write = runOutputL1toL2_U0_output_l2_3_write;
-
-assign runDataL2toL1_U0_ap_continue = (ap_sync_channel_write_data_l1_9 & ap_sync_channel_write_data_l1_8 & ap_sync_channel_write_data_l1_7 & ap_sync_channel_write_data_l1_6 & ap_sync_channel_write_data_l1_5 & ap_sync_channel_write_data_l1_4 & ap_sync_channel_write_data_l1_3 & ap_sync_channel_write_data_l1_2 & ap_sync_channel_write_data_l1_15 & ap_sync_channel_write_data_l1_14 & ap_sync_channel_write_data_l1_13 & ap_sync_channel_write_data_l1_12 & ap_sync_channel_write_data_l1_11 & ap_sync_channel_write_data_l1_10 & ap_sync_channel_write_data_l1_1 & ap_sync_channel_write_data_l1_0);
+assign runDataL2toL1_U0_ap_continue = (ap_sync_channel_write_data_l1_3 & ap_sync_channel_write_data_l1_2 & ap_sync_channel_write_data_l1_1 & ap_sync_channel_write_data_l1_0);
 
 assign runDataL2toL1_U0_ap_start = ((ap_sync_reg_runDataL2toL1_U0_ap_ready ^ 1'b1) & ap_start);
 
-assign runDataL2toL1_U0_data_l1_0257_i_full_n = data_l1_0_i_full_n;
+assign runDataL2toL1_U0_data_l1_017_i_full_n = data_l1_0_i_full_n;
 
-assign runDataL2toL1_U0_data_l1_10267_i_full_n = data_l1_10_i_full_n;
+assign runDataL2toL1_U0_data_l1_118_i_full_n = data_l1_1_i_full_n;
 
-assign runDataL2toL1_U0_data_l1_11268_i_full_n = data_l1_11_i_full_n;
+assign runDataL2toL1_U0_data_l1_219_i_full_n = data_l1_2_i_full_n;
 
-assign runDataL2toL1_U0_data_l1_12269_i_full_n = data_l1_12_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_1258_i_full_n = data_l1_1_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_13270_i_full_n = data_l1_13_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_14271_i_full_n = data_l1_14_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_15272_i_full_n = data_l1_15_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_2259_i_full_n = data_l1_2_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_3260_i_full_n = data_l1_3_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_4261_i_full_n = data_l1_4_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_5262_i_full_n = data_l1_5_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_6263_i_full_n = data_l1_6_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_7264_i_full_n = data_l1_7_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_8265_i_full_n = data_l1_8_i_full_n;
-
-assign runDataL2toL1_U0_data_l1_9266_i_full_n = data_l1_9_i_full_n;
+assign runDataL2toL1_U0_data_l1_320_i_full_n = data_l1_3_i_full_n;
 
 assign runDataL2toL1_U0_data_l2_0_full_n = data_l2_0_empty_n;
 
 assign runDataL2toL1_U0_data_l2_0_write = 1'b0;
-
-assign runDataL2toL1_U0_data_l2_1_full_n = data_l2_1_empty_n;
-
-assign runDataL2toL1_U0_data_l2_1_write = 1'b0;
-
-assign runDataL2toL1_U0_data_l2_2_full_n = data_l2_2_empty_n;
-
-assign runDataL2toL1_U0_data_l2_2_write = 1'b0;
-
-assign runDataL2toL1_U0_data_l2_3_full_n = data_l2_3_empty_n;
-
-assign runDataL2toL1_U0_data_l2_3_write = 1'b0;
 
 assign runDataL2toL1_U0_start_full_n = 1'b1;
 
@@ -13316,69 +2012,33 @@ assign runDataL2toL1_U0_start_write = 1'b0;
 
 assign runOutputL1toL2_U0_ap_continue = ap_continue;
 
-assign runOutputL1toL2_U0_ap_start = (output_l1_9_t_empty_n & output_l1_8_t_empty_n & output_l1_7_t_empty_n & output_l1_6_t_empty_n & output_l1_5_t_empty_n & output_l1_4_t_empty_n & output_l1_3_t_empty_n & output_l1_2_t_empty_n & output_l1_1_t_empty_n & output_l1_15_t_empty_n & output_l1_14_t_empty_n & output_l1_13_t_empty_n & output_l1_12_t_empty_n & output_l1_11_t_empty_n & output_l1_10_t_empty_n & output_l1_0_t_empty_n);
+assign runOutputL1toL2_U0_ap_start = (output_l1_3_t_empty_n & output_l1_2_t_empty_n & output_l1_1_t_empty_n & output_l1_0_t_empty_n);
 
 assign runOutputL1toL2_U0_output_l2_0_full_n = output_l2_0_full_n;
 
 assign runOutputL1toL2_U0_output_l2_0_write = 1'b0;
 
-assign runOutputL1toL2_U0_output_l2_1_full_n = output_l2_1_full_n;
-
-assign runOutputL1toL2_U0_output_l2_1_write = 1'b0;
-
-assign runOutputL1toL2_U0_output_l2_2_full_n = output_l2_2_full_n;
-
-assign runOutputL1toL2_U0_output_l2_2_write = 1'b0;
-
-assign runOutputL1toL2_U0_output_l2_3_full_n = output_l2_3_full_n;
-
-assign runOutputL1toL2_U0_output_l2_3_write = 1'b0;
-
 assign runOutputL1toL2_U0_start_full_n = 1'b1;
 
 assign runOutputL1toL2_U0_start_write = 1'b0;
 
-assign runSysArr_U0_ap_continue = (ap_sync_channel_write_output_l1_9 & ap_sync_channel_write_output_l1_8 & ap_sync_channel_write_output_l1_7 & ap_sync_channel_write_output_l1_6 & ap_sync_channel_write_output_l1_5 & ap_sync_channel_write_output_l1_4 & ap_sync_channel_write_output_l1_3 & ap_sync_channel_write_output_l1_2 & ap_sync_channel_write_output_l1_15 & ap_sync_channel_write_output_l1_14 & ap_sync_channel_write_output_l1_13 & ap_sync_channel_write_output_l1_12 & ap_sync_channel_write_output_l1_11 & ap_sync_channel_write_output_l1_10 & ap_sync_channel_write_output_l1_1 & ap_sync_channel_write_output_l1_0);
+assign runSIMD_U0_ap_continue = (ap_sync_channel_write_output_l1_3 & ap_sync_channel_write_output_l1_2 & ap_sync_channel_write_output_l1_1 & ap_sync_channel_write_output_l1_0);
 
-assign runSysArr_U0_ap_start = (weight_regfile_9_9_empty_n & weight_regfile_9_8_empty_n & weight_regfile_9_7_empty_n & weight_regfile_9_6_empty_n & weight_regfile_9_5_empty_n & weight_regfile_9_4_empty_n & weight_regfile_9_3_empty_n & weight_regfile_9_2_empty_n & weight_regfile_9_1_empty_n & weight_regfile_9_15_empty_n & weight_regfile_9_14_empty_n & weight_regfile_9_13_empty_n & weight_regfile_9_12_empty_n & weight_regfile_9_11_empty_n & weight_regfile_9_10_empty_n & weight_regfile_9_0_empty_n & weight_regfile_8_9_empty_n & weight_regfile_8_8_empty_n & weight_regfile_8_7_empty_n & weight_regfile_8_6_empty_n & weight_regfile_8_5_empty_n & weight_regfile_8_4_empty_n & weight_regfile_8_3_empty_n & weight_regfile_8_2_empty_n & weight_regfile_8_1_empty_n & weight_regfile_8_15_empty_n & weight_regfile_8_14_empty_n & weight_regfile_8_13_empty_n & weight_regfile_8_12_empty_n & weight_regfile_8_11_empty_n & weight_regfile_8_10_empty_n & weight_regfile_8_0_empty_n & weight_regfile_7_9_empty_n & weight_regfile_7_8_empty_n & weight_regfile_7_7_empty_n & weight_regfile_7_6_empty_n & weight_regfile_7_5_empty_n & weight_regfile_7_4_empty_n & weight_regfile_7_3_empty_n & weight_regfile_7_2_empty_n & weight_regfile_7_1_empty_n & weight_regfile_7_15_empty_n & weight_regfile_7_14_empty_n & weight_regfile_7_13_empty_n & weight_regfile_7_12_empty_n & weight_regfile_7_11_empty_n & weight_regfile_7_10_empty_n & weight_regfile_7_0_empty_n & weight_regfile_6_9_empty_n & weight_regfile_6_8_empty_n & weight_regfile_6_7_empty_n & weight_regfile_6_6_empty_n & weight_regfile_6_5_empty_n & weight_regfile_6_4_empty_n & weight_regfile_6_3_empty_n & weight_regfile_6_2_empty_n & weight_regfile_6_1_empty_n & weight_regfile_6_15_empty_n & weight_regfile_6_14_empty_n & weight_regfile_6_13_empty_n & weight_regfile_6_12_empty_n & weight_regfile_6_11_empty_n & weight_regfile_6_10_empty_n & weight_regfile_6_0_empty_n & weight_regfile_5_9_empty_n & weight_regfile_5_8_empty_n & weight_regfile_5_7_empty_n & weight_regfile_5_6_empty_n & weight_regfile_5_5_empty_n & weight_regfile_5_4_empty_n & weight_regfile_5_3_empty_n & weight_regfile_5_2_empty_n & weight_regfile_5_1_empty_n & weight_regfile_5_15_empty_n & weight_regfile_5_14_empty_n & weight_regfile_5_13_empty_n & weight_regfile_5_12_empty_n & weight_regfile_5_11_empty_n & weight_regfile_5_10_empty_n & weight_regfile_5_0_empty_n & weight_regfile_4_9_empty_n & weight_regfile_4_8_empty_n & weight_regfile_4_7_empty_n & weight_regfile_4_6_empty_n & weight_regfile_4_5_empty_n & weight_regfile_4_4_empty_n & weight_regfile_4_3_empty_n & weight_regfile_4_2_empty_n & weight_regfile_4_1_empty_n & weight_regfile_4_15_empty_n & weight_regfile_4_14_empty_n & weight_regfile_4_13_empty_n & weight_regfile_4_12_empty_n & weight_regfile_4_11_empty_n & weight_regfile_4_10_empty_n & weight_regfile_4_0_empty_n & weight_regfile_3_9_empty_n & weight_regfile_3_8_empty_n & weight_regfile_3_7_empty_n & weight_regfile_3_6_empty_n & weight_regfile_3_5_empty_n & weight_regfile_3_4_empty_n & weight_regfile_3_3_empty_n & weight_regfile_3_2_empty_n & weight_regfile_3_1_empty_n & weight_regfile_3_15_empty_n & weight_regfile_3_14_empty_n & weight_regfile_3_13_empty_n & weight_regfile_3_12_empty_n & weight_regfile_3_11_empty_n & weight_regfile_3_10_empty_n & weight_regfile_3_0_empty_n & weight_regfile_2_9_empty_n & weight_regfile_2_8_empty_n & weight_regfile_2_7_empty_n & weight_regfile_2_6_empty_n & weight_regfile_2_5_empty_n & weight_regfile_2_4_empty_n & weight_regfile_2_3_empty_n & weight_regfile_2_2_empty_n & weight_regfile_2_1_empty_n & weight_regfile_2_15_empty_n & weight_regfile_2_14_empty_n & weight_regfile_2_13_empty_n & weight_regfile_2_12_empty_n & weight_regfile_2_11_empty_n & weight_regfile_2_10_empty_n & weight_regfile_2_0_empty_n & weight_regfile_1_9_empty_n & weight_regfile_1_8_empty_n & weight_regfile_1_7_empty_n & weight_regfile_1_6_empty_n & weight_regfile_1_5_empty_n & weight_regfile_1_4_empty_n & weight_regfile_1_3_empty_n & weight_regfile_1_2_empty_n & weight_regfile_1_1_empty_n & weight_regfile_1_15_empty_n & weight_regfile_1_14_empty_n & weight_regfile_1_13_empty_n & weight_regfile_1_12_empty_n & weight_regfile_1_11_empty_n & weight_regfile_1_10_empty_n & weight_regfile_1_0_empty_n & weight_regfile_15_9_empty_n & weight_regfile_15_8_empty_n & weight_regfile_15_7_empty_n & weight_regfile_15_6_empty_n & weight_regfile_15_5_empty_n & weight_regfile_15_4_empty_n & weight_regfile_15_3_empty_n & weight_regfile_15_2_empty_n & weight_regfile_15_1_empty_n & weight_regfile_15_15_empty_n & weight_regfile_15_14_empty_n & weight_regfile_15_13_empty_n & weight_regfile_15_12_empty_n & weight_regfile_15_11_empty_n & weight_regfile_15_10_empty_n & weight_regfile_15_0_empty_n & weight_regfile_14_9_empty_n & weight_regfile_14_8_empty_n & weight_regfile_14_7_empty_n & weight_regfile_14_6_empty_n & weight_regfile_14_5_empty_n & weight_regfile_14_4_empty_n & weight_regfile_14_3_empty_n & weight_regfile_14_2_empty_n & weight_regfile_14_1_empty_n & weight_regfile_14_15_empty_n & weight_regfile_14_14_empty_n & weight_regfile_14_13_empty_n & weight_regfile_14_12_empty_n & weight_regfile_14_11_empty_n & weight_regfile_14_10_empty_n & weight_regfile_14_0_empty_n & weight_regfile_13_9_empty_n & weight_regfile_13_8_empty_n & weight_regfile_13_7_empty_n & weight_regfile_13_6_empty_n & weight_regfile_13_5_empty_n & weight_regfile_13_4_empty_n & weight_regfile_13_3_empty_n & weight_regfile_13_2_empty_n & weight_regfile_13_1_empty_n & weight_regfile_13_15_empty_n & weight_regfile_13_14_empty_n & weight_regfile_13_13_empty_n & weight_regfile_13_12_empty_n & weight_regfile_13_11_empty_n & weight_regfile_13_10_empty_n & weight_regfile_13_0_empty_n & weight_regfile_12_9_empty_n & weight_regfile_12_8_empty_n & weight_regfile_12_7_empty_n & weight_regfile_12_6_empty_n & weight_regfile_12_5_empty_n & weight_regfile_12_4_empty_n & weight_regfile_12_3_empty_n & weight_regfile_12_2_empty_n & weight_regfile_12_1_empty_n & weight_regfile_12_15_empty_n & weight_regfile_12_14_empty_n & weight_regfile_12_13_empty_n & weight_regfile_12_12_empty_n & weight_regfile_12_11_empty_n & weight_regfile_12_10_empty_n & weight_regfile_12_0_empty_n & weight_regfile_11_9_empty_n & weight_regfile_11_8_empty_n & weight_regfile_11_7_empty_n & weight_regfile_11_6_empty_n & weight_regfile_11_5_empty_n & weight_regfile_11_4_empty_n & weight_regfile_11_3_empty_n & weight_regfile_11_2_empty_n & weight_regfile_11_1_empty_n & weight_regfile_11_15_empty_n & weight_regfile_11_14_empty_n & weight_regfile_11_13_empty_n & weight_regfile_11_12_empty_n & weight_regfile_11_11_empty_n & weight_regfile_11_10_empty_n & weight_regfile_11_0_empty_n & weight_regfile_10_9_empty_n & weight_regfile_10_8_empty_n & weight_regfile_10_7_empty_n & weight_regfile_10_6_empty_n & weight_regfile_10_5_empty_n & weight_regfile_10_4_empty_n & weight_regfile_10_3_empty_n & weight_regfile_10_2_empty_n & weight_regfile_10_1_empty_n & weight_regfile_10_15_empty_n & weight_regfile_10_14_empty_n & weight_regfile_10_13_empty_n & weight_regfile_10_12_empty_n & weight_regfile_10_11_empty_n & weight_regfile_10_10_empty_n & weight_regfile_10_0_empty_n & weight_regfile_0_9_empty_n & weight_regfile_0_8_empty_n & weight_regfile_0_7_empty_n & weight_regfile_0_6_empty_n & weight_regfile_0_5_empty_n & weight_regfile_0_4_empty_n & weight_regfile_0_3_empty_n & weight_regfile_0_2_empty_n & weight_regfile_0_1_empty_n & weight_regfile_0_15_empty_n & weight_regfile_0_14_empty_n & weight_regfile_0_13_empty_n & weight_regfile_0_12_empty_n & weight_regfile_0_11_empty_n & weight_regfile_0_10_empty_n & weight_regfile_0_0_empty_n & data_l1_9_t_empty_n & data_l1_8_t_empty_n & data_l1_7_t_empty_n & data_l1_6_t_empty_n & data_l1_5_t_empty_n & data_l1_4_t_empty_n & data_l1_3_t_empty_n & data_l1_2_t_empty_n & data_l1_1_t_empty_n & data_l1_15_t_empty_n & data_l1_14_t_empty_n & data_l1_13_t_empty_n & data_l1_12_t_empty_n & data_l1_11_t_empty_n & data_l1_10_t_empty_n & data_l1_0_t_empty_n);
+assign runSIMD_U0_ap_start = (weight_regfile_3_3_empty_n & weight_regfile_3_2_empty_n & weight_regfile_3_1_empty_n & weight_regfile_3_0_empty_n & weight_regfile_2_3_empty_n & weight_regfile_2_2_empty_n & weight_regfile_2_1_empty_n & weight_regfile_2_0_empty_n & weight_regfile_1_3_empty_n & weight_regfile_1_2_empty_n & weight_regfile_1_1_empty_n & weight_regfile_1_0_empty_n & weight_regfile_0_3_empty_n & weight_regfile_0_2_empty_n & weight_regfile_0_1_empty_n & weight_regfile_0_0_empty_n & data_l1_3_t_empty_n & data_l1_2_t_empty_n & data_l1_1_t_empty_n & data_l1_0_t_empty_n);
 
-assign runSysArr_U0_output_l1_0273_i_full_n = output_l1_0_i_full_n;
+assign runSIMD_U0_output_l1_021_i_full_n = output_l1_0_i_full_n;
 
-assign runSysArr_U0_output_l1_10283_i_full_n = output_l1_10_i_full_n;
+assign runSIMD_U0_output_l1_122_i_full_n = output_l1_1_i_full_n;
 
-assign runSysArr_U0_output_l1_11284_i_full_n = output_l1_11_i_full_n;
+assign runSIMD_U0_output_l1_223_i_full_n = output_l1_2_i_full_n;
 
-assign runSysArr_U0_output_l1_12285_i_full_n = output_l1_12_i_full_n;
+assign runSIMD_U0_output_l1_324_i_full_n = output_l1_3_i_full_n;
 
-assign runSysArr_U0_output_l1_1274_i_full_n = output_l1_1_i_full_n;
+assign runSIMD_U0_start_full_n = 1'b1;
 
-assign runSysArr_U0_output_l1_13286_i_full_n = output_l1_13_i_full_n;
+assign runSIMD_U0_start_write = 1'b0;
 
-assign runSysArr_U0_output_l1_14287_i_full_n = output_l1_14_i_full_n;
-
-assign runSysArr_U0_output_l1_15288_i_full_n = output_l1_15_i_full_n;
-
-assign runSysArr_U0_output_l1_2275_i_full_n = output_l1_2_i_full_n;
-
-assign runSysArr_U0_output_l1_3276_i_full_n = output_l1_3_i_full_n;
-
-assign runSysArr_U0_output_l1_4277_i_full_n = output_l1_4_i_full_n;
-
-assign runSysArr_U0_output_l1_5278_i_full_n = output_l1_5_i_full_n;
-
-assign runSysArr_U0_output_l1_6279_i_full_n = output_l1_6_i_full_n;
-
-assign runSysArr_U0_output_l1_7280_i_full_n = output_l1_7_i_full_n;
-
-assign runSysArr_U0_output_l1_8281_i_full_n = output_l1_8_i_full_n;
-
-assign runSysArr_U0_output_l1_9282_i_full_n = output_l1_9_i_full_n;
-
-assign runSysArr_U0_start_full_n = 1'b1;
-
-assign runSysArr_U0_start_write = 1'b0;
-
-assign runWeight2Reg_U0_ap_continue = (ap_sync_channel_write_weight_regfile_9_9 & ap_sync_channel_write_weight_regfile_9_8 & ap_sync_channel_write_weight_regfile_9_7 & ap_sync_channel_write_weight_regfile_9_6 & ap_sync_channel_write_weight_regfile_9_5 & ap_sync_channel_write_weight_regfile_9_4 & ap_sync_channel_write_weight_regfile_9_3 & ap_sync_channel_write_weight_regfile_9_2 & ap_sync_channel_write_weight_regfile_9_15 & ap_sync_channel_write_weight_regfile_9_14 & ap_sync_channel_write_weight_regfile_9_13 & ap_sync_channel_write_weight_regfile_9_12 & ap_sync_channel_write_weight_regfile_9_11 & ap_sync_channel_write_weight_regfile_9_10 & ap_sync_channel_write_weight_regfile_9_1 & ap_sync_channel_write_weight_regfile_9_0 & ap_sync_channel_write_weight_regfile_8_9 & ap_sync_channel_write_weight_regfile_8_8 & ap_sync_channel_write_weight_regfile_8_7 & ap_sync_channel_write_weight_regfile_8_6 & ap_sync_channel_write_weight_regfile_8_5 & ap_sync_channel_write_weight_regfile_8_4 & ap_sync_channel_write_weight_regfile_8_3 & ap_sync_channel_write_weight_regfile_8_2 & ap_sync_channel_write_weight_regfile_8_15 & ap_sync_channel_write_weight_regfile_8_14 & ap_sync_channel_write_weight_regfile_8_13 & ap_sync_channel_write_weight_regfile_8_12 & ap_sync_channel_write_weight_regfile_8_11 & ap_sync_channel_write_weight_regfile_8_10 & ap_sync_channel_write_weight_regfile_8_1 & ap_sync_channel_write_weight_regfile_8_0 & ap_sync_channel_write_weight_regfile_7_9 & ap_sync_channel_write_weight_regfile_7_8 & ap_sync_channel_write_weight_regfile_7_7 & ap_sync_channel_write_weight_regfile_7_6 & ap_sync_channel_write_weight_regfile_7_5 & ap_sync_channel_write_weight_regfile_7_4 & ap_sync_channel_write_weight_regfile_7_3 & ap_sync_channel_write_weight_regfile_7_2 & ap_sync_channel_write_weight_regfile_7_15 & ap_sync_channel_write_weight_regfile_7_14 & ap_sync_channel_write_weight_regfile_7_13 & ap_sync_channel_write_weight_regfile_7_12 & ap_sync_channel_write_weight_regfile_7_11 & ap_sync_channel_write_weight_regfile_7_10 & ap_sync_channel_write_weight_regfile_7_1 & ap_sync_channel_write_weight_regfile_7_0 & ap_sync_channel_write_weight_regfile_6_9 & ap_sync_channel_write_weight_regfile_6_8 & ap_sync_channel_write_weight_regfile_6_7 & ap_sync_channel_write_weight_regfile_6_6 & ap_sync_channel_write_weight_regfile_6_5 & ap_sync_channel_write_weight_regfile_6_4 & ap_sync_channel_write_weight_regfile_6_3 & ap_sync_channel_write_weight_regfile_6_2 & ap_sync_channel_write_weight_regfile_6_15 & ap_sync_channel_write_weight_regfile_6_14 & ap_sync_channel_write_weight_regfile_6_13 & ap_sync_channel_write_weight_regfile_6_12 & ap_sync_channel_write_weight_regfile_6_11 & ap_sync_channel_write_weight_regfile_6_10 & ap_sync_channel_write_weight_regfile_6_1 & ap_sync_channel_write_weight_regfile_6_0 & ap_sync_channel_write_weight_regfile_5_9 & ap_sync_channel_write_weight_regfile_5_8 & ap_sync_channel_write_weight_regfile_5_7 & ap_sync_channel_write_weight_regfile_5_6 & ap_sync_channel_write_weight_regfile_5_5 & ap_sync_channel_write_weight_regfile_5_4 & ap_sync_channel_write_weight_regfile_5_3 & ap_sync_channel_write_weight_regfile_5_2 & ap_sync_channel_write_weight_regfile_5_15 & ap_sync_channel_write_weight_regfile_5_14 & ap_sync_channel_write_weight_regfile_5_13 & ap_sync_channel_write_weight_regfile_5_12 & ap_sync_channel_write_weight_regfile_5_11 & ap_sync_channel_write_weight_regfile_5_10 & ap_sync_channel_write_weight_regfile_5_1 & ap_sync_channel_write_weight_regfile_5_0 & ap_sync_channel_write_weight_regfile_4_9 & ap_sync_channel_write_weight_regfile_4_8 & ap_sync_channel_write_weight_regfile_4_7 & ap_sync_channel_write_weight_regfile_4_6 & ap_sync_channel_write_weight_regfile_4_5 & ap_sync_channel_write_weight_regfile_4_4 & ap_sync_channel_write_weight_regfile_4_3 & ap_sync_channel_write_weight_regfile_4_2 & ap_sync_channel_write_weight_regfile_4_15 & ap_sync_channel_write_weight_regfile_4_14 & ap_sync_channel_write_weight_regfile_4_13 & ap_sync_channel_write_weight_regfile_4_12 & ap_sync_channel_write_weight_regfile_4_11 & ap_sync_channel_write_weight_regfile_4_10 & ap_sync_channel_write_weight_regfile_4_1 & ap_sync_channel_write_weight_regfile_4_0 & ap_sync_channel_write_weight_regfile_3_9 & ap_sync_channel_write_weight_regfile_3_8 & ap_sync_channel_write_weight_regfile_3_7 & ap_sync_channel_write_weight_regfile_3_6 & ap_sync_channel_write_weight_regfile_3_5 & ap_sync_channel_write_weight_regfile_3_4 & ap_sync_channel_write_weight_regfile_3_3 & ap_sync_channel_write_weight_regfile_3_2 & ap_sync_channel_write_weight_regfile_3_15 & ap_sync_channel_write_weight_regfile_3_14 & ap_sync_channel_write_weight_regfile_3_13 & ap_sync_channel_write_weight_regfile_3_12 & ap_sync_channel_write_weight_regfile_3_11 & ap_sync_channel_write_weight_regfile_3_10 & ap_sync_channel_write_weight_regfile_3_1 & ap_sync_channel_write_weight_regfile_3_0 & ap_sync_channel_write_weight_regfile_2_9 & ap_sync_channel_write_weight_regfile_2_8 & ap_sync_channel_write_weight_regfile_2_7 & ap_sync_channel_write_weight_regfile_2_6 & ap_sync_channel_write_weight_regfile_2_5 & ap_sync_channel_write_weight_regfile_2_4 & ap_sync_channel_write_weight_regfile_2_3 & ap_sync_channel_write_weight_regfile_2_2 & ap_sync_channel_write_weight_regfile_2_15 & ap_sync_channel_write_weight_regfile_2_14 & ap_sync_channel_write_weight_regfile_2_13 & ap_sync_channel_write_weight_regfile_2_12 & ap_sync_channel_write_weight_regfile_2_11 & ap_sync_channel_write_weight_regfile_2_10 & ap_sync_channel_write_weight_regfile_2_1 & ap_sync_channel_write_weight_regfile_2_0 & ap_sync_channel_write_weight_regfile_1_9 & ap_sync_channel_write_weight_regfile_1_8 & ap_sync_channel_write_weight_regfile_1_7 & ap_sync_channel_write_weight_regfile_1_6 & ap_sync_channel_write_weight_regfile_1_5 & ap_sync_channel_write_weight_regfile_1_4 & ap_sync_channel_write_weight_regfile_1_3 & ap_sync_channel_write_weight_regfile_1_2 & ap_sync_channel_write_weight_regfile_1_15 & ap_sync_channel_write_weight_regfile_1_14 & ap_sync_channel_write_weight_regfile_1_13 & ap_sync_channel_write_weight_regfile_1_12 & ap_sync_channel_write_weight_regfile_1_11 & ap_sync_channel_write_weight_regfile_1_10 & ap_sync_channel_write_weight_regfile_1_1 & ap_sync_channel_write_weight_regfile_1_0 & ap_sync_channel_write_weight_regfile_15_9 & ap_sync_channel_write_weight_regfile_15_8 & ap_sync_channel_write_weight_regfile_15_7 & ap_sync_channel_write_weight_regfile_15_6 & ap_sync_channel_write_weight_regfile_15_5 & ap_sync_channel_write_weight_regfile_15_4 & ap_sync_channel_write_weight_regfile_15_3 & ap_sync_channel_write_weight_regfile_15_2 & ap_sync_channel_write_weight_regfile_15_15 & ap_sync_channel_write_weight_regfile_15_14 & ap_sync_channel_write_weight_regfile_15_13 & ap_sync_channel_write_weight_regfile_15_12 & ap_sync_channel_write_weight_regfile_15_11 & ap_sync_channel_write_weight_regfile_15_10 & ap_sync_channel_write_weight_regfile_15_1 & ap_sync_channel_write_weight_regfile_15_0 & ap_sync_channel_write_weight_regfile_14_9 & ap_sync_channel_write_weight_regfile_14_8 & ap_sync_channel_write_weight_regfile_14_7 & ap_sync_channel_write_weight_regfile_14_6 & ap_sync_channel_write_weight_regfile_14_5 & ap_sync_channel_write_weight_regfile_14_4 & ap_sync_channel_write_weight_regfile_14_3 & ap_sync_channel_write_weight_regfile_14_2 & ap_sync_channel_write_weight_regfile_14_15 & ap_sync_channel_write_weight_regfile_14_14 & ap_sync_channel_write_weight_regfile_14_13 & ap_sync_channel_write_weight_regfile_14_12 & ap_sync_channel_write_weight_regfile_14_11 & ap_sync_channel_write_weight_regfile_14_10 & ap_sync_channel_write_weight_regfile_14_1 & ap_sync_channel_write_weight_regfile_14_0 & ap_sync_channel_write_weight_regfile_13_9 & ap_sync_channel_write_weight_regfile_13_8 & ap_sync_channel_write_weight_regfile_13_7 & ap_sync_channel_write_weight_regfile_13_6 & ap_sync_channel_write_weight_regfile_13_5 & ap_sync_channel_write_weight_regfile_13_4 & ap_sync_channel_write_weight_regfile_13_3 & ap_sync_channel_write_weight_regfile_13_2 & ap_sync_channel_write_weight_regfile_13_15 & ap_sync_channel_write_weight_regfile_13_14 & ap_sync_channel_write_weight_regfile_13_13 & ap_sync_channel_write_weight_regfile_13_12 & ap_sync_channel_write_weight_regfile_13_11 & ap_sync_channel_write_weight_regfile_13_10 & ap_sync_channel_write_weight_regfile_13_1 & ap_sync_channel_write_weight_regfile_13_0 & ap_sync_channel_write_weight_regfile_12_9 & ap_sync_channel_write_weight_regfile_12_8 & ap_sync_channel_write_weight_regfile_12_7 & ap_sync_channel_write_weight_regfile_12_6 & ap_sync_channel_write_weight_regfile_12_5 & ap_sync_channel_write_weight_regfile_12_4 & ap_sync_channel_write_weight_regfile_12_3 & ap_sync_channel_write_weight_regfile_12_2 & ap_sync_channel_write_weight_regfile_12_15 & ap_sync_channel_write_weight_regfile_12_14 & ap_sync_channel_write_weight_regfile_12_13 & ap_sync_channel_write_weight_regfile_12_12 & ap_sync_channel_write_weight_regfile_12_11 & ap_sync_channel_write_weight_regfile_12_10 & ap_sync_channel_write_weight_regfile_12_1 & ap_sync_channel_write_weight_regfile_12_0 & ap_sync_channel_write_weight_regfile_11_9 & ap_sync_channel_write_weight_regfile_11_8 & ap_sync_channel_write_weight_regfile_11_7 & ap_sync_channel_write_weight_regfile_11_6 & ap_sync_channel_write_weight_regfile_11_5 & ap_sync_channel_write_weight_regfile_11_4 & ap_sync_channel_write_weight_regfile_11_3 & ap_sync_channel_write_weight_regfile_11_2 & ap_sync_channel_write_weight_regfile_11_15 & ap_sync_channel_write_weight_regfile_11_14 & ap_sync_channel_write_weight_regfile_11_13 & ap_sync_channel_write_weight_regfile_11_12 & ap_sync_channel_write_weight_regfile_11_11 & ap_sync_channel_write_weight_regfile_11_10 & ap_sync_channel_write_weight_regfile_11_1 & ap_sync_channel_write_weight_regfile_11_0 & ap_sync_channel_write_weight_regfile_10_9 & ap_sync_channel_write_weight_regfile_10_8 & ap_sync_channel_write_weight_regfile_10_7 & ap_sync_channel_write_weight_regfile_10_6 & ap_sync_channel_write_weight_regfile_10_5 & ap_sync_channel_write_weight_regfile_10_4 & ap_sync_channel_write_weight_regfile_10_3 & ap_sync_channel_write_weight_regfile_10_2 & ap_sync_channel_write_weight_regfile_10_15 & ap_sync_channel_write_weight_regfile_10_14 & ap_sync_channel_write_weight_regfile_10_13 & ap_sync_channel_write_weight_regfile_10_12 & ap_sync_channel_write_weight_regfile_10_11 & ap_sync_channel_write_weight_regfile_10_10 & ap_sync_channel_write_weight_regfile_10_1 & ap_sync_channel_write_weight_regfile_10_0 & ap_sync_channel_write_weight_regfile_0_9 & ap_sync_channel_write_weight_regfile_0_8 & ap_sync_channel_write_weight_regfile_0_7 & ap_sync_channel_write_weight_regfile_0_6 & ap_sync_channel_write_weight_regfile_0_5 & ap_sync_channel_write_weight_regfile_0_4 & ap_sync_channel_write_weight_regfile_0_3 & ap_sync_channel_write_weight_regfile_0_2 & ap_sync_channel_write_weight_regfile_0_15 & ap_sync_channel_write_weight_regfile_0_14 & ap_sync_channel_write_weight_regfile_0_13 & ap_sync_channel_write_weight_regfile_0_12 & ap_sync_channel_write_weight_regfile_0_11 & ap_sync_channel_write_weight_regfile_0_10 & ap_sync_channel_write_weight_regfile_0_1 & ap_sync_channel_write_weight_regfile_0_0);
+assign runWeight2Reg_U0_ap_continue = (ap_sync_channel_write_weight_regfile_3_3 & ap_sync_channel_write_weight_regfile_3_2 & ap_sync_channel_write_weight_regfile_3_1 & ap_sync_channel_write_weight_regfile_3_0 & ap_sync_channel_write_weight_regfile_2_3 & ap_sync_channel_write_weight_regfile_2_2 & ap_sync_channel_write_weight_regfile_2_1 & ap_sync_channel_write_weight_regfile_2_0 & ap_sync_channel_write_weight_regfile_1_3 & ap_sync_channel_write_weight_regfile_1_2 & ap_sync_channel_write_weight_regfile_1_1 & ap_sync_channel_write_weight_regfile_1_0 & ap_sync_channel_write_weight_regfile_0_3 & ap_sync_channel_write_weight_regfile_0_2 & ap_sync_channel_write_weight_regfile_0_1 & ap_sync_channel_write_weight_regfile_0_0);
 
 assign runWeight2Reg_U0_ap_start = ((ap_sync_reg_runWeight2Reg_U0_ap_ready ^ 1'b1) & ap_start);
 
@@ -13389,18 +2049,6 @@ assign runWeight2Reg_U0_start_write = 1'b0;
 assign runWeight2Reg_U0_weight_l2_0_full_n = weight_l2_0_empty_n;
 
 assign runWeight2Reg_U0_weight_l2_0_write = 1'b0;
-
-assign runWeight2Reg_U0_weight_l2_1_full_n = weight_l2_1_empty_n;
-
-assign runWeight2Reg_U0_weight_l2_1_write = 1'b0;
-
-assign runWeight2Reg_U0_weight_l2_2_full_n = weight_l2_2_empty_n;
-
-assign runWeight2Reg_U0_weight_l2_2_write = 1'b0;
-
-assign runWeight2Reg_U0_weight_l2_3_full_n = weight_l2_3_empty_n;
-
-assign runWeight2Reg_U0_weight_l2_3_write = 1'b0;
 
 assign weight_l2_0_address0 = runWeight2Reg_U0_weight_l2_0_address0;
 
@@ -13419,59 +2067,5 @@ assign weight_l2_0_read = runWeight2Reg_U0_weight_l2_0_write;
 assign weight_l2_0_we0 = 1'b0;
 
 assign weight_l2_0_we1 = 1'b0;
-
-assign weight_l2_1_address0 = runWeight2Reg_U0_weight_l2_1_address0;
-
-assign weight_l2_1_address1 = 12'd0;
-
-assign weight_l2_1_ce0 = runWeight2Reg_U0_weight_l2_1_ce0;
-
-assign weight_l2_1_ce1 = 1'b0;
-
-assign weight_l2_1_d0 = 8'd0;
-
-assign weight_l2_1_d1 = 8'd0;
-
-assign weight_l2_1_read = runWeight2Reg_U0_weight_l2_1_write;
-
-assign weight_l2_1_we0 = 1'b0;
-
-assign weight_l2_1_we1 = 1'b0;
-
-assign weight_l2_2_address0 = runWeight2Reg_U0_weight_l2_2_address0;
-
-assign weight_l2_2_address1 = 12'd0;
-
-assign weight_l2_2_ce0 = runWeight2Reg_U0_weight_l2_2_ce0;
-
-assign weight_l2_2_ce1 = 1'b0;
-
-assign weight_l2_2_d0 = 8'd0;
-
-assign weight_l2_2_d1 = 8'd0;
-
-assign weight_l2_2_read = runWeight2Reg_U0_weight_l2_2_write;
-
-assign weight_l2_2_we0 = 1'b0;
-
-assign weight_l2_2_we1 = 1'b0;
-
-assign weight_l2_3_address0 = runWeight2Reg_U0_weight_l2_3_address0;
-
-assign weight_l2_3_address1 = 12'd0;
-
-assign weight_l2_3_ce0 = runWeight2Reg_U0_weight_l2_3_ce0;
-
-assign weight_l2_3_ce1 = 1'b0;
-
-assign weight_l2_3_d0 = 8'd0;
-
-assign weight_l2_3_d1 = 8'd0;
-
-assign weight_l2_3_read = runWeight2Reg_U0_weight_l2_3_write;
-
-assign weight_l2_3_we0 = 1'b0;
-
-assign weight_l2_3_we1 = 1'b0;
 
 endmodule //Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER

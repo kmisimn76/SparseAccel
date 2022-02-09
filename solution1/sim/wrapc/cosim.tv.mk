@@ -49,6 +49,7 @@ IFLAG += -Wno-unknown-pragmas
 LFLAG += -L "${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools/systemc/lib" -lsystemc -lpthread
 IFLAG += -D__RTL_SIMULATION__
 IFLAG += -D__xilinx_ip_top=
+AP_ENABLE_OPTIMIZED := 1
 DFLAG += -DAESL_PIPELINE
 
 include ./Makefile.rules

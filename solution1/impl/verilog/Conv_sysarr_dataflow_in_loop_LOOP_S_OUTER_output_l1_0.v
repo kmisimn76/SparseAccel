@@ -7,7 +7,7 @@
 
 module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0
 #(parameter
-    DataWidth    = 32,
+    DataWidth    = 16,
     AddressRange = 32,
     AddressWidth = 6,
     BufferCount  = 2,

@@ -8,7 +8,7 @@ use ieee.numeric_std.all;
 
 entity Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0  is
     generic (
-        DataWidth    : integer := 32;
+        DataWidth    : integer := 16;
         AddressRange : integer := 32;
         AddressWidth : integer := 6;
         BufferCount  : integer := 2;
@@ -48,13 +48,13 @@ port (
     ce0      : in  std_logic;
     address0 : in  std_logic_vector(6 downto 0);
     we0      : in  std_logic;
-    d0       : in  std_logic_vector(31 downto 0);
-    q0       : out std_logic_vector(31 downto 0);
+    d0       : in  std_logic_vector(15 downto 0);
+    q0       : out std_logic_vector(15 downto 0);
     ce1      : in  std_logic;
     address1 : in  std_logic_vector(6 downto 0);
     we1      : in  std_logic;
-    d1       : in  std_logic_vector(31 downto 0);
-    q1       : out std_logic_vector(31 downto 0)
+    d1       : in  std_logic_vector(15 downto 0);
+    q1       : out std_logic_vector(15 downto 0)
 );
 end component;
 

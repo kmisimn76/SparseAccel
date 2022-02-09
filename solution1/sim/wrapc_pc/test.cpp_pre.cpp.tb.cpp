@@ -67333,12 +67333,7 @@ typedef unsigned char uchar;
 
 typedef char DPTYPE;
 typedef int MACTYPE;
-
-
-
-
-
-
+# 34 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"
 typedef ap_axiu<4*32,0,0,0> k2k_data;
 
 typedef struct {
@@ -67381,7 +67376,7 @@ typedef struct {
     uint TILESIZE_S;
 } NPU_PARAM;
 # 4 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp" 2
-# 50 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 48 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 void Conv_sysarr(
         NPU_PARAM hw_param,
   DPTYPE *bias_in,
@@ -67437,7 +67432,7 @@ int conv_out[3211264];
 extern "C"
 #endif
 void apatb_Conv_sysarr_sw(NPU_PARAM, char *, char *, char *, int *);
-# 100 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 98 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 int conv_test(
   NPU_PARAM param,
   char *bias,
@@ -67476,12 +67471,12 @@ int conv_test(
 #ifndef HLS_FASTSIM
 #define Conv_sysarr apatb_Conv_sysarr_sw
 #endif
-# 134 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 132 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 Conv_sysarr(
    param,
    bias_in, weight_in, data_in, conv_out);
 #undef Conv_sysarr
-# 134 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 132 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
 
     for(int wh=0;wh<param.WH*param.WH;wh++) {
@@ -67498,42 +67493,42 @@ Conv_sysarr(
     return 0;
 }
 #endif
-# 150 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 148 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
 
 
 int main()
 {
 
  NPU_PARAM param;
-# 206 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
+# 165 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
  {
- param.K = 32;
- param.C = 64;
+ param.K = 16;
+ param.C = 4;
  param.WH = 14;
  param.WH_in = 16;
  param.RS = 3;
- param.L2_TILENUM_K = 1;
- param.L2_TILENUM_C = 2;
- param.L2_TILENUM_W = 1;
- param.L2_TILENUM_H = 1;
+ param.L2_TILENUM_K = 4;
+ param.L2_TILENUM_C = 1;
+ param.L2_TILENUM_W = 2;
+ param.L2_TILENUM_H = 2;
  param.L2_TILENUM_R = 1;
  param.L2_TILENUM_S = 1;
- param.K_L2 = 32;
- param.C_L2 = 32;
- param.W_L2 = 14;
- param.H_L2 = 14;
- param.W_in_L2 = 16;
- param.H_in_L2 = 16;
+ param.K_L2 = 4;
+ param.C_L2 = 4;
+ param.W_L2 = 7;
+ param.H_L2 = 7;
+ param.W_in_L2 = 9;
+ param.H_in_L2 = 9;
  param.R_L2 = 3;
  param.S_L2 = 3;
- param.L1_TILENUM_K = 2;
- param.L1_TILENUM_C = 2;
- param.L1_TILENUM_W = 2;
- param.L1_TILENUM_H = 2;
+ param.L1_TILENUM_K = 1;
+ param.L1_TILENUM_C = 1;
+ param.L1_TILENUM_W = 1;
+ param.L1_TILENUM_H = 1;
  param.L1_TILENUM_R = 3;
  param.L1_TILENUM_S = 3;
- param.K_L1 = 16;
- param.C_L1 = 16;
+ param.K_L1 = 4;
+ param.C_L1 = 4;
  param.W_L1 = 7;
  param.H_L1 = 7;
  param.W_in_L1 = 7;
@@ -67545,7 +67540,7 @@ int main()
  param.TILESIZE_R = 1;
  param.TILESIZE_S = 1;
  }
-
+# 244 "/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"
     printf("Test Start\n");
 
  for(int k = 0; k < param.K; k++) bias[k] = 1;

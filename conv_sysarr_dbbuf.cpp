@@ -1,8 +1,6 @@
 
 #include "hw_param.h"
 
-#define ARRAY_K 16
-#define ARRAY_C 16
 /*
 typedef struct {
     uint K;
@@ -49,13 +47,17 @@ typedef struct {
 #define PRAGMA_SUB(x) _Pragma (#x)
 #define DO_PRAGMA(x) PRAGMA_SUB(x)
 
+#define   BIAS_DRAM_DEPTH 1280
+#define WEIGHT_DRAM_DEPTH 23040
+#define   DATA_DRAM_DEPTH 20480
+#define OUTPUT_DRAM_DEPTH 15680
 #define   DATA_L2_SIZE 2048
 #define WEIGHT_L2_SIZE 2304
 #define OUTPUT_L2_SIZE 1568
 //#define   DATA_L2_SIZE 817216
 //#define WEIGHT_L2_SIZE 589824
 //#define OUTPUT_L2_SIZE 802816
-#define   BIAS_L2_SIZE 8
+#define   BIAS_L2_SIZE 128
 #define   DATA_L1_SIZE 49
 #define WEIGHT_L1_SIZE -1
 #define OUTPUT_L1_SIZE 49
@@ -122,7 +124,7 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 	}
 }
 
-void doSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
+void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
 		DPTYPE data_reg[ARRAY_K][ARRAY_C], MACTYPE output_reg[ARRAY_K][ARRAY_C],
 		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
 		uint hi, uint wi, uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S, bool isFirst) {
@@ -169,7 +171,6 @@ void doSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data
 		}
 	}
 }
-
 void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
 		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
 		int input_rows,
@@ -200,10 +201,61 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 					#pragma HLS latency min=1 max=1 // systolic array implementation
 					int hi = (i) / TILESIZE_W;
 					int wi = (i) % TILESIZE_W;
-					doSysArr(weight_regfile, data_l1,
+					doSysArrPE(weight_regfile, data_l1,
 							data_reg, output_reg,
 							output_l1_local, output_l1,
 							hi, wi, TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+				}
+			}
+		}
+	}
+}
+
+void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
+		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
+		int input_rows,
+		int bubble_h, int bubble_w,
+		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
+		bool isFirst) {
+
+	DPTYPE data_reg[ARRAY_K][ARRAY_C];
+	#pragma HLS dependence variable=data_reg
+	MACTYPE output_reg[ARRAY_K][ARRAY_C];
+	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
+	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
+	LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
+		#pragma HLS LOOP_TRIPCOUNT max=1 min=1
+		LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
+			#pragma HLS LOOP_TRIPCOUNT max=1 min=1
+			//#pragma HLS loop_flatten
+			LOOP_H_INNER: for (int hi = 0; hi < TILESIZE_H; hi++) {
+				#pragma HLS LOOP_TRIPCOUNT max=7 min=7
+				LOOP_W_INNER: for (int wi = 0; wi < TILESIZE_W; wi++) {
+					#pragma HLS LOOP_TRIPCOUNT max=7 min=7
+					#pragma HLS DEPENDENCE variable=output_l1
+					#pragma HLS DEPENDENCE variable=output_l1_local
+					#pragma HLS pipeline rewind
+					//#pragma HLS latency min=1 max=1 // systolic array implementation
+					LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
+						#pragma HLS unroll
+						LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
+							#pragma HLS unroll
+							data_reg[ki][ci] = data_l1[hi * TILESIZE_W + wi][ci];
+							//output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
+							output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
+						}
+					}
+
+					// reduction
+					LOOP_REDUCTION_K: for (int ki = 0; ki < ARRAY_K; ki++) {
+						#pragma HLS unroll
+						MACTYPE sum = 0;
+						LOOP_REDUCTION_C: for (int ci = 0; ci < ARRAY_C; ci++) {
+							#pragma HLS unroll
+							sum += output_reg[ki][ci];
+						}
+						output_l1[hi * TILESIZE_W + wi][ki] = sum;
+					}
 				}
 			}
 		}
@@ -217,15 +269,57 @@ MACTYPE output_l2[OUTPUT_L2_SIZE][ARRAY_K];
 MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][ARRAY_K];
 
 void Conv_sysarr(
-		NPU_PARAM param,
+		//NPU_PARAM param,
+	    uint K,
+	    uint C,
+	    uint WH,
+	    uint WH_in,
+	    uint RS,
+		uint L2_TILENUM_K,///
+		uint L2_TILENUM_C,
+	    uint L2_TILENUM_W, // W Size of a tile
+	    uint L2_TILENUM_H,
+	    uint L2_TILENUM_R,
+	    uint L2_TILENUM_S,
+	    uint K_L2,
+	    uint C_L2,
+	    uint W_L2,
+	    uint H_L2,
+	    uint W_in_L2,
+	    uint H_in_L2,
+	    uint R_L2,
+	    uint S_L2,
+		uint L1_TILENUM_K,///
+		uint L1_TILENUM_C,
+	    uint L1_TILENUM_W, // W Size of a tile
+	    uint L1_TILENUM_H,
+	    uint L1_TILENUM_R,
+	    uint L1_TILENUM_S,
+	    uint K_L1,
+	    uint C_L1,
+	    uint W_L1,
+	    uint H_L1,
+	    uint W_in_L1,
+	    uint H_in_L1,
+	    uint R_L1,
+	    uint S_L1,
+	    uint TILESIZE_W, // W Size of a tile
+	    uint TILESIZE_H,
+	    uint TILESIZE_R, //must be 1
+	    uint TILESIZE_S, //must be 1
 		DPTYPE *bias_in,
 		DPTYPE *weight_in,
 		DPTYPE *data_in,
-		MACTYPE *conv_out) {
-#pragma HLS INTERFACE m_axi port=bias_in offset=slave bundle=gmem0
-#pragma HLS INTERFACE m_axi port=weight_in offset=slave bundle=gmem1
-#pragma HLS INTERFACE m_axi port=data_in offset=slave bundle=gmem2
-#pragma HLS INTERFACE m_axi port=conv_out offset=slave bundle=gmem3
+		MACTYPE *conv_out
+		) {
+		DO_PRAGMA(HLS INTERFACE m_axi port=bias_in offset=slave bundle=gmem0 depth=BIAS_DRAM_DEPTH)
+		DO_PRAGMA(HLS INTERFACE m_axi port=weight_in offset=slave bundle=gmem1 depth=WEIGHT_DRAM_DEPTH)
+		DO_PRAGMA(HLS INTERFACE m_axi port=data_in offset=slave bundle=gmem2 depth=DATA_DRAM_DEPTH)
+		DO_PRAGMA(HLS INTERFACE m_axi port=conv_out offset=slave bundle=gmem3 depth=OUTPUT_DRAM_DEPTH)
+	//DO_PRAGMA(HLS INTERFACE ap_bus port=bias_in bundle=gmem0)
+	//DO_PRAGMA(HLS INTERFACE ap_bus port=weight_in bundle=gmem1)
+	//DO_PRAGMA(HLS INTERFACE ap_bus port=data_in bundle=gmem2)
+	//DO_PRAGMA(HLS INTERFACE ap_bus port=conv_out bundle=gmem3)
 
 	#pragma HLS expression_balance
 
@@ -235,7 +329,8 @@ void Conv_sysarr(
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2 dim=2 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2_reduction dim=2 complete)
 
-	uint K = param.K;
+    printf("Conv Sysarr start\n");
+	/*uint K = param.K;
 	uint C = param.C;
 	uint WH = param.WH;
 	uint WH_in = param.WH_in;
@@ -272,25 +367,45 @@ void Conv_sysarr(
 	uint TILESIZE_H =param.TILESIZE_H;
 	uint TILESIZE_R =param.TILESIZE_R; //must be 1
 	uint TILESIZE_S =param.TILESIZE_S; //must be 1
+	*/
+    printf("Conv Sysarr set params\n");
+
+    printf("Args: ");
+    printf("%u,%u,%u,%u,%u,||,", K, C, WH, WH_in, RS);
+    printf("%d,%d,%d,%d,%d,%d,||,", L2_TILENUM_K, L2_TILENUM_C, L2_TILENUM_W, L2_TILENUM_H, L2_TILENUM_R, L2_TILENUM_S);
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,||,", K_L2, C_L2, W_L2, H_L2, W_in_L2, H_in_L2, R_L2, S_L2);
+    printf("%d,%d,%d,%d,%d,%d,||,", L1_TILENUM_K, L1_TILENUM_C, L1_TILENUM_W, L1_TILENUM_H, L1_TILENUM_R, L1_TILENUM_S);
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,||,", K_L1, C_L1, W_L1, H_L1, W_in_L1, H_in_L1, R_L1, S_L1);
+    printf("%d,%d,%d,%d \n", TILESIZE_W, TILESIZE_H, TILESIZE_R, TILESIZE_S);
 
 	const uint input_rows = TILESIZE_H * TILESIZE_W + (ARRAY_K - 1) + (ARRAY_C - 1); // inner loop with sysarr bubble
+    printf("Conv Sysarr set params 2\n");
 	const uint bubble = (ARRAY_K - 1) + (ARRAY_C - 1);
-	const uint bubble_h = bubble / TILESIZE_W;
-	const uint bubble_w = bubble % TILESIZE_W;
+    printf("Conv Sysarr set params 3\n");
+	const uint bubble_h = 0; //bubble / TILESIZE_W; //not be used
+    printf("Conv Sysarr set params 4\n");
+	const uint bubble_w = 0; //bubble % TILESIZE_W; //not be used
+    printf("Conv Sysarr set params 5\n");
 
 
 	LOOP_K_MOST_OUTER: for (int kmo = 0; kmo < L2_TILENUM_K; kmo++) { // Inner channel
 	#pragma HLS loop_tripcount min=4 max=4
+//        printf("Most Outer Loop K: %d/%d\n", kmo, L2_TILENUM_K);
 	LOOP_C_MOST_OUTER: for (int cmo = 0; cmo < L2_TILENUM_C; cmo++) { // Inner channel
 	#pragma HLS loop_tripcount min=1 max=1
+//        printf("Most Outer Loop  C: %d/%d\n", cmo, L2_TILENUM_K);
 	LOOP_H_MOST_OUTER: for (int hmo = 0; hmo < L2_TILENUM_H; hmo++) {
 	#pragma HLS loop_tripcount min=2 max=2
+//        printf("Most Outer Loop   H: %d/%d\n", hmo, L2_TILENUM_H);
 	LOOP_W_MOST_OUTER: for (int wmo = 0; wmo < L2_TILENUM_W; wmo++) {
 	#pragma HLS loop_tripcount min=2 max=2
+//        printf("Most Outer Loop    W: %d/%d\n", wmo, L2_TILENUM_W);
 	LOOP_R_MOST_OUTER: for (int rmo = 0; rmo < L2_TILENUM_R; rmo++) {
 	#pragma HLS loop_tripcount min=1 max=1
+//        printf("Most Outer Loop     R: %d/%d\n", rmo, L2_TILENUM_R);
 	LOOP_S_MOST_OUTER: for (int smo = 0; smo < L2_TILENUM_S; smo++) {
 	#pragma HLS loop_tripcount min=1 max=1
+//        printf("Most Outer Loop      S: %d/%d\n", smo, L2_TILENUM_S);
 		#pragma HLS dataflow
 		#pragma HLS stable variable=conv_out
 		#pragma HLS stable variable=bias_in
@@ -387,10 +502,18 @@ void Conv_sysarr(
 			//Systolic Array
 			runWeight2Reg(weight_regfile, weight_l2, C_L2, R_L2, S_L2, ko, co, ro, so);
 			runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, W_in_L2, H_in_L2);
+			#define SIMD
+			#ifndef SIMD
 			runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
 						input_rows,
 						bubble_h, bubble_w,
 						TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+			#else
+			runSIMD(weight_regfile, data_l1, output_l1_local, output_l1,
+						input_rows,
+						bubble_h, bubble_w,
+						TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+			#endif
 			runOutputL1toL2(output_l1, output_l2, output_l2_reduction, TILESIZE_H, TILESIZE_W, ko, ho, wo, W_L2, H_L2, isFirst);
 		} // Loop S
 		} // Loop R
@@ -427,6 +550,7 @@ void Conv_sysarr(
 	}
 	}
 	}
+	//conv_out[0] = L2_TILENUM_K;
 
 	printf("Kernel coreConv compelete !!!\n");
 }

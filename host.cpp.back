@@ -1,0 +1,387 @@
+#define CL_TARGET_OPENCL_VERSION 120
+#define XILINX
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+#include <iostream>
+#include <fstream>
+
+#include <CL/opencl.h>
+// dependency
+#include "ocl_util.h"
+
+#include "hw_param.h"
+//typedef char DPTYPE;  // data path type
+//typedef int  MACTYPE;
+
+using namespace std;
+using namespace ocl_util;
+
+
+//----------- Design Parameters --------------//
+// select what platform is used
+#ifdef XILINX
+const char *vendor_name = "Xilinx";
+#else
+//----------- SDK version <= 19.1 -----------//
+//const char *vendor_name = "Intel";
+//----------- SDK version >= 19.3 ----------//
+#if defined(SW_EMU)
+const char *vendor_name = "Intel(R) FPGA Emulation Platform for OpenCL(TM)";
+#else
+const char *vendor_name = "Intel(R) FPGA SDK for OpenCL(TM)";
+#endif
+#endif
+#define DEVICE_TYPE CL_DEVICE_TYPE_ACCELERATOR
+
+#define DMA_ALIGNMENT   4096
+
+const char* knl_name_conv = "Conv_sysarr";
+
+cl_uint num_devices = 0;
+cl_platform_id platform_id = NULL;
+cl_context context = NULL;
+cl_program program = NULL;
+scoped_array<cl_device_id> device;
+cl_kernel knl_conv;
+cl_command_queue que;
+cl_mem data_buf;
+cl_mem output_buf;
+cl_mem weights_buf;
+cl_mem bias_buf;
+
+DPTYPE* weight;
+DPTYPE* data;
+DPTYPE* bias;
+MACTYPE* output;
+MACTYPE* gold;
+unsigned int weight_buf_size = 0;
+unsigned int bias_buf_size = 0;
+unsigned int in_buf_size = 0;
+unsigned int out_buf_size = 0;
+NPU_PRAM param;
+
+void conv_gold()
+{
+	for(int k=0;k<param.K;k++){
+		for(int h=0;h<param.WH;h++){
+			for(int w=0;w<param.WH;w++){
+				gold[k*param.WH*param.WH + h*param.WH + w] = bias[k];
+				for(int c=0;c<param.C;c++){
+					for(int r=0;r<param.RS;r++){
+						for(int s=0;s<param.RS;s++){
+							// INT32 accumulation
+							gold[k*param.WH*param.WH + h*param.WH + w]
+								 += data[c*param.WH_in*param.WH_in + (h+r)*param.WH_in + (w+s)]
+										* weight[k*param.C*param.RS*param.RS
+												 + c*param.RS*param.RS + r*param.RS + s];
+
+							// INT8 accumulation
+							//gold[k*WH*WH + h*WH + w] = (char)((char)gold[k*WH*WH + h*WH + w] + (char)(data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
+							//								 * weight[k*C*RS*RS + c*RS*RS + r*RS + s])); // for Quantization
+						}
+					}
+				}
+		    	//printf("%d ", gold[k*WH*WH + h*WH + w]);
+			}
+		}
+	}
+	//printf("\n");
+}
+void ocl_initialize();
+void array_initialize();
+void initial_buffers();
+void set_param_data();
+void data_enque();
+void set_args();
+void read_data();
+void score();
+void cleanup();
+
+int main(int argc, char** argv)
+{
+    if (argc != 2){
+	printf("Error: wrong commad format, usage:\n");
+	printf("%s <binaryfile>\n", argv[0]);
+	return EXIT_FAILURE;
+	}
+    cl_int status;
+   	cl_event event;
+	cl_ulong time;
+
+    ocl_initialize();
+    array_initialize();
+
+    time = 0;
+    {
+        set_param_data();
+        initial_buffers();
+
+        data_enque();
+        set_args();
+
+        // run
+    	status = clEnqueueTask(que, knl_conv, 0, NULL, &event);
+    	status = clWaitForEvents(num_devices, event);
+    	time += getKernelStartEndTime(event);
+    	clReleaseEvent(event);
+
+        read_data();
+
+        conv_gold();
+        score();
+    }
+
+    cleanup();
+    return 0;
+}
+
+void ocl_initialize()
+{
+    cl_int status;
+	// Connect to the desired platform
+	platform_id = findPlatform(vendor_name);
+	if(platform_id == NULL) {
+		printf("ERROR: Unable to find the desired OpenCL platform.\n");
+		return false;
+	}
+
+    // Query the available OpenCL device
+    device.reset(getDevices(platform_id, DEVICE_TYPE, &num_devices));
+    printf("\nPlatform: %s\n", getPlatformName(platform_id).c_str());
+    printf("Totally %d device(s) are found\n", num_devices);
+    device_ptr = 0; // only use one device, select the proper idx
+    num_devices = 1; // reset the num of device to 1
+    printf("  Using Device %d: %s\n", device_ptr, getDeviceName(device[device_ptr]).c_str());
+    displayDeviceInfo(device[device_ptr]);
+
+	// Create the context.
+    context = clCreateContext(NULL, num_devices, &device[device_ptr], NULL, NULL, &status);
+	checkError(status, "Failed to create context");
+
+	// Create Program Objects
+	char *kernel_file_name=argv[1];
+#ifdef XILINX
+	char *fpga_bin;
+	size_t fpga_bin_size;
+	fpga_bin_size = load_file_to_memory(kernel_file_name, &fpga_bin);
+	program = clCreateProgramWithBinary(context, 1, &device[device_ptr], &fpga_bin_size, (const unsigned char **) &fpga_bin, NULL, &status);
+#else
+	// Create the program for all device. All devices execute the same kernel.
+	program = createProgramFromFile(context, (const char *) kernel_file_name, &device[device_ptr], num_devices);
+#endif
+	checkError(status, "Failed to create context");
+
+	que = clCreateCommandQueue(context, device[device_ptr], CL_QUEUE_PROFILING_ENABLE, &status);
+	checkError(status, "Failed to create command queue");
+    knl_conv = clCreateKernel(program, knl_name_conv, &status);
+	checkError(status, "Failed to create memRd kernel");
+}
+
+void array_initialize()
+{
+#define MAX_WEIGHT_SIZE 2359296
+#define MAX_DATA_SIZE 3268864
+#define MAX_BIAS_SIZE 2048
+#define MAX_OUTPUT_SIZE 3211264
+    weight = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE, DMA_ALIGNMENT);
+    data = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_DATA_SIZE, DMA_ALIGNMENT);
+    bias = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_BIAS_SIZE, DMA_ALIGNMENT);
+    output = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+    gold = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+}
+
+void initial_buffers()
+{
+    cl_int status;
+    // Initialize Cl buffer
+    printf("weight_buf_size: ", weight_buf_size);
+    printf("bias_buf_size: ", bias_buf_size);
+	weights_buf = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, weight_buf_size* sizeof(DPTYPE), weight, &status);
+	checkError(status, "Failed to create buffer for weights");
+    bias_buf = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, bias_buf_size * sizeof(DPTYPE), bias, &status);
+    checkError(status, "Failed to create buffer for bias");
+
+	data_buf = clCreateBuffer(context, CL_MEM_READ_WRITE, in_buf_size * sizeof(DPTYPE), NULL, &status);
+	checkError(status, "Failed to create buffer for data");
+	output_buf = clCreateBuffer(context, CL_MEM_READ_WRITE, out_buf_size * sizeof(MACTYPE), NULL, &status);
+	checkError(status, "Failed to create buffer for output");
+}
+
+void set_param_data()
+{
+    {
+	param.K = 16;
+	param.C = 4;
+	param.WH = 14;
+	param.WH_in = 16;
+	param.RS = 3;
+	param.L2_TILENUM_K = 4; ///
+	param.L2_TILENUM_C = 1;
+	param.L2_TILENUM_W = 2;
+	param.L2_TILENUM_H = 2;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = 4;
+	param.C_L2 = 4;
+	param.W_L2 = 7;
+	param.H_L2 = 7;
+	param.W_in_L2 = 9; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 9;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 1; ///
+	param.L1_TILENUM_C = 1;
+	param.L1_TILENUM_W = 1;
+	param.L1_TILENUM_H = 1;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = 4;
+	param.C_L1 = 4;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}
+	/*{
+	param.K = 32;
+	param.C = 64;
+	param.WH = 14;
+	param.WH_in = 16;
+	param.RS = 3;
+	param.L2_TILENUM_K = 1; ///
+	param.L2_TILENUM_C = 2;
+	param.L2_TILENUM_W = 1;
+	param.L2_TILENUM_H = 1;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = ARRAY_K*8;
+	param.C_L2 = ARRAY_C*8;
+	param.W_L2 = 14;
+	param.H_L2 = 14;
+	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 16;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 8; ///
+	param.L1_TILENUM_C = 8;
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}*/
+    for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
+    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
+}
+
+void data_enque()
+{
+    cl_int status;
+    // Data enque
+    // weight is static
+	status = clEnqueueMigrateMemObjects(que, 1, &weights_buf, 0, /* 0 means from host*/ 0, NULL, NULL);
+	checkError(status, "Failed to transfer weight");
+	status = clEnqueueMigrateMemObjects(que, 1, &bias_buf, 0, /* 0 means from host*/ 0, NULL, NULL);
+	checkError(status, "Failed to transfer weight");
+    // input is dynamic
+	status = clEnqueueWriteBuffer(que, data_buf, CL_TRUE, 0, in_buf_size * sizeof(DPTYPE), data, 0, NULL, NULL);
+	checkError(status, "Failed to transfer input image");
+}
+
+void set_args()
+{
+    cl_int status;
+    // Set Kernel Arg
+    int argi = 0;
+	status = clSetKernelArg(knl_conv, argi++, sizeof(NPU_PARAM), &param);
+	checkError(status, "Failed to set argument %d of kernel", argi - 1);
+    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &bias_buf);
+	checkError(status, "Failed to set argument %d of kernel", argi - 1);
+    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &weight_buf);
+	checkError(status, "Failed to set argument %d of kernel", argi - 1);
+    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &data_buf);
+	checkError(status, "Failed to set argument %d of kernel", argi - 1);
+    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &output_buf);
+	checkError(status, "Failed to set argument %d of kernel", argi - 1);
+}
+
+void read_data()
+{
+    cl_int status;
+	status = clEnqueueReadBuffer(que, output_buf, CL_FALSE, 0, sizeof(MACTYPE) * out_buf_size, (void *)output, 0, NULL, NULL);
+	checkError(status, "Failed to set transfer output data");
+}
+
+void score()
+{
+    for(int wh=0;wh<param.WH*param.WH;wh++) {
+		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
+			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
+				unsigned int ptr = (ko*param.WH*param.WH+wh)*VEC_SIZE + ki;
+				unsigned int l = (ko*VEC_SIZE+ki)*param.WH*param.WH + wh;
+				int v = ki;
+				int out = output[ptr];
+				if(out != gold[l]) { printf("Error(%d or %d): %d (gold %d)\n", l, ptr, out, gold[l]);  return 1; }
+			}
+		}
+    }
+}
+
+// Release all memory resources here
+void cleanup()
+{
+	// Release the opencl runtime resource allocated
+	if(knl_conv) {
+		clReleaseKernel(knl_conv);
+	}
+	if(que) {
+		clReleaseCommandQueue(que);
+	}
+	if(data_buf) {
+		clReleaseMemObject(data_buf);
+	}
+	if(weights_buf) {
+		clReleaseMemObject(weights_buf);
+	}
+	if(bias_buf) {
+		clReleaseMemObject(bias_buf);
+	}
+	if(output_buf) {
+		clReleaseMemObject(output_buf);
+	}
+
+	if(program) {
+		clReleaseProgram(program);
+	}
+	if(context) {
+		clReleaseContext(context);
+	}
+
+	// Release the memory resource allocated
+	alignedFree(weights);
+	alignedFree(data);
+	alignedFree(bias);
+	alignedFree(output);
+}

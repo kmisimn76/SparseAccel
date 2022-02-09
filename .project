@@ -42,6 +42,11 @@
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>solution2/constraints</name>
+			<type>2</type>
+			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution2/.tcls</location>
+		</link>
+		<link>
 			<name>source/conv_sysarr_dbbuf.cpp</name>
 			<type>1</type>
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp</location>
@@ -70,6 +75,21 @@
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/script.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution2/solution2.directive</location>
+		</link>
+		<link>
+			<name>solution2/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution2/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution2/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>
