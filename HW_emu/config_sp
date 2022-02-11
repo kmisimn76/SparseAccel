@@ -6,6 +6,10 @@ kernel_frequency=100
 #sp=DataLoad_1.C_in:HBM[2]
 #sp=DataStore_1.B_out:HBM[1]
 #sp=DataStore_1.D_out:HBM[3]
+sp=Conv_sysarr_1.bias_in:DDR[0]
+sp=Conv_sysarr_1.weight_in:DDR[1]
+sp=Conv_sysarr_1.data_in:DDR[2]
+sp=Conv_sysarr_1.conv_out:DDR[3]
 
 #stream_connect=<cu_name>.<output_port>:<cu_name>.<input_port>:[<fifo_depth>]
 #stream_connect=memRead_1.bias_out:coreConv_1.bias_in

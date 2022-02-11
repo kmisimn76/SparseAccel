@@ -6,8 +6,8 @@
     </Simulation>
     <files xmlns="">
         <file name="../test.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
         <file name="Systolic_Array_PCNN_based/hw_param.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>
