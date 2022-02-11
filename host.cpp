@@ -99,19 +99,24 @@ void conv_gold()
 	for(int k=0;k<param.K;k++){
 		for(int h=0;h<param.WH;h++){
 			for(int w=0;w<param.WH;w++){
-				gold[k*param.WH*param.WH + h*param.WH + w] = bias[k];
+				int output_ptr = k*param.WH*param.WH + h*param.WH + w;
+				//int output_ptr = (((k/VEC_SIZE)*param.WH*param.WH) + h*param.WH + w)*VEC_SIZE + k%VEC_SIZE;
+				int bias_ptr = k;
+				//int bias_ptr = (k%VEC_SIZE)*(param.K/VEC_SIZE) + (k/VEC_SIZE);
+				gold[output_ptr] = bias[bias_ptr];
 				for(int c=0;c<param.C;c++){
 					for(int r=0;r<param.RS;r++){
 						for(int s=0;s<param.RS;s++){
+							int data_ptr = c*param.WH_in*param.WH_in + (h+r)*param.WH_in + (w+s);
+							int weight_ptr = k*param.C*param.RS*param.RS + c*param.RS*param.RS + r*param.RS + s;
+							//int data_ptr = ((c/VEC_SIZE)*param.WH_in*param.WH_in + (h+r)*param.WH_in + (w+s))*VEC_SIZE + c%VEC_SIZE;
+							//int weight_ptr = ((k/VEC_SIZE)*param.C*param.RS*param.RS + c*param.RS*param.RS + r*param.RS + s)*VEC_SIZE + k%VEC_SIZE;
 							// INT32 accumulation
-							gold[k*param.WH*param.WH + h*param.WH + w]
-								 += data[c*param.WH_in*param.WH_in + (h+r)*param.WH_in + (w+s)]
-										* weight[k*param.C*param.RS*param.RS
-												 + c*param.RS*param.RS + r*param.RS + s];
+							gold[output_ptr] += data[data_ptr] * weight[weight_ptr];
 
 							// INT8 accumulation
-							//gold[k*WH*WH + h*WH + w] = (char)((char)gold[k*WH*WH + h*WH + w] + (char)(data[c*WH_in*WH_in + (h+r)*WH_in + (w+s)]
-							//								 * weight[k*C*RS*RS + c*RS*RS + r*RS + s])); // for Quantization
+							/*gold[output_ptr] = (char)((char)gold[output_ptr] + (char)(data[data_ptr] * weight[weight_ptr])); // for Quantization
+															 */
 						}
 					}
 				}
@@ -125,6 +130,8 @@ void ocl_initialize();
 void array_initialize();
 void initial_buffers();
 void set_param_data();
+void reorder_params();
+void reorder_output();
 void data_enque();
 void set_args();
 void read_data(cl::Event* event);
@@ -153,6 +160,8 @@ int main(int argc, char** argv)
     time = 0;
     {
         set_param_data();
+        conv_gold();
+		reorder_params();
         printf("end set_param_data\n");
         initial_buffers();
         printf("end initial_buffers\n");
@@ -169,6 +178,11 @@ int main(int argc, char** argv)
     	checkError(status, "Failed to enqueue task");
         status = event.wait();
     	checkError(status, "Failed to wait event");
+		cl_ulong time_start, time_end;
+		event.getProfilingInfo(CL_PROFILING_COMMAND_START, &time_start);
+		event.getProfilingInfo(CL_PROFILING_COMMAND_END, &time_end);
+		cl_ulong time_total = time_end - time_start;
+		printf("Kernel time (ms): \t%lf\n", (double)time_total/1000000.0);
     	//time += getKernelStartEndTime(event);
     	//clReleaseEvent(event);
 
@@ -183,12 +197,15 @@ int main(int argc, char** argv)
         events.back().wait();
         events.clear();
 
-        conv_gold();
+		reorder_output();
         score();
-        printf("end score\n");
+        printf("Run complete, No errors!\n");
     }
 
-    cleanup();
+    //cleanup();
+	//printf("end cleanup");
+	printf("skip cleanup\n"); // due to opencl object
+	exit(0);                  // due to opencl object
     return 0;
 }
 
@@ -217,6 +234,8 @@ std::vector<cl::Device> get_devices(const std::string& vendor_name) {
     std::vector<cl::Device> devices;
     err = platform.getDevices(CL_DEVICE_TYPE_ACCELERATOR, &devices);
     checkError(err, "error");
+	cout<<"Device Nums: "<<devices.size()<<"\n";
+	cout<<"Device Name: "<<devices[0].getInfo<CL_DEVICE_NAME>()<<"\n";
     return devices;
 }
 char* read_binary_file(const std::string &xclbin_file_name, unsigned &nb) 
@@ -344,7 +363,8 @@ void initial_buffers()
 
 void set_param_data()
 {
-    {
+	int run_case = 0;
+    if(run_case==0){
 	param.K = 16;
 	param.C = 4;
 	param.WH = 7;
@@ -383,7 +403,7 @@ void set_param_data()
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 	}
-	/*{
+	else if(run_case==1){
 	param.K = 32;
 	param.C = 64;
 	param.WH = 14;
@@ -421,18 +441,144 @@ void set_param_data()
 	param.TILESIZE_H = 7;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
-	}*/
-    //for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
-    //for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
-    //for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
-    for(int k = 0; k < param.K; k++)								bias[k]		= 1;
-    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
+	}
+	else if(run_case==2){
+	param.K = 512;
+	param.C = 512;
+	param.WH = 28;
+	param.WH_in = 30;
+	param.RS = 3;
+	param.L2_TILENUM_K = 16; ///
+	param.L2_TILENUM_C = 16;
+	param.L2_TILENUM_W = 2;
+	param.L2_TILENUM_H = 2;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = ARRAY_K*8;
+	param.C_L2 = ARRAY_C*8;
+	param.W_L2 = 14;
+	param.H_L2 = 14;
+	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 16;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 8; ///
+	param.L1_TILENUM_C = 8;
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}
+	else{ printf("Invalid case\n"); exit(1);}
+    for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
+    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
+    //for(int k = 0; k < param.K; k++)								bias[k]		= 1;
+    //for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
+    //for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
 
     weight_buf_size = param.K * param.C * param.RS * param.RS;
     bias_buf_size = param.K;
     in_buf_size = param.C * param.WH_in * param.WH_in;
     out_buf_size = param.K * param.WH * param.WH;
+}
+void reorder_params() {
+	// bias
+	DPTYPE* bias_origin = new DPTYPE[bias_buf_size]();
+	memcpy(bias_origin, bias, bias_buf_size * sizeof(DPTYPE));
+	for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
+		for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
+			unsigned int origin_k = ko*VEC_SIZE + ki;
+			unsigned int global_k = (ko)*VEC_SIZE + ki;
+			bias[global_k] = bias_origin[origin_k];
+		}
+	}
+	delete bias_origin;
+	// weight
+	DPTYPE* weight_origin = new DPTYPE[weight_buf_size]();
+	memcpy(weight_origin, weight, weight_buf_size * sizeof(DPTYPE));
+	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) { // Inner channel
+	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) { // Inner channel
+	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
+	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
+	for (int rmo = 0; rmo < param.L2_TILENUM_R; rmo++) {
+	for (int smo = 0; smo < param.L2_TILENUM_S; smo++) {
+		for (unsigned int ko = 0; ko < (param.K_L2 / VEC_SIZE); ko++) { //burst read
+		for (unsigned int co = 0; co < param.C_L2; co++) { //burst read
+		for (unsigned int ro = 0; ro < param.R_L2; ro++) { //burst read
+		for (unsigned int so = 0; so < param.S_L2; so++) { //burst read
+			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
+				unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*VEC_SIZE+ki))*param.C*param.RS*param.RS + (cmo*param.C_L2+co)*param.RS*param.RS + (rmo*param.R_L2+ro)*param.RS + (smo*param.S_L2 + so));
+				unsigned int global_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+cmo*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)+smo)
+												*(param.K_L2/VEC_SIZE)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+co*param.S_L2*param.R_L2+ro*param.S_L2+so))*VEC_SIZE + ki; //burst read
+				weight[global_kcrs] = weight_origin[origin_kcsrs];
+			}
+		}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	delete weight_origin;
+	// input
+	DPTYPE* data_origin = new DPTYPE[in_buf_size]();
+	memcpy(data_origin, data, in_buf_size * sizeof(DPTYPE));
+	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) { // Inner channel
+	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
+	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
+	for (unsigned int co = 0; co < param.C_L2/VEC_SIZE; co++) {
+		for(unsigned int h = 0; h < param.H_in_L2; h++) {
+			for(unsigned int w = 0; w < param.W_in_L2; w++) {
+				for(unsigned int ci = 0; ci < VEC_SIZE; ci++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
+					unsigned int origin_chw = ((cmo*(param.C_L2)+(co*VEC_SIZE+ci))*param.WH_in*param.WH_in + (hmo*param.H_in_L2+h)*param.WH_in + (wmo*param.W_in_L2+w));
+					unsigned int global_chw = ((cmo*(param.C_L2/VEC_SIZE)+co)*param.WH_in*param.WH_in + (hmo*param.H_in_L2+h)*param.WH_in + (wmo*param.W_in_L2+w))*VEC_SIZE + ci;
+					data[global_chw] = data_origin[origin_chw];
+				}
+			}
+		}
+	}
+	}
+	}
+	}
+	delete data_origin;
+}
+void reorder_output()
+{
+	MACTYPE* out_origin = new MACTYPE[out_buf_size]();
+	memcpy(out_origin, output, out_buf_size * sizeof(MACTYPE));
+	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) { // Inner channel
+	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
+	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
+	for (unsigned int ko = 0; ko < param.K_L2/VEC_SIZE; ko++) {
+		for(unsigned int h = 0; h < param.H_L2; h++) {
+			for(unsigned int w = 0; w < param.W_L2; w++) {
+				for(unsigned int ki = 0;ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
+					unsigned int origin_khw = ((kmo*(param.K_L2)+(ko*VEC_SIZE+ki))*param.WH*param.WH + (hmo*param.H_L2+h)*param.WH + (wmo*param.W_L2+w));
+					unsigned int global_khw = ((kmo*(param.K_L2/VEC_SIZE)+ko)*param.WH*param.WH + (hmo*param.H_L2+h)*param.WH + (wmo*param.W_L2+w))*VEC_SIZE + ki;
+					output[origin_khw] = out_origin[global_khw];
+				}
+			}
+		}
+	}
+	}
+	}
+	}
 }
 
 void data_enque()
@@ -513,12 +659,13 @@ void score()
     for(int wh=0;wh<param.WH*param.WH;wh++) {
 		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
 			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
-				unsigned int ptr = (ko*param.WH*param.WH+wh)*VEC_SIZE + ki;
+				//unsigned int ptr = (ko*param.WH*param.WH+wh)*VEC_SIZE + ki;
 				unsigned int l = (ko*VEC_SIZE+ki)*param.WH*param.WH + wh;
+				unsigned int ptr = (ko*VEC_SIZE+ki)*param.WH*param.WH + wh;
 				int v = ki;
 				int out = output[ptr];
-				if(out != gold[l])
-                { printf("Error(%d or %d): %d (gold %d)\n", l, ptr, out, gold[l]);  exit(1); }
+				if(out != gold[ptr])
+                { printf("Error(%d or %d): %d (gold %d)\n", ptr, ptr, out, gold[l]);  exit(1); }
 			}
 		}
     }

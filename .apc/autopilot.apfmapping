@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="hw_param.h" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"/>
     <originFiles name="conv_sysarr_dbbuf.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/conv_sysarr_dbbuf.cpp"/>
+    <originFiles name="hw_param.h" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/hw_param.h"/>
   </source>
   <testbench>
     <originFiles name="test.cpp" path="/home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/test.cpp"/>

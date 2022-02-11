@@ -1,8 +1,9 @@
 FAKETIME=faketime -f "-1y" 
 
 #TARGET=sw_emu
-#TARGET=hw_emu
-TARGET=hw
+TARGET=hw_emu
+#TARGET=hw
+JOBS=-j 12
 
 xrt_path = $(XILINX_XRT)
 LINK_CONFIG = -L$(xrt_path)/lib -lOpenCL -lpthread -lrt -lstdc++
@@ -12,16 +13,16 @@ all: conv.xo conv.xclbin host
 
 conv.xo: ../conv_sysarr_dbbuf.cpp
 	#v++ -t sw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g --profile_kernel data:all:all:all --profile_kernel stall:all:all:all --define VGG16 --temp_dir ./tmp.sw_emu -c -k Conv_sysarr --config config_sp.u50 -I'../' -o'tmp.sw_emu/coreConv.xo' '../conv_sysarr_dbbuf.cpp'
-	${FAKETIME} v++ -t ${TARGET} --platform xilinx_u200_xdma_201830_2 -c -k Conv_sysarr --config config_sp -I'./..' -o'conv.${TARGET}.xo' ./../conv_sysarr_dbbuf.cpp
+	${FAKETIME} v++ -t ${TARGET} --platform xilinx_u200_xdma_201830_2 --save-temps -g --profile_kernel data:all:all:all --profile_kernel stall:all:all:all -c -k Conv_sysarr --config config_sp -I'./..' -o'conv.${TARGET}.xo' ./../conv_sysarr_dbbuf.cpp ${JOBS}
 conv.xclbin: ../conv_sysarr_dbbuf.cpp
-	${FAKETIME} v++ -t ${TARGET} --platform xilinx_u200_xdma_201830_2 -l conv.${TARGET}.xo -o'conv.${TARGET}.xclbin' --config config_sp
+	${FAKETIME} v++ -t ${TARGET} --platform xilinx_u200_xdma_201830_2 --save-temps -g --profile_kernel data:all:all:all --profile_kernel stall:all:all:all -l conv.${TARGET}.xo -o'conv.${TARGET}.xclbin' --config config_sp ${JOBS}
 
 .PHONY: host
 host: $(HOST_OBJS)
-	g++ $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../host.cpp
-	g++ $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/timer.cpp
-	g++ $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/ocl_util.cpp
-	g++ $(OCV_LIBDIRS) $(OCV_INCLUDES) host.o timer.o ocl_util.o -o host $(LINK_CONFIG) $(OCV_LIBS)
+	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../host.cpp
+	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/timer.cpp
+	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/ocl_util.cpp
+	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) host.o timer.o ocl_util.o -o host $(LINK_CONFIG) $(OCV_LIBS)
 
 .PHONY: emu
 emu:

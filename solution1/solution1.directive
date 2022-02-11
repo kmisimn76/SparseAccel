@@ -5,11 +5,6 @@
                 <option name="name" value="Conv_sysarr"/>
             </pragma>
         </directive>
-        <directive functionName="Conv_sysarr" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="Conv_sysarr"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

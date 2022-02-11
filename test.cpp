@@ -44,13 +44,57 @@ typedef struct {
 } NPU_PARAM;
 */
 
-
+/*
 void Conv_sysarr(
         NPU_PARAM hw_param,
 		DPTYPE *bias_in,
 		DPTYPE *weight_in,
 		DPTYPE *data_in,
-		MACTYPE *conv_out);
+		MACTYPE *conv_out);*/
+void Conv_sysarr(
+		//NPU_PARAM param,
+	    uint K,
+	    uint C,
+	    uint WH,
+	    uint WH_in,
+	    uint RS,
+		uint L2_TILENUM_K,///
+		uint L2_TILENUM_C,
+	    uint L2_TILENUM_W, // W Size of a tile
+	    uint L2_TILENUM_H,
+	    uint L2_TILENUM_R,
+	    uint L2_TILENUM_S,
+	    uint K_L2,
+	    uint C_L2,
+	    uint W_L2,
+	    uint H_L2,
+	    uint W_in_L2,
+	    uint H_in_L2,
+	    uint R_L2,
+	    uint S_L2,
+		uint L1_TILENUM_K,///
+		uint L1_TILENUM_C,
+	    uint L1_TILENUM_W, // W Size of a tile
+	    uint L1_TILENUM_H,
+	    uint L1_TILENUM_R,
+	    uint L1_TILENUM_S,
+	    uint K_L1,
+	    uint C_L1,
+	    uint W_L1,
+	    uint H_L1,
+	    uint W_in_L1,
+	    uint H_in_L1,
+	    uint R_L1,
+	    uint S_L1,
+	    uint TILESIZE_W, // W Size of a tile
+	    uint TILESIZE_H,
+	    uint TILESIZE_R, //must be 1
+	    uint TILESIZE_S, //must be 1
+		DPTYPE *bias_in,
+		DPTYPE *weight_in,
+		DPTYPE *data_in,
+		MACTYPE *conv_out
+		);
 
 void conv_gold(
 		NPU_PARAM param,
@@ -129,9 +173,53 @@ int conv_test(
 		}
     }
 
-	Conv_sysarr(
-			param,
-			bias_in, weight_in, data_in, conv_out); //Conv sys arr
+	//Conv_sysarr(
+			//param,
+			//bias_in, weight_in, data_in, conv_out); //Conv sys arr
+    Conv_sysarr(
+    		//NPU_PARAM param,
+    	    param.K,
+			param.C,
+			param.WH,
+			param.WH_in,
+			param.RS,
+			param.L2_TILENUM_K,///
+			param.L2_TILENUM_C,
+			param.L2_TILENUM_W, // W Size of a tile
+			param.L2_TILENUM_H,
+			param.L2_TILENUM_R,
+			param.L2_TILENUM_S,
+			param.K_L2,
+			param.C_L2,
+			param.W_L2,
+			param.H_L2,
+			param.W_in_L2,
+			param.H_in_L2,
+			param.R_L2,
+			param.S_L2,
+			param.L1_TILENUM_K,///
+			param.L1_TILENUM_C,
+			param.L1_TILENUM_W, // W Size of a tile
+			param.L1_TILENUM_H,
+			param.L1_TILENUM_R,
+			param.L1_TILENUM_S,
+			param.K_L1,
+			param.C_L1,
+			param.W_L1,
+			param.H_L1,
+			param.W_in_L1,
+			param.H_in_L1,
+			param.R_L1,
+			param.S_L1,
+			param.TILESIZE_W, // W Size of a tile
+			param.TILESIZE_H,
+			param.TILESIZE_R, //must be 1
+			param.TILESIZE_S, //must be 1
+    		bias_in,
+    		weight_in,
+    		data_in,
+    		conv_out
+    		);
 
     for(int wh=0;wh<param.WH*param.WH;wh++) {
 		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
@@ -141,6 +229,7 @@ int conv_test(
 				int v = ki;
 				int output = conv_out[ptr];
 				if(output != gold[l]) { printf("Error(%d or %d): %d (gold %d)\n", l, ptr, output, gold[l]);  return 1; }
+				if(wh==0 && ko==0 && ki==0) printf("Error(%d or %d): %d (gold %d)\n", l, ptr, output, gold[l]);
 			}
 		}
     }

@@ -6,7 +6,11 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2022-02-10T00:57:49.081+0900"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2022-02-10T00:57:01.487+0900"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="Systolic_Array_PCNN_based" solutionName="solution1" date="2022-02-10T00:53:17.774+0900"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
