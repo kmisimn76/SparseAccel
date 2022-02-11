@@ -609,60 +609,14 @@ void Conv_sysarr(
 				}
 			}
 		}*/
-		/*weight_dram_read(weight_l2, weight_in,
+		weight_dram_read(weight_l2, weight_in,
 						kmo, cmo, rmo, smo,
 						K_L2, C_L2, R_L2, S_L2,
 						L2_TILENUM_K, L2_TILENUM_C, L2_TILENUM_R, L2_TILENUM_S);
 		// Read Input from DRAM
 		input_dram_read(data_l2, data_in,
 						cmo, hmo, wmo,
-						C_L2, H_L2, W_L2, H_in_L2, W_in_L2, WH_in);*/
-		WEIGHT_DRAM_READ:
-		/*for (unsigned int ko = 0; ko < K_L2 / VEC_SIZE; ko++) {
-			#pragma HLS	 loop_tripcount min=1 max=1
-			for (unsigned int c = 0; c < C_L2; c++) {
-				#pragma HLS loop_tripcount min=4 max=4
-				for (unsigned int r = 0; r < R_L2; r++) {
-					#pragma HLS loop_tripcount min=3 max=3
-					for (unsigned int s = 0; s < S_L2; s++) {
-						#pragma HLS loop_tripcount min=3 max=3*/
-					for (unsigned int ko = 0; ko < (K_L2 / VEC_SIZE)*C_L2*R_L2*S_L2; ko++) { //burst read
-					#pragma HLS loop_tripcount min=36 max=36
-						#pragma HLS pipeline
-						for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-							#pragma HLS unroll
-						//	unsigned int global_kcrs = ((kmo*(K_L2/VEC_SIZE)+ko)*C*RS*RS + (cmo*C_L2+c)*RS*RS + (rmo*R_L2+r)*RS + (smo*S_L2 + s))*VEC_SIZE + ki;
-						//	unsigned int kcrs = ko*C_L2*R_L2*S_L2 + c*R_L2*S_L2 + r*S_L2 + s;
-							unsigned int global_kcrs = ((kmo*(L2_TILENUM_C)*(L2_TILENUM_R)*(L2_TILENUM_S)+cmo*(L2_TILENUM_R)*(L2_TILENUM_S)+rmo*(L2_TILENUM_S)+smo)
-															*(K_L2/VEC_SIZE)*C_L2*R_L2*S_L2 + ko)*VEC_SIZE + ki; //burst read
-							unsigned int kcrs = ko;
-							unsigned int v = ki;
-							//weight_l2[kcrs][ki] = weight_in[global_kcrs];
-							weight_l2[ki][kcrs] = weight_in[global_kcrs];
-						}
-					}
-					/*}
-				}
-			}
-		}*/
-		INPUT_DRAM_READ: 
-		for (unsigned int co = 0; co < C_L2/VEC_SIZE; co++) {
-			#pragma HLS loop_tripcount min=1 max=1
-			for(unsigned int h = 0; h < H_in_L2; h++) {
-				#pragma HLS loop_tripcount min=9 max=9
-				for(unsigned int w = 0; w < W_in_L2; w++) {
-					#pragma HLS loop_tripcount min=9 max=9
-					#pragma HLS pipeline
-					for(unsigned int ci = 0; ci < VEC_SIZE; ci++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
-						#pragma HLS unroll
-						unsigned int global_chw = ((cmo*(C_L2/VEC_SIZE)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*VEC_SIZE + ci;
-						unsigned int chw = co*H_in_L2*W_in_L2 + h*W_in_L2 + w;
-						unsigned int v = ci;
-						data_l2[chw][ci] = data_in[global_chw];
-					}
-				}
-			}
-		}
+						C_L2, H_L2, W_L2, H_in_L2, W_in_L2, WH_in);
 
 		LOOP_K_OUTER: for (int ko = 0; ko < L1_TILENUM_K; ko++) {
 		#pragma HLS loop_tripcount min=1 max=1
@@ -719,65 +673,9 @@ void Conv_sysarr(
 		}
 		}
 
-		//bool isFirst;
-		//if(cmo==0 && rmo==0 && smo==0) isFirst = true; // first iteration of a output
-		//else isFirst = false;
-	//	output_dram_write(output_l2, conv_out,
-	//					kmo, hmo, wmo,
-	//					K_L2, H_L2, W_L2, WH);
-			MACTYPE stream_buffer[STREAM_BUFFER_SIZE][VEC_SIZE];
-		OUTPUT_DRAM_WRITE:
-		for (unsigned int ko = 0; ko < (K_L2 / VEC_SIZE); ko++) {
-			#pragma HLS loop_tripcount min=1 max=1
-			for (unsigned int h = 0; h < H_L2; h++) {
-				#pragma HLS loop_tripcount min=7 max=7
-				/*for (unsigned int w = 0; w < W_L2; w++) {
-					#pragma HLS loop_tripcount min=7 max=7
-					#pragma HLS pipeline
-					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-						#pragma HLS unroll
-						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							conv_out[global_khw] += output_l2[khw][ki];
-					}
-				}*/
-				OUTPUT_DRAM_STREA_IN: for (unsigned int w = 0; w < W_L2; w++) {
-					#pragma HLS loop_tripcount min=7 max=7
-					#pragma HLS pipeline
-					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-						#pragma HLS unroll
-						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							stream_buffer[w][ki] = conv_out[global_khw];
-					}
-				}
-				OUTPUT_DRAM_STREA_OUT: for (unsigned int w = 0; w < W_L2; w++) {
-					#pragma HLS loop_tripcount min=7 max=7
-					#pragma HLS pipeline
-					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-						#pragma HLS unroll
-						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							conv_out[global_khw] = stream_buffer[w][ki] + output_l2[khw][ki];
-					}
-				}
-			}
-		}
+		output_dram_write(output_l2, conv_out,
+						kmo, hmo, wmo,
+						K_L2, H_L2, W_L2, WH);
 	}
 	}
 	}
