@@ -4,10 +4,12 @@ HW_imple/*.log
 HW_imple/_x
 HW_imple/_x/*
 HW_imple/_x/**
+HW_imple/.*
 HW_emu/*.log
 HW_emu/_x
 HW_emu/_x/*
 HW_emu/_x/**
+HW_emu/.*
 solution1/*
 solution1/**
 solution2/*
