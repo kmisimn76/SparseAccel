@@ -47,10 +47,10 @@ typedef struct {
 #define PRAGMA_SUB(x) _Pragma (#x)
 #define DO_PRAGMA(x) PRAGMA_SUB(x)
 
-#define   BIAS_DRAM_DEPTH 1280
-#define WEIGHT_DRAM_DEPTH 23040
-#define   DATA_DRAM_DEPTH 20480
-#define OUTPUT_DRAM_DEPTH 15680
+//#define   BIAS_DRAM_DEPTH 1280
+//#define WEIGHT_DRAM_DEPTH 23040
+//#define   DATA_DRAM_DEPTH 20480
+//#define OUTPUT_DRAM_DEPTH 15680
 #define   DATA_L2_SIZE 2048
 #define WEIGHT_L2_SIZE 2304
 #define OUTPUT_L2_SIZE 1568
@@ -435,10 +435,14 @@ void Conv_sysarr(
 		DPTYPE *data_in,
 		MACTYPE *conv_out
 		) {
-		DO_PRAGMA(HLS INTERFACE m_axi port=bias_in offset=slave bundle=gmem0 depth=BIAS_DRAM_DEPTH)
+		/*DO_PRAGMA(HLS INTERFACE m_axi port=bias_in offset=slave bundle=gmem0 depth=BIAS_DRAM_DEPTH)
 		DO_PRAGMA(HLS INTERFACE m_axi port=weight_in offset=slave bundle=gmem1 depth=WEIGHT_DRAM_DEPTH)
 		DO_PRAGMA(HLS INTERFACE m_axi port=data_in offset=slave bundle=gmem2 depth=DATA_DRAM_DEPTH)
-		DO_PRAGMA(HLS INTERFACE m_axi port=conv_out offset=slave bundle=gmem3 depth=OUTPUT_DRAM_DEPTH)
+		DO_PRAGMA(HLS INTERFACE m_axi port=conv_out offset=slave bundle=gmem3 depth=OUTPUT_DRAM_DEPTH)*/
+		DO_PRAGMA(HLS INTERFACE m_axi port=bias_in offset=slave bundle=gmem0)
+		DO_PRAGMA(HLS INTERFACE m_axi port=weight_in offset=slave bundle=gmem1)
+		DO_PRAGMA(HLS INTERFACE m_axi port=data_in offset=slave bundle=gmem2)
+		DO_PRAGMA(HLS INTERFACE m_axi port=conv_out offset=slave bundle=gmem3)
 	//DO_PRAGMA(HLS INTERFACE ap_bus port=bias_in bundle=gmem0)
 	//DO_PRAGMA(HLS INTERFACE ap_bus port=weight_in bundle=gmem1)
 	//DO_PRAGMA(HLS INTERFACE ap_bus port=data_in bundle=gmem2)
@@ -525,10 +529,10 @@ void Conv_sysarr(
 	}
 	BIAS_DRAM_WRITE_K: for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
 		#pragma HLS loop_tripcount min=1 max=1
-	BIAS_DRAM_WRITE_H: for (int wh = 0; wh < WH; wh++) {
+	BIAS_DRAM_WRITE_H: for (int wh = 0; wh < WH*WH; wh++) {
 	#pragma HLS loop_tripcount min=49 max=49
 		for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-			unsigned int global_khw = (ko*(K/VEC_SIZE)+wh)*VEC_SIZE + ki;
+			unsigned int global_khw = (ko*WH*WH+wh)*VEC_SIZE + ki;
 			unsigned int global_k = (ko)*VEC_SIZE + ki;
 			unsigned int v = ki;
 			conv_out[global_khw] = bias_l2[ki][ko];
@@ -567,48 +571,6 @@ void Conv_sysarr(
 		//#pragma HLS stable variable=output_l2_reduction
 		//#pragma HLS dependence variable=output_l2
 
-		// Read Bias from DRAM
-		/*BIAS_DRAM_READ: for (unsigned int ko = 0; ko < K_L2/VEC_SIZE; ko++) {
-			#pragma HLS loop_tripcount min=1 max=1
-			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-				#pragma HLS unroll
-				unsigned int global_k = (kmo*(K_L2/VEC_SIZE) + ko)*VEC_SIZE + ki;
-				unsigned int v = ki;
-				//bias_l2[ko][ki] = bias_in[global_k];
-				bias_l2[ki][ko] = bias_in[global_k];
-			}
-		}*/
-		/*BIAS_DRAM_READ: for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
-			//#pragma HLS unroll
-			//unsigned int global_k = kmo*K_L2 + ki*(K_L2/VEC_SIZE);
-			//memcpy(bias_l2[ki], (const DPTYPE*)bias_in+global_k, (K_L2/VEC_SIZE) * sizeof(DPTYPE));
-			for (unsigned int ko = 0; ko < K_L2/VEC_SIZE; ko++) {
-			#pragma HLS loop_tripcount min=1 max=1
-			#pragma HLS pipeline
-				bias_l2[ki][ko] = bias_in[kmo*K_L2 + ki*(K_L2/VEC_SIZE) + ko];
-			}
-		}*/
-		// Read Weight from DRAM
-		/*WEIGHT_DRAM_READ: for (unsigned int c = 0; c < C_L2; c++) {
-			#pragma HLS loop_tripcount min=4 max=4
-			for (unsigned int r = 0; r < R_L2; r++) {
-				#pragma HLS loop_tripcount min=3 max=3
-				for (unsigned int s = 0; s < S_L2; s++) {
-					#pragma HLS loop_tripcount min=3 max=3
-					for (unsigned int ko = 0; ko < K_L2 / VEC_SIZE; ko++) {
-						#pragma HLS loop_tripcount min=1 max=1
-						for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-							#pragma HLS unroll
-							unsigned int global_kcrs = ((kmo*(K_L2/VEC_SIZE)+ko)*C*RS*RS + (cmo*C_L2+c)*RS*RS + (rmo*R_L2+r)*RS + (smo*S_L2 + s))*VEC_SIZE + ki;
-							unsigned int kcrs = ko*C_L2*R_L2*S_L2 + c*R_L2*S_L2 + r*S_L2 + s;
-							unsigned int v = ki;
-							//weight_l2[kcrs][ki] = weight_in[global_kcrs];
-							weight_l2[ki][kcrs] = weight_in[global_kcrs];
-						}
-					}
-				}
-			}
-		}*/
 		weight_dram_read(weight_l2, weight_in,
 						kmo, cmo, rmo, smo,
 						K_L2, C_L2, R_L2, S_L2,
@@ -653,7 +615,7 @@ void Conv_sysarr(
 			//Systolic Array
 			runWeight2Reg(weight_regfile, weight_l2, C_L2, R_L2, S_L2, ko, co, ro, so);
 			runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, W_in_L2, H_in_L2);
-			#define SIMD
+			//#define SIMD
 			#ifndef SIMD
 			runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
 						input_rows,

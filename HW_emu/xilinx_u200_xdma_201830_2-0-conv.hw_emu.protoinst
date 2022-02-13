@@ -3,7 +3,7 @@
   "modules": {
       "Conv_sysarr": {
       "proto_instances": {
-        "grp_dataflow_parent_loop_proc17_fu_716/grp_dataflow_parent_loop_proc17_fu_716": {
+        "grp_dataflow_parent_loop_proc24_fu_660/grp_dataflow_parent_loop_proc24_fu_660": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -15,7 +15,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_parent_loop_proc_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc22_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -27,7 +27,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc21_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -39,7 +39,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/LOOP_K_OUTER_proc_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc18_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -51,7 +51,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/grp_LOOP_K_OUTER_proc_wrapper_fu_212": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc17_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -63,7 +63,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc20_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_parent_loop_proc_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -75,7 +75,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc19_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -87,7 +87,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc18_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/LOOP_K_OUTER_proc_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -99,7 +99,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc16_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/grp_LOOP_K_OUTER_proc_wrapper_fu_212": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -111,7 +111,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc15_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc23_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -123,7 +123,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/dataflow_in_loop_LOOP_S_OUTER_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc20_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -135,7 +135,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runSIMD_U0/runSIMD_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc19_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -147,7 +147,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runOutputL1toL2_U0/runOutputL1toL2_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc16_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -159,7 +159,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runWeight2Reg_U0/runWeight2Reg_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_parent_loop_proc15_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -171,7 +171,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runDataL2toL1_U0/runDataL2toL1_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/dataflow_in_loop_LOOP_S_OUTER_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -183,7 +183,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/dataflow_in_loop_LOOP_S_OUTER_entry27_U0/dataflow_in_loop_LOOP_S_OUTER_entry27_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runSysArr_U0/runSysArr_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -195,7 +195,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/OUTPUT_DRAM_WRITE_proc_U0/OUTPUT_DRAM_WRITE_proc_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runOutputL1toL2_U0/runOutputL1toL2_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -207,7 +207,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/INPUT_DRAM_READ_proc_U0/INPUT_DRAM_READ_proc_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runWeight2Reg_U0/runWeight2Reg_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -219,7 +219,7 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/WEIGHT_DRAM_READ_proc_U0/WEIGHT_DRAM_READ_proc_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runDataL2toL1_U0/runDataL2toL1_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {
@@ -231,7 +231,55 @@
             "AP_READY": { "actual": "ap_ready", "optional":true }
           }
         },
-        "grp_dataflow_parent_loop_proc17_fu_716/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_entry33_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_entry33_U0": {
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_212/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/dataflow_in_loop_LOOP_S_OUTER_entry31_U0/dataflow_in_loop_LOOP_S_OUTER_entry31_U0": {
+          "silent": true,
+          "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+          "ports": {
+            "AP_CLK": { "actual": "ap_clk"},
+            "AP_RESET": { "actual": "ap_rst"},
+            "AP_START": { "actual": "ap_start"},
+            "AP_DONE": { "actual": "ap_done"},
+            "AP_CONTINUE": { "actual": "ap_continue", "optional":true },
+            "AP_READY": { "actual": "ap_ready", "optional":true }
+          }
+        },
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/output_dram_write_1_U0/output_dram_write_1_U0": {
+          "silent": true,
+          "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+          "ports": {
+            "AP_CLK": { "actual": "ap_clk"},
+            "AP_RESET": { "actual": "ap_rst"},
+            "AP_START": { "actual": "ap_start"},
+            "AP_DONE": { "actual": "ap_done"},
+            "AP_CONTINUE": { "actual": "ap_continue", "optional":true },
+            "AP_READY": { "actual": "ap_ready", "optional":true }
+          }
+        },
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/input_dram_read_1_U0/input_dram_read_1_U0": {
+          "silent": true,
+          "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+          "ports": {
+            "AP_CLK": { "actual": "ap_clk"},
+            "AP_RESET": { "actual": "ap_rst"},
+            "AP_START": { "actual": "ap_start"},
+            "AP_DONE": { "actual": "ap_done"},
+            "AP_CONTINUE": { "actual": "ap_continue", "optional":true },
+            "AP_READY": { "actual": "ap_ready", "optional":true }
+          }
+        },
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/weight_dram_read_1_U0/weight_dram_read_1_U0": {
+          "silent": true,
+          "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
+          "ports": {
+            "AP_CLK": { "actual": "ap_clk"},
+            "AP_RESET": { "actual": "ap_rst"},
+            "AP_START": { "actual": "ap_start"},
+            "AP_DONE": { "actual": "ap_done"},
+            "AP_CONTINUE": { "actual": "ap_continue", "optional":true },
+            "AP_READY": { "actual": "ap_ready", "optional":true }
+          }
+        },
+        "grp_dataflow_parent_loop_proc24_fu_660/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_entry37_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_entry37_U0": {
           "silent": true,
           "interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
           "ports": {

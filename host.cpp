@@ -129,7 +129,7 @@ void conv_gold()
 void ocl_initialize();
 void array_initialize();
 void initial_buffers();
-void set_param_data();
+void set_param_data(int);
 void reorder_params();
 void reorder_output();
 void data_enque();
@@ -137,6 +137,33 @@ void set_args();
 void read_data(cl::Event* event);
 void score();
 void cleanup();
+
+typedef struct layer_info_ {
+    uint K;
+    uint C;
+    uint WH;
+    uint WH_in;
+    uint RS;
+}LayerInfo;
+LayerInfo layer_infos[200];
+int get_layer_info(const char* filename)
+{
+    FILE* f = fopen(filename, "r");
+    printf("Filename: %s\n", filename);
+    int n = 0;
+    fscanf(f, "%d", &n);
+    printf("N: %d\n", n);
+    for (int i=0; i<n; i++)
+    {
+        fscanf(f, "%d,%d,%d,%d,%d", &layer_infos[i].K,
+                                        &layer_infos[i].C,
+                                        &layer_infos[i].WH,
+                                        &layer_infos[i].WH_in,
+                                        &layer_infos[i].RS);
+    }
+    fclose(f);
+    return n;
+}
 
 int main(int argc, char** argv)
 {
@@ -157,9 +184,13 @@ int main(int argc, char** argv)
     array_initialize();
     printf("end array_initilaize\n");
 
+    int len = get_layer_info("./layer_info.txt");
+
     time = 0;
-    {
-        set_param_data();
+	int run_case = -3;
+    for(int i=0, run_case=1;i<13;i++, run_case++){
+		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
+        set_param_data(run_case);
         conv_gold();
 		reorder_params();
         printf("end set_param_data\n");
@@ -197,9 +228,11 @@ int main(int argc, char** argv)
         events.back().wait();
         events.clear();
 
+		printf("===Run Result===\n");
 		reorder_output();
         score();
         printf("Run complete, No errors!\n");
+		printf("<<<<<<<<<<<<>>>>>>>>>>>>\n");
     }
 
     //cleanup();
@@ -314,10 +347,10 @@ void ocl_initialize()
 
 void array_initialize()
 {
-#define MAX_WEIGHT_SIZE 2359296
-#define MAX_DATA_SIZE 3268864
-#define MAX_BIAS_SIZE 2048
-#define MAX_OUTPUT_SIZE 3211264
+#define MAX_WEIGHT_SIZE 23592960
+#define MAX_DATA_SIZE 32688640
+#define MAX_BIAS_SIZE 20480
+#define MAX_OUTPUT_SIZE 32112640
     weight = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE, DMA_ALIGNMENT);
     data = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_DATA_SIZE, DMA_ALIGNMENT);
     bias = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_BIAS_SIZE, DMA_ALIGNMENT);
@@ -361,10 +394,11 @@ void initial_buffers()
     que.finish();
 }
 
-void set_param_data()
+
+void set_param_data(int run_case)
 {
-	int run_case = 0;
-    if(run_case==0){
+	//int run_case = 0;
+    if(run_case==-1){
 	param.K = 16;
 	param.C = 4;
 	param.WH = 7;
@@ -403,7 +437,7 @@ void set_param_data()
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 	}
-	else if(run_case==1){
+	else if(run_case==-2){
 	param.K = 32;
 	param.C = 64;
 	param.WH = 14;
@@ -442,7 +476,7 @@ void set_param_data()
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 	}
-	else if(run_case==2){
+	else if(run_case==-3){
 	param.K = 512;
 	param.C = 512;
 	param.WH = 28;
@@ -481,18 +515,64 @@ void set_param_data()
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 	}
+	else if(run_case>=0 && run_case<1000) { // real vgg case
+        param.K = layer_infos[run_case].K;
+        param.C = layer_infos[run_case].C;
+        param.WH = layer_infos[run_case].WH;
+        param.WH_in = layer_infos[run_case].WH_in;
+        param.RS = layer_infos[run_case].RS;
+	param.L2_TILENUM_K = param.K/(ARRAY_K*1);//((param.K>=128)?8:4)); ///
+	param.L2_TILENUM_C = param.C/(ARRAY_C*1);//((param.C>=128)?8:((param.C>=64)?4:1)));
+	param.L2_TILENUM_W = param.WH/14;
+	param.L2_TILENUM_H = param.WH/14;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+	param.K_L2 = ARRAY_K*1;//((param.K>=128)?8:4);
+	param.C_L2 = ARRAY_C*1;//((param.C>=128)?8:((param.C>=64)?4:1));
+	param.W_L2 = 14;
+	param.H_L2 = 14;
+	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 16;
+	param.R_L2 = 3;
+	param.S_L2 = 3;
+	param.L1_TILENUM_K = 1;//(param.K>=128)?8:4; ///
+	param.L1_TILENUM_C = 1;//(param.C>=128)?8:((param.C>=64)?4:1);
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = 7;
+	param.H_L1 = 7;
+	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;
+	param.R_L1 = 1;
+	param.S_L1 = 1;
+	param.TILESIZE_W = 7; ////
+	param.TILESIZE_H = 7;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+	}
 	else{ printf("Invalid case\n"); exit(1);}
-    for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
+    /*for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
     for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
-    //for(int k = 0; k < param.K; k++)								bias[k]		= 1;
-    //for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
-    //for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;*/
+    for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
+    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
 
     weight_buf_size = param.K * param.C * param.RS * param.RS;
     bias_buf_size = param.K;
     in_buf_size = param.C * param.WH_in * param.WH_in;
     out_buf_size = param.K * param.WH * param.WH;
+
+	printf("===Kernel Info(case %d)===\n", run_case);
+	printf("K,C,WH,RS : %d %d %d %d\n", param.K, param.C, param.WH, param.RS);
+	printf("L2 Tile K,C,W(H),R(S): %d %d %d %d\n", param.L2_TILENUM_K, param.L2_TILENUM_C, param.L2_TILENUM_W, param.L2_TILENUM_R);
+	printf("L1 Tile K,C,W(H),R(S): %d %d %d %d\n", param.L1_TILENUM_K, param.L1_TILENUM_C, param.L1_TILENUM_W, param.L1_TILENUM_R);
+	printf("InTile  K,C,W(H),R(S): %d %d %d %d\n", ARRAY_K, ARRAY_C, param.TILESIZE_W, param.TILESIZE_R);
+	printf("==========================\n");
 }
 void reorder_params() {
 	// bias
@@ -619,11 +699,11 @@ void set_args()
 	checkError(status, "Failed to set argument %d of kernel", 0);*/
     NPU_PARAM_TEMP tmp;
     tmp.origin = param;
-    printf("param union tmp : %u,%u,%u,%u,%u,...,%u\n", 
+    /*printf("param union tmp : %u,%u,%u,%u,%u,...,%u\n", 
                 tmp.origin.K,tmp.origin.C,tmp.origin.WH,tmp.origin.WH_in,tmp.origin.RS,
                 tmp.origin.TILESIZE_S);
     printf("param union dst : %u,%u,%u,%u,%u,...,%u\n",
-                tmp.dest[0],tmp.dest[1],tmp.dest[2],tmp.dest[3],tmp.dest[4],tmp.dest[36]);
+                tmp.dest[0],tmp.dest[1],tmp.dest[2],tmp.dest[3],tmp.dest[4],tmp.dest[36]);*/
     status = 0;
     for(int i=0;i<37;i++)
         status |= knl_conv.setArg(i, tmp.dest[i]);

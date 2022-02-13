@@ -27,12 +27,12 @@ typedef int  MACTYPE;
 #define DP_WIDTH 8    // data path width
 #define MAC_WIDTH 32
 
-#define ARRAY_K 4
-#define ARRAY_C 4
-#define VEC_SIZE 4 // smaller than ARRAY_C,ARRAY_K
+#define ARRAY_K 64
+#define ARRAY_C 64
+#define VEC_SIZE 64 // smaller than ARRAY_C,ARRAY_K
 //typedef ap_axiu<512,0,0,0> k2k_data;
 #ifndef XILINX
-typedef ap_axiu<VEC_SIZE*32,0,0,0> k2k_data;
+//typedef ap_axiu<VEC_SIZE*32,0,0,0> k2k_data;
 #endif
 typedef struct {
     uint K;
