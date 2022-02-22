@@ -1,18 +1,14 @@
 FAKETIME=faketime -f "-1y" 
 
 #TARGET=sw_emu
-#TARGET=hw_emu
-TARGET=hw
+TARGET=hw_emu
+#TARGET=hw
 JOBS=-j 12
 
-#profiled=true #uncomment to profile
-ifeq ($(profiled), true)
-	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all:all
-	DEBUG=-g
-else
-	PROFILE=
-	DEBUG=
-endif
+PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+DEBUG=-g
+#PROFILE=
+#DEBUG=
 
 xrt_path = $(XILINX_XRT)
 LINK_CONFIG = -L$(xrt_path)/lib -lOpenCL -lpthread -lrt -lstdc++
@@ -28,10 +24,10 @@ conv.xclbin: ../conv_sysarr_dbbuf.cpp
 
 .PHONY: host
 host: $(HOST_OBJS)
-	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../host.cpp
-	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/timer.cpp
-	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/ocl_util.cpp
-	g++ -g $(OCV_LIBDIRS) $(OCV_INCLUDES) host.o timer.o ocl_util.o -o host $(LINK_CONFIG) $(OCV_LIBS)
+	g++ $(DEBUG) $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../host.cpp
+	g++ $(DEBUG) $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/timer.cpp
+	g++ $(DEBUG) $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../common/ocl_util.cpp
+	g++ $(DEBUG) $(OCV_LIBDIRS) $(OCV_INCLUDES) host.o timer.o ocl_util.o -o host $(LINK_CONFIG) $(OCV_LIBS)
 
 .PHONY: emu
 emu:
