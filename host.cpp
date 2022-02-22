@@ -23,6 +23,8 @@
 #include "ocl_util.h"
 #include "timer.h"
 
+//#include "spdlog/sinks/basic_file_sink.h"
+
 #include "hw_param.h"
 
 /*void Conv_sysarr(
@@ -57,30 +59,43 @@ const char *vendor_name = "Intel(R) FPGA SDK for OpenCL(TM)";
 
 #define DMA_ALIGNMENT   4096
 
-const char* knl_name_conv = "Conv_sysarr";
-char *kernel_file_name;
-/*cl_uint num_devices = 0;
-cl_platform_id platform_id = NULL;
-cl_context context = NULL;
-cl_program program = NULL;
-scoped_array<cl_device_id> device;
-cl_kernel knl_conv;
-cl_command_queue que;
-cl_mem data_buf;
-cl_mem output_buf;
-cl_mem weights_buf;
-cl_mem bias_buf;*/
-cl_uint num_devices = 0;
-cl::Platform platform;
+class cl_data_ {
+public:
+// cl::Platform platform;
 cl::Context context;
 cl::Program program;
 std::vector<cl::Device> device;
 cl::Kernel knl_conv;
 cl::CommandQueue que;
-cl::Buffer data_buf;
+cl::Buffer dat_buf;
 cl::Buffer output_buf;
 cl::Buffer weights_buf;
 cl::Buffer bias_buf;
+
+
+cl_data_() {}
+~cl_data_() {}
+};
+unsigned int bias_buf_size = 0;
+unsigned int weight_buf_size = 0;
+unsigned int in_buf_size = 0;
+unsigned int out_buf_size = 0;
+
+const char* knl_name_conv = "Conv_sysarr";
+char *kernel_file_name;
+/*cl_uint num_cl_data->devices = 0;
+cl_cl_data->platform_id platform_id = NULL;
+cl_cl_data->context context = NULL;
+cl_cl_data->program program = NULL;
+scoped_array<cl_cl_data->device_id> device;
+cl_kernel cl_data->knl_conv;
+cl_command_cl_data->queue que;
+cl_mem cl_data->dat_buf;
+cl_mem cl_data->output_buf;
+cl_mem cl_data->weights_buf;
+cl_mem cl_data->bias_buf;*/
+cl_uint num_devices = 0;
+cl_data_* cl_data;
 std::vector<cl::Event> events;
 
 DPTYPE* weight;
@@ -88,10 +103,6 @@ DPTYPE* data;
 DPTYPE* bias;
 MACTYPE* output;
 MACTYPE* gold;
-unsigned int weight_buf_size = 0;
-unsigned int bias_buf_size = 0;
-unsigned int in_buf_size = 0;
-unsigned int out_buf_size = 0;
 NPU_PARAM param;
 
 void conv_gold()
@@ -164,6 +175,7 @@ int get_layer_info(const char* filename)
     fclose(f);
     return n;
 }
+//std::shared_ptr<logger> logger;
 
 int main(int argc, char** argv)
 {
@@ -177,7 +189,16 @@ int main(int argc, char** argv)
    	cl::Event event;
    	cl::Event event_read;
 	cl_ulong time;
+/*    try 
+    {
+        //logger = spdlog::basic_logger_mt("basic_logger", "logs/sa_runtime_log.txt");
+    }
+    catch (const spdlog::spdlog_ex &ex)
+    {
+        std::cout << "Log init failed: " << ex.what() << std::endl;
+    }*/
 
+    //logger->info("Running host");
     printf("running with OCL2\n");
     ocl_initialize();
     printf("end ocl_initilaize\n");
@@ -188,7 +209,10 @@ int main(int argc, char** argv)
 
     time = 0;
 	int run_case = -3;
-    for(int i=0, run_case=1;i<13;i++, run_case++){
+    //for(int i=0, run_case=0;i<13;i++, run_case++){
+        int i = 5;
+ //       run_case = 5;
+    {
 		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
         set_param_data(run_case);
         conv_gold();
@@ -198,15 +222,15 @@ int main(int argc, char** argv)
         printf("end initial_buffers\n");
 
         data_enque();
-        printf("end data_enque\n");
+        printf("end data_encl_data->que\n");
         set_args();
         printf("end set_args\n");
 
         // run
-    	//status = clEnqueueTask(que, knl_conv, 0, NULL, &event);
-    	status = que.enqueueTask(knl_conv, &events, &event);
+    	//status = clEncl_data->queueTask(que, cl_data->knl_conv, 0, NULL, &event);
+    	status = cl_data->que.enqueueTask(cl_data->knl_conv, &events, &event);
         events.push_back(event);
-    	checkError(status, "Failed to enqueue task");
+    	checkError(status, "Failed to encl_data->queue task");
         status = event.wait();
     	checkError(status, "Failed to wait event");
 		cl_ulong time_start, time_end;
@@ -217,8 +241,8 @@ int main(int argc, char** argv)
     	//time += getKernelStartEndTime(event);
     	//clReleaseEvent(event);
 
-        //status = clFinish(que);
-        //status = que.finish();
+        //status = clFinish(cl_data->que);
+        //status = cl_data->que.finish();
     	//checkError(status, "Failed to finish");
         printf("end run kernel\n");
 
@@ -235,9 +259,8 @@ int main(int argc, char** argv)
 		printf("<<<<<<<<<<<<>>>>>>>>>>>>\n");
     }
 
-    //cleanup();
-	//printf("end cleanup");
-	printf("skip cleanup\n"); // due to opencl object
+    cleanup();
+	printf("end cleanup\n");
 	exit(0);                  // due to opencl object
     return 0;
 }
@@ -254,7 +277,7 @@ std::vector<cl::Device> get_devices(const std::string& vendor_name) {
         std::string platformName = platform.getInfo<CL_PLATFORM_NAME>(&err);
         checkError(err, "error");
         if (platformName == vendor_name){
-            //std::cout << "Found platform: " << platformName.c_str() << std::endl;
+            //std::cout << "Found cl_data->platform: " << platformName.c_str() << std::endl;
             break;
         }
     }
@@ -263,7 +286,7 @@ std::vector<cl::Device> get_devices(const std::string& vendor_name) {
         exit(EXIT_FAILURE);
     }
 
-    //Getting ACCELERATOR Devices and selecting 1st such device
+    //Getting ACCELERATOR Devices and selecting 1st such cl_data->device
     std::vector<cl::Device> devices;
     err = platform.getDevices(CL_DEVICE_TYPE_ACCELERATOR, &devices);
     checkError(err, "error");
@@ -291,32 +314,33 @@ char* read_binary_file(const std::string &xclbin_file_name, unsigned &nb)
 void ocl_initialize()
 {
     cl_int status;
-	// Connect to the desired platform
-	/*platform_id = findPlatform(vendor_name);
-	if(platform_id == NULL) {
-		printf("ERROR: Unable to find the desired OpenCL platform.\n");
+    cl_data = new cl_data_();
+	// Connect to the desired cl_data->platform
+	/*cl_data->platform_id = findPlatform(vendor_name);
+	if(cl_data->platform_id == NULL) {
+		printf("ERROR: Unable to find the desired OpenCL cl_data->platform.\n");
 		exit(1);
 	}
 
-    // Query the available OpenCL device
-    device.reset(getDevices(platform_id, DEVICE_TYPE, &num_devices));
-    printf("\nPlatform: %s\n", getPlatformName(platform_id).c_str());
-    printf("Totally %d device(s) are found\n", num_devices);
-    int device_ptr = 0; // only use one device, select the proper idx
-    num_devices = 1; // reset the num of device to 1
-    printf("  Using Device %d: %s\n", device_ptr, getDeviceName(device[device_ptr]).c_str());
-    displayDeviceInfo(device[device_ptr]);*/
+    // Query the available OpenCL cl_data->device
+    cl_data->device.reset(getDevices(cl_data->platform_id, DEVICE_TYPE, &num_devices));
+    printf("\nPlatform: %s\n", getPlatformName(cl_data->platform_id).c_str());
+    printf("Totally %d cl_data->device(s) are found\n", num_devices);
+    int cl_data->device_ptr = 0; // only use one device, select the proper idx
+    num_cl_data->devices = 1; // reset the num of device to 1
+    printf("  Using Device %d: %s\n", cl_data->device_ptr, getDeviceName(device[device_ptr]).c_str());
+    displayDeviceInfo(cl_data->device[device_ptr]);*/
     std::string vendor_name_s(vendor_name);
-    device = get_devices(vendor_name_s);
+    cl_data->device = get_devices(vendor_name_s);
 
-	// Create the context.
-    /*context = clCreateContext(NULL, num_devices, &device[device_ptr], NULL, NULL, &status);
-	checkError(status, "Failed to create context");*/
-    context = cl::Context(device[0], NULL, NULL, NULL, &status);
-	checkError(status, "Failed to create context");
-	/*que = clCreateCommandQueue(context, device[device_ptr], CL_QUEUE_PROFILING_ENABLE, &status);
+	// Create the cl_data->context.
+    /*cl_data->context = clCreateContext(NULL, num_cl_data->devices, &device[device_ptr], NULL, NULL, &status);
+	checkError(status, "Failed to create cl_data->context");*/
+    cl_data->context = cl::Context(cl_data->device[0], NULL, NULL, NULL, &status);
+	checkError(status, "Failed to create cl_data->context");
+	/*cl_data->que = clCreateCommandQueue(cl_data->context, cl_data->device[device_ptr], CL_QUEUE_PROFILING_ENABLE, &status);
 	checkError(status, "Failed to create command queue");*/
-    que = cl::CommandQueue(context, device[0], cl::QueueProperties::Profiling | cl::QueueProperties::OutOfOrder, &status);
+    cl_data->que = cl::CommandQueue(cl_data->context, cl_data->device[0], cl::QueueProperties::Profiling | cl::QueueProperties::OutOfOrder, &status);
 	checkError(status, "Failed to create command queue");
 
 	// Create Program Objects
@@ -325,23 +349,23 @@ void ocl_initialize()
 	char *fpga_bin;
 	size_t fpga_bin_size;
 	fpga_bin_size = load_file_to_memory(kernel_file_name, &fpga_bin);
-	program = clCreateProgramWithBinary(context, 1, &device[device_ptr], &fpga_bin_size, (const unsigned char **) &fpga_bin, NULL, &status);
+	cl_data->program = clCreateProgramWithBinary(cl_data->context, 1, &cl_data->device[device_ptr], &fpga_bin_size, (const unsigned char **) &fpga_bin, NULL, &status);
 #else
-	// Create the program for all device. All devices execute the same kernel.
-	program = createProgramFromFile(context, (const char *) kernel_file_name, &device[device_ptr], num_devices);
+	// Create the cl_data->program for all cl_data->device. All devices execute the same kernel.
+	cl_data->program = createProgramFromFile(cl_data->context, (const char *) kernel_file_name, &cl_data->device[device_ptr], num_devices);
 #endif
-	checkError(status, "Failed to create context");*/
+	checkError(status, "Failed to create cl_data->context");*/
     unsigned fileBufSize;
     char* fileBuf = read_binary_file(kernel_file_name, fileBufSize);
     cl::Program::Binaries bins{{fileBuf, fileBufSize}};
-    program = cl::Program(context, device, bins, NULL, &status);
+    cl_data->program = cl::Program(cl_data->context, cl_data->device, bins, NULL, &status);
 	checkError(status, "Failed to create program");
-    status = program.build(device);
+    status = cl_data->program.build(cl_data->device);
 	checkError(status, "Failed to build program");
 
-    /*knl_conv = clCreateKernel(program, knl_name_conv, &status);
+    /*cl_data->knl_conv = clCreateKernel(cl_data->program, knl_name_conv, &status);
 	checkError(status, "Failed to create memRd kernel");*/
-    knl_conv = cl::Kernel(program, knl_name_conv, &status);
+    cl_data->knl_conv = cl::Kernel(cl_data->program, knl_name_conv, &status);
 	checkError(status, "Failed to create kernel");
 }
 
@@ -364,34 +388,34 @@ void initial_buffers()
     // Initialize Cl buffer
     printf("weight_buf_size: %d\n", weight_buf_size);
     printf("bias_buf_size: %d\n", bias_buf_size);
-	/*weights_buf = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, weight_buf_size* sizeof(DPTYPE), weight, &status);
+	/*cl_data->weights_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, weight_buf_size* sizeof(DPTYPE), weight, &status);
 	checkError(status, "Failed to create buffer for weights");
-    bias_buf = clCreateBuffer(context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, bias_buf_size * sizeof(DPTYPE), bias, &status);
+    cl_data->bias_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, bias_buf_size * sizeof(DPTYPE), bias, &status);
     checkError(status, "Failed to create buffer for bias");
 
-	data_buf = clCreateBuffer(context, CL_MEM_READ_WRITE, in_buf_size * sizeof(DPTYPE), NULL, &status);
+	cl_data->dat_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_WRITE, in_buf_size * sizeof(DPTYPE), NULL, &status);
 	checkError(status, "Failed to create buffer for data");
-	output_buf = clCreateBuffer(context, CL_MEM_READ_WRITE, out_buf_size * sizeof(MACTYPE), NULL, &status);
+	cl_data->output_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_WRITE, out_buf_size * sizeof(MACTYPE), NULL, &status);
 	checkError(status, "Failed to create buffer for output");*/
-    weights_buf = cl::Buffer(context, CL_MEM_READ_ONLY,  weight_buf_size*sizeof(DPTYPE), nullptr, &status);
+    cl_data->weights_buf = cl::Buffer(cl_data->context, CL_MEM_READ_ONLY,  weight_buf_size*sizeof(DPTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for weights");
-    bias_buf = cl::Buffer(context, CL_MEM_READ_ONLY,  bias_buf_size*sizeof(DPTYPE), nullptr, &status);
+    cl_data->bias_buf = cl::Buffer(cl_data->context, CL_MEM_READ_ONLY,  bias_buf_size*sizeof(DPTYPE), nullptr, &status);
     checkError(status, "Failed to create buffer for bias");
-    data_buf = cl::Buffer(context, CL_MEM_READ_ONLY,  in_buf_size*sizeof(DPTYPE), nullptr, &status);
+    cl_data->dat_buf = cl::Buffer(cl_data->context, CL_MEM_READ_ONLY,  in_buf_size*sizeof(DPTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for data");
-    output_buf = cl::Buffer(context, CL_MEM_WRITE_ONLY,  out_buf_size*sizeof(MACTYPE), nullptr, &status);
+    cl_data->output_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY,  out_buf_size*sizeof(MACTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for output");
 
-    status = knl_conv.setArg(36+1, bias_buf);
-    status |= knl_conv.setArg(36+2, weights_buf);
-    status |= knl_conv.setArg(36+3, data_buf);
-    status |= knl_conv.setArg(36+4, output_buf);
+    status = cl_data->knl_conv.setArg(36+1, cl_data->bias_buf);
+    status |= cl_data->knl_conv.setArg(36+2, cl_data->weights_buf);
+    status |= cl_data->knl_conv.setArg(36+3, cl_data->dat_buf);
+    status |= cl_data->knl_conv.setArg(36+4, cl_data->output_buf);
 	checkError(status, "Failed to set buffer args");
 
-    status = que.enqueueMigrateMemObjects({bias_buf,weights_buf,data_buf,output_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
+    status = cl_data->que.enqueueMigrateMemObjects({cl_data->bias_buf,cl_data->weights_buf,cl_data->dat_buf,cl_data->output_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
 	checkError(status, "Failed to migrate buffer");
 
-    que.finish();
+    cl_data->que.finish();
 }
 
 
@@ -516,27 +540,29 @@ void set_param_data(int run_case)
 	param.TILESIZE_S = 1; //must be 1
 	}
 	else if(run_case>=0 && run_case<1000) { // real vgg case
+		if (layer_infos[run_case].K < ARRAY_K) layer_infos[run_case].K = ARRAY_K; //HW padding
+		if (layer_infos[run_case].C < ARRAY_C) layer_infos[run_case].C = ARRAY_C; //HW padding
         param.K = layer_infos[run_case].K;
         param.C = layer_infos[run_case].C;
         param.WH = layer_infos[run_case].WH;
         param.WH_in = layer_infos[run_case].WH_in;
         param.RS = layer_infos[run_case].RS;
-	param.L2_TILENUM_K = param.K/(ARRAY_K*1);//((param.K>=128)?8:4)); ///
-	param.L2_TILENUM_C = param.C/(ARRAY_C*1);//((param.C>=128)?8:((param.C>=64)?4:1)));
+	param.L2_TILENUM_K = param.K/(ARRAY_K*((param.K>=128)?2:4)); ///
+	param.L2_TILENUM_C = param.C/(ARRAY_C*((param.C>=128)?2:((param.C>=64)?4:1)));
 	param.L2_TILENUM_W = param.WH/14;
 	param.L2_TILENUM_H = param.WH/14;
 	param.L2_TILENUM_R = 1;
 	param.L2_TILENUM_S = 1;
-	param.K_L2 = ARRAY_K*1;//((param.K>=128)?8:4);
-	param.C_L2 = ARRAY_C*1;//((param.C>=128)?8:((param.C>=64)?4:1));
+	param.K_L2 = ARRAY_K*((param.K>=128)?2:4);
+	param.C_L2 = ARRAY_C*((param.C>=128)?2:((param.C>=64)?4:1));
 	param.W_L2 = 14;
 	param.H_L2 = 14;
 	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
 	param.H_in_L2 = 16;
 	param.R_L2 = 3;
 	param.S_L2 = 3;
-	param.L1_TILENUM_K = 1;//(param.K>=128)?8:4; ///
-	param.L1_TILENUM_C = 1;//(param.C>=128)?8:((param.C>=64)?4:1);
+	param.L1_TILENUM_K = (param.K>=128)?2:4; ///
+	param.L1_TILENUM_C = (param.C>=128)?2:((param.C>=64)?4:1);
 	param.L1_TILENUM_W = 2;
 	param.L1_TILENUM_H = 2;
 	param.L1_TILENUM_R = 3;
@@ -572,6 +598,7 @@ void set_param_data(int run_case)
 	printf("L2 Tile K,C,W(H),R(S): %d %d %d %d\n", param.L2_TILENUM_K, param.L2_TILENUM_C, param.L2_TILENUM_W, param.L2_TILENUM_R);
 	printf("L1 Tile K,C,W(H),R(S): %d %d %d %d\n", param.L1_TILENUM_K, param.L1_TILENUM_C, param.L1_TILENUM_W, param.L1_TILENUM_R);
 	printf("InTile  K,C,W(H),R(S): %d %d %d %d\n", ARRAY_K, ARRAY_C, param.TILESIZE_W, param.TILESIZE_R);
+    //logger->info("Kernel info");
 	printf("==========================\n");
 }
 void reorder_params() {
@@ -664,23 +691,23 @@ void reorder_output()
 void data_enque()
 {
     cl_int status;
-    // Data enque
+    // Data encl_data->que
     // weight is static
-/*	status = clEnqueueMigrateMemObjects(que, 1, &weights_buf, 0, 0, NULL, NULL); // 0 means from host
+/*	status = clEncl_data->queueMigrateMemObjects(que, 1, &cl_data->weights_buf, 0, 0, NULL, NULL); // 0 means from host
 	checkError(status, "Failed to transfer weight");
-	status = clEnqueueMigrateMemObjects(que, 1, &bias_buf, 0, 0, NULL, NULL);
+	status = clEncl_data->queueMigrateMemObjects(que, 1, &cl_data->bias_buf, 0, 0, NULL, NULL);
 	checkError(status, "Failed to transfer weight");
     // input is dynamic
-	status = clEnqueueWriteBuffer(que, data_buf, CL_TRUE, 0, in_buf_size * sizeof(DPTYPE), data, 0, NULL, NULL);
+	status = clEncl_data->queueWriteBuffer(que, cl_data->dat_buf, CL_TRUE, 0, in_buf_size * sizeof(DPTYPE), data, 0, NULL, NULL);
 	checkError(status, "Failed to transfer input image");*/
-    status = que.enqueueWriteBuffer(weights_buf, CL_FALSE, 0, weight_buf_size * sizeof(DPTYPE), weight, nullptr, nullptr);
+    status = cl_data->que.enqueueWriteBuffer(cl_data->weights_buf, CL_FALSE, 0, weight_buf_size * sizeof(DPTYPE), weight, nullptr, nullptr);
 	checkError(status, "Failed to transfer weight");
-    status = que.enqueueWriteBuffer(bias_buf, CL_FALSE, 0, bias_buf_size * sizeof(DPTYPE), bias, nullptr, nullptr);
+    status = cl_data->que.enqueueWriteBuffer(cl_data->bias_buf, CL_FALSE, 0, bias_buf_size * sizeof(DPTYPE), bias, nullptr, nullptr);
 	checkError(status, "Failed to transfer weight");
-    status = que.enqueueWriteBuffer(data_buf, CL_FALSE, 0, in_buf_size * sizeof(DPTYPE), data, nullptr, nullptr);
+    status = cl_data->que.enqueueWriteBuffer(cl_data->dat_buf, CL_FALSE, 0, in_buf_size * sizeof(DPTYPE), data, nullptr, nullptr);
 	checkError(status, "Failed to transfer input image");
 
-    que.finish();
+    cl_data->que.finish();
 }
 
 typedef union NPU_PARAM_TEMP_
@@ -693,9 +720,9 @@ void set_args()
     cl_int status;
     // Set Kernel Arg
     int argi = 0;
-	//status = clSetKernelArg(knl_conv, argi++, sizeof(NPU_PARAM), &param);
+	//status = clSetKernelArg(cl_data->knl_conv, argi++, sizeof(NPU_PARAM), &param);
 	//checkError(status, "Failed to set argument %d of kernel", argi - 1);
-    /*status = knl_conv.setArg(0, param); // OCLC++ origin
+    /*status = cl_data->knl_conv.setArg(0, param); // OCLC++ origin
 	checkError(status, "Failed to set argument %d of kernel", 0);*/
     NPU_PARAM_TEMP tmp;
     tmp.origin = param;
@@ -706,30 +733,30 @@ void set_args()
                 tmp.dest[0],tmp.dest[1],tmp.dest[2],tmp.dest[3],tmp.dest[4],tmp.dest[36]);*/
     status = 0;
     for(int i=0;i<37;i++)
-        status |= knl_conv.setArg(i, tmp.dest[i]);
+        status |= cl_data->knl_conv.setArg(i, tmp.dest[i]);
 	checkError(status, "Failed to set argument %d of kernel", 36);
 
 //    argi = 7;
-//    status = knl_conv.setArg(5, argi);
+//    status = cl_data->knl_conv.setArg(5, argi);
 //	checkError(status, "Failed to set argument %d of kernel", 5);
 
     //move to createBuffer for OCL2
-    /*status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &bias_buf);
+    /*status = clSetKernelArg(cl_data->knl_conv, argi++, sizeof(cl_mem), &cl_data->bias_buf);
 	checkError(status, "Failed to set argument %d of kernel", argi - 1);
-    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &weights_buf);
+    status = clSetKernelArg(cl_data->knl_conv, argi++, sizeof(cl_mem), &cl_data->weights_buf);
 	checkError(status, "Failed to set argument %d of kernel", argi - 1);
-    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &data_buf);
+    status = clSetKernelArg(cl_data->knl_conv, argi++, sizeof(cl_mem), &cl_data->dat_buf);
 	checkError(status, "Failed to set argument %d of kernel", argi - 1);
-    status = clSetKernelArg(knl_conv, argi++, sizeof(cl_mem), &output_buf);
+    status = clSetKernelArg(cl_data->knl_conv, argi++, sizeof(cl_mem), &cl_data->output_buf);
 	checkError(status, "Failed to set argument %d of kernel", argi - 1);*/
 }
 
 void read_data(cl::Event* event)
 {
     cl_int status;
-	/*status = clEnqueueReadBuffer(que, output_buf, CL_FALSE, 0, sizeof(MACTYPE) * out_buf_size, (void *)output, 0, NULL, NULL);
+	/*status = clEncl_data->queueReadBuffer(que, cl_data->output_buf, CL_FALSE, 0, sizeof(MACTYPE) * out_buf_size, (void *)output, 0, NULL, NULL);
 	checkError(status, "Failed to set transfer output data");*/
-    status = que.enqueueReadBuffer(output_buf, CL_FALSE, 0, sizeof(MACTYPE) * out_buf_size, output, &events, event);
+    status = cl_data->que.enqueueReadBuffer(cl_data->output_buf, CL_FALSE, 0, sizeof(MACTYPE) * out_buf_size, output, &events, event);
     events.push_back(*event);
 	checkError(status, "Failed to set transfer output data");
 }
@@ -755,31 +782,41 @@ void score()
 void cleanup()
 {
 	// Release the opencl runtime resource allocated
-	/*if(knl_conv) {
-		clReleaseKernel(knl_conv);
+	/*if(cl_data->knl_conv) {
+		clReleaseKernel(cl_data->knl_conv);
 	}
-	if(que) {
-		clReleaseCommandQueue(que);
+	if(cl_data->que) {
+		clReleaseCommandQueue(cl_data->que);
 	}
-	if(data_buf) {
-		clReleaseMemObject(data_buf);
+	if(cl_data->dat_buf) {
+		clReleaseMemObject(cl_data->dat_buf);
 	}
-	if(weights_buf) {
-		clReleaseMemObject(weights_buf);
+	if(cl_data->weights_buf) {
+		clReleaseMemObject(cl_data->weights_buf);
 	}
-	if(bias_buf) {
-		clReleaseMemObject(bias_buf);
+	if(cl_data->bias_buf) {
+		clReleaseMemObject(cl_data->bias_buf);
 	}
-	if(output_buf) {
-		clReleaseMemObject(output_buf);
+	if(cl_data->output_buf) {
+		clReleaseMemObject(cl_data->output_buf);
 	}
 
-	if(program) {
-		clReleaseProgram(program);
+	if(cl_data->program) {
+		clReleaseProgram(cl_data->program);
 	}
-	if(context) {
-		clReleaseContext(context);
+	if(cl_data->context) {
+		clReleaseContext(cl_data->context);
 	}*/
+    /*delete cl_data->bias_buf;
+    delete cl_data->weights_buf;
+    delete cl_data->output_buf;
+    delete cl_data->dat_buf;
+    delete cl_data->knl_conv;
+    delete cl_data->que;
+    delete cl_data->program;
+    delete conetxt;*/
+
+    delete cl_data;
 
 	// Release the memory resource allocated
 	alignedFree(weight);

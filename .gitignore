@@ -10,6 +10,11 @@ HW_emu/_x
 HW_emu/_x/*
 HW_emu/_x/**
 HW_emu/.*
+HW_emu*/*.log
+HW_emu*/_x
+HW_emu*/_x/*
+HW_emu*/_x/**
+HW_emu*/.*
 solution1/*
 solution1/**
 solution2/*
