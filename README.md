@@ -8,3 +8,6 @@ HLS code : conv_sysarr_dbbuf.cpp
 Testbench code : test.cpp
 
 dependency : spdlog(sudo apt install libspdlog-dev)
+
+-> Vitis HLS 프로젝트로 열 수 있음
+-> V++ 컴파일은 HW_emu 디렉토리에서 수행
