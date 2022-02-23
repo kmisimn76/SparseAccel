@@ -18,9 +18,9 @@
 //#define WEIGHT_L2_SIZE 589824
 //#define OUTPUT_L2_SIZE 802816
 #define   BIAS_L2_SIZE 128
-#define   DATA_L1_SIZE 49
+#define   DATA_L1_SIZE 196 //49
 #define WEIGHT_L1_SIZE -1
-#define OUTPUT_L1_SIZE 49
+#define OUTPUT_L1_SIZE 196 //49
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
 
@@ -31,7 +31,9 @@ extern "C" {
 void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE weight_l2[ARRAY_C][WEIGHT_L2_SIZE], const uint C,
 		const uint R, const uint S, const uint ko, const uint co, const uint r, const uint s) {
 	for (int ci = 0; ci < ARRAY_C; ci++) {
+		#pragma HLS pipeline
 			for (int ki = 0; ki < ARRAY_K; ki++) {
+			#pragma HLS unroll
 			//#pragma HLS pipeline //must be pipelined for dataflow, (and ARRAY_K & ARRAY_C may be small) ..?
 			int k = (ko * ARRAY_K + ki);
 			int c = (co * ARRAY_C + ci);
