@@ -208,10 +208,10 @@ int main(int argc, char** argv)
     int len = get_layer_info("./layer_info.txt");
 
     time = 0;
-	int run_case = -3;
+	int run_case = -2;
     //for(int i=0, run_case=0;i<13;i++, run_case++){
         int i = 5;
- //       run_case = 5;
+    //    run_case = 5;
     {
 		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
         set_param_data(run_case);
@@ -321,7 +321,6 @@ void ocl_initialize()
 		printf("ERROR: Unable to find the desired OpenCL cl_data->platform.\n");
 		exit(1);
 	}
-
     // Query the available OpenCL cl_data->device
     cl_data->device.reset(getDevices(cl_data->platform_id, DEVICE_TYPE, &num_devices));
     printf("\nPlatform: %s\n", getPlatformName(cl_data->platform_id).c_str());
@@ -392,7 +391,6 @@ void initial_buffers()
 	checkError(status, "Failed to create buffer for weights");
     cl_data->bias_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_ONLY | CL_MEM_USE_HOST_PTR, bias_buf_size * sizeof(DPTYPE), bias, &status);
     checkError(status, "Failed to create buffer for bias");
-
 	cl_data->dat_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_WRITE, in_buf_size * sizeof(DPTYPE), NULL, &status);
 	checkError(status, "Failed to create buffer for data");
 	cl_data->output_buf = clCreateBuffer(cl_data->context, CL_MEM_READ_WRITE, out_buf_size * sizeof(MACTYPE), NULL, &status);
@@ -473,16 +471,16 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_H = 1;
 	param.L2_TILENUM_R = 1;
 	param.L2_TILENUM_S = 1;
-	param.K_L2 = ARRAY_K*8;
-	param.C_L2 = ARRAY_C*8;
+	param.K_L2 = 32;
+	param.C_L2 = 32;
 	param.W_L2 = 14;
 	param.H_L2 = 14;
 	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
 	param.H_in_L2 = 16;
 	param.R_L2 = 3;
 	param.S_L2 = 3;
-	param.L1_TILENUM_K = 8; ///
-	param.L1_TILENUM_C = 8;
+	param.L1_TILENUM_K = 32/ARRAY_K; ///
+	param.L1_TILENUM_C = 32/ARRAY_C;
 	param.L1_TILENUM_W = 2;
 	param.L1_TILENUM_H = 2;
 	param.L1_TILENUM_R = 3;
@@ -540,45 +538,51 @@ void set_param_data(int run_case)
 	param.TILESIZE_S = 1; //must be 1
 	}
 	else if(run_case>=0 && run_case<1000) { // real vgg case
-		if (layer_infos[run_case].K < ARRAY_K) layer_infos[run_case].K = ARRAY_K; //HW padding
-		if (layer_infos[run_case].C < ARRAY_C) layer_infos[run_case].C = ARRAY_C; //HW padding
-        param.K = layer_infos[run_case].K;
-        param.C = layer_infos[run_case].C;
-        param.WH = layer_infos[run_case].WH;
-        param.WH_in = layer_infos[run_case].WH_in;
-        param.RS = layer_infos[run_case].RS;
-	param.L2_TILENUM_K = param.K/(ARRAY_K*((param.K>=128)?2:4)); ///
-	param.L2_TILENUM_C = param.C/(ARRAY_C*((param.C>=128)?2:((param.C>=64)?4:1)));
-	param.L2_TILENUM_W = param.WH/14;
-	param.L2_TILENUM_H = param.WH/14;
-	param.L2_TILENUM_R = 1;
-	param.L2_TILENUM_S = 1;
-	param.K_L2 = ARRAY_K*((param.K>=128)?2:4);
-	param.C_L2 = ARRAY_C*((param.C>=128)?2:((param.C>=64)?4:1));
-	param.W_L2 = 14;
-	param.H_L2 = 14;
-	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
-	param.H_in_L2 = 16;
-	param.R_L2 = 3;
-	param.S_L2 = 3;
-	param.L1_TILENUM_K = (param.K>=128)?2:4; ///
-	param.L1_TILENUM_C = (param.C>=128)?2:((param.C>=64)?4:1);
-	param.L1_TILENUM_W = 2;
-	param.L1_TILENUM_H = 2;
-	param.L1_TILENUM_R = 3;
-	param.L1_TILENUM_S = 3;
-	param.K_L1 = ARRAY_K;
-	param.C_L1 = ARRAY_C;
-	param.W_L1 = 7;
-	param.H_L1 = 7;
-	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	param.H_in_L1 = 7;
-	param.R_L1 = 1;
-	param.S_L1 = 1;
-	param.TILESIZE_W = 7; ////
-	param.TILESIZE_H = 7;
+	if (layer_infos[run_case].K < ARRAY_K) layer_infos[run_case].K = ARRAY_K; //HW padding
+	if (layer_infos[run_case].C < ARRAY_C) layer_infos[run_case].C = ARRAY_C; //HW padding
+
+    param.K = layer_infos[run_case].K;
+    param.C = layer_infos[run_case].C;
+    param.WH = layer_infos[run_case].WH;
+    param.WH_in = layer_infos[run_case].WH_in;
+    param.RS = layer_infos[run_case].RS;
+
+	param.TILESIZE_W = 14; ////
+	param.TILESIZE_H = 14;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
+
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = param.TILESIZE_W;
+	param.H_L1 = param.TILESIZE_H;
+	param.W_in_L1 = param.TILESIZE_W + (param.TILESIZE_S/2); // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = param.TILESIZE_H + (param.TILESIZE_R/2);
+	param.R_L1 = param.TILESIZE_R;
+	param.S_L1 = param.TILESIZE_S;
+
+	param.L1_TILENUM_K = (param.K>=(ARRAY_K*4))?4:((param.K>=(ARRAY_K*2))?2:1); ///
+	param.L1_TILENUM_C = (param.C>=(ARRAY_C*4))?4:((param.C>=(ARRAY_C*2))?2:1);
+	param.L1_TILENUM_W = 1;
+	param.L1_TILENUM_H = 1;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+
+	param.K_L2 = ARRAY_K*param.L1_TILENUM_K;
+	param.C_L2 = ARRAY_C*param.L1_TILENUM_C;
+	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
+	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
+	param.W_in_L2 = param.W_L2 + (param.L1_TILENUM_S/2); // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = param.H_L2 + (param.L1_TILENUM_R/2);
+	param.R_L2 = param.L1_TILENUM_R;
+	param.S_L2 = param.L1_TILENUM_S;
+
+	param.L2_TILENUM_K = param.K/(param.K_L2); ///
+	param.L2_TILENUM_C = param.C/(param.C_L2);
+	param.L2_TILENUM_W = param.WH/param.W_L2;
+	param.L2_TILENUM_H = param.WH/param.H_L2;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
     /*for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
@@ -800,7 +804,6 @@ void cleanup()
 	if(cl_data->output_buf) {
 		clReleaseMemObject(cl_data->output_buf);
 	}
-
 	if(cl_data->program) {
 		clReleaseProgram(cl_data->program);
 	}
