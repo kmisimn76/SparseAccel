@@ -113,13 +113,13 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 	}
 }
 
-void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
-		DPTYPE data_reg[ARRAY_K][ARRAY_C], MACTYPE output_reg[ARRAY_K][ARRAY_C],
-		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
-		uint hi, uint wi, uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S, bool isFirst) {
+void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], 
+		DPTYPE data_reg[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
+		MACTYPE output_reg[ARRAY_K][ARRAY_C], MACTYPE (*output_l1)[ARRAY_K],
+		uint hi, uint wi, uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 #pragma HLS inline //for pipelining
 	// Push Input
-	int i = hi*TILESIZE_W + wi;
+	int i = hi*TILESIZE_W + wi;//BUG?: if remove this and use parameter, LUT increase?
 	DPTYPE input_data[ARRAY_C];
 	#pragma HLS array_partition variable=input_data complete
 	for (int ci = 0; ci < ARRAY_C; ci++) {
@@ -161,11 +161,10 @@ void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*da
 	}
 }
 void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
-		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
+		MACTYPE (*output_l1)[ARRAY_K],
 		int input_rows,
 		int bubble_h, int bubble_w,
-		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
-		bool isFirst) {
+		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS dependence variable=data_reg
@@ -185,15 +184,15 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 				LOOP_W_INNER: for (int wi = 0; wi < TILESIZE_W; wi++) {
 					#pragma HLS LOOP_TRIPCOUNT max=7 min=7*/
 					#pragma HLS DEPENDENCE variable=output_l1
-					#pragma HLS DEPENDENCE variable=output_l1_local
+					//#pragma HLS DEPENDENCE variable=output_l1_local
 					#pragma HLS pipeline rewind
 					#pragma HLS latency min=1 max=1 // systolic array implementation
-					int hi = (i) / TILESIZE_W;
-					int wi = (i) % TILESIZE_W;
-					doSysArrPE(weight_regfile, data_l1,
-							data_reg, output_reg,
-							output_l1_local, output_l1,
-							hi, wi, TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+					int hi = (i) / TILESIZE_W;//BUG?: if remove this and use parameter, LUT increase?
+					int wi = (i) % TILESIZE_W;//		(See doSysArrPE())
+					doSysArrPE(weight_regfile, 
+							data_reg, data_l1,
+							output_reg, output_l1,
+							hi, wi, TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S);
 				}
 			}
 		}
@@ -201,11 +200,10 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 }
 
 void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
-		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
+		MACTYPE (*output_l1)[ARRAY_K],
 		int input_rows,
 		int bubble_h, int bubble_w,
-		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
-		bool isFirst) {
+		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS dependence variable=data_reg
@@ -222,7 +220,7 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 				LOOP_W_INNER: for (int wi = 0; wi < TILESIZE_W; wi++) {
 					#pragma HLS LOOP_TRIPCOUNT max=7 min=7
 					#pragma HLS DEPENDENCE variable=output_l1
-					#pragma HLS DEPENDENCE variable=output_l1_local
+					//#pragma HLS DEPENDENCE variable=output_l1_local
 					#pragma HLS pipeline rewind
 					//#pragma HLS latency min=1 max=1 // systolic array implementation
 					LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
@@ -252,11 +250,10 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 }
 #ifdef INPUT_SPARSE
 void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C], hls::stream<short> data_l1_bitvec[ARRAY_C],
-		MACTYPE (*output_l1_local)[ARRAY_K], MACTYPE (*output_l1)[ARRAY_K],
+		MACTYPE (*output_l1)[ARRAY_K],
 		int input_rows,
 		int bubble_h, int bubble_w,
-		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
-		bool isFirst) {
+		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS dependence variable=data_reg
@@ -274,7 +271,7 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 					//#pragma HLS LOOP_TRIPCOUNT max=7 min=7
 				//for(int)
 					#pragma HLS DEPENDENCE variable=output_l1
-					#pragma HLS DEPENDENCE variable=output_l1_local
+					//#pragma HLS DEPENDENCE variable=output_l1_local
 					#pragma HLS pipeline rewind
 					//#pragma HLS latency min=1 max=1 // systolic array implementation
 					LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
@@ -649,11 +646,11 @@ void Conv_sysarr(
 			hls::stream<short> data_l1_bitvec[ARRAY_C];
 			#endif
 			MACTYPE output_l1[OUTPUT_L1_SIZE][ARRAY_K];
-			static MACTYPE output_l1_local[OUTPUT_L1_SIZE][ARRAY_K];
+			//static MACTYPE output_l1_local[OUTPUT_L1_SIZE][ARRAY_K];
 			#pragma HLS ARRAY_PARTITION variable=weight_regfile dim=0 complete //register
 			#pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
 			#pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
-			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
+			//#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
 
 			//Systolic Array
 			runWeight2Reg(weight_regfile, weight_l2, C_L2, R_L2, S_L2, ko, co, ro, so);
@@ -664,21 +661,21 @@ void Conv_sysarr(
 			#endif
 			//#define SIMD
 			#ifndef SIMD
-			runSysArr(weight_regfile, data_l1, output_l1_local, output_l1,
+			runSysArr(weight_regfile, data_l1, output_l1,
 						input_rows,
 						bubble_h, bubble_w,
-						TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+						TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S);
 			#else
 				#ifdef INPUT_SPARSE
-				runSIMD_bitvec(weight_regfile, data_l1, data_l1_bitvec, output_l1_local, output_l1,
+				runSIMD_bitvec(weight_regfile, data_l1, data_l1_bitvec, output_l1,
 							input_rows,
 							bubble_h, bubble_w,
-							TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+							TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S);
 				#else
-				runSIMD(weight_regfile, data_l1, output_l1_local, output_l1,
+				runSIMD(weight_regfile, data_l1, output_l1,
 							input_rows,
 							bubble_h, bubble_w,
-							TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S, isFirst);
+							TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S);
 				#endif
 			#endif
 			runOutputL1toL2(output_l1, output_l2, output_l2_reduction, TILESIZE_H, TILESIZE_W, ko, ho, wo, W_L2, H_L2, isFirst);
