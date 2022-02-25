@@ -585,12 +585,12 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
-    /*for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
-    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;*/
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
+    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
+    /*for(int k = 0; k < param.K; k++)								bias[k]		= 1;
     for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;*/
 
     weight_buf_size = param.K * param.C * param.RS * param.RS;
     bias_buf_size = param.K;
