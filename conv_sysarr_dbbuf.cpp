@@ -31,7 +31,7 @@ extern "C" {
 void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE weight_l2[ARRAY_C][WEIGHT_L2_SIZE], const uint C,
 		const uint R, const uint S, const uint ko, const uint co, const uint r, const uint s) {
 	for (int ci = 0; ci < ARRAY_C; ci++) {
-		#pragma HLS pipeline
+		#pragma HLS unroll
 			for (int ki = 0; ki < ARRAY_K; ki++) {
 			#pragma HLS unroll
 			//#pragma HLS pipeline //must be pipelined for dataflow, (and ARRAY_K & ARRAY_C may be small) ..?
@@ -98,14 +98,16 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 				int k = (ko * ARRAY_K + ki);
 				int h = (ho * TILESIZE_H + hi);
 				int w = (wo * TILESIZE_W + wi);
+				MACTYPE temp;
 				if(isFirst)
-					output_l2_reduction[ko * H * W + h * W + w][ki]
-						= output_l1[hi * TILESIZE_W + wi][ki];
+					temp = 0;
 				else
-					output_l2_reduction[ko * H * W + h * W + w][ki]
-						+= output_l1[hi * TILESIZE_W + wi][ki];
+					temp = output_l2_reduction[ko * H * W + h * W + w][ki];
+				temp += output_l1[hi * TILESIZE_W + wi][ki];
 				output_l2[ko * H * W + h * W + w][ki]
-						= output_l2_reduction[ko * H * W + h * W + w][ki];
+						= temp;
+				output_l2_reduction[ko * H * W + h * W + w][ki]
+						= temp;
 			}
 		}
 	}
