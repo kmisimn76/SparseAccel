@@ -171,6 +171,8 @@ int get_layer_info(const char* filename)
                                         &layer_infos[i].WH,
                                         &layer_infos[i].WH_in,
                                         &layer_infos[i].RS);
+	    if (layer_infos[i].K < ARRAY_K) layer_infos[i].K = ARRAY_K; //HW padding
+    	if (layer_infos[i].C < ARRAY_C) layer_infos[i].C = ARRAY_C; //HW padding
     }
     fclose(f);
     return n;
@@ -179,12 +181,18 @@ int get_layer_info(const char* filename)
 
 int main(int argc, char** argv)
 {
-    if (argc != 2){
+    if (argc < 2){
 	printf("Error: wrong commad format, usage:\n");
 	printf("%s <binaryfile>\n", argv[0]);
 	return EXIT_FAILURE;
 	}
 	kernel_file_name=argv[1];
+    int startnum = 0;
+    int endnum = 13;
+    if(argc == 3) {
+        startnum = atoi(argv[2]);
+        endnum = startnum+1;
+    }
     cl_int status;
    	cl::Event event;
    	cl::Event event_read;
@@ -208,11 +216,13 @@ int main(int argc, char** argv)
     int len = get_layer_info("./layer_info.txt");
 
     time = 0;
-	int run_case = -2;
+	//int run_case = -2;
     //for(int i=0, run_case=0;i<13;i++, run_case++){
-        int i = 5;
+    //    int i = 5;
     //    run_case = 5;
-    {
+    //{
+    for(int i=startnum; i<endnum; i++) {
+        int run_case = i;
 		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
         set_param_data(run_case);
         conv_gold();
@@ -538,9 +548,6 @@ void set_param_data(int run_case)
 	param.TILESIZE_S = 1; //must be 1
 	}
 	else if(run_case>=0 && run_case<1000) { // real vgg case
-	if (layer_infos[run_case].K < ARRAY_K) layer_infos[run_case].K = ARRAY_K; //HW padding
-	if (layer_infos[run_case].C < ARRAY_C) layer_infos[run_case].C = ARRAY_C; //HW padding
-
     param.K = layer_infos[run_case].K;
     param.C = layer_infos[run_case].C;
     param.WH = layer_infos[run_case].WH;
@@ -556,8 +563,8 @@ void set_param_data(int run_case)
 	param.C_L1 = ARRAY_C;
 	param.W_L1 = param.TILESIZE_W;
 	param.H_L1 = param.TILESIZE_H;
-	param.W_in_L1 = param.TILESIZE_W + (param.TILESIZE_S/2); // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	param.H_in_L1 = param.TILESIZE_H + (param.TILESIZE_R/2);
+	param.W_in_L1 = param.TILESIZE_W + (param.TILESIZE_S-1); // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = param.TILESIZE_H + (param.TILESIZE_R-1);
 	param.R_L1 = param.TILESIZE_R;
 	param.S_L1 = param.TILESIZE_S;
 
@@ -572,8 +579,8 @@ void set_param_data(int run_case)
 	param.C_L2 = ARRAY_C*param.L1_TILENUM_C;
 	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
 	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
-	param.W_in_L2 = param.W_L2 + (param.L1_TILENUM_S/2); // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
-	param.H_in_L2 = param.H_L2 + (param.L1_TILENUM_R/2);
+	param.W_in_L2 = param.W_L2 + (param.L1_TILENUM_S-1); // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = param.H_L2 + (param.L1_TILENUM_R-1);
 	param.R_L2 = param.L1_TILENUM_R;
 	param.S_L2 = param.L1_TILENUM_S;
 

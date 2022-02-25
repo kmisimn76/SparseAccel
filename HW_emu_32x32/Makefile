@@ -35,7 +35,7 @@ host: $(HOST_OBJS)
 emu:
 #ifeq ($(PLATFORM), x86)
 	emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
-	XCL_EMULATION_MODE=$(TARGET) ./host conv.${TARGET}.xclbin
+	XCL_EMULATION_MODE=$(TARGET) ./host conv.${TARGET}.xclbin -2
 #else
 #	$(ABS_COMMON_REPO)/utility/run_emulation.pl "$(PACKAGE_OUT)/launch_$(FLOW).sh | tee embedded_run.log" "./run_app.sh $(FLOW)" "TEST PASSED" "7"
 #endif
