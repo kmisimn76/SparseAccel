@@ -18,9 +18,9 @@
 //#define WEIGHT_L2_SIZE 589824
 //#define OUTPUT_L2_SIZE 802816
 #define   BIAS_L2_SIZE 128
-#define   DATA_L1_SIZE 196 //49
+#define   DATA_L1_SIZE 200 //49
 #define WEIGHT_L1_SIZE -1
-#define OUTPUT_L1_SIZE 196 //49
+#define OUTPUT_L1_SIZE 200 //49
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
 
@@ -48,9 +48,9 @@ void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE weight_l2[ARR
 void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint TILESIZE_H,
 		uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
 	LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
-		#pragma HLS loop_tripcount min=7 max=7
+		#pragma HLS loop_tripcount min=14 max=14
 		LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
-			#pragma HLS loop_tripcount min=7 max=7
+			#pragma HLS loop_tripcount min=14 max=14
 			for (int ci = 0; ci < ARRAY_C; ci++) { // place unroll to inner-most
 				#pragma HLS unroll
 				int c = (co * ARRAY_C + ci);
@@ -66,9 +66,9 @@ void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint 
 void runDataL2toL1_bitvec(DPTYPE (*data_l1)[ARRAY_C], hls::stream<short> data_l1_bitvec[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint TILESIZE_H,
 		uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
 	LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
-		#pragma HLS loop_tripcount min=7 max=7
+		#pragma HLS loop_tripcount min=14 max=14
 		LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
-			#pragma HLS loop_tripcount min=7 max=7
+			#pragma HLS loop_tripcount min=14 max=14
 			for (int ci = 0; ci < ARRAY_C; ci++) { // place unroll to inner-most
 				#pragma HLS unroll
 				int c = (co * ARRAY_C + ci);
@@ -90,9 +90,9 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 #pragma HLS dependence variable=output_l2
 #pragma HLS dependence variable=output_l2_reduction
 	LOOP_L2_H: for (int hi = 0; hi < TILESIZE_H; hi++) {
-		#pragma HLS loop_tripcount min=7 max=7
+		#pragma HLS loop_tripcount min=14 max=14
 		LOOP_L2_W: for (int wi = 0; wi < TILESIZE_W; wi++) {
-			#pragma HLS loop_tripcount min=7 max=7
+			#pragma HLS loop_tripcount min=14 max=14
 			for (int ki = 0; ki < ARRAY_K; ki++) { // place unroll to inner-most
 				#pragma HLS unroll
 				int k = (ko * ARRAY_K + ki);
@@ -177,7 +177,8 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 			#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 			#pragma HLS loop_flatten
 			LOOP_INPUT_ROW: for (int i = 0; i < input_rows; i++) {
-			#pragma HLS LOOP_TRIPCOUNT max=55 min=55
+			#pragma HLS LOOP_TRIPCOUNT max=196 min=196
+			//#pragma HLS LOOP_TRIPCOUNT max=258 min=258
 				{
 			/*LOOP_H_INNER: for (int hi = 0; hi <= TILESIZE_H + bubble_h; hi++) {
 				#pragma HLS LOOP_TRIPCOUNT max=8 min=8
@@ -216,9 +217,9 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 			#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 			//#pragma HLS loop_flatten
 			LOOP_H_INNER: for (int hi = 0; hi < TILESIZE_H; hi++) {
-				#pragma HLS LOOP_TRIPCOUNT max=7 min=7
+				#pragma HLS LOOP_TRIPCOUNT max=14 min=14
 				LOOP_W_INNER: for (int wi = 0; wi < TILESIZE_W; wi++) {
-					#pragma HLS LOOP_TRIPCOUNT max=7 min=7
+					#pragma HLS LOOP_TRIPCOUNT max=14 min=14
 					#pragma HLS DEPENDENCE variable=output_l1
 					//#pragma HLS DEPENDENCE variable=output_l1_local
 					#pragma HLS pipeline rewind
