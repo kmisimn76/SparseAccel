@@ -7,16 +7,17 @@
 //#define HIGH_FREQUENCY //not use slow DSP in SysArr, Use LUT x10 much
 #define ARRAY_PADDING_DATA //increase array so that no if in sysarr 
 #define ARRAY_PADDING_OUTPUT //increase array so that no if in sysarr
-#define ARRAY_PADDING_DATA_NO_INITIALIZE//remove initilizing loop in runDataL2toL1
-//#define DIV_ADDRESS_DATA //set upper bound by moduler operation //make wrong result in hw_emu, why?
-//#define DIV_ADDRESS_OUTPUT //set upper bound by moduler operation, effect to ARRAY_PADDING_OUTPUT
-//problem: Mouler operation CAN MAKE WRONG ADDRESS
 
-//#define DATA_L1_PADDING_BEFORE_DATAFLOW //DONT ENABLE THIS; IT BROKE DATAFLOW
+// #define ARRAY_PADDING_DATA_NO_INITIALIZE//remove initilizing loop in runDataL2toL1
+
 //#define IGNORE_R_S_LOOP //R and S must be 1, so this can be skipped
 
+#define LIMIT_ARRAY_BY_MODULA //array modular fix
+
+
 #ifdef INPUT_SPARSE
-    #undef ARRAY_PADDING
+    #undef ARRAY_PADDING_DATA
+    #undef ARRAY_PADDING_OUTPUT 
 #endif
 // using macro in PRAGMA
 #define PRAGMA_SUB(x) _Pragma (#x)
@@ -34,29 +35,50 @@
 //#define OUTPUT_L2_SIZE 802816
 #define   BIAS_L2_SIZE 128
 
-#define L1_BUFFER_SIZE 200
+#define DATA_L1_ORIGNAL_SIZE 400
+//#define WEIGHT_L1_SIZE -1
+#define OUTPUT_L1_ORIGNAL_SIZE 200
 
 #ifdef ARRAY_PADDING_DATA
-    #define   DATA_L1_SIZE (ARRAY_C + L1_BUFFER_SIZE)//bottom padding
+    #define   DATA_L1_SIZE (ARRAY_C + DATA_L1_ORIGNAL_SIZE)//bottom padding
 #else
-    #define   DATA_L1_SIZE L1_BUFFER_SIZE
+    #define   DATA_L1_SIZE DATA_L1_ORIGNAL_SIZE
 #endif
-//#define WEIGHT_L1_SIZE -1
 #ifdef ARRAY_PADDING_OUTPUT
-    #ifdef DIV_ADDRESS_OUTPUT
-        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + L1_BUFFER_SIZE)//bottom padding    
+    #ifdef LIMIT_ARRAY_BY_MODULA
+        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE)//bottom padding    
     #else
-        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + L1_BUFFER_SIZE + (ARRAY_K + ARRAY_C))//top&bottom padding   
+        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE + (ARRAY_K + ARRAY_C))//top&bottom padding   
     #endif
 #else
-    #ifdef DIV_ADDRESS_OUTPUT
-        #define OUTPUT_L1_SIZE (L1_BUFFER_SIZE + (ARRAY_K + ARRAY_C))//top padding
-    #else
-        #define OUTPUT_L1_SIZE L1_BUFFER_SIZE
-    #endif
+    //#define OUTPUT_L1_SIZE (L1_BUFFER_SIZE + (ARRAY_K + ARRAY_C))//top padding
+    #define OUTPUT_L1_SIZE OUTPUT_L1_ORIGNAL_SIZE
 #endif
 
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
+
+#ifdef LIMIT_ARRAY_BY_MODULA
+    //#define DATA_L1_MODULA(X)     ((X)%DATA_L1_SIZE)
+    #define DATA_L1_MODULA(X)     (X)
+    //BUG???
+    //#define WEIGHT_L1_MODULA(X) ((X)%WEIGHT_L1_SIZE)
+    #define OUTPUT_L1_MODULA(X)   ((X)%OUTPUT_L1_SIZE)
+    //#define BIAS_L1_MODULA(X)   ((X)%BIAS_L1_SIZE)
+    //#define DATA_L2_MODULA(X)     ((X)%DATA_L2_SIZE)
+    //#define WEIGHT_L2_MODULA(X)   ((X)%WEIGHT_L2_SIZE)
+    //#define OUTPUT_L2_MODULA(X)   ((X)%OUTPUT_L2_SIZE)
+    //#define BIAS_L2_MODULA(X)     ((X)%BIAS_L2_SIZE)
+   
+#else
+    #define DATA_L1_MODULA(X)     (X)
+    //#define WEIGHT_L1_MODULA(X) (X) 
+    #define OUTPUT_L1_MODULA(X)   (X)
+    //#define BIAS_L1_MODULA(X)   (X)
+    //#define DATA_L2_MODULA(X)     (X)
+    //#define WEIGHT_L2_MODULA(X)   (X)
+    //#define OUTPUT_L2_MODULA(X)   (X)
+    //#define BIAS_L2_MODULA(X)     (X)
+#endif
 
 
 #ifndef XILINX
@@ -72,15 +94,15 @@ void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE weight_l2[ARR
 			int c = (co * ARRAY_C + ci);
 			//weight_regfile[ki][ci] = weight_l2[ko * C * R
 			//		* S + c * R * S + r * S + s][ki];
-			weight_regfile[ki][ci] = weight_l2[ki][ko * C * R
-					* S + c * R * S + r * S + s];
+			weight_regfile[ki][ci] = weight_l2[ki][(ko * C * R
+					* S + c * R * S + r * S + s)];
 		}
 	}
 }
 
 void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint TILESIZE_H,
 		uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
-#ifndef DATA_L1_PADDING_BEFORE_DATAFLOW
+
 #ifdef  ARRAY_PADDING_DATA
 #ifndef ARRAY_PADDING_DATA_NO_INITIALIZE
     LOOP_L1_PADDING: for (int wi = 0; wi < ARRAY_C; wi++) {
@@ -92,7 +114,7 @@ void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint 
     }
 #endif
 #endif
-#endif
+
 	LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
 		#pragma HLS loop_tripcount min=14 max=14
 		LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W; wi++) {
@@ -103,11 +125,11 @@ void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint 
 				int h = (ho * TILESIZE_H + hi) + r;
 				int w = (wo * TILESIZE_W + wi) + s;
 #ifdef ARRAY_PADDING_DATA
-				data_l1[hi * TILESIZE_W + wi + ARRAY_C][ci] =
-						data_l2[co * H_in * W_in + h * W_in + w][ci];
+				data_l1[(hi * TILESIZE_W + wi + ARRAY_C)][ci] =
+						data_l2[(co * H_in * W_in + h * W_in + w)][ci];
 #else
-				data_l1[hi * TILESIZE_W + wi][ci] =
-						data_l2[co * H_in * W_in + h * W_in + w][ci];
+				data_l1[(hi * TILESIZE_W + wi)][ci] =
+						data_l2[(co * H_in * W_in + h * W_in + w)][ci];
 #endif
 			}
 		}
@@ -153,24 +175,21 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 				if(isFirst)
 					temp = 0;
 				else
-					temp = output_l2_reduction[ko * H * W + h * W + w][ki];
+					temp = output_l2_reduction[(ko * H * W + h * W + w)][ki];
 #ifdef ARRAY_PADDING_OUTPUT 
-				temp += output_l1[hi * TILESIZE_W + wi + ARRAY_K + ARRAY_C][ki];
+				temp += output_l1[(hi * TILESIZE_W + wi + ARRAY_K + ARRAY_C)][ki];
 #else
-				temp += output_l1[hi * TILESIZE_W + wi][ki];
+				temp += output_l1[(hi * TILESIZE_W + wi)][ki];
 #endif
-				output_l2[ko * H * W + h * W + w][ki]
+				output_l2[(ko * H * W + h * W + w)][ki]
 						= temp;
-				output_l2_reduction[ko * H * W + h * W + w][ki]
+				output_l2_reduction[(ko * H * W + h * W + w)][ki]
 						= temp;
 			}
 		}
 	}
 }
-//MAX_f(U200)
-//HIGH_FREQUENCY
-//turn off: 194MHz
-//turn on : 337MHz, LUT x10
+
 void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], 
 		DPTYPE data_reg[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
 		MACTYPE output_reg[ARRAY_K][ARRAY_C], MACTYPE (*output_l1)[ARRAY_K],
@@ -184,16 +203,12 @@ void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C],
 	for (int ci = 0; ci < ARRAY_C; ci++) {
 		#pragma HLS unroll
 #ifdef ARRAY_PADDING_DATA
-		input_data[ci] = data_l1[((i - ci) + ARRAY_C)][ci];
+		input_data[ci] = data_l1[DATA_L1_MODULA((i - ci) + ARRAY_C)][ci];
 #else
-    #ifdef DIV_ADDRESS_DATA
-			input_data[ci] = data_l1[(i - ci)%DATA_L1_SIZE][ci];
-    #else
 		if (i - ci >= 0)
-			input_data[ci] = data_l1[(i - ci)][ci];
+			input_data[ci] = data_l1[DATA_L1_MODULA(i - ci)][ci];
 		else
 			input_data[ci] = 0; //Bubble
-    #endif
 #endif
 	}
 
@@ -223,18 +238,10 @@ void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C],
 	for (int ki = ARRAY_K - 1; ki >= 0; ki--) {
 		#pragma HLS unroll
 #ifdef ARRAY_PADDING_OUTPUT 
-    #ifdef DIV_ADDRESS_OUTPUT
-			output_l1[(((i + 1) - ki) + ARRAY_K%OUTPUT_L1_SIZE)][ki] = output_reg[ki][(ARRAY_C - 1)];
-    #else
-            output_l1[(((i + 1) - ki) + ARRAY_K)][ki] = output_reg[ki][(ARRAY_C - 1)];
-    #endif
+			output_l1[OUTPUT_L1_MODULA(((i - ARRAY_C + 1) - ki) + ARRAY_C + ARRAY_K)][ki] = output_reg[ki][(ARRAY_C - 1)];
 #else
-    #ifdef DIV_ADDRESS_DATA
-			output_l1[((i - ARRAY_C + 1) - ki)%OUTPUT_L1_SIZE][ki] = output_reg[ki][(ARRAY_C - 1)];
-    #else
 		if ((i - ARRAY_C + 1) - ki >= 0 && (i - ARRAY_C + 1) - ki < TILESIZE_W * TILESIZE_H) //is needed?
-			output_l1[(((i - ARRAY_C + 1) - ki))][ki] = output_reg[ki][(ARRAY_C - 1)];
-    #endif
+			output_l1[OUTPUT_L1_MODULA(((i - ARRAY_C + 1) - ki))][ki] = output_reg[ki][(ARRAY_C - 1)];
 #endif
 	}
 }
@@ -248,9 +255,7 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 
 	DPTYPE data_reg[ARRAY_K][ARRAY_C];
-//#ifndef HIGH_FREQUENCY
 	#pragma HLS dependence variable=data_reg
-//#endif
 	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
 	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
@@ -318,7 +323,7 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 						#pragma HLS unroll
 						LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
 							#pragma HLS unroll
-							data_reg[ki][ci] = data_l1[hi * TILESIZE_W + wi][ci];
+							data_reg[ki][ci] = data_l1[(hi * TILESIZE_W + wi)][ci];
 							//output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
 							output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
 						}
@@ -332,7 +337,7 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 							#pragma HLS unroll
 							sum += output_reg[ki][ci];
 						}
-						output_l1[hi * TILESIZE_W + wi][ki] = sum;
+						output_l1[(hi * TILESIZE_W + wi)][ki] = sum;
 					}
 				}
 			}
@@ -434,7 +439,7 @@ void weight_dram_read(DPTYPE weight_l2[ARRAY_K][WEIGHT_L2_SIZE], DPTYPE* weight_
 							unsigned int kcrs = ko;
 							unsigned int v = ki;
 							//weight_l2[kcrs][ki] = weight_in[global_kcrs];
-							weight_l2[ki][kcrs] = weight_in[global_kcrs];
+							weight_l2[ki][(kcrs)] = weight_in[global_kcrs];
 						}
 					}
 					/*}
@@ -460,7 +465,7 @@ void input_dram_read(DPTYPE data_l2[DATA_L2_SIZE][ARRAY_C], DPTYPE* data_in,
 						unsigned int global_chw = ((cmo*(C_L2/VEC_SIZE)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*VEC_SIZE + ci;
 						unsigned int chw = co*H_in_L2*W_in_L2 + h*W_in_L2 + w;
 						unsigned int v = ci;
-						data_l2[chw][ci] = data_in[global_chw];
+						data_l2[(chw)][ci] = data_in[global_chw];
 					}
 				}
 			}
@@ -518,7 +523,7 @@ void output_dram_write(MACTYPE output_l2[OUTPUT_L2_SIZE][ARRAY_K], MACTYPE* conv
 						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
 						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
 						//else
-							conv_out[global_khw] = stream_buffer[w][ki] + output_l2[khw][ki];
+							conv_out[global_khw] = stream_buffer[w][ki] + output_l2[(khw)][ki];
 					}
 				}
 			}
@@ -650,19 +655,6 @@ void Conv_sysarr(
 	const uint bubble_w = 0; //bubble % TILESIZE_W; //not be used
     printf("Conv Sysarr set params 5\n");
 
-#ifdef DATA_L1_PADDING_BEFORE_DATAFLOW
-#ifdef ARRAY_PADDING_DATA
-    //IMPOSSIBLE; it broke DATAFLOW
-	DPTYPE data_l1[DATA_L1_SIZE][ARRAY_C];
-    LOOP_L1_PADDING: for (int wi = 0; wi < ARRAY_C; wi++) {
-    #pragma HLS unroll
-        for (int ci = 0; ci < ARRAY_C; ci++) {
-        #pragma HLS unroll
-            data_l1[wi][ci] = 0;
-        }
-    }
-#endif
-#endif
 
 	BIAS_DRAM_READ: for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
 		#pragma HLS loop_tripcount min=1 max=1
@@ -671,7 +663,7 @@ void Conv_sysarr(
 			unsigned int global_k = (ko)*VEC_SIZE + ki;
 			unsigned int v = ki;
 			//bias_l2[ko][ki] = bias_in[global_k];
-			bias_l2[ki][ko] = bias_in[global_k];
+			bias_l2[ki][(ko)] = bias_in[global_k];
 		}
 	}
 	BIAS_DRAM_WRITE_K: for (unsigned int ko = 0; ko < K/VEC_SIZE; ko++) {
@@ -682,7 +674,7 @@ void Conv_sysarr(
 			unsigned int global_khw = (ko*WH*WH+wh)*VEC_SIZE + ki;
 			unsigned int global_k = (ko)*VEC_SIZE + ki;
 			unsigned int v = ki;
-			conv_out[global_khw] = bias_l2[ki][ko];
+			conv_out[global_khw] = bias_l2[ki][(ko)];
 		}
 	}
 	}
