@@ -1,0 +1,7 @@
+sv work "glbl.v"
+sv xil_defaultlib "adder_tree_large.autotb.v"
+sv xil_defaultlib "adder_tree_large.v"
+sv xil_defaultlib "AESL_automem_a.v"
+sv xil_defaultlib "AESL_automem_b.v"
+sv xil_defaultlib "adder_tree_large_mul_32s_32s_32_1_1.v"
+

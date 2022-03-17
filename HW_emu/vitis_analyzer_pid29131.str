@@ -1,0 +1,246 @@
+/*
+
+Xilinx Vitis Analyzer v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:35 MDT 2020
+
+Process ID (PID): 29131
+License: Customer
+
+Current time: 	Wed Mar 16 12:06:02 KST 2022
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Ubuntu
+OS Version: 5.4.0-100-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: rabbit:13.0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/lnx64/jre9.0.4
+Java executable location: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sumin
+User home directory: /home/sumin
+User working directory: /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis
+HDI_APPROOT: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+RDI_DATADIR: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
+RDI_BINDIR: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin
+
+Vitis Analyzer preferences file location: /home/sumin/.Xilinx/vitis_analyzer/2020.1/vitis_analyzer.xml
+Vitis Analyzer preferences directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/
+Vitis Analyzer layouts directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/data/layouts
+PlanAhead jar file location: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/classes/frank.jar
+Vitis Analyzer log file location: 	/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.log
+Vitis Analyzer journal file location: 	/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.jou
+Engine tmp dir: 	./.Xil/vitis_analyzer-29131-rabbit
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_PLANAHEAD: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_SDK: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_VITIS: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_VIVADO: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
+XILINX_VIVADO_HLS: /home/sumin/tools/Xilinx_vitis/Vitis/Vivado/2020.1
+XILINX_XRT: /opt/xilinx/xrt
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,433 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// bz (ct):  Open Files : addNotify
+dismissDialog("Open Files"); // bz (ct)
+// Tcl Command: 'create_project dummy'
+// TclEventType: PROJECT_NEW
+// Opening Summary: Type{value=LINK_SUMMARY},SummaryFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/conv.hw_emu.xclbin.link_summary}
+// bz (ct):  Open Summary : addNotify
+// Tcl Message: create_project dummy 
+dismissDialog("Open Summary"); // bz (ct)
+// Opening Report: Type{value=BUILD_SUMMARY_REPORT},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/conv.hw_emu.xclbin.link_summary}
+// [GUI Memory]: 104 MB (+106550kb) [00:00:06]
+// [Engine Memory]: 1,431 MB (+1349061kb) [00:00:06]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,443 MB. GUI used memory: 55 MB. Current time: 3/16/22, 12:06:03 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,443 MB. GUI used memory: 54 MB. Current time: 3/16/22, 12:36:03 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,443 MB. GUI used memory: 54 MB. Current time: 3/16/22, 1:06:03 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 3924 seconds
+selectTree("Report Navigator Tree", "[root, Type{value=KERNEL_ESTIMATE_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/system_estimate_conv.hw_emu.xtxt}]", 9, false); // b (J, ct)
+// Opening Report: Type{value=KERNEL_ESTIMATE_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/system_estimate_conv.hw_emu.xtxt}
+selectTree("Report Navigator Tree", "[root, Type{value=KERNEL_GUIDANCE_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/v++_compile_conv.hw_emu_guidance.pb}]", 10, false); // b (J, ct)
+// Opening Report: Type{value=KERNEL_GUIDANCE_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/v++_compile_conv.hw_emu_guidance.pb}
+selectTree("Report Navigator Tree", "[root, Type{value=KERNEL_ESTIMATE_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/system_estimate_conv.hw_emu.xtxt}]", 9, false); // b (J, ct)
+// Elapsed time: 30 seconds
+selectCodeEditor("Kernel Estimate", 201, 192); // G (w, ct)
+// Elapsed time: 28 seconds
+selectTree("Report Navigator Tree", "[root, Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}]", 11, false); // b (J, ct)
+// Opening Report: Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}
+// bz (ct):  Open HLS Synthesis Report : addNotify
+dismissDialog("Open HLS Synthesis Report"); // bz (ct)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,469 MB. GUI used memory: 50 MB. Current time: 3/16/22, 1:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,473 MB. GUI used memory: 51 MB. Current time: 3/16/22, 1:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,473 MB. GUI used memory: 50 MB. Current time: 3/16/22, 2:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,473 MB. GUI used memory: 47 MB. Current time: 3/16/22, 2:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,473 MB. GUI used memory: 47 MB. Current time: 3/16/22, 3:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 3:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 4:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 4:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 5:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 5:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 6:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 6:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 7:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 7:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 8:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 8:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 9:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 9:42:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 10:12:28 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 10:42:29 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 11:12:29 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/16/22, 11:42:29 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 12:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 12:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 1:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 1:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 2:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 2:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 3:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 3:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 4:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 4:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 5:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 5:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 6:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 6:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 7:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 7:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 8:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 8:42:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 9:12:29 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 9:42:30 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 10:12:30 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 10:42:30 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 11:12:30 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 48 MB. Current time: 3/17/22, 11:42:30 AM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 12:12:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 12:42:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 1:12:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 1:42:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 2:12:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 2:42:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 3:12:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 3:42:30 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,474 MB. GUI used memory: 47 MB. Current time: 3/17/22, 4:12:30 PM KST

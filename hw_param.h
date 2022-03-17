@@ -30,6 +30,7 @@ typedef int  MACTYPE;
 #define ARRAY_K 8
 #define ARRAY_C 8
 #define VEC_SIZE 8 // smaller than ARRAY_C,ARRAY_K
+#define BLOCK_SIZE 4 // divisible into ARRAY_C
 //typedef ap_axiu<512,0,0,0> k2k_data;
 #ifndef XILINX
 //typedef ap_axiu<VEC_SIZE*32,0,0,0> k2k_data;

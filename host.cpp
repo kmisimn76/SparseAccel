@@ -81,6 +81,9 @@ unsigned int weight_buf_size = 0;
 unsigned int in_buf_size = 0;
 unsigned int out_buf_size = 0;
 
+//float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
+//float sparsity = 0.95; //eltwise sparsity: expected group 4 sparsity = 0.8145
+float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
 const char* knl_name_conv = "Conv_sysarr";
 char *kernel_file_name;
 /*cl_uint num_cl_data->devices = 0;
@@ -136,6 +139,28 @@ void conv_gold()
 		}
 	}
 	//printf("\n");
+}
+
+template<typename T>
+void sparsify(T* _data, int _len, float _sparsity)
+{
+    bool* mask = new bool[_len];
+    for(int i=0;i<_len;i++) // zero mask
+        mask[i] = (i >= _len*_sparsity)?(true):(false);
+    for(int i=_len-1;i>=1;i--) { // suffule
+        int r = rand()%i;
+        T tmp = mask[i];
+        mask[i] = mask[r];
+        mask[r] = tmp;
+    }
+    for(int i=0;i<_len;i++) // masking
+        _data[i] *= mask[i];
+
+    int cnt = 0;
+    for(int i=0;i<_len;i++)
+        if(_data[i]==.0) cnt++;
+    printf("sparsified rate: %lf\n", (float)cnt / (float)_len);
+    delete[] mask;
 }
 void ocl_initialize();
 void array_initialize();
@@ -462,8 +487,8 @@ void set_param_data(int run_case)
 	else if(run_case==-2){
 	param.K = 32;
 	param.C = 64;
-	param.WH = 14;
-	param.WH_in = 16;
+	param.WH = 14;//16;
+	param.WH_in = 16;//18;
 	param.RS = 3;
 	param.L2_TILENUM_K = 1; ///
 	param.L2_TILENUM_C = 2;
@@ -473,10 +498,10 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	param.K_L2 = 32;
 	param.C_L2 = 32;
-	param.W_L2 = 14;
-	param.H_L2 = 14;
-	param.W_in_L2 = 16; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
-	param.H_in_L2 = 16;
+	param.W_L2 = 14;//16;
+	param.H_L2 = 14;//16;
+	param.W_in_L2 = 16;//18; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = 16;//18;
 	param.R_L2 = 3;
 	param.S_L2 = 3;
 	param.L1_TILENUM_K = 32/ARRAY_K; ///
@@ -487,14 +512,14 @@ void set_param_data(int run_case)
 	param.L1_TILENUM_S = 3;
 	param.K_L1 = ARRAY_K;
 	param.C_L1 = ARRAY_C;
-	param.W_L1 = 7;
-	param.H_L1 = 7;
-	param.W_in_L1 = 7; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	param.H_in_L1 = 7;
+	param.W_L1 = 7;//8;
+	param.H_L1 = 7;//8;
+	param.W_in_L1 = 7;//8; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;//8;
 	param.R_L1 = 1;
 	param.S_L1 = 1;
-	param.TILESIZE_W = 7; ////
-	param.TILESIZE_H = 7;
+	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
+	param.TILESIZE_H = 8;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 	}
@@ -585,12 +610,23 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
+//#define RAND_INPUT
+#define SPARSIFYING
+#ifdef RAND_INPUT
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
     for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
     for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
-    /*for(int k = 0; k < param.K; k++)								bias[k]		= 1;
+#else
+    for(int k = 0; k < param.K; k++)								bias[k]		= 1;
     for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;*/
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
+#endif
+#ifdef SPARSIFYING
+    printf("Data ");
+    sparsify<DPTYPE>(data, param.C*param.WH_in*param.WH_in, sparsity);
+    printf("Weight ");
+    sparsify<DPTYPE>(weight, param.K*param.C*param.RS*param.RS, sparsity);
+#endif
 
     weight_buf_size = param.K * param.C * param.RS * param.RS;
     bias_buf_size = param.K;
@@ -767,6 +803,7 @@ void read_data(cl::Event* event)
 
 void score()
 {
+    int cnt = 0;
     for(int wh=0;wh<param.WH*param.WH;wh++) {
 		for (unsigned int ko = 0; ko < param.K/VEC_SIZE; ko++) {
 			for (unsigned int ki = 0; ki < VEC_SIZE; ki++) {
@@ -776,7 +813,8 @@ void score()
 				int v = ki;
 				int out = output[ptr];
 				if(out != gold[ptr])
-                { printf("Error(%d or %d): %d (gold %d)\n", ptr, ptr, out, gold[l]);  exit(1); }
+                { printf("Error(%d or %d): %d (gold %d), # of correct: %d\n", ptr, ptr, out, gold[l], cnt);  exit(1); }
+                cnt ++;
 			}
 		}
     }

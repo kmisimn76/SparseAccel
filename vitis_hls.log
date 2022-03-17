@@ -1,0 +1,440 @@
+INFO: [HLS 200-10] Running '/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'sumin' on host 'rabbit' (Linux_x86_64 version 5.4.0-100-generic) on Tue Mar 08 19:41:25 KST 2022
+INFO: [HLS 200-10] On os Ubuntu 18.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based'
+Sourcing Tcl script '/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/AdderTree_example/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project '/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/AdderTree_example'.
+INFO: [HLS 200-10] Adding design file 'AdderTree_example/example.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'AdderTree_example/test.cpp' to the project
+INFO: [HLS 200-10] Opening solution '/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/AdderTree_example/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-1505.html
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_alignment_byte_size=0
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -m_axi_max_widen_bitwidth=0
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_interface -default_slave_interface=none
+INFO: [HLS 200-435] Setting 'config_flow -target' configuration: config_rtl -register_reset_num=0
+INFO: [HLS 200-1464] Running solution command: config_interface -clock_enable=0
+INFO: [HLS 200-1464] Running solution command: config_interface -default_slave_interface=s_axilite
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_addr64=1
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_auto_max_ports=0
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_latency=64
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-1464] Running solution command: config_interface -m_axi_offset=off
+INFO: [HLS 200-1464] Running solution command: config_interface -register_io=off
+INFO: [HLS 200-1464] Running solution command: config_interface -s_axilite_data64=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -kernel_profile=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -m_axi_conservative_mode=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -module_auto_prefix=1
+INFO: [HLS 200-1464] Running solution command: config_rtl -mult_keep_attribute=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -register_reset_num=3
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset=control
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_async=0
+INFO: [HLS 200-1464] Running solution command: config_rtl -reset_level=high
+INFO: [HLS 200-10] Analyzing design file 'AdderTree_example/example.cpp' ... 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_19_2' (AdderTree_example/example.cpp:19:19) in function 'adder_tree_large' completely with a factor of 8 (AdderTree_example/example.cpp:19:19)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_26_3' (AdderTree_example/example.cpp:26:20) in function 'adder_tree_large' completely with a factor of 8 (AdderTree_example/example.cpp:26:20)
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8962 ; free virtual = 54173
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8962 ; free virtual = 54173
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8961 ; free virtual = 54172
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8961 ; free virtual = 54172
+INFO: [XFORM 203-101] Partitioning array 'a' (AdderTree_example/example.cpp:7) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'b' (AdderTree_example/example.cpp:7) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'c' (AdderTree_example/example.cpp:7) in dimension 1 completely.
+INFO: [XFORM 203-11] Balancing expressions in function 'adder_tree_large' (AdderTree_example/example.cpp:7)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8944 ; free virtual = 54155
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8944 ; free virtual = 54155
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'adder_tree_large' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'adder_tree_large' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_15_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+WARNING: [HLS 200-871] Estimated clock period (7.828ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'adder_tree_large' consists of the following:	'load' operation ('a_6_load', AdderTree_example/example.cpp:22) on array 'a_6' [100]  (1.16 ns)
+	'mul' operation ('mul_ln22_6', AdderTree_example/example.cpp:22) [103]  (3.17 ns)
+	'add' operation ('add_ln29_4', AdderTree_example/example.cpp:29) [113]  (0.88 ns)
+	'add' operation ('add_ln29_5', AdderTree_example/example.cpp:29) [114]  (0.731 ns)
+	'add' operation ('add_ln29_6', AdderTree_example/example.cpp:29) [115]  (0.731 ns)
+	'store' operation ('c_0_addr_write_ln29', AdderTree_example/example.cpp:29) of variable 'add_ln29_6', AdderTree_example/example.cpp:29 on array 'c_0' [117]  (1.16 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/html_docs/xilinx2020_1/hls-guidance/200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 4.68 seconds; current allocated memory: 96.074 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.04 seconds; current allocated memory: 96.470 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'adder_tree_large' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/a_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/b_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_0' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_3' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_4' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_5' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_6' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/c_7' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'adder_tree_large/n' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'adder_tree_large' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'n' and 'return' to AXI-Lite port control.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_1_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_1_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_2_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_2_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_3_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_3_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_4_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_4_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_5_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_5_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_6_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_6_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_address0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_address0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_ce0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_ce0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_we0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_we0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_d0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_d0' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_q0' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_address1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_address1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_ce1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_ce1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_we1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_we1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_d1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+WARNING: [RTGEN 206-101] Setting dangling out port 'adder_tree_large/c_7_d1' to 0.
+WARNING: [RTGEN 206-101] Port 'adder_tree_large/c_7_q1' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'adder_tree_large'.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 97.362 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'adder_tree_large_mul_32s_32s_32_1_1_Multiplier_0'
+ETP: found array_partition regexp: a_\d+ : a_0 a_1 a_2 a_3 a_4 a_5 a_6 a_7 
+ETP: a_0 -> a_0_address0 -> a_0_address0  (bram data virtual)
+ETP: a_0 -> a_0_ce0 -> a_0_ce0  (bram data virtual)
+ETP: a_0 -> a_0_q0 -> a_0_q0  (bram data virtual)
+ETP: a_1 -> a_1_address0 -> a_1_address0  (bram data virtual)
+ETP: a_1 -> a_1_ce0 -> a_1_ce0  (bram data virtual)
+ETP: a_1 -> a_1_q0 -> a_1_q0  (bram data virtual)
+ETP: a_2 -> a_2_address0 -> a_2_address0  (bram data virtual)
+ETP: a_2 -> a_2_ce0 -> a_2_ce0  (bram data virtual)
+ETP: a_2 -> a_2_q0 -> a_2_q0  (bram data virtual)
+ETP: a_3 -> a_3_address0 -> a_3_address0  (bram data virtual)
+ETP: a_3 -> a_3_ce0 -> a_3_ce0  (bram data virtual)
+ETP: a_3 -> a_3_q0 -> a_3_q0  (bram data virtual)
+ETP: a_4 -> a_4_address0 -> a_4_address0  (bram data virtual)
+ETP: a_4 -> a_4_ce0 -> a_4_ce0  (bram data virtual)
+ETP: a_4 -> a_4_q0 -> a_4_q0  (bram data virtual)
+ETP: a_5 -> a_5_address0 -> a_5_address0  (bram data virtual)
+ETP: a_5 -> a_5_ce0 -> a_5_ce0  (bram data virtual)
+ETP: a_5 -> a_5_q0 -> a_5_q0  (bram data virtual)
+ETP: a_6 -> a_6_address0 -> a_6_address0  (bram data virtual)
+ETP: a_6 -> a_6_ce0 -> a_6_ce0  (bram data virtual)
+ETP: a_6 -> a_6_q0 -> a_6_q0  (bram data virtual)
+ETP: a_7 -> a_7_address0 -> a_7_address0  (bram data virtual)
+ETP: a_7 -> a_7_ce0 -> a_7_ce0  (bram data virtual)
+ETP: a_7 -> a_7_q0 -> a_7_q0  (bram data virtual)
+ETP: found array_partition regexp: b_\d+ : b_0 b_1 b_2 b_3 b_4 b_5 b_6 b_7 
+ETP: b_0 -> b_0_address0 -> b_0_address0  (bram data virtual)
+ETP: b_0 -> b_0_ce0 -> b_0_ce0  (bram data virtual)
+ETP: b_0 -> b_0_q0 -> b_0_q0  (bram data virtual)
+ETP: b_1 -> b_1_address0 -> b_1_address0  (bram data virtual)
+ETP: b_1 -> b_1_ce0 -> b_1_ce0  (bram data virtual)
+ETP: b_1 -> b_1_q0 -> b_1_q0  (bram data virtual)
+ETP: b_2 -> b_2_address0 -> b_2_address0  (bram data virtual)
+ETP: b_2 -> b_2_ce0 -> b_2_ce0  (bram data virtual)
+ETP: b_2 -> b_2_q0 -> b_2_q0  (bram data virtual)
+ETP: b_3 -> b_3_address0 -> b_3_address0  (bram data virtual)
+ETP: b_3 -> b_3_ce0 -> b_3_ce0  (bram data virtual)
+ETP: b_3 -> b_3_q0 -> b_3_q0  (bram data virtual)
+ETP: b_4 -> b_4_address0 -> b_4_address0  (bram data virtual)
+ETP: b_4 -> b_4_ce0 -> b_4_ce0  (bram data virtual)
+ETP: b_4 -> b_4_q0 -> b_4_q0  (bram data virtual)
+ETP: b_5 -> b_5_address0 -> b_5_address0  (bram data virtual)
+ETP: b_5 -> b_5_ce0 -> b_5_ce0  (bram data virtual)
+ETP: b_5 -> b_5_q0 -> b_5_q0  (bram data virtual)
+ETP: b_6 -> b_6_address0 -> b_6_address0  (bram data virtual)
+ETP: b_6 -> b_6_ce0 -> b_6_ce0  (bram data virtual)
+ETP: b_6 -> b_6_q0 -> b_6_q0  (bram data virtual)
+ETP: b_7 -> b_7_address0 -> b_7_address0  (bram data virtual)
+ETP: b_7 -> b_7_ce0 -> b_7_ce0  (bram data virtual)
+ETP: b_7 -> b_7_q0 -> b_7_q0  (bram data virtual)
+ETP: found array_partition regexp: c_\d+ : c_0 c_1 c_2 c_3 c_4 c_5 c_6 c_7 
+ETP: c_0 -> c_0_address0 -> c_0_address0  (bram data virtual)
+ETP: c_0 -> c_0_ce0 -> c_0_ce0  (bram data virtual)
+ETP: c_0 -> c_0_we0 -> c_0_we0  (bram data virtual)
+ETP: c_0 -> c_0_d0 -> c_0_d0  (bram data virtual)
+ETP: c_1 -> c_1_address0 -> c_1_address0  (bram data virtual)
+ETP: c_1 -> c_1_ce0 -> c_1_ce0  (bram data virtual)
+ETP: c_1 -> c_1_we0 -> c_1_we0  (bram data virtual)
+ETP: c_1 -> c_1_d0 -> c_1_d0  (bram data virtual)
+ETP: c_1 -> c_1_q0 -> c_1_q0  (bram data virtual)
+ETP: c_1 -> c_1_address1 -> c_1_address1  (bram data virtual)
+ETP: c_1 -> c_1_ce1 -> c_1_ce1  (bram data virtual)
+ETP: c_1 -> c_1_we1 -> c_1_we1  (bram data virtual)
+ETP: c_1 -> c_1_d1 -> c_1_d1  (bram data virtual)
+ETP: c_1 -> c_1_q1 -> c_1_q1  (bram data virtual)
+ETP: c_2 -> c_2_address0 -> c_2_address0  (bram data virtual)
+ETP: c_2 -> c_2_ce0 -> c_2_ce0  (bram data virtual)
+ETP: c_2 -> c_2_we0 -> c_2_we0  (bram data virtual)
+ETP: c_2 -> c_2_d0 -> c_2_d0  (bram data virtual)
+ETP: c_2 -> c_2_q0 -> c_2_q0  (bram data virtual)
+ETP: c_2 -> c_2_address1 -> c_2_address1  (bram data virtual)
+ETP: c_2 -> c_2_ce1 -> c_2_ce1  (bram data virtual)
+ETP: c_2 -> c_2_we1 -> c_2_we1  (bram data virtual)
+ETP: c_2 -> c_2_d1 -> c_2_d1  (bram data virtual)
+ETP: c_2 -> c_2_q1 -> c_2_q1  (bram data virtual)
+ETP: c_3 -> c_3_address0 -> c_3_address0  (bram data virtual)
+ETP: c_3 -> c_3_ce0 -> c_3_ce0  (bram data virtual)
+ETP: c_3 -> c_3_we0 -> c_3_we0  (bram data virtual)
+ETP: c_3 -> c_3_d0 -> c_3_d0  (bram data virtual)
+ETP: c_3 -> c_3_q0 -> c_3_q0  (bram data virtual)
+ETP: c_3 -> c_3_address1 -> c_3_address1  (bram data virtual)
+ETP: c_3 -> c_3_ce1 -> c_3_ce1  (bram data virtual)
+ETP: c_3 -> c_3_we1 -> c_3_we1  (bram data virtual)
+ETP: c_3 -> c_3_d1 -> c_3_d1  (bram data virtual)
+ETP: c_3 -> c_3_q1 -> c_3_q1  (bram data virtual)
+ETP: c_4 -> c_4_address0 -> c_4_address0  (bram data virtual)
+ETP: c_4 -> c_4_ce0 -> c_4_ce0  (bram data virtual)
+ETP: c_4 -> c_4_we0 -> c_4_we0  (bram data virtual)
+ETP: c_4 -> c_4_d0 -> c_4_d0  (bram data virtual)
+ETP: c_4 -> c_4_q0 -> c_4_q0  (bram data virtual)
+ETP: c_4 -> c_4_address1 -> c_4_address1  (bram data virtual)
+ETP: c_4 -> c_4_ce1 -> c_4_ce1  (bram data virtual)
+ETP: c_4 -> c_4_we1 -> c_4_we1  (bram data virtual)
+ETP: c_4 -> c_4_d1 -> c_4_d1  (bram data virtual)
+ETP: c_4 -> c_4_q1 -> c_4_q1  (bram data virtual)
+ETP: c_5 -> c_5_address0 -> c_5_address0  (bram data virtual)
+ETP: c_5 -> c_5_ce0 -> c_5_ce0  (bram data virtual)
+ETP: c_5 -> c_5_we0 -> c_5_we0  (bram data virtual)
+ETP: c_5 -> c_5_d0 -> c_5_d0  (bram data virtual)
+ETP: c_5 -> c_5_q0 -> c_5_q0  (bram data virtual)
+ETP: c_5 -> c_5_address1 -> c_5_address1  (bram data virtual)
+ETP: c_5 -> c_5_ce1 -> c_5_ce1  (bram data virtual)
+ETP: c_5 -> c_5_we1 -> c_5_we1  (bram data virtual)
+ETP: c_5 -> c_5_d1 -> c_5_d1  (bram data virtual)
+ETP: c_5 -> c_5_q1 -> c_5_q1  (bram data virtual)
+ETP: c_6 -> c_6_address0 -> c_6_address0  (bram data virtual)
+ETP: c_6 -> c_6_ce0 -> c_6_ce0  (bram data virtual)
+ETP: c_6 -> c_6_we0 -> c_6_we0  (bram data virtual)
+ETP: c_6 -> c_6_d0 -> c_6_d0  (bram data virtual)
+ETP: c_6 -> c_6_q0 -> c_6_q0  (bram data virtual)
+ETP: c_6 -> c_6_address1 -> c_6_address1  (bram data virtual)
+ETP: c_6 -> c_6_ce1 -> c_6_ce1  (bram data virtual)
+ETP: c_6 -> c_6_we1 -> c_6_we1  (bram data virtual)
+ETP: c_6 -> c_6_d1 -> c_6_d1  (bram data virtual)
+ETP: c_6 -> c_6_q1 -> c_6_q1  (bram data virtual)
+ETP: c_7 -> c_7_address0 -> c_7_address0  (bram data virtual)
+ETP: c_7 -> c_7_ce0 -> c_7_ce0  (bram data virtual)
+ETP: c_7 -> c_7_we0 -> c_7_we0  (bram data virtual)
+ETP: c_7 -> c_7_d0 -> c_7_d0  (bram data virtual)
+ETP: c_7 -> c_7_q0 -> c_7_q0  (bram data virtual)
+ETP: c_7 -> c_7_address1 -> c_7_address1  (bram data virtual)
+ETP: c_7 -> c_7_ce1 -> c_7_ce1  (bram data virtual)
+ETP: c_7 -> c_7_we1 -> c_7_we1  (bram data virtual)
+ETP: c_7 -> c_7_d1 -> c_7_d1  (bram data virtual)
+ETP: c_7 -> c_7_q1 -> c_7_q1  (bram data virtual)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1555.305 ; gain = 1101.770 ; free physical = 8936 ; free virtual = 54149
+INFO: [VHDL 208-304] Generating VHDL RTL for adder_tree_large.
+INFO: [VLOG 209-307] Generating Verilog RTL for adder_tree_large.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 127.75 MHz
+INFO: [HLS 200-112] Total elapsed time: 5.64 seconds; peak allocated memory: 97.362 MB.
