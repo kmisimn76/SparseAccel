@@ -23,6 +23,7 @@
 #define   DATA_L1_SIZE 196 //49
 #define WEIGHT_L1_SIZE -1
 #define OUTPUT_L1_SIZE 196 //49
+//#define OUTPUT_L1_SIZE 64
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
 
@@ -92,7 +93,8 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
                     }
                     if(ci%BLOCK_SIZE == BLOCK_SIZE-1) {
                         if(non_zero_check == true) {
-                            data_l1_bitvec[counter[pt][ci/BLOCK_SIZE]][pt][ci/BLOCK_SIZE] = (hi * TILESIZE_W/PORT_NUM + wi)*PORT_NUM + pt; // bottleneck //pt is stored in bitvec_ptr
+                            //data_l1_bitvec[counter[pt][ci/BLOCK_SIZE]][pt][ci/BLOCK_SIZE] = (hi * TILESIZE_W/PORT_NUM + wi)*PORT_NUM + pt; // bottleneck //pt is stored in bitvec_ptr
+                            data_l1_bitvec[counter[pt][ci/BLOCK_SIZE]][pt][ci/BLOCK_SIZE] = (hi * TILESIZE_W/PORT_NUM + wi); // bottleneck //pt is stored in bitvec_ptr
                             counter[pt][ci/BLOCK_SIZE]++;
                         }
                         non_zero_check=false;
@@ -302,13 +304,9 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S,
 		bool isFirst) {
 
-	DPTYPE data_reg[ARRAY_K][ARRAY_C];
-	#pragma HLS dependence variable=data_reg
-	MACTYPE output_reg[ARRAY_K][ARRAY_C];
-	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
-	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
     for(int i=0;i<(TILESIZE_W/PORT_NUM)*TILESIZE_H;i++) {
-        #pragma HLS LOOP_TRIPCOUNT max=32 min=32
+        #pragma HLS unroll
+        //#pragma HLS LOOP_TRIPCOUNT max=32 min=32
         for(int pt=0; pt<PORT_NUM; pt++) {
             //#pragma HLS pipeline
             #pragma HLS unroll
@@ -325,64 +323,71 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 			#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 			//#pragma HLS loop_flatten
             for(int bitvec_pt = 0; bitvec_pt < PORT_NUM; bitvec_pt++) {
-            #pragma HLS unroll off
-            for(int i = 0; i < max_bitvec_length[bitvec_pt]; i++) {
-                #pragma HLS DEPENDENCE variable=output_l1
-                #pragma HLS DEPENDENCE variable=output_l1_local
-                #pragma HLS DEPENDENCE variable=data_l1_bitvec
-                #pragma HLS DEPENDENCE variable=data_l1
-                #pragma HLS DEPENDENCE variable=data_l1_length
-                #pragma HLS pipeline rewind
-                #pragma HLS latency min=1 max=2 // SIMD implementation
-		        #pragma HLS LOOP_TRIPCOUNT min=1 max=25
-                LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
-                    #pragma HLS unroll
-		            #pragma HLS dependence variable=output_l1_local //WH is different each iteration
-		            #pragma HLS dependence variable=output_l1
-                    /*LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
+                #pragma HLS unroll
+                for(int i = 0; i < DATA_L1_SIZE; i++) {
+                    if(i>=max_bitvec_length[bitvec_pt]) break;
+                    #pragma HLS DEPENDENCE variable=output_l1
+                    #pragma HLS DEPENDENCE variable=output_l1_local
+                    #pragma HLS DEPENDENCE variable=data_l1_bitvec
+                    #pragma HLS DEPENDENCE variable=data_l1
+                    #pragma HLS DEPENDENCE variable=data_l1_length
+                    #pragma HLS pipeline rewind
+                    #pragma HLS latency min=1 max=2 // SIMD implementation
+                    #pragma HLS LOOP_TRIPCOUNT min=1 max=25
+                    DPTYPE data_reg[ARRAY_K][ARRAY_C];
+                    //#pragma HLS dependence variable=data_reg
+                    MACTYPE output_reg[ARRAY_K][ARRAY_C];
+                    #pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
+                    #pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
+                    LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
                         #pragma HLS unroll
-                        //data_reg[ki][ci] = data_l1[hi * TILESIZE_W + wi][ci];
-                        int addr = data_l1_bitvec[i][bitvec_pt][ci/BLOCK_SIZE]/PORT_NUM;
-                        int pt = data_l1_bitvec[i][bitvec_pt][ci/BLOCK_SIZE]%PORT_NUM;
-                        data_reg[ki][ci] = (i>=data_l1_length[bitvec_pt][ci/BLOCK_SIZE])?(0):(data_l1[addr][pt][ci]);
-                        output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
-                    }
-                    LOOP_REDUCTION_C: for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) {
-                        #pragma HLS unroll
-                        MACTYPE sum = 0;
-                        LOOP_REDUCTION_BLOCK: for (int bl = 0; bl < BLOCK_SIZE; bl++) {
+                        #pragma HLS dependence variable=output_l1_local //WH is different each iteration
+                        #pragma HLS dependence variable=output_l1
+                        /*LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
                             #pragma HLS unroll
-                            uint ci = cib * BLOCK_SIZE + bl;
-                            sum += output_reg[ki][ci];
-                        }
-                        int addr = data_l1_bitvec[i][bitvec_pt][cib]/PORT_NUM;
-                        int pt = data_l1_bitvec[i][bitvec_pt][cib]%PORT_NUM;
-                        output_l1_local[addr][pt][ki] += sum;
-                        output_l1[addr][pt][ki] = output_l1_local[addr][pt][ki];
-                    }*/
-                    LOOP_REDUCTION_C: for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) {
-                        //#pragma HLS unroll
-                        MACTYPE sum = 0;
-                        int addr = data_l1_bitvec[i][bitvec_pt][cib]/PORT_NUM;
-                        int pt = data_l1_bitvec[i][bitvec_pt][cib]%PORT_NUM;
-                        LOOP_REDUCTION_BLOCK: for (int bl = 0; bl < BLOCK_SIZE; bl++) {
-                            #pragma HLS unroll
-                            uint ci = cib * BLOCK_SIZE + bl;
-
-                            //data_reg[ki][ci] = (i>=data_l1_length[bitvec_pt][ci/BLOCK_SIZE])?(0):(data_l1[addr][pt][ci]);
-                            data_reg[ki][ci] = data_l1[addr][pt][ci];
+                            //data_reg[ki][ci] = data_l1[hi * TILESIZE_W + wi][ci];
+                            int addr = data_l1_bitvec[i][bitvec_pt][ci/BLOCK_SIZE]/PORT_NUM;
+                            int pt = data_l1_bitvec[i][bitvec_pt][ci/BLOCK_SIZE]%PORT_NUM;
+                            data_reg[ki][ci] = (i>=data_l1_length[bitvec_pt][ci/BLOCK_SIZE])?(0):(data_l1[addr][pt][ci]);
                             output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
-
-                            #pragma HLS BIND_OP variable=sum op=add impl=fabric
-                            sum += output_reg[ki][ci];
                         }
-                        if(i<data_l1_length[bitvec_pt][cib]) {
+                        LOOP_REDUCTION_C: for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) {
+                            #pragma HLS unroll
+                            MACTYPE sum = 0;
+                            LOOP_REDUCTION_BLOCK: for (int bl = 0; bl < BLOCK_SIZE; bl++) {
+                                #pragma HLS unroll
+                                uint ci = cib * BLOCK_SIZE + bl;
+                                sum += output_reg[ki][ci];
+                            }
+                            int addr = data_l1_bitvec[i][bitvec_pt][cib]/PORT_NUM;
+                            int pt = data_l1_bitvec[i][bitvec_pt][cib]%PORT_NUM;
                             output_l1_local[addr][pt][ki] += sum;
                             output_l1[addr][pt][ki] = output_l1_local[addr][pt][ki];
+                        }*/
+                        LOOP_REDUCTION_C: for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) {
+                            //#pragma HLS unroll
+                            MACTYPE sum = 0;
+                            //int addr = data_l1_bitvec[i][bitvec_pt][cib]/PORT_NUM;
+                            int addr = data_l1_bitvec[i][bitvec_pt][cib];
+                            //int pt = data_l1_bitvec[i][bitvec_pt][cib]%PORT_NUM;
+                            LOOP_REDUCTION_BLOCK: for (int bl = 0; bl < BLOCK_SIZE; bl++) {
+                                #pragma HLS unroll
+                                uint ci = cib * BLOCK_SIZE + bl;
+    
+                                //data_reg[ki][ci] = (i>=data_l1_length[bitvec_pt][ci/BLOCK_SIZE])?(0):(data_l1[addr][pt][ci]);
+                                data_reg[ki][ci] = data_l1[addr][bitvec_pt][ci];
+                                output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
+    
+                                #pragma HLS BIND_OP variable=sum op=add impl=fabric
+                                sum += output_reg[ki][ci];
+                            }
+                            if(i<data_l1_length[bitvec_pt][cib]) {
+                                output_l1_local[addr][bitvec_pt][ki] += sum;
+                                output_l1[addr][bitvec_pt][ki] = output_l1_local[addr][bitvec_pt][ki];
+                            }
                         }
                     }
                 }
-            }
             }
 		}
 	}
@@ -756,13 +761,18 @@ void Conv_sysarr(
 			#pragma HLS ARRAY_PARTITION variable=data_l1_length dim=1 complete
 			#pragma HLS ARRAY_PARTITION variable=max_bitvec_length dim=1 complete
             #endif
-			#pragma HLS ARRAY_PARTITION variable=output_l1 dim=3 complete
-			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=3 complete
             // more port
             #ifdef INPUT_SPARSE
 			#pragma HLS ARRAY_PARTITION variable=data_l1 dim=2 complete
+			#pragma HLS ARRAY_PARTITION variable=output_l1 dim=3 complete
+			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=3 complete
 			#pragma HLS ARRAY_PARTITION variable=output_l1 dim=2 complete
 			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=2 complete
+			/*#pragma HLS ARRAY_PARTITION variable=output_l1 dim=0 complete
+			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=0 complete*/
+            #elif
+			#pragma HLS ARRAY_PARTITION variable=output_l1 dim=3 complete
+			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=3 complete
             #endif
 
 			//Systolic Array
