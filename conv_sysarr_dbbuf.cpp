@@ -1,28 +1,29 @@
-
 #include "hw_param.h"
 
+#define SIMD
+//#define SIMPLPIED
 //#define INPUT_SPARSE
 
-//SysArr optimization
-//#define HIGH_FREQUENCY //not use slow DSP in SysArr, Use LUT x10 much
-#define ARRAY_PADDING_DATA //increase array so that no if in sysarr 
-#define ARRAY_PADDING_OUTPUT //increase array so that no if in sysarr
+#define IGNORE_R_S_LOOP //R and S must be 1, so this can be skipped
+/****************SysArr optimization*******************************/
+//#define NOT_USE_DSP //not use slow DSP in SysArr, Use LUT x10 much, increase frequency littel
+//disable this when sw_emu, or it makes segment fault
 
-// #define ARRAY_PADDING_DATA_NO_INITIALIZE//remove initilizing loop in runDataL2toL1
+//#define ARRAY_PADDING_DATA //increase array so that no if in sysarr
+//#define ARRAY_PADDING_OUTPUT //increase array so that no if in sysarr
 
-//#define IGNORE_R_S_LOOP //R and S must be 1, so this can be skipped
+//#define ARRAY_PADDING_DATA_NO_INITIALIZE//remove initilizing loop in runDataL2toL1
+//enable this when sw_emu, or it makes segment fault
 
-#define LIMIT_ARRAY_BY_MODULA //array modular fix
+//make size to power of 2
+//#define DATA_L2_SIZE_POWER
+//#define WEIGHT_L2_SIZE_POWER
+//#define OUPUT_L2_SIZE_POWER
+//#define BIAS_L2_SIZE_POWER
+//#define DATA_L1_SIZE_POWER //recommand to turn on when USING DATA_L1_MODULA()
+//#define OUPUT_L1_SIZE_POWER//recommand to turn on when USING OUTPUT_L1_MODULA()
 
-
-#ifdef INPUT_SPARSE
-    #undef ARRAY_PADDING_DATA
-    #undef ARRAY_PADDING_OUTPUT 
-#endif
-// using macro in PRAGMA
-#define PRAGMA_SUB(x) _Pragma (#x)
-#define DO_PRAGMA(x) PRAGMA_SUB(x)
-
+/******************************************************************/
 //#define   BIAS_DRAM_DEPTH 1280
 //#define WEIGHT_DRAM_DEPTH 23040
 //#define   DATA_DRAM_DEPTH 20480
@@ -30,57 +31,280 @@
 #define   DATA_L2_SIZE 2048
 #define WEIGHT_L2_SIZE 2304
 #define OUTPUT_L2_SIZE 1568
-//#define   DATA_L2_SIZE 817216
-//#define WEIGHT_L2_SIZE 589824
-//#define OUTPUT_L2_SIZE 802816
 #define   BIAS_L2_SIZE 128
 
-#define DATA_L1_ORIGNAL_SIZE 400
-//#define WEIGHT_L1_SIZE -1
+#define DATA_L1_ORIGNAL_SIZE 200
+#define WEIGHT_L1_SIZE -1
 #define OUTPUT_L1_ORIGNAL_SIZE 200
-
-#ifdef ARRAY_PADDING_DATA
-    #define   DATA_L1_SIZE (ARRAY_C + DATA_L1_ORIGNAL_SIZE)//bottom padding
-#else
-    #define   DATA_L1_SIZE DATA_L1_ORIGNAL_SIZE
-#endif
-#ifdef ARRAY_PADDING_OUTPUT
-    #ifdef LIMIT_ARRAY_BY_MODULA
-        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE)//bottom padding    
-    #else
-        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE + (ARRAY_K + ARRAY_C))//top&bottom padding   
-    #endif
-#else
-    //#define OUTPUT_L1_SIZE (L1_BUFFER_SIZE + (ARRAY_K + ARRAY_C))//top padding
-    #define OUTPUT_L1_SIZE OUTPUT_L1_ORIGNAL_SIZE
-#endif
 
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
-#ifdef LIMIT_ARRAY_BY_MODULA
-    //#define DATA_L1_MODULA(X)     ((X)%DATA_L1_SIZE)
-    #define DATA_L1_MODULA(X)     (X)
-    //BUG???
-    //#define WEIGHT_L1_MODULA(X) ((X)%WEIGHT_L1_SIZE)
-    #define OUTPUT_L1_MODULA(X)   ((X)%OUTPUT_L1_SIZE)
-    //#define BIAS_L1_MODULA(X)   ((X)%BIAS_L1_SIZE)
-    //#define DATA_L2_MODULA(X)     ((X)%DATA_L2_SIZE)
-    //#define WEIGHT_L2_MODULA(X)   ((X)%WEIGHT_L2_SIZE)
-    //#define OUTPUT_L2_MODULA(X)   ((X)%OUTPUT_L2_SIZE)
-    //#define BIAS_L2_MODULA(X)     ((X)%BIAS_L2_SIZE)
-   
-#else
-    #define DATA_L1_MODULA(X)     (X)
-    //#define WEIGHT_L1_MODULA(X) (X) 
-    #define OUTPUT_L1_MODULA(X)   (X)
-    //#define BIAS_L1_MODULA(X)   (X)
-    //#define DATA_L2_MODULA(X)     (X)
-    //#define WEIGHT_L2_MODULA(X)   (X)
-    //#define OUTPUT_L2_MODULA(X)   (X)
-    //#define BIAS_L2_MODULA(X)     (X)
+/****************TONOT TOUCH UNDER*************************/
+// using macro in PRAGMA
+#define PRAGMA_SUB(x) _Pragma (#x)
+#define DO_PRAGMA(x) PRAGMA_SUB(x)
+
+#ifdef INPUT_SPARSE
+    #undef ARRAY_PADDING_DATA
+    #undef ARRAY_PADDING_OUTPUT 
+#endif
+
+#ifdef SIMD
+	#undef DATA_L2_SIZE_POWER
+	#undef WEIGHT_L2_SIZE_POWER
+	#undef OUPUT_L2_SIZE_POWER
+	#undef BIAS_L2_SIZE_POWER
+	#undef DATA_L1_SIZE_POWER
+	#undef OUPUT_L1_SIZE_POWER
+    //^^ Are they Actually need?
+	#undef ARRAY_PADDING_DATA
+    #undef ARRAY_PADDING_OUTPUT 
+	#undef ARRAY_PADDING_DATA_NO_INITIALIZE
+	#undef DATA_L1_MODULA
+	#undef OUTPUT_L1_MODULA
 #endif
 
 
+#ifdef ARRAY_PADDING_DATA
+    #define DATA_L1_SIZE (ARRAY_C + DATA_L1_ORIGNAL_SIZE)//bottom padding
+#else
+    #define DATA_L1_SIZE DATA_L1_ORIGNAL_SIZE
+#endif
+
+#ifdef ARRAY_PADDING_OUTPUT
+   #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE + (ARRAY_K + ARRAY_C))//top&bottom padding   
+   /*#ifdef OUTPUT_L1_MODULA//need modula optimize
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE ((ARRAY_K + ARRAY_C) + OUTPUT_L1_ORIGNAL_SIZE)//bottom padding   
+    #endif*/
+#else
+    //#define OUTPUT_L1_SIZE (OUTPUT_L1_ORIGNAL_SIZE + (ARRAY_K + ARRAY_C))//top padding
+    #define OUTPUT_L1_SIZE OUTPUT_L1_ORIGNAL_SIZE
+#endif
+
+#ifdef DATA_L2_SIZE_POWER
+    #if (DATA_L2_SIZE <= 16)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 16
+    #elif (DATA_L2_SIZE <= 32)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 32
+    #elif (DATA_L2_SIZE <= 64)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 64
+    #elif (DATA_L2_SIZE <= 128)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 128
+    #elif (DATA_L2_SIZE <= 256)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 256
+    #elif (DATA_L2_SIZE <= 512)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 512
+    #elif (DATA_L2_SIZE <= 1024)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 1024
+    #elif (DATA_L2_SIZE <= 2048)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 2048
+    #elif (DATA_L2_SIZE <= 4096)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 4096
+     #elif (DATA_L2_SIZE <= 8192)
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 8192
+    #else
+        #undef DATA_L2_SIZE
+        #define DATA_L2_SIZE 16384
+    #endif     
+#endif
+
+#ifdef WEIGHT_L2_SIZE_POWER
+    #if (WEIGHT_L2_SIZE <= 16)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 16
+    #elif (WEIGHT_L2_SIZE <= 32)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 32
+    #elif (WEIGHT_L2_SIZE <= 64)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 64
+    #elif (WEIGHT_L2_SIZE <= 128)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 128
+    #elif (WEIGHT_L2_SIZE <= 256)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 256
+    #elif (WEIGHT_L2_SIZE <= 512)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 512
+    #elif (WEIGHT_L2_SIZE <= 1024)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 1024
+    #elif (WEIGHT_L2_SIZE <= 2048)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 2048
+    #elif (WEIGHT_L2_SIZE <= 4096)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 4096
+     #elif (WEIGHT_L2_SIZE <= 8192)
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 8192
+    #else
+        #undef WEIGHT_L2_SIZE
+        #define WEIGHT_L2_SIZE 16384
+    #endif     
+#endif
+
+#ifdef OUTPUT_L2_SIZE_POWER
+    #if (OUTPUT_L2_SIZE <= 16)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 16
+    #elif (OUTPUT_L2_SIZE <= 32)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 32
+    #elif (OUTPUT_L2_SIZE <= 64)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 64
+    #elif (OUTPUT_L2_SIZE <= 128)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 128
+    #elif (OUTPUT_L2_SIZE <= 256)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 256
+    #elif (OUTPUT_L2_SIZE <= 512)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 512
+    #elif (OUTPUT_L2_SIZE <= 1024)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 1024
+    #elif (OUTPUT_L2_SIZE <= 2048)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 2048
+    #elif (OUTPUT_L2_SIZE <= 4096)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 4096
+     #elif (OUTPUT_L2_SIZE <= 8192)
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 8192
+    #else
+        #undef OUTPUT_L2_SIZE
+        #define OUTPUT_L2_SIZE 16384
+    #endif     
+#endif
+
+#ifdef BIAS_L2_SIZE_POWER
+    #if (BIAS_L2_SIZE <= 16)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 16
+    #elif (BIAS_L2_SIZE <= 32)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 32
+    #elif (BIAS_L2_SIZE <= 64)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 64
+    #elif (BIAS_L2_SIZE <= 128)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 128
+    #elif (BIAS_L2_SIZE <= 256)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 256
+    #elif (BIAS_L2_SIZE <= 512)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 512
+    #elif (BIAS_L2_SIZE <= 1024)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 1024
+    #elif (BIAS_L2_SIZE <= 2048)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 2048
+    #elif (BIAS_L2_SIZE <= 4096)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 4096
+     #elif (BIAS_L2_SIZE <= 8192)
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 8192
+    #else
+        #undef BIAS_L2_SIZE
+        #define BIAS_L2_SIZE 16384
+    #endif     
+#endif
+
+#ifdef DATA_L1_SIZE_POWER
+    #if (DATA_L1_SIZE <= 16)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 16
+    #elif (DATA_L1_SIZE <= 32)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 32
+    #elif (DATA_L1_SIZE <= 64)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 64
+    #elif (DATA_L1_SIZE <= 128)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 128
+    #elif (DATA_L1_SIZE <= 256)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 256
+    #elif (DATA_L1_SIZE <= 512)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 512
+    #elif (DATA_L1_SIZE <= 1024)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 1024
+    #elif (DATA_L1_SIZE <= 2048)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 2048
+    #elif (DATA_L1_SIZE <= 4096)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 4096
+     #elif (DATA_L1_SIZE <= 8192)
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 8192
+    #else
+        #undef DATA_L1_SIZE
+        #define DATA_L1_SIZE 16384
+    #endif     
+#endif
+
+
+ #ifdef OUPUT_L1_SIZE_POWER
+    #if (OUTPUT_L1_SIZE <= 16)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 16
+    #elif (OUTPUT_L1_SIZE <= 32)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 32
+    #elif (OUTPUT_L1_SIZE <= 64)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 64
+    #elif (OUTPUT_L1_SIZE <= 128)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 128
+    #elif (OUTPUT_L1_SIZE <= 256)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 256
+    #elif (OUTPUT_L1_SIZE <= 512)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 512
+    #elif (OUTPUT_L1_SIZE <= 1024)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 1024
+    #elif (OUTPUT_L1_SIZE <= 2048)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 2048
+    #elif (OUTPUT_L1_SIZE <= 4096)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 4096
+     #elif (OUTPUT_L1_SIZE <= 8192)
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 8192
+    #else
+        #undef OUTPUT_L1_SIZE
+        #define OUTPUT_L1_SIZE 16384   
+    #endif     
+#endif
+/************************************************************************/
 #ifndef XILINX
 extern "C" {
 #endif
@@ -109,6 +333,7 @@ void runDataL2toL1(DPTYPE (*data_l1)[ARRAY_C], DPTYPE (*data_l2)[ARRAY_C], uint 
     #pragma HLS unroll
         for (int ci = 0; ci < ARRAY_C; ci++) {
         #pragma HLS unroll
+		  //printf("Write (%d,%d)\n",wi, ci);
             data_l1[wi][ci] = 0;
         }
     }
@@ -189,7 +414,9 @@ void runOutputL1toL2(MACTYPE (*output_l1)[ARRAY_K], MACTYPE (*output_l2)[ARRAY_K
 		}
 	}
 }
+int mis_max=0;
 
+#ifndef SIMD
 void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], 
 		DPTYPE data_reg[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
 		MACTYPE output_reg[ARRAY_K][ARRAY_C], MACTYPE (*output_l1)[ARRAY_K],
@@ -217,18 +444,19 @@ void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C],
 		#pragma HLS unroll
 		LOOP_SYSARR_C:for (int ci = ARRAY_C - 1; ci >= 0; ci--) { // SysArr DIM : C
 			#pragma HLS unroll
-#ifdef HIGH_FREQUENCY
+#ifdef NOT_USE_DSP
 //Not use DSP, increase LUT x10 but Higer frequency 
 			data_reg[ki][ci] = (ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
 			MACTYPE psum = (ci == 0) ? (0) : (output_reg[ki][(ci - 1)]);
-			MACTYPE temp = data_reg[ki][ci] * weight_regfile[ki][ci];
+			MACTYPE temp;
+			temp = data_reg[ki][ci] * weight_regfile[ki][ci];
 			MACTYPE temp2;
 			#pragma HLS BIND_OP variable=temp2 op=add impl=fabric
 			temp2 = psum+temp;
 			output_reg[ki][ci]=temp2;
 #else
-			MACTYPE psum = (ci == 0) ? (0) : (output_reg[ki][(ci - 1)]);
             data_reg[ki][ci] = (ki == 0) ? (input_data[ci]) : (data_reg[(ki - 1)][ci]);
+			MACTYPE psum = (ci == 0) ? (0) : (output_reg[ki][(ci - 1)]);
             output_reg[ki][ci]=psum+(data_reg[ki][ci] * weight_regfile[ki][ci]);
 #endif 
 		}
@@ -241,11 +469,10 @@ void doSysArrPE(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C],
 			output_l1[OUTPUT_L1_MODULA(((i - ARRAY_C + 1) - ki) + ARRAY_C + ARRAY_K)][ki] = output_reg[ki][(ARRAY_C - 1)];
 #else
 		if ((i - ARRAY_C + 1) - ki >= 0 && (i - ARRAY_C + 1) - ki < TILESIZE_W * TILESIZE_H) //is needed?
-			output_l1[OUTPUT_L1_MODULA(((i - ARRAY_C + 1) - ki))][ki] = output_reg[ki][(ARRAY_C - 1)];
+			output_l1[OUTPUT_L1_MODULA((i - ARRAY_C + 1) - ki)][ki] = output_reg[ki][(ARRAY_C - 1)];
 #endif
 	}
 }
-
 
 
 void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
@@ -259,7 +486,7 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
 	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 	LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
 		#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 		LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
@@ -287,24 +514,26 @@ void runSysArr(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*dat
 							TILESIZE_H, TILESIZE_W, TILESIZE_R, TILESIZE_S);
 				}
 			}
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 		}
 	}
 #endif
 }
-
+#endif
+#ifdef SIMD
+#ifndef INPUT_SPARSE
 void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C],
 		MACTYPE (*output_l1)[ARRAY_K],
 		int input_rows,
 		int bubble_h, int bubble_w,
 		uint TILESIZE_H, uint TILESIZE_W, uint TILESIZE_R, uint TILESIZE_S) {
 
-	DPTYPE data_reg[ARRAY_K][ARRAY_C];
-	#pragma HLS dependence variable=data_reg
+	//DPTYPE data_reg[ARRAY_K][ARRAY_C];
+	//#pragma HLS dependence variable=data_reg
 	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
 	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 	LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
 		#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 		LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
@@ -319,17 +548,21 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 					//#pragma HLS DEPENDENCE variable=output_l1_local
 					#pragma HLS pipeline rewind
 					//#pragma HLS latency min=1 max=1 // systolic array implementation
+
+#ifndef SIMPLPIED
+					MACTYPE data;
 					LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
 						#pragma HLS unroll
 						LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
 							#pragma HLS unroll
-							data_reg[ki][ci] = data_l1[(hi * TILESIZE_W + wi)][ci];
+							//data_reg[ki][ci] = data_l1[(hi * TILESIZE_W + wi)][ci];
+							data = data_l1[(hi * TILESIZE_W + wi)][ci];
 							//output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
-							output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
+							output_reg[ki][ci] = data * weight_regfile[ki][ci];
 						}
 					}
-
 					// reduction
+
 					LOOP_REDUCTION_K: for (int ki = 0; ki < ARRAY_K; ki++) {
 						#pragma HLS unroll
 						MACTYPE sum = 0;
@@ -339,13 +572,26 @@ void runSIMD(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_
 						}
 						output_l1[(hi * TILESIZE_W + wi)][ki] = sum;
 					}
+#else
+					LOOP_K_INNER: for (int ki = 0; ki < ARRAY_K; ki++) {
+						#pragma HLS unroll
+						MACTYPE sum = 0;
+						LOOP_C_INNER: for (int ci = 0; ci < ARRAY_C; ci++) {
+						#pragma HLS unroll
+							sum += data_l1[(hi * TILESIZE_W + wi)][ci] * weight_regfile[ki][ci];
+							}
+						output_l1[(hi * TILESIZE_W + wi)][ki] = sum;
+					}
+#endif
+
 				}
 			}
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 		}
 	}
 #endif
 }
+#endif
 #ifdef INPUT_SPARSE
 void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE (*data_l1)[ARRAY_C], hls::stream<short> data_l1_bitvec[ARRAY_C],
 		MACTYPE (*output_l1)[ARRAY_K],
@@ -358,7 +604,7 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 	MACTYPE output_reg[ARRAY_K][ARRAY_C];
 	#pragma HLS ARRAY_PARTITION variable=data_reg dim=0 complete // Register
 	#pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 	LOOP_R_INNER: for (int ri = 0; ri < TILESIZE_R; ri++) {
 		#pragma HLS LOOP_TRIPCOUNT max=1 min=1
 		LOOP_S_INNER: for (int si = 0; si < TILESIZE_S; si++) {
@@ -396,13 +642,13 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 					}
 				//}
 			}
-#ifdef IGNORE_R_S_LOOP
+#ifndef IGNORE_R_S_LOOP
 		}
 	}
 #endif
 }
 #endif
-
+#endif
 //DPTYPE bias_l2[BIAS_L2_SIZE][ARRAY_K];
 DPTYPE bias_l2[ARRAY_K][BIAS_L2_SIZE];
 //DPTYPE weight_l2[WEIGHT_L2_SIZE][ARRAY_K];
@@ -439,7 +685,7 @@ void weight_dram_read(DPTYPE weight_l2[ARRAY_K][WEIGHT_L2_SIZE], DPTYPE* weight_
 							unsigned int kcrs = ko;
 							unsigned int v = ki;
 							//weight_l2[kcrs][ki] = weight_in[global_kcrs];
-							weight_l2[ki][(kcrs)] = weight_in[global_kcrs];
+							weight_l2[ki][kcrs] = weight_in[global_kcrs];
 						}
 					}
 					/*}
@@ -598,53 +844,18 @@ void Conv_sysarr(
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2_reduction dim=2 complete)
 
     printf("Conv Sysarr start\n");
-	/*uint K = param.K;
-	uint C = param.C;
-	uint WH = param.WH;
-	uint WH_in = param.WH_in;
-	uint RS = param.RS;
-	uint L2_TILENUM_K = param.L2_TILENUM_K; ///
-	uint L2_TILENUM_C = param.L2_TILENUM_C;
-	uint L2_TILENUM_W = param.L2_TILENUM_W;
-	uint L2_TILENUM_H = param.L2_TILENUM_H;
-	uint L2_TILENUM_R = param.L2_TILENUM_R;
-	uint L2_TILENUM_S = param.L2_TILENUM_S;
-	uint K_L2 = param.K_L2;
-	uint C_L2 = param.C_L2;
-	uint W_L2 = param.W_L2;
-	uint H_L2 = param.H_L2;
-	uint W_in_L2 = param.W_in_L2; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
-	uint H_in_L2 = param.H_in_L2;
-	uint R_L2 = param.R_L2;
-	uint S_L2 = param.S_L2;
-	uint L1_TILENUM_K = param.L1_TILENUM_K; ///
-	uint L1_TILENUM_C = param.L1_TILENUM_C;
-	uint L1_TILENUM_W = param.L1_TILENUM_W;
-	uint L1_TILENUM_H = param.L1_TILENUM_H;
-	uint L1_TILENUM_R = param.L1_TILENUM_R;
-	uint L1_TILENUM_S = param.L1_TILENUM_S;
-	uint K_L1 = param.K_L1;
-	uint C_L1 = param.C_L1;
-	uint W_L1 = param.W_L1;
-	uint H_L1 = param.H_L1;
-	uint W_in_L1 = param.W_in_L1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	uint H_in_L1 = param.H_in_L1;
-	uint R_L1 = param.R_L1;
-	uint S_L1 = param.S_L1;
-	uint TILESIZE_W =param.TILESIZE_W; ////
-	uint TILESIZE_H =param.TILESIZE_H;
-	uint TILESIZE_R =param.TILESIZE_R; //must be 1
-	uint TILESIZE_S =param.TILESIZE_S; //must be 1
-	*/
-    printf("Conv Sysarr set params\n");
 
-    printf("Args: ");
-    printf("%u,%u,%u,%u,%u,||,", K, C, WH, WH_in, RS);
-    printf("%d,%d,%d,%d,%d,%d,||,", L2_TILENUM_K, L2_TILENUM_C, L2_TILENUM_W, L2_TILENUM_H, L2_TILENUM_R, L2_TILENUM_S);
-    printf("%d,%d,%d,%d,%d,%d,%d,%d,||,", K_L2, C_L2, W_L2, H_L2, W_in_L2, H_in_L2, R_L2, S_L2);
-    printf("%d,%d,%d,%d,%d,%d,||,", L1_TILENUM_K, L1_TILENUM_C, L1_TILENUM_W, L1_TILENUM_H, L1_TILENUM_R, L1_TILENUM_S);
-    printf("%d,%d,%d,%d,%d,%d,%d,%d,||,", K_L1, C_L1, W_L1, H_L1, W_in_L1, H_in_L1, R_L1, S_L1);
-    printf("%d,%d,%d,%d \n", TILESIZE_W, TILESIZE_H, TILESIZE_R, TILESIZE_S);
+    printf("Defines: \n");
+    printf("%d,%d,%d,%d,||\n", DATA_L2_SIZE, WEIGHT_L2_SIZE, OUTPUT_L2_SIZE, BIAS_L2_SIZE);
+    printf("%d,%d,%d,||\n", DATA_L1_SIZE, WEIGHT_L1_SIZE, OUTPUT_L1_SIZE);
+    printf("Conv Sysarr set params\n");
+    printf("Args: \n");
+    printf("%u,%u,%u,%u,%u,||\n", K, C, WH, WH_in, RS);
+    printf("%d,%d,%d,%d,%d,%d,||\n", L2_TILENUM_K, L2_TILENUM_C, L2_TILENUM_W, L2_TILENUM_H, L2_TILENUM_R, L2_TILENUM_S);
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,||\n", K_L2, C_L2, W_L2, H_L2, W_in_L2, H_in_L2, R_L2, S_L2);
+    printf("%d,%d,%d,%d,%d,%d,||\n", L1_TILENUM_K, L1_TILENUM_C, L1_TILENUM_W, L1_TILENUM_H, L1_TILENUM_R, L1_TILENUM_S);
+    printf("%d,%d,%d,%d,%d,%d,%d,%d,||\n", K_L1, C_L1, W_L1, H_L1, W_in_L1, H_in_L1, R_L1, S_L1);
+    printf("%d,%d,%d,%d,||\n", TILESIZE_W, TILESIZE_H, TILESIZE_R, TILESIZE_S);
 
 	const uint input_rows = TILESIZE_H * TILESIZE_W + (ARRAY_K - 1) + (ARRAY_C - 1); // inner loop with sysarr bubble
     printf("Conv Sysarr set params 2\n");
@@ -761,7 +972,6 @@ void Conv_sysarr(
 			#else
 			runDataL2toL1(data_l1, data_l2, TILESIZE_H, TILESIZE_W, co, ho, wo, ro, so, W_in_L2, H_in_L2);
 			#endif
-			//#define SIMD
 			#ifndef SIMD
 			runSysArr(weight_regfile, data_l1, output_l1,
 						input_rows,
