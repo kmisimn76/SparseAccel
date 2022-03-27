@@ -1,6 +1,6 @@
 Profile Summary
-Generated on: 2022-03-10 04:35:04
-Msec since Epoch: 1646854504171
+Generated on: 2022-03-22 15:59:27
+Msec since Epoch: 1647932367623
 Profiled application: host
 Target platform: 
 Tool version: 2020.2
@@ -13,42 +13,42 @@ Flow mode: Hardware Emulation
 
 OpenCL API Calls
 API Name,Number Of Calls,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
-clWaitForEvents,2,133010,0.639719,66505,133009,
-clCreateProgramWithBinary,1,30446.8,30446.8,30446.8,30446.8,
-clFinish,2,173.566,0.003347,86.7828,173.562,
-clSetKernelArg,41,6.07263,0.002574,0.148113,3.89765,
-clCreateKernel,1,4.48672,4.48672,4.48672,4.48672,
-clEnqueueTask,1,1.05073,1.05073,1.05073,1.05073,
-clEnqueueWriteBuffer,3,0.152638,0.01059,0.0508793,0.129805,
-clGetDeviceIDs,5,0.056978,0.002565,0.0113956,0.043192,
-clGetDeviceInfo,2,0.042621,0.003236,0.0213105,0.039385,
-clEnqueueReadBuffer,1,0.03745,0.03745,0.03745,0.03745,
-clReleaseMemObject,12,0.03741,0.002625,0.0031175,0.005951,
-clEnqueueMigrateMemObjects,1,0.034846,0.034846,0.034846,0.034846,
-clGetExtensionFunctionAddress,2,0.032272,0.008376,0.016136,0.023896,
-clCreateBuffer,4,0.026971,0.002825,0.00674275,0.017313,
-clRetainMemObject,8,0.023974,0.002615,0.00299675,0.004498,
-clGetPlatformInfo,6,0.017132,0.002605,0.00285533,0.003276,
-clCreateContext,1,0.016081,0.016081,0.016081,0.016081,
-clGetEventProfilingInfo,2,0.010831,0.002896,0.0054155,0.007935,
-clGetExtensionFunctionAddressForPlatform,2,0.010138,0.002945,0.005069,0.007193,
-clReleaseDevice,3,0.009087,0.002855,0.003029,0.003116,
-clRetainDevice,3,0.008947,0.002805,0.00298233,0.003126,
-clRetainEvent,2,0.008216,0.003767,0.004108,0.004449,
-clBuildProgram,1,0.008075,0.008075,0.008075,0.008075,
-clGetProgramInfo,2,0.007344,0.003116,0.003672,0.004228,
-clReleaseEvent,2,0.007204,0.003236,0.003602,0.003968,
-clGetProgramBuildInfo,2,0.006883,0.003146,0.0034415,0.003737,
-clCreateCommandQueue,1,0.00526,0.00526,0.00526,0.00526,
-clReleaseCommandQueue,1,0.003787,0.003787,0.003787,0.003787,
-clReleaseKernel,1,0.003456,0.003456,0.003456,0.003456,
-clReleaseProgram,1,0.003226,0.003226,0.003226,0.003226,
-clReleaseContext,1,0.002816,0.002816,0.002816,0.002816,
+clWaitForEvents,2,57006.6,0.493697,28503.3,57006.1,
+clCreateProgramWithBinary,1,18250.2,18250.2,18250.2,18250.2,
+clFinish,2,8.7308,0.002034,4.3654,8.72876,
+clCreateKernel,1,4.24516,4.24516,4.24516,4.24516,
+clSetKernelArg,41,0.786271,0.002404,0.0191773,0.400511,
+clEnqueueTask,1,0.406622,0.406622,0.406622,0.406622,
+clEnqueueWriteBuffer,3,0.119145,0.006702,0.039715,0.102434,
+clGetDeviceIDs,5,0.054494,0.001593,0.0108988,0.045036,
+clGetExtensionFunctionAddress,2,0.044214,0.01047,0.022107,0.033744,
+clGetDeviceInfo,2,0.040728,0.001984,0.020364,0.038744,
+clEnqueueReadBuffer,1,0.040507,0.040507,0.040507,0.040507,
+clReleaseMemObject,12,0.03064,0.001463,0.00255333,0.007615,
+clEnqueueMigrateMemObjects,1,0.027923,0.027923,0.027923,0.027923,
+clCreateBuffer,4,0.022062,0.001573,0.0055155,0.016391,
+clGetPlatformInfo,6,0.017734,0.001543,0.00295567,0.004288,
+clRetainMemObject,8,0.013716,0.001463,0.0017145,0.002925,
+clGetEventProfilingInfo,2,0.013265,0.004509,0.0066325,0.008756,
+clGetExtensionFunctionAddressForPlatform,2,0.012574,0.003727,0.006287,0.008847,
+clReleaseEvent,2,0.011892,0.004048,0.005946,0.007844,
+clCreateContext,1,0.011833,0.011833,0.011833,0.011833,
+clReleaseDevice,3,0.010149,0.002845,0.003383,0.003987,
+clRetainEvent,2,0.009478,0.004118,0.004739,0.00536,
+clRetainDevice,3,0.007834,0.001743,0.00261133,0.003236,
+clGetProgramInfo,2,0.007454,0.003196,0.003727,0.004258,
+clBuildProgram,1,0.007113,0.007113,0.007113,0.007113,
+clGetProgramBuildInfo,2,0.006943,0.003186,0.0034715,0.003757,
+clReleaseCommandQueue,1,0.004739,0.004739,0.004739,0.004739,
+clReleaseProgram,1,0.004488,0.004488,0.004488,0.004488,
+clCreateCommandQueue,1,0.004258,0.004258,0.004258,0.004258,
+clReleaseContext,1,0.004228,0.004228,0.004228,0.004228,
+clReleaseKernel,1,0.004098,0.004098,0.004098,0.004098,
 
 
 Kernel Execution (includes estimated device times)
 Kernel,Number Of Enqueues,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
-Conv_sysarr,1,0.299766,0.299766,0.299766,0.299766,
+Conv_sysarr,1,0.302815,0.302815,0.302815,0.302815,
 
 
 Compute Unit Utilization (includes estimated device times)
@@ -63,38 +63,38 @@ context0:1,WRITE,3,N/A,N/A,11.616,N/A,N/A,
 
 Data Transfer: Kernels to Global Memory
 Device,Compute Unit/Port Name,Kernel Arguments,Memory Resources,Transfer Type,Number Of Transfers,Transfer Rate (MB/s),Average Bandwidth Utilization (%),Average Size (KB),Average Latency (ns),
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem0,bias_in,DDR[0],READ,1,1600,13.8889,0.032,20,
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem1,weight_in,DDR[1],READ,144,2395.84,20.7972,0.128,538.75,
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem2,data_in,DDR[2],READ,128,2078.31,18.0409,0.128,61.5885,
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem3,conv_out,DDR[3],READ,124,6335.35,54.9944,0.404645,67.0968,
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem3,conv_out,DDR[3],WRITE,176,6623.41,57.4949,0.427636,72.0833,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem0,bias_in,DDR[0],READ,1,1920,16.6667,0.032,16.6667,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem1,weight_in,DDR[1],READ,144,2394.8,20.7882,0.128,539.005,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem2,data_in,DDR[2],READ,128,2080.07,18.0561,0.128,61.5365,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem3,conv_out,DDR[3],READ,124,6335.35,54.9944,0.404645,66.9624,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1/m_axi_gmem3,conv_out,DDR[3],WRITE,176,6623.41,57.4949,0.427636,72.2348,
 
 
 Top Data Transfer: Kernels to Global Memory
 Device,Compute Unit,Number of Transfers,Average Bytes per Transfer,Transfer Efficiency (%),Total Data Transfer (MB),Total Write (MB),Total Read (MB),Total Transfer Rate (MB/s),
-xilinx_u200_xdma_201830_2-0,Conv_sysarr_1,573,279.735,6.82946,0.160288,0.075264,0.085024,4595.41,
+xilinx_u200_xdma_201830_2-0,Conv_sysarr_1,573,279.735,6.82946,0.160288,0.075264,0.085024,4596.29,
 
 
 Top Kernel Execution
 Kernel Instance Address,Kernel,Context ID,Command Queue ID,Device,Start Time (ms),Duration (ms),Global Work Size,Local Work Size,
-94659264163712,Conv_sysarr,0,0,xilinx_u200_xdma_201830_2-0,0.03986,0.299766,1:1:1,1:1:1,
+94468124766080,Conv_sysarr,0,0,xilinx_u200_xdma_201830_2-0,0.072997,0.302815,1:1:1,1:1:1,
 
 
 Top Memory Writes: Host to Global Memory
 Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Writing Rate(MB/s),
-0,0,0,30842.7,N/A,0.032,N/A,
-34359738368,0,0,30896.2,N/A,16.384,N/A,
-17179869184,0,0,30834.7,N/A,18.432,N/A,
+0,0,0,18656.6,N/A,0.032,N/A,
+34359738368,0,0,18660.8,N/A,16.384,N/A,
+17179869184,0,0,18656.6,N/A,18.432,N/A,
 
 
 Top Memory Reads: Host to Global Memory
 Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Reading Rate(MB/s),
-51539607552,0,0,164010,N/A,25.088,N/A,
+51539607552,0,0,75672.2,N/A,25.088,N/A,
 
 
 Guidance Parameters
 Parameter,Element,Value,
-DEVICE_EXEC_TIME,xilinx_u200_xdma_201830_2-0,0.299766,
+DEVICE_EXEC_TIME,xilinx_u200_xdma_201830_2-0,0.302815,
 CU_CALLS,xilinx_u200_xdma_201830_2-0|Conv_sysarr_1,2,
 NUM_MONITORS,xilinx_u200_xdma_201830_2-0|XCL_PERF_MON_ACCEL|1,1,
 NUM_MONITORS,xilinx_u200_xdma_201830_2-0|XCL_PERF_MON_MEMORY|4,4,
@@ -121,7 +121,7 @@ OBJECTS_RELEASED,all,0,
 TRACE_MEMORY,all,NA,
 CU_CONTEXT_EN,all,0,
 MAX_PARALLEL_KERNEL_ENQUEUES,Conv_sysarr,1,
-COMMAND_QUEUE_OOO,94659264117136,1,
+COMMAND_QUEUE_OOO,94468124719504,1,
 PLRAM_SIZE_BYTES,xilinx_u200_xdma_201830_2-0,131072,
 KERNEL_BUFFER_INFO,Conv_sysarr|bias_in|DDR[0]|1,32,
 KERNEL_BUFFER_INFO,Conv_sysarr|weight_in|DDR[1]|1,18432,
@@ -143,10 +143,10 @@ XRT_INI_SETTING,stall_trace,off,
 XRT_INI_SETTING,timeline_trace,1,
 XRT_INI_SETTING,trace_buffer_size,128G,
 XRT_INI_SETTING,verbosity,4,
-BUFFER_RD_ACTIVE_TIME_MS,all,0.615754,
-BUFFER_WR_ACTIVE_TIME_MS,all,156.918,
-BUFFER_TX_ACTIVE_TIME_MS,all,133175,
-APPLICATION_RUN_TIME_MS,all,167897,
-TOTAL_KERNEL_RUN_TIME_MS,all,133009,
+BUFFER_RD_ACTIVE_TIME_MS,all,0.424556,
+BUFFER_WR_ACTIVE_TIME_MS,all,8.68588,
+BUFFER_TX_ACTIVE_TIME_MS,all,57016,
+APPLICATION_RUN_TIME_MS,all,77311.9,
+TOTAL_KERNEL_RUN_TIME_MS,all,57006.1,
 
 

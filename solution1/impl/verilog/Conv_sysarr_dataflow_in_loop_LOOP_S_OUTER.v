@@ -10,33 +10,343 @@
 module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         ap_clk,
         ap_rst,
-        param,
-        ko_1,
+        C_L2,
+        R_L2,
+        S_L2,
+        ko_3,
         co,
         ro,
         so,
+        TILESIZE_H,
+        TILESIZE_W,
         ho,
         wo,
-        data_l2_0_address0,
-        data_l2_0_ce0,
-        data_l2_0_d0,
-        data_l2_0_q0,
-        data_l2_0_we0,
-        data_l2_0_address1,
-        data_l2_0_ce1,
-        data_l2_0_d1,
-        data_l2_0_q1,
-        data_l2_0_we1,
-        output_l2_0_address0,
-        output_l2_0_ce0,
-        output_l2_0_d0,
-        output_l2_0_q0,
-        output_l2_0_we0,
-        output_l2_0_address1,
-        output_l2_0_ce1,
-        output_l2_0_d1,
-        output_l2_0_q1,
-        output_l2_0_we1,
+        W_in_L2,
+        H_in_L2,
+        TILESIZE_R,
+        TILESIZE_S,
+        W_L2,
+        H_L2,
+        data_l2_0_0_address0,
+        data_l2_0_0_ce0,
+        data_l2_0_0_d0,
+        data_l2_0_0_q0,
+        data_l2_0_0_we0,
+        data_l2_0_0_address1,
+        data_l2_0_0_ce1,
+        data_l2_0_0_d1,
+        data_l2_0_0_q1,
+        data_l2_0_0_we1,
+        data_l2_0_1_address0,
+        data_l2_0_1_ce0,
+        data_l2_0_1_d0,
+        data_l2_0_1_q0,
+        data_l2_0_1_we0,
+        data_l2_0_1_address1,
+        data_l2_0_1_ce1,
+        data_l2_0_1_d1,
+        data_l2_0_1_q1,
+        data_l2_0_1_we1,
+        data_l2_0_2_address0,
+        data_l2_0_2_ce0,
+        data_l2_0_2_d0,
+        data_l2_0_2_q0,
+        data_l2_0_2_we0,
+        data_l2_0_2_address1,
+        data_l2_0_2_ce1,
+        data_l2_0_2_d1,
+        data_l2_0_2_q1,
+        data_l2_0_2_we1,
+        data_l2_0_3_address0,
+        data_l2_0_3_ce0,
+        data_l2_0_3_d0,
+        data_l2_0_3_q0,
+        data_l2_0_3_we0,
+        data_l2_0_3_address1,
+        data_l2_0_3_ce1,
+        data_l2_0_3_d1,
+        data_l2_0_3_q1,
+        data_l2_0_3_we1,
+        data_l2_0_4_address0,
+        data_l2_0_4_ce0,
+        data_l2_0_4_d0,
+        data_l2_0_4_q0,
+        data_l2_0_4_we0,
+        data_l2_0_4_address1,
+        data_l2_0_4_ce1,
+        data_l2_0_4_d1,
+        data_l2_0_4_q1,
+        data_l2_0_4_we1,
+        data_l2_0_5_address0,
+        data_l2_0_5_ce0,
+        data_l2_0_5_d0,
+        data_l2_0_5_q0,
+        data_l2_0_5_we0,
+        data_l2_0_5_address1,
+        data_l2_0_5_ce1,
+        data_l2_0_5_d1,
+        data_l2_0_5_q1,
+        data_l2_0_5_we1,
+        data_l2_0_6_address0,
+        data_l2_0_6_ce0,
+        data_l2_0_6_d0,
+        data_l2_0_6_q0,
+        data_l2_0_6_we0,
+        data_l2_0_6_address1,
+        data_l2_0_6_ce1,
+        data_l2_0_6_d1,
+        data_l2_0_6_q1,
+        data_l2_0_6_we1,
+        data_l2_0_7_address0,
+        data_l2_0_7_ce0,
+        data_l2_0_7_d0,
+        data_l2_0_7_q0,
+        data_l2_0_7_we0,
+        data_l2_0_7_address1,
+        data_l2_0_7_ce1,
+        data_l2_0_7_d1,
+        data_l2_0_7_q1,
+        data_l2_0_7_we1,
+        data_l2_1_0_address0,
+        data_l2_1_0_ce0,
+        data_l2_1_0_d0,
+        data_l2_1_0_q0,
+        data_l2_1_0_we0,
+        data_l2_1_0_address1,
+        data_l2_1_0_ce1,
+        data_l2_1_0_d1,
+        data_l2_1_0_q1,
+        data_l2_1_0_we1,
+        data_l2_1_1_address0,
+        data_l2_1_1_ce0,
+        data_l2_1_1_d0,
+        data_l2_1_1_q0,
+        data_l2_1_1_we0,
+        data_l2_1_1_address1,
+        data_l2_1_1_ce1,
+        data_l2_1_1_d1,
+        data_l2_1_1_q1,
+        data_l2_1_1_we1,
+        data_l2_1_2_address0,
+        data_l2_1_2_ce0,
+        data_l2_1_2_d0,
+        data_l2_1_2_q0,
+        data_l2_1_2_we0,
+        data_l2_1_2_address1,
+        data_l2_1_2_ce1,
+        data_l2_1_2_d1,
+        data_l2_1_2_q1,
+        data_l2_1_2_we1,
+        data_l2_1_3_address0,
+        data_l2_1_3_ce0,
+        data_l2_1_3_d0,
+        data_l2_1_3_q0,
+        data_l2_1_3_we0,
+        data_l2_1_3_address1,
+        data_l2_1_3_ce1,
+        data_l2_1_3_d1,
+        data_l2_1_3_q1,
+        data_l2_1_3_we1,
+        data_l2_1_4_address0,
+        data_l2_1_4_ce0,
+        data_l2_1_4_d0,
+        data_l2_1_4_q0,
+        data_l2_1_4_we0,
+        data_l2_1_4_address1,
+        data_l2_1_4_ce1,
+        data_l2_1_4_d1,
+        data_l2_1_4_q1,
+        data_l2_1_4_we1,
+        data_l2_1_5_address0,
+        data_l2_1_5_ce0,
+        data_l2_1_5_d0,
+        data_l2_1_5_q0,
+        data_l2_1_5_we0,
+        data_l2_1_5_address1,
+        data_l2_1_5_ce1,
+        data_l2_1_5_d1,
+        data_l2_1_5_q1,
+        data_l2_1_5_we1,
+        data_l2_1_6_address0,
+        data_l2_1_6_ce0,
+        data_l2_1_6_d0,
+        data_l2_1_6_q0,
+        data_l2_1_6_we0,
+        data_l2_1_6_address1,
+        data_l2_1_6_ce1,
+        data_l2_1_6_d1,
+        data_l2_1_6_q1,
+        data_l2_1_6_we1,
+        data_l2_1_7_address0,
+        data_l2_1_7_ce0,
+        data_l2_1_7_d0,
+        data_l2_1_7_q0,
+        data_l2_1_7_we0,
+        data_l2_1_7_address1,
+        data_l2_1_7_ce1,
+        data_l2_1_7_d1,
+        data_l2_1_7_q1,
+        data_l2_1_7_we1,
+        output_l2_0_0_address0,
+        output_l2_0_0_ce0,
+        output_l2_0_0_d0,
+        output_l2_0_0_q0,
+        output_l2_0_0_we0,
+        output_l2_0_0_address1,
+        output_l2_0_0_ce1,
+        output_l2_0_0_d1,
+        output_l2_0_0_q1,
+        output_l2_0_0_we1,
+        output_l2_0_1_address0,
+        output_l2_0_1_ce0,
+        output_l2_0_1_d0,
+        output_l2_0_1_q0,
+        output_l2_0_1_we0,
+        output_l2_0_1_address1,
+        output_l2_0_1_ce1,
+        output_l2_0_1_d1,
+        output_l2_0_1_q1,
+        output_l2_0_1_we1,
+        output_l2_0_2_address0,
+        output_l2_0_2_ce0,
+        output_l2_0_2_d0,
+        output_l2_0_2_q0,
+        output_l2_0_2_we0,
+        output_l2_0_2_address1,
+        output_l2_0_2_ce1,
+        output_l2_0_2_d1,
+        output_l2_0_2_q1,
+        output_l2_0_2_we1,
+        output_l2_0_3_address0,
+        output_l2_0_3_ce0,
+        output_l2_0_3_d0,
+        output_l2_0_3_q0,
+        output_l2_0_3_we0,
+        output_l2_0_3_address1,
+        output_l2_0_3_ce1,
+        output_l2_0_3_d1,
+        output_l2_0_3_q1,
+        output_l2_0_3_we1,
+        output_l2_0_4_address0,
+        output_l2_0_4_ce0,
+        output_l2_0_4_d0,
+        output_l2_0_4_q0,
+        output_l2_0_4_we0,
+        output_l2_0_4_address1,
+        output_l2_0_4_ce1,
+        output_l2_0_4_d1,
+        output_l2_0_4_q1,
+        output_l2_0_4_we1,
+        output_l2_0_5_address0,
+        output_l2_0_5_ce0,
+        output_l2_0_5_d0,
+        output_l2_0_5_q0,
+        output_l2_0_5_we0,
+        output_l2_0_5_address1,
+        output_l2_0_5_ce1,
+        output_l2_0_5_d1,
+        output_l2_0_5_q1,
+        output_l2_0_5_we1,
+        output_l2_0_6_address0,
+        output_l2_0_6_ce0,
+        output_l2_0_6_d0,
+        output_l2_0_6_q0,
+        output_l2_0_6_we0,
+        output_l2_0_6_address1,
+        output_l2_0_6_ce1,
+        output_l2_0_6_d1,
+        output_l2_0_6_q1,
+        output_l2_0_6_we1,
+        output_l2_0_7_address0,
+        output_l2_0_7_ce0,
+        output_l2_0_7_d0,
+        output_l2_0_7_q0,
+        output_l2_0_7_we0,
+        output_l2_0_7_address1,
+        output_l2_0_7_ce1,
+        output_l2_0_7_d1,
+        output_l2_0_7_q1,
+        output_l2_0_7_we1,
+        output_l2_1_0_address0,
+        output_l2_1_0_ce0,
+        output_l2_1_0_d0,
+        output_l2_1_0_q0,
+        output_l2_1_0_we0,
+        output_l2_1_0_address1,
+        output_l2_1_0_ce1,
+        output_l2_1_0_d1,
+        output_l2_1_0_q1,
+        output_l2_1_0_we1,
+        output_l2_1_1_address0,
+        output_l2_1_1_ce0,
+        output_l2_1_1_d0,
+        output_l2_1_1_q0,
+        output_l2_1_1_we0,
+        output_l2_1_1_address1,
+        output_l2_1_1_ce1,
+        output_l2_1_1_d1,
+        output_l2_1_1_q1,
+        output_l2_1_1_we1,
+        output_l2_1_2_address0,
+        output_l2_1_2_ce0,
+        output_l2_1_2_d0,
+        output_l2_1_2_q0,
+        output_l2_1_2_we0,
+        output_l2_1_2_address1,
+        output_l2_1_2_ce1,
+        output_l2_1_2_d1,
+        output_l2_1_2_q1,
+        output_l2_1_2_we1,
+        output_l2_1_3_address0,
+        output_l2_1_3_ce0,
+        output_l2_1_3_d0,
+        output_l2_1_3_q0,
+        output_l2_1_3_we0,
+        output_l2_1_3_address1,
+        output_l2_1_3_ce1,
+        output_l2_1_3_d1,
+        output_l2_1_3_q1,
+        output_l2_1_3_we1,
+        output_l2_1_4_address0,
+        output_l2_1_4_ce0,
+        output_l2_1_4_d0,
+        output_l2_1_4_q0,
+        output_l2_1_4_we0,
+        output_l2_1_4_address1,
+        output_l2_1_4_ce1,
+        output_l2_1_4_d1,
+        output_l2_1_4_q1,
+        output_l2_1_4_we1,
+        output_l2_1_5_address0,
+        output_l2_1_5_ce0,
+        output_l2_1_5_d0,
+        output_l2_1_5_q0,
+        output_l2_1_5_we0,
+        output_l2_1_5_address1,
+        output_l2_1_5_ce1,
+        output_l2_1_5_d1,
+        output_l2_1_5_q1,
+        output_l2_1_5_we1,
+        output_l2_1_6_address0,
+        output_l2_1_6_ce0,
+        output_l2_1_6_d0,
+        output_l2_1_6_q0,
+        output_l2_1_6_we0,
+        output_l2_1_6_address1,
+        output_l2_1_6_ce1,
+        output_l2_1_6_d1,
+        output_l2_1_6_q1,
+        output_l2_1_6_we1,
+        output_l2_1_7_address0,
+        output_l2_1_7_ce0,
+        output_l2_1_7_d0,
+        output_l2_1_7_q0,
+        output_l2_1_7_we0,
+        output_l2_1_7_address1,
+        output_l2_1_7_ce1,
+        output_l2_1_7_d1,
+        output_l2_1_7_q1,
+        output_l2_1_7_we1,
         weight_l2_0_address0,
         weight_l2_0_ce0,
         weight_l2_0_d0,
@@ -47,20 +357,174 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
         weight_l2_0_d1,
         weight_l2_0_q1,
         weight_l2_0_we1,
-        param_ap_vld,
-        ko_1_ap_vld,
+        weight_l2_1_address0,
+        weight_l2_1_ce0,
+        weight_l2_1_d0,
+        weight_l2_1_q0,
+        weight_l2_1_we0,
+        weight_l2_1_address1,
+        weight_l2_1_ce1,
+        weight_l2_1_d1,
+        weight_l2_1_q1,
+        weight_l2_1_we1,
+        weight_l2_2_address0,
+        weight_l2_2_ce0,
+        weight_l2_2_d0,
+        weight_l2_2_q0,
+        weight_l2_2_we0,
+        weight_l2_2_address1,
+        weight_l2_2_ce1,
+        weight_l2_2_d1,
+        weight_l2_2_q1,
+        weight_l2_2_we1,
+        weight_l2_3_address0,
+        weight_l2_3_ce0,
+        weight_l2_3_d0,
+        weight_l2_3_q0,
+        weight_l2_3_we0,
+        weight_l2_3_address1,
+        weight_l2_3_ce1,
+        weight_l2_3_d1,
+        weight_l2_3_q1,
+        weight_l2_3_we1,
+        weight_l2_4_address0,
+        weight_l2_4_ce0,
+        weight_l2_4_d0,
+        weight_l2_4_q0,
+        weight_l2_4_we0,
+        weight_l2_4_address1,
+        weight_l2_4_ce1,
+        weight_l2_4_d1,
+        weight_l2_4_q1,
+        weight_l2_4_we1,
+        weight_l2_5_address0,
+        weight_l2_5_ce0,
+        weight_l2_5_d0,
+        weight_l2_5_q0,
+        weight_l2_5_we0,
+        weight_l2_5_address1,
+        weight_l2_5_ce1,
+        weight_l2_5_d1,
+        weight_l2_5_q1,
+        weight_l2_5_we1,
+        weight_l2_6_address0,
+        weight_l2_6_ce0,
+        weight_l2_6_d0,
+        weight_l2_6_q0,
+        weight_l2_6_we0,
+        weight_l2_6_address1,
+        weight_l2_6_ce1,
+        weight_l2_6_d1,
+        weight_l2_6_q1,
+        weight_l2_6_we1,
+        weight_l2_7_address0,
+        weight_l2_7_ce0,
+        weight_l2_7_d0,
+        weight_l2_7_q0,
+        weight_l2_7_we0,
+        weight_l2_7_address1,
+        weight_l2_7_ce1,
+        weight_l2_7_d1,
+        weight_l2_7_q1,
+        weight_l2_7_we1,
+        C_L2_ap_vld,
+        R_L2_ap_vld,
+        S_L2_ap_vld,
+        ko_3_ap_vld,
         co_ap_vld,
         ro_ap_vld,
         so_ap_vld,
+        TILESIZE_H_ap_vld,
+        TILESIZE_W_ap_vld,
         ho_ap_vld,
         wo_ap_vld,
+        W_in_L2_ap_vld,
+        H_in_L2_ap_vld,
+        TILESIZE_R_ap_vld,
+        TILESIZE_S_ap_vld,
+        W_L2_ap_vld,
+        H_L2_ap_vld,
         ap_start,
         weight_l2_0_empty_n,
         weight_l2_0_read,
-        data_l2_0_empty_n,
-        data_l2_0_read,
-        output_l2_0_full_n,
-        output_l2_0_write,
+        weight_l2_1_empty_n,
+        weight_l2_1_read,
+        weight_l2_2_empty_n,
+        weight_l2_2_read,
+        weight_l2_3_empty_n,
+        weight_l2_3_read,
+        weight_l2_4_empty_n,
+        weight_l2_4_read,
+        weight_l2_5_empty_n,
+        weight_l2_5_read,
+        weight_l2_6_empty_n,
+        weight_l2_6_read,
+        weight_l2_7_empty_n,
+        weight_l2_7_read,
+        data_l2_0_0_empty_n,
+        data_l2_0_0_read,
+        data_l2_0_1_empty_n,
+        data_l2_0_1_read,
+        data_l2_0_2_empty_n,
+        data_l2_0_2_read,
+        data_l2_0_3_empty_n,
+        data_l2_0_3_read,
+        data_l2_0_4_empty_n,
+        data_l2_0_4_read,
+        data_l2_0_5_empty_n,
+        data_l2_0_5_read,
+        data_l2_0_6_empty_n,
+        data_l2_0_6_read,
+        data_l2_0_7_empty_n,
+        data_l2_0_7_read,
+        data_l2_1_0_empty_n,
+        data_l2_1_0_read,
+        data_l2_1_1_empty_n,
+        data_l2_1_1_read,
+        data_l2_1_2_empty_n,
+        data_l2_1_2_read,
+        data_l2_1_3_empty_n,
+        data_l2_1_3_read,
+        data_l2_1_4_empty_n,
+        data_l2_1_4_read,
+        data_l2_1_5_empty_n,
+        data_l2_1_5_read,
+        data_l2_1_6_empty_n,
+        data_l2_1_6_read,
+        data_l2_1_7_empty_n,
+        data_l2_1_7_read,
+        output_l2_0_0_full_n,
+        output_l2_0_0_write,
+        output_l2_0_1_full_n,
+        output_l2_0_1_write,
+        output_l2_0_2_full_n,
+        output_l2_0_2_write,
+        output_l2_0_3_full_n,
+        output_l2_0_3_write,
+        output_l2_0_4_full_n,
+        output_l2_0_4_write,
+        output_l2_0_5_full_n,
+        output_l2_0_5_write,
+        output_l2_0_6_full_n,
+        output_l2_0_6_write,
+        output_l2_0_7_full_n,
+        output_l2_0_7_write,
+        output_l2_1_0_full_n,
+        output_l2_1_0_write,
+        output_l2_1_1_full_n,
+        output_l2_1_1_write,
+        output_l2_1_2_full_n,
+        output_l2_1_2_write,
+        output_l2_1_3_full_n,
+        output_l2_1_3_write,
+        output_l2_1_4_full_n,
+        output_l2_1_4_write,
+        output_l2_1_5_full_n,
+        output_l2_1_5_write,
+        output_l2_1_6_full_n,
+        output_l2_1_6_write,
+        output_l2_1_7_full_n,
+        output_l2_1_7_write,
         ap_done,
         ap_ready,
         ap_idle,
@@ -70,33 +534,343 @@ module Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER (
 
 input   ap_clk;
 input   ap_rst;
-input  [1183:0] param;
-input  [11:0] ko_1;
+input  [11:0] C_L2;
+input  [11:0] R_L2;
+input  [11:0] S_L2;
+input  [11:0] ko_3;
 input  [31:0] co;
 input  [31:0] ro;
 input  [31:0] so;
+input  [31:0] TILESIZE_H;
+input  [31:0] TILESIZE_W;
 input  [10:0] ho;
-input  [10:0] wo;
-output  [10:0] data_l2_0_address0;
-output   data_l2_0_ce0;
-output  [7:0] data_l2_0_d0;
-input  [7:0] data_l2_0_q0;
-output   data_l2_0_we0;
-output  [10:0] data_l2_0_address1;
-output   data_l2_0_ce1;
-output  [7:0] data_l2_0_d1;
-input  [7:0] data_l2_0_q1;
-output   data_l2_0_we1;
-output  [10:0] output_l2_0_address0;
-output   output_l2_0_ce0;
-output  [31:0] output_l2_0_d0;
-input  [31:0] output_l2_0_q0;
-output   output_l2_0_we0;
-output  [10:0] output_l2_0_address1;
-output   output_l2_0_ce1;
-output  [31:0] output_l2_0_d1;
-input  [31:0] output_l2_0_q1;
-output   output_l2_0_we1;
+input  [11:0] wo;
+input  [10:0] W_in_L2;
+input  [10:0] H_in_L2;
+input  [31:0] TILESIZE_R;
+input  [31:0] TILESIZE_S;
+input  [10:0] W_L2;
+input  [10:0] H_L2;
+output  [10:0] data_l2_0_0_address0;
+output   data_l2_0_0_ce0;
+output  [7:0] data_l2_0_0_d0;
+input  [7:0] data_l2_0_0_q0;
+output   data_l2_0_0_we0;
+output  [10:0] data_l2_0_0_address1;
+output   data_l2_0_0_ce1;
+output  [7:0] data_l2_0_0_d1;
+input  [7:0] data_l2_0_0_q1;
+output   data_l2_0_0_we1;
+output  [10:0] data_l2_0_1_address0;
+output   data_l2_0_1_ce0;
+output  [7:0] data_l2_0_1_d0;
+input  [7:0] data_l2_0_1_q0;
+output   data_l2_0_1_we0;
+output  [10:0] data_l2_0_1_address1;
+output   data_l2_0_1_ce1;
+output  [7:0] data_l2_0_1_d1;
+input  [7:0] data_l2_0_1_q1;
+output   data_l2_0_1_we1;
+output  [10:0] data_l2_0_2_address0;
+output   data_l2_0_2_ce0;
+output  [7:0] data_l2_0_2_d0;
+input  [7:0] data_l2_0_2_q0;
+output   data_l2_0_2_we0;
+output  [10:0] data_l2_0_2_address1;
+output   data_l2_0_2_ce1;
+output  [7:0] data_l2_0_2_d1;
+input  [7:0] data_l2_0_2_q1;
+output   data_l2_0_2_we1;
+output  [10:0] data_l2_0_3_address0;
+output   data_l2_0_3_ce0;
+output  [7:0] data_l2_0_3_d0;
+input  [7:0] data_l2_0_3_q0;
+output   data_l2_0_3_we0;
+output  [10:0] data_l2_0_3_address1;
+output   data_l2_0_3_ce1;
+output  [7:0] data_l2_0_3_d1;
+input  [7:0] data_l2_0_3_q1;
+output   data_l2_0_3_we1;
+output  [10:0] data_l2_0_4_address0;
+output   data_l2_0_4_ce0;
+output  [7:0] data_l2_0_4_d0;
+input  [7:0] data_l2_0_4_q0;
+output   data_l2_0_4_we0;
+output  [10:0] data_l2_0_4_address1;
+output   data_l2_0_4_ce1;
+output  [7:0] data_l2_0_4_d1;
+input  [7:0] data_l2_0_4_q1;
+output   data_l2_0_4_we1;
+output  [10:0] data_l2_0_5_address0;
+output   data_l2_0_5_ce0;
+output  [7:0] data_l2_0_5_d0;
+input  [7:0] data_l2_0_5_q0;
+output   data_l2_0_5_we0;
+output  [10:0] data_l2_0_5_address1;
+output   data_l2_0_5_ce1;
+output  [7:0] data_l2_0_5_d1;
+input  [7:0] data_l2_0_5_q1;
+output   data_l2_0_5_we1;
+output  [10:0] data_l2_0_6_address0;
+output   data_l2_0_6_ce0;
+output  [7:0] data_l2_0_6_d0;
+input  [7:0] data_l2_0_6_q0;
+output   data_l2_0_6_we0;
+output  [10:0] data_l2_0_6_address1;
+output   data_l2_0_6_ce1;
+output  [7:0] data_l2_0_6_d1;
+input  [7:0] data_l2_0_6_q1;
+output   data_l2_0_6_we1;
+output  [10:0] data_l2_0_7_address0;
+output   data_l2_0_7_ce0;
+output  [7:0] data_l2_0_7_d0;
+input  [7:0] data_l2_0_7_q0;
+output   data_l2_0_7_we0;
+output  [10:0] data_l2_0_7_address1;
+output   data_l2_0_7_ce1;
+output  [7:0] data_l2_0_7_d1;
+input  [7:0] data_l2_0_7_q1;
+output   data_l2_0_7_we1;
+output  [10:0] data_l2_1_0_address0;
+output   data_l2_1_0_ce0;
+output  [7:0] data_l2_1_0_d0;
+input  [7:0] data_l2_1_0_q0;
+output   data_l2_1_0_we0;
+output  [10:0] data_l2_1_0_address1;
+output   data_l2_1_0_ce1;
+output  [7:0] data_l2_1_0_d1;
+input  [7:0] data_l2_1_0_q1;
+output   data_l2_1_0_we1;
+output  [10:0] data_l2_1_1_address0;
+output   data_l2_1_1_ce0;
+output  [7:0] data_l2_1_1_d0;
+input  [7:0] data_l2_1_1_q0;
+output   data_l2_1_1_we0;
+output  [10:0] data_l2_1_1_address1;
+output   data_l2_1_1_ce1;
+output  [7:0] data_l2_1_1_d1;
+input  [7:0] data_l2_1_1_q1;
+output   data_l2_1_1_we1;
+output  [10:0] data_l2_1_2_address0;
+output   data_l2_1_2_ce0;
+output  [7:0] data_l2_1_2_d0;
+input  [7:0] data_l2_1_2_q0;
+output   data_l2_1_2_we0;
+output  [10:0] data_l2_1_2_address1;
+output   data_l2_1_2_ce1;
+output  [7:0] data_l2_1_2_d1;
+input  [7:0] data_l2_1_2_q1;
+output   data_l2_1_2_we1;
+output  [10:0] data_l2_1_3_address0;
+output   data_l2_1_3_ce0;
+output  [7:0] data_l2_1_3_d0;
+input  [7:0] data_l2_1_3_q0;
+output   data_l2_1_3_we0;
+output  [10:0] data_l2_1_3_address1;
+output   data_l2_1_3_ce1;
+output  [7:0] data_l2_1_3_d1;
+input  [7:0] data_l2_1_3_q1;
+output   data_l2_1_3_we1;
+output  [10:0] data_l2_1_4_address0;
+output   data_l2_1_4_ce0;
+output  [7:0] data_l2_1_4_d0;
+input  [7:0] data_l2_1_4_q0;
+output   data_l2_1_4_we0;
+output  [10:0] data_l2_1_4_address1;
+output   data_l2_1_4_ce1;
+output  [7:0] data_l2_1_4_d1;
+input  [7:0] data_l2_1_4_q1;
+output   data_l2_1_4_we1;
+output  [10:0] data_l2_1_5_address0;
+output   data_l2_1_5_ce0;
+output  [7:0] data_l2_1_5_d0;
+input  [7:0] data_l2_1_5_q0;
+output   data_l2_1_5_we0;
+output  [10:0] data_l2_1_5_address1;
+output   data_l2_1_5_ce1;
+output  [7:0] data_l2_1_5_d1;
+input  [7:0] data_l2_1_5_q1;
+output   data_l2_1_5_we1;
+output  [10:0] data_l2_1_6_address0;
+output   data_l2_1_6_ce0;
+output  [7:0] data_l2_1_6_d0;
+input  [7:0] data_l2_1_6_q0;
+output   data_l2_1_6_we0;
+output  [10:0] data_l2_1_6_address1;
+output   data_l2_1_6_ce1;
+output  [7:0] data_l2_1_6_d1;
+input  [7:0] data_l2_1_6_q1;
+output   data_l2_1_6_we1;
+output  [10:0] data_l2_1_7_address0;
+output   data_l2_1_7_ce0;
+output  [7:0] data_l2_1_7_d0;
+input  [7:0] data_l2_1_7_q0;
+output   data_l2_1_7_we0;
+output  [10:0] data_l2_1_7_address1;
+output   data_l2_1_7_ce1;
+output  [7:0] data_l2_1_7_d1;
+input  [7:0] data_l2_1_7_q1;
+output   data_l2_1_7_we1;
+output  [10:0] output_l2_0_0_address0;
+output   output_l2_0_0_ce0;
+output  [31:0] output_l2_0_0_d0;
+input  [31:0] output_l2_0_0_q0;
+output   output_l2_0_0_we0;
+output  [10:0] output_l2_0_0_address1;
+output   output_l2_0_0_ce1;
+output  [31:0] output_l2_0_0_d1;
+input  [31:0] output_l2_0_0_q1;
+output   output_l2_0_0_we1;
+output  [10:0] output_l2_0_1_address0;
+output   output_l2_0_1_ce0;
+output  [31:0] output_l2_0_1_d0;
+input  [31:0] output_l2_0_1_q0;
+output   output_l2_0_1_we0;
+output  [10:0] output_l2_0_1_address1;
+output   output_l2_0_1_ce1;
+output  [31:0] output_l2_0_1_d1;
+input  [31:0] output_l2_0_1_q1;
+output   output_l2_0_1_we1;
+output  [10:0] output_l2_0_2_address0;
+output   output_l2_0_2_ce0;
+output  [31:0] output_l2_0_2_d0;
+input  [31:0] output_l2_0_2_q0;
+output   output_l2_0_2_we0;
+output  [10:0] output_l2_0_2_address1;
+output   output_l2_0_2_ce1;
+output  [31:0] output_l2_0_2_d1;
+input  [31:0] output_l2_0_2_q1;
+output   output_l2_0_2_we1;
+output  [10:0] output_l2_0_3_address0;
+output   output_l2_0_3_ce0;
+output  [31:0] output_l2_0_3_d0;
+input  [31:0] output_l2_0_3_q0;
+output   output_l2_0_3_we0;
+output  [10:0] output_l2_0_3_address1;
+output   output_l2_0_3_ce1;
+output  [31:0] output_l2_0_3_d1;
+input  [31:0] output_l2_0_3_q1;
+output   output_l2_0_3_we1;
+output  [10:0] output_l2_0_4_address0;
+output   output_l2_0_4_ce0;
+output  [31:0] output_l2_0_4_d0;
+input  [31:0] output_l2_0_4_q0;
+output   output_l2_0_4_we0;
+output  [10:0] output_l2_0_4_address1;
+output   output_l2_0_4_ce1;
+output  [31:0] output_l2_0_4_d1;
+input  [31:0] output_l2_0_4_q1;
+output   output_l2_0_4_we1;
+output  [10:0] output_l2_0_5_address0;
+output   output_l2_0_5_ce0;
+output  [31:0] output_l2_0_5_d0;
+input  [31:0] output_l2_0_5_q0;
+output   output_l2_0_5_we0;
+output  [10:0] output_l2_0_5_address1;
+output   output_l2_0_5_ce1;
+output  [31:0] output_l2_0_5_d1;
+input  [31:0] output_l2_0_5_q1;
+output   output_l2_0_5_we1;
+output  [10:0] output_l2_0_6_address0;
+output   output_l2_0_6_ce0;
+output  [31:0] output_l2_0_6_d0;
+input  [31:0] output_l2_0_6_q0;
+output   output_l2_0_6_we0;
+output  [10:0] output_l2_0_6_address1;
+output   output_l2_0_6_ce1;
+output  [31:0] output_l2_0_6_d1;
+input  [31:0] output_l2_0_6_q1;
+output   output_l2_0_6_we1;
+output  [10:0] output_l2_0_7_address0;
+output   output_l2_0_7_ce0;
+output  [31:0] output_l2_0_7_d0;
+input  [31:0] output_l2_0_7_q0;
+output   output_l2_0_7_we0;
+output  [10:0] output_l2_0_7_address1;
+output   output_l2_0_7_ce1;
+output  [31:0] output_l2_0_7_d1;
+input  [31:0] output_l2_0_7_q1;
+output   output_l2_0_7_we1;
+output  [10:0] output_l2_1_0_address0;
+output   output_l2_1_0_ce0;
+output  [31:0] output_l2_1_0_d0;
+input  [31:0] output_l2_1_0_q0;
+output   output_l2_1_0_we0;
+output  [10:0] output_l2_1_0_address1;
+output   output_l2_1_0_ce1;
+output  [31:0] output_l2_1_0_d1;
+input  [31:0] output_l2_1_0_q1;
+output   output_l2_1_0_we1;
+output  [10:0] output_l2_1_1_address0;
+output   output_l2_1_1_ce0;
+output  [31:0] output_l2_1_1_d0;
+input  [31:0] output_l2_1_1_q0;
+output   output_l2_1_1_we0;
+output  [10:0] output_l2_1_1_address1;
+output   output_l2_1_1_ce1;
+output  [31:0] output_l2_1_1_d1;
+input  [31:0] output_l2_1_1_q1;
+output   output_l2_1_1_we1;
+output  [10:0] output_l2_1_2_address0;
+output   output_l2_1_2_ce0;
+output  [31:0] output_l2_1_2_d0;
+input  [31:0] output_l2_1_2_q0;
+output   output_l2_1_2_we0;
+output  [10:0] output_l2_1_2_address1;
+output   output_l2_1_2_ce1;
+output  [31:0] output_l2_1_2_d1;
+input  [31:0] output_l2_1_2_q1;
+output   output_l2_1_2_we1;
+output  [10:0] output_l2_1_3_address0;
+output   output_l2_1_3_ce0;
+output  [31:0] output_l2_1_3_d0;
+input  [31:0] output_l2_1_3_q0;
+output   output_l2_1_3_we0;
+output  [10:0] output_l2_1_3_address1;
+output   output_l2_1_3_ce1;
+output  [31:0] output_l2_1_3_d1;
+input  [31:0] output_l2_1_3_q1;
+output   output_l2_1_3_we1;
+output  [10:0] output_l2_1_4_address0;
+output   output_l2_1_4_ce0;
+output  [31:0] output_l2_1_4_d0;
+input  [31:0] output_l2_1_4_q0;
+output   output_l2_1_4_we0;
+output  [10:0] output_l2_1_4_address1;
+output   output_l2_1_4_ce1;
+output  [31:0] output_l2_1_4_d1;
+input  [31:0] output_l2_1_4_q1;
+output   output_l2_1_4_we1;
+output  [10:0] output_l2_1_5_address0;
+output   output_l2_1_5_ce0;
+output  [31:0] output_l2_1_5_d0;
+input  [31:0] output_l2_1_5_q0;
+output   output_l2_1_5_we0;
+output  [10:0] output_l2_1_5_address1;
+output   output_l2_1_5_ce1;
+output  [31:0] output_l2_1_5_d1;
+input  [31:0] output_l2_1_5_q1;
+output   output_l2_1_5_we1;
+output  [10:0] output_l2_1_6_address0;
+output   output_l2_1_6_ce0;
+output  [31:0] output_l2_1_6_d0;
+input  [31:0] output_l2_1_6_q0;
+output   output_l2_1_6_we0;
+output  [10:0] output_l2_1_6_address1;
+output   output_l2_1_6_ce1;
+output  [31:0] output_l2_1_6_d1;
+input  [31:0] output_l2_1_6_q1;
+output   output_l2_1_6_we1;
+output  [10:0] output_l2_1_7_address0;
+output   output_l2_1_7_ce0;
+output  [31:0] output_l2_1_7_d0;
+input  [31:0] output_l2_1_7_q0;
+output   output_l2_1_7_we0;
+output  [10:0] output_l2_1_7_address1;
+output   output_l2_1_7_ce1;
+output  [31:0] output_l2_1_7_d1;
+input  [31:0] output_l2_1_7_q1;
+output   output_l2_1_7_we1;
 output  [11:0] weight_l2_0_address0;
 output   weight_l2_0_ce0;
 output  [7:0] weight_l2_0_d0;
@@ -107,88 +881,302 @@ output   weight_l2_0_ce1;
 output  [7:0] weight_l2_0_d1;
 input  [7:0] weight_l2_0_q1;
 output   weight_l2_0_we1;
-input   param_ap_vld;
-input   ko_1_ap_vld;
+output  [11:0] weight_l2_1_address0;
+output   weight_l2_1_ce0;
+output  [7:0] weight_l2_1_d0;
+input  [7:0] weight_l2_1_q0;
+output   weight_l2_1_we0;
+output  [11:0] weight_l2_1_address1;
+output   weight_l2_1_ce1;
+output  [7:0] weight_l2_1_d1;
+input  [7:0] weight_l2_1_q1;
+output   weight_l2_1_we1;
+output  [11:0] weight_l2_2_address0;
+output   weight_l2_2_ce0;
+output  [7:0] weight_l2_2_d0;
+input  [7:0] weight_l2_2_q0;
+output   weight_l2_2_we0;
+output  [11:0] weight_l2_2_address1;
+output   weight_l2_2_ce1;
+output  [7:0] weight_l2_2_d1;
+input  [7:0] weight_l2_2_q1;
+output   weight_l2_2_we1;
+output  [11:0] weight_l2_3_address0;
+output   weight_l2_3_ce0;
+output  [7:0] weight_l2_3_d0;
+input  [7:0] weight_l2_3_q0;
+output   weight_l2_3_we0;
+output  [11:0] weight_l2_3_address1;
+output   weight_l2_3_ce1;
+output  [7:0] weight_l2_3_d1;
+input  [7:0] weight_l2_3_q1;
+output   weight_l2_3_we1;
+output  [11:0] weight_l2_4_address0;
+output   weight_l2_4_ce0;
+output  [7:0] weight_l2_4_d0;
+input  [7:0] weight_l2_4_q0;
+output   weight_l2_4_we0;
+output  [11:0] weight_l2_4_address1;
+output   weight_l2_4_ce1;
+output  [7:0] weight_l2_4_d1;
+input  [7:0] weight_l2_4_q1;
+output   weight_l2_4_we1;
+output  [11:0] weight_l2_5_address0;
+output   weight_l2_5_ce0;
+output  [7:0] weight_l2_5_d0;
+input  [7:0] weight_l2_5_q0;
+output   weight_l2_5_we0;
+output  [11:0] weight_l2_5_address1;
+output   weight_l2_5_ce1;
+output  [7:0] weight_l2_5_d1;
+input  [7:0] weight_l2_5_q1;
+output   weight_l2_5_we1;
+output  [11:0] weight_l2_6_address0;
+output   weight_l2_6_ce0;
+output  [7:0] weight_l2_6_d0;
+input  [7:0] weight_l2_6_q0;
+output   weight_l2_6_we0;
+output  [11:0] weight_l2_6_address1;
+output   weight_l2_6_ce1;
+output  [7:0] weight_l2_6_d1;
+input  [7:0] weight_l2_6_q1;
+output   weight_l2_6_we1;
+output  [11:0] weight_l2_7_address0;
+output   weight_l2_7_ce0;
+output  [7:0] weight_l2_7_d0;
+input  [7:0] weight_l2_7_q0;
+output   weight_l2_7_we0;
+output  [11:0] weight_l2_7_address1;
+output   weight_l2_7_ce1;
+output  [7:0] weight_l2_7_d1;
+input  [7:0] weight_l2_7_q1;
+output   weight_l2_7_we1;
+input   C_L2_ap_vld;
+input   R_L2_ap_vld;
+input   S_L2_ap_vld;
+input   ko_3_ap_vld;
 input   co_ap_vld;
 input   ro_ap_vld;
 input   so_ap_vld;
+input   TILESIZE_H_ap_vld;
+input   TILESIZE_W_ap_vld;
 input   ho_ap_vld;
 input   wo_ap_vld;
+input   W_in_L2_ap_vld;
+input   H_in_L2_ap_vld;
+input   TILESIZE_R_ap_vld;
+input   TILESIZE_S_ap_vld;
+input   W_L2_ap_vld;
+input   H_L2_ap_vld;
 input   ap_start;
 input   weight_l2_0_empty_n;
 output   weight_l2_0_read;
-input   data_l2_0_empty_n;
-output   data_l2_0_read;
-input   output_l2_0_full_n;
-output   output_l2_0_write;
+input   weight_l2_1_empty_n;
+output   weight_l2_1_read;
+input   weight_l2_2_empty_n;
+output   weight_l2_2_read;
+input   weight_l2_3_empty_n;
+output   weight_l2_3_read;
+input   weight_l2_4_empty_n;
+output   weight_l2_4_read;
+input   weight_l2_5_empty_n;
+output   weight_l2_5_read;
+input   weight_l2_6_empty_n;
+output   weight_l2_6_read;
+input   weight_l2_7_empty_n;
+output   weight_l2_7_read;
+input   data_l2_0_0_empty_n;
+output   data_l2_0_0_read;
+input   data_l2_0_1_empty_n;
+output   data_l2_0_1_read;
+input   data_l2_0_2_empty_n;
+output   data_l2_0_2_read;
+input   data_l2_0_3_empty_n;
+output   data_l2_0_3_read;
+input   data_l2_0_4_empty_n;
+output   data_l2_0_4_read;
+input   data_l2_0_5_empty_n;
+output   data_l2_0_5_read;
+input   data_l2_0_6_empty_n;
+output   data_l2_0_6_read;
+input   data_l2_0_7_empty_n;
+output   data_l2_0_7_read;
+input   data_l2_1_0_empty_n;
+output   data_l2_1_0_read;
+input   data_l2_1_1_empty_n;
+output   data_l2_1_1_read;
+input   data_l2_1_2_empty_n;
+output   data_l2_1_2_read;
+input   data_l2_1_3_empty_n;
+output   data_l2_1_3_read;
+input   data_l2_1_4_empty_n;
+output   data_l2_1_4_read;
+input   data_l2_1_5_empty_n;
+output   data_l2_1_5_read;
+input   data_l2_1_6_empty_n;
+output   data_l2_1_6_read;
+input   data_l2_1_7_empty_n;
+output   data_l2_1_7_read;
+input   output_l2_0_0_full_n;
+output   output_l2_0_0_write;
+input   output_l2_0_1_full_n;
+output   output_l2_0_1_write;
+input   output_l2_0_2_full_n;
+output   output_l2_0_2_write;
+input   output_l2_0_3_full_n;
+output   output_l2_0_3_write;
+input   output_l2_0_4_full_n;
+output   output_l2_0_4_write;
+input   output_l2_0_5_full_n;
+output   output_l2_0_5_write;
+input   output_l2_0_6_full_n;
+output   output_l2_0_6_write;
+input   output_l2_0_7_full_n;
+output   output_l2_0_7_write;
+input   output_l2_1_0_full_n;
+output   output_l2_1_0_write;
+input   output_l2_1_1_full_n;
+output   output_l2_1_1_write;
+input   output_l2_1_2_full_n;
+output   output_l2_1_2_write;
+input   output_l2_1_3_full_n;
+output   output_l2_1_3_write;
+input   output_l2_1_4_full_n;
+output   output_l2_1_4_write;
+input   output_l2_1_5_full_n;
+output   output_l2_1_5_write;
+input   output_l2_1_6_full_n;
+output   output_l2_1_6_write;
+input   output_l2_1_7_full_n;
+output   output_l2_1_7_write;
 output   ap_done;
 output   ap_ready;
 output   ap_idle;
 input   ap_continue;
 
-wire   [7:0] data_l1_0_i_q0;
-wire   [7:0] data_l1_0_t_q0;
-wire   [0:0] data_l1_1_i_q0;
-wire   [0:0] data_l1_1_t_q0;
-wire   [0:0] data_l1_2_i_q0;
-wire   [0:0] data_l1_2_t_q0;
-wire   [0:0] data_l1_3_i_q0;
-wire   [0:0] data_l1_3_t_q0;
-wire   [15:0] output_l1_0_i_q0;
-wire   [15:0] output_l1_0_t_q0;
-wire   [15:0] output_l1_1_i_q0;
-wire   [15:0] output_l1_1_t_q0;
-wire   [15:0] output_l1_2_i_q0;
-wire   [15:0] output_l1_2_t_q0;
-wire   [15:0] output_l1_3_i_q0;
-wire   [15:0] output_l1_3_t_q0;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_done;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
-wire   [1183:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write;
-wire   [1119:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write;
-wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write;
-wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write;
-wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write;
+wire   [7:0] data_l1_0_0_i_q0;
+wire   [7:0] data_l1_0_0_t_q0;
+wire   [7:0] data_l1_0_1_i_q0;
+wire   [7:0] data_l1_0_1_t_q0;
+wire   [7:0] data_l1_0_2_i_q0;
+wire   [7:0] data_l1_0_2_t_q0;
+wire   [7:0] data_l1_0_3_i_q0;
+wire   [7:0] data_l1_0_3_t_q0;
+wire   [7:0] data_l1_0_4_i_q0;
+wire   [7:0] data_l1_0_4_t_q0;
+wire   [7:0] data_l1_0_5_i_q0;
+wire   [7:0] data_l1_0_5_t_q0;
+wire   [7:0] data_l1_0_6_i_q0;
+wire   [7:0] data_l1_0_6_t_q0;
+wire   [7:0] data_l1_0_7_i_q0;
+wire   [7:0] data_l1_0_7_t_q0;
+wire   [7:0] data_l1_1_0_i_q0;
+wire   [7:0] data_l1_1_0_t_q0;
+wire   [7:0] data_l1_1_1_i_q0;
+wire   [7:0] data_l1_1_1_t_q0;
+wire   [7:0] data_l1_1_2_i_q0;
+wire   [7:0] data_l1_1_2_t_q0;
+wire   [7:0] data_l1_1_3_i_q0;
+wire   [7:0] data_l1_1_3_t_q0;
+wire   [7:0] data_l1_1_4_i_q0;
+wire   [7:0] data_l1_1_4_t_q0;
+wire   [7:0] data_l1_1_5_i_q0;
+wire   [7:0] data_l1_1_5_t_q0;
+wire   [7:0] data_l1_1_6_i_q0;
+wire   [7:0] data_l1_1_6_t_q0;
+wire   [7:0] data_l1_1_7_i_q0;
+wire   [7:0] data_l1_1_7_t_q0;
+wire   [15:0] data_l1_bitvec_0_0_i_q0;
+wire   [15:0] data_l1_bitvec_0_0_t_q0;
+wire   [15:0] data_l1_bitvec_0_1_i_q0;
+wire   [15:0] data_l1_bitvec_0_1_t_q0;
+wire   [15:0] data_l1_bitvec_1_0_i_q0;
+wire   [15:0] data_l1_bitvec_1_0_t_q0;
+wire   [15:0] data_l1_bitvec_1_1_i_q0;
+wire   [15:0] data_l1_bitvec_1_1_t_q0;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_start;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_done;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_continue;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_idle;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_write;
+wire   [11:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_write;
+wire   [31:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_write;
+wire   [10:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_din;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_write;
 wire    runWeight2Reg_U0_ap_start;
 wire    runWeight2Reg_U0_ap_done;
 wire    runWeight2Reg_U0_ap_continue;
 wire    runWeight2Reg_U0_ap_idle;
 wire    runWeight2Reg_U0_ap_ready;
-wire    runWeight2Reg_U0_param_read;
-wire    runWeight2Reg_U0_ko_1_read;
+wire    runWeight2Reg_U0_C_L2_read;
+wire    runWeight2Reg_U0_R_L2_read;
+wire    runWeight2Reg_U0_S_L2_read;
+wire    runWeight2Reg_U0_ko_3_read;
 wire    runWeight2Reg_U0_co_read;
 wire    runWeight2Reg_U0_ro_read;
 wire    runWeight2Reg_U0_so_read;
 wire   [11:0] runWeight2Reg_U0_weight_l2_0_address0;
 wire    runWeight2Reg_U0_weight_l2_0_ce0;
-wire   [1183:0] runWeight2Reg_U0_param_out_din;
-wire    runWeight2Reg_U0_param_out_write;
-wire   [10:0] runWeight2Reg_U0_ko_1_out_din;
-wire    runWeight2Reg_U0_ko_1_out_write;
+wire   [11:0] runWeight2Reg_U0_weight_l2_1_address0;
+wire    runWeight2Reg_U0_weight_l2_1_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_2_address0;
+wire    runWeight2Reg_U0_weight_l2_2_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_3_address0;
+wire    runWeight2Reg_U0_weight_l2_3_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_4_address0;
+wire    runWeight2Reg_U0_weight_l2_4_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_5_address0;
+wire    runWeight2Reg_U0_weight_l2_5_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_6_address0;
+wire    runWeight2Reg_U0_weight_l2_6_ce0;
+wire   [11:0] runWeight2Reg_U0_weight_l2_7_address0;
+wire    runWeight2Reg_U0_weight_l2_7_ce0;
+wire   [10:0] runWeight2Reg_U0_ko_3_out_din;
+wire    runWeight2Reg_U0_ko_3_out_write;
 wire   [31:0] runWeight2Reg_U0_co_out_din;
 wire    runWeight2Reg_U0_co_out_write;
 wire   [31:0] runWeight2Reg_U0_ro_out_din;
@@ -211,8 +1199,214 @@ wire   [7:0] runWeight2Reg_U0_ap_return_12;
 wire   [7:0] runWeight2Reg_U0_ap_return_13;
 wire   [7:0] runWeight2Reg_U0_ap_return_14;
 wire   [7:0] runWeight2Reg_U0_ap_return_15;
+wire   [7:0] runWeight2Reg_U0_ap_return_16;
+wire   [7:0] runWeight2Reg_U0_ap_return_17;
+wire   [7:0] runWeight2Reg_U0_ap_return_18;
+wire   [7:0] runWeight2Reg_U0_ap_return_19;
+wire   [7:0] runWeight2Reg_U0_ap_return_20;
+wire   [7:0] runWeight2Reg_U0_ap_return_21;
+wire   [7:0] runWeight2Reg_U0_ap_return_22;
+wire   [7:0] runWeight2Reg_U0_ap_return_23;
+wire   [7:0] runWeight2Reg_U0_ap_return_24;
+wire   [7:0] runWeight2Reg_U0_ap_return_25;
+wire   [7:0] runWeight2Reg_U0_ap_return_26;
+wire   [7:0] runWeight2Reg_U0_ap_return_27;
+wire   [7:0] runWeight2Reg_U0_ap_return_28;
+wire   [7:0] runWeight2Reg_U0_ap_return_29;
+wire   [7:0] runWeight2Reg_U0_ap_return_30;
+wire   [7:0] runWeight2Reg_U0_ap_return_31;
+wire   [7:0] runWeight2Reg_U0_ap_return_32;
+wire   [7:0] runWeight2Reg_U0_ap_return_33;
+wire   [7:0] runWeight2Reg_U0_ap_return_34;
+wire   [7:0] runWeight2Reg_U0_ap_return_35;
+wire   [7:0] runWeight2Reg_U0_ap_return_36;
+wire   [7:0] runWeight2Reg_U0_ap_return_37;
+wire   [7:0] runWeight2Reg_U0_ap_return_38;
+wire   [7:0] runWeight2Reg_U0_ap_return_39;
+wire   [7:0] runWeight2Reg_U0_ap_return_40;
+wire   [7:0] runWeight2Reg_U0_ap_return_41;
+wire   [7:0] runWeight2Reg_U0_ap_return_42;
+wire   [7:0] runWeight2Reg_U0_ap_return_43;
+wire   [7:0] runWeight2Reg_U0_ap_return_44;
+wire   [7:0] runWeight2Reg_U0_ap_return_45;
+wire   [7:0] runWeight2Reg_U0_ap_return_46;
+wire   [7:0] runWeight2Reg_U0_ap_return_47;
+wire   [7:0] runWeight2Reg_U0_ap_return_48;
+wire   [7:0] runWeight2Reg_U0_ap_return_49;
+wire   [7:0] runWeight2Reg_U0_ap_return_50;
+wire   [7:0] runWeight2Reg_U0_ap_return_51;
+wire   [7:0] runWeight2Reg_U0_ap_return_52;
+wire   [7:0] runWeight2Reg_U0_ap_return_53;
+wire   [7:0] runWeight2Reg_U0_ap_return_54;
+wire   [7:0] runWeight2Reg_U0_ap_return_55;
+wire   [7:0] runWeight2Reg_U0_ap_return_56;
+wire   [7:0] runWeight2Reg_U0_ap_return_57;
+wire   [7:0] runWeight2Reg_U0_ap_return_58;
+wire   [7:0] runWeight2Reg_U0_ap_return_59;
+wire   [7:0] runWeight2Reg_U0_ap_return_60;
+wire   [7:0] runWeight2Reg_U0_ap_return_61;
+wire   [7:0] runWeight2Reg_U0_ap_return_62;
+wire   [7:0] runWeight2Reg_U0_ap_return_63;
 wire    runWeight2Reg_U0_weight_l2_0_full_n;
 wire    runWeight2Reg_U0_weight_l2_0_write;
+wire    runWeight2Reg_U0_weight_l2_1_full_n;
+wire    runWeight2Reg_U0_weight_l2_1_write;
+wire    runWeight2Reg_U0_weight_l2_2_full_n;
+wire    runWeight2Reg_U0_weight_l2_2_write;
+wire    runWeight2Reg_U0_weight_l2_3_full_n;
+wire    runWeight2Reg_U0_weight_l2_3_write;
+wire    runWeight2Reg_U0_weight_l2_4_full_n;
+wire    runWeight2Reg_U0_weight_l2_4_write;
+wire    runWeight2Reg_U0_weight_l2_5_full_n;
+wire    runWeight2Reg_U0_weight_l2_5_write;
+wire    runWeight2Reg_U0_weight_l2_6_full_n;
+wire    runWeight2Reg_U0_weight_l2_6_write;
+wire    runWeight2Reg_U0_weight_l2_7_full_n;
+wire    runWeight2Reg_U0_weight_l2_7_write;
+wire    ap_channel_done_weight_regfile_7_7;
+wire    weight_regfile_7_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_7;
+wire    ap_sync_channel_write_weight_regfile_7_7;
+wire    ap_channel_done_weight_regfile_7_6;
+wire    weight_regfile_7_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_6;
+wire    ap_sync_channel_write_weight_regfile_7_6;
+wire    ap_channel_done_weight_regfile_7_5;
+wire    weight_regfile_7_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_5;
+wire    ap_sync_channel_write_weight_regfile_7_5;
+wire    ap_channel_done_weight_regfile_7_4;
+wire    weight_regfile_7_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_4;
+wire    ap_sync_channel_write_weight_regfile_7_4;
+wire    ap_channel_done_weight_regfile_7_3;
+wire    weight_regfile_7_3_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_3;
+wire    ap_sync_channel_write_weight_regfile_7_3;
+wire    ap_channel_done_weight_regfile_7_2;
+wire    weight_regfile_7_2_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_2;
+wire    ap_sync_channel_write_weight_regfile_7_2;
+wire    ap_channel_done_weight_regfile_7_1;
+wire    weight_regfile_7_1_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_1;
+wire    ap_sync_channel_write_weight_regfile_7_1;
+wire    ap_channel_done_weight_regfile_7_0;
+wire    weight_regfile_7_0_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_7_0;
+wire    ap_sync_channel_write_weight_regfile_7_0;
+wire    ap_channel_done_weight_regfile_6_7;
+wire    weight_regfile_6_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_7;
+wire    ap_sync_channel_write_weight_regfile_6_7;
+wire    ap_channel_done_weight_regfile_6_6;
+wire    weight_regfile_6_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_6;
+wire    ap_sync_channel_write_weight_regfile_6_6;
+wire    ap_channel_done_weight_regfile_6_5;
+wire    weight_regfile_6_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_5;
+wire    ap_sync_channel_write_weight_regfile_6_5;
+wire    ap_channel_done_weight_regfile_6_4;
+wire    weight_regfile_6_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_4;
+wire    ap_sync_channel_write_weight_regfile_6_4;
+wire    ap_channel_done_weight_regfile_6_3;
+wire    weight_regfile_6_3_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_3;
+wire    ap_sync_channel_write_weight_regfile_6_3;
+wire    ap_channel_done_weight_regfile_6_2;
+wire    weight_regfile_6_2_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_2;
+wire    ap_sync_channel_write_weight_regfile_6_2;
+wire    ap_channel_done_weight_regfile_6_1;
+wire    weight_regfile_6_1_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_1;
+wire    ap_sync_channel_write_weight_regfile_6_1;
+wire    ap_channel_done_weight_regfile_6_0;
+wire    weight_regfile_6_0_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_6_0;
+wire    ap_sync_channel_write_weight_regfile_6_0;
+wire    ap_channel_done_weight_regfile_5_7;
+wire    weight_regfile_5_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_7;
+wire    ap_sync_channel_write_weight_regfile_5_7;
+wire    ap_channel_done_weight_regfile_5_6;
+wire    weight_regfile_5_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_6;
+wire    ap_sync_channel_write_weight_regfile_5_6;
+wire    ap_channel_done_weight_regfile_5_5;
+wire    weight_regfile_5_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_5;
+wire    ap_sync_channel_write_weight_regfile_5_5;
+wire    ap_channel_done_weight_regfile_5_4;
+wire    weight_regfile_5_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_4;
+wire    ap_sync_channel_write_weight_regfile_5_4;
+wire    ap_channel_done_weight_regfile_5_3;
+wire    weight_regfile_5_3_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_3;
+wire    ap_sync_channel_write_weight_regfile_5_3;
+wire    ap_channel_done_weight_regfile_5_2;
+wire    weight_regfile_5_2_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_2;
+wire    ap_sync_channel_write_weight_regfile_5_2;
+wire    ap_channel_done_weight_regfile_5_1;
+wire    weight_regfile_5_1_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_1;
+wire    ap_sync_channel_write_weight_regfile_5_1;
+wire    ap_channel_done_weight_regfile_5_0;
+wire    weight_regfile_5_0_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_5_0;
+wire    ap_sync_channel_write_weight_regfile_5_0;
+wire    ap_channel_done_weight_regfile_4_7;
+wire    weight_regfile_4_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_7;
+wire    ap_sync_channel_write_weight_regfile_4_7;
+wire    ap_channel_done_weight_regfile_4_6;
+wire    weight_regfile_4_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_6;
+wire    ap_sync_channel_write_weight_regfile_4_6;
+wire    ap_channel_done_weight_regfile_4_5;
+wire    weight_regfile_4_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_5;
+wire    ap_sync_channel_write_weight_regfile_4_5;
+wire    ap_channel_done_weight_regfile_4_4;
+wire    weight_regfile_4_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_4;
+wire    ap_sync_channel_write_weight_regfile_4_4;
+wire    ap_channel_done_weight_regfile_4_3;
+wire    weight_regfile_4_3_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_3;
+wire    ap_sync_channel_write_weight_regfile_4_3;
+wire    ap_channel_done_weight_regfile_4_2;
+wire    weight_regfile_4_2_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_2;
+wire    ap_sync_channel_write_weight_regfile_4_2;
+wire    ap_channel_done_weight_regfile_4_1;
+wire    weight_regfile_4_1_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_1;
+wire    ap_sync_channel_write_weight_regfile_4_1;
+wire    ap_channel_done_weight_regfile_4_0;
+wire    weight_regfile_4_0_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_4_0;
+wire    ap_sync_channel_write_weight_regfile_4_0;
+wire    ap_channel_done_weight_regfile_3_7;
+wire    weight_regfile_3_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_3_7;
+wire    ap_sync_channel_write_weight_regfile_3_7;
+wire    ap_channel_done_weight_regfile_3_6;
+wire    weight_regfile_3_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_3_6;
+wire    ap_sync_channel_write_weight_regfile_3_6;
+wire    ap_channel_done_weight_regfile_3_5;
+wire    weight_regfile_3_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_3_5;
+wire    ap_sync_channel_write_weight_regfile_3_5;
+wire    ap_channel_done_weight_regfile_3_4;
+wire    weight_regfile_3_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_3_4;
+wire    ap_sync_channel_write_weight_regfile_3_4;
 wire    ap_channel_done_weight_regfile_3_3;
 wire    weight_regfile_3_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_3_3;
@@ -229,6 +1423,22 @@ wire    ap_channel_done_weight_regfile_3_0;
 wire    weight_regfile_3_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_3_0;
 wire    ap_sync_channel_write_weight_regfile_3_0;
+wire    ap_channel_done_weight_regfile_2_7;
+wire    weight_regfile_2_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_2_7;
+wire    ap_sync_channel_write_weight_regfile_2_7;
+wire    ap_channel_done_weight_regfile_2_6;
+wire    weight_regfile_2_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_2_6;
+wire    ap_sync_channel_write_weight_regfile_2_6;
+wire    ap_channel_done_weight_regfile_2_5;
+wire    weight_regfile_2_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_2_5;
+wire    ap_sync_channel_write_weight_regfile_2_5;
+wire    ap_channel_done_weight_regfile_2_4;
+wire    weight_regfile_2_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_2_4;
+wire    ap_sync_channel_write_weight_regfile_2_4;
 wire    ap_channel_done_weight_regfile_2_3;
 wire    weight_regfile_2_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_2_3;
@@ -245,6 +1455,22 @@ wire    ap_channel_done_weight_regfile_2_0;
 wire    weight_regfile_2_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_2_0;
 wire    ap_sync_channel_write_weight_regfile_2_0;
+wire    ap_channel_done_weight_regfile_1_7;
+wire    weight_regfile_1_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_1_7;
+wire    ap_sync_channel_write_weight_regfile_1_7;
+wire    ap_channel_done_weight_regfile_1_6;
+wire    weight_regfile_1_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_1_6;
+wire    ap_sync_channel_write_weight_regfile_1_6;
+wire    ap_channel_done_weight_regfile_1_5;
+wire    weight_regfile_1_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_1_5;
+wire    ap_sync_channel_write_weight_regfile_1_5;
+wire    ap_channel_done_weight_regfile_1_4;
+wire    weight_regfile_1_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_1_4;
+wire    ap_sync_channel_write_weight_regfile_1_4;
 wire    ap_channel_done_weight_regfile_1_3;
 wire    weight_regfile_1_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_1_3;
@@ -261,6 +1487,22 @@ wire    ap_channel_done_weight_regfile_1_0;
 wire    weight_regfile_1_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_1_0;
 wire    ap_sync_channel_write_weight_regfile_1_0;
+wire    ap_channel_done_weight_regfile_0_7;
+wire    weight_regfile_0_7_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_0_7;
+wire    ap_sync_channel_write_weight_regfile_0_7;
+wire    ap_channel_done_weight_regfile_0_6;
+wire    weight_regfile_0_6_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_0_6;
+wire    ap_sync_channel_write_weight_regfile_0_6;
+wire    ap_channel_done_weight_regfile_0_5;
+wire    weight_regfile_0_5_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_0_5;
+wire    ap_sync_channel_write_weight_regfile_0_5;
+wire    ap_channel_done_weight_regfile_0_4;
+wire    weight_regfile_0_4_full_n;
+reg    ap_sync_reg_channel_write_weight_regfile_0_4;
+wire    ap_sync_channel_write_weight_regfile_0_4;
 wire    ap_channel_done_weight_regfile_0_3;
 wire    weight_regfile_0_3_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_0_3;
@@ -277,189 +1519,961 @@ wire    ap_channel_done_weight_regfile_0_0;
 wire    weight_regfile_0_0_full_n;
 reg    ap_sync_reg_channel_write_weight_regfile_0_0;
 wire    ap_sync_channel_write_weight_regfile_0_0;
-wire    runDataL2toL1_U0_ap_start;
-wire    runDataL2toL1_U0_ap_done;
-wire    runDataL2toL1_U0_ap_continue;
-wire    runDataL2toL1_U0_ap_idle;
-wire    runDataL2toL1_U0_ap_ready;
-wire   [5:0] runDataL2toL1_U0_data_l1_017_i_address0;
-wire    runDataL2toL1_U0_data_l1_017_i_ce0;
-wire    runDataL2toL1_U0_data_l1_017_i_we0;
-wire   [7:0] runDataL2toL1_U0_data_l1_017_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_118_i_address0;
-wire    runDataL2toL1_U0_data_l1_118_i_ce0;
-wire    runDataL2toL1_U0_data_l1_118_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_118_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_219_i_address0;
-wire    runDataL2toL1_U0_data_l1_219_i_ce0;
-wire    runDataL2toL1_U0_data_l1_219_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_219_i_d0;
-wire   [5:0] runDataL2toL1_U0_data_l1_320_i_address0;
-wire    runDataL2toL1_U0_data_l1_320_i_ce0;
-wire    runDataL2toL1_U0_data_l1_320_i_we0;
-wire   [0:0] runDataL2toL1_U0_data_l1_320_i_d0;
-wire    runDataL2toL1_U0_param_read;
-wire    runDataL2toL1_U0_co_read;
-wire    runDataL2toL1_U0_ho_read;
-wire    runDataL2toL1_U0_wo_read;
-wire    runDataL2toL1_U0_ro_read;
-wire    runDataL2toL1_U0_so_read;
-wire   [10:0] runDataL2toL1_U0_data_l2_0_address0;
-wire    runDataL2toL1_U0_data_l2_0_ce0;
-wire    runDataL2toL1_U0_data_l2_0_full_n;
-wire    runDataL2toL1_U0_data_l2_0_write;
-wire    ap_channel_done_data_l1_3;
-wire    runDataL2toL1_U0_data_l1_320_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_3;
-wire    ap_sync_channel_write_data_l1_3;
-wire    ap_channel_done_data_l1_2;
-wire    runDataL2toL1_U0_data_l1_219_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_2;
-wire    ap_sync_channel_write_data_l1_2;
-wire    ap_channel_done_data_l1_1;
-wire    runDataL2toL1_U0_data_l1_118_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_1;
-wire    ap_sync_channel_write_data_l1_1;
-wire    ap_channel_done_data_l1_0;
-wire    runDataL2toL1_U0_data_l1_017_i_full_n;
-reg    ap_sync_reg_channel_write_data_l1_0;
-wire    ap_sync_channel_write_data_l1_0;
-wire    runSIMD_U0_ap_start;
-wire    runSIMD_U0_ap_done;
-wire    runSIMD_U0_ap_continue;
-wire    runSIMD_U0_ap_idle;
-wire    runSIMD_U0_ap_ready;
-wire   [5:0] runSIMD_U0_data_l1_017_i_address0;
-wire    runSIMD_U0_data_l1_017_i_ce0;
-wire   [5:0] runSIMD_U0_data_l1_118_i_address0;
-wire    runSIMD_U0_data_l1_118_i_ce0;
-wire   [5:0] runSIMD_U0_data_l1_219_i_address0;
-wire    runSIMD_U0_data_l1_219_i_ce0;
-wire   [5:0] runSIMD_U0_data_l1_320_i_address0;
-wire    runSIMD_U0_data_l1_320_i_ce0;
-wire   [5:0] runSIMD_U0_output_l1_021_i_address0;
-wire    runSIMD_U0_output_l1_021_i_ce0;
-wire    runSIMD_U0_output_l1_021_i_we0;
-wire   [15:0] runSIMD_U0_output_l1_021_i_d0;
-wire   [5:0] runSIMD_U0_output_l1_122_i_address0;
-wire    runSIMD_U0_output_l1_122_i_ce0;
-wire    runSIMD_U0_output_l1_122_i_we0;
-wire   [15:0] runSIMD_U0_output_l1_122_i_d0;
-wire   [5:0] runSIMD_U0_output_l1_223_i_address0;
-wire    runSIMD_U0_output_l1_223_i_ce0;
-wire    runSIMD_U0_output_l1_223_i_we0;
-wire   [15:0] runSIMD_U0_output_l1_223_i_d0;
-wire   [5:0] runSIMD_U0_output_l1_324_i_address0;
-wire    runSIMD_U0_output_l1_324_i_ce0;
-wire    runSIMD_U0_output_l1_324_i_we0;
-wire   [15:0] runSIMD_U0_output_l1_324_i_d0;
-wire    runSIMD_U0_param_read;
-wire   [1119:0] runSIMD_U0_param_out_din;
-wire    runSIMD_U0_param_out_write;
-wire    ap_channel_done_output_l1_3;
-wire    runSIMD_U0_output_l1_324_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_3;
-wire    ap_sync_channel_write_output_l1_3;
-wire    ap_channel_done_output_l1_2;
-wire    runSIMD_U0_output_l1_223_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_2;
-wire    ap_sync_channel_write_output_l1_2;
-wire    ap_channel_done_output_l1_1;
-wire    runSIMD_U0_output_l1_122_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_1;
-wire    ap_sync_channel_write_output_l1_1;
-wire    ap_channel_done_output_l1_0;
-wire    runSIMD_U0_output_l1_021_i_full_n;
-reg    ap_sync_reg_channel_write_output_l1_0;
-wire    ap_sync_channel_write_output_l1_0;
+wire    runDataL2toL1_bitvec_U0_ap_start;
+wire    runDataL2toL1_bitvec_U0_ap_done;
+wire    runDataL2toL1_bitvec_U0_ap_continue;
+wire    runDataL2toL1_bitvec_U0_ap_idle;
+wire    runDataL2toL1_bitvec_U0_ap_ready;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_065_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_065_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_065_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_065_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_166_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_166_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_166_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_166_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_267_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_267_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_267_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_267_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_368_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_368_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_368_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_368_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_469_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_469_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_469_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_469_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_570_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_570_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_570_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_570_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_671_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_671_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_671_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_671_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_772_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_772_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_772_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_0_772_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_073_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_073_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_073_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_073_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_174_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_174_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_174_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_174_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_275_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_275_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_275_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_275_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_376_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_376_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_376_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_376_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_477_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_477_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_477_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_477_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_578_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_578_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_578_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_578_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_679_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_679_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_679_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_679_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_780_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_780_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_780_i_we0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_1_780_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_we0;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_we0;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_we0;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_d0;
+wire   [7:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_address0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_ce0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_we0;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_d0;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_length_0_085_i;
+wire    runDataL2toL1_bitvec_U0_data_l1_length_0_085_i_ap_vld;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_length_0_186_i;
+wire    runDataL2toL1_bitvec_U0_data_l1_length_0_186_i_ap_vld;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_length_1_087_i;
+wire    runDataL2toL1_bitvec_U0_data_l1_length_1_087_i_ap_vld;
+wire   [15:0] runDataL2toL1_bitvec_U0_data_l1_length_1_188_i;
+wire    runDataL2toL1_bitvec_U0_data_l1_length_1_188_i_ap_vld;
+wire    runDataL2toL1_bitvec_U0_TILESIZE_H_read;
+wire    runDataL2toL1_bitvec_U0_TILESIZE_W_read;
+wire    runDataL2toL1_bitvec_U0_co_read;
+wire    runDataL2toL1_bitvec_U0_ho_read;
+wire    runDataL2toL1_bitvec_U0_wo_read;
+wire    runDataL2toL1_bitvec_U0_ro_read;
+wire    runDataL2toL1_bitvec_U0_so_read;
+wire    runDataL2toL1_bitvec_U0_W_in_L2_read;
+wire    runDataL2toL1_bitvec_U0_H_in_L2_read;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_0_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_0_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_1_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_1_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_2_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_2_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_3_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_3_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_4_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_4_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_5_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_5_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_6_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_6_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_0_7_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_7_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_0_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_0_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_1_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_1_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_2_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_2_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_3_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_3_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_4_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_4_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_5_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_5_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_6_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_6_ce0;
+wire   [10:0] runDataL2toL1_bitvec_U0_data_l2_1_7_address0;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_7_ce0;
+wire   [15:0] runDataL2toL1_bitvec_U0_ap_return;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_0_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_0_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_1_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_1_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_2_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_2_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_3_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_3_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_4_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_4_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_5_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_5_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_6_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_6_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_7_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_0_7_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_0_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_0_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_1_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_1_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_2_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_2_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_3_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_3_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_4_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_4_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_5_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_5_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_6_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_6_write;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_7_full_n;
+wire    runDataL2toL1_bitvec_U0_data_l2_1_7_write;
+wire    ap_channel_done_max_bitvec_length_0;
+wire    max_bitvec_length_0_full_n;
+reg    ap_sync_reg_channel_write_max_bitvec_length_0;
+wire    ap_sync_channel_write_max_bitvec_length_0;
+wire    ap_channel_done_data_l1_length_1_1;
+wire    data_l1_length_1_1_full_n;
+reg    ap_sync_reg_channel_write_data_l1_length_1_1;
+wire    ap_sync_channel_write_data_l1_length_1_1;
+wire    ap_channel_done_data_l1_length_1_0;
+wire    data_l1_length_1_0_full_n;
+reg    ap_sync_reg_channel_write_data_l1_length_1_0;
+wire    ap_sync_channel_write_data_l1_length_1_0;
+wire    ap_channel_done_data_l1_length_0_1;
+wire    data_l1_length_0_1_full_n;
+reg    ap_sync_reg_channel_write_data_l1_length_0_1;
+wire    ap_sync_channel_write_data_l1_length_0_1;
+wire    ap_channel_done_data_l1_length_0_0;
+wire    data_l1_length_0_0_full_n;
+reg    ap_sync_reg_channel_write_data_l1_length_0_0;
+wire    ap_sync_channel_write_data_l1_length_0_0;
+wire    ap_channel_done_data_l1_bitvec_1_1;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_bitvec_1_1;
+wire    ap_sync_channel_write_data_l1_bitvec_1_1;
+wire    ap_channel_done_data_l1_bitvec_1_0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_bitvec_1_0;
+wire    ap_sync_channel_write_data_l1_bitvec_1_0;
+wire    ap_channel_done_data_l1_bitvec_0_1;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_bitvec_0_1;
+wire    ap_sync_channel_write_data_l1_bitvec_0_1;
+wire    ap_channel_done_data_l1_bitvec_0_0;
+wire    runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_bitvec_0_0;
+wire    ap_sync_channel_write_data_l1_bitvec_0_0;
+wire    ap_channel_done_data_l1_1_7;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_780_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_7;
+wire    ap_sync_channel_write_data_l1_1_7;
+wire    ap_channel_done_data_l1_1_6;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_679_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_6;
+wire    ap_sync_channel_write_data_l1_1_6;
+wire    ap_channel_done_data_l1_1_5;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_578_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_5;
+wire    ap_sync_channel_write_data_l1_1_5;
+wire    ap_channel_done_data_l1_1_4;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_477_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_4;
+wire    ap_sync_channel_write_data_l1_1_4;
+wire    ap_channel_done_data_l1_1_3;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_376_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_3;
+wire    ap_sync_channel_write_data_l1_1_3;
+wire    ap_channel_done_data_l1_1_2;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_275_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_2;
+wire    ap_sync_channel_write_data_l1_1_2;
+wire    ap_channel_done_data_l1_1_1;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_174_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_1;
+wire    ap_sync_channel_write_data_l1_1_1;
+wire    ap_channel_done_data_l1_1_0;
+wire    runDataL2toL1_bitvec_U0_data_l1_1_073_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_1_0;
+wire    ap_sync_channel_write_data_l1_1_0;
+wire    ap_channel_done_data_l1_0_7;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_772_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_7;
+wire    ap_sync_channel_write_data_l1_0_7;
+wire    ap_channel_done_data_l1_0_6;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_671_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_6;
+wire    ap_sync_channel_write_data_l1_0_6;
+wire    ap_channel_done_data_l1_0_5;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_570_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_5;
+wire    ap_sync_channel_write_data_l1_0_5;
+wire    ap_channel_done_data_l1_0_4;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_469_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_4;
+wire    ap_sync_channel_write_data_l1_0_4;
+wire    ap_channel_done_data_l1_0_3;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_368_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_3;
+wire    ap_sync_channel_write_data_l1_0_3;
+wire    ap_channel_done_data_l1_0_2;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_267_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_2;
+wire    ap_sync_channel_write_data_l1_0_2;
+wire    ap_channel_done_data_l1_0_1;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_166_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_1;
+wire    ap_sync_channel_write_data_l1_0_1;
+wire    ap_channel_done_data_l1_0_0;
+wire    runDataL2toL1_bitvec_U0_data_l1_0_065_i_full_n;
+reg    ap_sync_reg_channel_write_data_l1_0_0;
+wire    ap_sync_channel_write_data_l1_0_0;
+wire    runSIMD_bitvec_U0_ap_start;
+wire    runSIMD_bitvec_U0_ap_done;
+wire    runSIMD_bitvec_U0_ap_continue;
+wire    runSIMD_bitvec_U0_ap_idle;
+wire    runSIMD_bitvec_U0_ap_ready;
+wire   [7:0] runSIMD_bitvec_U0_data_l1_address0;
+wire    runSIMD_bitvec_U0_data_l1_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l164_address0;
+wire    runSIMD_bitvec_U0_data_l164_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l165_address0;
+wire    runSIMD_bitvec_U0_data_l165_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l166_address0;
+wire    runSIMD_bitvec_U0_data_l166_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l167_address0;
+wire    runSIMD_bitvec_U0_data_l167_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l168_address0;
+wire    runSIMD_bitvec_U0_data_l168_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l169_address0;
+wire    runSIMD_bitvec_U0_data_l169_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l170_address0;
+wire    runSIMD_bitvec_U0_data_l170_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l18_address0;
+wire    runSIMD_bitvec_U0_data_l18_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1871_address0;
+wire    runSIMD_bitvec_U0_data_l1871_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1872_address0;
+wire    runSIMD_bitvec_U0_data_l1872_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1873_address0;
+wire    runSIMD_bitvec_U0_data_l1873_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1874_address0;
+wire    runSIMD_bitvec_U0_data_l1874_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1875_address0;
+wire    runSIMD_bitvec_U0_data_l1875_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1876_address0;
+wire    runSIMD_bitvec_U0_data_l1876_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1877_address0;
+wire    runSIMD_bitvec_U0_data_l1877_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1_bitvec_address0;
+wire    runSIMD_bitvec_U0_data_l1_bitvec_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1_bitvec78_address0;
+wire    runSIMD_bitvec_U0_data_l1_bitvec78_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1_bitvec9_address0;
+wire    runSIMD_bitvec_U0_data_l1_bitvec9_ce0;
+wire   [7:0] runSIMD_bitvec_U0_data_l1_bitvec979_address0;
+wire    runSIMD_bitvec_U0_data_l1_bitvec979_ce0;
+wire    runSIMD_bitvec_U0_TILESIZE_H_read;
+wire    runSIMD_bitvec_U0_TILESIZE_W_read;
+wire    runSIMD_bitvec_U0_TILESIZE_R_read;
+wire    runSIMD_bitvec_U0_TILESIZE_S_read;
+wire   [31:0] runSIMD_bitvec_U0_TILESIZE_H_out_din;
+wire    runSIMD_bitvec_U0_TILESIZE_H_out_write;
+wire   [31:0] runSIMD_bitvec_U0_TILESIZE_W_out_din;
+wire    runSIMD_bitvec_U0_TILESIZE_W_out_write;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_0_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_0_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_0_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_0_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_0_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_0_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_0_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_0_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_1_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_1_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_1_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_1_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_1_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_1_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_1_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_1_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_2_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_2_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_2_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_2_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_2_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_2_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_2_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_2_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_3_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_3_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_3_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_3_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_3_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_3_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_3_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_3_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_4_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_4_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_4_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_4_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_4_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_4_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_4_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_4_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_5_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_5_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_5_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_5_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_5_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_5_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_5_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_5_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_6_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_6_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_6_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_6_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_6_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_6_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_6_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_6_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_7_address0;
+wire    runSIMD_bitvec_U0_output_l1_0_7_ce0;
+wire    runSIMD_bitvec_U0_output_l1_0_7_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_7_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_0_7_address1;
+wire    runSIMD_bitvec_U0_output_l1_0_7_ce1;
+wire    runSIMD_bitvec_U0_output_l1_0_7_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_0_7_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_0_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_0_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_0_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_0_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_0_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_0_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_0_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_0_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_1_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_1_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_1_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_1_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_1_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_1_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_1_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_1_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_2_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_2_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_2_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_2_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_2_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_2_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_2_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_2_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_3_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_3_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_3_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_3_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_3_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_3_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_3_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_3_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_4_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_4_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_4_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_4_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_4_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_4_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_4_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_4_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_5_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_5_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_5_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_5_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_5_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_5_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_5_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_5_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_6_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_6_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_6_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_6_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_6_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_6_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_6_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_6_d1;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_7_address0;
+wire    runSIMD_bitvec_U0_output_l1_1_7_ce0;
+wire    runSIMD_bitvec_U0_output_l1_1_7_we0;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_7_d0;
+wire   [7:0] runSIMD_bitvec_U0_output_l1_1_7_address1;
+wire    runSIMD_bitvec_U0_output_l1_1_7_ce1;
+wire    runSIMD_bitvec_U0_output_l1_1_7_we1;
+wire   [31:0] runSIMD_bitvec_U0_output_l1_1_7_d1;
+wire    ap_channel_done_output_l1_1_7;
+wire    runSIMD_bitvec_U0_output_l1_1_7_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_7;
+wire    ap_sync_channel_write_output_l1_1_7;
+wire    ap_channel_done_output_l1_1_6;
+wire    runSIMD_bitvec_U0_output_l1_1_6_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_6;
+wire    ap_sync_channel_write_output_l1_1_6;
+wire    ap_channel_done_output_l1_1_5;
+wire    runSIMD_bitvec_U0_output_l1_1_5_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_5;
+wire    ap_sync_channel_write_output_l1_1_5;
+wire    ap_channel_done_output_l1_1_4;
+wire    runSIMD_bitvec_U0_output_l1_1_4_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_4;
+wire    ap_sync_channel_write_output_l1_1_4;
+wire    ap_channel_done_output_l1_1_3;
+wire    runSIMD_bitvec_U0_output_l1_1_3_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_3;
+wire    ap_sync_channel_write_output_l1_1_3;
+wire    ap_channel_done_output_l1_1_2;
+wire    runSIMD_bitvec_U0_output_l1_1_2_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_2;
+wire    ap_sync_channel_write_output_l1_1_2;
+wire    ap_channel_done_output_l1_1_1;
+wire    runSIMD_bitvec_U0_output_l1_1_1_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_1;
+wire    ap_sync_channel_write_output_l1_1_1;
+wire    ap_channel_done_output_l1_1_0;
+wire    runSIMD_bitvec_U0_output_l1_1_0_full_n;
+reg    ap_sync_reg_channel_write_output_l1_1_0;
+wire    ap_sync_channel_write_output_l1_1_0;
+wire    ap_channel_done_output_l1_0_7;
+wire    runSIMD_bitvec_U0_output_l1_0_7_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_7;
+wire    ap_sync_channel_write_output_l1_0_7;
+wire    ap_channel_done_output_l1_0_6;
+wire    runSIMD_bitvec_U0_output_l1_0_6_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_6;
+wire    ap_sync_channel_write_output_l1_0_6;
+wire    ap_channel_done_output_l1_0_5;
+wire    runSIMD_bitvec_U0_output_l1_0_5_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_5;
+wire    ap_sync_channel_write_output_l1_0_5;
+wire    ap_channel_done_output_l1_0_4;
+wire    runSIMD_bitvec_U0_output_l1_0_4_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_4;
+wire    ap_sync_channel_write_output_l1_0_4;
+wire    ap_channel_done_output_l1_0_3;
+wire    runSIMD_bitvec_U0_output_l1_0_3_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_3;
+wire    ap_sync_channel_write_output_l1_0_3;
+wire    ap_channel_done_output_l1_0_2;
+wire    runSIMD_bitvec_U0_output_l1_0_2_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_2;
+wire    ap_sync_channel_write_output_l1_0_2;
+wire    ap_channel_done_output_l1_0_1;
+wire    runSIMD_bitvec_U0_output_l1_0_1_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_1;
+wire    ap_sync_channel_write_output_l1_0_1;
+wire    ap_channel_done_output_l1_0_0;
+wire    runSIMD_bitvec_U0_output_l1_0_0_full_n;
+reg    ap_sync_reg_channel_write_output_l1_0_0;
+wire    ap_sync_channel_write_output_l1_0_0;
 wire    runOutputL1toL2_U0_ap_start;
 wire    runOutputL1toL2_U0_ap_done;
 wire    runOutputL1toL2_U0_ap_continue;
 wire    runOutputL1toL2_U0_ap_idle;
 wire    runOutputL1toL2_U0_ap_ready;
-wire   [5:0] runOutputL1toL2_U0_output_l1_021_i_address0;
-wire    runOutputL1toL2_U0_output_l1_021_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_122_i_address0;
-wire    runOutputL1toL2_U0_output_l1_122_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_223_i_address0;
-wire    runOutputL1toL2_U0_output_l1_223_i_ce0;
-wire   [5:0] runOutputL1toL2_U0_output_l1_324_i_address0;
-wire    runOutputL1toL2_U0_output_l1_324_i_ce0;
-wire    runOutputL1toL2_U0_param_read;
-wire    runOutputL1toL2_U0_ko_1_read;
+wire    runOutputL1toL2_U0_TILESIZE_H_read;
+wire    runOutputL1toL2_U0_TILESIZE_W_read;
+wire    runOutputL1toL2_U0_ko_3_read;
 wire    runOutputL1toL2_U0_ho_read;
 wire    runOutputL1toL2_U0_wo_read;
+wire    runOutputL1toL2_U0_W_L2_read;
+wire    runOutputL1toL2_U0_H_L2_read;
 wire    runOutputL1toL2_U0_ro_read;
 wire    runOutputL1toL2_U0_co_read;
 wire    runOutputL1toL2_U0_so_read;
-wire   [10:0] runOutputL1toL2_U0_output_l2_0_address0;
-wire    runOutputL1toL2_U0_output_l2_0_ce0;
-wire    runOutputL1toL2_U0_output_l2_0_we0;
-wire   [31:0] runOutputL1toL2_U0_output_l2_0_d0;
-wire    runOutputL1toL2_U0_output_l2_0_full_n;
-wire    runOutputL1toL2_U0_output_l2_0_write;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_0_address0;
+wire    runOutputL1toL2_U0_output_l1_0_0_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_1_address0;
+wire    runOutputL1toL2_U0_output_l1_0_1_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_1_address1;
+wire    runOutputL1toL2_U0_output_l1_0_1_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_2_address0;
+wire    runOutputL1toL2_U0_output_l1_0_2_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_2_address1;
+wire    runOutputL1toL2_U0_output_l1_0_2_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_3_address0;
+wire    runOutputL1toL2_U0_output_l1_0_3_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_3_address1;
+wire    runOutputL1toL2_U0_output_l1_0_3_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_4_address0;
+wire    runOutputL1toL2_U0_output_l1_0_4_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_4_address1;
+wire    runOutputL1toL2_U0_output_l1_0_4_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_5_address0;
+wire    runOutputL1toL2_U0_output_l1_0_5_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_5_address1;
+wire    runOutputL1toL2_U0_output_l1_0_5_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_6_address0;
+wire    runOutputL1toL2_U0_output_l1_0_6_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_6_address1;
+wire    runOutputL1toL2_U0_output_l1_0_6_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_7_address0;
+wire    runOutputL1toL2_U0_output_l1_0_7_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_0_7_address1;
+wire    runOutputL1toL2_U0_output_l1_0_7_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_0_address0;
+wire    runOutputL1toL2_U0_output_l1_1_0_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_0_address1;
+wire    runOutputL1toL2_U0_output_l1_1_0_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_1_address0;
+wire    runOutputL1toL2_U0_output_l1_1_1_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_1_address1;
+wire    runOutputL1toL2_U0_output_l1_1_1_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_2_address0;
+wire    runOutputL1toL2_U0_output_l1_1_2_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_2_address1;
+wire    runOutputL1toL2_U0_output_l1_1_2_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_3_address0;
+wire    runOutputL1toL2_U0_output_l1_1_3_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_3_address1;
+wire    runOutputL1toL2_U0_output_l1_1_3_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_4_address0;
+wire    runOutputL1toL2_U0_output_l1_1_4_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_4_address1;
+wire    runOutputL1toL2_U0_output_l1_1_4_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_5_address0;
+wire    runOutputL1toL2_U0_output_l1_1_5_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_5_address1;
+wire    runOutputL1toL2_U0_output_l1_1_5_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_6_address0;
+wire    runOutputL1toL2_U0_output_l1_1_6_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_6_address1;
+wire    runOutputL1toL2_U0_output_l1_1_6_ce1;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_7_address0;
+wire    runOutputL1toL2_U0_output_l1_1_7_ce0;
+wire   [7:0] runOutputL1toL2_U0_output_l1_1_7_address1;
+wire    runOutputL1toL2_U0_output_l1_1_7_ce1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_0_address0;
+wire    runOutputL1toL2_U0_output_l2_0_0_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_0_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_0_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_0_address1;
+wire    runOutputL1toL2_U0_output_l2_0_0_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_0_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_0_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_1_address0;
+wire    runOutputL1toL2_U0_output_l2_0_1_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_1_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_1_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_1_address1;
+wire    runOutputL1toL2_U0_output_l2_0_1_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_1_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_1_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_2_address0;
+wire    runOutputL1toL2_U0_output_l2_0_2_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_2_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_2_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_2_address1;
+wire    runOutputL1toL2_U0_output_l2_0_2_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_2_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_2_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_3_address0;
+wire    runOutputL1toL2_U0_output_l2_0_3_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_3_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_3_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_3_address1;
+wire    runOutputL1toL2_U0_output_l2_0_3_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_3_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_3_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_4_address0;
+wire    runOutputL1toL2_U0_output_l2_0_4_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_4_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_4_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_4_address1;
+wire    runOutputL1toL2_U0_output_l2_0_4_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_4_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_4_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_5_address0;
+wire    runOutputL1toL2_U0_output_l2_0_5_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_5_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_5_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_5_address1;
+wire    runOutputL1toL2_U0_output_l2_0_5_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_5_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_5_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_6_address0;
+wire    runOutputL1toL2_U0_output_l2_0_6_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_6_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_6_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_6_address1;
+wire    runOutputL1toL2_U0_output_l2_0_6_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_6_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_6_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_7_address0;
+wire    runOutputL1toL2_U0_output_l2_0_7_ce0;
+wire    runOutputL1toL2_U0_output_l2_0_7_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_7_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_0_7_address1;
+wire    runOutputL1toL2_U0_output_l2_0_7_ce1;
+wire    runOutputL1toL2_U0_output_l2_0_7_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_0_7_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_0_address0;
+wire    runOutputL1toL2_U0_output_l2_1_0_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_0_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_0_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_0_address1;
+wire    runOutputL1toL2_U0_output_l2_1_0_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_0_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_0_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_1_address0;
+wire    runOutputL1toL2_U0_output_l2_1_1_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_1_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_1_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_1_address1;
+wire    runOutputL1toL2_U0_output_l2_1_1_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_1_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_1_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_2_address0;
+wire    runOutputL1toL2_U0_output_l2_1_2_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_2_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_2_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_2_address1;
+wire    runOutputL1toL2_U0_output_l2_1_2_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_2_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_2_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_3_address0;
+wire    runOutputL1toL2_U0_output_l2_1_3_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_3_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_3_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_3_address1;
+wire    runOutputL1toL2_U0_output_l2_1_3_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_3_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_3_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_4_address0;
+wire    runOutputL1toL2_U0_output_l2_1_4_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_4_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_4_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_4_address1;
+wire    runOutputL1toL2_U0_output_l2_1_4_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_4_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_4_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_5_address0;
+wire    runOutputL1toL2_U0_output_l2_1_5_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_5_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_5_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_5_address1;
+wire    runOutputL1toL2_U0_output_l2_1_5_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_5_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_5_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_6_address0;
+wire    runOutputL1toL2_U0_output_l2_1_6_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_6_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_6_d0;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_6_address1;
+wire    runOutputL1toL2_U0_output_l2_1_6_ce1;
+wire    runOutputL1toL2_U0_output_l2_1_6_we1;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_6_d1;
+wire   [10:0] runOutputL1toL2_U0_output_l2_1_7_address0;
+wire    runOutputL1toL2_U0_output_l2_1_7_ce0;
+wire    runOutputL1toL2_U0_output_l2_1_7_we0;
+wire   [31:0] runOutputL1toL2_U0_output_l2_1_7_d0;
+wire    runOutputL1toL2_U0_output_l2_0_0_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_0_write;
+wire    runOutputL1toL2_U0_output_l2_0_1_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_1_write;
+wire    runOutputL1toL2_U0_output_l2_0_2_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_2_write;
+wire    runOutputL1toL2_U0_output_l2_0_3_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_3_write;
+wire    runOutputL1toL2_U0_output_l2_0_4_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_4_write;
+wire    runOutputL1toL2_U0_output_l2_0_5_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_5_write;
+wire    runOutputL1toL2_U0_output_l2_0_6_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_6_write;
+wire    runOutputL1toL2_U0_output_l2_0_7_full_n;
+wire    runOutputL1toL2_U0_output_l2_0_7_write;
+wire    runOutputL1toL2_U0_output_l2_1_0_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_0_write;
+wire    runOutputL1toL2_U0_output_l2_1_1_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_1_write;
+wire    runOutputL1toL2_U0_output_l2_1_2_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_2_write;
+wire    runOutputL1toL2_U0_output_l2_1_3_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_3_write;
+wire    runOutputL1toL2_U0_output_l2_1_4_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_4_write;
+wire    runOutputL1toL2_U0_output_l2_1_5_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_5_write;
+wire    runOutputL1toL2_U0_output_l2_1_6_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_6_write;
+wire    runOutputL1toL2_U0_output_l2_1_7_full_n;
+wire    runOutputL1toL2_U0_output_l2_1_7_write;
 wire    ap_sync_continue;
-wire    data_l1_0_i_full_n;
-wire    data_l1_0_t_empty_n;
-wire    data_l1_1_i_full_n;
-wire    data_l1_1_t_empty_n;
-wire    data_l1_2_i_full_n;
-wire    data_l1_2_t_empty_n;
-wire    data_l1_3_i_full_n;
-wire    data_l1_3_t_empty_n;
-wire    output_l1_0_i_full_n;
-wire    output_l1_0_t_empty_n;
-wire    output_l1_1_i_full_n;
-wire    output_l1_1_t_empty_n;
-wire    output_l1_2_i_full_n;
-wire    output_l1_2_t_empty_n;
-wire    output_l1_3_i_full_n;
-wire    output_l1_3_t_empty_n;
-wire    param_c_full_n;
-wire   [1183:0] param_c_dout;
-wire    param_c_empty_n;
-wire    param_c1_full_n;
-wire   [1119:0] param_c1_dout;
-wire    param_c1_empty_n;
-wire    ko_1_c_full_n;
-wire   [11:0] ko_1_c_dout;
-wire    ko_1_c_empty_n;
+wire    data_l1_0_0_i_full_n;
+wire    data_l1_0_0_t_empty_n;
+wire    data_l1_0_1_i_full_n;
+wire    data_l1_0_1_t_empty_n;
+wire    data_l1_0_2_i_full_n;
+wire    data_l1_0_2_t_empty_n;
+wire    data_l1_0_3_i_full_n;
+wire    data_l1_0_3_t_empty_n;
+wire    data_l1_0_4_i_full_n;
+wire    data_l1_0_4_t_empty_n;
+wire    data_l1_0_5_i_full_n;
+wire    data_l1_0_5_t_empty_n;
+wire    data_l1_0_6_i_full_n;
+wire    data_l1_0_6_t_empty_n;
+wire    data_l1_0_7_i_full_n;
+wire    data_l1_0_7_t_empty_n;
+wire    data_l1_1_0_i_full_n;
+wire    data_l1_1_0_t_empty_n;
+wire    data_l1_1_1_i_full_n;
+wire    data_l1_1_1_t_empty_n;
+wire    data_l1_1_2_i_full_n;
+wire    data_l1_1_2_t_empty_n;
+wire    data_l1_1_3_i_full_n;
+wire    data_l1_1_3_t_empty_n;
+wire    data_l1_1_4_i_full_n;
+wire    data_l1_1_4_t_empty_n;
+wire    data_l1_1_5_i_full_n;
+wire    data_l1_1_5_t_empty_n;
+wire    data_l1_1_6_i_full_n;
+wire    data_l1_1_6_t_empty_n;
+wire    data_l1_1_7_i_full_n;
+wire    data_l1_1_7_t_empty_n;
+wire    data_l1_bitvec_0_0_i_full_n;
+wire    data_l1_bitvec_0_0_t_empty_n;
+wire    data_l1_bitvec_0_1_i_full_n;
+wire    data_l1_bitvec_0_1_t_empty_n;
+wire    data_l1_bitvec_1_0_i_full_n;
+wire    data_l1_bitvec_1_0_t_empty_n;
+wire    data_l1_bitvec_1_1_i_full_n;
+wire    data_l1_bitvec_1_1_t_empty_n;
+wire   [31:0] output_l1_0_0_i_q0;
+wire   [31:0] output_l1_0_0_t_q0;
+wire    output_l1_0_0_i_full_n;
+wire    output_l1_0_0_t_empty_n;
+wire   [31:0] output_l1_0_1_i_q0;
+wire   [31:0] output_l1_0_1_i_q1;
+wire   [31:0] output_l1_0_1_t_q0;
+wire   [31:0] output_l1_0_1_t_q1;
+wire    output_l1_0_1_i_full_n;
+wire    output_l1_0_1_t_empty_n;
+wire   [31:0] output_l1_0_2_i_q0;
+wire   [31:0] output_l1_0_2_i_q1;
+wire   [31:0] output_l1_0_2_t_q0;
+wire   [31:0] output_l1_0_2_t_q1;
+wire    output_l1_0_2_i_full_n;
+wire    output_l1_0_2_t_empty_n;
+wire   [31:0] output_l1_0_3_i_q0;
+wire   [31:0] output_l1_0_3_i_q1;
+wire   [31:0] output_l1_0_3_t_q0;
+wire   [31:0] output_l1_0_3_t_q1;
+wire    output_l1_0_3_i_full_n;
+wire    output_l1_0_3_t_empty_n;
+wire   [31:0] output_l1_0_4_i_q0;
+wire   [31:0] output_l1_0_4_i_q1;
+wire   [31:0] output_l1_0_4_t_q0;
+wire   [31:0] output_l1_0_4_t_q1;
+wire    output_l1_0_4_i_full_n;
+wire    output_l1_0_4_t_empty_n;
+wire   [31:0] output_l1_0_5_i_q0;
+wire   [31:0] output_l1_0_5_i_q1;
+wire   [31:0] output_l1_0_5_t_q0;
+wire   [31:0] output_l1_0_5_t_q1;
+wire    output_l1_0_5_i_full_n;
+wire    output_l1_0_5_t_empty_n;
+wire   [31:0] output_l1_0_6_i_q0;
+wire   [31:0] output_l1_0_6_i_q1;
+wire   [31:0] output_l1_0_6_t_q0;
+wire   [31:0] output_l1_0_6_t_q1;
+wire    output_l1_0_6_i_full_n;
+wire    output_l1_0_6_t_empty_n;
+wire   [31:0] output_l1_0_7_i_q0;
+wire   [31:0] output_l1_0_7_i_q1;
+wire   [31:0] output_l1_0_7_t_q0;
+wire   [31:0] output_l1_0_7_t_q1;
+wire    output_l1_0_7_i_full_n;
+wire    output_l1_0_7_t_empty_n;
+wire   [31:0] output_l1_1_0_i_q0;
+wire   [31:0] output_l1_1_0_i_q1;
+wire   [31:0] output_l1_1_0_t_q0;
+wire   [31:0] output_l1_1_0_t_q1;
+wire    output_l1_1_0_i_full_n;
+wire    output_l1_1_0_t_empty_n;
+wire   [31:0] output_l1_1_1_i_q0;
+wire   [31:0] output_l1_1_1_i_q1;
+wire   [31:0] output_l1_1_1_t_q0;
+wire   [31:0] output_l1_1_1_t_q1;
+wire    output_l1_1_1_i_full_n;
+wire    output_l1_1_1_t_empty_n;
+wire   [31:0] output_l1_1_2_i_q0;
+wire   [31:0] output_l1_1_2_i_q1;
+wire   [31:0] output_l1_1_2_t_q0;
+wire   [31:0] output_l1_1_2_t_q1;
+wire    output_l1_1_2_i_full_n;
+wire    output_l1_1_2_t_empty_n;
+wire   [31:0] output_l1_1_3_i_q0;
+wire   [31:0] output_l1_1_3_i_q1;
+wire   [31:0] output_l1_1_3_t_q0;
+wire   [31:0] output_l1_1_3_t_q1;
+wire    output_l1_1_3_i_full_n;
+wire    output_l1_1_3_t_empty_n;
+wire   [31:0] output_l1_1_4_i_q0;
+wire   [31:0] output_l1_1_4_i_q1;
+wire   [31:0] output_l1_1_4_t_q0;
+wire   [31:0] output_l1_1_4_t_q1;
+wire    output_l1_1_4_i_full_n;
+wire    output_l1_1_4_t_empty_n;
+wire   [31:0] output_l1_1_5_i_q0;
+wire   [31:0] output_l1_1_5_i_q1;
+wire   [31:0] output_l1_1_5_t_q0;
+wire   [31:0] output_l1_1_5_t_q1;
+wire    output_l1_1_5_i_full_n;
+wire    output_l1_1_5_t_empty_n;
+wire   [31:0] output_l1_1_6_i_q0;
+wire   [31:0] output_l1_1_6_i_q1;
+wire   [31:0] output_l1_1_6_t_q0;
+wire   [31:0] output_l1_1_6_t_q1;
+wire    output_l1_1_6_i_full_n;
+wire    output_l1_1_6_t_empty_n;
+wire   [31:0] output_l1_1_7_i_q0;
+wire   [31:0] output_l1_1_7_i_q1;
+wire   [31:0] output_l1_1_7_t_q0;
+wire   [31:0] output_l1_1_7_t_q1;
+wire    output_l1_1_7_i_full_n;
+wire    output_l1_1_7_t_empty_n;
+wire    C_L2_c_full_n;
+wire   [11:0] C_L2_c_dout;
+wire    C_L2_c_empty_n;
+wire    R_L2_c_full_n;
+wire   [11:0] R_L2_c_dout;
+wire    R_L2_c_empty_n;
+wire    S_L2_c_full_n;
+wire   [11:0] S_L2_c_dout;
+wire    S_L2_c_empty_n;
+wire    ko_3_c_full_n;
+wire   [11:0] ko_3_c_dout;
+wire    ko_3_c_empty_n;
 wire    co_c_full_n;
 wire   [31:0] co_c_dout;
 wire    co_c_empty_n;
-wire    co_c2_full_n;
-wire   [10:0] co_c2_dout;
-wire    co_c2_empty_n;
+wire    co_c1_full_n;
+wire   [10:0] co_c1_dout;
+wire    co_c1_empty_n;
 wire    ro_c_full_n;
 wire   [31:0] ro_c_dout;
 wire    ro_c_empty_n;
-wire    ro_c3_full_n;
-wire   [10:0] ro_c3_dout;
-wire    ro_c3_empty_n;
+wire    ro_c2_full_n;
+wire   [10:0] ro_c2_dout;
+wire    ro_c2_empty_n;
 wire    so_c_full_n;
 wire   [31:0] so_c_dout;
 wire    so_c_empty_n;
-wire    so_c4_full_n;
-wire   [10:0] so_c4_dout;
-wire    so_c4_empty_n;
+wire    so_c3_full_n;
+wire   [11:0] so_c3_dout;
+wire    so_c3_empty_n;
+wire    TILESIZE_H_c_full_n;
+wire   [31:0] TILESIZE_H_c_dout;
+wire    TILESIZE_H_c_empty_n;
+wire    TILESIZE_H_c4_full_n;
+wire   [31:0] TILESIZE_H_c4_dout;
+wire    TILESIZE_H_c4_empty_n;
+wire    TILESIZE_W_c_full_n;
+wire   [31:0] TILESIZE_W_c_dout;
+wire    TILESIZE_W_c_empty_n;
+wire    TILESIZE_W_c5_full_n;
+wire   [31:0] TILESIZE_W_c5_dout;
+wire    TILESIZE_W_c5_empty_n;
 wire    ho_c_full_n;
 wire   [10:0] ho_c_dout;
 wire    ho_c_empty_n;
-wire    ho_c5_full_n;
-wire   [10:0] ho_c5_dout;
-wire    ho_c5_empty_n;
+wire    ho_c6_full_n;
+wire   [10:0] ho_c6_dout;
+wire    ho_c6_empty_n;
 wire    wo_c_full_n;
-wire   [10:0] wo_c_dout;
+wire   [11:0] wo_c_dout;
 wire    wo_c_empty_n;
-wire    wo_c6_full_n;
-wire   [10:0] wo_c6_dout;
-wire    wo_c6_empty_n;
-wire    param_c7_full_n;
-wire   [1183:0] param_c7_dout;
-wire    param_c7_empty_n;
-wire    ko_1_c8_full_n;
-wire   [10:0] ko_1_c8_dout;
-wire    ko_1_c8_empty_n;
+wire    wo_c7_full_n;
+wire   [11:0] wo_c7_dout;
+wire    wo_c7_empty_n;
+wire    W_in_L2_c_full_n;
+wire   [10:0] W_in_L2_c_dout;
+wire    W_in_L2_c_empty_n;
+wire    H_in_L2_c_full_n;
+wire   [10:0] H_in_L2_c_dout;
+wire    H_in_L2_c_empty_n;
+wire    TILESIZE_R_c_full_n;
+wire   [31:0] TILESIZE_R_c_dout;
+wire    TILESIZE_R_c_empty_n;
+wire    TILESIZE_S_c_full_n;
+wire   [31:0] TILESIZE_S_c_dout;
+wire    TILESIZE_S_c_empty_n;
+wire    W_L2_c_full_n;
+wire   [10:0] W_L2_c_dout;
+wire    W_L2_c_empty_n;
+wire    H_L2_c_full_n;
+wire   [10:0] H_L2_c_dout;
+wire    H_L2_c_empty_n;
+wire    ko_3_c8_full_n;
+wire   [10:0] ko_3_c8_dout;
+wire    ko_3_c8_empty_n;
 wire    co_c9_full_n;
 wire   [31:0] co_c9_dout;
 wire    co_c9_empty_n;
@@ -477,6 +2491,14 @@ wire   [7:0] weight_regfile_0_2_dout;
 wire    weight_regfile_0_2_empty_n;
 wire   [7:0] weight_regfile_0_3_dout;
 wire    weight_regfile_0_3_empty_n;
+wire   [7:0] weight_regfile_0_4_dout;
+wire    weight_regfile_0_4_empty_n;
+wire   [7:0] weight_regfile_0_5_dout;
+wire    weight_regfile_0_5_empty_n;
+wire   [7:0] weight_regfile_0_6_dout;
+wire    weight_regfile_0_6_empty_n;
+wire   [7:0] weight_regfile_0_7_dout;
+wire    weight_regfile_0_7_empty_n;
 wire   [7:0] weight_regfile_1_0_dout;
 wire    weight_regfile_1_0_empty_n;
 wire   [7:0] weight_regfile_1_1_dout;
@@ -485,6 +2507,14 @@ wire   [7:0] weight_regfile_1_2_dout;
 wire    weight_regfile_1_2_empty_n;
 wire   [7:0] weight_regfile_1_3_dout;
 wire    weight_regfile_1_3_empty_n;
+wire   [7:0] weight_regfile_1_4_dout;
+wire    weight_regfile_1_4_empty_n;
+wire   [7:0] weight_regfile_1_5_dout;
+wire    weight_regfile_1_5_empty_n;
+wire   [7:0] weight_regfile_1_6_dout;
+wire    weight_regfile_1_6_empty_n;
+wire   [7:0] weight_regfile_1_7_dout;
+wire    weight_regfile_1_7_empty_n;
 wire   [7:0] weight_regfile_2_0_dout;
 wire    weight_regfile_2_0_empty_n;
 wire   [7:0] weight_regfile_2_1_dout;
@@ -493,6 +2523,14 @@ wire   [7:0] weight_regfile_2_2_dout;
 wire    weight_regfile_2_2_empty_n;
 wire   [7:0] weight_regfile_2_3_dout;
 wire    weight_regfile_2_3_empty_n;
+wire   [7:0] weight_regfile_2_4_dout;
+wire    weight_regfile_2_4_empty_n;
+wire   [7:0] weight_regfile_2_5_dout;
+wire    weight_regfile_2_5_empty_n;
+wire   [7:0] weight_regfile_2_6_dout;
+wire    weight_regfile_2_6_empty_n;
+wire   [7:0] weight_regfile_2_7_dout;
+wire    weight_regfile_2_7_empty_n;
 wire   [7:0] weight_regfile_3_0_dout;
 wire    weight_regfile_3_0_empty_n;
 wire   [7:0] weight_regfile_3_1_dout;
@@ -501,319 +2539,828 @@ wire   [7:0] weight_regfile_3_2_dout;
 wire    weight_regfile_3_2_empty_n;
 wire   [7:0] weight_regfile_3_3_dout;
 wire    weight_regfile_3_3_empty_n;
-wire    param_c12_full_n;
-wire   [1119:0] param_c12_dout;
-wire    param_c12_empty_n;
+wire   [7:0] weight_regfile_3_4_dout;
+wire    weight_regfile_3_4_empty_n;
+wire   [7:0] weight_regfile_3_5_dout;
+wire    weight_regfile_3_5_empty_n;
+wire   [7:0] weight_regfile_3_6_dout;
+wire    weight_regfile_3_6_empty_n;
+wire   [7:0] weight_regfile_3_7_dout;
+wire    weight_regfile_3_7_empty_n;
+wire   [7:0] weight_regfile_4_0_dout;
+wire    weight_regfile_4_0_empty_n;
+wire   [7:0] weight_regfile_4_1_dout;
+wire    weight_regfile_4_1_empty_n;
+wire   [7:0] weight_regfile_4_2_dout;
+wire    weight_regfile_4_2_empty_n;
+wire   [7:0] weight_regfile_4_3_dout;
+wire    weight_regfile_4_3_empty_n;
+wire   [7:0] weight_regfile_4_4_dout;
+wire    weight_regfile_4_4_empty_n;
+wire   [7:0] weight_regfile_4_5_dout;
+wire    weight_regfile_4_5_empty_n;
+wire   [7:0] weight_regfile_4_6_dout;
+wire    weight_regfile_4_6_empty_n;
+wire   [7:0] weight_regfile_4_7_dout;
+wire    weight_regfile_4_7_empty_n;
+wire   [7:0] weight_regfile_5_0_dout;
+wire    weight_regfile_5_0_empty_n;
+wire   [7:0] weight_regfile_5_1_dout;
+wire    weight_regfile_5_1_empty_n;
+wire   [7:0] weight_regfile_5_2_dout;
+wire    weight_regfile_5_2_empty_n;
+wire   [7:0] weight_regfile_5_3_dout;
+wire    weight_regfile_5_3_empty_n;
+wire   [7:0] weight_regfile_5_4_dout;
+wire    weight_regfile_5_4_empty_n;
+wire   [7:0] weight_regfile_5_5_dout;
+wire    weight_regfile_5_5_empty_n;
+wire   [7:0] weight_regfile_5_6_dout;
+wire    weight_regfile_5_6_empty_n;
+wire   [7:0] weight_regfile_5_7_dout;
+wire    weight_regfile_5_7_empty_n;
+wire   [7:0] weight_regfile_6_0_dout;
+wire    weight_regfile_6_0_empty_n;
+wire   [7:0] weight_regfile_6_1_dout;
+wire    weight_regfile_6_1_empty_n;
+wire   [7:0] weight_regfile_6_2_dout;
+wire    weight_regfile_6_2_empty_n;
+wire   [7:0] weight_regfile_6_3_dout;
+wire    weight_regfile_6_3_empty_n;
+wire   [7:0] weight_regfile_6_4_dout;
+wire    weight_regfile_6_4_empty_n;
+wire   [7:0] weight_regfile_6_5_dout;
+wire    weight_regfile_6_5_empty_n;
+wire   [7:0] weight_regfile_6_6_dout;
+wire    weight_regfile_6_6_empty_n;
+wire   [7:0] weight_regfile_6_7_dout;
+wire    weight_regfile_6_7_empty_n;
+wire   [7:0] weight_regfile_7_0_dout;
+wire    weight_regfile_7_0_empty_n;
+wire   [7:0] weight_regfile_7_1_dout;
+wire    weight_regfile_7_1_empty_n;
+wire   [7:0] weight_regfile_7_2_dout;
+wire    weight_regfile_7_2_empty_n;
+wire   [7:0] weight_regfile_7_3_dout;
+wire    weight_regfile_7_3_empty_n;
+wire   [7:0] weight_regfile_7_4_dout;
+wire    weight_regfile_7_4_empty_n;
+wire   [7:0] weight_regfile_7_5_dout;
+wire    weight_regfile_7_5_empty_n;
+wire   [7:0] weight_regfile_7_6_dout;
+wire    weight_regfile_7_6_empty_n;
+wire   [7:0] weight_regfile_7_7_dout;
+wire    weight_regfile_7_7_empty_n;
+wire   [15:0] data_l1_length_0_0_dout;
+wire    data_l1_length_0_0_empty_n;
+wire   [15:0] data_l1_length_0_1_dout;
+wire    data_l1_length_0_1_empty_n;
+wire   [15:0] data_l1_length_1_0_dout;
+wire    data_l1_length_1_0_empty_n;
+wire   [15:0] data_l1_length_1_1_dout;
+wire    data_l1_length_1_1_empty_n;
+wire   [15:0] max_bitvec_length_0_dout;
+wire    max_bitvec_length_0_empty_n;
+wire    TILESIZE_H_c12_full_n;
+wire   [31:0] TILESIZE_H_c12_dout;
+wire    TILESIZE_H_c12_empty_n;
+wire    TILESIZE_W_c13_full_n;
+wire   [31:0] TILESIZE_W_c13_dout;
+wire    TILESIZE_W_c13_empty_n;
 wire    ap_sync_done;
 wire    ap_sync_ready;
-reg    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
-wire    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
-reg   [1:0] dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count;
+reg    ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready;
+wire    ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready;
+reg   [1:0] dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count;
 reg    ap_sync_reg_runWeight2Reg_U0_ap_ready;
 wire    ap_sync_runWeight2Reg_U0_ap_ready;
 reg   [1:0] runWeight2Reg_U0_ap_ready_count;
-reg    ap_sync_reg_runDataL2toL1_U0_ap_ready;
-wire    ap_sync_runDataL2toL1_U0_ap_ready;
-reg   [1:0] runDataL2toL1_U0_ap_ready_count;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_full_n;
-wire    dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_write;
+reg    ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready;
+wire    ap_sync_runDataL2toL1_bitvec_U0_ap_ready;
+reg   [1:0] runDataL2toL1_bitvec_U0_ap_ready_count;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_start_full_n;
+wire    dataflow_in_loop_LOOP_S_OUTER_entry30_U0_start_write;
 wire    runWeight2Reg_U0_start_full_n;
 wire    runWeight2Reg_U0_start_write;
-wire    runDataL2toL1_U0_start_full_n;
-wire    runDataL2toL1_U0_start_write;
-wire    runSIMD_U0_start_full_n;
-wire    runSIMD_U0_start_write;
+wire    runDataL2toL1_bitvec_U0_start_full_n;
+wire    runDataL2toL1_bitvec_U0_start_write;
+wire    runSIMD_bitvec_U0_start_full_n;
+wire    runSIMD_bitvec_U0_start_write;
 wire    runOutputL1toL2_U0_start_full_n;
 wire    runOutputL1toL2_U0_start_write;
 
 // power-on initialization
 initial begin
+#0 ap_sync_reg_channel_write_weight_regfile_7_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_4 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_3 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_2 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_1 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_7_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_4 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_3 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_2 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_1 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_6_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_4 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_3 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_2 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_1 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_5_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_4 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_3 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_2 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_1 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_4_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_3_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_3_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_3_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_3_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_3_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_2_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_2_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_2_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_2_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_2_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_1_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_1_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_1_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_1_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_1_0 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_0_7 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_0_6 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_0_5 = 1'b0;
+#0 ap_sync_reg_channel_write_weight_regfile_0_4 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_3 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_2 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_1 = 1'b0;
 #0 ap_sync_reg_channel_write_weight_regfile_0_0 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_3 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_2 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_1 = 1'b0;
-#0 ap_sync_reg_channel_write_data_l1_0 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_3 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_2 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_1 = 1'b0;
-#0 ap_sync_reg_channel_write_output_l1_0 = 1'b0;
-#0 ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready = 1'b0;
-#0 dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count = 2'd0;
+#0 ap_sync_reg_channel_write_max_bitvec_length_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_length_1_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_length_1_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_length_0_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_length_0_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_bitvec_1_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_bitvec_1_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_bitvec_0_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_bitvec_0_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_7 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_6 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_5 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_4 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_3 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_2 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_1_0 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_7 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_6 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_5 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_4 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_3 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_2 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_1 = 1'b0;
+#0 ap_sync_reg_channel_write_data_l1_0_0 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_7 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_6 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_5 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_4 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_3 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_2 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_1 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_1_0 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_7 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_6 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_5 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_4 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_3 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_2 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_1 = 1'b0;
+#0 ap_sync_reg_channel_write_output_l1_0_0 = 1'b0;
+#0 ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready = 1'b0;
+#0 dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count = 2'd0;
 #0 ap_sync_reg_runWeight2Reg_U0_ap_ready = 1'b0;
 #0 runWeight2Reg_U0_ap_ready_count = 2'd0;
-#0 ap_sync_reg_runDataL2toL1_U0_ap_ready = 1'b0;
-#0 runDataL2toL1_U0_ap_ready_count = 2'd0;
+#0 ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready = 1'b0;
+#0 runDataL2toL1_bitvec_U0_ap_ready_count = 2'd0;
 end
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0 #(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
     .DataWidth( 8 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_0_U(
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_0_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_017_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_017_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_017_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_017_i_d0),
-    .i_q0(data_l1_0_i_q0),
-    .t_address0(runSIMD_U0_data_l1_017_i_address0),
-    .t_ce0(runSIMD_U0_data_l1_017_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_d0),
+    .i_q0(data_l1_0_0_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1_ce0),
     .t_we0(1'b0),
     .t_d0(8'd0),
-    .t_q0(data_l1_0_t_q0),
+    .t_q0(data_l1_0_0_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(data_l1_0_i_full_n),
-    .i_write(ap_channel_done_data_l1_0),
-    .t_empty_n(data_l1_0_t_empty_n),
-    .t_read(runSIMD_U0_ap_ready)
+    .i_full_n(data_l1_0_0_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_0),
+    .t_empty_n(data_l1_0_0_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_1_U(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_1_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_118_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_118_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_118_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_118_i_d0),
-    .i_q0(data_l1_1_i_q0),
-    .t_address0(runSIMD_U0_data_l1_118_i_address0),
-    .t_ce0(runSIMD_U0_data_l1_118_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_d0),
+    .i_q0(data_l1_0_1_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l164_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l164_ce0),
     .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_1_t_q0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_1_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(data_l1_1_i_full_n),
-    .i_write(ap_channel_done_data_l1_1),
-    .t_empty_n(data_l1_1_t_empty_n),
-    .t_read(runSIMD_U0_ap_ready)
+    .i_full_n(data_l1_0_1_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_1),
+    .t_empty_n(data_l1_0_1_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_2_U(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_2_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_219_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_219_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_219_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_219_i_d0),
-    .i_q0(data_l1_2_i_q0),
-    .t_address0(runSIMD_U0_data_l1_219_i_address0),
-    .t_ce0(runSIMD_U0_data_l1_219_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_d0),
+    .i_q0(data_l1_0_2_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l165_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l165_ce0),
     .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_2_t_q0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_2_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(data_l1_2_i_full_n),
-    .i_write(ap_channel_done_data_l1_2),
-    .t_empty_n(data_l1_2_t_empty_n),
-    .t_read(runSIMD_U0_ap_ready)
+    .i_full_n(data_l1_0_2_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_2),
+    .t_empty_n(data_l1_0_2_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_1 #(
-    .DataWidth( 1 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-data_l1_3_U(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_3_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runDataL2toL1_U0_data_l1_320_i_address0),
-    .i_ce0(runDataL2toL1_U0_data_l1_320_i_ce0),
-    .i_we0(runDataL2toL1_U0_data_l1_320_i_we0),
-    .i_d0(runDataL2toL1_U0_data_l1_320_i_d0),
-    .i_q0(data_l1_3_i_q0),
-    .t_address0(runSIMD_U0_data_l1_320_i_address0),
-    .t_ce0(runSIMD_U0_data_l1_320_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_d0),
+    .i_q0(data_l1_0_3_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l166_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l166_ce0),
     .t_we0(1'b0),
-    .t_d0(1'd0),
-    .t_q0(data_l1_3_t_q0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_3_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(data_l1_3_i_full_n),
-    .i_write(ap_channel_done_data_l1_3),
-    .t_empty_n(data_l1_3_t_empty_n),
-    .t_read(runSIMD_U0_ap_ready)
+    .i_full_n(data_l1_0_3_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_3),
+    .t_empty_n(data_l1_0_3_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_d0),
+    .i_q0(data_l1_0_4_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l167_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l167_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_4_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_0_4_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_4),
+    .t_empty_n(data_l1_0_4_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_d0),
+    .i_q0(data_l1_0_5_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l168_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l168_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_5_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_0_5_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_5),
+    .t_empty_n(data_l1_0_5_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_d0),
+    .i_q0(data_l1_0_6_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l169_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l169_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_6_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_0_6_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_6),
+    .t_empty_n(data_l1_0_6_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_0_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_d0),
+    .i_q0(data_l1_0_7_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l170_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l170_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_0_7_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_0_7_i_full_n),
+    .i_write(ap_channel_done_data_l1_0_7),
+    .t_empty_n(data_l1_0_7_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_d0),
+    .i_q0(data_l1_1_0_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l18_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l18_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_0_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_0_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_0),
+    .t_empty_n(data_l1_1_0_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_d0),
+    .i_q0(data_l1_1_1_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1871_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1871_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_1_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_1_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_1),
+    .t_empty_n(data_l1_1_1_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_d0),
+    .i_q0(data_l1_1_2_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1872_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1872_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_2_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_2_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_2),
+    .t_empty_n(data_l1_1_2_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_d0),
+    .i_q0(data_l1_1_3_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1873_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1873_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_3_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_3_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_3),
+    .t_empty_n(data_l1_1_3_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_d0),
+    .i_q0(data_l1_1_4_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1874_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1874_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_4_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_4_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_4),
+    .t_empty_n(data_l1_1_4_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_d0),
+    .i_q0(data_l1_1_5_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1875_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1875_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_5_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_5_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_5),
+    .t_empty_n(data_l1_1_5_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_d0),
+    .i_q0(data_l1_1_6_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1876_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1876_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_6_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_6_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_6),
+    .t_empty_n(data_l1_1_6_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_0_0 #(
+    .DataWidth( 8 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_1_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_d0),
+    .i_q0(data_l1_1_7_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1877_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1877_ce0),
+    .t_we0(1'b0),
+    .t_d0(8'd0),
+    .t_q0(data_l1_1_7_t_q0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(data_l1_1_7_i_full_n),
+    .i_write(ap_channel_done_data_l1_1_7),
+    .t_empty_n(data_l1_1_7_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_bitvec_0_0 #(
     .DataWidth( 16 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_0_U(
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_bitvec_0_0_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSIMD_U0_output_l1_021_i_address0),
-    .i_ce0(runSIMD_U0_output_l1_021_i_ce0),
-    .i_we0(runSIMD_U0_output_l1_021_i_we0),
-    .i_d0(runSIMD_U0_output_l1_021_i_d0),
-    .i_q0(output_l1_0_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_021_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_021_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_d0),
+    .i_q0(data_l1_bitvec_0_0_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1_bitvec_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1_bitvec_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
-    .t_q0(output_l1_0_t_q0),
+    .t_q0(data_l1_bitvec_0_0_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(output_l1_0_i_full_n),
-    .i_write(ap_channel_done_output_l1_0),
-    .t_empty_n(output_l1_0_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
+    .i_full_n(data_l1_bitvec_0_0_i_full_n),
+    .i_write(ap_channel_done_data_l1_bitvec_0_0),
+    .t_empty_n(data_l1_bitvec_0_0_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_bitvec_0_0 #(
     .DataWidth( 16 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_1_U(
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_bitvec_0_1_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSIMD_U0_output_l1_122_i_address0),
-    .i_ce0(runSIMD_U0_output_l1_122_i_ce0),
-    .i_we0(runSIMD_U0_output_l1_122_i_we0),
-    .i_d0(runSIMD_U0_output_l1_122_i_d0),
-    .i_q0(output_l1_1_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_122_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_122_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_d0),
+    .i_q0(data_l1_bitvec_0_1_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1_bitvec78_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1_bitvec78_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
-    .t_q0(output_l1_1_t_q0),
+    .t_q0(data_l1_bitvec_0_1_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(output_l1_1_i_full_n),
-    .i_write(ap_channel_done_output_l1_1),
-    .t_empty_n(output_l1_1_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
+    .i_full_n(data_l1_bitvec_0_1_i_full_n),
+    .i_write(ap_channel_done_data_l1_bitvec_0_1),
+    .t_empty_n(data_l1_bitvec_0_1_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_bitvec_0_0 #(
     .DataWidth( 16 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_2_U(
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_bitvec_1_0_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSIMD_U0_output_l1_223_i_address0),
-    .i_ce0(runSIMD_U0_output_l1_223_i_ce0),
-    .i_we0(runSIMD_U0_output_l1_223_i_we0),
-    .i_d0(runSIMD_U0_output_l1_223_i_d0),
-    .i_q0(output_l1_2_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_223_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_223_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_d0),
+    .i_q0(data_l1_bitvec_1_0_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1_bitvec9_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1_bitvec9_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
-    .t_q0(output_l1_2_t_q0),
+    .t_q0(data_l1_bitvec_1_0_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(output_l1_2_i_full_n),
-    .i_write(ap_channel_done_output_l1_2),
-    .t_empty_n(output_l1_2_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
+    .i_full_n(data_l1_bitvec_1_0_i_full_n),
+    .i_write(ap_channel_done_data_l1_bitvec_1_0),
+    .t_empty_n(data_l1_bitvec_1_0_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0 #(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_data_l1_bitvec_0_0 #(
     .DataWidth( 16 ),
-    .AddressRange( 49 ),
-    .AddressWidth( 6 ))
-output_l1_3_U(
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+data_l1_bitvec_1_1_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .i_address0(runSIMD_U0_output_l1_324_i_address0),
-    .i_ce0(runSIMD_U0_output_l1_324_i_ce0),
-    .i_we0(runSIMD_U0_output_l1_324_i_we0),
-    .i_d0(runSIMD_U0_output_l1_324_i_d0),
-    .i_q0(output_l1_3_i_q0),
-    .t_address0(runOutputL1toL2_U0_output_l1_324_i_address0),
-    .t_ce0(runOutputL1toL2_U0_output_l1_324_i_ce0),
+    .i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_address0),
+    .i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_ce0),
+    .i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_we0),
+    .i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_d0),
+    .i_q0(data_l1_bitvec_1_1_i_q0),
+    .t_address0(runSIMD_bitvec_U0_data_l1_bitvec979_address0),
+    .t_ce0(runSIMD_bitvec_U0_data_l1_bitvec979_ce0),
     .t_we0(1'b0),
     .t_d0(16'd0),
-    .t_q0(output_l1_3_t_q0),
+    .t_q0(data_l1_bitvec_1_1_t_q0),
     .i_ce(1'b1),
     .t_ce(1'b1),
-    .i_full_n(output_l1_3_i_full_n),
-    .i_write(ap_channel_done_output_l1_3),
-    .t_empty_n(output_l1_3_t_empty_n),
-    .t_read(runOutputL1toL2_U0_ap_ready)
+    .i_full_n(data_l1_bitvec_1_1_i_full_n),
+    .i_write(ap_channel_done_data_l1_bitvec_1_1),
+    .t_empty_n(data_l1_bitvec_1_1_t_empty_n),
+    .t_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry33 dataflow_in_loop_LOOP_S_OUTER_entry33_U0(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_entry30 dataflow_in_loop_LOOP_S_OUTER_entry30_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start),
-    .ap_done(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_done),
-    .ap_continue(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue),
-    .ap_idle(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle),
-    .ap_ready(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready),
-    .param(param),
-    .ko_1(ko_1),
+    .ap_start(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_start),
+    .ap_done(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_done),
+    .ap_continue(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_continue),
+    .ap_idle(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_idle),
+    .ap_ready(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready),
+    .C_L2(C_L2),
+    .R_L2(R_L2),
+    .S_L2(S_L2),
+    .ko_3(ko_3),
     .co(co),
     .ro(ro),
     .so(so),
+    .TILESIZE_H(TILESIZE_H),
+    .TILESIZE_W(TILESIZE_W),
     .ho(ho),
     .wo(wo),
-    .param_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din),
-    .param_out_full_n(param_c_full_n),
-    .param_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write),
-    .param_out1_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din),
-    .param_out1_full_n(param_c1_full_n),
-    .param_out1_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write),
-    .ko_1_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din),
-    .ko_1_out_full_n(ko_1_c_full_n),
-    .ko_1_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write),
-    .co_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din),
+    .W_in_L2(W_in_L2),
+    .H_in_L2(H_in_L2),
+    .TILESIZE_R(TILESIZE_R),
+    .TILESIZE_S(TILESIZE_S),
+    .W_L2(W_L2),
+    .H_L2(H_L2),
+    .C_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_din),
+    .C_L2_out_full_n(C_L2_c_full_n),
+    .C_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_write),
+    .R_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_din),
+    .R_L2_out_full_n(R_L2_c_full_n),
+    .R_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_write),
+    .S_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_din),
+    .S_L2_out_full_n(S_L2_c_full_n),
+    .S_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_write),
+    .ko_3_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_din),
+    .ko_3_out_full_n(ko_3_c_full_n),
+    .ko_3_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_write),
+    .co_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_din),
     .co_out_full_n(co_c_full_n),
-    .co_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write),
-    .co_out2_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din),
-    .co_out2_full_n(co_c2_full_n),
-    .co_out2_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write),
-    .ro_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din),
+    .co_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_write),
+    .co_out1_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_din),
+    .co_out1_full_n(co_c1_full_n),
+    .co_out1_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_write),
+    .ro_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_din),
     .ro_out_full_n(ro_c_full_n),
-    .ro_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write),
-    .ro_out3_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din),
-    .ro_out3_full_n(ro_c3_full_n),
-    .ro_out3_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write),
-    .so_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din),
+    .ro_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_write),
+    .ro_out2_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_din),
+    .ro_out2_full_n(ro_c2_full_n),
+    .ro_out2_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_write),
+    .so_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_din),
     .so_out_full_n(so_c_full_n),
-    .so_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write),
-    .so_out4_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din),
-    .so_out4_full_n(so_c4_full_n),
-    .so_out4_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write),
-    .ho_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din),
+    .so_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_write),
+    .so_out3_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_din),
+    .so_out3_full_n(so_c3_full_n),
+    .so_out3_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_write),
+    .TILESIZE_H_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_din),
+    .TILESIZE_H_out_full_n(TILESIZE_H_c_full_n),
+    .TILESIZE_H_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_write),
+    .TILESIZE_H_out4_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_din),
+    .TILESIZE_H_out4_full_n(TILESIZE_H_c4_full_n),
+    .TILESIZE_H_out4_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_write),
+    .TILESIZE_W_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_din),
+    .TILESIZE_W_out_full_n(TILESIZE_W_c_full_n),
+    .TILESIZE_W_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_write),
+    .TILESIZE_W_out5_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_din),
+    .TILESIZE_W_out5_full_n(TILESIZE_W_c5_full_n),
+    .TILESIZE_W_out5_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_write),
+    .ho_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_din),
     .ho_out_full_n(ho_c_full_n),
-    .ho_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write),
-    .ho_out5_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din),
-    .ho_out5_full_n(ho_c5_full_n),
-    .ho_out5_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write),
-    .wo_out_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din),
+    .ho_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_write),
+    .ho_out6_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_din),
+    .ho_out6_full_n(ho_c6_full_n),
+    .ho_out6_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_write),
+    .wo_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_din),
     .wo_out_full_n(wo_c_full_n),
-    .wo_out_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write),
-    .wo_out6_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din),
-    .wo_out6_full_n(wo_c6_full_n),
-    .wo_out6_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write)
+    .wo_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_write),
+    .wo_out7_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_din),
+    .wo_out7_full_n(wo_c7_full_n),
+    .wo_out7_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_write),
+    .W_in_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_din),
+    .W_in_L2_out_full_n(W_in_L2_c_full_n),
+    .W_in_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_write),
+    .H_in_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_din),
+    .H_in_L2_out_full_n(H_in_L2_c_full_n),
+    .H_in_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_write),
+    .TILESIZE_R_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_din),
+    .TILESIZE_R_out_full_n(TILESIZE_R_c_full_n),
+    .TILESIZE_R_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_write),
+    .TILESIZE_S_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_din),
+    .TILESIZE_S_out_full_n(TILESIZE_S_c_full_n),
+    .TILESIZE_S_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_write),
+    .W_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_din),
+    .W_L2_out_full_n(W_L2_c_full_n),
+    .W_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_write),
+    .H_L2_out_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_din),
+    .H_L2_out_full_n(H_L2_c_full_n),
+    .H_L2_out_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_write)
 );
 
 Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
@@ -824,12 +3371,18 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .ap_continue(runWeight2Reg_U0_ap_continue),
     .ap_idle(runWeight2Reg_U0_ap_idle),
     .ap_ready(runWeight2Reg_U0_ap_ready),
-    .param_dout(param_c_dout),
-    .param_empty_n(param_c_empty_n),
-    .param_read(runWeight2Reg_U0_param_read),
-    .ko_1_dout(ko_1_c_dout),
-    .ko_1_empty_n(ko_1_c_empty_n),
-    .ko_1_read(runWeight2Reg_U0_ko_1_read),
+    .C_L2_dout(C_L2_c_dout),
+    .C_L2_empty_n(C_L2_c_empty_n),
+    .C_L2_read(runWeight2Reg_U0_C_L2_read),
+    .R_L2_dout(R_L2_c_dout),
+    .R_L2_empty_n(R_L2_c_empty_n),
+    .R_L2_read(runWeight2Reg_U0_R_L2_read),
+    .S_L2_dout(S_L2_c_dout),
+    .S_L2_empty_n(S_L2_c_empty_n),
+    .S_L2_read(runWeight2Reg_U0_S_L2_read),
+    .ko_3_dout(ko_3_c_dout),
+    .ko_3_empty_n(ko_3_c_empty_n),
+    .ko_3_read(runWeight2Reg_U0_ko_3_read),
     .co_dout(co_c_dout),
     .co_empty_n(co_c_empty_n),
     .co_read(runWeight2Reg_U0_co_read),
@@ -842,12 +3395,30 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .weight_l2_0_address0(runWeight2Reg_U0_weight_l2_0_address0),
     .weight_l2_0_ce0(runWeight2Reg_U0_weight_l2_0_ce0),
     .weight_l2_0_q0(weight_l2_0_q0),
-    .param_out_din(runWeight2Reg_U0_param_out_din),
-    .param_out_full_n(param_c7_full_n),
-    .param_out_write(runWeight2Reg_U0_param_out_write),
-    .ko_1_out_din(runWeight2Reg_U0_ko_1_out_din),
-    .ko_1_out_full_n(ko_1_c8_full_n),
-    .ko_1_out_write(runWeight2Reg_U0_ko_1_out_write),
+    .weight_l2_1_address0(runWeight2Reg_U0_weight_l2_1_address0),
+    .weight_l2_1_ce0(runWeight2Reg_U0_weight_l2_1_ce0),
+    .weight_l2_1_q0(weight_l2_1_q0),
+    .weight_l2_2_address0(runWeight2Reg_U0_weight_l2_2_address0),
+    .weight_l2_2_ce0(runWeight2Reg_U0_weight_l2_2_ce0),
+    .weight_l2_2_q0(weight_l2_2_q0),
+    .weight_l2_3_address0(runWeight2Reg_U0_weight_l2_3_address0),
+    .weight_l2_3_ce0(runWeight2Reg_U0_weight_l2_3_ce0),
+    .weight_l2_3_q0(weight_l2_3_q0),
+    .weight_l2_4_address0(runWeight2Reg_U0_weight_l2_4_address0),
+    .weight_l2_4_ce0(runWeight2Reg_U0_weight_l2_4_ce0),
+    .weight_l2_4_q0(weight_l2_4_q0),
+    .weight_l2_5_address0(runWeight2Reg_U0_weight_l2_5_address0),
+    .weight_l2_5_ce0(runWeight2Reg_U0_weight_l2_5_ce0),
+    .weight_l2_5_q0(weight_l2_5_q0),
+    .weight_l2_6_address0(runWeight2Reg_U0_weight_l2_6_address0),
+    .weight_l2_6_ce0(runWeight2Reg_U0_weight_l2_6_ce0),
+    .weight_l2_6_q0(weight_l2_6_q0),
+    .weight_l2_7_address0(runWeight2Reg_U0_weight_l2_7_address0),
+    .weight_l2_7_ce0(runWeight2Reg_U0_weight_l2_7_ce0),
+    .weight_l2_7_q0(weight_l2_7_q0),
+    .ko_3_out_din(runWeight2Reg_U0_ko_3_out_din),
+    .ko_3_out_full_n(ko_3_c8_full_n),
+    .ko_3_out_write(runWeight2Reg_U0_ko_3_out_write),
     .co_out_din(runWeight2Reg_U0_co_out_din),
     .co_out_full_n(co_c9_full_n),
     .co_out_write(runWeight2Reg_U0_co_out_write),
@@ -872,114 +3443,514 @@ Conv_sysarr_runWeight2Reg runWeight2Reg_U0(
     .ap_return_12(runWeight2Reg_U0_ap_return_12),
     .ap_return_13(runWeight2Reg_U0_ap_return_13),
     .ap_return_14(runWeight2Reg_U0_ap_return_14),
-    .ap_return_15(runWeight2Reg_U0_ap_return_15)
+    .ap_return_15(runWeight2Reg_U0_ap_return_15),
+    .ap_return_16(runWeight2Reg_U0_ap_return_16),
+    .ap_return_17(runWeight2Reg_U0_ap_return_17),
+    .ap_return_18(runWeight2Reg_U0_ap_return_18),
+    .ap_return_19(runWeight2Reg_U0_ap_return_19),
+    .ap_return_20(runWeight2Reg_U0_ap_return_20),
+    .ap_return_21(runWeight2Reg_U0_ap_return_21),
+    .ap_return_22(runWeight2Reg_U0_ap_return_22),
+    .ap_return_23(runWeight2Reg_U0_ap_return_23),
+    .ap_return_24(runWeight2Reg_U0_ap_return_24),
+    .ap_return_25(runWeight2Reg_U0_ap_return_25),
+    .ap_return_26(runWeight2Reg_U0_ap_return_26),
+    .ap_return_27(runWeight2Reg_U0_ap_return_27),
+    .ap_return_28(runWeight2Reg_U0_ap_return_28),
+    .ap_return_29(runWeight2Reg_U0_ap_return_29),
+    .ap_return_30(runWeight2Reg_U0_ap_return_30),
+    .ap_return_31(runWeight2Reg_U0_ap_return_31),
+    .ap_return_32(runWeight2Reg_U0_ap_return_32),
+    .ap_return_33(runWeight2Reg_U0_ap_return_33),
+    .ap_return_34(runWeight2Reg_U0_ap_return_34),
+    .ap_return_35(runWeight2Reg_U0_ap_return_35),
+    .ap_return_36(runWeight2Reg_U0_ap_return_36),
+    .ap_return_37(runWeight2Reg_U0_ap_return_37),
+    .ap_return_38(runWeight2Reg_U0_ap_return_38),
+    .ap_return_39(runWeight2Reg_U0_ap_return_39),
+    .ap_return_40(runWeight2Reg_U0_ap_return_40),
+    .ap_return_41(runWeight2Reg_U0_ap_return_41),
+    .ap_return_42(runWeight2Reg_U0_ap_return_42),
+    .ap_return_43(runWeight2Reg_U0_ap_return_43),
+    .ap_return_44(runWeight2Reg_U0_ap_return_44),
+    .ap_return_45(runWeight2Reg_U0_ap_return_45),
+    .ap_return_46(runWeight2Reg_U0_ap_return_46),
+    .ap_return_47(runWeight2Reg_U0_ap_return_47),
+    .ap_return_48(runWeight2Reg_U0_ap_return_48),
+    .ap_return_49(runWeight2Reg_U0_ap_return_49),
+    .ap_return_50(runWeight2Reg_U0_ap_return_50),
+    .ap_return_51(runWeight2Reg_U0_ap_return_51),
+    .ap_return_52(runWeight2Reg_U0_ap_return_52),
+    .ap_return_53(runWeight2Reg_U0_ap_return_53),
+    .ap_return_54(runWeight2Reg_U0_ap_return_54),
+    .ap_return_55(runWeight2Reg_U0_ap_return_55),
+    .ap_return_56(runWeight2Reg_U0_ap_return_56),
+    .ap_return_57(runWeight2Reg_U0_ap_return_57),
+    .ap_return_58(runWeight2Reg_U0_ap_return_58),
+    .ap_return_59(runWeight2Reg_U0_ap_return_59),
+    .ap_return_60(runWeight2Reg_U0_ap_return_60),
+    .ap_return_61(runWeight2Reg_U0_ap_return_61),
+    .ap_return_62(runWeight2Reg_U0_ap_return_62),
+    .ap_return_63(runWeight2Reg_U0_ap_return_63)
 );
 
-Conv_sysarr_runDataL2toL1 runDataL2toL1_U0(
+Conv_sysarr_runDataL2toL1_bitvec runDataL2toL1_bitvec_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(runDataL2toL1_U0_ap_start),
-    .ap_done(runDataL2toL1_U0_ap_done),
-    .ap_continue(runDataL2toL1_U0_ap_continue),
-    .ap_idle(runDataL2toL1_U0_ap_idle),
-    .ap_ready(runDataL2toL1_U0_ap_ready),
-    .data_l1_017_i_address0(runDataL2toL1_U0_data_l1_017_i_address0),
-    .data_l1_017_i_ce0(runDataL2toL1_U0_data_l1_017_i_ce0),
-    .data_l1_017_i_we0(runDataL2toL1_U0_data_l1_017_i_we0),
-    .data_l1_017_i_d0(runDataL2toL1_U0_data_l1_017_i_d0),
-    .data_l1_118_i_address0(runDataL2toL1_U0_data_l1_118_i_address0),
-    .data_l1_118_i_ce0(runDataL2toL1_U0_data_l1_118_i_ce0),
-    .data_l1_118_i_we0(runDataL2toL1_U0_data_l1_118_i_we0),
-    .data_l1_118_i_d0(runDataL2toL1_U0_data_l1_118_i_d0),
-    .data_l1_219_i_address0(runDataL2toL1_U0_data_l1_219_i_address0),
-    .data_l1_219_i_ce0(runDataL2toL1_U0_data_l1_219_i_ce0),
-    .data_l1_219_i_we0(runDataL2toL1_U0_data_l1_219_i_we0),
-    .data_l1_219_i_d0(runDataL2toL1_U0_data_l1_219_i_d0),
-    .data_l1_320_i_address0(runDataL2toL1_U0_data_l1_320_i_address0),
-    .data_l1_320_i_ce0(runDataL2toL1_U0_data_l1_320_i_ce0),
-    .data_l1_320_i_we0(runDataL2toL1_U0_data_l1_320_i_we0),
-    .data_l1_320_i_d0(runDataL2toL1_U0_data_l1_320_i_d0),
-    .param_dout(param_c1_dout),
-    .param_empty_n(param_c1_empty_n),
-    .param_read(runDataL2toL1_U0_param_read),
-    .co_dout(co_c2_dout),
-    .co_empty_n(co_c2_empty_n),
-    .co_read(runDataL2toL1_U0_co_read),
+    .ap_start(runDataL2toL1_bitvec_U0_ap_start),
+    .ap_done(runDataL2toL1_bitvec_U0_ap_done),
+    .ap_continue(runDataL2toL1_bitvec_U0_ap_continue),
+    .ap_idle(runDataL2toL1_bitvec_U0_ap_idle),
+    .ap_ready(runDataL2toL1_bitvec_U0_ap_ready),
+    .data_l1_0_065_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_address0),
+    .data_l1_0_065_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_ce0),
+    .data_l1_0_065_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_we0),
+    .data_l1_0_065_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_065_i_d0),
+    .data_l1_0_166_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_address0),
+    .data_l1_0_166_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_ce0),
+    .data_l1_0_166_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_we0),
+    .data_l1_0_166_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_166_i_d0),
+    .data_l1_0_267_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_address0),
+    .data_l1_0_267_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_ce0),
+    .data_l1_0_267_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_we0),
+    .data_l1_0_267_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_267_i_d0),
+    .data_l1_0_368_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_address0),
+    .data_l1_0_368_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_ce0),
+    .data_l1_0_368_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_we0),
+    .data_l1_0_368_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_368_i_d0),
+    .data_l1_0_469_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_address0),
+    .data_l1_0_469_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_ce0),
+    .data_l1_0_469_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_we0),
+    .data_l1_0_469_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_469_i_d0),
+    .data_l1_0_570_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_address0),
+    .data_l1_0_570_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_ce0),
+    .data_l1_0_570_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_we0),
+    .data_l1_0_570_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_570_i_d0),
+    .data_l1_0_671_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_address0),
+    .data_l1_0_671_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_ce0),
+    .data_l1_0_671_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_we0),
+    .data_l1_0_671_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_671_i_d0),
+    .data_l1_0_772_i_address0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_address0),
+    .data_l1_0_772_i_ce0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_ce0),
+    .data_l1_0_772_i_we0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_we0),
+    .data_l1_0_772_i_d0(runDataL2toL1_bitvec_U0_data_l1_0_772_i_d0),
+    .data_l1_1_073_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_address0),
+    .data_l1_1_073_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_ce0),
+    .data_l1_1_073_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_we0),
+    .data_l1_1_073_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_073_i_d0),
+    .data_l1_1_174_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_address0),
+    .data_l1_1_174_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_ce0),
+    .data_l1_1_174_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_we0),
+    .data_l1_1_174_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_174_i_d0),
+    .data_l1_1_275_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_address0),
+    .data_l1_1_275_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_ce0),
+    .data_l1_1_275_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_we0),
+    .data_l1_1_275_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_275_i_d0),
+    .data_l1_1_376_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_address0),
+    .data_l1_1_376_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_ce0),
+    .data_l1_1_376_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_we0),
+    .data_l1_1_376_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_376_i_d0),
+    .data_l1_1_477_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_address0),
+    .data_l1_1_477_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_ce0),
+    .data_l1_1_477_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_we0),
+    .data_l1_1_477_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_477_i_d0),
+    .data_l1_1_578_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_address0),
+    .data_l1_1_578_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_ce0),
+    .data_l1_1_578_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_we0),
+    .data_l1_1_578_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_578_i_d0),
+    .data_l1_1_679_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_address0),
+    .data_l1_1_679_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_ce0),
+    .data_l1_1_679_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_we0),
+    .data_l1_1_679_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_679_i_d0),
+    .data_l1_1_780_i_address0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_address0),
+    .data_l1_1_780_i_ce0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_ce0),
+    .data_l1_1_780_i_we0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_we0),
+    .data_l1_1_780_i_d0(runDataL2toL1_bitvec_U0_data_l1_1_780_i_d0),
+    .data_l1_bitvec_0_081_i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_address0),
+    .data_l1_bitvec_0_081_i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_ce0),
+    .data_l1_bitvec_0_081_i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_we0),
+    .data_l1_bitvec_0_081_i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_d0),
+    .data_l1_bitvec_0_182_i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_address0),
+    .data_l1_bitvec_0_182_i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_ce0),
+    .data_l1_bitvec_0_182_i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_we0),
+    .data_l1_bitvec_0_182_i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_d0),
+    .data_l1_bitvec_1_083_i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_address0),
+    .data_l1_bitvec_1_083_i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_ce0),
+    .data_l1_bitvec_1_083_i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_we0),
+    .data_l1_bitvec_1_083_i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_d0),
+    .data_l1_bitvec_1_184_i_address0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_address0),
+    .data_l1_bitvec_1_184_i_ce0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_ce0),
+    .data_l1_bitvec_1_184_i_we0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_we0),
+    .data_l1_bitvec_1_184_i_d0(runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_d0),
+    .data_l1_length_0_085_i(runDataL2toL1_bitvec_U0_data_l1_length_0_085_i),
+    .data_l1_length_0_085_i_ap_vld(runDataL2toL1_bitvec_U0_data_l1_length_0_085_i_ap_vld),
+    .data_l1_length_0_186_i(runDataL2toL1_bitvec_U0_data_l1_length_0_186_i),
+    .data_l1_length_0_186_i_ap_vld(runDataL2toL1_bitvec_U0_data_l1_length_0_186_i_ap_vld),
+    .data_l1_length_1_087_i(runDataL2toL1_bitvec_U0_data_l1_length_1_087_i),
+    .data_l1_length_1_087_i_ap_vld(runDataL2toL1_bitvec_U0_data_l1_length_1_087_i_ap_vld),
+    .data_l1_length_1_188_i(runDataL2toL1_bitvec_U0_data_l1_length_1_188_i),
+    .data_l1_length_1_188_i_ap_vld(runDataL2toL1_bitvec_U0_data_l1_length_1_188_i_ap_vld),
+    .TILESIZE_H_dout(TILESIZE_H_c_dout),
+    .TILESIZE_H_empty_n(TILESIZE_H_c_empty_n),
+    .TILESIZE_H_read(runDataL2toL1_bitvec_U0_TILESIZE_H_read),
+    .TILESIZE_W_dout(TILESIZE_W_c_dout),
+    .TILESIZE_W_empty_n(TILESIZE_W_c_empty_n),
+    .TILESIZE_W_read(runDataL2toL1_bitvec_U0_TILESIZE_W_read),
+    .co_dout(co_c1_dout),
+    .co_empty_n(co_c1_empty_n),
+    .co_read(runDataL2toL1_bitvec_U0_co_read),
     .ho_dout(ho_c_dout),
     .ho_empty_n(ho_c_empty_n),
-    .ho_read(runDataL2toL1_U0_ho_read),
+    .ho_read(runDataL2toL1_bitvec_U0_ho_read),
     .wo_dout(wo_c_dout),
     .wo_empty_n(wo_c_empty_n),
-    .wo_read(runDataL2toL1_U0_wo_read),
-    .ro_dout(ro_c3_dout),
-    .ro_empty_n(ro_c3_empty_n),
-    .ro_read(runDataL2toL1_U0_ro_read),
-    .so_dout(so_c4_dout),
-    .so_empty_n(so_c4_empty_n),
-    .so_read(runDataL2toL1_U0_so_read),
-    .data_l2_0_address0(runDataL2toL1_U0_data_l2_0_address0),
-    .data_l2_0_ce0(runDataL2toL1_U0_data_l2_0_ce0),
-    .data_l2_0_q0(data_l2_0_q0)
+    .wo_read(runDataL2toL1_bitvec_U0_wo_read),
+    .ro_dout(ro_c2_dout),
+    .ro_empty_n(ro_c2_empty_n),
+    .ro_read(runDataL2toL1_bitvec_U0_ro_read),
+    .so_dout(so_c3_dout),
+    .so_empty_n(so_c3_empty_n),
+    .so_read(runDataL2toL1_bitvec_U0_so_read),
+    .W_in_L2_dout(W_in_L2_c_dout),
+    .W_in_L2_empty_n(W_in_L2_c_empty_n),
+    .W_in_L2_read(runDataL2toL1_bitvec_U0_W_in_L2_read),
+    .H_in_L2_dout(H_in_L2_c_dout),
+    .H_in_L2_empty_n(H_in_L2_c_empty_n),
+    .H_in_L2_read(runDataL2toL1_bitvec_U0_H_in_L2_read),
+    .data_l2_0_0_address0(runDataL2toL1_bitvec_U0_data_l2_0_0_address0),
+    .data_l2_0_0_ce0(runDataL2toL1_bitvec_U0_data_l2_0_0_ce0),
+    .data_l2_0_0_q0(data_l2_0_0_q0),
+    .data_l2_0_1_address0(runDataL2toL1_bitvec_U0_data_l2_0_1_address0),
+    .data_l2_0_1_ce0(runDataL2toL1_bitvec_U0_data_l2_0_1_ce0),
+    .data_l2_0_1_q0(data_l2_0_1_q0),
+    .data_l2_0_2_address0(runDataL2toL1_bitvec_U0_data_l2_0_2_address0),
+    .data_l2_0_2_ce0(runDataL2toL1_bitvec_U0_data_l2_0_2_ce0),
+    .data_l2_0_2_q0(data_l2_0_2_q0),
+    .data_l2_0_3_address0(runDataL2toL1_bitvec_U0_data_l2_0_3_address0),
+    .data_l2_0_3_ce0(runDataL2toL1_bitvec_U0_data_l2_0_3_ce0),
+    .data_l2_0_3_q0(data_l2_0_3_q0),
+    .data_l2_0_4_address0(runDataL2toL1_bitvec_U0_data_l2_0_4_address0),
+    .data_l2_0_4_ce0(runDataL2toL1_bitvec_U0_data_l2_0_4_ce0),
+    .data_l2_0_4_q0(data_l2_0_4_q0),
+    .data_l2_0_5_address0(runDataL2toL1_bitvec_U0_data_l2_0_5_address0),
+    .data_l2_0_5_ce0(runDataL2toL1_bitvec_U0_data_l2_0_5_ce0),
+    .data_l2_0_5_q0(data_l2_0_5_q0),
+    .data_l2_0_6_address0(runDataL2toL1_bitvec_U0_data_l2_0_6_address0),
+    .data_l2_0_6_ce0(runDataL2toL1_bitvec_U0_data_l2_0_6_ce0),
+    .data_l2_0_6_q0(data_l2_0_6_q0),
+    .data_l2_0_7_address0(runDataL2toL1_bitvec_U0_data_l2_0_7_address0),
+    .data_l2_0_7_ce0(runDataL2toL1_bitvec_U0_data_l2_0_7_ce0),
+    .data_l2_0_7_q0(data_l2_0_7_q0),
+    .data_l2_1_0_address0(runDataL2toL1_bitvec_U0_data_l2_1_0_address0),
+    .data_l2_1_0_ce0(runDataL2toL1_bitvec_U0_data_l2_1_0_ce0),
+    .data_l2_1_0_q0(data_l2_1_0_q0),
+    .data_l2_1_1_address0(runDataL2toL1_bitvec_U0_data_l2_1_1_address0),
+    .data_l2_1_1_ce0(runDataL2toL1_bitvec_U0_data_l2_1_1_ce0),
+    .data_l2_1_1_q0(data_l2_1_1_q0),
+    .data_l2_1_2_address0(runDataL2toL1_bitvec_U0_data_l2_1_2_address0),
+    .data_l2_1_2_ce0(runDataL2toL1_bitvec_U0_data_l2_1_2_ce0),
+    .data_l2_1_2_q0(data_l2_1_2_q0),
+    .data_l2_1_3_address0(runDataL2toL1_bitvec_U0_data_l2_1_3_address0),
+    .data_l2_1_3_ce0(runDataL2toL1_bitvec_U0_data_l2_1_3_ce0),
+    .data_l2_1_3_q0(data_l2_1_3_q0),
+    .data_l2_1_4_address0(runDataL2toL1_bitvec_U0_data_l2_1_4_address0),
+    .data_l2_1_4_ce0(runDataL2toL1_bitvec_U0_data_l2_1_4_ce0),
+    .data_l2_1_4_q0(data_l2_1_4_q0),
+    .data_l2_1_5_address0(runDataL2toL1_bitvec_U0_data_l2_1_5_address0),
+    .data_l2_1_5_ce0(runDataL2toL1_bitvec_U0_data_l2_1_5_ce0),
+    .data_l2_1_5_q0(data_l2_1_5_q0),
+    .data_l2_1_6_address0(runDataL2toL1_bitvec_U0_data_l2_1_6_address0),
+    .data_l2_1_6_ce0(runDataL2toL1_bitvec_U0_data_l2_1_6_ce0),
+    .data_l2_1_6_q0(data_l2_1_6_q0),
+    .data_l2_1_7_address0(runDataL2toL1_bitvec_U0_data_l2_1_7_address0),
+    .data_l2_1_7_ce0(runDataL2toL1_bitvec_U0_data_l2_1_7_ce0),
+    .data_l2_1_7_q0(data_l2_1_7_q0),
+    .ap_return(runDataL2toL1_bitvec_U0_ap_return)
 );
 
-Conv_sysarr_runSIMD runSIMD_U0(
+Conv_sysarr_runSIMD_bitvec runSIMD_bitvec_U0(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(runSIMD_U0_ap_start),
-    .ap_done(runSIMD_U0_ap_done),
-    .ap_continue(runSIMD_U0_ap_continue),
-    .ap_idle(runSIMD_U0_ap_idle),
-    .ap_ready(runSIMD_U0_ap_ready),
+    .ap_start(runSIMD_bitvec_U0_ap_start),
+    .ap_done(runSIMD_bitvec_U0_ap_done),
+    .ap_continue(runSIMD_bitvec_U0_ap_continue),
+    .ap_idle(runSIMD_bitvec_U0_ap_idle),
+    .ap_ready(runSIMD_bitvec_U0_ap_ready),
     .p_read(weight_regfile_0_0_dout),
     .p_read1(weight_regfile_0_1_dout),
     .p_read2(weight_regfile_0_2_dout),
     .p_read3(weight_regfile_0_3_dout),
-    .p_read4(weight_regfile_1_0_dout),
-    .p_read5(weight_regfile_1_1_dout),
-    .p_read6(weight_regfile_1_2_dout),
-    .p_read7(weight_regfile_1_3_dout),
-    .p_read8(weight_regfile_2_0_dout),
-    .p_read9(weight_regfile_2_1_dout),
-    .p_read10(weight_regfile_2_2_dout),
-    .p_read11(weight_regfile_2_3_dout),
-    .p_read12(weight_regfile_3_0_dout),
-    .p_read13(weight_regfile_3_1_dout),
-    .p_read14(weight_regfile_3_2_dout),
-    .p_read15(weight_regfile_3_3_dout),
-    .data_l1_017_i_address0(runSIMD_U0_data_l1_017_i_address0),
-    .data_l1_017_i_ce0(runSIMD_U0_data_l1_017_i_ce0),
-    .data_l1_017_i_q0(data_l1_0_t_q0),
-    .data_l1_118_i_address0(runSIMD_U0_data_l1_118_i_address0),
-    .data_l1_118_i_ce0(runSIMD_U0_data_l1_118_i_ce0),
-    .data_l1_118_i_q0(data_l1_1_t_q0),
-    .data_l1_219_i_address0(runSIMD_U0_data_l1_219_i_address0),
-    .data_l1_219_i_ce0(runSIMD_U0_data_l1_219_i_ce0),
-    .data_l1_219_i_q0(data_l1_2_t_q0),
-    .data_l1_320_i_address0(runSIMD_U0_data_l1_320_i_address0),
-    .data_l1_320_i_ce0(runSIMD_U0_data_l1_320_i_ce0),
-    .data_l1_320_i_q0(data_l1_3_t_q0),
-    .output_l1_021_i_address0(runSIMD_U0_output_l1_021_i_address0),
-    .output_l1_021_i_ce0(runSIMD_U0_output_l1_021_i_ce0),
-    .output_l1_021_i_we0(runSIMD_U0_output_l1_021_i_we0),
-    .output_l1_021_i_d0(runSIMD_U0_output_l1_021_i_d0),
-    .output_l1_122_i_address0(runSIMD_U0_output_l1_122_i_address0),
-    .output_l1_122_i_ce0(runSIMD_U0_output_l1_122_i_ce0),
-    .output_l1_122_i_we0(runSIMD_U0_output_l1_122_i_we0),
-    .output_l1_122_i_d0(runSIMD_U0_output_l1_122_i_d0),
-    .output_l1_223_i_address0(runSIMD_U0_output_l1_223_i_address0),
-    .output_l1_223_i_ce0(runSIMD_U0_output_l1_223_i_ce0),
-    .output_l1_223_i_we0(runSIMD_U0_output_l1_223_i_we0),
-    .output_l1_223_i_d0(runSIMD_U0_output_l1_223_i_d0),
-    .output_l1_324_i_address0(runSIMD_U0_output_l1_324_i_address0),
-    .output_l1_324_i_ce0(runSIMD_U0_output_l1_324_i_ce0),
-    .output_l1_324_i_we0(runSIMD_U0_output_l1_324_i_we0),
-    .output_l1_324_i_d0(runSIMD_U0_output_l1_324_i_d0),
-    .param_dout(param_c7_dout),
-    .param_empty_n(param_c7_empty_n),
-    .param_read(runSIMD_U0_param_read),
-    .param_out_din(runSIMD_U0_param_out_din),
-    .param_out_full_n(param_c12_full_n),
-    .param_out_write(runSIMD_U0_param_out_write)
+    .p_read4(weight_regfile_0_4_dout),
+    .p_read5(weight_regfile_0_5_dout),
+    .p_read6(weight_regfile_0_6_dout),
+    .p_read7(weight_regfile_0_7_dout),
+    .p_read8(weight_regfile_1_0_dout),
+    .p_read9(weight_regfile_1_1_dout),
+    .p_read10(weight_regfile_1_2_dout),
+    .p_read11(weight_regfile_1_3_dout),
+    .p_read12(weight_regfile_1_4_dout),
+    .p_read13(weight_regfile_1_5_dout),
+    .p_read14(weight_regfile_1_6_dout),
+    .p_read15(weight_regfile_1_7_dout),
+    .p_read16(weight_regfile_2_0_dout),
+    .p_read17(weight_regfile_2_1_dout),
+    .p_read18(weight_regfile_2_2_dout),
+    .p_read19(weight_regfile_2_3_dout),
+    .p_read20(weight_regfile_2_4_dout),
+    .p_read21(weight_regfile_2_5_dout),
+    .p_read22(weight_regfile_2_6_dout),
+    .p_read23(weight_regfile_2_7_dout),
+    .p_read24(weight_regfile_3_0_dout),
+    .p_read25(weight_regfile_3_1_dout),
+    .p_read26(weight_regfile_3_2_dout),
+    .p_read27(weight_regfile_3_3_dout),
+    .p_read28(weight_regfile_3_4_dout),
+    .p_read29(weight_regfile_3_5_dout),
+    .p_read30(weight_regfile_3_6_dout),
+    .p_read31(weight_regfile_3_7_dout),
+    .p_read32(weight_regfile_4_0_dout),
+    .p_read33(weight_regfile_4_1_dout),
+    .p_read34(weight_regfile_4_2_dout),
+    .p_read35(weight_regfile_4_3_dout),
+    .p_read36(weight_regfile_4_4_dout),
+    .p_read37(weight_regfile_4_5_dout),
+    .p_read38(weight_regfile_4_6_dout),
+    .p_read39(weight_regfile_4_7_dout),
+    .p_read40(weight_regfile_5_0_dout),
+    .p_read41(weight_regfile_5_1_dout),
+    .p_read42(weight_regfile_5_2_dout),
+    .p_read43(weight_regfile_5_3_dout),
+    .p_read44(weight_regfile_5_4_dout),
+    .p_read45(weight_regfile_5_5_dout),
+    .p_read46(weight_regfile_5_6_dout),
+    .p_read47(weight_regfile_5_7_dout),
+    .p_read48(weight_regfile_6_0_dout),
+    .p_read49(weight_regfile_6_1_dout),
+    .p_read50(weight_regfile_6_2_dout),
+    .p_read51(weight_regfile_6_3_dout),
+    .p_read52(weight_regfile_6_4_dout),
+    .p_read53(weight_regfile_6_5_dout),
+    .p_read54(weight_regfile_6_6_dout),
+    .p_read55(weight_regfile_6_7_dout),
+    .p_read56(weight_regfile_7_0_dout),
+    .p_read57(weight_regfile_7_1_dout),
+    .p_read58(weight_regfile_7_2_dout),
+    .p_read59(weight_regfile_7_3_dout),
+    .p_read60(weight_regfile_7_4_dout),
+    .p_read61(weight_regfile_7_5_dout),
+    .p_read62(weight_regfile_7_6_dout),
+    .p_read63(weight_regfile_7_7_dout),
+    .data_l1_address0(runSIMD_bitvec_U0_data_l1_address0),
+    .data_l1_ce0(runSIMD_bitvec_U0_data_l1_ce0),
+    .data_l1_q0(data_l1_0_0_t_q0),
+    .data_l164_address0(runSIMD_bitvec_U0_data_l164_address0),
+    .data_l164_ce0(runSIMD_bitvec_U0_data_l164_ce0),
+    .data_l164_q0(data_l1_0_1_t_q0),
+    .data_l165_address0(runSIMD_bitvec_U0_data_l165_address0),
+    .data_l165_ce0(runSIMD_bitvec_U0_data_l165_ce0),
+    .data_l165_q0(data_l1_0_2_t_q0),
+    .data_l166_address0(runSIMD_bitvec_U0_data_l166_address0),
+    .data_l166_ce0(runSIMD_bitvec_U0_data_l166_ce0),
+    .data_l166_q0(data_l1_0_3_t_q0),
+    .data_l167_address0(runSIMD_bitvec_U0_data_l167_address0),
+    .data_l167_ce0(runSIMD_bitvec_U0_data_l167_ce0),
+    .data_l167_q0(data_l1_0_4_t_q0),
+    .data_l168_address0(runSIMD_bitvec_U0_data_l168_address0),
+    .data_l168_ce0(runSIMD_bitvec_U0_data_l168_ce0),
+    .data_l168_q0(data_l1_0_5_t_q0),
+    .data_l169_address0(runSIMD_bitvec_U0_data_l169_address0),
+    .data_l169_ce0(runSIMD_bitvec_U0_data_l169_ce0),
+    .data_l169_q0(data_l1_0_6_t_q0),
+    .data_l170_address0(runSIMD_bitvec_U0_data_l170_address0),
+    .data_l170_ce0(runSIMD_bitvec_U0_data_l170_ce0),
+    .data_l170_q0(data_l1_0_7_t_q0),
+    .data_l18_address0(runSIMD_bitvec_U0_data_l18_address0),
+    .data_l18_ce0(runSIMD_bitvec_U0_data_l18_ce0),
+    .data_l18_q0(data_l1_1_0_t_q0),
+    .data_l1871_address0(runSIMD_bitvec_U0_data_l1871_address0),
+    .data_l1871_ce0(runSIMD_bitvec_U0_data_l1871_ce0),
+    .data_l1871_q0(data_l1_1_1_t_q0),
+    .data_l1872_address0(runSIMD_bitvec_U0_data_l1872_address0),
+    .data_l1872_ce0(runSIMD_bitvec_U0_data_l1872_ce0),
+    .data_l1872_q0(data_l1_1_2_t_q0),
+    .data_l1873_address0(runSIMD_bitvec_U0_data_l1873_address0),
+    .data_l1873_ce0(runSIMD_bitvec_U0_data_l1873_ce0),
+    .data_l1873_q0(data_l1_1_3_t_q0),
+    .data_l1874_address0(runSIMD_bitvec_U0_data_l1874_address0),
+    .data_l1874_ce0(runSIMD_bitvec_U0_data_l1874_ce0),
+    .data_l1874_q0(data_l1_1_4_t_q0),
+    .data_l1875_address0(runSIMD_bitvec_U0_data_l1875_address0),
+    .data_l1875_ce0(runSIMD_bitvec_U0_data_l1875_ce0),
+    .data_l1875_q0(data_l1_1_5_t_q0),
+    .data_l1876_address0(runSIMD_bitvec_U0_data_l1876_address0),
+    .data_l1876_ce0(runSIMD_bitvec_U0_data_l1876_ce0),
+    .data_l1876_q0(data_l1_1_6_t_q0),
+    .data_l1877_address0(runSIMD_bitvec_U0_data_l1877_address0),
+    .data_l1877_ce0(runSIMD_bitvec_U0_data_l1877_ce0),
+    .data_l1877_q0(data_l1_1_7_t_q0),
+    .data_l1_bitvec_address0(runSIMD_bitvec_U0_data_l1_bitvec_address0),
+    .data_l1_bitvec_ce0(runSIMD_bitvec_U0_data_l1_bitvec_ce0),
+    .data_l1_bitvec_q0(data_l1_bitvec_0_0_t_q0),
+    .data_l1_bitvec78_address0(runSIMD_bitvec_U0_data_l1_bitvec78_address0),
+    .data_l1_bitvec78_ce0(runSIMD_bitvec_U0_data_l1_bitvec78_ce0),
+    .data_l1_bitvec78_q0(data_l1_bitvec_0_1_t_q0),
+    .data_l1_bitvec9_address0(runSIMD_bitvec_U0_data_l1_bitvec9_address0),
+    .data_l1_bitvec9_ce0(runSIMD_bitvec_U0_data_l1_bitvec9_ce0),
+    .data_l1_bitvec9_q0(data_l1_bitvec_1_0_t_q0),
+    .data_l1_bitvec979_address0(runSIMD_bitvec_U0_data_l1_bitvec979_address0),
+    .data_l1_bitvec979_ce0(runSIMD_bitvec_U0_data_l1_bitvec979_ce0),
+    .data_l1_bitvec979_q0(data_l1_bitvec_1_1_t_q0),
+    .data_l1_length(data_l1_length_0_0_dout),
+    .data_l1_length80(data_l1_length_0_1_dout),
+    .data_l1_length10(data_l1_length_1_0_dout),
+    .data_l1_length1081(data_l1_length_1_1_dout),
+    .p_read64(max_bitvec_length_0_dout),
+    .TILESIZE_H_dout(TILESIZE_H_c4_dout),
+    .TILESIZE_H_empty_n(TILESIZE_H_c4_empty_n),
+    .TILESIZE_H_read(runSIMD_bitvec_U0_TILESIZE_H_read),
+    .TILESIZE_W_dout(TILESIZE_W_c5_dout),
+    .TILESIZE_W_empty_n(TILESIZE_W_c5_empty_n),
+    .TILESIZE_W_read(runSIMD_bitvec_U0_TILESIZE_W_read),
+    .TILESIZE_R_dout(TILESIZE_R_c_dout),
+    .TILESIZE_R_empty_n(TILESIZE_R_c_empty_n),
+    .TILESIZE_R_read(runSIMD_bitvec_U0_TILESIZE_R_read),
+    .TILESIZE_S_dout(TILESIZE_S_c_dout),
+    .TILESIZE_S_empty_n(TILESIZE_S_c_empty_n),
+    .TILESIZE_S_read(runSIMD_bitvec_U0_TILESIZE_S_read),
+    .TILESIZE_H_out_din(runSIMD_bitvec_U0_TILESIZE_H_out_din),
+    .TILESIZE_H_out_full_n(TILESIZE_H_c12_full_n),
+    .TILESIZE_H_out_write(runSIMD_bitvec_U0_TILESIZE_H_out_write),
+    .TILESIZE_W_out_din(runSIMD_bitvec_U0_TILESIZE_W_out_din),
+    .TILESIZE_W_out_full_n(TILESIZE_W_c13_full_n),
+    .TILESIZE_W_out_write(runSIMD_bitvec_U0_TILESIZE_W_out_write),
+    .output_l1_0_0_address0(runSIMD_bitvec_U0_output_l1_0_0_address0),
+    .output_l1_0_0_ce0(runSIMD_bitvec_U0_output_l1_0_0_ce0),
+    .output_l1_0_0_we0(runSIMD_bitvec_U0_output_l1_0_0_we0),
+    .output_l1_0_0_d0(runSIMD_bitvec_U0_output_l1_0_0_d0),
+    .output_l1_0_0_address1(runSIMD_bitvec_U0_output_l1_0_0_address1),
+    .output_l1_0_0_ce1(runSIMD_bitvec_U0_output_l1_0_0_ce1),
+    .output_l1_0_0_we1(runSIMD_bitvec_U0_output_l1_0_0_we1),
+    .output_l1_0_0_d1(runSIMD_bitvec_U0_output_l1_0_0_d1),
+    .output_l1_0_1_address0(runSIMD_bitvec_U0_output_l1_0_1_address0),
+    .output_l1_0_1_ce0(runSIMD_bitvec_U0_output_l1_0_1_ce0),
+    .output_l1_0_1_we0(runSIMD_bitvec_U0_output_l1_0_1_we0),
+    .output_l1_0_1_d0(runSIMD_bitvec_U0_output_l1_0_1_d0),
+    .output_l1_0_1_address1(runSIMD_bitvec_U0_output_l1_0_1_address1),
+    .output_l1_0_1_ce1(runSIMD_bitvec_U0_output_l1_0_1_ce1),
+    .output_l1_0_1_we1(runSIMD_bitvec_U0_output_l1_0_1_we1),
+    .output_l1_0_1_d1(runSIMD_bitvec_U0_output_l1_0_1_d1),
+    .output_l1_0_2_address0(runSIMD_bitvec_U0_output_l1_0_2_address0),
+    .output_l1_0_2_ce0(runSIMD_bitvec_U0_output_l1_0_2_ce0),
+    .output_l1_0_2_we0(runSIMD_bitvec_U0_output_l1_0_2_we0),
+    .output_l1_0_2_d0(runSIMD_bitvec_U0_output_l1_0_2_d0),
+    .output_l1_0_2_address1(runSIMD_bitvec_U0_output_l1_0_2_address1),
+    .output_l1_0_2_ce1(runSIMD_bitvec_U0_output_l1_0_2_ce1),
+    .output_l1_0_2_we1(runSIMD_bitvec_U0_output_l1_0_2_we1),
+    .output_l1_0_2_d1(runSIMD_bitvec_U0_output_l1_0_2_d1),
+    .output_l1_0_3_address0(runSIMD_bitvec_U0_output_l1_0_3_address0),
+    .output_l1_0_3_ce0(runSIMD_bitvec_U0_output_l1_0_3_ce0),
+    .output_l1_0_3_we0(runSIMD_bitvec_U0_output_l1_0_3_we0),
+    .output_l1_0_3_d0(runSIMD_bitvec_U0_output_l1_0_3_d0),
+    .output_l1_0_3_address1(runSIMD_bitvec_U0_output_l1_0_3_address1),
+    .output_l1_0_3_ce1(runSIMD_bitvec_U0_output_l1_0_3_ce1),
+    .output_l1_0_3_we1(runSIMD_bitvec_U0_output_l1_0_3_we1),
+    .output_l1_0_3_d1(runSIMD_bitvec_U0_output_l1_0_3_d1),
+    .output_l1_0_4_address0(runSIMD_bitvec_U0_output_l1_0_4_address0),
+    .output_l1_0_4_ce0(runSIMD_bitvec_U0_output_l1_0_4_ce0),
+    .output_l1_0_4_we0(runSIMD_bitvec_U0_output_l1_0_4_we0),
+    .output_l1_0_4_d0(runSIMD_bitvec_U0_output_l1_0_4_d0),
+    .output_l1_0_4_address1(runSIMD_bitvec_U0_output_l1_0_4_address1),
+    .output_l1_0_4_ce1(runSIMD_bitvec_U0_output_l1_0_4_ce1),
+    .output_l1_0_4_we1(runSIMD_bitvec_U0_output_l1_0_4_we1),
+    .output_l1_0_4_d1(runSIMD_bitvec_U0_output_l1_0_4_d1),
+    .output_l1_0_5_address0(runSIMD_bitvec_U0_output_l1_0_5_address0),
+    .output_l1_0_5_ce0(runSIMD_bitvec_U0_output_l1_0_5_ce0),
+    .output_l1_0_5_we0(runSIMD_bitvec_U0_output_l1_0_5_we0),
+    .output_l1_0_5_d0(runSIMD_bitvec_U0_output_l1_0_5_d0),
+    .output_l1_0_5_address1(runSIMD_bitvec_U0_output_l1_0_5_address1),
+    .output_l1_0_5_ce1(runSIMD_bitvec_U0_output_l1_0_5_ce1),
+    .output_l1_0_5_we1(runSIMD_bitvec_U0_output_l1_0_5_we1),
+    .output_l1_0_5_d1(runSIMD_bitvec_U0_output_l1_0_5_d1),
+    .output_l1_0_6_address0(runSIMD_bitvec_U0_output_l1_0_6_address0),
+    .output_l1_0_6_ce0(runSIMD_bitvec_U0_output_l1_0_6_ce0),
+    .output_l1_0_6_we0(runSIMD_bitvec_U0_output_l1_0_6_we0),
+    .output_l1_0_6_d0(runSIMD_bitvec_U0_output_l1_0_6_d0),
+    .output_l1_0_6_address1(runSIMD_bitvec_U0_output_l1_0_6_address1),
+    .output_l1_0_6_ce1(runSIMD_bitvec_U0_output_l1_0_6_ce1),
+    .output_l1_0_6_we1(runSIMD_bitvec_U0_output_l1_0_6_we1),
+    .output_l1_0_6_d1(runSIMD_bitvec_U0_output_l1_0_6_d1),
+    .output_l1_0_7_address0(runSIMD_bitvec_U0_output_l1_0_7_address0),
+    .output_l1_0_7_ce0(runSIMD_bitvec_U0_output_l1_0_7_ce0),
+    .output_l1_0_7_we0(runSIMD_bitvec_U0_output_l1_0_7_we0),
+    .output_l1_0_7_d0(runSIMD_bitvec_U0_output_l1_0_7_d0),
+    .output_l1_0_7_address1(runSIMD_bitvec_U0_output_l1_0_7_address1),
+    .output_l1_0_7_ce1(runSIMD_bitvec_U0_output_l1_0_7_ce1),
+    .output_l1_0_7_we1(runSIMD_bitvec_U0_output_l1_0_7_we1),
+    .output_l1_0_7_d1(runSIMD_bitvec_U0_output_l1_0_7_d1),
+    .output_l1_1_0_address0(runSIMD_bitvec_U0_output_l1_1_0_address0),
+    .output_l1_1_0_ce0(runSIMD_bitvec_U0_output_l1_1_0_ce0),
+    .output_l1_1_0_we0(runSIMD_bitvec_U0_output_l1_1_0_we0),
+    .output_l1_1_0_d0(runSIMD_bitvec_U0_output_l1_1_0_d0),
+    .output_l1_1_0_address1(runSIMD_bitvec_U0_output_l1_1_0_address1),
+    .output_l1_1_0_ce1(runSIMD_bitvec_U0_output_l1_1_0_ce1),
+    .output_l1_1_0_we1(runSIMD_bitvec_U0_output_l1_1_0_we1),
+    .output_l1_1_0_d1(runSIMD_bitvec_U0_output_l1_1_0_d1),
+    .output_l1_1_1_address0(runSIMD_bitvec_U0_output_l1_1_1_address0),
+    .output_l1_1_1_ce0(runSIMD_bitvec_U0_output_l1_1_1_ce0),
+    .output_l1_1_1_we0(runSIMD_bitvec_U0_output_l1_1_1_we0),
+    .output_l1_1_1_d0(runSIMD_bitvec_U0_output_l1_1_1_d0),
+    .output_l1_1_1_address1(runSIMD_bitvec_U0_output_l1_1_1_address1),
+    .output_l1_1_1_ce1(runSIMD_bitvec_U0_output_l1_1_1_ce1),
+    .output_l1_1_1_we1(runSIMD_bitvec_U0_output_l1_1_1_we1),
+    .output_l1_1_1_d1(runSIMD_bitvec_U0_output_l1_1_1_d1),
+    .output_l1_1_2_address0(runSIMD_bitvec_U0_output_l1_1_2_address0),
+    .output_l1_1_2_ce0(runSIMD_bitvec_U0_output_l1_1_2_ce0),
+    .output_l1_1_2_we0(runSIMD_bitvec_U0_output_l1_1_2_we0),
+    .output_l1_1_2_d0(runSIMD_bitvec_U0_output_l1_1_2_d0),
+    .output_l1_1_2_address1(runSIMD_bitvec_U0_output_l1_1_2_address1),
+    .output_l1_1_2_ce1(runSIMD_bitvec_U0_output_l1_1_2_ce1),
+    .output_l1_1_2_we1(runSIMD_bitvec_U0_output_l1_1_2_we1),
+    .output_l1_1_2_d1(runSIMD_bitvec_U0_output_l1_1_2_d1),
+    .output_l1_1_3_address0(runSIMD_bitvec_U0_output_l1_1_3_address0),
+    .output_l1_1_3_ce0(runSIMD_bitvec_U0_output_l1_1_3_ce0),
+    .output_l1_1_3_we0(runSIMD_bitvec_U0_output_l1_1_3_we0),
+    .output_l1_1_3_d0(runSIMD_bitvec_U0_output_l1_1_3_d0),
+    .output_l1_1_3_address1(runSIMD_bitvec_U0_output_l1_1_3_address1),
+    .output_l1_1_3_ce1(runSIMD_bitvec_U0_output_l1_1_3_ce1),
+    .output_l1_1_3_we1(runSIMD_bitvec_U0_output_l1_1_3_we1),
+    .output_l1_1_3_d1(runSIMD_bitvec_U0_output_l1_1_3_d1),
+    .output_l1_1_4_address0(runSIMD_bitvec_U0_output_l1_1_4_address0),
+    .output_l1_1_4_ce0(runSIMD_bitvec_U0_output_l1_1_4_ce0),
+    .output_l1_1_4_we0(runSIMD_bitvec_U0_output_l1_1_4_we0),
+    .output_l1_1_4_d0(runSIMD_bitvec_U0_output_l1_1_4_d0),
+    .output_l1_1_4_address1(runSIMD_bitvec_U0_output_l1_1_4_address1),
+    .output_l1_1_4_ce1(runSIMD_bitvec_U0_output_l1_1_4_ce1),
+    .output_l1_1_4_we1(runSIMD_bitvec_U0_output_l1_1_4_we1),
+    .output_l1_1_4_d1(runSIMD_bitvec_U0_output_l1_1_4_d1),
+    .output_l1_1_5_address0(runSIMD_bitvec_U0_output_l1_1_5_address0),
+    .output_l1_1_5_ce0(runSIMD_bitvec_U0_output_l1_1_5_ce0),
+    .output_l1_1_5_we0(runSIMD_bitvec_U0_output_l1_1_5_we0),
+    .output_l1_1_5_d0(runSIMD_bitvec_U0_output_l1_1_5_d0),
+    .output_l1_1_5_address1(runSIMD_bitvec_U0_output_l1_1_5_address1),
+    .output_l1_1_5_ce1(runSIMD_bitvec_U0_output_l1_1_5_ce1),
+    .output_l1_1_5_we1(runSIMD_bitvec_U0_output_l1_1_5_we1),
+    .output_l1_1_5_d1(runSIMD_bitvec_U0_output_l1_1_5_d1),
+    .output_l1_1_6_address0(runSIMD_bitvec_U0_output_l1_1_6_address0),
+    .output_l1_1_6_ce0(runSIMD_bitvec_U0_output_l1_1_6_ce0),
+    .output_l1_1_6_we0(runSIMD_bitvec_U0_output_l1_1_6_we0),
+    .output_l1_1_6_d0(runSIMD_bitvec_U0_output_l1_1_6_d0),
+    .output_l1_1_6_address1(runSIMD_bitvec_U0_output_l1_1_6_address1),
+    .output_l1_1_6_ce1(runSIMD_bitvec_U0_output_l1_1_6_ce1),
+    .output_l1_1_6_we1(runSIMD_bitvec_U0_output_l1_1_6_we1),
+    .output_l1_1_6_d1(runSIMD_bitvec_U0_output_l1_1_6_d1),
+    .output_l1_1_7_address0(runSIMD_bitvec_U0_output_l1_1_7_address0),
+    .output_l1_1_7_ce0(runSIMD_bitvec_U0_output_l1_1_7_ce0),
+    .output_l1_1_7_we0(runSIMD_bitvec_U0_output_l1_1_7_we0),
+    .output_l1_1_7_d0(runSIMD_bitvec_U0_output_l1_1_7_d0),
+    .output_l1_1_7_address1(runSIMD_bitvec_U0_output_l1_1_7_address1),
+    .output_l1_1_7_ce1(runSIMD_bitvec_U0_output_l1_1_7_ce1),
+    .output_l1_1_7_we1(runSIMD_bitvec_U0_output_l1_1_7_we1),
+    .output_l1_1_7_d1(runSIMD_bitvec_U0_output_l1_1_7_d1)
 );
 
 Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
@@ -990,30 +3961,27 @@ Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
     .ap_continue(runOutputL1toL2_U0_ap_continue),
     .ap_idle(runOutputL1toL2_U0_ap_idle),
     .ap_ready(runOutputL1toL2_U0_ap_ready),
-    .output_l1_021_i_address0(runOutputL1toL2_U0_output_l1_021_i_address0),
-    .output_l1_021_i_ce0(runOutputL1toL2_U0_output_l1_021_i_ce0),
-    .output_l1_021_i_q0(output_l1_0_t_q0),
-    .output_l1_122_i_address0(runOutputL1toL2_U0_output_l1_122_i_address0),
-    .output_l1_122_i_ce0(runOutputL1toL2_U0_output_l1_122_i_ce0),
-    .output_l1_122_i_q0(output_l1_1_t_q0),
-    .output_l1_223_i_address0(runOutputL1toL2_U0_output_l1_223_i_address0),
-    .output_l1_223_i_ce0(runOutputL1toL2_U0_output_l1_223_i_ce0),
-    .output_l1_223_i_q0(output_l1_2_t_q0),
-    .output_l1_324_i_address0(runOutputL1toL2_U0_output_l1_324_i_address0),
-    .output_l1_324_i_ce0(runOutputL1toL2_U0_output_l1_324_i_ce0),
-    .output_l1_324_i_q0(output_l1_3_t_q0),
-    .param_dout(param_c12_dout),
-    .param_empty_n(param_c12_empty_n),
-    .param_read(runOutputL1toL2_U0_param_read),
-    .ko_1_dout(ko_1_c8_dout),
-    .ko_1_empty_n(ko_1_c8_empty_n),
-    .ko_1_read(runOutputL1toL2_U0_ko_1_read),
-    .ho_dout(ho_c5_dout),
-    .ho_empty_n(ho_c5_empty_n),
+    .TILESIZE_H_dout(TILESIZE_H_c12_dout),
+    .TILESIZE_H_empty_n(TILESIZE_H_c12_empty_n),
+    .TILESIZE_H_read(runOutputL1toL2_U0_TILESIZE_H_read),
+    .TILESIZE_W_dout(TILESIZE_W_c13_dout),
+    .TILESIZE_W_empty_n(TILESIZE_W_c13_empty_n),
+    .TILESIZE_W_read(runOutputL1toL2_U0_TILESIZE_W_read),
+    .ko_3_dout(ko_3_c8_dout),
+    .ko_3_empty_n(ko_3_c8_empty_n),
+    .ko_3_read(runOutputL1toL2_U0_ko_3_read),
+    .ho_dout(ho_c6_dout),
+    .ho_empty_n(ho_c6_empty_n),
     .ho_read(runOutputL1toL2_U0_ho_read),
-    .wo_dout(wo_c6_dout),
-    .wo_empty_n(wo_c6_empty_n),
+    .wo_dout(wo_c7_dout),
+    .wo_empty_n(wo_c7_empty_n),
     .wo_read(runOutputL1toL2_U0_wo_read),
+    .W_L2_dout(W_L2_c_dout),
+    .W_L2_empty_n(W_L2_c_empty_n),
+    .W_L2_read(runOutputL1toL2_U0_W_L2_read),
+    .H_L2_dout(H_L2_c_dout),
+    .H_L2_empty_n(H_L2_c_empty_n),
+    .H_L2_read(runOutputL1toL2_U0_H_L2_read),
     .ro_dout(ro_c10_dout),
     .ro_empty_n(ro_c10_empty_n),
     .ro_read(runOutputL1toL2_U0_ro_read),
@@ -1023,49 +3991,833 @@ Conv_sysarr_runOutputL1toL2 runOutputL1toL2_U0(
     .so_dout(so_c11_dout),
     .so_empty_n(so_c11_empty_n),
     .so_read(runOutputL1toL2_U0_so_read),
-    .output_l2_0_address0(runOutputL1toL2_U0_output_l2_0_address0),
-    .output_l2_0_ce0(runOutputL1toL2_U0_output_l2_0_ce0),
-    .output_l2_0_we0(runOutputL1toL2_U0_output_l2_0_we0),
-    .output_l2_0_d0(runOutputL1toL2_U0_output_l2_0_d0)
+    .output_l1_0_0_address0(runOutputL1toL2_U0_output_l1_0_0_address0),
+    .output_l1_0_0_ce0(runOutputL1toL2_U0_output_l1_0_0_ce0),
+    .output_l1_0_0_q0(output_l1_0_0_t_q0),
+    .output_l1_0_1_address0(runOutputL1toL2_U0_output_l1_0_1_address0),
+    .output_l1_0_1_ce0(runOutputL1toL2_U0_output_l1_0_1_ce0),
+    .output_l1_0_1_q0(output_l1_0_1_t_q0),
+    .output_l1_0_1_address1(runOutputL1toL2_U0_output_l1_0_1_address1),
+    .output_l1_0_1_ce1(runOutputL1toL2_U0_output_l1_0_1_ce1),
+    .output_l1_0_1_q1(output_l1_0_1_t_q1),
+    .output_l1_0_2_address0(runOutputL1toL2_U0_output_l1_0_2_address0),
+    .output_l1_0_2_ce0(runOutputL1toL2_U0_output_l1_0_2_ce0),
+    .output_l1_0_2_q0(output_l1_0_2_t_q0),
+    .output_l1_0_2_address1(runOutputL1toL2_U0_output_l1_0_2_address1),
+    .output_l1_0_2_ce1(runOutputL1toL2_U0_output_l1_0_2_ce1),
+    .output_l1_0_2_q1(output_l1_0_2_t_q1),
+    .output_l1_0_3_address0(runOutputL1toL2_U0_output_l1_0_3_address0),
+    .output_l1_0_3_ce0(runOutputL1toL2_U0_output_l1_0_3_ce0),
+    .output_l1_0_3_q0(output_l1_0_3_t_q0),
+    .output_l1_0_3_address1(runOutputL1toL2_U0_output_l1_0_3_address1),
+    .output_l1_0_3_ce1(runOutputL1toL2_U0_output_l1_0_3_ce1),
+    .output_l1_0_3_q1(output_l1_0_3_t_q1),
+    .output_l1_0_4_address0(runOutputL1toL2_U0_output_l1_0_4_address0),
+    .output_l1_0_4_ce0(runOutputL1toL2_U0_output_l1_0_4_ce0),
+    .output_l1_0_4_q0(output_l1_0_4_t_q0),
+    .output_l1_0_4_address1(runOutputL1toL2_U0_output_l1_0_4_address1),
+    .output_l1_0_4_ce1(runOutputL1toL2_U0_output_l1_0_4_ce1),
+    .output_l1_0_4_q1(output_l1_0_4_t_q1),
+    .output_l1_0_5_address0(runOutputL1toL2_U0_output_l1_0_5_address0),
+    .output_l1_0_5_ce0(runOutputL1toL2_U0_output_l1_0_5_ce0),
+    .output_l1_0_5_q0(output_l1_0_5_t_q0),
+    .output_l1_0_5_address1(runOutputL1toL2_U0_output_l1_0_5_address1),
+    .output_l1_0_5_ce1(runOutputL1toL2_U0_output_l1_0_5_ce1),
+    .output_l1_0_5_q1(output_l1_0_5_t_q1),
+    .output_l1_0_6_address0(runOutputL1toL2_U0_output_l1_0_6_address0),
+    .output_l1_0_6_ce0(runOutputL1toL2_U0_output_l1_0_6_ce0),
+    .output_l1_0_6_q0(output_l1_0_6_t_q0),
+    .output_l1_0_6_address1(runOutputL1toL2_U0_output_l1_0_6_address1),
+    .output_l1_0_6_ce1(runOutputL1toL2_U0_output_l1_0_6_ce1),
+    .output_l1_0_6_q1(output_l1_0_6_t_q1),
+    .output_l1_0_7_address0(runOutputL1toL2_U0_output_l1_0_7_address0),
+    .output_l1_0_7_ce0(runOutputL1toL2_U0_output_l1_0_7_ce0),
+    .output_l1_0_7_q0(output_l1_0_7_t_q0),
+    .output_l1_0_7_address1(runOutputL1toL2_U0_output_l1_0_7_address1),
+    .output_l1_0_7_ce1(runOutputL1toL2_U0_output_l1_0_7_ce1),
+    .output_l1_0_7_q1(output_l1_0_7_t_q1),
+    .output_l1_1_0_address0(runOutputL1toL2_U0_output_l1_1_0_address0),
+    .output_l1_1_0_ce0(runOutputL1toL2_U0_output_l1_1_0_ce0),
+    .output_l1_1_0_q0(output_l1_1_0_t_q0),
+    .output_l1_1_0_address1(runOutputL1toL2_U0_output_l1_1_0_address1),
+    .output_l1_1_0_ce1(runOutputL1toL2_U0_output_l1_1_0_ce1),
+    .output_l1_1_0_q1(output_l1_1_0_t_q1),
+    .output_l1_1_1_address0(runOutputL1toL2_U0_output_l1_1_1_address0),
+    .output_l1_1_1_ce0(runOutputL1toL2_U0_output_l1_1_1_ce0),
+    .output_l1_1_1_q0(output_l1_1_1_t_q0),
+    .output_l1_1_1_address1(runOutputL1toL2_U0_output_l1_1_1_address1),
+    .output_l1_1_1_ce1(runOutputL1toL2_U0_output_l1_1_1_ce1),
+    .output_l1_1_1_q1(output_l1_1_1_t_q1),
+    .output_l1_1_2_address0(runOutputL1toL2_U0_output_l1_1_2_address0),
+    .output_l1_1_2_ce0(runOutputL1toL2_U0_output_l1_1_2_ce0),
+    .output_l1_1_2_q0(output_l1_1_2_t_q0),
+    .output_l1_1_2_address1(runOutputL1toL2_U0_output_l1_1_2_address1),
+    .output_l1_1_2_ce1(runOutputL1toL2_U0_output_l1_1_2_ce1),
+    .output_l1_1_2_q1(output_l1_1_2_t_q1),
+    .output_l1_1_3_address0(runOutputL1toL2_U0_output_l1_1_3_address0),
+    .output_l1_1_3_ce0(runOutputL1toL2_U0_output_l1_1_3_ce0),
+    .output_l1_1_3_q0(output_l1_1_3_t_q0),
+    .output_l1_1_3_address1(runOutputL1toL2_U0_output_l1_1_3_address1),
+    .output_l1_1_3_ce1(runOutputL1toL2_U0_output_l1_1_3_ce1),
+    .output_l1_1_3_q1(output_l1_1_3_t_q1),
+    .output_l1_1_4_address0(runOutputL1toL2_U0_output_l1_1_4_address0),
+    .output_l1_1_4_ce0(runOutputL1toL2_U0_output_l1_1_4_ce0),
+    .output_l1_1_4_q0(output_l1_1_4_t_q0),
+    .output_l1_1_4_address1(runOutputL1toL2_U0_output_l1_1_4_address1),
+    .output_l1_1_4_ce1(runOutputL1toL2_U0_output_l1_1_4_ce1),
+    .output_l1_1_4_q1(output_l1_1_4_t_q1),
+    .output_l1_1_5_address0(runOutputL1toL2_U0_output_l1_1_5_address0),
+    .output_l1_1_5_ce0(runOutputL1toL2_U0_output_l1_1_5_ce0),
+    .output_l1_1_5_q0(output_l1_1_5_t_q0),
+    .output_l1_1_5_address1(runOutputL1toL2_U0_output_l1_1_5_address1),
+    .output_l1_1_5_ce1(runOutputL1toL2_U0_output_l1_1_5_ce1),
+    .output_l1_1_5_q1(output_l1_1_5_t_q1),
+    .output_l1_1_6_address0(runOutputL1toL2_U0_output_l1_1_6_address0),
+    .output_l1_1_6_ce0(runOutputL1toL2_U0_output_l1_1_6_ce0),
+    .output_l1_1_6_q0(output_l1_1_6_t_q0),
+    .output_l1_1_6_address1(runOutputL1toL2_U0_output_l1_1_6_address1),
+    .output_l1_1_6_ce1(runOutputL1toL2_U0_output_l1_1_6_ce1),
+    .output_l1_1_6_q1(output_l1_1_6_t_q1),
+    .output_l1_1_7_address0(runOutputL1toL2_U0_output_l1_1_7_address0),
+    .output_l1_1_7_ce0(runOutputL1toL2_U0_output_l1_1_7_ce0),
+    .output_l1_1_7_q0(output_l1_1_7_t_q0),
+    .output_l1_1_7_address1(runOutputL1toL2_U0_output_l1_1_7_address1),
+    .output_l1_1_7_ce1(runOutputL1toL2_U0_output_l1_1_7_ce1),
+    .output_l1_1_7_q1(output_l1_1_7_t_q1),
+    .output_l2_0_0_address0(runOutputL1toL2_U0_output_l2_0_0_address0),
+    .output_l2_0_0_ce0(runOutputL1toL2_U0_output_l2_0_0_ce0),
+    .output_l2_0_0_we0(runOutputL1toL2_U0_output_l2_0_0_we0),
+    .output_l2_0_0_d0(runOutputL1toL2_U0_output_l2_0_0_d0),
+    .output_l2_0_0_address1(runOutputL1toL2_U0_output_l2_0_0_address1),
+    .output_l2_0_0_ce1(runOutputL1toL2_U0_output_l2_0_0_ce1),
+    .output_l2_0_0_we1(runOutputL1toL2_U0_output_l2_0_0_we1),
+    .output_l2_0_0_d1(runOutputL1toL2_U0_output_l2_0_0_d1),
+    .output_l2_0_1_address0(runOutputL1toL2_U0_output_l2_0_1_address0),
+    .output_l2_0_1_ce0(runOutputL1toL2_U0_output_l2_0_1_ce0),
+    .output_l2_0_1_we0(runOutputL1toL2_U0_output_l2_0_1_we0),
+    .output_l2_0_1_d0(runOutputL1toL2_U0_output_l2_0_1_d0),
+    .output_l2_0_1_address1(runOutputL1toL2_U0_output_l2_0_1_address1),
+    .output_l2_0_1_ce1(runOutputL1toL2_U0_output_l2_0_1_ce1),
+    .output_l2_0_1_we1(runOutputL1toL2_U0_output_l2_0_1_we1),
+    .output_l2_0_1_d1(runOutputL1toL2_U0_output_l2_0_1_d1),
+    .output_l2_0_2_address0(runOutputL1toL2_U0_output_l2_0_2_address0),
+    .output_l2_0_2_ce0(runOutputL1toL2_U0_output_l2_0_2_ce0),
+    .output_l2_0_2_we0(runOutputL1toL2_U0_output_l2_0_2_we0),
+    .output_l2_0_2_d0(runOutputL1toL2_U0_output_l2_0_2_d0),
+    .output_l2_0_2_address1(runOutputL1toL2_U0_output_l2_0_2_address1),
+    .output_l2_0_2_ce1(runOutputL1toL2_U0_output_l2_0_2_ce1),
+    .output_l2_0_2_we1(runOutputL1toL2_U0_output_l2_0_2_we1),
+    .output_l2_0_2_d1(runOutputL1toL2_U0_output_l2_0_2_d1),
+    .output_l2_0_3_address0(runOutputL1toL2_U0_output_l2_0_3_address0),
+    .output_l2_0_3_ce0(runOutputL1toL2_U0_output_l2_0_3_ce0),
+    .output_l2_0_3_we0(runOutputL1toL2_U0_output_l2_0_3_we0),
+    .output_l2_0_3_d0(runOutputL1toL2_U0_output_l2_0_3_d0),
+    .output_l2_0_3_address1(runOutputL1toL2_U0_output_l2_0_3_address1),
+    .output_l2_0_3_ce1(runOutputL1toL2_U0_output_l2_0_3_ce1),
+    .output_l2_0_3_we1(runOutputL1toL2_U0_output_l2_0_3_we1),
+    .output_l2_0_3_d1(runOutputL1toL2_U0_output_l2_0_3_d1),
+    .output_l2_0_4_address0(runOutputL1toL2_U0_output_l2_0_4_address0),
+    .output_l2_0_4_ce0(runOutputL1toL2_U0_output_l2_0_4_ce0),
+    .output_l2_0_4_we0(runOutputL1toL2_U0_output_l2_0_4_we0),
+    .output_l2_0_4_d0(runOutputL1toL2_U0_output_l2_0_4_d0),
+    .output_l2_0_4_address1(runOutputL1toL2_U0_output_l2_0_4_address1),
+    .output_l2_0_4_ce1(runOutputL1toL2_U0_output_l2_0_4_ce1),
+    .output_l2_0_4_we1(runOutputL1toL2_U0_output_l2_0_4_we1),
+    .output_l2_0_4_d1(runOutputL1toL2_U0_output_l2_0_4_d1),
+    .output_l2_0_5_address0(runOutputL1toL2_U0_output_l2_0_5_address0),
+    .output_l2_0_5_ce0(runOutputL1toL2_U0_output_l2_0_5_ce0),
+    .output_l2_0_5_we0(runOutputL1toL2_U0_output_l2_0_5_we0),
+    .output_l2_0_5_d0(runOutputL1toL2_U0_output_l2_0_5_d0),
+    .output_l2_0_5_address1(runOutputL1toL2_U0_output_l2_0_5_address1),
+    .output_l2_0_5_ce1(runOutputL1toL2_U0_output_l2_0_5_ce1),
+    .output_l2_0_5_we1(runOutputL1toL2_U0_output_l2_0_5_we1),
+    .output_l2_0_5_d1(runOutputL1toL2_U0_output_l2_0_5_d1),
+    .output_l2_0_6_address0(runOutputL1toL2_U0_output_l2_0_6_address0),
+    .output_l2_0_6_ce0(runOutputL1toL2_U0_output_l2_0_6_ce0),
+    .output_l2_0_6_we0(runOutputL1toL2_U0_output_l2_0_6_we0),
+    .output_l2_0_6_d0(runOutputL1toL2_U0_output_l2_0_6_d0),
+    .output_l2_0_6_address1(runOutputL1toL2_U0_output_l2_0_6_address1),
+    .output_l2_0_6_ce1(runOutputL1toL2_U0_output_l2_0_6_ce1),
+    .output_l2_0_6_we1(runOutputL1toL2_U0_output_l2_0_6_we1),
+    .output_l2_0_6_d1(runOutputL1toL2_U0_output_l2_0_6_d1),
+    .output_l2_0_7_address0(runOutputL1toL2_U0_output_l2_0_7_address0),
+    .output_l2_0_7_ce0(runOutputL1toL2_U0_output_l2_0_7_ce0),
+    .output_l2_0_7_we0(runOutputL1toL2_U0_output_l2_0_7_we0),
+    .output_l2_0_7_d0(runOutputL1toL2_U0_output_l2_0_7_d0),
+    .output_l2_0_7_address1(runOutputL1toL2_U0_output_l2_0_7_address1),
+    .output_l2_0_7_ce1(runOutputL1toL2_U0_output_l2_0_7_ce1),
+    .output_l2_0_7_we1(runOutputL1toL2_U0_output_l2_0_7_we1),
+    .output_l2_0_7_d1(runOutputL1toL2_U0_output_l2_0_7_d1),
+    .output_l2_1_0_address0(runOutputL1toL2_U0_output_l2_1_0_address0),
+    .output_l2_1_0_ce0(runOutputL1toL2_U0_output_l2_1_0_ce0),
+    .output_l2_1_0_we0(runOutputL1toL2_U0_output_l2_1_0_we0),
+    .output_l2_1_0_d0(runOutputL1toL2_U0_output_l2_1_0_d0),
+    .output_l2_1_0_address1(runOutputL1toL2_U0_output_l2_1_0_address1),
+    .output_l2_1_0_ce1(runOutputL1toL2_U0_output_l2_1_0_ce1),
+    .output_l2_1_0_we1(runOutputL1toL2_U0_output_l2_1_0_we1),
+    .output_l2_1_0_d1(runOutputL1toL2_U0_output_l2_1_0_d1),
+    .output_l2_1_1_address0(runOutputL1toL2_U0_output_l2_1_1_address0),
+    .output_l2_1_1_ce0(runOutputL1toL2_U0_output_l2_1_1_ce0),
+    .output_l2_1_1_we0(runOutputL1toL2_U0_output_l2_1_1_we0),
+    .output_l2_1_1_d0(runOutputL1toL2_U0_output_l2_1_1_d0),
+    .output_l2_1_1_address1(runOutputL1toL2_U0_output_l2_1_1_address1),
+    .output_l2_1_1_ce1(runOutputL1toL2_U0_output_l2_1_1_ce1),
+    .output_l2_1_1_we1(runOutputL1toL2_U0_output_l2_1_1_we1),
+    .output_l2_1_1_d1(runOutputL1toL2_U0_output_l2_1_1_d1),
+    .output_l2_1_2_address0(runOutputL1toL2_U0_output_l2_1_2_address0),
+    .output_l2_1_2_ce0(runOutputL1toL2_U0_output_l2_1_2_ce0),
+    .output_l2_1_2_we0(runOutputL1toL2_U0_output_l2_1_2_we0),
+    .output_l2_1_2_d0(runOutputL1toL2_U0_output_l2_1_2_d0),
+    .output_l2_1_2_address1(runOutputL1toL2_U0_output_l2_1_2_address1),
+    .output_l2_1_2_ce1(runOutputL1toL2_U0_output_l2_1_2_ce1),
+    .output_l2_1_2_we1(runOutputL1toL2_U0_output_l2_1_2_we1),
+    .output_l2_1_2_d1(runOutputL1toL2_U0_output_l2_1_2_d1),
+    .output_l2_1_3_address0(runOutputL1toL2_U0_output_l2_1_3_address0),
+    .output_l2_1_3_ce0(runOutputL1toL2_U0_output_l2_1_3_ce0),
+    .output_l2_1_3_we0(runOutputL1toL2_U0_output_l2_1_3_we0),
+    .output_l2_1_3_d0(runOutputL1toL2_U0_output_l2_1_3_d0),
+    .output_l2_1_3_address1(runOutputL1toL2_U0_output_l2_1_3_address1),
+    .output_l2_1_3_ce1(runOutputL1toL2_U0_output_l2_1_3_ce1),
+    .output_l2_1_3_we1(runOutputL1toL2_U0_output_l2_1_3_we1),
+    .output_l2_1_3_d1(runOutputL1toL2_U0_output_l2_1_3_d1),
+    .output_l2_1_4_address0(runOutputL1toL2_U0_output_l2_1_4_address0),
+    .output_l2_1_4_ce0(runOutputL1toL2_U0_output_l2_1_4_ce0),
+    .output_l2_1_4_we0(runOutputL1toL2_U0_output_l2_1_4_we0),
+    .output_l2_1_4_d0(runOutputL1toL2_U0_output_l2_1_4_d0),
+    .output_l2_1_4_address1(runOutputL1toL2_U0_output_l2_1_4_address1),
+    .output_l2_1_4_ce1(runOutputL1toL2_U0_output_l2_1_4_ce1),
+    .output_l2_1_4_we1(runOutputL1toL2_U0_output_l2_1_4_we1),
+    .output_l2_1_4_d1(runOutputL1toL2_U0_output_l2_1_4_d1),
+    .output_l2_1_5_address0(runOutputL1toL2_U0_output_l2_1_5_address0),
+    .output_l2_1_5_ce0(runOutputL1toL2_U0_output_l2_1_5_ce0),
+    .output_l2_1_5_we0(runOutputL1toL2_U0_output_l2_1_5_we0),
+    .output_l2_1_5_d0(runOutputL1toL2_U0_output_l2_1_5_d0),
+    .output_l2_1_5_address1(runOutputL1toL2_U0_output_l2_1_5_address1),
+    .output_l2_1_5_ce1(runOutputL1toL2_U0_output_l2_1_5_ce1),
+    .output_l2_1_5_we1(runOutputL1toL2_U0_output_l2_1_5_we1),
+    .output_l2_1_5_d1(runOutputL1toL2_U0_output_l2_1_5_d1),
+    .output_l2_1_6_address0(runOutputL1toL2_U0_output_l2_1_6_address0),
+    .output_l2_1_6_ce0(runOutputL1toL2_U0_output_l2_1_6_ce0),
+    .output_l2_1_6_we0(runOutputL1toL2_U0_output_l2_1_6_we0),
+    .output_l2_1_6_d0(runOutputL1toL2_U0_output_l2_1_6_d0),
+    .output_l2_1_6_address1(runOutputL1toL2_U0_output_l2_1_6_address1),
+    .output_l2_1_6_ce1(runOutputL1toL2_U0_output_l2_1_6_ce1),
+    .output_l2_1_6_we1(runOutputL1toL2_U0_output_l2_1_6_we1),
+    .output_l2_1_6_d1(runOutputL1toL2_U0_output_l2_1_6_d1),
+    .output_l2_1_7_address0(runOutputL1toL2_U0_output_l2_1_7_address0),
+    .output_l2_1_7_ce0(runOutputL1toL2_U0_output_l2_1_7_ce0),
+    .output_l2_1_7_we0(runOutputL1toL2_U0_output_l2_1_7_we0),
+    .output_l2_1_7_d0(runOutputL1toL2_U0_output_l2_1_7_d0)
 );
 
-Conv_sysarr_fifo_w1184_d2_S param_c_U(
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_0 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_0_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_0_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_0_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_0_d0),
+    .i_q0(output_l1_0_0_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_0_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_0_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_0_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_0_d1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_0_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_0_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_0_t_q0),
+    .t_address1(8'd0),
+    .t_ce1(1'b0),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_0_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_0),
+    .t_empty_n(output_l1_0_0_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_1_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_1_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_1_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_1_d0),
+    .i_q0(output_l1_0_1_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_1_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_1_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_1_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_1_d1),
+    .i_q1(output_l1_0_1_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_1_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_1_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_1_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_1_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_1_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_1_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_1_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_1),
+    .t_empty_n(output_l1_0_1_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_2_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_2_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_2_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_2_d0),
+    .i_q0(output_l1_0_2_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_2_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_2_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_2_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_2_d1),
+    .i_q1(output_l1_0_2_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_2_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_2_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_2_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_2_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_2_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_2_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_2_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_2),
+    .t_empty_n(output_l1_0_2_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_3_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_3_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_3_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_3_d0),
+    .i_q0(output_l1_0_3_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_3_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_3_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_3_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_3_d1),
+    .i_q1(output_l1_0_3_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_3_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_3_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_3_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_3_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_3_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_3_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_3_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_3),
+    .t_empty_n(output_l1_0_3_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_4_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_4_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_4_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_4_d0),
+    .i_q0(output_l1_0_4_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_4_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_4_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_4_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_4_d1),
+    .i_q1(output_l1_0_4_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_4_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_4_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_4_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_4_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_4_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_4_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_4_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_4),
+    .t_empty_n(output_l1_0_4_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_5_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_5_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_5_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_5_d0),
+    .i_q0(output_l1_0_5_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_5_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_5_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_5_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_5_d1),
+    .i_q1(output_l1_0_5_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_5_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_5_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_5_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_5_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_5_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_5_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_5_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_5),
+    .t_empty_n(output_l1_0_5_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_6_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_6_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_6_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_6_d0),
+    .i_q0(output_l1_0_6_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_6_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_6_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_6_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_6_d1),
+    .i_q1(output_l1_0_6_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_6_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_6_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_6_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_6_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_6_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_6_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_6_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_6),
+    .t_empty_n(output_l1_0_6_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_0_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_0_7_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_0_7_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_0_7_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_0_7_d0),
+    .i_q0(output_l1_0_7_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_0_7_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_0_7_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_0_7_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_0_7_d1),
+    .i_q1(output_l1_0_7_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_0_7_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_0_7_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_0_7_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_0_7_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_0_7_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_0_7_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_0_7_i_full_n),
+    .i_write(ap_channel_done_output_l1_0_7),
+    .t_empty_n(output_l1_0_7_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_0_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_0_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_0_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_0_d0),
+    .i_q0(output_l1_1_0_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_0_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_0_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_0_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_0_d1),
+    .i_q1(output_l1_1_0_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_0_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_0_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_0_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_0_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_0_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_0_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_0_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_0),
+    .t_empty_n(output_l1_1_0_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_1_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_1_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_1_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_1_d0),
+    .i_q0(output_l1_1_1_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_1_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_1_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_1_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_1_d1),
+    .i_q1(output_l1_1_1_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_1_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_1_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_1_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_1_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_1_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_1_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_1_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_1),
+    .t_empty_n(output_l1_1_1_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_2_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_2_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_2_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_2_d0),
+    .i_q0(output_l1_1_2_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_2_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_2_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_2_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_2_d1),
+    .i_q1(output_l1_1_2_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_2_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_2_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_2_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_2_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_2_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_2_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_2_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_2),
+    .t_empty_n(output_l1_1_2_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_3_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_3_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_3_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_3_d0),
+    .i_q0(output_l1_1_3_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_3_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_3_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_3_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_3_d1),
+    .i_q1(output_l1_1_3_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_3_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_3_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_3_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_3_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_3_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_3_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_3_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_3),
+    .t_empty_n(output_l1_1_3_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_4_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_4_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_4_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_4_d0),
+    .i_q0(output_l1_1_4_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_4_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_4_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_4_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_4_d1),
+    .i_q1(output_l1_1_4_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_4_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_4_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_4_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_4_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_4_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_4_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_4_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_4),
+    .t_empty_n(output_l1_1_4_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_5_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_5_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_5_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_5_d0),
+    .i_q0(output_l1_1_5_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_5_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_5_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_5_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_5_d1),
+    .i_q1(output_l1_1_5_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_5_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_5_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_5_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_5_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_5_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_5_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_5_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_5),
+    .t_empty_n(output_l1_1_5_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_6_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_6_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_6_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_6_d0),
+    .i_q0(output_l1_1_6_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_6_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_6_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_6_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_6_d1),
+    .i_q1(output_l1_1_6_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_6_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_6_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_6_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_6_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_6_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_6_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_6_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_6),
+    .t_empty_n(output_l1_1_6_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER_output_l1_0_1 #(
+    .DataWidth( 32 ),
+    .AddressRange( 196 ),
+    .AddressWidth( 8 ))
+output_l1_1_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .i_address0(runSIMD_bitvec_U0_output_l1_1_7_address0),
+    .i_ce0(runSIMD_bitvec_U0_output_l1_1_7_ce0),
+    .i_we0(runSIMD_bitvec_U0_output_l1_1_7_we0),
+    .i_d0(runSIMD_bitvec_U0_output_l1_1_7_d0),
+    .i_q0(output_l1_1_7_i_q0),
+    .i_address1(runSIMD_bitvec_U0_output_l1_1_7_address1),
+    .i_ce1(runSIMD_bitvec_U0_output_l1_1_7_ce1),
+    .i_we1(runSIMD_bitvec_U0_output_l1_1_7_we1),
+    .i_d1(runSIMD_bitvec_U0_output_l1_1_7_d1),
+    .i_q1(output_l1_1_7_i_q1),
+    .t_address0(runOutputL1toL2_U0_output_l1_1_7_address0),
+    .t_ce0(runOutputL1toL2_U0_output_l1_1_7_ce0),
+    .t_we0(1'b0),
+    .t_d0(32'd0),
+    .t_q0(output_l1_1_7_t_q0),
+    .t_address1(runOutputL1toL2_U0_output_l1_1_7_address1),
+    .t_ce1(runOutputL1toL2_U0_output_l1_1_7_ce1),
+    .t_we1(1'b0),
+    .t_d1(32'd0),
+    .t_q1(output_l1_1_7_t_q1),
+    .i_ce(1'b1),
+    .t_ce(1'b1),
+    .i_full_n(output_l1_1_7_i_full_n),
+    .i_write(ap_channel_done_output_l1_1_7),
+    .t_empty_n(output_l1_1_7_t_empty_n),
+    .t_read(runOutputL1toL2_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w12_d2_S C_L2_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_din),
-    .if_full_n(param_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out_write),
-    .if_dout(param_c_dout),
-    .if_empty_n(param_c_empty_n),
-    .if_read(runWeight2Reg_U0_param_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_din),
+    .if_full_n(C_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_C_L2_out_write),
+    .if_dout(C_L2_c_dout),
+    .if_empty_n(C_L2_c_empty_n),
+    .if_read(runWeight2Reg_U0_C_L2_read)
 );
 
-Conv_sysarr_fifo_w1120_d2_S param_c1_U(
+Conv_sysarr_fifo_w12_d2_S R_L2_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_din),
-    .if_full_n(param_c1_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_param_out1_write),
-    .if_dout(param_c1_dout),
-    .if_empty_n(param_c1_empty_n),
-    .if_read(runDataL2toL1_U0_param_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_din),
+    .if_full_n(R_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_R_L2_out_write),
+    .if_dout(R_L2_c_dout),
+    .if_empty_n(R_L2_c_empty_n),
+    .if_read(runWeight2Reg_U0_R_L2_read)
 );
 
-Conv_sysarr_fifo_w12_d2_S ko_1_c_U(
+Conv_sysarr_fifo_w12_d2_S S_L2_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_din),
-    .if_full_n(ko_1_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ko_1_out_write),
-    .if_dout(ko_1_c_dout),
-    .if_empty_n(ko_1_c_empty_n),
-    .if_read(runWeight2Reg_U0_ko_1_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_din),
+    .if_full_n(S_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_S_L2_out_write),
+    .if_dout(S_L2_c_dout),
+    .if_empty_n(S_L2_c_empty_n),
+    .if_read(runWeight2Reg_U0_S_L2_read)
+);
+
+Conv_sysarr_fifo_w12_d2_S ko_3_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_din),
+    .if_full_n(ko_3_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ko_3_out_write),
+    .if_dout(ko_3_c_dout),
+    .if_empty_n(ko_3_c_empty_n),
+    .if_read(runWeight2Reg_U0_ko_3_read)
 );
 
 Conv_sysarr_fifo_w32_d2_S co_c_U(
@@ -1073,25 +4825,25 @@ Conv_sysarr_fifo_w32_d2_S co_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_din),
     .if_full_n(co_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out_write),
     .if_dout(co_c_dout),
     .if_empty_n(co_c_empty_n),
     .if_read(runWeight2Reg_U0_co_read)
 );
 
-Conv_sysarr_fifo_w11_d2_S co_c2_U(
+Conv_sysarr_fifo_w11_d2_S co_c1_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_din),
-    .if_full_n(co_c2_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_co_out2_write),
-    .if_dout(co_c2_dout),
-    .if_empty_n(co_c2_empty_n),
-    .if_read(runDataL2toL1_U0_co_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_din),
+    .if_full_n(co_c1_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_co_out1_write),
+    .if_dout(co_c1_dout),
+    .if_empty_n(co_c1_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_co_read)
 );
 
 Conv_sysarr_fifo_w32_d2_S ro_c_U(
@@ -1099,25 +4851,25 @@ Conv_sysarr_fifo_w32_d2_S ro_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_din),
     .if_full_n(ro_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out_write),
     .if_dout(ro_c_dout),
     .if_empty_n(ro_c_empty_n),
     .if_read(runWeight2Reg_U0_ro_read)
 );
 
-Conv_sysarr_fifo_w11_d2_S ro_c3_U(
+Conv_sysarr_fifo_w11_d2_S ro_c2_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_din),
-    .if_full_n(ro_c3_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ro_out3_write),
-    .if_dout(ro_c3_dout),
-    .if_empty_n(ro_c3_empty_n),
-    .if_read(runDataL2toL1_U0_ro_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_din),
+    .if_full_n(ro_c2_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ro_out2_write),
+    .if_dout(ro_c2_dout),
+    .if_empty_n(ro_c2_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_ro_read)
 );
 
 Conv_sysarr_fifo_w32_d2_S so_c_U(
@@ -1125,25 +4877,77 @@ Conv_sysarr_fifo_w32_d2_S so_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_din),
     .if_full_n(so_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out_write),
     .if_dout(so_c_dout),
     .if_empty_n(so_c_empty_n),
     .if_read(runWeight2Reg_U0_so_read)
 );
 
-Conv_sysarr_fifo_w11_d2_S so_c4_U(
+Conv_sysarr_fifo_w12_d2_S so_c3_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_din),
-    .if_full_n(so_c4_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_so_out4_write),
-    .if_dout(so_c4_dout),
-    .if_empty_n(so_c4_empty_n),
-    .if_read(runDataL2toL1_U0_so_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_din),
+    .if_full_n(so_c3_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_so_out3_write),
+    .if_dout(so_c3_dout),
+    .if_empty_n(so_c3_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_so_read)
+);
+
+Conv_sysarr_fifo_w32_d2_S TILESIZE_H_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_din),
+    .if_full_n(TILESIZE_H_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out_write),
+    .if_dout(TILESIZE_H_c_dout),
+    .if_empty_n(TILESIZE_H_c_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_TILESIZE_H_read)
+);
+
+Conv_sysarr_fifo_w32_d3_S TILESIZE_H_c4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_din),
+    .if_full_n(TILESIZE_H_c4_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_H_out4_write),
+    .if_dout(TILESIZE_H_c4_dout),
+    .if_empty_n(TILESIZE_H_c4_empty_n),
+    .if_read(runSIMD_bitvec_U0_TILESIZE_H_read)
+);
+
+Conv_sysarr_fifo_w32_d2_S TILESIZE_W_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_din),
+    .if_full_n(TILESIZE_W_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out_write),
+    .if_dout(TILESIZE_W_c_dout),
+    .if_empty_n(TILESIZE_W_c_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_TILESIZE_W_read)
+);
+
+Conv_sysarr_fifo_w32_d3_S TILESIZE_W_c5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_din),
+    .if_full_n(TILESIZE_W_c5_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_W_out5_write),
+    .if_dout(TILESIZE_W_c5_dout),
+    .if_empty_n(TILESIZE_W_c5_empty_n),
+    .if_read(runSIMD_bitvec_U0_TILESIZE_W_read)
 );
 
 Conv_sysarr_fifo_w11_d2_S ho_c_U(
@@ -1151,77 +4955,142 @@ Conv_sysarr_fifo_w11_d2_S ho_c_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_din),
     .if_full_n(ho_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out_write),
     .if_dout(ho_c_dout),
     .if_empty_n(ho_c_empty_n),
-    .if_read(runDataL2toL1_U0_ho_read)
+    .if_read(runDataL2toL1_bitvec_U0_ho_read)
 );
 
-Conv_sysarr_fifo_w11_d4_S ho_c5_U(
+Conv_sysarr_fifo_w11_d4_S ho_c6_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_din),
-    .if_full_n(ho_c5_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ho_out5_write),
-    .if_dout(ho_c5_dout),
-    .if_empty_n(ho_c5_empty_n),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_din),
+    .if_full_n(ho_c6_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ho_out6_write),
+    .if_dout(ho_c6_dout),
+    .if_empty_n(ho_c6_empty_n),
     .if_read(runOutputL1toL2_U0_ho_read)
 );
 
-Conv_sysarr_fifo_w11_d2_S wo_c_U(
+Conv_sysarr_fifo_w12_d2_S wo_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_din),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_din),
     .if_full_n(wo_c_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out_write),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out_write),
     .if_dout(wo_c_dout),
     .if_empty_n(wo_c_empty_n),
-    .if_read(runDataL2toL1_U0_wo_read)
+    .if_read(runDataL2toL1_bitvec_U0_wo_read)
 );
 
-Conv_sysarr_fifo_w11_d4_S wo_c6_U(
+Conv_sysarr_fifo_w12_d4_S wo_c7_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_din),
-    .if_full_n(wo_c6_full_n),
-    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry33_U0_wo_out6_write),
-    .if_dout(wo_c6_dout),
-    .if_empty_n(wo_c6_empty_n),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_din),
+    .if_full_n(wo_c7_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_wo_out7_write),
+    .if_dout(wo_c7_dout),
+    .if_empty_n(wo_c7_empty_n),
     .if_read(runOutputL1toL2_U0_wo_read)
 );
 
-Conv_sysarr_fifo_w1184_d2_S param_c7_U(
+Conv_sysarr_fifo_w11_d2_S W_in_L2_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_param_out_din),
-    .if_full_n(param_c7_full_n),
-    .if_write(runWeight2Reg_U0_param_out_write),
-    .if_dout(param_c7_dout),
-    .if_empty_n(param_c7_empty_n),
-    .if_read(runSIMD_U0_param_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_din),
+    .if_full_n(W_in_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_in_L2_out_write),
+    .if_dout(W_in_L2_c_dout),
+    .if_empty_n(W_in_L2_c_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_W_in_L2_read)
 );
 
-Conv_sysarr_fifo_w11_d3_S ko_1_c8_U(
+Conv_sysarr_fifo_w11_d2_S H_in_L2_c_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ko_1_out_din),
-    .if_full_n(ko_1_c8_full_n),
-    .if_write(runWeight2Reg_U0_ko_1_out_write),
-    .if_dout(ko_1_c8_dout),
-    .if_empty_n(ko_1_c8_empty_n),
-    .if_read(runOutputL1toL2_U0_ko_1_read)
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_din),
+    .if_full_n(H_in_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_in_L2_out_write),
+    .if_dout(H_in_L2_c_dout),
+    .if_empty_n(H_in_L2_c_empty_n),
+    .if_read(runDataL2toL1_bitvec_U0_H_in_L2_read)
+);
+
+Conv_sysarr_fifo_w32_d3_S TILESIZE_R_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_din),
+    .if_full_n(TILESIZE_R_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_R_out_write),
+    .if_dout(TILESIZE_R_c_dout),
+    .if_empty_n(TILESIZE_R_c_empty_n),
+    .if_read(runSIMD_bitvec_U0_TILESIZE_R_read)
+);
+
+Conv_sysarr_fifo_w32_d3_S TILESIZE_S_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_din),
+    .if_full_n(TILESIZE_S_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_TILESIZE_S_out_write),
+    .if_dout(TILESIZE_S_c_dout),
+    .if_empty_n(TILESIZE_S_c_empty_n),
+    .if_read(runSIMD_bitvec_U0_TILESIZE_S_read)
+);
+
+Conv_sysarr_fifo_w11_d4_S W_L2_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_din),
+    .if_full_n(W_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_W_L2_out_write),
+    .if_dout(W_L2_c_dout),
+    .if_empty_n(W_L2_c_empty_n),
+    .if_read(runOutputL1toL2_U0_W_L2_read)
+);
+
+Conv_sysarr_fifo_w11_d4_S H_L2_c_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_din),
+    .if_full_n(H_L2_c_full_n),
+    .if_write(dataflow_in_loop_LOOP_S_OUTER_entry30_U0_H_L2_out_write),
+    .if_dout(H_L2_c_dout),
+    .if_empty_n(H_L2_c_empty_n),
+    .if_read(runOutputL1toL2_U0_H_L2_read)
+);
+
+Conv_sysarr_fifo_w11_d3_S ko_3_c8_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ko_3_out_din),
+    .if_full_n(ko_3_c8_full_n),
+    .if_write(runWeight2Reg_U0_ko_3_out_write),
+    .if_dout(ko_3_c8_dout),
+    .if_empty_n(ko_3_c8_empty_n),
+    .if_read(runOutputL1toL2_U0_ko_3_read)
 );
 
 Conv_sysarr_fifo_w32_d3_S co_c9_U(
@@ -1273,7 +5142,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_0_U(
     .if_write(ap_channel_done_weight_regfile_0_0),
     .if_dout(weight_regfile_0_0_dout),
     .if_empty_n(weight_regfile_0_0_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_1_U(
@@ -1286,7 +5155,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_1_U(
     .if_write(ap_channel_done_weight_regfile_0_1),
     .if_dout(weight_regfile_0_1_dout),
     .if_empty_n(weight_regfile_0_1_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_2_U(
@@ -1299,7 +5168,7 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_2_U(
     .if_write(ap_channel_done_weight_regfile_0_2),
     .if_dout(weight_regfile_0_2_dout),
     .if_empty_n(weight_regfile_0_2_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_0_3_U(
@@ -1312,7 +5181,59 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_0_3_U(
     .if_write(ap_channel_done_weight_regfile_0_3),
     .if_dout(weight_regfile_0_3_dout),
     .if_empty_n(weight_regfile_0_3_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_0_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_4),
+    .if_full_n(weight_regfile_0_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_0_4),
+    .if_dout(weight_regfile_0_4_dout),
+    .if_empty_n(weight_regfile_0_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_0_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_5),
+    .if_full_n(weight_regfile_0_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_0_5),
+    .if_dout(weight_regfile_0_5_dout),
+    .if_empty_n(weight_regfile_0_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_0_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_6),
+    .if_full_n(weight_regfile_0_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_0_6),
+    .if_dout(weight_regfile_0_6_dout),
+    .if_empty_n(weight_regfile_0_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_0_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_7),
+    .if_full_n(weight_regfile_0_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_0_7),
+    .if_dout(weight_regfile_0_7_dout),
+    .if_empty_n(weight_regfile_0_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_0_U(
@@ -1320,12 +5241,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_4),
+    .if_din(runWeight2Reg_U0_ap_return_8),
     .if_full_n(weight_regfile_1_0_full_n),
     .if_write(ap_channel_done_weight_regfile_1_0),
     .if_dout(weight_regfile_1_0_dout),
     .if_empty_n(weight_regfile_1_0_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_1_U(
@@ -1333,12 +5254,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_5),
+    .if_din(runWeight2Reg_U0_ap_return_9),
     .if_full_n(weight_regfile_1_1_full_n),
     .if_write(ap_channel_done_weight_regfile_1_1),
     .if_dout(weight_regfile_1_1_dout),
     .if_empty_n(weight_regfile_1_1_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_2_U(
@@ -1346,12 +5267,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_6),
+    .if_din(runWeight2Reg_U0_ap_return_10),
     .if_full_n(weight_regfile_1_2_full_n),
     .if_write(ap_channel_done_weight_regfile_1_2),
     .if_dout(weight_regfile_1_2_dout),
     .if_empty_n(weight_regfile_1_2_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_1_3_U(
@@ -1359,12 +5280,64 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_1_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_7),
+    .if_din(runWeight2Reg_U0_ap_return_11),
     .if_full_n(weight_regfile_1_3_full_n),
     .if_write(ap_channel_done_weight_regfile_1_3),
     .if_dout(weight_regfile_1_3_dout),
     .if_empty_n(weight_regfile_1_3_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_1_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_12),
+    .if_full_n(weight_regfile_1_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_1_4),
+    .if_dout(weight_regfile_1_4_dout),
+    .if_empty_n(weight_regfile_1_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_1_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_13),
+    .if_full_n(weight_regfile_1_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_1_5),
+    .if_dout(weight_regfile_1_5_dout),
+    .if_empty_n(weight_regfile_1_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_1_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_14),
+    .if_full_n(weight_regfile_1_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_1_6),
+    .if_dout(weight_regfile_1_6_dout),
+    .if_empty_n(weight_regfile_1_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_1_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_15),
+    .if_full_n(weight_regfile_1_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_1_7),
+    .if_dout(weight_regfile_1_7_dout),
+    .if_empty_n(weight_regfile_1_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_0_U(
@@ -1372,12 +5345,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_8),
+    .if_din(runWeight2Reg_U0_ap_return_16),
     .if_full_n(weight_regfile_2_0_full_n),
     .if_write(ap_channel_done_weight_regfile_2_0),
     .if_dout(weight_regfile_2_0_dout),
     .if_empty_n(weight_regfile_2_0_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_1_U(
@@ -1385,12 +5358,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_9),
+    .if_din(runWeight2Reg_U0_ap_return_17),
     .if_full_n(weight_regfile_2_1_full_n),
     .if_write(ap_channel_done_weight_regfile_2_1),
     .if_dout(weight_regfile_2_1_dout),
     .if_empty_n(weight_regfile_2_1_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_2_U(
@@ -1398,12 +5371,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_10),
+    .if_din(runWeight2Reg_U0_ap_return_18),
     .if_full_n(weight_regfile_2_2_full_n),
     .if_write(ap_channel_done_weight_regfile_2_2),
     .if_dout(weight_regfile_2_2_dout),
     .if_empty_n(weight_regfile_2_2_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_2_3_U(
@@ -1411,12 +5384,64 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_2_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_11),
+    .if_din(runWeight2Reg_U0_ap_return_19),
     .if_full_n(weight_regfile_2_3_full_n),
     .if_write(ap_channel_done_weight_regfile_2_3),
     .if_dout(weight_regfile_2_3_dout),
     .if_empty_n(weight_regfile_2_3_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_2_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_20),
+    .if_full_n(weight_regfile_2_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_2_4),
+    .if_dout(weight_regfile_2_4_dout),
+    .if_empty_n(weight_regfile_2_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_2_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_21),
+    .if_full_n(weight_regfile_2_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_2_5),
+    .if_dout(weight_regfile_2_5_dout),
+    .if_empty_n(weight_regfile_2_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_2_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_22),
+    .if_full_n(weight_regfile_2_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_2_6),
+    .if_dout(weight_regfile_2_6_dout),
+    .if_empty_n(weight_regfile_2_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_2_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_23),
+    .if_full_n(weight_regfile_2_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_2_7),
+    .if_dout(weight_regfile_2_7_dout),
+    .if_empty_n(weight_regfile_2_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_0_U(
@@ -1424,12 +5449,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_0_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_12),
+    .if_din(runWeight2Reg_U0_ap_return_24),
     .if_full_n(weight_regfile_3_0_full_n),
     .if_write(ap_channel_done_weight_regfile_3_0),
     .if_dout(weight_regfile_3_0_dout),
     .if_empty_n(weight_regfile_3_0_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_1_U(
@@ -1437,12 +5462,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_1_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_13),
+    .if_din(runWeight2Reg_U0_ap_return_25),
     .if_full_n(weight_regfile_3_1_full_n),
     .if_write(ap_channel_done_weight_regfile_3_1),
     .if_dout(weight_regfile_3_1_dout),
     .if_empty_n(weight_regfile_3_1_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_2_U(
@@ -1450,12 +5475,12 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_2_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_14),
+    .if_din(runWeight2Reg_U0_ap_return_26),
     .if_full_n(weight_regfile_3_2_full_n),
     .if_write(ap_channel_done_weight_regfile_3_2),
     .if_dout(weight_regfile_3_2_dout),
     .if_empty_n(weight_regfile_3_2_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
 Conv_sysarr_fifo_w8_d2_S weight_regfile_3_3_U(
@@ -1463,119 +5488,1061 @@ Conv_sysarr_fifo_w8_d2_S weight_regfile_3_3_U(
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runWeight2Reg_U0_ap_return_15),
+    .if_din(runWeight2Reg_U0_ap_return_27),
     .if_full_n(weight_regfile_3_3_full_n),
     .if_write(ap_channel_done_weight_regfile_3_3),
     .if_dout(weight_regfile_3_3_dout),
     .if_empty_n(weight_regfile_3_3_empty_n),
-    .if_read(runSIMD_U0_ap_ready)
+    .if_read(runSIMD_bitvec_U0_ap_ready)
 );
 
-Conv_sysarr_fifo_w1120_d2_S param_c12_U(
+Conv_sysarr_fifo_w8_d2_S weight_regfile_3_4_U(
     .clk(ap_clk),
     .reset(ap_rst),
     .if_read_ce(1'b1),
     .if_write_ce(1'b1),
-    .if_din(runSIMD_U0_param_out_din),
-    .if_full_n(param_c12_full_n),
-    .if_write(runSIMD_U0_param_out_write),
-    .if_dout(param_c12_dout),
-    .if_empty_n(param_c12_empty_n),
-    .if_read(runOutputL1toL2_U0_param_read)
+    .if_din(runWeight2Reg_U0_ap_return_28),
+    .if_full_n(weight_regfile_3_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_3_4),
+    .if_dout(weight_regfile_3_4_dout),
+    .if_empty_n(weight_regfile_3_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_3_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_29),
+    .if_full_n(weight_regfile_3_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_3_5),
+    .if_dout(weight_regfile_3_5_dout),
+    .if_empty_n(weight_regfile_3_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_3_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_30),
+    .if_full_n(weight_regfile_3_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_3_6),
+    .if_dout(weight_regfile_3_6_dout),
+    .if_empty_n(weight_regfile_3_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_3_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_31),
+    .if_full_n(weight_regfile_3_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_3_7),
+    .if_dout(weight_regfile_3_7_dout),
+    .if_empty_n(weight_regfile_3_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_32),
+    .if_full_n(weight_regfile_4_0_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_0),
+    .if_dout(weight_regfile_4_0_dout),
+    .if_empty_n(weight_regfile_4_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_33),
+    .if_full_n(weight_regfile_4_1_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_1),
+    .if_dout(weight_regfile_4_1_dout),
+    .if_empty_n(weight_regfile_4_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_34),
+    .if_full_n(weight_regfile_4_2_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_2),
+    .if_dout(weight_regfile_4_2_dout),
+    .if_empty_n(weight_regfile_4_2_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_35),
+    .if_full_n(weight_regfile_4_3_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_3),
+    .if_dout(weight_regfile_4_3_dout),
+    .if_empty_n(weight_regfile_4_3_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_36),
+    .if_full_n(weight_regfile_4_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_4),
+    .if_dout(weight_regfile_4_4_dout),
+    .if_empty_n(weight_regfile_4_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_37),
+    .if_full_n(weight_regfile_4_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_5),
+    .if_dout(weight_regfile_4_5_dout),
+    .if_empty_n(weight_regfile_4_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_38),
+    .if_full_n(weight_regfile_4_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_6),
+    .if_dout(weight_regfile_4_6_dout),
+    .if_empty_n(weight_regfile_4_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_4_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_39),
+    .if_full_n(weight_regfile_4_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_4_7),
+    .if_dout(weight_regfile_4_7_dout),
+    .if_empty_n(weight_regfile_4_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_40),
+    .if_full_n(weight_regfile_5_0_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_0),
+    .if_dout(weight_regfile_5_0_dout),
+    .if_empty_n(weight_regfile_5_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_41),
+    .if_full_n(weight_regfile_5_1_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_1),
+    .if_dout(weight_regfile_5_1_dout),
+    .if_empty_n(weight_regfile_5_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_42),
+    .if_full_n(weight_regfile_5_2_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_2),
+    .if_dout(weight_regfile_5_2_dout),
+    .if_empty_n(weight_regfile_5_2_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_43),
+    .if_full_n(weight_regfile_5_3_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_3),
+    .if_dout(weight_regfile_5_3_dout),
+    .if_empty_n(weight_regfile_5_3_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_44),
+    .if_full_n(weight_regfile_5_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_4),
+    .if_dout(weight_regfile_5_4_dout),
+    .if_empty_n(weight_regfile_5_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_45),
+    .if_full_n(weight_regfile_5_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_5),
+    .if_dout(weight_regfile_5_5_dout),
+    .if_empty_n(weight_regfile_5_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_46),
+    .if_full_n(weight_regfile_5_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_6),
+    .if_dout(weight_regfile_5_6_dout),
+    .if_empty_n(weight_regfile_5_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_5_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_47),
+    .if_full_n(weight_regfile_5_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_5_7),
+    .if_dout(weight_regfile_5_7_dout),
+    .if_empty_n(weight_regfile_5_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_48),
+    .if_full_n(weight_regfile_6_0_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_0),
+    .if_dout(weight_regfile_6_0_dout),
+    .if_empty_n(weight_regfile_6_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_49),
+    .if_full_n(weight_regfile_6_1_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_1),
+    .if_dout(weight_regfile_6_1_dout),
+    .if_empty_n(weight_regfile_6_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_50),
+    .if_full_n(weight_regfile_6_2_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_2),
+    .if_dout(weight_regfile_6_2_dout),
+    .if_empty_n(weight_regfile_6_2_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_51),
+    .if_full_n(weight_regfile_6_3_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_3),
+    .if_dout(weight_regfile_6_3_dout),
+    .if_empty_n(weight_regfile_6_3_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_52),
+    .if_full_n(weight_regfile_6_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_4),
+    .if_dout(weight_regfile_6_4_dout),
+    .if_empty_n(weight_regfile_6_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_53),
+    .if_full_n(weight_regfile_6_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_5),
+    .if_dout(weight_regfile_6_5_dout),
+    .if_empty_n(weight_regfile_6_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_54),
+    .if_full_n(weight_regfile_6_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_6),
+    .if_dout(weight_regfile_6_6_dout),
+    .if_empty_n(weight_regfile_6_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_6_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_55),
+    .if_full_n(weight_regfile_6_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_6_7),
+    .if_dout(weight_regfile_6_7_dout),
+    .if_empty_n(weight_regfile_6_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_56),
+    .if_full_n(weight_regfile_7_0_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_0),
+    .if_dout(weight_regfile_7_0_dout),
+    .if_empty_n(weight_regfile_7_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_57),
+    .if_full_n(weight_regfile_7_1_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_1),
+    .if_dout(weight_regfile_7_1_dout),
+    .if_empty_n(weight_regfile_7_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_2_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_58),
+    .if_full_n(weight_regfile_7_2_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_2),
+    .if_dout(weight_regfile_7_2_dout),
+    .if_empty_n(weight_regfile_7_2_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_3_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_59),
+    .if_full_n(weight_regfile_7_3_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_3),
+    .if_dout(weight_regfile_7_3_dout),
+    .if_empty_n(weight_regfile_7_3_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_4_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_60),
+    .if_full_n(weight_regfile_7_4_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_4),
+    .if_dout(weight_regfile_7_4_dout),
+    .if_empty_n(weight_regfile_7_4_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_5_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_61),
+    .if_full_n(weight_regfile_7_5_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_5),
+    .if_dout(weight_regfile_7_5_dout),
+    .if_empty_n(weight_regfile_7_5_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_6_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_62),
+    .if_full_n(weight_regfile_7_6_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_6),
+    .if_dout(weight_regfile_7_6_dout),
+    .if_empty_n(weight_regfile_7_6_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w8_d2_S weight_regfile_7_7_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runWeight2Reg_U0_ap_return_63),
+    .if_full_n(weight_regfile_7_7_full_n),
+    .if_write(ap_channel_done_weight_regfile_7_7),
+    .if_dout(weight_regfile_7_7_dout),
+    .if_empty_n(weight_regfile_7_7_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w16_d2_S data_l1_length_0_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runDataL2toL1_bitvec_U0_data_l1_length_0_085_i),
+    .if_full_n(data_l1_length_0_0_full_n),
+    .if_write(ap_channel_done_data_l1_length_0_0),
+    .if_dout(data_l1_length_0_0_dout),
+    .if_empty_n(data_l1_length_0_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w16_d2_S data_l1_length_0_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runDataL2toL1_bitvec_U0_data_l1_length_0_186_i),
+    .if_full_n(data_l1_length_0_1_full_n),
+    .if_write(ap_channel_done_data_l1_length_0_1),
+    .if_dout(data_l1_length_0_1_dout),
+    .if_empty_n(data_l1_length_0_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w16_d2_S data_l1_length_1_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runDataL2toL1_bitvec_U0_data_l1_length_1_087_i),
+    .if_full_n(data_l1_length_1_0_full_n),
+    .if_write(ap_channel_done_data_l1_length_1_0),
+    .if_dout(data_l1_length_1_0_dout),
+    .if_empty_n(data_l1_length_1_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w16_d2_S data_l1_length_1_1_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runDataL2toL1_bitvec_U0_data_l1_length_1_188_i),
+    .if_full_n(data_l1_length_1_1_full_n),
+    .if_write(ap_channel_done_data_l1_length_1_1),
+    .if_dout(data_l1_length_1_1_dout),
+    .if_empty_n(data_l1_length_1_1_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w16_d2_S max_bitvec_length_0_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runDataL2toL1_bitvec_U0_ap_return),
+    .if_full_n(max_bitvec_length_0_full_n),
+    .if_write(ap_channel_done_max_bitvec_length_0),
+    .if_dout(max_bitvec_length_0_dout),
+    .if_empty_n(max_bitvec_length_0_empty_n),
+    .if_read(runSIMD_bitvec_U0_ap_ready)
+);
+
+Conv_sysarr_fifo_w32_d2_S TILESIZE_H_c12_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runSIMD_bitvec_U0_TILESIZE_H_out_din),
+    .if_full_n(TILESIZE_H_c12_full_n),
+    .if_write(runSIMD_bitvec_U0_TILESIZE_H_out_write),
+    .if_dout(TILESIZE_H_c12_dout),
+    .if_empty_n(TILESIZE_H_c12_empty_n),
+    .if_read(runOutputL1toL2_U0_TILESIZE_H_read)
+);
+
+Conv_sysarr_fifo_w32_d2_S TILESIZE_W_c13_U(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .if_read_ce(1'b1),
+    .if_write_ce(1'b1),
+    .if_din(runSIMD_bitvec_U0_TILESIZE_W_out_din),
+    .if_full_n(TILESIZE_W_c13_full_n),
+    .if_write(runSIMD_bitvec_U0_TILESIZE_W_out_write),
+    .if_dout(TILESIZE_W_c13_dout),
+    .if_empty_n(TILESIZE_W_c13_empty_n),
+    .if_read(runOutputL1toL2_U0_TILESIZE_W_read)
 );
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_0 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_0 <= 1'b0;
     end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_0 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_0 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_data_l1_0 <= ap_sync_channel_write_data_l1_0;
+            ap_sync_reg_channel_write_data_l1_0_0 <= ap_sync_channel_write_data_l1_0_0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_1 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_1 <= 1'b0;
     end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_1 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_1 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_data_l1_1 <= ap_sync_channel_write_data_l1_1;
+            ap_sync_reg_channel_write_data_l1_0_1 <= ap_sync_channel_write_data_l1_0_1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_2 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_2 <= 1'b0;
     end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_2 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_2 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_data_l1_2 <= ap_sync_channel_write_data_l1_2;
+            ap_sync_reg_channel_write_data_l1_0_2 <= ap_sync_channel_write_data_l1_0_2;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_data_l1_3 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_3 <= 1'b0;
     end else begin
-        if (((runDataL2toL1_U0_ap_done & runDataL2toL1_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_data_l1_3 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_3 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_data_l1_3 <= ap_sync_channel_write_data_l1_3;
+            ap_sync_reg_channel_write_data_l1_0_3 <= ap_sync_channel_write_data_l1_0_3;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_0 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_4 <= 1'b0;
     end else begin
-        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_0 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_4 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_output_l1_0 <= ap_sync_channel_write_output_l1_0;
+            ap_sync_reg_channel_write_data_l1_0_4 <= ap_sync_channel_write_data_l1_0_4;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_1 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_5 <= 1'b0;
     end else begin
-        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_1 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_5 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_output_l1_1 <= ap_sync_channel_write_output_l1_1;
+            ap_sync_reg_channel_write_data_l1_0_5 <= ap_sync_channel_write_data_l1_0_5;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_2 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_6 <= 1'b0;
     end else begin
-        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_2 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_6 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_output_l1_2 <= ap_sync_channel_write_output_l1_2;
+            ap_sync_reg_channel_write_data_l1_0_6 <= ap_sync_channel_write_data_l1_0_6;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_channel_write_output_l1_3 <= 1'b0;
+        ap_sync_reg_channel_write_data_l1_0_7 <= 1'b0;
     end else begin
-        if (((runSIMD_U0_ap_done & runSIMD_U0_ap_continue) == 1'b1)) begin
-            ap_sync_reg_channel_write_output_l1_3 <= 1'b0;
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_0_7 <= 1'b0;
         end else begin
-            ap_sync_reg_channel_write_output_l1_3 <= ap_sync_channel_write_output_l1_3;
+            ap_sync_reg_channel_write_data_l1_0_7 <= ap_sync_channel_write_data_l1_0_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_0 <= ap_sync_channel_write_data_l1_1_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_1 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_1 <= ap_sync_channel_write_data_l1_1_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_2 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_2 <= ap_sync_channel_write_data_l1_1_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_3 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_3 <= ap_sync_channel_write_data_l1_1_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_4 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_4 <= ap_sync_channel_write_data_l1_1_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_5 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_5 <= ap_sync_channel_write_data_l1_1_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_6 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_6 <= ap_sync_channel_write_data_l1_1_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_1_7 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_1_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_1_7 <= ap_sync_channel_write_data_l1_1_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_bitvec_0_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_bitvec_0_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_bitvec_0_0 <= ap_sync_channel_write_data_l1_bitvec_0_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_bitvec_0_1 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_bitvec_0_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_bitvec_0_1 <= ap_sync_channel_write_data_l1_bitvec_0_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_bitvec_1_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_bitvec_1_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_bitvec_1_0 <= ap_sync_channel_write_data_l1_bitvec_1_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_bitvec_1_1 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_bitvec_1_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_bitvec_1_1 <= ap_sync_channel_write_data_l1_bitvec_1_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_length_0_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_length_0_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_length_0_0 <= ap_sync_channel_write_data_l1_length_0_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_length_0_1 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_length_0_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_length_0_1 <= ap_sync_channel_write_data_l1_length_0_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_length_1_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_length_1_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_length_1_0 <= ap_sync_channel_write_data_l1_length_1_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_data_l1_length_1_1 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_data_l1_length_1_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_data_l1_length_1_1 <= ap_sync_channel_write_data_l1_length_1_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_max_bitvec_length_0 <= 1'b0;
+    end else begin
+        if (((runDataL2toL1_bitvec_U0_ap_done & runDataL2toL1_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_max_bitvec_length_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_max_bitvec_length_0 <= ap_sync_channel_write_max_bitvec_length_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_0 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_0 <= ap_sync_channel_write_output_l1_0_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_1 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_1 <= ap_sync_channel_write_output_l1_0_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_2 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_2 <= ap_sync_channel_write_output_l1_0_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_3 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_3 <= ap_sync_channel_write_output_l1_0_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_4 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_4 <= ap_sync_channel_write_output_l1_0_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_5 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_5 <= ap_sync_channel_write_output_l1_0_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_6 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_6 <= ap_sync_channel_write_output_l1_0_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_0_7 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_0_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_0_7 <= ap_sync_channel_write_output_l1_0_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_0 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_0 <= ap_sync_channel_write_output_l1_1_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_1 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_1 <= ap_sync_channel_write_output_l1_1_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_2 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_2 <= ap_sync_channel_write_output_l1_1_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_3 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_3 <= ap_sync_channel_write_output_l1_1_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_4 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_4 <= ap_sync_channel_write_output_l1_1_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_5 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_5 <= ap_sync_channel_write_output_l1_1_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_6 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_6 <= ap_sync_channel_write_output_l1_1_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_output_l1_1_7 <= 1'b0;
+    end else begin
+        if (((runSIMD_bitvec_U0_ap_done & runSIMD_bitvec_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_output_l1_1_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_output_l1_1_7 <= ap_sync_channel_write_output_l1_1_7;
         end
     end
 end
@@ -1630,6 +6597,54 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_0_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_0_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_0_4 <= ap_sync_channel_write_weight_regfile_0_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_0_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_0_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_0_5 <= ap_sync_channel_write_weight_regfile_0_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_0_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_0_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_0_6 <= ap_sync_channel_write_weight_regfile_0_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_0_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_0_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_0_7 <= ap_sync_channel_write_weight_regfile_0_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_1_0 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -1672,6 +6687,54 @@ always @ (posedge ap_clk) begin
             ap_sync_reg_channel_write_weight_regfile_1_3 <= 1'b0;
         end else begin
             ap_sync_reg_channel_write_weight_regfile_1_3 <= ap_sync_channel_write_weight_regfile_1_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_1_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_1_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_1_4 <= ap_sync_channel_write_weight_regfile_1_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_1_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_1_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_1_5 <= ap_sync_channel_write_weight_regfile_1_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_1_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_1_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_1_6 <= ap_sync_channel_write_weight_regfile_1_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_1_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_1_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_1_7 <= ap_sync_channel_write_weight_regfile_1_7;
         end
     end
 end
@@ -1726,6 +6789,54 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_2_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_2_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_2_4 <= ap_sync_channel_write_weight_regfile_2_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_2_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_2_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_2_5 <= ap_sync_channel_write_weight_regfile_2_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_2_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_2_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_2_6 <= ap_sync_channel_write_weight_regfile_2_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_2_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_2_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_2_7 <= ap_sync_channel_write_weight_regfile_2_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
         ap_sync_reg_channel_write_weight_regfile_3_0 <= 1'b0;
     end else begin
         if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
@@ -1774,24 +6885,456 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= 1'b0;
+        ap_sync_reg_channel_write_weight_regfile_3_4 <= 1'b0;
     end else begin
-        if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= 1'b0;
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_3_4 <= 1'b0;
         end else begin
-            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready;
+            ap_sync_reg_channel_write_weight_regfile_3_4 <= ap_sync_channel_write_weight_regfile_3_4;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_sync_reg_runDataL2toL1_U0_ap_ready <= 1'b0;
+        ap_sync_reg_channel_write_weight_regfile_3_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_3_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_3_5 <= ap_sync_channel_write_weight_regfile_3_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_3_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_3_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_3_6 <= ap_sync_channel_write_weight_regfile_3_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_3_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_3_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_3_7 <= ap_sync_channel_write_weight_regfile_3_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_0 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_0 <= ap_sync_channel_write_weight_regfile_4_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_1 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_1 <= ap_sync_channel_write_weight_regfile_4_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_2 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_2 <= ap_sync_channel_write_weight_regfile_4_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_3 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_3 <= ap_sync_channel_write_weight_regfile_4_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_4 <= ap_sync_channel_write_weight_regfile_4_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_5 <= ap_sync_channel_write_weight_regfile_4_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_6 <= ap_sync_channel_write_weight_regfile_4_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_4_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_4_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_4_7 <= ap_sync_channel_write_weight_regfile_4_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_0 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_0 <= ap_sync_channel_write_weight_regfile_5_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_1 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_1 <= ap_sync_channel_write_weight_regfile_5_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_2 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_2 <= ap_sync_channel_write_weight_regfile_5_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_3 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_3 <= ap_sync_channel_write_weight_regfile_5_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_4 <= ap_sync_channel_write_weight_regfile_5_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_5 <= ap_sync_channel_write_weight_regfile_5_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_6 <= ap_sync_channel_write_weight_regfile_5_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_5_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_5_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_5_7 <= ap_sync_channel_write_weight_regfile_5_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_0 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_0 <= ap_sync_channel_write_weight_regfile_6_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_1 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_1 <= ap_sync_channel_write_weight_regfile_6_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_2 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_2 <= ap_sync_channel_write_weight_regfile_6_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_3 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_3 <= ap_sync_channel_write_weight_regfile_6_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_4 <= ap_sync_channel_write_weight_regfile_6_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_5 <= ap_sync_channel_write_weight_regfile_6_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_6 <= ap_sync_channel_write_weight_regfile_6_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_6_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_6_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_6_7 <= ap_sync_channel_write_weight_regfile_6_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_0 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_0 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_0 <= ap_sync_channel_write_weight_regfile_7_0;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_1 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_1 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_1 <= ap_sync_channel_write_weight_regfile_7_1;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_2 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_2 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_2 <= ap_sync_channel_write_weight_regfile_7_2;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_3 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_3 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_3 <= ap_sync_channel_write_weight_regfile_7_3;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_4 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_4 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_4 <= ap_sync_channel_write_weight_regfile_7_4;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_5 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_5 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_5 <= ap_sync_channel_write_weight_regfile_7_5;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_6 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_6 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_6 <= ap_sync_channel_write_weight_regfile_7_6;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_channel_write_weight_regfile_7_7 <= 1'b0;
+    end else begin
+        if (((runWeight2Reg_U0_ap_done & runWeight2Reg_U0_ap_continue) == 1'b1)) begin
+            ap_sync_reg_channel_write_weight_regfile_7_7 <= 1'b0;
+        end else begin
+            ap_sync_reg_channel_write_weight_regfile_7_7 <= ap_sync_channel_write_weight_regfile_7_7;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready <= 1'b0;
     end else begin
         if (((ap_sync_ready & ap_start) == 1'b1)) begin
-            ap_sync_reg_runDataL2toL1_U0_ap_ready <= 1'b0;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready <= 1'b0;
         end else begin
-            ap_sync_reg_runDataL2toL1_U0_ap_ready <= ap_sync_runDataL2toL1_U0_ap_ready;
+            ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready <= ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
+        ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready <= 1'b0;
+    end else begin
+        if (((ap_sync_ready & ap_start) == 1'b1)) begin
+            ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready <= 1'b0;
+        end else begin
+            ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready <= ap_sync_runDataL2toL1_bitvec_U0_ap_ready;
         end
     end
 end
@@ -1809,18 +7352,18 @@ always @ (posedge ap_clk) begin
 end
 
 always @ (posedge ap_clk) begin
-    if (((dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
-        dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count - 2'd1);
-    end else if (((dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
-        dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready_count + 2'd1);
+    if (((dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
+        dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count - 2'd1);
+    end else if (((dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
+        dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count <= (dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready_count + 2'd1);
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((runDataL2toL1_U0_ap_ready == 1'b0) & (ap_sync_ready == 1'b1))) begin
-        runDataL2toL1_U0_ap_ready_count <= (runDataL2toL1_U0_ap_ready_count - 2'd1);
-    end else if (((runDataL2toL1_U0_ap_ready == 1'b1) & (ap_sync_ready == 1'b0))) begin
-        runDataL2toL1_U0_ap_ready_count <= (runDataL2toL1_U0_ap_ready_count + 2'd1);
+    if (((ap_sync_ready == 1'b1) & (runDataL2toL1_bitvec_U0_ap_ready == 1'b0))) begin
+        runDataL2toL1_bitvec_U0_ap_ready_count <= (runDataL2toL1_bitvec_U0_ap_ready_count - 2'd1);
+    end else if (((ap_sync_ready == 1'b0) & (runDataL2toL1_bitvec_U0_ap_ready == 1'b1))) begin
+        runDataL2toL1_bitvec_U0_ap_ready_count <= (runDataL2toL1_bitvec_U0_ap_ready_count + 2'd1);
     end
 end
 
@@ -1832,21 +7375,87 @@ always @ (posedge ap_clk) begin
     end
 end
 
-assign ap_channel_done_data_l1_0 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0 ^ 1'b1));
+assign ap_channel_done_data_l1_0_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_0 ^ 1'b1));
 
-assign ap_channel_done_data_l1_1 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1 ^ 1'b1));
+assign ap_channel_done_data_l1_0_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_1 ^ 1'b1));
 
-assign ap_channel_done_data_l1_2 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_2 ^ 1'b1));
+assign ap_channel_done_data_l1_0_2 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_2 ^ 1'b1));
 
-assign ap_channel_done_data_l1_3 = (runDataL2toL1_U0_ap_done & (ap_sync_reg_channel_write_data_l1_3 ^ 1'b1));
+assign ap_channel_done_data_l1_0_3 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_3 ^ 1'b1));
 
-assign ap_channel_done_output_l1_0 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0 ^ 1'b1));
+assign ap_channel_done_data_l1_0_4 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_4 ^ 1'b1));
 
-assign ap_channel_done_output_l1_1 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1 ^ 1'b1));
+assign ap_channel_done_data_l1_0_5 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_5 ^ 1'b1));
 
-assign ap_channel_done_output_l1_2 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_2 ^ 1'b1));
+assign ap_channel_done_data_l1_0_6 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_6 ^ 1'b1));
 
-assign ap_channel_done_output_l1_3 = (runSIMD_U0_ap_done & (ap_sync_reg_channel_write_output_l1_3 ^ 1'b1));
+assign ap_channel_done_data_l1_0_7 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_0_7 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_0 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_1 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_2 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_2 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_3 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_3 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_4 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_4 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_5 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_5 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_6 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_6 ^ 1'b1));
+
+assign ap_channel_done_data_l1_1_7 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_1_7 ^ 1'b1));
+
+assign ap_channel_done_data_l1_bitvec_0_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_bitvec_0_0 ^ 1'b1));
+
+assign ap_channel_done_data_l1_bitvec_0_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_bitvec_0_1 ^ 1'b1));
+
+assign ap_channel_done_data_l1_bitvec_1_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_bitvec_1_0 ^ 1'b1));
+
+assign ap_channel_done_data_l1_bitvec_1_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_bitvec_1_1 ^ 1'b1));
+
+assign ap_channel_done_data_l1_length_0_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_length_0_0 ^ 1'b1));
+
+assign ap_channel_done_data_l1_length_0_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_length_0_1 ^ 1'b1));
+
+assign ap_channel_done_data_l1_length_1_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_length_1_0 ^ 1'b1));
+
+assign ap_channel_done_data_l1_length_1_1 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_data_l1_length_1_1 ^ 1'b1));
+
+assign ap_channel_done_max_bitvec_length_0 = (runDataL2toL1_bitvec_U0_ap_done & (ap_sync_reg_channel_write_max_bitvec_length_0 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_0 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_0 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_1 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_1 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_2 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_2 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_3 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_3 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_4 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_4 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_5 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_5 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_6 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_6 ^ 1'b1));
+
+assign ap_channel_done_output_l1_0_7 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_0_7 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_0 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_0 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_1 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_1 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_2 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_2 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_3 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_3 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_4 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_4 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_5 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_5 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_6 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_6 ^ 1'b1));
+
+assign ap_channel_done_output_l1_1_7 = (runSIMD_bitvec_U0_ap_done & (ap_sync_reg_channel_write_output_l1_1_7 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_0_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_0 ^ 1'b1));
 
@@ -1856,6 +7465,14 @@ assign ap_channel_done_weight_regfile_0_2 = (runWeight2Reg_U0_ap_done & (ap_sync
 
 assign ap_channel_done_weight_regfile_0_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_3 ^ 1'b1));
 
+assign ap_channel_done_weight_regfile_0_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_0_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_0_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_0_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_0_7 ^ 1'b1));
+
 assign ap_channel_done_weight_regfile_1_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_1_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_1 ^ 1'b1));
@@ -1863,6 +7480,14 @@ assign ap_channel_done_weight_regfile_1_1 = (runWeight2Reg_U0_ap_done & (ap_sync
 assign ap_channel_done_weight_regfile_1_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_2 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_1_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_3 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_1_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_1_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_1_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_1_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_1_7 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_2_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_0 ^ 1'b1));
 
@@ -1872,6 +7497,14 @@ assign ap_channel_done_weight_regfile_2_2 = (runWeight2Reg_U0_ap_done & (ap_sync
 
 assign ap_channel_done_weight_regfile_2_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_3 ^ 1'b1));
 
+assign ap_channel_done_weight_regfile_2_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_2_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_2_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_2_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_2_7 ^ 1'b1));
+
 assign ap_channel_done_weight_regfile_3_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_0 ^ 1'b1));
 
 assign ap_channel_done_weight_regfile_3_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_1 ^ 1'b1));
@@ -1880,27 +7513,165 @@ assign ap_channel_done_weight_regfile_3_2 = (runWeight2Reg_U0_ap_done & (ap_sync
 
 assign ap_channel_done_weight_regfile_3_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_3 ^ 1'b1));
 
+assign ap_channel_done_weight_regfile_3_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_3_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_3_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_3_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_3_7 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_0 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_1 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_2 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_3 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_4_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_4_7 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_0 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_1 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_2 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_3 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_5_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_5_7 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_0 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_1 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_2 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_3 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_6_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_6_7 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_0 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_0 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_1 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_1 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_2 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_2 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_3 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_3 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_4 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_4 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_5 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_5 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_6 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_6 ^ 1'b1));
+
+assign ap_channel_done_weight_regfile_7_7 = (runWeight2Reg_U0_ap_done & (ap_sync_reg_channel_write_weight_regfile_7_7 ^ 1'b1));
+
 assign ap_done = runOutputL1toL2_U0_ap_done;
 
-assign ap_idle = (runWeight2Reg_U0_ap_idle & runSIMD_U0_ap_idle & runOutputL1toL2_U0_ap_idle & runDataL2toL1_U0_ap_idle & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (output_l1_3_t_empty_n ^ 1'b1) & (output_l1_2_t_empty_n ^ 1'b1) & (output_l1_1_t_empty_n ^ 1'b1) & (output_l1_0_t_empty_n ^ 1'b1) & (data_l1_3_t_empty_n ^ 1'b1) & (data_l1_2_t_empty_n ^ 1'b1) & (data_l1_1_t_empty_n ^ 1'b1) & (data_l1_0_t_empty_n ^ 1'b1) & (weight_regfile_3_3_empty_n ^ 1'b1) & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_idle);
+assign ap_idle = (runWeight2Reg_U0_ap_idle & runSIMD_bitvec_U0_ap_idle & runOutputL1toL2_U0_ap_idle & runDataL2toL1_bitvec_U0_ap_idle & (max_bitvec_length_0_empty_n ^ 1'b1) & (data_l1_length_1_1_empty_n ^ 1'b1) & (data_l1_length_1_0_empty_n ^ 1'b1) & (data_l1_length_0_1_empty_n ^ 1'b1) & (data_l1_length_0_0_empty_n ^ 1'b1) & (weight_regfile_7_7_empty_n ^ 1'b1) & (weight_regfile_7_6_empty_n ^ 1'b1) & (weight_regfile_7_5_empty_n ^ 1'b1) & (weight_regfile_7_4_empty_n ^ 1'b1) & (weight_regfile_7_3_empty_n ^ 1'b1) & (weight_regfile_7_2_empty_n ^ 1'b1) & (weight_regfile_7_1_empty_n ^ 1'b1) & (weight_regfile_7_0_empty_n ^ 1'b1) & (weight_regfile_6_7_empty_n ^ 1'b1) & (weight_regfile_6_6_empty_n ^ 1'b1) & (weight_regfile_6_5_empty_n ^ 1'b1) & (weight_regfile_6_4_empty_n ^ 1'b1) & (weight_regfile_6_3_empty_n ^ 1'b1) & (weight_regfile_6_2_empty_n ^ 1'b1) & (weight_regfile_6_1_empty_n ^ 1'b1) & (weight_regfile_6_0_empty_n ^ 1'b1) & (weight_regfile_5_7_empty_n ^ 1'b1) & (weight_regfile_5_6_empty_n ^ 1'b1) & (weight_regfile_5_5_empty_n ^ 1'b1) & (weight_regfile_5_4_empty_n ^ 1'b1) & (weight_regfile_5_3_empty_n ^ 1'b1) & (weight_regfile_5_2_empty_n ^ 1'b1) & (weight_regfile_5_1_empty_n ^ 1'b1) & (weight_regfile_5_0_empty_n ^ 1'b1) & (weight_regfile_4_7_empty_n ^ 1'b1) & (weight_regfile_4_6_empty_n ^ 1'b1) & (weight_regfile_4_5_empty_n ^ 1'b1) & (weight_regfile_4_4_empty_n ^ 1'b1) & (weight_regfile_4_3_empty_n ^ 1'b1) & (weight_regfile_4_2_empty_n ^ 1'b1) & (weight_regfile_4_1_empty_n ^ 1'b1) & (weight_regfile_4_0_empty_n ^ 1'b1) & (weight_regfile_3_7_empty_n ^ 1'b1) & (weight_regfile_3_6_empty_n ^ 1'b1) & (weight_regfile_3_5_empty_n ^ 1'b1) & (weight_regfile_3_4_empty_n ^ 1'b1) & (weight_regfile_3_3_empty_n ^ 1'b1) & (weight_regfile_3_2_empty_n ^ 1'b1) & (weight_regfile_3_1_empty_n ^ 1'b1) & (weight_regfile_3_0_empty_n ^ 1'b1) & (weight_regfile_2_7_empty_n ^ 1'b1) & (weight_regfile_2_6_empty_n ^ 1'b1) & (weight_regfile_2_5_empty_n ^ 1'b1) & (weight_regfile_2_4_empty_n ^ 1'b1) & (weight_regfile_2_3_empty_n ^ 1'b1) & (weight_regfile_2_2_empty_n ^ 1'b1) & (weight_regfile_2_1_empty_n ^ 1'b1) & (weight_regfile_2_0_empty_n ^ 1'b1) & (weight_regfile_1_7_empty_n ^ 1'b1) & (weight_regfile_1_6_empty_n ^ 1'b1) & (weight_regfile_1_5_empty_n ^ 1'b1) & (weight_regfile_1_4_empty_n ^ 1'b1) & (weight_regfile_1_3_empty_n ^ 1'b1) & (weight_regfile_1_2_empty_n ^ 1'b1) & (weight_regfile_1_1_empty_n ^ 1'b1) & (weight_regfile_1_0_empty_n ^ 1'b1) & (weight_regfile_0_7_empty_n ^ 1'b1) & (weight_regfile_0_6_empty_n ^ 1'b1) & (weight_regfile_0_5_empty_n ^ 1'b1) & (weight_regfile_0_4_empty_n ^ 1'b1) & (weight_regfile_0_3_empty_n ^ 1'b1) & (weight_regfile_0_2_empty_n ^ 1'b1) & (weight_regfile_0_1_empty_n ^ 1'b1) & (weight_regfile_0_0_empty_n ^ 1'b1) & (output_l1_1_7_t_empty_n ^ 1'b1) & (output_l1_1_6_t_empty_n ^ 1'b1) & (output_l1_1_5_t_empty_n ^ 1'b1) & (output_l1_1_4_t_empty_n ^ 1'b1) & (output_l1_1_3_t_empty_n ^ 1'b1) & (output_l1_1_2_t_empty_n ^ 1'b1) & (output_l1_1_1_t_empty_n ^ 1'b1) & (output_l1_1_0_t_empty_n ^ 1'b1) & (output_l1_0_7_t_empty_n ^ 1'b1) & (output_l1_0_6_t_empty_n ^ 1'b1) & (output_l1_0_5_t_empty_n ^ 1'b1) & (output_l1_0_4_t_empty_n ^ 1'b1) & (output_l1_0_3_t_empty_n ^ 1'b1) & (output_l1_0_2_t_empty_n ^ 1'b1) & (output_l1_0_1_t_empty_n ^ 1'b1) & (output_l1_0_0_t_empty_n ^ 1'b1) & (data_l1_bitvec_1_1_t_empty_n ^ 1'b1) & (data_l1_bitvec_1_0_t_empty_n ^ 1'b1) & (data_l1_bitvec_0_1_t_empty_n ^ 1'b1) & (data_l1_bitvec_0_0_t_empty_n ^ 1'b1) & (data_l1_1_7_t_empty_n ^ 1'b1) & (data_l1_1_6_t_empty_n ^ 1'b1) & (data_l1_1_5_t_empty_n ^ 1'b1) & (data_l1_1_4_t_empty_n ^ 1'b1) & (data_l1_1_3_t_empty_n ^ 1'b1) & (data_l1_1_2_t_empty_n ^ 1'b1) & (data_l1_1_1_t_empty_n ^ 1'b1) & (data_l1_1_0_t_empty_n ^ 1'b1) & (data_l1_0_7_t_empty_n ^ 1'b1) & (data_l1_0_6_t_empty_n ^ 1'b1) & (data_l1_0_5_t_empty_n ^ 1'b1) & (data_l1_0_4_t_empty_n ^ 1'b1) & (data_l1_0_3_t_empty_n ^ 1'b1) & (data_l1_0_2_t_empty_n ^ 1'b1) & (data_l1_0_1_t_empty_n ^ 1'b1) & (data_l1_0_0_t_empty_n ^ 1'b1) & dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_idle);
 
 assign ap_ready = ap_sync_ready;
 
-assign ap_sync_channel_write_data_l1_0 = ((runDataL2toL1_U0_data_l1_017_i_full_n & ap_channel_done_data_l1_0) | ap_sync_reg_channel_write_data_l1_0);
+assign ap_sync_channel_write_data_l1_0_0 = ((runDataL2toL1_bitvec_U0_data_l1_0_065_i_full_n & ap_channel_done_data_l1_0_0) | ap_sync_reg_channel_write_data_l1_0_0);
 
-assign ap_sync_channel_write_data_l1_1 = ((runDataL2toL1_U0_data_l1_118_i_full_n & ap_channel_done_data_l1_1) | ap_sync_reg_channel_write_data_l1_1);
+assign ap_sync_channel_write_data_l1_0_1 = ((runDataL2toL1_bitvec_U0_data_l1_0_166_i_full_n & ap_channel_done_data_l1_0_1) | ap_sync_reg_channel_write_data_l1_0_1);
 
-assign ap_sync_channel_write_data_l1_2 = ((runDataL2toL1_U0_data_l1_219_i_full_n & ap_channel_done_data_l1_2) | ap_sync_reg_channel_write_data_l1_2);
+assign ap_sync_channel_write_data_l1_0_2 = ((runDataL2toL1_bitvec_U0_data_l1_0_267_i_full_n & ap_channel_done_data_l1_0_2) | ap_sync_reg_channel_write_data_l1_0_2);
 
-assign ap_sync_channel_write_data_l1_3 = ((runDataL2toL1_U0_data_l1_320_i_full_n & ap_channel_done_data_l1_3) | ap_sync_reg_channel_write_data_l1_3);
+assign ap_sync_channel_write_data_l1_0_3 = ((runDataL2toL1_bitvec_U0_data_l1_0_368_i_full_n & ap_channel_done_data_l1_0_3) | ap_sync_reg_channel_write_data_l1_0_3);
 
-assign ap_sync_channel_write_output_l1_0 = ((runSIMD_U0_output_l1_021_i_full_n & ap_channel_done_output_l1_0) | ap_sync_reg_channel_write_output_l1_0);
+assign ap_sync_channel_write_data_l1_0_4 = ((runDataL2toL1_bitvec_U0_data_l1_0_469_i_full_n & ap_channel_done_data_l1_0_4) | ap_sync_reg_channel_write_data_l1_0_4);
 
-assign ap_sync_channel_write_output_l1_1 = ((runSIMD_U0_output_l1_122_i_full_n & ap_channel_done_output_l1_1) | ap_sync_reg_channel_write_output_l1_1);
+assign ap_sync_channel_write_data_l1_0_5 = ((runDataL2toL1_bitvec_U0_data_l1_0_570_i_full_n & ap_channel_done_data_l1_0_5) | ap_sync_reg_channel_write_data_l1_0_5);
 
-assign ap_sync_channel_write_output_l1_2 = ((runSIMD_U0_output_l1_223_i_full_n & ap_channel_done_output_l1_2) | ap_sync_reg_channel_write_output_l1_2);
+assign ap_sync_channel_write_data_l1_0_6 = ((runDataL2toL1_bitvec_U0_data_l1_0_671_i_full_n & ap_channel_done_data_l1_0_6) | ap_sync_reg_channel_write_data_l1_0_6);
 
-assign ap_sync_channel_write_output_l1_3 = ((runSIMD_U0_output_l1_324_i_full_n & ap_channel_done_output_l1_3) | ap_sync_reg_channel_write_output_l1_3);
+assign ap_sync_channel_write_data_l1_0_7 = ((runDataL2toL1_bitvec_U0_data_l1_0_772_i_full_n & ap_channel_done_data_l1_0_7) | ap_sync_reg_channel_write_data_l1_0_7);
+
+assign ap_sync_channel_write_data_l1_1_0 = ((runDataL2toL1_bitvec_U0_data_l1_1_073_i_full_n & ap_channel_done_data_l1_1_0) | ap_sync_reg_channel_write_data_l1_1_0);
+
+assign ap_sync_channel_write_data_l1_1_1 = ((runDataL2toL1_bitvec_U0_data_l1_1_174_i_full_n & ap_channel_done_data_l1_1_1) | ap_sync_reg_channel_write_data_l1_1_1);
+
+assign ap_sync_channel_write_data_l1_1_2 = ((runDataL2toL1_bitvec_U0_data_l1_1_275_i_full_n & ap_channel_done_data_l1_1_2) | ap_sync_reg_channel_write_data_l1_1_2);
+
+assign ap_sync_channel_write_data_l1_1_3 = ((runDataL2toL1_bitvec_U0_data_l1_1_376_i_full_n & ap_channel_done_data_l1_1_3) | ap_sync_reg_channel_write_data_l1_1_3);
+
+assign ap_sync_channel_write_data_l1_1_4 = ((runDataL2toL1_bitvec_U0_data_l1_1_477_i_full_n & ap_channel_done_data_l1_1_4) | ap_sync_reg_channel_write_data_l1_1_4);
+
+assign ap_sync_channel_write_data_l1_1_5 = ((runDataL2toL1_bitvec_U0_data_l1_1_578_i_full_n & ap_channel_done_data_l1_1_5) | ap_sync_reg_channel_write_data_l1_1_5);
+
+assign ap_sync_channel_write_data_l1_1_6 = ((runDataL2toL1_bitvec_U0_data_l1_1_679_i_full_n & ap_channel_done_data_l1_1_6) | ap_sync_reg_channel_write_data_l1_1_6);
+
+assign ap_sync_channel_write_data_l1_1_7 = ((runDataL2toL1_bitvec_U0_data_l1_1_780_i_full_n & ap_channel_done_data_l1_1_7) | ap_sync_reg_channel_write_data_l1_1_7);
+
+assign ap_sync_channel_write_data_l1_bitvec_0_0 = ((runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_full_n & ap_channel_done_data_l1_bitvec_0_0) | ap_sync_reg_channel_write_data_l1_bitvec_0_0);
+
+assign ap_sync_channel_write_data_l1_bitvec_0_1 = ((runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_full_n & ap_channel_done_data_l1_bitvec_0_1) | ap_sync_reg_channel_write_data_l1_bitvec_0_1);
+
+assign ap_sync_channel_write_data_l1_bitvec_1_0 = ((runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_full_n & ap_channel_done_data_l1_bitvec_1_0) | ap_sync_reg_channel_write_data_l1_bitvec_1_0);
+
+assign ap_sync_channel_write_data_l1_bitvec_1_1 = ((runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_full_n & ap_channel_done_data_l1_bitvec_1_1) | ap_sync_reg_channel_write_data_l1_bitvec_1_1);
+
+assign ap_sync_channel_write_data_l1_length_0_0 = ((data_l1_length_0_0_full_n & ap_channel_done_data_l1_length_0_0) | ap_sync_reg_channel_write_data_l1_length_0_0);
+
+assign ap_sync_channel_write_data_l1_length_0_1 = ((data_l1_length_0_1_full_n & ap_channel_done_data_l1_length_0_1) | ap_sync_reg_channel_write_data_l1_length_0_1);
+
+assign ap_sync_channel_write_data_l1_length_1_0 = ((data_l1_length_1_0_full_n & ap_channel_done_data_l1_length_1_0) | ap_sync_reg_channel_write_data_l1_length_1_0);
+
+assign ap_sync_channel_write_data_l1_length_1_1 = ((data_l1_length_1_1_full_n & ap_channel_done_data_l1_length_1_1) | ap_sync_reg_channel_write_data_l1_length_1_1);
+
+assign ap_sync_channel_write_max_bitvec_length_0 = ((max_bitvec_length_0_full_n & ap_channel_done_max_bitvec_length_0) | ap_sync_reg_channel_write_max_bitvec_length_0);
+
+assign ap_sync_channel_write_output_l1_0_0 = ((runSIMD_bitvec_U0_output_l1_0_0_full_n & ap_channel_done_output_l1_0_0) | ap_sync_reg_channel_write_output_l1_0_0);
+
+assign ap_sync_channel_write_output_l1_0_1 = ((runSIMD_bitvec_U0_output_l1_0_1_full_n & ap_channel_done_output_l1_0_1) | ap_sync_reg_channel_write_output_l1_0_1);
+
+assign ap_sync_channel_write_output_l1_0_2 = ((runSIMD_bitvec_U0_output_l1_0_2_full_n & ap_channel_done_output_l1_0_2) | ap_sync_reg_channel_write_output_l1_0_2);
+
+assign ap_sync_channel_write_output_l1_0_3 = ((runSIMD_bitvec_U0_output_l1_0_3_full_n & ap_channel_done_output_l1_0_3) | ap_sync_reg_channel_write_output_l1_0_3);
+
+assign ap_sync_channel_write_output_l1_0_4 = ((runSIMD_bitvec_U0_output_l1_0_4_full_n & ap_channel_done_output_l1_0_4) | ap_sync_reg_channel_write_output_l1_0_4);
+
+assign ap_sync_channel_write_output_l1_0_5 = ((runSIMD_bitvec_U0_output_l1_0_5_full_n & ap_channel_done_output_l1_0_5) | ap_sync_reg_channel_write_output_l1_0_5);
+
+assign ap_sync_channel_write_output_l1_0_6 = ((runSIMD_bitvec_U0_output_l1_0_6_full_n & ap_channel_done_output_l1_0_6) | ap_sync_reg_channel_write_output_l1_0_6);
+
+assign ap_sync_channel_write_output_l1_0_7 = ((runSIMD_bitvec_U0_output_l1_0_7_full_n & ap_channel_done_output_l1_0_7) | ap_sync_reg_channel_write_output_l1_0_7);
+
+assign ap_sync_channel_write_output_l1_1_0 = ((runSIMD_bitvec_U0_output_l1_1_0_full_n & ap_channel_done_output_l1_1_0) | ap_sync_reg_channel_write_output_l1_1_0);
+
+assign ap_sync_channel_write_output_l1_1_1 = ((runSIMD_bitvec_U0_output_l1_1_1_full_n & ap_channel_done_output_l1_1_1) | ap_sync_reg_channel_write_output_l1_1_1);
+
+assign ap_sync_channel_write_output_l1_1_2 = ((runSIMD_bitvec_U0_output_l1_1_2_full_n & ap_channel_done_output_l1_1_2) | ap_sync_reg_channel_write_output_l1_1_2);
+
+assign ap_sync_channel_write_output_l1_1_3 = ((runSIMD_bitvec_U0_output_l1_1_3_full_n & ap_channel_done_output_l1_1_3) | ap_sync_reg_channel_write_output_l1_1_3);
+
+assign ap_sync_channel_write_output_l1_1_4 = ((runSIMD_bitvec_U0_output_l1_1_4_full_n & ap_channel_done_output_l1_1_4) | ap_sync_reg_channel_write_output_l1_1_4);
+
+assign ap_sync_channel_write_output_l1_1_5 = ((runSIMD_bitvec_U0_output_l1_1_5_full_n & ap_channel_done_output_l1_1_5) | ap_sync_reg_channel_write_output_l1_1_5);
+
+assign ap_sync_channel_write_output_l1_1_6 = ((runSIMD_bitvec_U0_output_l1_1_6_full_n & ap_channel_done_output_l1_1_6) | ap_sync_reg_channel_write_output_l1_1_6);
+
+assign ap_sync_channel_write_output_l1_1_7 = ((runSIMD_bitvec_U0_output_l1_1_7_full_n & ap_channel_done_output_l1_1_7) | ap_sync_reg_channel_write_output_l1_1_7);
 
 assign ap_sync_channel_write_weight_regfile_0_0 = ((weight_regfile_0_0_full_n & ap_channel_done_weight_regfile_0_0) | ap_sync_reg_channel_write_weight_regfile_0_0);
 
@@ -1910,6 +7681,14 @@ assign ap_sync_channel_write_weight_regfile_0_2 = ((weight_regfile_0_2_full_n & 
 
 assign ap_sync_channel_write_weight_regfile_0_3 = ((weight_regfile_0_3_full_n & ap_channel_done_weight_regfile_0_3) | ap_sync_reg_channel_write_weight_regfile_0_3);
 
+assign ap_sync_channel_write_weight_regfile_0_4 = ((weight_regfile_0_4_full_n & ap_channel_done_weight_regfile_0_4) | ap_sync_reg_channel_write_weight_regfile_0_4);
+
+assign ap_sync_channel_write_weight_regfile_0_5 = ((weight_regfile_0_5_full_n & ap_channel_done_weight_regfile_0_5) | ap_sync_reg_channel_write_weight_regfile_0_5);
+
+assign ap_sync_channel_write_weight_regfile_0_6 = ((weight_regfile_0_6_full_n & ap_channel_done_weight_regfile_0_6) | ap_sync_reg_channel_write_weight_regfile_0_6);
+
+assign ap_sync_channel_write_weight_regfile_0_7 = ((weight_regfile_0_7_full_n & ap_channel_done_weight_regfile_0_7) | ap_sync_reg_channel_write_weight_regfile_0_7);
+
 assign ap_sync_channel_write_weight_regfile_1_0 = ((weight_regfile_1_0_full_n & ap_channel_done_weight_regfile_1_0) | ap_sync_reg_channel_write_weight_regfile_1_0);
 
 assign ap_sync_channel_write_weight_regfile_1_1 = ((weight_regfile_1_1_full_n & ap_channel_done_weight_regfile_1_1) | ap_sync_reg_channel_write_weight_regfile_1_1);
@@ -1917,6 +7696,14 @@ assign ap_sync_channel_write_weight_regfile_1_1 = ((weight_regfile_1_1_full_n & 
 assign ap_sync_channel_write_weight_regfile_1_2 = ((weight_regfile_1_2_full_n & ap_channel_done_weight_regfile_1_2) | ap_sync_reg_channel_write_weight_regfile_1_2);
 
 assign ap_sync_channel_write_weight_regfile_1_3 = ((weight_regfile_1_3_full_n & ap_channel_done_weight_regfile_1_3) | ap_sync_reg_channel_write_weight_regfile_1_3);
+
+assign ap_sync_channel_write_weight_regfile_1_4 = ((weight_regfile_1_4_full_n & ap_channel_done_weight_regfile_1_4) | ap_sync_reg_channel_write_weight_regfile_1_4);
+
+assign ap_sync_channel_write_weight_regfile_1_5 = ((weight_regfile_1_5_full_n & ap_channel_done_weight_regfile_1_5) | ap_sync_reg_channel_write_weight_regfile_1_5);
+
+assign ap_sync_channel_write_weight_regfile_1_6 = ((weight_regfile_1_6_full_n & ap_channel_done_weight_regfile_1_6) | ap_sync_reg_channel_write_weight_regfile_1_6);
+
+assign ap_sync_channel_write_weight_regfile_1_7 = ((weight_regfile_1_7_full_n & ap_channel_done_weight_regfile_1_7) | ap_sync_reg_channel_write_weight_regfile_1_7);
 
 assign ap_sync_channel_write_weight_regfile_2_0 = ((weight_regfile_2_0_full_n & ap_channel_done_weight_regfile_2_0) | ap_sync_reg_channel_write_weight_regfile_2_0);
 
@@ -1926,6 +7713,14 @@ assign ap_sync_channel_write_weight_regfile_2_2 = ((weight_regfile_2_2_full_n & 
 
 assign ap_sync_channel_write_weight_regfile_2_3 = ((weight_regfile_2_3_full_n & ap_channel_done_weight_regfile_2_3) | ap_sync_reg_channel_write_weight_regfile_2_3);
 
+assign ap_sync_channel_write_weight_regfile_2_4 = ((weight_regfile_2_4_full_n & ap_channel_done_weight_regfile_2_4) | ap_sync_reg_channel_write_weight_regfile_2_4);
+
+assign ap_sync_channel_write_weight_regfile_2_5 = ((weight_regfile_2_5_full_n & ap_channel_done_weight_regfile_2_5) | ap_sync_reg_channel_write_weight_regfile_2_5);
+
+assign ap_sync_channel_write_weight_regfile_2_6 = ((weight_regfile_2_6_full_n & ap_channel_done_weight_regfile_2_6) | ap_sync_reg_channel_write_weight_regfile_2_6);
+
+assign ap_sync_channel_write_weight_regfile_2_7 = ((weight_regfile_2_7_full_n & ap_channel_done_weight_regfile_2_7) | ap_sync_reg_channel_write_weight_regfile_2_7);
+
 assign ap_sync_channel_write_weight_regfile_3_0 = ((weight_regfile_3_0_full_n & ap_channel_done_weight_regfile_3_0) | ap_sync_reg_channel_write_weight_regfile_3_0);
 
 assign ap_sync_channel_write_weight_regfile_3_1 = ((weight_regfile_3_1_full_n & ap_channel_done_weight_regfile_3_1) | ap_sync_reg_channel_write_weight_regfile_3_1);
@@ -1934,111 +7729,899 @@ assign ap_sync_channel_write_weight_regfile_3_2 = ((weight_regfile_3_2_full_n & 
 
 assign ap_sync_channel_write_weight_regfile_3_3 = ((weight_regfile_3_3_full_n & ap_channel_done_weight_regfile_3_3) | ap_sync_reg_channel_write_weight_regfile_3_3);
 
+assign ap_sync_channel_write_weight_regfile_3_4 = ((weight_regfile_3_4_full_n & ap_channel_done_weight_regfile_3_4) | ap_sync_reg_channel_write_weight_regfile_3_4);
+
+assign ap_sync_channel_write_weight_regfile_3_5 = ((weight_regfile_3_5_full_n & ap_channel_done_weight_regfile_3_5) | ap_sync_reg_channel_write_weight_regfile_3_5);
+
+assign ap_sync_channel_write_weight_regfile_3_6 = ((weight_regfile_3_6_full_n & ap_channel_done_weight_regfile_3_6) | ap_sync_reg_channel_write_weight_regfile_3_6);
+
+assign ap_sync_channel_write_weight_regfile_3_7 = ((weight_regfile_3_7_full_n & ap_channel_done_weight_regfile_3_7) | ap_sync_reg_channel_write_weight_regfile_3_7);
+
+assign ap_sync_channel_write_weight_regfile_4_0 = ((weight_regfile_4_0_full_n & ap_channel_done_weight_regfile_4_0) | ap_sync_reg_channel_write_weight_regfile_4_0);
+
+assign ap_sync_channel_write_weight_regfile_4_1 = ((weight_regfile_4_1_full_n & ap_channel_done_weight_regfile_4_1) | ap_sync_reg_channel_write_weight_regfile_4_1);
+
+assign ap_sync_channel_write_weight_regfile_4_2 = ((weight_regfile_4_2_full_n & ap_channel_done_weight_regfile_4_2) | ap_sync_reg_channel_write_weight_regfile_4_2);
+
+assign ap_sync_channel_write_weight_regfile_4_3 = ((weight_regfile_4_3_full_n & ap_channel_done_weight_regfile_4_3) | ap_sync_reg_channel_write_weight_regfile_4_3);
+
+assign ap_sync_channel_write_weight_regfile_4_4 = ((weight_regfile_4_4_full_n & ap_channel_done_weight_regfile_4_4) | ap_sync_reg_channel_write_weight_regfile_4_4);
+
+assign ap_sync_channel_write_weight_regfile_4_5 = ((weight_regfile_4_5_full_n & ap_channel_done_weight_regfile_4_5) | ap_sync_reg_channel_write_weight_regfile_4_5);
+
+assign ap_sync_channel_write_weight_regfile_4_6 = ((weight_regfile_4_6_full_n & ap_channel_done_weight_regfile_4_6) | ap_sync_reg_channel_write_weight_regfile_4_6);
+
+assign ap_sync_channel_write_weight_regfile_4_7 = ((weight_regfile_4_7_full_n & ap_channel_done_weight_regfile_4_7) | ap_sync_reg_channel_write_weight_regfile_4_7);
+
+assign ap_sync_channel_write_weight_regfile_5_0 = ((weight_regfile_5_0_full_n & ap_channel_done_weight_regfile_5_0) | ap_sync_reg_channel_write_weight_regfile_5_0);
+
+assign ap_sync_channel_write_weight_regfile_5_1 = ((weight_regfile_5_1_full_n & ap_channel_done_weight_regfile_5_1) | ap_sync_reg_channel_write_weight_regfile_5_1);
+
+assign ap_sync_channel_write_weight_regfile_5_2 = ((weight_regfile_5_2_full_n & ap_channel_done_weight_regfile_5_2) | ap_sync_reg_channel_write_weight_regfile_5_2);
+
+assign ap_sync_channel_write_weight_regfile_5_3 = ((weight_regfile_5_3_full_n & ap_channel_done_weight_regfile_5_3) | ap_sync_reg_channel_write_weight_regfile_5_3);
+
+assign ap_sync_channel_write_weight_regfile_5_4 = ((weight_regfile_5_4_full_n & ap_channel_done_weight_regfile_5_4) | ap_sync_reg_channel_write_weight_regfile_5_4);
+
+assign ap_sync_channel_write_weight_regfile_5_5 = ((weight_regfile_5_5_full_n & ap_channel_done_weight_regfile_5_5) | ap_sync_reg_channel_write_weight_regfile_5_5);
+
+assign ap_sync_channel_write_weight_regfile_5_6 = ((weight_regfile_5_6_full_n & ap_channel_done_weight_regfile_5_6) | ap_sync_reg_channel_write_weight_regfile_5_6);
+
+assign ap_sync_channel_write_weight_regfile_5_7 = ((weight_regfile_5_7_full_n & ap_channel_done_weight_regfile_5_7) | ap_sync_reg_channel_write_weight_regfile_5_7);
+
+assign ap_sync_channel_write_weight_regfile_6_0 = ((weight_regfile_6_0_full_n & ap_channel_done_weight_regfile_6_0) | ap_sync_reg_channel_write_weight_regfile_6_0);
+
+assign ap_sync_channel_write_weight_regfile_6_1 = ((weight_regfile_6_1_full_n & ap_channel_done_weight_regfile_6_1) | ap_sync_reg_channel_write_weight_regfile_6_1);
+
+assign ap_sync_channel_write_weight_regfile_6_2 = ((weight_regfile_6_2_full_n & ap_channel_done_weight_regfile_6_2) | ap_sync_reg_channel_write_weight_regfile_6_2);
+
+assign ap_sync_channel_write_weight_regfile_6_3 = ((weight_regfile_6_3_full_n & ap_channel_done_weight_regfile_6_3) | ap_sync_reg_channel_write_weight_regfile_6_3);
+
+assign ap_sync_channel_write_weight_regfile_6_4 = ((weight_regfile_6_4_full_n & ap_channel_done_weight_regfile_6_4) | ap_sync_reg_channel_write_weight_regfile_6_4);
+
+assign ap_sync_channel_write_weight_regfile_6_5 = ((weight_regfile_6_5_full_n & ap_channel_done_weight_regfile_6_5) | ap_sync_reg_channel_write_weight_regfile_6_5);
+
+assign ap_sync_channel_write_weight_regfile_6_6 = ((weight_regfile_6_6_full_n & ap_channel_done_weight_regfile_6_6) | ap_sync_reg_channel_write_weight_regfile_6_6);
+
+assign ap_sync_channel_write_weight_regfile_6_7 = ((weight_regfile_6_7_full_n & ap_channel_done_weight_regfile_6_7) | ap_sync_reg_channel_write_weight_regfile_6_7);
+
+assign ap_sync_channel_write_weight_regfile_7_0 = ((weight_regfile_7_0_full_n & ap_channel_done_weight_regfile_7_0) | ap_sync_reg_channel_write_weight_regfile_7_0);
+
+assign ap_sync_channel_write_weight_regfile_7_1 = ((weight_regfile_7_1_full_n & ap_channel_done_weight_regfile_7_1) | ap_sync_reg_channel_write_weight_regfile_7_1);
+
+assign ap_sync_channel_write_weight_regfile_7_2 = ((weight_regfile_7_2_full_n & ap_channel_done_weight_regfile_7_2) | ap_sync_reg_channel_write_weight_regfile_7_2);
+
+assign ap_sync_channel_write_weight_regfile_7_3 = ((weight_regfile_7_3_full_n & ap_channel_done_weight_regfile_7_3) | ap_sync_reg_channel_write_weight_regfile_7_3);
+
+assign ap_sync_channel_write_weight_regfile_7_4 = ((weight_regfile_7_4_full_n & ap_channel_done_weight_regfile_7_4) | ap_sync_reg_channel_write_weight_regfile_7_4);
+
+assign ap_sync_channel_write_weight_regfile_7_5 = ((weight_regfile_7_5_full_n & ap_channel_done_weight_regfile_7_5) | ap_sync_reg_channel_write_weight_regfile_7_5);
+
+assign ap_sync_channel_write_weight_regfile_7_6 = ((weight_regfile_7_6_full_n & ap_channel_done_weight_regfile_7_6) | ap_sync_reg_channel_write_weight_regfile_7_6);
+
+assign ap_sync_channel_write_weight_regfile_7_7 = ((weight_regfile_7_7_full_n & ap_channel_done_weight_regfile_7_7) | ap_sync_reg_channel_write_weight_regfile_7_7);
+
 assign ap_sync_continue = ap_continue;
 
-assign ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready = (dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready);
+assign ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready = (dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready | ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready);
 
 assign ap_sync_done = runOutputL1toL2_U0_ap_done;
 
-assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runDataL2toL1_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready);
+assign ap_sync_ready = (ap_sync_runWeight2Reg_U0_ap_ready & ap_sync_runDataL2toL1_bitvec_U0_ap_ready & ap_sync_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready);
 
-assign ap_sync_runDataL2toL1_U0_ap_ready = (runDataL2toL1_U0_ap_ready | ap_sync_reg_runDataL2toL1_U0_ap_ready);
+assign ap_sync_runDataL2toL1_bitvec_U0_ap_ready = (runDataL2toL1_bitvec_U0_ap_ready | ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready);
 
 assign ap_sync_runWeight2Reg_U0_ap_ready = (runWeight2Reg_U0_ap_ready | ap_sync_reg_runWeight2Reg_U0_ap_ready);
 
-assign data_l2_0_address0 = runDataL2toL1_U0_data_l2_0_address0;
+assign data_l2_0_0_address0 = runDataL2toL1_bitvec_U0_data_l2_0_0_address0;
 
-assign data_l2_0_address1 = 11'd0;
+assign data_l2_0_0_address1 = 11'd0;
 
-assign data_l2_0_ce0 = runDataL2toL1_U0_data_l2_0_ce0;
+assign data_l2_0_0_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_0_ce0;
 
-assign data_l2_0_ce1 = 1'b0;
+assign data_l2_0_0_ce1 = 1'b0;
 
-assign data_l2_0_d0 = 8'd0;
+assign data_l2_0_0_d0 = 8'd0;
 
-assign data_l2_0_d1 = 8'd0;
+assign data_l2_0_0_d1 = 8'd0;
 
-assign data_l2_0_read = runDataL2toL1_U0_data_l2_0_write;
+assign data_l2_0_0_read = runDataL2toL1_bitvec_U0_data_l2_0_0_write;
 
-assign data_l2_0_we0 = 1'b0;
+assign data_l2_0_0_we0 = 1'b0;
 
-assign data_l2_0_we1 = 1'b0;
+assign data_l2_0_0_we1 = 1'b0;
 
-assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_continue = 1'b1;
+assign data_l2_0_1_address0 = runDataL2toL1_bitvec_U0_data_l2_0_1_address0;
 
-assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry33_U0_ap_ready ^ 1'b1) & ap_start);
+assign data_l2_0_1_address1 = 11'd0;
 
-assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_full_n = 1'b1;
+assign data_l2_0_1_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_1_ce0;
 
-assign dataflow_in_loop_LOOP_S_OUTER_entry33_U0_start_write = 1'b0;
+assign data_l2_0_1_ce1 = 1'b0;
 
-assign output_l2_0_address0 = runOutputL1toL2_U0_output_l2_0_address0;
+assign data_l2_0_1_d0 = 8'd0;
 
-assign output_l2_0_address1 = 11'd0;
+assign data_l2_0_1_d1 = 8'd0;
 
-assign output_l2_0_ce0 = runOutputL1toL2_U0_output_l2_0_ce0;
+assign data_l2_0_1_read = runDataL2toL1_bitvec_U0_data_l2_0_1_write;
 
-assign output_l2_0_ce1 = 1'b0;
+assign data_l2_0_1_we0 = 1'b0;
 
-assign output_l2_0_d0 = runOutputL1toL2_U0_output_l2_0_d0;
+assign data_l2_0_1_we1 = 1'b0;
 
-assign output_l2_0_d1 = 32'd0;
+assign data_l2_0_2_address0 = runDataL2toL1_bitvec_U0_data_l2_0_2_address0;
 
-assign output_l2_0_we0 = runOutputL1toL2_U0_output_l2_0_we0;
+assign data_l2_0_2_address1 = 11'd0;
 
-assign output_l2_0_we1 = 1'b0;
+assign data_l2_0_2_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_2_ce0;
 
-assign output_l2_0_write = runOutputL1toL2_U0_output_l2_0_write;
+assign data_l2_0_2_ce1 = 1'b0;
 
-assign runDataL2toL1_U0_ap_continue = (ap_sync_channel_write_data_l1_3 & ap_sync_channel_write_data_l1_2 & ap_sync_channel_write_data_l1_1 & ap_sync_channel_write_data_l1_0);
+assign data_l2_0_2_d0 = 8'd0;
 
-assign runDataL2toL1_U0_ap_start = ((ap_sync_reg_runDataL2toL1_U0_ap_ready ^ 1'b1) & ap_start);
+assign data_l2_0_2_d1 = 8'd0;
 
-assign runDataL2toL1_U0_data_l1_017_i_full_n = data_l1_0_i_full_n;
+assign data_l2_0_2_read = runDataL2toL1_bitvec_U0_data_l2_0_2_write;
 
-assign runDataL2toL1_U0_data_l1_118_i_full_n = data_l1_1_i_full_n;
+assign data_l2_0_2_we0 = 1'b0;
 
-assign runDataL2toL1_U0_data_l1_219_i_full_n = data_l1_2_i_full_n;
+assign data_l2_0_2_we1 = 1'b0;
 
-assign runDataL2toL1_U0_data_l1_320_i_full_n = data_l1_3_i_full_n;
+assign data_l2_0_3_address0 = runDataL2toL1_bitvec_U0_data_l2_0_3_address0;
 
-assign runDataL2toL1_U0_data_l2_0_full_n = data_l2_0_empty_n;
+assign data_l2_0_3_address1 = 11'd0;
 
-assign runDataL2toL1_U0_data_l2_0_write = 1'b0;
+assign data_l2_0_3_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_3_ce0;
 
-assign runDataL2toL1_U0_start_full_n = 1'b1;
+assign data_l2_0_3_ce1 = 1'b0;
 
-assign runDataL2toL1_U0_start_write = 1'b0;
+assign data_l2_0_3_d0 = 8'd0;
+
+assign data_l2_0_3_d1 = 8'd0;
+
+assign data_l2_0_3_read = runDataL2toL1_bitvec_U0_data_l2_0_3_write;
+
+assign data_l2_0_3_we0 = 1'b0;
+
+assign data_l2_0_3_we1 = 1'b0;
+
+assign data_l2_0_4_address0 = runDataL2toL1_bitvec_U0_data_l2_0_4_address0;
+
+assign data_l2_0_4_address1 = 11'd0;
+
+assign data_l2_0_4_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_4_ce0;
+
+assign data_l2_0_4_ce1 = 1'b0;
+
+assign data_l2_0_4_d0 = 8'd0;
+
+assign data_l2_0_4_d1 = 8'd0;
+
+assign data_l2_0_4_read = runDataL2toL1_bitvec_U0_data_l2_0_4_write;
+
+assign data_l2_0_4_we0 = 1'b0;
+
+assign data_l2_0_4_we1 = 1'b0;
+
+assign data_l2_0_5_address0 = runDataL2toL1_bitvec_U0_data_l2_0_5_address0;
+
+assign data_l2_0_5_address1 = 11'd0;
+
+assign data_l2_0_5_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_5_ce0;
+
+assign data_l2_0_5_ce1 = 1'b0;
+
+assign data_l2_0_5_d0 = 8'd0;
+
+assign data_l2_0_5_d1 = 8'd0;
+
+assign data_l2_0_5_read = runDataL2toL1_bitvec_U0_data_l2_0_5_write;
+
+assign data_l2_0_5_we0 = 1'b0;
+
+assign data_l2_0_5_we1 = 1'b0;
+
+assign data_l2_0_6_address0 = runDataL2toL1_bitvec_U0_data_l2_0_6_address0;
+
+assign data_l2_0_6_address1 = 11'd0;
+
+assign data_l2_0_6_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_6_ce0;
+
+assign data_l2_0_6_ce1 = 1'b0;
+
+assign data_l2_0_6_d0 = 8'd0;
+
+assign data_l2_0_6_d1 = 8'd0;
+
+assign data_l2_0_6_read = runDataL2toL1_bitvec_U0_data_l2_0_6_write;
+
+assign data_l2_0_6_we0 = 1'b0;
+
+assign data_l2_0_6_we1 = 1'b0;
+
+assign data_l2_0_7_address0 = runDataL2toL1_bitvec_U0_data_l2_0_7_address0;
+
+assign data_l2_0_7_address1 = 11'd0;
+
+assign data_l2_0_7_ce0 = runDataL2toL1_bitvec_U0_data_l2_0_7_ce0;
+
+assign data_l2_0_7_ce1 = 1'b0;
+
+assign data_l2_0_7_d0 = 8'd0;
+
+assign data_l2_0_7_d1 = 8'd0;
+
+assign data_l2_0_7_read = runDataL2toL1_bitvec_U0_data_l2_0_7_write;
+
+assign data_l2_0_7_we0 = 1'b0;
+
+assign data_l2_0_7_we1 = 1'b0;
+
+assign data_l2_1_0_address0 = runDataL2toL1_bitvec_U0_data_l2_1_0_address0;
+
+assign data_l2_1_0_address1 = 11'd0;
+
+assign data_l2_1_0_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_0_ce0;
+
+assign data_l2_1_0_ce1 = 1'b0;
+
+assign data_l2_1_0_d0 = 8'd0;
+
+assign data_l2_1_0_d1 = 8'd0;
+
+assign data_l2_1_0_read = runDataL2toL1_bitvec_U0_data_l2_1_0_write;
+
+assign data_l2_1_0_we0 = 1'b0;
+
+assign data_l2_1_0_we1 = 1'b0;
+
+assign data_l2_1_1_address0 = runDataL2toL1_bitvec_U0_data_l2_1_1_address0;
+
+assign data_l2_1_1_address1 = 11'd0;
+
+assign data_l2_1_1_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_1_ce0;
+
+assign data_l2_1_1_ce1 = 1'b0;
+
+assign data_l2_1_1_d0 = 8'd0;
+
+assign data_l2_1_1_d1 = 8'd0;
+
+assign data_l2_1_1_read = runDataL2toL1_bitvec_U0_data_l2_1_1_write;
+
+assign data_l2_1_1_we0 = 1'b0;
+
+assign data_l2_1_1_we1 = 1'b0;
+
+assign data_l2_1_2_address0 = runDataL2toL1_bitvec_U0_data_l2_1_2_address0;
+
+assign data_l2_1_2_address1 = 11'd0;
+
+assign data_l2_1_2_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_2_ce0;
+
+assign data_l2_1_2_ce1 = 1'b0;
+
+assign data_l2_1_2_d0 = 8'd0;
+
+assign data_l2_1_2_d1 = 8'd0;
+
+assign data_l2_1_2_read = runDataL2toL1_bitvec_U0_data_l2_1_2_write;
+
+assign data_l2_1_2_we0 = 1'b0;
+
+assign data_l2_1_2_we1 = 1'b0;
+
+assign data_l2_1_3_address0 = runDataL2toL1_bitvec_U0_data_l2_1_3_address0;
+
+assign data_l2_1_3_address1 = 11'd0;
+
+assign data_l2_1_3_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_3_ce0;
+
+assign data_l2_1_3_ce1 = 1'b0;
+
+assign data_l2_1_3_d0 = 8'd0;
+
+assign data_l2_1_3_d1 = 8'd0;
+
+assign data_l2_1_3_read = runDataL2toL1_bitvec_U0_data_l2_1_3_write;
+
+assign data_l2_1_3_we0 = 1'b0;
+
+assign data_l2_1_3_we1 = 1'b0;
+
+assign data_l2_1_4_address0 = runDataL2toL1_bitvec_U0_data_l2_1_4_address0;
+
+assign data_l2_1_4_address1 = 11'd0;
+
+assign data_l2_1_4_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_4_ce0;
+
+assign data_l2_1_4_ce1 = 1'b0;
+
+assign data_l2_1_4_d0 = 8'd0;
+
+assign data_l2_1_4_d1 = 8'd0;
+
+assign data_l2_1_4_read = runDataL2toL1_bitvec_U0_data_l2_1_4_write;
+
+assign data_l2_1_4_we0 = 1'b0;
+
+assign data_l2_1_4_we1 = 1'b0;
+
+assign data_l2_1_5_address0 = runDataL2toL1_bitvec_U0_data_l2_1_5_address0;
+
+assign data_l2_1_5_address1 = 11'd0;
+
+assign data_l2_1_5_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_5_ce0;
+
+assign data_l2_1_5_ce1 = 1'b0;
+
+assign data_l2_1_5_d0 = 8'd0;
+
+assign data_l2_1_5_d1 = 8'd0;
+
+assign data_l2_1_5_read = runDataL2toL1_bitvec_U0_data_l2_1_5_write;
+
+assign data_l2_1_5_we0 = 1'b0;
+
+assign data_l2_1_5_we1 = 1'b0;
+
+assign data_l2_1_6_address0 = runDataL2toL1_bitvec_U0_data_l2_1_6_address0;
+
+assign data_l2_1_6_address1 = 11'd0;
+
+assign data_l2_1_6_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_6_ce0;
+
+assign data_l2_1_6_ce1 = 1'b0;
+
+assign data_l2_1_6_d0 = 8'd0;
+
+assign data_l2_1_6_d1 = 8'd0;
+
+assign data_l2_1_6_read = runDataL2toL1_bitvec_U0_data_l2_1_6_write;
+
+assign data_l2_1_6_we0 = 1'b0;
+
+assign data_l2_1_6_we1 = 1'b0;
+
+assign data_l2_1_7_address0 = runDataL2toL1_bitvec_U0_data_l2_1_7_address0;
+
+assign data_l2_1_7_address1 = 11'd0;
+
+assign data_l2_1_7_ce0 = runDataL2toL1_bitvec_U0_data_l2_1_7_ce0;
+
+assign data_l2_1_7_ce1 = 1'b0;
+
+assign data_l2_1_7_d0 = 8'd0;
+
+assign data_l2_1_7_d1 = 8'd0;
+
+assign data_l2_1_7_read = runDataL2toL1_bitvec_U0_data_l2_1_7_write;
+
+assign data_l2_1_7_we0 = 1'b0;
+
+assign data_l2_1_7_we1 = 1'b0;
+
+assign dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_continue = 1'b1;
+
+assign dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_start = ((ap_sync_reg_dataflow_in_loop_LOOP_S_OUTER_entry30_U0_ap_ready ^ 1'b1) & ap_start);
+
+assign dataflow_in_loop_LOOP_S_OUTER_entry30_U0_start_full_n = 1'b1;
+
+assign dataflow_in_loop_LOOP_S_OUTER_entry30_U0_start_write = 1'b0;
+
+assign output_l2_0_0_address0 = runOutputL1toL2_U0_output_l2_0_0_address0;
+
+assign output_l2_0_0_address1 = runOutputL1toL2_U0_output_l2_0_0_address1;
+
+assign output_l2_0_0_ce0 = runOutputL1toL2_U0_output_l2_0_0_ce0;
+
+assign output_l2_0_0_ce1 = runOutputL1toL2_U0_output_l2_0_0_ce1;
+
+assign output_l2_0_0_d0 = runOutputL1toL2_U0_output_l2_0_0_d0;
+
+assign output_l2_0_0_d1 = runOutputL1toL2_U0_output_l2_0_0_d1;
+
+assign output_l2_0_0_we0 = runOutputL1toL2_U0_output_l2_0_0_we0;
+
+assign output_l2_0_0_we1 = runOutputL1toL2_U0_output_l2_0_0_we1;
+
+assign output_l2_0_0_write = runOutputL1toL2_U0_output_l2_0_0_write;
+
+assign output_l2_0_1_address0 = runOutputL1toL2_U0_output_l2_0_1_address0;
+
+assign output_l2_0_1_address1 = runOutputL1toL2_U0_output_l2_0_1_address1;
+
+assign output_l2_0_1_ce0 = runOutputL1toL2_U0_output_l2_0_1_ce0;
+
+assign output_l2_0_1_ce1 = runOutputL1toL2_U0_output_l2_0_1_ce1;
+
+assign output_l2_0_1_d0 = runOutputL1toL2_U0_output_l2_0_1_d0;
+
+assign output_l2_0_1_d1 = runOutputL1toL2_U0_output_l2_0_1_d1;
+
+assign output_l2_0_1_we0 = runOutputL1toL2_U0_output_l2_0_1_we0;
+
+assign output_l2_0_1_we1 = runOutputL1toL2_U0_output_l2_0_1_we1;
+
+assign output_l2_0_1_write = runOutputL1toL2_U0_output_l2_0_1_write;
+
+assign output_l2_0_2_address0 = runOutputL1toL2_U0_output_l2_0_2_address0;
+
+assign output_l2_0_2_address1 = runOutputL1toL2_U0_output_l2_0_2_address1;
+
+assign output_l2_0_2_ce0 = runOutputL1toL2_U0_output_l2_0_2_ce0;
+
+assign output_l2_0_2_ce1 = runOutputL1toL2_U0_output_l2_0_2_ce1;
+
+assign output_l2_0_2_d0 = runOutputL1toL2_U0_output_l2_0_2_d0;
+
+assign output_l2_0_2_d1 = runOutputL1toL2_U0_output_l2_0_2_d1;
+
+assign output_l2_0_2_we0 = runOutputL1toL2_U0_output_l2_0_2_we0;
+
+assign output_l2_0_2_we1 = runOutputL1toL2_U0_output_l2_0_2_we1;
+
+assign output_l2_0_2_write = runOutputL1toL2_U0_output_l2_0_2_write;
+
+assign output_l2_0_3_address0 = runOutputL1toL2_U0_output_l2_0_3_address0;
+
+assign output_l2_0_3_address1 = runOutputL1toL2_U0_output_l2_0_3_address1;
+
+assign output_l2_0_3_ce0 = runOutputL1toL2_U0_output_l2_0_3_ce0;
+
+assign output_l2_0_3_ce1 = runOutputL1toL2_U0_output_l2_0_3_ce1;
+
+assign output_l2_0_3_d0 = runOutputL1toL2_U0_output_l2_0_3_d0;
+
+assign output_l2_0_3_d1 = runOutputL1toL2_U0_output_l2_0_3_d1;
+
+assign output_l2_0_3_we0 = runOutputL1toL2_U0_output_l2_0_3_we0;
+
+assign output_l2_0_3_we1 = runOutputL1toL2_U0_output_l2_0_3_we1;
+
+assign output_l2_0_3_write = runOutputL1toL2_U0_output_l2_0_3_write;
+
+assign output_l2_0_4_address0 = runOutputL1toL2_U0_output_l2_0_4_address0;
+
+assign output_l2_0_4_address1 = runOutputL1toL2_U0_output_l2_0_4_address1;
+
+assign output_l2_0_4_ce0 = runOutputL1toL2_U0_output_l2_0_4_ce0;
+
+assign output_l2_0_4_ce1 = runOutputL1toL2_U0_output_l2_0_4_ce1;
+
+assign output_l2_0_4_d0 = runOutputL1toL2_U0_output_l2_0_4_d0;
+
+assign output_l2_0_4_d1 = runOutputL1toL2_U0_output_l2_0_4_d1;
+
+assign output_l2_0_4_we0 = runOutputL1toL2_U0_output_l2_0_4_we0;
+
+assign output_l2_0_4_we1 = runOutputL1toL2_U0_output_l2_0_4_we1;
+
+assign output_l2_0_4_write = runOutputL1toL2_U0_output_l2_0_4_write;
+
+assign output_l2_0_5_address0 = runOutputL1toL2_U0_output_l2_0_5_address0;
+
+assign output_l2_0_5_address1 = runOutputL1toL2_U0_output_l2_0_5_address1;
+
+assign output_l2_0_5_ce0 = runOutputL1toL2_U0_output_l2_0_5_ce0;
+
+assign output_l2_0_5_ce1 = runOutputL1toL2_U0_output_l2_0_5_ce1;
+
+assign output_l2_0_5_d0 = runOutputL1toL2_U0_output_l2_0_5_d0;
+
+assign output_l2_0_5_d1 = runOutputL1toL2_U0_output_l2_0_5_d1;
+
+assign output_l2_0_5_we0 = runOutputL1toL2_U0_output_l2_0_5_we0;
+
+assign output_l2_0_5_we1 = runOutputL1toL2_U0_output_l2_0_5_we1;
+
+assign output_l2_0_5_write = runOutputL1toL2_U0_output_l2_0_5_write;
+
+assign output_l2_0_6_address0 = runOutputL1toL2_U0_output_l2_0_6_address0;
+
+assign output_l2_0_6_address1 = runOutputL1toL2_U0_output_l2_0_6_address1;
+
+assign output_l2_0_6_ce0 = runOutputL1toL2_U0_output_l2_0_6_ce0;
+
+assign output_l2_0_6_ce1 = runOutputL1toL2_U0_output_l2_0_6_ce1;
+
+assign output_l2_0_6_d0 = runOutputL1toL2_U0_output_l2_0_6_d0;
+
+assign output_l2_0_6_d1 = runOutputL1toL2_U0_output_l2_0_6_d1;
+
+assign output_l2_0_6_we0 = runOutputL1toL2_U0_output_l2_0_6_we0;
+
+assign output_l2_0_6_we1 = runOutputL1toL2_U0_output_l2_0_6_we1;
+
+assign output_l2_0_6_write = runOutputL1toL2_U0_output_l2_0_6_write;
+
+assign output_l2_0_7_address0 = runOutputL1toL2_U0_output_l2_0_7_address0;
+
+assign output_l2_0_7_address1 = runOutputL1toL2_U0_output_l2_0_7_address1;
+
+assign output_l2_0_7_ce0 = runOutputL1toL2_U0_output_l2_0_7_ce0;
+
+assign output_l2_0_7_ce1 = runOutputL1toL2_U0_output_l2_0_7_ce1;
+
+assign output_l2_0_7_d0 = runOutputL1toL2_U0_output_l2_0_7_d0;
+
+assign output_l2_0_7_d1 = runOutputL1toL2_U0_output_l2_0_7_d1;
+
+assign output_l2_0_7_we0 = runOutputL1toL2_U0_output_l2_0_7_we0;
+
+assign output_l2_0_7_we1 = runOutputL1toL2_U0_output_l2_0_7_we1;
+
+assign output_l2_0_7_write = runOutputL1toL2_U0_output_l2_0_7_write;
+
+assign output_l2_1_0_address0 = runOutputL1toL2_U0_output_l2_1_0_address0;
+
+assign output_l2_1_0_address1 = runOutputL1toL2_U0_output_l2_1_0_address1;
+
+assign output_l2_1_0_ce0 = runOutputL1toL2_U0_output_l2_1_0_ce0;
+
+assign output_l2_1_0_ce1 = runOutputL1toL2_U0_output_l2_1_0_ce1;
+
+assign output_l2_1_0_d0 = runOutputL1toL2_U0_output_l2_1_0_d0;
+
+assign output_l2_1_0_d1 = runOutputL1toL2_U0_output_l2_1_0_d1;
+
+assign output_l2_1_0_we0 = runOutputL1toL2_U0_output_l2_1_0_we0;
+
+assign output_l2_1_0_we1 = runOutputL1toL2_U0_output_l2_1_0_we1;
+
+assign output_l2_1_0_write = runOutputL1toL2_U0_output_l2_1_0_write;
+
+assign output_l2_1_1_address0 = runOutputL1toL2_U0_output_l2_1_1_address0;
+
+assign output_l2_1_1_address1 = runOutputL1toL2_U0_output_l2_1_1_address1;
+
+assign output_l2_1_1_ce0 = runOutputL1toL2_U0_output_l2_1_1_ce0;
+
+assign output_l2_1_1_ce1 = runOutputL1toL2_U0_output_l2_1_1_ce1;
+
+assign output_l2_1_1_d0 = runOutputL1toL2_U0_output_l2_1_1_d0;
+
+assign output_l2_1_1_d1 = runOutputL1toL2_U0_output_l2_1_1_d1;
+
+assign output_l2_1_1_we0 = runOutputL1toL2_U0_output_l2_1_1_we0;
+
+assign output_l2_1_1_we1 = runOutputL1toL2_U0_output_l2_1_1_we1;
+
+assign output_l2_1_1_write = runOutputL1toL2_U0_output_l2_1_1_write;
+
+assign output_l2_1_2_address0 = runOutputL1toL2_U0_output_l2_1_2_address0;
+
+assign output_l2_1_2_address1 = runOutputL1toL2_U0_output_l2_1_2_address1;
+
+assign output_l2_1_2_ce0 = runOutputL1toL2_U0_output_l2_1_2_ce0;
+
+assign output_l2_1_2_ce1 = runOutputL1toL2_U0_output_l2_1_2_ce1;
+
+assign output_l2_1_2_d0 = runOutputL1toL2_U0_output_l2_1_2_d0;
+
+assign output_l2_1_2_d1 = runOutputL1toL2_U0_output_l2_1_2_d1;
+
+assign output_l2_1_2_we0 = runOutputL1toL2_U0_output_l2_1_2_we0;
+
+assign output_l2_1_2_we1 = runOutputL1toL2_U0_output_l2_1_2_we1;
+
+assign output_l2_1_2_write = runOutputL1toL2_U0_output_l2_1_2_write;
+
+assign output_l2_1_3_address0 = runOutputL1toL2_U0_output_l2_1_3_address0;
+
+assign output_l2_1_3_address1 = runOutputL1toL2_U0_output_l2_1_3_address1;
+
+assign output_l2_1_3_ce0 = runOutputL1toL2_U0_output_l2_1_3_ce0;
+
+assign output_l2_1_3_ce1 = runOutputL1toL2_U0_output_l2_1_3_ce1;
+
+assign output_l2_1_3_d0 = runOutputL1toL2_U0_output_l2_1_3_d0;
+
+assign output_l2_1_3_d1 = runOutputL1toL2_U0_output_l2_1_3_d1;
+
+assign output_l2_1_3_we0 = runOutputL1toL2_U0_output_l2_1_3_we0;
+
+assign output_l2_1_3_we1 = runOutputL1toL2_U0_output_l2_1_3_we1;
+
+assign output_l2_1_3_write = runOutputL1toL2_U0_output_l2_1_3_write;
+
+assign output_l2_1_4_address0 = runOutputL1toL2_U0_output_l2_1_4_address0;
+
+assign output_l2_1_4_address1 = runOutputL1toL2_U0_output_l2_1_4_address1;
+
+assign output_l2_1_4_ce0 = runOutputL1toL2_U0_output_l2_1_4_ce0;
+
+assign output_l2_1_4_ce1 = runOutputL1toL2_U0_output_l2_1_4_ce1;
+
+assign output_l2_1_4_d0 = runOutputL1toL2_U0_output_l2_1_4_d0;
+
+assign output_l2_1_4_d1 = runOutputL1toL2_U0_output_l2_1_4_d1;
+
+assign output_l2_1_4_we0 = runOutputL1toL2_U0_output_l2_1_4_we0;
+
+assign output_l2_1_4_we1 = runOutputL1toL2_U0_output_l2_1_4_we1;
+
+assign output_l2_1_4_write = runOutputL1toL2_U0_output_l2_1_4_write;
+
+assign output_l2_1_5_address0 = runOutputL1toL2_U0_output_l2_1_5_address0;
+
+assign output_l2_1_5_address1 = runOutputL1toL2_U0_output_l2_1_5_address1;
+
+assign output_l2_1_5_ce0 = runOutputL1toL2_U0_output_l2_1_5_ce0;
+
+assign output_l2_1_5_ce1 = runOutputL1toL2_U0_output_l2_1_5_ce1;
+
+assign output_l2_1_5_d0 = runOutputL1toL2_U0_output_l2_1_5_d0;
+
+assign output_l2_1_5_d1 = runOutputL1toL2_U0_output_l2_1_5_d1;
+
+assign output_l2_1_5_we0 = runOutputL1toL2_U0_output_l2_1_5_we0;
+
+assign output_l2_1_5_we1 = runOutputL1toL2_U0_output_l2_1_5_we1;
+
+assign output_l2_1_5_write = runOutputL1toL2_U0_output_l2_1_5_write;
+
+assign output_l2_1_6_address0 = runOutputL1toL2_U0_output_l2_1_6_address0;
+
+assign output_l2_1_6_address1 = runOutputL1toL2_U0_output_l2_1_6_address1;
+
+assign output_l2_1_6_ce0 = runOutputL1toL2_U0_output_l2_1_6_ce0;
+
+assign output_l2_1_6_ce1 = runOutputL1toL2_U0_output_l2_1_6_ce1;
+
+assign output_l2_1_6_d0 = runOutputL1toL2_U0_output_l2_1_6_d0;
+
+assign output_l2_1_6_d1 = runOutputL1toL2_U0_output_l2_1_6_d1;
+
+assign output_l2_1_6_we0 = runOutputL1toL2_U0_output_l2_1_6_we0;
+
+assign output_l2_1_6_we1 = runOutputL1toL2_U0_output_l2_1_6_we1;
+
+assign output_l2_1_6_write = runOutputL1toL2_U0_output_l2_1_6_write;
+
+assign output_l2_1_7_address0 = runOutputL1toL2_U0_output_l2_1_7_address0;
+
+assign output_l2_1_7_address1 = 11'd0;
+
+assign output_l2_1_7_ce0 = runOutputL1toL2_U0_output_l2_1_7_ce0;
+
+assign output_l2_1_7_ce1 = 1'b0;
+
+assign output_l2_1_7_d0 = runOutputL1toL2_U0_output_l2_1_7_d0;
+
+assign output_l2_1_7_d1 = 32'd0;
+
+assign output_l2_1_7_we0 = runOutputL1toL2_U0_output_l2_1_7_we0;
+
+assign output_l2_1_7_we1 = 1'b0;
+
+assign output_l2_1_7_write = runOutputL1toL2_U0_output_l2_1_7_write;
+
+assign runDataL2toL1_bitvec_U0_ap_continue = (ap_sync_channel_write_max_bitvec_length_0 & ap_sync_channel_write_data_l1_length_1_1 & ap_sync_channel_write_data_l1_length_1_0 & ap_sync_channel_write_data_l1_length_0_1 & ap_sync_channel_write_data_l1_length_0_0 & ap_sync_channel_write_data_l1_bitvec_1_1 & ap_sync_channel_write_data_l1_bitvec_1_0 & ap_sync_channel_write_data_l1_bitvec_0_1 & ap_sync_channel_write_data_l1_bitvec_0_0 & ap_sync_channel_write_data_l1_1_7 & ap_sync_channel_write_data_l1_1_6 & ap_sync_channel_write_data_l1_1_5 & ap_sync_channel_write_data_l1_1_4 & ap_sync_channel_write_data_l1_1_3 & ap_sync_channel_write_data_l1_1_2 & ap_sync_channel_write_data_l1_1_1 & ap_sync_channel_write_data_l1_1_0 & ap_sync_channel_write_data_l1_0_7 & ap_sync_channel_write_data_l1_0_6 & ap_sync_channel_write_data_l1_0_5 & ap_sync_channel_write_data_l1_0_4 & ap_sync_channel_write_data_l1_0_3 & ap_sync_channel_write_data_l1_0_2 & ap_sync_channel_write_data_l1_0_1 & ap_sync_channel_write_data_l1_0_0);
+
+assign runDataL2toL1_bitvec_U0_ap_start = ((ap_sync_reg_runDataL2toL1_bitvec_U0_ap_ready ^ 1'b1) & ap_start);
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_065_i_full_n = data_l1_0_0_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_166_i_full_n = data_l1_0_1_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_267_i_full_n = data_l1_0_2_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_368_i_full_n = data_l1_0_3_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_469_i_full_n = data_l1_0_4_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_570_i_full_n = data_l1_0_5_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_671_i_full_n = data_l1_0_6_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_0_772_i_full_n = data_l1_0_7_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_073_i_full_n = data_l1_1_0_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_174_i_full_n = data_l1_1_1_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_275_i_full_n = data_l1_1_2_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_376_i_full_n = data_l1_1_3_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_477_i_full_n = data_l1_1_4_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_578_i_full_n = data_l1_1_5_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_679_i_full_n = data_l1_1_6_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_1_780_i_full_n = data_l1_1_7_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_bitvec_0_081_i_full_n = data_l1_bitvec_0_0_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_bitvec_0_182_i_full_n = data_l1_bitvec_0_1_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_bitvec_1_083_i_full_n = data_l1_bitvec_1_0_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l1_bitvec_1_184_i_full_n = data_l1_bitvec_1_1_i_full_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_0_full_n = data_l2_0_0_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_0_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_1_full_n = data_l2_0_1_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_1_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_2_full_n = data_l2_0_2_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_2_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_3_full_n = data_l2_0_3_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_3_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_4_full_n = data_l2_0_4_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_4_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_5_full_n = data_l2_0_5_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_5_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_6_full_n = data_l2_0_6_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_6_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_7_full_n = data_l2_0_7_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_0_7_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_0_full_n = data_l2_1_0_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_0_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_1_full_n = data_l2_1_1_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_1_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_2_full_n = data_l2_1_2_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_2_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_3_full_n = data_l2_1_3_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_3_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_4_full_n = data_l2_1_4_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_4_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_5_full_n = data_l2_1_5_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_5_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_6_full_n = data_l2_1_6_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_6_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_7_full_n = data_l2_1_7_empty_n;
+
+assign runDataL2toL1_bitvec_U0_data_l2_1_7_write = 1'b0;
+
+assign runDataL2toL1_bitvec_U0_start_full_n = 1'b1;
+
+assign runDataL2toL1_bitvec_U0_start_write = 1'b0;
 
 assign runOutputL1toL2_U0_ap_continue = ap_continue;
 
-assign runOutputL1toL2_U0_ap_start = (output_l1_3_t_empty_n & output_l1_2_t_empty_n & output_l1_1_t_empty_n & output_l1_0_t_empty_n);
+assign runOutputL1toL2_U0_ap_start = (output_l1_1_7_t_empty_n & output_l1_1_6_t_empty_n & output_l1_1_5_t_empty_n & output_l1_1_4_t_empty_n & output_l1_1_3_t_empty_n & output_l1_1_2_t_empty_n & output_l1_1_1_t_empty_n & output_l1_1_0_t_empty_n & output_l1_0_7_t_empty_n & output_l1_0_6_t_empty_n & output_l1_0_5_t_empty_n & output_l1_0_4_t_empty_n & output_l1_0_3_t_empty_n & output_l1_0_2_t_empty_n & output_l1_0_1_t_empty_n & output_l1_0_0_t_empty_n);
 
-assign runOutputL1toL2_U0_output_l2_0_full_n = output_l2_0_full_n;
+assign runOutputL1toL2_U0_output_l2_0_0_full_n = output_l2_0_0_full_n;
 
-assign runOutputL1toL2_U0_output_l2_0_write = 1'b0;
+assign runOutputL1toL2_U0_output_l2_0_0_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_1_full_n = output_l2_0_1_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_1_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_2_full_n = output_l2_0_2_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_2_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_3_full_n = output_l2_0_3_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_3_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_4_full_n = output_l2_0_4_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_4_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_5_full_n = output_l2_0_5_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_5_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_6_full_n = output_l2_0_6_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_6_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_0_7_full_n = output_l2_0_7_full_n;
+
+assign runOutputL1toL2_U0_output_l2_0_7_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_0_full_n = output_l2_1_0_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_0_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_1_full_n = output_l2_1_1_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_1_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_2_full_n = output_l2_1_2_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_2_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_3_full_n = output_l2_1_3_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_3_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_4_full_n = output_l2_1_4_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_4_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_5_full_n = output_l2_1_5_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_5_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_6_full_n = output_l2_1_6_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_6_write = 1'b0;
+
+assign runOutputL1toL2_U0_output_l2_1_7_full_n = output_l2_1_7_full_n;
+
+assign runOutputL1toL2_U0_output_l2_1_7_write = 1'b0;
 
 assign runOutputL1toL2_U0_start_full_n = 1'b1;
 
 assign runOutputL1toL2_U0_start_write = 1'b0;
 
-assign runSIMD_U0_ap_continue = (ap_sync_channel_write_output_l1_3 & ap_sync_channel_write_output_l1_2 & ap_sync_channel_write_output_l1_1 & ap_sync_channel_write_output_l1_0);
+assign runSIMD_bitvec_U0_ap_continue = (ap_sync_channel_write_output_l1_1_7 & ap_sync_channel_write_output_l1_1_6 & ap_sync_channel_write_output_l1_1_5 & ap_sync_channel_write_output_l1_1_4 & ap_sync_channel_write_output_l1_1_3 & ap_sync_channel_write_output_l1_1_2 & ap_sync_channel_write_output_l1_1_1 & ap_sync_channel_write_output_l1_1_0 & ap_sync_channel_write_output_l1_0_7 & ap_sync_channel_write_output_l1_0_6 & ap_sync_channel_write_output_l1_0_5 & ap_sync_channel_write_output_l1_0_4 & ap_sync_channel_write_output_l1_0_3 & ap_sync_channel_write_output_l1_0_2 & ap_sync_channel_write_output_l1_0_1 & ap_sync_channel_write_output_l1_0_0);
 
-assign runSIMD_U0_ap_start = (weight_regfile_3_3_empty_n & weight_regfile_3_2_empty_n & weight_regfile_3_1_empty_n & weight_regfile_3_0_empty_n & weight_regfile_2_3_empty_n & weight_regfile_2_2_empty_n & weight_regfile_2_1_empty_n & weight_regfile_2_0_empty_n & weight_regfile_1_3_empty_n & weight_regfile_1_2_empty_n & weight_regfile_1_1_empty_n & weight_regfile_1_0_empty_n & weight_regfile_0_3_empty_n & weight_regfile_0_2_empty_n & weight_regfile_0_1_empty_n & weight_regfile_0_0_empty_n & data_l1_3_t_empty_n & data_l1_2_t_empty_n & data_l1_1_t_empty_n & data_l1_0_t_empty_n);
+assign runSIMD_bitvec_U0_ap_start = (weight_regfile_7_7_empty_n & weight_regfile_7_6_empty_n & weight_regfile_7_5_empty_n & weight_regfile_7_4_empty_n & weight_regfile_7_3_empty_n & weight_regfile_7_2_empty_n & weight_regfile_7_1_empty_n & weight_regfile_7_0_empty_n & weight_regfile_6_7_empty_n & weight_regfile_6_6_empty_n & weight_regfile_6_5_empty_n & weight_regfile_6_4_empty_n & weight_regfile_6_3_empty_n & weight_regfile_6_2_empty_n & weight_regfile_6_1_empty_n & weight_regfile_6_0_empty_n & weight_regfile_5_7_empty_n & weight_regfile_5_6_empty_n & weight_regfile_5_5_empty_n & weight_regfile_5_4_empty_n & weight_regfile_5_3_empty_n & weight_regfile_5_2_empty_n & weight_regfile_5_1_empty_n & weight_regfile_5_0_empty_n & weight_regfile_4_7_empty_n & weight_regfile_4_6_empty_n & weight_regfile_4_5_empty_n & weight_regfile_4_4_empty_n & weight_regfile_4_3_empty_n & weight_regfile_4_2_empty_n & weight_regfile_4_1_empty_n & weight_regfile_4_0_empty_n & weight_regfile_3_7_empty_n & weight_regfile_3_6_empty_n & weight_regfile_3_5_empty_n & weight_regfile_3_4_empty_n & weight_regfile_3_3_empty_n & weight_regfile_3_2_empty_n & weight_regfile_3_1_empty_n & weight_regfile_3_0_empty_n & weight_regfile_2_7_empty_n & weight_regfile_2_6_empty_n & weight_regfile_2_5_empty_n & weight_regfile_2_4_empty_n & weight_regfile_2_3_empty_n & weight_regfile_2_2_empty_n & weight_regfile_2_1_empty_n & weight_regfile_2_0_empty_n & weight_regfile_1_7_empty_n & weight_regfile_1_6_empty_n & weight_regfile_1_5_empty_n & weight_regfile_1_4_empty_n & weight_regfile_1_3_empty_n & weight_regfile_1_2_empty_n & weight_regfile_1_1_empty_n & weight_regfile_1_0_empty_n & weight_regfile_0_7_empty_n & weight_regfile_0_6_empty_n & weight_regfile_0_5_empty_n & weight_regfile_0_4_empty_n & weight_regfile_0_3_empty_n & weight_regfile_0_2_empty_n & weight_regfile_0_1_empty_n & weight_regfile_0_0_empty_n & max_bitvec_length_0_empty_n & data_l1_length_1_1_empty_n & data_l1_length_1_0_empty_n & data_l1_length_0_1_empty_n & data_l1_length_0_0_empty_n & data_l1_bitvec_1_1_t_empty_n & data_l1_bitvec_1_0_t_empty_n & data_l1_bitvec_0_1_t_empty_n & data_l1_bitvec_0_0_t_empty_n & data_l1_1_7_t_empty_n & data_l1_1_6_t_empty_n & data_l1_1_5_t_empty_n & data_l1_1_4_t_empty_n & data_l1_1_3_t_empty_n & data_l1_1_2_t_empty_n & data_l1_1_1_t_empty_n & data_l1_1_0_t_empty_n & data_l1_0_7_t_empty_n & data_l1_0_6_t_empty_n & data_l1_0_5_t_empty_n & data_l1_0_4_t_empty_n & data_l1_0_3_t_empty_n & data_l1_0_2_t_empty_n & data_l1_0_1_t_empty_n & data_l1_0_0_t_empty_n);
 
-assign runSIMD_U0_output_l1_021_i_full_n = output_l1_0_i_full_n;
+assign runSIMD_bitvec_U0_output_l1_0_0_full_n = output_l1_0_0_i_full_n;
 
-assign runSIMD_U0_output_l1_122_i_full_n = output_l1_1_i_full_n;
+assign runSIMD_bitvec_U0_output_l1_0_1_full_n = output_l1_0_1_i_full_n;
 
-assign runSIMD_U0_output_l1_223_i_full_n = output_l1_2_i_full_n;
+assign runSIMD_bitvec_U0_output_l1_0_2_full_n = output_l1_0_2_i_full_n;
 
-assign runSIMD_U0_output_l1_324_i_full_n = output_l1_3_i_full_n;
+assign runSIMD_bitvec_U0_output_l1_0_3_full_n = output_l1_0_3_i_full_n;
 
-assign runSIMD_U0_start_full_n = 1'b1;
+assign runSIMD_bitvec_U0_output_l1_0_4_full_n = output_l1_0_4_i_full_n;
 
-assign runSIMD_U0_start_write = 1'b0;
+assign runSIMD_bitvec_U0_output_l1_0_5_full_n = output_l1_0_5_i_full_n;
 
-assign runWeight2Reg_U0_ap_continue = (ap_sync_channel_write_weight_regfile_3_3 & ap_sync_channel_write_weight_regfile_3_2 & ap_sync_channel_write_weight_regfile_3_1 & ap_sync_channel_write_weight_regfile_3_0 & ap_sync_channel_write_weight_regfile_2_3 & ap_sync_channel_write_weight_regfile_2_2 & ap_sync_channel_write_weight_regfile_2_1 & ap_sync_channel_write_weight_regfile_2_0 & ap_sync_channel_write_weight_regfile_1_3 & ap_sync_channel_write_weight_regfile_1_2 & ap_sync_channel_write_weight_regfile_1_1 & ap_sync_channel_write_weight_regfile_1_0 & ap_sync_channel_write_weight_regfile_0_3 & ap_sync_channel_write_weight_regfile_0_2 & ap_sync_channel_write_weight_regfile_0_1 & ap_sync_channel_write_weight_regfile_0_0);
+assign runSIMD_bitvec_U0_output_l1_0_6_full_n = output_l1_0_6_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_0_7_full_n = output_l1_0_7_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_0_full_n = output_l1_1_0_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_1_full_n = output_l1_1_1_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_2_full_n = output_l1_1_2_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_3_full_n = output_l1_1_3_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_4_full_n = output_l1_1_4_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_5_full_n = output_l1_1_5_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_6_full_n = output_l1_1_6_i_full_n;
+
+assign runSIMD_bitvec_U0_output_l1_1_7_full_n = output_l1_1_7_i_full_n;
+
+assign runSIMD_bitvec_U0_start_full_n = 1'b1;
+
+assign runSIMD_bitvec_U0_start_write = 1'b0;
+
+assign runWeight2Reg_U0_ap_continue = (ap_sync_channel_write_weight_regfile_7_7 & ap_sync_channel_write_weight_regfile_7_6 & ap_sync_channel_write_weight_regfile_7_5 & ap_sync_channel_write_weight_regfile_7_4 & ap_sync_channel_write_weight_regfile_7_3 & ap_sync_channel_write_weight_regfile_7_2 & ap_sync_channel_write_weight_regfile_7_1 & ap_sync_channel_write_weight_regfile_7_0 & ap_sync_channel_write_weight_regfile_6_7 & ap_sync_channel_write_weight_regfile_6_6 & ap_sync_channel_write_weight_regfile_6_5 & ap_sync_channel_write_weight_regfile_6_4 & ap_sync_channel_write_weight_regfile_6_3 & ap_sync_channel_write_weight_regfile_6_2 & ap_sync_channel_write_weight_regfile_6_1 & ap_sync_channel_write_weight_regfile_6_0 & ap_sync_channel_write_weight_regfile_5_7 & ap_sync_channel_write_weight_regfile_5_6 & ap_sync_channel_write_weight_regfile_5_5 & ap_sync_channel_write_weight_regfile_5_4 & ap_sync_channel_write_weight_regfile_5_3 & ap_sync_channel_write_weight_regfile_5_2 & ap_sync_channel_write_weight_regfile_5_1 & ap_sync_channel_write_weight_regfile_5_0 & ap_sync_channel_write_weight_regfile_4_7 & ap_sync_channel_write_weight_regfile_4_6 & ap_sync_channel_write_weight_regfile_4_5 & ap_sync_channel_write_weight_regfile_4_4 & ap_sync_channel_write_weight_regfile_4_3 & ap_sync_channel_write_weight_regfile_4_2 & ap_sync_channel_write_weight_regfile_4_1 & ap_sync_channel_write_weight_regfile_4_0 & ap_sync_channel_write_weight_regfile_3_7 & ap_sync_channel_write_weight_regfile_3_6 & ap_sync_channel_write_weight_regfile_3_5 & ap_sync_channel_write_weight_regfile_3_4 & ap_sync_channel_write_weight_regfile_3_3 & ap_sync_channel_write_weight_regfile_3_2 & ap_sync_channel_write_weight_regfile_3_1 & ap_sync_channel_write_weight_regfile_3_0 & ap_sync_channel_write_weight_regfile_2_7 & ap_sync_channel_write_weight_regfile_2_6 & ap_sync_channel_write_weight_regfile_2_5 & ap_sync_channel_write_weight_regfile_2_4 & ap_sync_channel_write_weight_regfile_2_3 & ap_sync_channel_write_weight_regfile_2_2 & ap_sync_channel_write_weight_regfile_2_1 & ap_sync_channel_write_weight_regfile_2_0 & ap_sync_channel_write_weight_regfile_1_7 & ap_sync_channel_write_weight_regfile_1_6 & ap_sync_channel_write_weight_regfile_1_5 & ap_sync_channel_write_weight_regfile_1_4 & ap_sync_channel_write_weight_regfile_1_3 & ap_sync_channel_write_weight_regfile_1_2 & ap_sync_channel_write_weight_regfile_1_1 & ap_sync_channel_write_weight_regfile_1_0 & ap_sync_channel_write_weight_regfile_0_7 & ap_sync_channel_write_weight_regfile_0_6 & ap_sync_channel_write_weight_regfile_0_5 & ap_sync_channel_write_weight_regfile_0_4 & ap_sync_channel_write_weight_regfile_0_3 & ap_sync_channel_write_weight_regfile_0_2 & ap_sync_channel_write_weight_regfile_0_1 & ap_sync_channel_write_weight_regfile_0_0);
 
 assign runWeight2Reg_U0_ap_start = ((ap_sync_reg_runWeight2Reg_U0_ap_ready ^ 1'b1) & ap_start);
 
@@ -2049,6 +8632,34 @@ assign runWeight2Reg_U0_start_write = 1'b0;
 assign runWeight2Reg_U0_weight_l2_0_full_n = weight_l2_0_empty_n;
 
 assign runWeight2Reg_U0_weight_l2_0_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_1_full_n = weight_l2_1_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_1_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_2_full_n = weight_l2_2_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_2_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_3_full_n = weight_l2_3_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_3_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_4_full_n = weight_l2_4_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_4_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_5_full_n = weight_l2_5_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_5_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_6_full_n = weight_l2_6_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_6_write = 1'b0;
+
+assign runWeight2Reg_U0_weight_l2_7_full_n = weight_l2_7_empty_n;
+
+assign runWeight2Reg_U0_weight_l2_7_write = 1'b0;
 
 assign weight_l2_0_address0 = runWeight2Reg_U0_weight_l2_0_address0;
 
@@ -2067,5 +8678,131 @@ assign weight_l2_0_read = runWeight2Reg_U0_weight_l2_0_write;
 assign weight_l2_0_we0 = 1'b0;
 
 assign weight_l2_0_we1 = 1'b0;
+
+assign weight_l2_1_address0 = runWeight2Reg_U0_weight_l2_1_address0;
+
+assign weight_l2_1_address1 = 12'd0;
+
+assign weight_l2_1_ce0 = runWeight2Reg_U0_weight_l2_1_ce0;
+
+assign weight_l2_1_ce1 = 1'b0;
+
+assign weight_l2_1_d0 = 8'd0;
+
+assign weight_l2_1_d1 = 8'd0;
+
+assign weight_l2_1_read = runWeight2Reg_U0_weight_l2_1_write;
+
+assign weight_l2_1_we0 = 1'b0;
+
+assign weight_l2_1_we1 = 1'b0;
+
+assign weight_l2_2_address0 = runWeight2Reg_U0_weight_l2_2_address0;
+
+assign weight_l2_2_address1 = 12'd0;
+
+assign weight_l2_2_ce0 = runWeight2Reg_U0_weight_l2_2_ce0;
+
+assign weight_l2_2_ce1 = 1'b0;
+
+assign weight_l2_2_d0 = 8'd0;
+
+assign weight_l2_2_d1 = 8'd0;
+
+assign weight_l2_2_read = runWeight2Reg_U0_weight_l2_2_write;
+
+assign weight_l2_2_we0 = 1'b0;
+
+assign weight_l2_2_we1 = 1'b0;
+
+assign weight_l2_3_address0 = runWeight2Reg_U0_weight_l2_3_address0;
+
+assign weight_l2_3_address1 = 12'd0;
+
+assign weight_l2_3_ce0 = runWeight2Reg_U0_weight_l2_3_ce0;
+
+assign weight_l2_3_ce1 = 1'b0;
+
+assign weight_l2_3_d0 = 8'd0;
+
+assign weight_l2_3_d1 = 8'd0;
+
+assign weight_l2_3_read = runWeight2Reg_U0_weight_l2_3_write;
+
+assign weight_l2_3_we0 = 1'b0;
+
+assign weight_l2_3_we1 = 1'b0;
+
+assign weight_l2_4_address0 = runWeight2Reg_U0_weight_l2_4_address0;
+
+assign weight_l2_4_address1 = 12'd0;
+
+assign weight_l2_4_ce0 = runWeight2Reg_U0_weight_l2_4_ce0;
+
+assign weight_l2_4_ce1 = 1'b0;
+
+assign weight_l2_4_d0 = 8'd0;
+
+assign weight_l2_4_d1 = 8'd0;
+
+assign weight_l2_4_read = runWeight2Reg_U0_weight_l2_4_write;
+
+assign weight_l2_4_we0 = 1'b0;
+
+assign weight_l2_4_we1 = 1'b0;
+
+assign weight_l2_5_address0 = runWeight2Reg_U0_weight_l2_5_address0;
+
+assign weight_l2_5_address1 = 12'd0;
+
+assign weight_l2_5_ce0 = runWeight2Reg_U0_weight_l2_5_ce0;
+
+assign weight_l2_5_ce1 = 1'b0;
+
+assign weight_l2_5_d0 = 8'd0;
+
+assign weight_l2_5_d1 = 8'd0;
+
+assign weight_l2_5_read = runWeight2Reg_U0_weight_l2_5_write;
+
+assign weight_l2_5_we0 = 1'b0;
+
+assign weight_l2_5_we1 = 1'b0;
+
+assign weight_l2_6_address0 = runWeight2Reg_U0_weight_l2_6_address0;
+
+assign weight_l2_6_address1 = 12'd0;
+
+assign weight_l2_6_ce0 = runWeight2Reg_U0_weight_l2_6_ce0;
+
+assign weight_l2_6_ce1 = 1'b0;
+
+assign weight_l2_6_d0 = 8'd0;
+
+assign weight_l2_6_d1 = 8'd0;
+
+assign weight_l2_6_read = runWeight2Reg_U0_weight_l2_6_write;
+
+assign weight_l2_6_we0 = 1'b0;
+
+assign weight_l2_6_we1 = 1'b0;
+
+assign weight_l2_7_address0 = runWeight2Reg_U0_weight_l2_7_address0;
+
+assign weight_l2_7_address1 = 12'd0;
+
+assign weight_l2_7_ce0 = runWeight2Reg_U0_weight_l2_7_ce0;
+
+assign weight_l2_7_ce1 = 1'b0;
+
+assign weight_l2_7_d0 = 8'd0;
+
+assign weight_l2_7_d1 = 8'd0;
+
+assign weight_l2_7_read = runWeight2Reg_U0_weight_l2_7_write;
+
+assign weight_l2_7_we0 = 1'b0;
+
+assign weight_l2_7_we1 = 1'b0;
 
 endmodule //Conv_sysarr_dataflow_in_loop_LOOP_S_OUTER

@@ -2,10 +2,10 @@
 # Vitis Analyzer v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # 
-# Start of session at: Sat Mar 19 02:46:10 2022
-# Process ID: 14150
+# Start of session at: Sun Mar 27 18:18:01 2022
+# Process ID: 13678
 # Current directory: /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu
-# Command line: vitis_analyzer conv.hw_emu.xclbin.link_summary
+# Command line: vitis_analyzer conv.hw_emu.xclbin.run_summary
 # Log file: /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.log
 # Journal file: /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.jou
 #-----------------------------------------------------------

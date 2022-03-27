@@ -157,39 +157,9 @@
                         					
                     </folderInfo>
                     					
-                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1052271600.692894431" name="test.cpp" rcbsApplicability="disable" resourcePath="testbench/test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038.2060248866">
-                        						
-                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038.2060248866" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038">
-                            							
-                            <option id="gnu.cpp.compiler.option.preprocessor.def.461608946" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-                            							
-                            <option id="gnu.cpp.compiler.option.include.paths.7773998" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
-                                							
-                            </option>
-                            							
-                            <option id="gnu.cpp.compiler.option.other.other.481954470" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
-                            							
-                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1202033944" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-                            						
-                        </tool>
-                        					
-                    </fileInfo>
-                    					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|solution2|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -335,39 +305,9 @@
                         					
                     </folderInfo>
                     					
-                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.227281044.863603739" name="test.cpp" rcbsApplicability="disable" resourcePath="testbench/test.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648.1169315384">
-                        						
-                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648.1169315384" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648">
-                            							
-                            <option id="gnu.cpp.compiler.option.preprocessor.def.1928891217" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
-                            							
-                            <option id="gnu.cpp.compiler.option.include.paths.2115898026" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/workspace/hls_test"/>
-                                								
-                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
-                                							
-                            </option>
-                            							
-                            <option id="gnu.cpp.compiler.option.other.other.953315692" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
-                            							
-                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.307515454" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
-                            						
-                        </tool>
-                        					
-                    </fileInfo>
-                    					
                     <sourceEntries>
                         						
-                        <entry excluding=".apc|.reference|.settings|solution1|solution2|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+                        <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
                         					
                     </sourceEntries>
                     				
@@ -387,11 +327,15 @@
         	
     </storageModule>
     	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope"/>
+    	
     <storageModule moduleId="scannerConfiguration">
         		
         <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
         		
-        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1052271600;cdt.managedbuild.config.gnu.exe.debug.1052271600.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038;cdt.managedbuild.tool.gnu.cpp.compiler.input.1665658656">
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.227281044;cdt.managedbuild.config.gnu.exe.release.227281044.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.488936171;cdt.managedbuild.tool.gnu.c.compiler.input.1466310493">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
             		
@@ -409,16 +353,12 @@
             		
         </scannerConfigBuildInfo>
         		
-        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.227281044;cdt.managedbuild.config.gnu.exe.release.227281044.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.488936171;cdt.managedbuild.tool.gnu.c.compiler.input.1466310493">
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1052271600;cdt.managedbuild.config.gnu.exe.debug.1052271600.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038;cdt.managedbuild.tool.gnu.cpp.compiler.input.1665658656">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
             		
         </scannerConfigBuildInfo>
         	
     </storageModule>
-    	
-    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
-    	
-    <storageModule moduleId="refreshScope"/>
     
 </cproject>

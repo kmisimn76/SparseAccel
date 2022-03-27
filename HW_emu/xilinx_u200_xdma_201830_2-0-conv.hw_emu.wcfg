@@ -10005,10 +10005,6 @@
                            <obj_property name="label">p_read64</obj_property>
                            <obj_property name="DisplayName">label</obj_property>
                         </wvobject>
-                        <wvobject db_ref_id="1" type="array" fp_name="/emu_wrapper/emu_i/Conv_sysarr_1/inst/grp_dataflow_parent_loop_proc24_fu_907/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_356/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runSIMD_bitvec_U0/p_read65">
-                           <obj_property name="label">p_read65</obj_property>
-                           <obj_property name="DisplayName">label</obj_property>
-                        </wvobject>
                         <wvobject db_ref_id="1" type="array" fp_name="/emu_wrapper/emu_i/Conv_sysarr_1/inst/grp_dataflow_parent_loop_proc24_fu_907/dataflow_parent_loop_proc22_U0/dataflow_parent_loop_proc21_U0/dataflow_parent_loop_proc18_U0/dataflow_parent_loop_proc17_U0/dataflow_parent_loop_proc_U0/dataflow_in_loop_LOOP_S_MOST_OUTER_U0/LOOP_K_OUTER_proc_U0/grp_LOOP_K_OUTER_proc_wrapper_fu_356/dataflow_parent_loop_proc23_U0/dataflow_parent_loop_proc20_U0/dataflow_parent_loop_proc19_U0/dataflow_parent_loop_proc16_U0/dataflow_parent_loop_proc15_U0/dataflow_in_loop_LOOP_S_OUTER_U0/runSIMD_bitvec_U0/output_l1_0_0_d0">
                            <obj_property name="label">output_l1_0_0_d0</obj_property>
                            <obj_property name="DisplayName">label</obj_property>

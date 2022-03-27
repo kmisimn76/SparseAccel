@@ -59,7 +59,7 @@
         <value string="solution1"/>
     </name>
     <project>
-        <value string="Systolic_Array_PCNN_based"/>
+        <value string="Sparse_Systolic_Array_TEST_PCNN_based"/>
     </project>
     <flowTarget value="vivado"/>
     <targetInfo>
@@ -70,7 +70,7 @@
         <library name="DefaultPlatform" value="xilinx/virtexuplus/virtexuplus_fpv7"/>
     </libraryList>
     <clockList>
-        <clock name="default" default="false" period="10"/>
+        <clock default="false" name="default" period="10"/>
     </clockList>
 </solution>
 

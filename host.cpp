@@ -81,9 +81,10 @@ unsigned int weight_buf_size = 0;
 unsigned int in_buf_size = 0;
 unsigned int out_buf_size = 0;
 
-//float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
+//float sparsity = 0.0; //eltwise sparsity: expected group 4 sparsity = 0.6561
+float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
 //float sparsity = 0.95; //eltwise sparsity: expected group 4 sparsity = 0.8145
-float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
+//float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
 const char* knl_name_conv = "Conv_sysarr";
 char *kernel_file_name;
 /*cl_uint num_cl_data->devices = 0;
@@ -103,6 +104,8 @@ std::vector<cl::Event> events;
 
 DPTYPE* weight;
 DPTYPE* data;
+DPTYPE* weight_original;
+DPTYPE* data_original;
 DPTYPE* bias;
 MACTYPE* output;
 MACTYPE* gold;
@@ -118,6 +121,7 @@ void conv_gold()
 				int bias_ptr = k;
 				//int bias_ptr = (k%VEC_SIZE)*(param.K/VEC_SIZE) + (k/VEC_SIZE);
 				gold[output_ptr] = bias[bias_ptr];
+                //if(k==0&&h==0&&w==3) printf("bias %d\n", bias[bias_ptr]);
 				for(int c=0;c<param.C;c++){
 					for(int r=0;r<param.RS;r++){
 						for(int s=0;s<param.RS;s++){
@@ -127,6 +131,7 @@ void conv_gold()
 							//int weight_ptr = ((k/VEC_SIZE)*param.C*param.RS*param.RS + c*param.RS*param.RS + r*param.RS + s)*VEC_SIZE + k%VEC_SIZE;
 							// INT32 accumulation
 							gold[output_ptr] += data[data_ptr] * weight[weight_ptr];
+                //if(k==0&&h==0&&w==3) printf("%d %d\n", data[data_ptr] , weight[weight_ptr]);
 
 							// INT8 accumulation
 							/*gold[output_ptr] = (char)((char)gold[output_ptr] + (char)(data[data_ptr] * weight[weight_ptr])); // for Quantization
@@ -487,8 +492,8 @@ void set_param_data(int run_case)
 	else if(run_case==-2){
 	param.K = 32;
 	param.C = 64;
-	param.WH = 14;//16;
-	param.WH_in = 16;//18;
+	param.WH = 16;
+	param.WH_in = 18;
 	param.RS = 3;
 	param.L2_TILENUM_K = 1; ///
 	param.L2_TILENUM_C = 2;
@@ -496,32 +501,34 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_H = 1;
 	param.L2_TILENUM_R = 1;
 	param.L2_TILENUM_S = 1;
-	param.K_L2 = 32;
-	param.C_L2 = 32;
-	param.W_L2 = 14;//16;
-	param.H_L2 = 14;//16;
-	param.W_in_L2 = 16;//18; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
-	param.H_in_L2 = 16;//18;
-	param.R_L2 = 3;
-	param.S_L2 = 3;
+
 	param.L1_TILENUM_K = 32/ARRAY_K; ///
 	param.L1_TILENUM_C = 32/ARRAY_C;
 	param.L1_TILENUM_W = 2;
 	param.L1_TILENUM_H = 2;
 	param.L1_TILENUM_R = 3;
 	param.L1_TILENUM_S = 3;
-	param.K_L1 = ARRAY_K;
-	param.C_L1 = ARRAY_C;
-	param.W_L1 = 7;//8;
-	param.H_L1 = 7;//8;
-	param.W_in_L1 = 7;//8; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	param.H_in_L1 = 7;//8;
-	param.R_L1 = 1;
-	param.S_L1 = 1;
 	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
 	param.TILESIZE_H = 8;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
+
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = param.TILESIZE_W;
+	param.H_L1 = param.TILESIZE_H;
+	param.R_L1 = param.TILESIZE_R;
+	param.S_L1 = param.TILESIZE_S;
+	param.W_in_L1 = param.TILESIZE_W + param.S_L1-1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = param.TILESIZE_H + param.R_L1-1;
+	param.K_L2 = param.K_L1 * param.L1_TILENUM_K;
+	param.C_L2 = param.C_L1 * param.L1_TILENUM_C;
+	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
+	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
+	param.R_L2 = param.R_L1*param.L1_TILENUM_R;
+	param.S_L2 = param.S_L1*param.L1_TILENUM_S;
+	param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = param.H_L2 + param.R_L2-1;
 	}
 	else if(run_case==-3){
 	param.K = 512;
@@ -610,28 +617,45 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
-//#define RAND_INPUT
+#define RAND_INPUT
 #define SPARSIFYING
 #ifdef RAND_INPUT
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
     for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= rand()%256-128;
     for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= rand()%256-128;
 #else
-    for(int k = 0; k < param.K; k++)								bias[k]		= 1;
-    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		weight[k]	= 1;
-    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		data[k]		= 1;
+    for(int k = 0; k < param.K; k++)								{ bias[k]		= rand()%256-128; bias[k]		= 1; }
+    for(int k = 0; k < param.K*param.C*param.RS*param.RS; k++)		{ weight[k]	= rand()%256-128; weight[k]	= 1; }
+    for(int k = 0; k < param.C*param.WH_in*param.WH_in; k++)		{ data[k]		= rand()%256-128; data[k]		= 1; }
 #endif
 #ifdef SPARSIFYING
     printf("Data ");
     sparsify<DPTYPE>(data, param.C*param.WH_in*param.WH_in, sparsity);
-    printf("Weight ");
-    sparsify<DPTYPE>(weight, param.K*param.C*param.RS*param.RS, sparsity);
+    //printf("Weight ");
+    //sparsify<DPTYPE>(weight, param.K*param.C*param.RS*param.RS, sparsity);
 #endif
 
     weight_buf_size = param.K * param.C * param.RS * param.RS;
     bias_buf_size = param.K;
     in_buf_size = param.C * param.WH_in * param.WH_in;
     out_buf_size = param.K * param.WH * param.WH;
+
+    weight_original = (DPTYPE*)malloc(sizeof(DPTYPE)*weight_buf_size);
+    data_original = (DPTYPE*)malloc(sizeof(DPTYPE)*in_buf_size);
+    memcpy(weight_original, weight, sizeof(DPTYPE)*weight_buf_size);
+    memcpy(data_original, data, sizeof(DPTYPE)*in_buf_size);
+
+                    /*printf("original 001\n");
+                    int wh = 1;
+                    int ko = 0, ki = 0;
+                    for(int r=0; r<param.RS; r++) {
+                        for(int s=0; s<param.RS; s++) {
+                            for(int c=0; c<param.C; c++) {
+                                printf("%d %d\n", data_original[c*param.WH_in*param.WH_in+(r+wh/param.WH)*param.WH_in+(s+wh%param.WH)], weight_original[(ko*VEC_SIZE*ki)*param.C*param.RS*param.RS + c*param.RS*param.RS + r*param.RS + s]);
+
+                            }
+                        }
+                    }*/
 
 	printf("===Kernel Info(case %d)===\n", run_case);
 	printf("K,C,WH,RS : %d %d %d %d\n", param.K, param.C, param.WH, param.RS);
@@ -686,7 +710,7 @@ void reorder_params() {
 	// input
 	DPTYPE* data_origin = new DPTYPE[in_buf_size]();
 	memcpy(data_origin, data, in_buf_size * sizeof(DPTYPE));
-	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) { // Inner channel
+	/*for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) { // Inner channel
 	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
 	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
 	for (unsigned int co = 0; co < param.C_L2/VEC_SIZE; co++) {
@@ -702,7 +726,22 @@ void reorder_params() {
 	}
 	}
 	}
+	}*/
+	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) { // Inner channel
+	for (unsigned int co = 0; co < param.C_L2/VEC_SIZE; co++) {
+		for(unsigned int wh = 0; wh < param.WH_in*param.WH_in; wh++) {
+				for(unsigned int ci = 0; ci < VEC_SIZE; ci++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
+					//unsigned int origin_chw = ((cmo*(param.C_L2)+(co*VEC_SIZE+ci))*param.WH_in*param.WH_in + (hmo*param.H_in_L2+h)*param.WH_in + (wmo*param.W_in_L2+w));
+					//unsigned int global_chw = ((cmo*(param.C_L2/VEC_SIZE)+co)*param.WH_in*param.WH_in + (hmo*param.H_in_L2+h)*param.WH_in + (wmo*param.W_in_L2+w))*VEC_SIZE + ci;
+					unsigned int origin_chw = ((cmo*(param.C_L2)+(co*VEC_SIZE+ci))*param.WH_in*param.WH_in + wh);
+					unsigned int global_chw = ((cmo*(param.C_L2/VEC_SIZE)+co)*param.WH_in*param.WH_in + wh)*VEC_SIZE + ci;
+					data[global_chw] = data_origin[origin_chw];
+				}
+		}
 	}
+	}
+
+
 	delete data_origin;
 }
 void reorder_output()
@@ -813,7 +852,18 @@ void score()
 				int v = ki;
 				int out = output[ptr];
 				if(out != gold[ptr])
-                { printf("Error(%d or %d): %d (gold %d), # of correct: %d\n", ptr, ptr, out, gold[l], cnt);  exit(1); }
+                {
+                    printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, ko*VEC_SIZE+ki, wh/param.WH, wh%param.WH, out, gold[l], cnt);
+                    printf("err\n");
+                    for(int c=0; c<param.C; c++) {
+                        for(int r=0; r<param.RS; r++) {
+                            for(int s=0; s<param.RS; s++) {
+                                printf("%d %d\n", data_original[c*param.WH_in*param.WH_in+(r+wh/param.WH)*param.WH_in+(s+wh%param.WH)], weight_original[(ko*VEC_SIZE*ki)*param.C*param.RS*param.RS + c*param.RS*param.RS + r*param.RS + s]);
+
+                            }
+                        }
+                    }
+                    exit(1); }
                 cnt ++;
 			}
 		}
@@ -864,4 +914,6 @@ void cleanup()
 	alignedFree(data);
 	alignedFree(bias);
 	alignedFree(output);
+	alignedFree(weight_original);
+	alignedFree(data_original);
 }
