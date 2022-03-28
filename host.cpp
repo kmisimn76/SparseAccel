@@ -82,9 +82,10 @@ unsigned int in_buf_size = 0;
 unsigned int out_buf_size = 0;
 
 //float sparsity = 0.0; //eltwise sparsity: expected group 4 sparsity = 0.6561
-float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
+//float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
 //float sparsity = 0.95; //eltwise sparsity: expected group 4 sparsity = 0.8145
-//float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
+float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
+int groupsize[3] = {1,1,4}; //W,H,C
 const char* knl_name_conv = "Conv_sysarr";
 char *kernel_file_name;
 /*cl_uint num_cl_data->devices = 0;
@@ -164,7 +165,27 @@ void sparsify(T* _data, int _len, float _sparsity)
     int cnt = 0;
     for(int i=0;i<_len;i++)
         if(_data[i]==.0) cnt++;
-    printf("sparsified rate: %lf\n", (float)cnt / (float)_len);
+    printf("Eltwise sparsified rate: %lf\n", (float)cnt / (float)_len);
+
+//int groupsize[3] = {1,1,4}; //W,H,C
+    // input group sparsity
+    cnt = 0;
+    for(int c=0; c<param.C/groupsize[2];c++) {
+        for(int h=0; h<param.WH/groupsize[1];h++) {
+            for(int w=0; w<param.WH/groupsize[0];w++) {
+                bool non_zero = false;
+                for(int ci=0; ci<groupsize[2];ci++) {
+                    for(int hi=0; hi<groupsize[1];hi++) {
+                        for(int wi=0; wi<groupsize[0];wi++) {
+                            if(_data[(c*groupsize[2]+ci)*(param.WH*param.WH) + (h*groupsize[1]+hi)*(param.WH) + (w*groupsize[0]+wi)]!=.0) non_zero = true;
+                        }
+                    }
+                }
+                if(!non_zero) cnt++;
+            }
+        }
+    }
+    printf("Group sparsified rate: %lf\n", (float)cnt / (float)((param.C/groupsize[2])*(param.WH/groupsize[1])*(param.WH/groupsize[0])));
     delete[] mask;
 }
 void ocl_initialize();
@@ -492,8 +513,8 @@ void set_param_data(int run_case)
 	else if(run_case==-2){
 	param.K = 32;
 	param.C = 64;
-	param.WH = 16;
-	param.WH_in = 18;
+	param.WH = 14;
+	param.WH_in = 16;
 	param.RS = 3;
 	param.L2_TILENUM_K = 1; ///
 	param.L2_TILENUM_C = 2;
@@ -515,16 +536,16 @@ void set_param_data(int run_case)
 
 	param.K_L1 = ARRAY_K;
 	param.C_L1 = ARRAY_C;
-	param.W_L1 = param.TILESIZE_W;
-	param.H_L1 = param.TILESIZE_H;
+	param.W_L1 = 7;//param.TILESIZE_W;
+	param.H_L1 = 7;//param.TILESIZE_H;
 	param.R_L1 = param.TILESIZE_R;
 	param.S_L1 = param.TILESIZE_S;
-	param.W_in_L1 = param.TILESIZE_W + param.S_L1-1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
-	param.H_in_L1 = param.TILESIZE_H + param.R_L1-1;
+	param.W_in_L1 = 7;//param.TILESIZE_W + param.S_L1-1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = 7;//param.TILESIZE_H + param.R_L1-1;
 	param.K_L2 = param.K_L1 * param.L1_TILENUM_K;
 	param.C_L2 = param.C_L1 * param.L1_TILENUM_C;
-	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
-	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
+	param.W_L2 = 14;//param.W_L1 * param.L1_TILENUM_W;
+	param.H_L2 = 14;//param.H_L1 * param.L1_TILENUM_H;
 	param.R_L2 = param.R_L1*param.L1_TILENUM_R;
 	param.S_L2 = param.S_L1*param.L1_TILENUM_S;
 	param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride

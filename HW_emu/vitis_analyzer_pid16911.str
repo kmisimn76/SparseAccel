@@ -1,0 +1,88 @@
+/*
+
+Xilinx Vitis Analyzer v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:35 MDT 2020
+
+Process ID (PID): 16911
+License: Customer
+
+Current time: 	Mon Mar 28 20:52:54 KST 2022
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Ubuntu
+OS Version: 5.4.0-104-generic
+OS Architecture: amd64
+Available processors (cores): 16
+
+Display: rabbit:11.0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/lnx64/jre9.0.4
+Java executable location: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sumin
+User home directory: /home/sumin
+User working directory: /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu
+User country: 	US
+User language: 	en
+User locale: 	en_US
+
+RDI_BASEROOT: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis
+HDI_APPROOT: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+RDI_DATADIR: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/data
+RDI_BINDIR: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin
+
+Vitis Analyzer preferences file location: /home/sumin/.Xilinx/vitis_analyzer/2020.1/vitis_analyzer.xml
+Vitis Analyzer preferences directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/
+Vitis Analyzer layouts directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/data/layouts
+PlanAhead jar file location: 	/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lib/classes/frank.jar
+Vitis Analyzer log file location: 	/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.log
+Vitis Analyzer journal file location: 	/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/vitis_analyzer.jou
+Engine tmp dir: 	./.Xil/vitis_analyzer-16911-rabbit
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_PLANAHEAD: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_SDK: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_VITIS: /home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1
+XILINX_VIVADO: /home/sumin/tools/Xilinx/Vivado/Vivado/2020.1
+XILINX_VIVADO_HLS: /home/sumin/tools/Xilinx_vitis/Vitis/Vivado/2020.1
+XILINX_XRT: /opt/xilinx/xrt
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,451 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// bz (ct):  Open Files : addNotify
+dismissDialog("Open Files"); // bz (ct)
+// Tcl Command: 'create_project dummy'
+// TclEventType: PROJECT_NEW
+// Opening Summary: Type{value=LINK_SUMMARY},SummaryFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/conv.hw_emu.xclbin.link_summary}
+// bz (ct):  Open Summary : addNotify
+// Tcl Message: create_project dummy 
+dismissDialog("Open Summary"); // bz (ct)
+// Opening Report: Type{value=BUILD_SUMMARY_REPORT},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/conv.hw_emu.xclbin.link_summary}
+// [GUI Memory]: 105 MB (+107910kb) [00:00:05]
+// [Engine Memory]: 1,449 MB (+1367767kb) [00:00:05]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,461 MB. GUI used memory: 55 MB. Current time: 3/28/22, 8:52:55 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+selectTree("Report Navigator Tree", "[root, Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}]", 11, false); // b (J, ct)
+// Opening Report: Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw_emu.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}
+// bz (ct):  Open HLS Synthesis Report : addNotify
+dismissDialog("Open HLS Synthesis Report"); // bz (ct)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,480 MB. GUI used memory: 57 MB. Current time: 3/28/22, 9:22:55 PM KST
