@@ -5,8 +5,8 @@
 ############################################################
 open_project Sparse_Systolic_Array_TEST_PCNN_based
 set_top Conv_sysarr
-add_files Sparse_Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp
 add_files Sparse_Systolic_Array_TEST_PCNN_based/hw_param.h
+add_files Sparse_Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xcu200-fsgd2104-2-e}
 create_clock -period 10 -name default

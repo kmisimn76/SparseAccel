@@ -259,7 +259,7 @@ int main(int argc, char** argv)
     int len = get_layer_info("./layer_info.txt");
 
     time = 0;
-	int run_case = -2;
+	int run_case = -3;
     //for(int i=0, run_case=0;i<13;i++, run_case++){
         int i = 5;
     //    run_case = 5;
@@ -529,8 +529,8 @@ void set_param_data(int run_case)
 	param.L1_TILENUM_H = 2;
 	param.L1_TILENUM_R = 3;
 	param.L1_TILENUM_S = 3;
-	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
-	param.TILESIZE_H = 8;
+	param.TILESIZE_W = 7; //// is allowed(not matched with W_L1)
+	param.TILESIZE_H = 7;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 
@@ -552,6 +552,48 @@ void set_param_data(int run_case)
 	param.H_in_L2 = param.H_L2 + param.R_L2-1;
 	}
 	else if(run_case==-3){
+	param.K = 32;
+	param.C = 64;
+	param.WH = 16;
+	param.WH_in = 18;
+	param.RS = 3;
+	param.L2_TILENUM_K = 1; ///
+	param.L2_TILENUM_C = 2;
+	param.L2_TILENUM_W = 1;
+	param.L2_TILENUM_H = 1;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+
+	param.L1_TILENUM_K = 32/ARRAY_K; ///
+	param.L1_TILENUM_C = 32/ARRAY_C;
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
+	param.TILESIZE_H = 8;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = param.TILESIZE_W;
+	param.H_L1 = param.TILESIZE_H;
+	param.R_L1 = param.TILESIZE_R;
+	param.S_L1 = param.TILESIZE_S;
+	param.W_in_L1 = param.TILESIZE_W + param.S_L1-1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = param.TILESIZE_H + param.R_L1-1;
+	param.K_L2 = param.K_L1 * param.L1_TILENUM_K;
+	param.C_L2 = param.C_L1 * param.L1_TILENUM_C;
+	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
+	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
+	param.R_L2 = param.R_L1*param.L1_TILENUM_R;
+	param.S_L2 = param.S_L1*param.L1_TILENUM_S;
+	param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = param.H_L2 + param.R_L2-1;
+	}
+
+	else if(run_case==-4){
 	param.K = 512;
 	param.C = 512;
 	param.WH = 28;
@@ -638,7 +680,7 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
-#define RAND_INPUT
+//#define RAND_INPUT
 #define SPARSIFYING
 #ifdef RAND_INPUT
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
@@ -875,7 +917,7 @@ void score()
 				if(out != gold[ptr])
                 {
                     printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, ko*VEC_SIZE+ki, wh/param.WH, wh%param.WH, out, gold[l], cnt);
-                    printf("err\n");
+                    /*printf("err\n");
                     for(int c=0; c<param.C; c++) {
                         for(int r=0; r<param.RS; r++) {
                             for(int s=0; s<param.RS; s++) {
@@ -883,7 +925,7 @@ void score()
 
                             }
                         }
-                    }
+                    }*/
                     exit(1); }
                 cnt ++;
 			}

@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sun Mar 28 16:25:07 2021",
- "timestampMillis": "1616916307913",
+ "dateTimestamp": "Mon Mar 29 14:18:10 2021",
+ "timestampMillis": "1616995090397",
  "buildStep": {
-  "cmdId": "3e820062-820d-41c3-ac39-de4b3fecdb1e",
+  "cmdId": "1644cc66-a803-4fa0-823f-71b9ef798aa8",
   "name": "v++",
   "logFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/conv.hw_emu.steps.log",
   "commandLine": "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t hw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g -c -k Conv_sysarr --config config_sp -I./.. -oconv.hw_emu.xo ./../conv_sysarr_dbbuf.cpp -j 12 ",
@@ -47,10 +47,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun Mar 28 16:25:07 2021",
- "timestampMillis": "1616916307913",
+ "dateTimestamp": "Mon Mar 29 14:18:10 2021",
+ "timestampMillis": "1616995090397",
  "status": {
-  "cmdId": "3e820062-820d-41c3-ac39-de4b3fecdb1e",
+  "cmdId": "1644cc66-a803-4fa0-823f-71b9ef798aa8",
   "state": "CS_RUNNING"
  }
 }
@@ -58,8 +58,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sun Mar 28 16:25:23 2021",
- "timestampMillis": "1616916323594",
+ "dateTimestamp": "Mon Mar 29 14:18:26 2021",
+ "timestampMillis": "1616995106020",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u200_xdma_201830_2.xpfm",
   "hardwareDsa": "xilinx_u200_xdma_201830_2.dsa",
@@ -91,10 +91,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sun Mar 28 16:25:23 2021",
- "timestampMillis": "1616916323596",
+ "dateTimestamp": "Mon Mar 29 14:18:26 2021",
+ "timestampMillis": "1616995106023",
  "buildStep": {
-  "cmdId": "1daece33-8bd1-40e8-a465-cc7eff554fd8",
+  "cmdId": "15580865-2735-405a-bc06-079d56ec5777",
   "name": "vitis_hls",
   "logFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/vitis_hls.log",
   "commandLine": "vitis_hls -f /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr.tcl -messageDb vitis_hls.pb",
@@ -113,10 +113,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun Mar 28 16:25:23 2021",
- "timestampMillis": "1616916323597",
+ "dateTimestamp": "Mon Mar 29 14:18:26 2021",
+ "timestampMillis": "1616995106023",
  "status": {
-  "cmdId": "1daece33-8bd1-40e8-a465-cc7eff554fd8",
+  "cmdId": "15580865-2735-405a-bc06-079d56ec5777",
   "state": "CS_RUNNING"
  }
 }
@@ -124,10 +124,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405404",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204639",
  "status": {
-  "cmdId": "1daece33-8bd1-40e8-a465-cc7eff554fd8",
+  "cmdId": "15580865-2735-405a-bc06-079d56ec5777",
   "state": "CS_PASSED"
  }
 }
@@ -135,8 +135,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405416",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204654",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml",
   "name": "Conv_sysarr",
@@ -148,8 +148,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405417",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204654",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/.message_syn.xml",
   "name": "Conv_sysarr",
@@ -161,8 +161,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405417",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204654",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/hls_reports/Conv_sysarr_csynth.rpt",
   "name": "Conv_sysarr",
@@ -174,8 +174,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405418",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204654",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/conv.hw_emu/Conv_sysarr/Conv_sysarr/solution/syn/report/Conv_sysarr_csynth.xml",
   "name": "Conv_sysarr",
@@ -187,8 +187,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405458",
+ "dateTimestamp": "Mon Mar 29 14:20:04 2021",
+ "timestampMillis": "1616995204717",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/system_estimate_conv.hw_emu.xtxt",
   "name": "",
@@ -200,8 +200,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405942",
+ "dateTimestamp": "Mon Mar 29 14:20:05 2021",
+ "timestampMillis": "1616995205308",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/reports/conv.hw_emu/v++_compile_conv.hw_emu_guidance.html",
   "name": "",
@@ -213,8 +213,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405943",
+ "dateTimestamp": "Mon Mar 29 14:20:05 2021",
+ "timestampMillis": "1616995205308",
  "report": {
   "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/_x/v++_compile_conv.hw_emu_guidance.pb",
   "name": "",
@@ -226,10 +226,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sun Mar 28 16:26:45 2021",
- "timestampMillis": "1616916405943",
+ "dateTimestamp": "Mon Mar 29 14:20:05 2021",
+ "timestampMillis": "1616995205309",
  "status": {
-  "cmdId": "3e820062-820d-41c3-ac39-de4b3fecdb1e",
+  "cmdId": "1644cc66-a803-4fa0-823f-71b9ef798aa8",
   "state": "CS_PASSED"
  }
 }

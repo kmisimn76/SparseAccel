@@ -10,7 +10,7 @@ Conv_sysarr_1,grp_dataflow_parent_loop_proc27_fu_793/dataflow_parent_loop_proc25
 Compute Units: Port Data Transfer
 Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
 Conv_sysarr_1,m_axi_gmem0,0.000,0.000,0.020,0.006
-Conv_sysarr_1,m_axi_gmem1,0.000,0.000,7.705,2.167
-Conv_sysarr_1,m_axi_gmem2,0.000,0.000,10.659,2.997
-Conv_sysarr_1,m_axi_gmem3,15.263,4.292,10.886,3.061
+Conv_sysarr_1,m_axi_gmem1,0.000,0.000,7.702,2.166
+Conv_sysarr_1,m_axi_gmem2,0.000,0.000,10.655,2.996
+Conv_sysarr_1,m_axi_gmem3,15.256,4.290,10.882,3.060
 
