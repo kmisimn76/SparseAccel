@@ -1,7 +1,7 @@
 
 #include "hw_param.h"
 
-#define PORT_NUM 4
+#define PORT_NUM 8
 #define INPUT_SPARSE
 #define SIMD
 
@@ -34,7 +34,7 @@ extern "C" {
 void runWeight2Reg(DPTYPE weight_regfile[ARRAY_K][ARRAY_C], DPTYPE weight_l2[ARRAY_C][WEIGHT_L2_SIZE], const uint C,
 		const uint R, const uint S, const uint ko, const uint co, const uint r, const uint s) {
 	for (int ci = 0; ci < ARRAY_C; ci++) {
-		#pragma HLS pipeline
+		#pragma HLS unroll
 			for (int ki = 0; ki < ARRAY_K; ki++) {
 			#pragma HLS unroll
 			//#pragma HLS pipeline //must be pipelined for dataflow, (and ARRAY_K & ARRAY_C may be small) ..?
@@ -72,8 +72,8 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
 		uint TILESIZE_W, uint co, uint ho, uint wo, uint r, uint s, uint W_in, uint H_in) {
 //#pragma HLS stable variable=r
 //#pragma HLS stable variable=s
-	uint sp = s/PORT_NUM;
-	uint spr = s%PORT_NUM;
+	int sp = s/PORT_NUM;
+	int spr = s%PORT_NUM;
     short counter[PORT_NUM][ARRAY_C/BLOCK_SIZE];
 	#pragma HLS ARRAY_PARTITION variable=counter dim=0 complete // Register
     for(int pt=0;pt<PORT_NUM;pt++) {
@@ -84,26 +84,36 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
         }
     }
 	LOOP_L2_H_IN: for (int hi = 0; hi < TILESIZE_H; hi++) {
-		#pragma HLS loop_tripcount min=7 max=7
+		#pragma HLS loop_tripcount min=8 max=8
 		LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W/PORT_NUM; wi++) {
-			#pragma HLS loop_tripcount min=4 max=4
-		    for (uint pt = 0; pt < PORT_NUM; pt++) {
+			#pragma HLS loop_tripcount min=1 max=1
+		    for (int pt = 0; pt < PORT_NUM; pt++) {
             #pragma HLS unroll
-                for (uint cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) { // place unroll to inner-most
+                for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) { // place unroll to inner-most
                     #pragma HLS unroll
                     bool non_zero_check = false;
 //#pragma HLS DEPENDENCE variable=data_l2 inter false
-                    for (uint bl = 0; bl < BLOCK_SIZE; bl++) { // place unroll to inner-most
+                    for (int bl = 0; bl < BLOCK_SIZE; bl++) { // place unroll to inner-most
                         #pragma HLS unroll
                         #pragma HLS dependence variable=non_zero_check
-						//#pragma HLS DEPENDENCE variable=data_l2 intra false
+						#pragma HLS DEPENDENCE variable=data_l2
 
                         int h = (ho * TILESIZE_H + hi) + r;
-                        int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + ((pt<spr)?(1):(0)); //(pt+s)/PORT_NUM;
-                        uint pt_r = (pt+s)%PORT_NUM; //dependency bottleneck?
                         int ci = cib*BLOCK_SIZE + bl;
+                        DPTYPE l2_data;
+                        //int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + ((PORT_NUM-spr <= pt)?(1):(0)); //(pt+s)/PORT_NUM; // II violation
+                    	uint pt_r = (pt+s)%PORT_NUM; //dependency bottleneck?
+                        if(pt<PORT_NUM-spr) {
+                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp; //(pt+s)/PORT_NUM;
+                            l2_data = data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
+                        }
+                        else {
+                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + 1; //(pt+s)/PORT_NUM;
+                            l2_data = data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
+                        }
                         data_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ci] =
-                                data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
+                        		l2_data;
+                                //data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
                         if(data_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ci] != 0) {
                             non_zero_check = true;
                         }
@@ -230,13 +240,13 @@ void runOutputL1toL2(MACTYPE (*output_l1)[PORT_NUM][ARRAY_K][ARRAY_C/BLOCK_SIZE]
         }
     }
 	LOOP_L2_H: for (int hi = 0; hi < TILESIZE_H; hi++) {
-		#pragma HLS loop_tripcount min=7 max=7
+		#pragma HLS loop_tripcount min=8 max=8
 		//int l2_h_offset = hi*TILSIZE_W;
 		//int l1_h_offset = hi*W;
         //int l2_offset = l2_offset_base + l2_h_offset;
         //int l1_offset = l1_h_offset;
 		LOOP_L2_W: for (int wi = 0; wi < TILESIZE_W/PORT_NUM; wi++) {
-			#pragma HLS loop_tripcount min=4 max=4
+			#pragma HLS loop_tripcount min=1 max=1
             int addr = (hi * TILESIZE_W/PORT_NUM + wi);
 		    for (int pt = 0; pt < PORT_NUM; pt++) {
             #pragma HLS unroll
