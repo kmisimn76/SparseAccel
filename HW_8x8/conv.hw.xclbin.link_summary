@@ -1,0 +1,908 @@
+<ENTRY>
+{
+ "thisFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Apr  4 14:45:57 2021",
+ "timestampMillis": "1617515157257",
+ "buildStep": {
+  "cmdId": "70639a2d-1183-4190-9688-4360434ceef2",
+  "name": "v++",
+  "logFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/link.steps.log",
+  "commandLine": "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l -t hw --platform xilinx_u200_xdma_201830_2 --save-temps -g conv.hw.xo -oconv.hw.xclbin --config config_sp -j 12 ",
+  "args": [
+   "-l",
+   "-t",
+   "hw",
+   "--platform",
+   "xilinx_u200_xdma_201830_2",
+   "--save-temps",
+   "-g",
+   "conv.hw.xo",
+   "-oconv.hw.xclbin",
+   "--config",
+   "config_sp",
+   "-j",
+   "12"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/config_sp",
+    "content": "kernel_frequency=100\n#platform=xilinx_u200_xdma_201830_2\n\ndebug=1\n#profile_kernel=data:all:all:all\n\n[connectivity]\n#sp=\u003ccompute_unit_name\u003e.\u003cinterface_name\u003e:\u003csptag[min:max]\u003e\nsp=Conv_sysarr_1.bias_in:DDR[0]\nsp=Conv_sysarr_1.weight_in:DDR[1]\nsp=Conv_sysarr_1.data_in:DDR[2]\nsp=Conv_sysarr_1.conv_out:DDR[3]\n\n#stream_connect=\u003ccu_name\u003e.\u003coutput_port\u003e:\u003ccu_name\u003e.\u003cinput_port\u003e:[\u003cfifo_depth\u003e]\n#stream_connect=memRead_1.bias_out:coreConv_1.bias_in\n#stream_connect=memRead_1.weight_out:coreConv_1.weight_in\n#stream_connect=memRead_1.data_out:coreConv_1.data_in\n##VGG connection\n#stream_connect=coreConv_1.conv_out:memWrite_1.conv_in\n##ResNet connection\n#stream_connect=coreConv_1.conv_out:batchNorm_1.conv_in\n#stream_connect=coreConv_1.bypass_out:memWrite_1.bypass_in\n#stream_connect=batchNorm_1.bn_out:memWrite_1.bn_in\n\n\n##used for pipelined pooling\n#stream_connect=memWrite_1.pool_sync_out:maxPool_1.pool_sync_in\n\n#nk=\u003ckernal_name\u003e:#:\u003ccu_name1\u003e.\u003ccu_name2\u003e...\u003ccu_name#\u003e\n#nk=DataLoad:1:DataLoad_1\n#nk=DataStore:1:DataStore_1\n\n[vivado]\n##dump all waveforms\nprop=fileset.sim_1.xsim.elaborate.debug_level=all\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:45:57 2021",
+ "timestampMillis": "1617515157258",
+ "status": {
+  "cmdId": "70639a2d-1183-4190-9688-4360434ceef2",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Apr  4 14:46:13 2021",
+ "timestampMillis": "1617515173564",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u200_xdma_201830_2.xpfm",
+  "hardwareDsa": "xilinx_u200_xdma_201830_2.dsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u200_xdma_201830_2",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "conv.hw",
+    "file": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin",
+    "reports": []
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "Conv_sysarr",
+     "file": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xo",
+     "reports": []
+    },
+    "sources": [
+     "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "Conv_sysarr_1"
+    ],
+    "type": "HLS"
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:14 2021",
+ "timestampMillis": "1617515174010",
+ "buildStep": {
+  "cmdId": "b1bd9aea-fb80-4dbd-ad85-f00de6ff7203",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xo -keep --config /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm --target hw --output_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int --temp_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xo",
+   "-keep",
+   "--config",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int",
+   "--temp_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/syslinkConfig.ini",
+    "content": "sp=Conv_sysarr_1.bias_in:DDR[0]\nsp=Conv_sysarr_1.weight_in:DDR[1]\nsp=Conv_sysarr_1.data_in:DDR[2]\nsp=Conv_sysarr_1.conv_out:DDR[3]\n\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:14 2021",
+ "timestampMillis": "1617515174010",
+ "status": {
+  "cmdId": "b1bd9aea-fb80-4dbd-ad85-f00de6ff7203",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:20 2021",
+ "timestampMillis": "1617515180778",
+ "status": {
+  "cmdId": "b1bd9aea-fb80-4dbd-ad85-f00de6ff7203",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:20 2021",
+ "timestampMillis": "1617515180779",
+ "buildStep": {
+  "cmdId": "c58d9f43-3db3-45c9-b54e-3b78be9c40dc",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/sdsl.dat -rtd /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/cf2sw.rtd -xclbin /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.xml -o /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/sdsl.dat",
+   "-rtd",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/cf2sw.rtd",
+   "-xclbin",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:20 2021",
+ "timestampMillis": "1617515180780",
+ "status": {
+  "cmdId": "c58d9f43-3db3-45c9-b54e-3b78be9c40dc",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:21 2021",
+ "timestampMillis": "1617515181769",
+ "status": {
+  "cmdId": "c58d9f43-3db3-45c9-b54e-3b78be9c40dc",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:21 2021",
+ "timestampMillis": "1617515181771",
+ "buildStep": {
+  "cmdId": "a17a0a48-a9f1-4ddd-a668-f8572bce6626",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:21 2021",
+ "timestampMillis": "1617515181771",
+ "status": {
+  "cmdId": "a17a0a48-a9f1-4ddd-a668-f8572bce6626",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 14:46:22 2021",
+ "timestampMillis": "1617515182528",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:22 2021",
+ "timestampMillis": "1617515182529",
+ "status": {
+  "cmdId": "a17a0a48-a9f1-4ddd-a668-f8572bce6626",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:22 2021",
+ "timestampMillis": "1617515182530",
+ "buildStep": {
+  "cmdId": "60264f23-a597-42fc-bcb1-491f7843075e",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f xilinx_u200_xdma_201830_2 -g -j 12 --kernel_frequency 100 --remote_ip_cache /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/.ipcache -s --output_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int --log_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/logs/link --report_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link --config /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/vplConfig.ini -k /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link --no-info --iprepo /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0 --messageDb /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/run_link/vpl.pb /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "xilinx_u200_xdma_201830_2",
+   "-g",
+   "-j",
+   "12",
+   "--kernel_frequency",
+   "100",
+   "--remote_ip_cache",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/.ipcache",
+   "-s",
+   "--output_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int",
+   "--log_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/logs/link",
+   "--report_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link",
+   "--config",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/vplConfig.ini",
+   "-k",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link",
+   "--no-info",
+   "--iprepo",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0",
+   "--messageDb",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/run_link/vpl.pb",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=compiler.vppCurrentWorkingDir=/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8\nmisc=BinaryName=conv.hw\n\n[connectivity]\nnk=Conv_sysarr:1:Conv_sysarr_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=fileset.sim_1.xsim.elaborate.debug_level=all\n\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:22 2021",
+ "timestampMillis": "1617515182530",
+ "status": {
+  "cmdId": "60264f23-a597-42fc-bcb1-491f7843075e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:23 2021",
+ "timestampMillis": "1617515183605",
+ "buildStep": {
+  "cmdId": "2a2dd71a-77c5-4961-bf81-5f2d8689f88b",
+  "name": "vpl",
+  "logFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/link.steps.log",
+  "commandLine": "/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/bin/unwrapped/lnx64.o/vpl -t hw -f xilinx_u200_xdma_201830_2 -g -j 12 --kernel_frequency 100 --remote_ip_cache /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/.ipcache -s --output_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int --log_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/logs/link --report_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link --config /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/vplConfig.ini -k /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link --no-info --iprepo /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0 --messageDb /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/run_link/vpl.pb /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:23 2021",
+ "timestampMillis": "1617515183605",
+ "status": {
+  "cmdId": "2a2dd71a-77c5-4961-bf81-5f2d8689f88b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Sun Apr  4 14:46:32 2021",
+ "timestampMillis": "1617515192532",
+ "vivadoProject": {
+  "openDir": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 14:46:32 2021",
+ "timestampMillis": "1617515192533",
+ "buildStep": {
+  "cmdId": "c60be2ac-ddcb-4b58-870b-0c6eb79bb79a",
+  "name": "vivado",
+  "logFile": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 14:46:32 2021",
+ "timestampMillis": "1617515192534",
+ "status": {
+  "cmdId": "c60be2ac-ddcb-4b58-870b-0c6eb79bb79a",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347449",
+ "status": {
+  "cmdId": "c60be2ac-ddcb-4b58-870b-0c6eb79bb79a",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347484",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347485",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347485",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_PLACEMENT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347485",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/kernel_util_routed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347485",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/kernel_util_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_ROUTE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347486",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/syn/pfm_dynamic_psreset_gate_pr_data_1_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347486",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/syn/pfm_dynamic_psreset_gate_pr_ddrmem_1_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347486",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/syn/pfm_dynamic_psreset_gate_pr_control_0_utilization_synth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347496",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/imp/xilinx_u200_xdma_201830_2_bb_locked_timing_summary_routed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_TIMING_SUMMARY"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347508",
+ "status": {
+  "cmdId": "2a2dd71a-77c5-4961-bf81-5f2d8689f88b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347516",
+ "status": {
+  "cmdId": "60264f23-a597-42fc-bcb1-491f7843075e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347517",
+ "buildStep": {
+  "cmdId": "d219e129-63da-42de-829e-b5010f90a554",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347517",
+ "status": {
+  "cmdId": "d219e129-63da-42de-829e-b5010f90a554",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347541",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347542",
+ "buildStep": {
+  "cmdId": "92ca6626-9be3-40ca-a24b-a2a703186881",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/address_map.xml -sdsl /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/sdsl.dat -xclbin /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.xml -rtd /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.rtd -o /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.xml",
+  "args": [
+   "-a",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/address_map.xml",
+   "-sdsl",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.rtd",
+   "-o",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:27 2021",
+ "timestampMillis": "1617523347542",
+ "status": {
+  "cmdId": "92ca6626-9be3-40ca-a24b-a2a703186881",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348611",
+ "status": {
+  "cmdId": "92ca6626-9be3-40ca-a24b-a2a703186881",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348615",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348615",
+ "buildStep": {
+  "cmdId": "13187a8a-6acc-462c-8033-7ef6bb63a3de",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.rtd",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348616",
+ "status": {
+  "cmdId": "13187a8a-6acc-462c-8033-7ef6bb63a3de",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348616",
+ "status": {
+  "cmdId": "13187a8a-6acc-462c-8033-7ef6bb63a3de",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348616",
+ "status": {
+  "cmdId": "d219e129-63da-42de-829e-b5010f90a554",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348636",
+ "buildStep": {
+  "cmdId": "60e8b03d-5cbb-4f39-b54e-d2ab7580e284",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/partial.bit --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.rtd --append-section :JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw_xml.rtd --add-section BUILD_METADATA:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.xml --add-section SYSTEM_METADATA:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/systemDiagramModelSlrBaseAddress.json --output /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/partial.bit",
+   "--force",
+   "--target",
+   "hw",
+   "--key-value",
+   "SYS:dfx_enable:true",
+   "--add-section",
+   ":JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.rtd",
+   "--append-section",
+   ":JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/conv.hw.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--output",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348637",
+ "status": {
+  "cmdId": "60e8b03d-5cbb-4f39-b54e-d2ab7580e284",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348997",
+ "status": {
+  "cmdId": "60e8b03d-5cbb-4f39-b54e-d2ab7580e284",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348998",
+ "buildStep": {
+  "cmdId": "7f712600-ca84-4800-ab84-9f427ca78c0d",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin.info --input /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin.info",
+   "--input",
+   "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/conv.hw.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:28 2021",
+ "timestampMillis": "1617523348999",
+ "status": {
+  "cmdId": "7f712600-ca84-4800-ab84-9f427ca78c0d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349533",
+ "status": {
+  "cmdId": "7f712600-ca84-4800-ab84-9f427ca78c0d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349535",
+ "buildStep": {
+  "cmdId": "6acea990-f1b2-4f0a-8536-d89514c5324d",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349535",
+ "status": {
+  "cmdId": "6acea990-f1b2-4f0a-8536-d89514c5324d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349536",
+ "status": {
+  "cmdId": "6acea990-f1b2-4f0a-8536-d89514c5324d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349662",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/system_estimate_conv.hw.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349879",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/reports/link/v++_link_conv.hw_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349879",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/v++_link_conv.hw_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349883",
+ "report": {
+  "path": "/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_8x8/_x/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr  4 17:02:29 2021",
+ "timestampMillis": "1617523349883",
+ "status": {
+  "cmdId": "70639a2d-1183-4190-9688-4360434ceef2",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

@@ -1,16 +1,16 @@
 Compute Units: Running Time and Stalls
 Compute Unit, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
-Conv_sysarr_1,140.095,2.742,0.476,0.000
+Conv_sysarr_1,331.813,1.158,0.201,0.000
 
 Functions: Running Time and Stalls
 Compute Unit, Function, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
-Conv_sysarr_1,grp_dataflow_parent_loop_proc28_fu_1387,135.457,2.742,0.000,0.000
-Conv_sysarr_1,grp_dataflow_parent_loop_proc28_fu_1387/dataflow_parent_loop_proc26_U0,135.457,2.742,0.000,0.000
+Conv_sysarr_1,grp_dataflow_parent_loop_proc28_fu_1387,327.175,1.158,0.000,0.000
+Conv_sysarr_1,grp_dataflow_parent_loop_proc28_fu_1387/dataflow_parent_loop_proc26_U0,327.175,1.158,0.000,0.000
 
 Compute Units: Port Data Transfer
 Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
-Conv_sysarr_1,m_axi_gmem0,0.000,0.000,0.020,0.014
-Conv_sysarr_1,m_axi_gmem1,0.000,0.000,7.708,5.502
-Conv_sysarr_1,m_axi_gmem2,0.000,0.000,10.655,7.606
-Conv_sysarr_1,m_axi_gmem3,15.270,10.900,10.882,7.768
+Conv_sysarr_1,m_axi_gmem0,0.000,0.000,0.020,0.006
+Conv_sysarr_1,m_axi_gmem1,0.000,0.000,7.708,2.323
+Conv_sysarr_1,m_axi_gmem2,0.000,0.000,10.659,3.212
+Conv_sysarr_1,m_axi_gmem3,15.260,4.599,10.886,3.281
 

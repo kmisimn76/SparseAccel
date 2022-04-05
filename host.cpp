@@ -84,8 +84,32 @@ unsigned int out_buf_size = 0;
 //float sparsity = 0.0; //eltwise sparsity: expected group 4 sparsity = 0.6561
 //float sparsity = 0.9; //eltwise sparsity: expected group 4 sparsity = 0.6561
 //float sparsity = 0.95; //eltwise sparsity: expected group 4 sparsity = 0.8145
-float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
+//float sparsity = 0.975; //eltwise sparsity: expected group 4 sparsity = 0.9037
+float sparsity_set[20][3] =
+{
+{0, 0.0, 0.0},
+{1, 0.05,	0.472870804501588},
+{2,0.1,	0.562341325190349},
+{3,0.15,	0.622332977288478},
+{4,0.2,	0.668740304976422},
+{5,0.25,	0.707106781186548},
+{6,0.3,	0.740082804492285},
+{7,0.35,	0.769160567313459},
+{8,0.4,	0.795270728767051},
+{9,0.45,	0.81903625881272},
+{10,0.5,	0.840896415253715},
+{11,0.55,	0.861173529963367},
+{12,0.6,	0.880111736793393},
+{13,0.65,	0.897900760011848},
+{14,0.7,	0.914691219228694},
+{15,0.75,	0.9306048591021},
+{16,0.8,	0.945741609003176},
+{17,0.85,	0.960184589404188},
+{18,0.9,	0.974003746425297},
+{19,0.95,	0.987258544901434}};
+float sparsity = sparsity_set[0][2];
 int groupsize[3] = {1,1,4}; //W,H,C
+
 const char* knl_name_conv = "Conv_sysarr";
 char *kernel_file_name;
 /*cl_uint num_cl_data->devices = 0;
@@ -259,11 +283,14 @@ int main(int argc, char** argv)
     int len = get_layer_info("./layer_info.txt");
 
     time = 0;
-	int run_case = -3;
+	int run_case = -4;
+	//int run_case = -3;
     //for(int i=0, run_case=0;i<13;i++, run_case++){
-        int i = 5;
-    //    run_case = 5;
-    {
+        //int i = 5;
+    for(int i=0;i<20;i++){
+        sparsity = sparsity_set[i][2];
+    //{
+
 		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
         set_param_data(run_case);
         conv_gold();
@@ -592,8 +619,50 @@ void set_param_data(int run_case)
 	param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
 	param.H_in_L2 = param.H_L2 + param.R_L2-1;
 	}
-
 	else if(run_case==-4){
+	param.K = 256;
+	param.C = 256;
+	param.WH = 64;
+	param.WH_in = 66;
+	param.RS = 3;
+
+	param.L2_TILENUM_K = 8; ///
+	param.L2_TILENUM_C = 8;
+	param.L2_TILENUM_W = 4;
+	param.L2_TILENUM_H = 4;
+	param.L2_TILENUM_R = 1;
+	param.L2_TILENUM_S = 1;
+
+	param.L1_TILENUM_K = 32/ARRAY_K; ///
+	param.L1_TILENUM_C = 32/ARRAY_C;
+	param.L1_TILENUM_W = 2;
+	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_R = 3;
+	param.L1_TILENUM_S = 3;
+	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
+	param.TILESIZE_H = 8;
+	param.TILESIZE_R = 1; //must be 1
+	param.TILESIZE_S = 1; //must be 1
+
+	param.K_L1 = ARRAY_K;
+	param.C_L1 = ARRAY_C;
+	param.W_L1 = param.TILESIZE_W;
+	param.H_L1 = param.TILESIZE_H;
+	param.R_L1 = param.TILESIZE_R;
+	param.S_L1 = param.TILESIZE_S;
+	param.W_in_L1 = param.TILESIZE_W + param.S_L1-1; // TILESIZE_W + TILESIZE_R/2. and don't need thinking about stride
+	param.H_in_L1 = param.TILESIZE_H + param.R_L1-1;
+	param.K_L2 = param.K_L1 * param.L1_TILENUM_K;
+	param.C_L2 = param.C_L1 * param.L1_TILENUM_C;
+	param.W_L2 = param.W_L1 * param.L1_TILENUM_W;
+	param.H_L2 = param.H_L1 * param.L1_TILENUM_H;
+	param.R_L2 = param.R_L1*param.L1_TILENUM_R;
+	param.S_L2 = param.S_L1*param.L1_TILENUM_S;
+	param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
+	param.H_in_L2 = param.H_L2 + param.R_L2-1;
+	}
+
+	else if(run_case==-5){
 	param.K = 512;
 	param.C = 512;
 	param.WH = 28;
@@ -680,7 +749,7 @@ void set_param_data(int run_case)
 	param.L2_TILENUM_S = 1;
 	}
 	else{ printf("Invalid case\n"); exit(1);}
-//#define RAND_INPUT
+#define RAND_INPUT
 #define SPARSIFYING
 #ifdef RAND_INPUT
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;

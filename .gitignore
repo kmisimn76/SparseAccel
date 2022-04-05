@@ -1,5 +1,11 @@
 #HW_imple/conv*
 #HW_imple/v++*
+HW_*/*.log
+HW_*/*.wdb
+HW_*/_x
+HW_*/_x/*
+HW_*/_x/**
+HW_*/.*
 HW_imple/*.log
 HW_imple/*.wdb
 HW_imple/_x
