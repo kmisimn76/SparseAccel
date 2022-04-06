@@ -1,7 +1,6 @@
 
 #include "hw_param.h"
 
-#define PORT_NUM 8
 #define INPUT_SPARSE
 #define SIMD
 
@@ -13,16 +12,16 @@
 //#define WEIGHT_DRAM_DEPTH 23040
 //#define   DATA_DRAM_DEPTH 20480
 //#define OUTPUT_DRAM_DEPTH 15680
-#define   DATA_L2_SIZE 2048
 #define WEIGHT_L2_SIZE 2304
-#define OUTPUT_L2_SIZE 1568 // reduce size after modifying indexing
+#define   DATA_L2_SIZE 180 //256 //2048 / PORT_NUM + a
+#define OUTPUT_L2_SIZE 98 //196 //1568 / PORT_NUM
 //#define   DATA_L2_SIZE 817216
 //#define WEIGHT_L2_SIZE 589824
 //#define OUTPUT_L2_SIZE 802816
-#define   BIAS_L2_SIZE 128
-#define   DATA_L1_SIZE 196 //49
 #define WEIGHT_L1_SIZE -1
-#define OUTPUT_L1_SIZE 196 //49
+#define   BIAS_L2_SIZE 128
+#define   DATA_L1_SIZE 32 //256/PORT //196 //49
+#define OUTPUT_L1_SIZE 32 //256/PORT //196 //49
 //#define OUTPUT_L1_SIZE 64
 #define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
@@ -105,11 +104,13 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
                     	uint pt_r = (pt+s)%PORT_NUM; //dependency bottleneck?
                         if(pt<PORT_NUM-spr) {
                         	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp; //(pt+s)/PORT_NUM;
-                            l2_data = data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
+                            uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
+                            l2_data = data_l2[datal2_ptr][pt_r][ci];
                         }
                         else {
                         	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + 1; //(pt+s)/PORT_NUM;
-                            l2_data = data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
+                            uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
+                            l2_data = data_l2[datal2_ptr][pt_r][ci];
                         }
                         data_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ci] =
                         		l2_data;
@@ -272,11 +273,12 @@ void runOutputL1toL2(MACTYPE (*output_l1)[PORT_NUM][ARRAY_K][ARRAY_C/BLOCK_SIZE]
                 }
                 for (int ki = 0; ki < ARRAY_K; ki++) {
                     #pragma HLS unroll
+                    uint out_ptr = ko * H * (W/PORT_NUM) + h * (W/PORT_NUM) + w;
                     if(isFirst)
-                        output_l2_reduction[ko * H * W + h * W + w][pt][ki] = output[ki];
+                        output_l2_reduction[out_ptr][pt][ki] = output[ki];
                     else
-                        output_l2_reduction[ko * H * W + h * W + w][pt][ki] += output[ki];
-                    output_l2[ko * H * W + h * W + w][pt][ki] = output_l2_reduction[ko * H * W + h * W + w][pt][ki];
+                        output_l2_reduction[out_ptr][pt][ki] += output[ki];
+                    output_l2[out_ptr][pt][ki] = output_l2_reduction[out_ptr][pt][ki];
                     //if(ko==0 && ki==0 && h==1 && w==0 && pt==0) printf("%d(%d) ", output_l2[ko * H * W + h * W + w][pt][ki], output[ki]);
                 }
             }
@@ -478,7 +480,7 @@ void input_dram_read(DPTYPE data_l2[DATA_L2_SIZE][PORT_NUM][ARRAY_C], DPTYPE* da
 					for(unsigned int ci = 0; ci < VEC_SIZE; ci++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
 						#pragma HLS unroll
 						unsigned int global_chw = ((cmo*(C_L2/VEC_SIZE)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*VEC_SIZE + ci;
-						unsigned int chw = co*H_in_L2*W_in_L2 + h*W_in_L2 + (w/PORT_NUM);
+						unsigned int chw = co*H_in_L2*(W_in_L2/PORT_NUM+1) + h*(W_in_L2/PORT_NUM+1) + (w/PORT_NUM);
 						unsigned int pt = w%PORT_NUM;
 						unsigned int v = ci;
 						data_l2[chw][pt][ci] = data_in[global_chw];
@@ -532,7 +534,7 @@ void output_dram_write(MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K], MAC
 					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 						#pragma HLS unroll
 						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w/PORT_NUM;
+						unsigned int khw = ko*H_L2*(W_L2/PORT_NUM) + h*(W_L2/PORT_NUM) + w/PORT_NUM;
                         unsigned int pt = w%PORT_NUM;
 						unsigned int v = ki;
 						//if(isFirst)

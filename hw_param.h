@@ -27,10 +27,11 @@ typedef int  MACTYPE;
 #define DP_WIDTH 8    // data path width
 #define MAC_WIDTH 32
 
-#define ARRAY_K 8 //32
-#define ARRAY_C 8 //32
-#define VEC_SIZE 8 //32 // smaller than ARRAY_C,ARRAY_K
-#define BLOCK_SIZE 4 //8 // divisible into ARRAY_C
+#define ARRAY_K 32 //32
+#define ARRAY_C 32 //32
+#define VEC_SIZE 32 //32 // smaller than ARRAY_C,ARRAY_K
+#define BLOCK_SIZE 16 //8 // divisible into ARRAY_C
+#define PORT_NUM 16
 //typedef ap_axiu<512,0,0,0> k2k_data;
 #ifndef XILINX
 //typedef ap_axiu<VEC_SIZE*32,0,0,0> k2k_data;

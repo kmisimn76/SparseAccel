@@ -283,11 +283,12 @@ int main(int argc, char** argv)
     int len = get_layer_info("./layer_info.txt");
 
     time = 0;
-	int run_case = -4;
-	//int run_case = -3;
+	//int run_case = -4;
+	int run_case = -3;
     //for(int i=0, run_case=0;i<13;i++, run_case++){
         //int i = 5;
-    for(int i=0;i<20;i++){
+    //for(int i=0;i<20;i++){
+    for(int i=16;i<17;i++){
         sparsity = sparsity_set[i][2];
     //{
 
