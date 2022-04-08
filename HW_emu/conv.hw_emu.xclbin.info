@@ -11,7 +11,7 @@ xclbin Information
    Kernels:                Conv_sysarr
    Signature:              
    Content:                HW Emulation Binary
-   UUID (xclbin):          7898652d-9fa3-4455-b7ae-f51704154750
+   UUID (xclbin):          d4ae2f85-a81e-42ad-80bf-31df3ffcef63
    Sections:               DEBUG_DATA, BITSTREAM, MEM_TOPOLOGY, IP_LAYOUT, 
                            CONNECTIVITY, BUILD_METADATA, EMBEDDED_METADATA, 
                            SYSTEM_METADATA, GROUP_CONNECTIVITY, GROUP_TOPOLOGY
@@ -98,25 +98,25 @@ Ports
    Port:          M_AXI_GMEM0
    Mode:          master
    Range (bytes): 0xFFFFFFFF
-   Data Width:    64 bits
+   Data Width:    128 bits
    Port Type:     addressable
 
    Port:          M_AXI_GMEM1
    Mode:          master
    Range (bytes): 0xFFFFFFFF
-   Data Width:    64 bits
+   Data Width:    128 bits
    Port Type:     addressable
 
    Port:          M_AXI_GMEM2
    Mode:          master
    Range (bytes): 0xFFFFFFFF
-   Data Width:    64 bits
+   Data Width:    128 bits
    Port Type:     addressable
 
    Port:          M_AXI_GMEM3
    Mode:          master
    Range (bytes): 0xFFFFFFFF
-   Data Width:    256 bits
+   Data Width:    512 bits
    Port Type:     addressable
 
    Port:          S_AXI_CONTROL

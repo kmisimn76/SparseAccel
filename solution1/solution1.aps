@@ -59,7 +59,7 @@
         <value string="solution1"/>
     </name>
     <project>
-        <value string="Sparse_Systolic_Array_TEST_PCNN_based"/>
+        <value string="Systolic_Array_TEST_PCNN_based"/>
     </project>
     <flowTarget value="vivado"/>
     <targetInfo>

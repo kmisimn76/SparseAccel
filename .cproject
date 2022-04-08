@@ -51,15 +51,15 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1709356539" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
                                     								
                                 </option>
                                 								
@@ -85,15 +85,15 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.782020077" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
                                     								
                                 </option>
                                 								
@@ -115,7 +115,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.825781415" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -129,7 +129,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.822710188" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -219,15 +219,15 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1766422814" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
                                     								
                                 </option>
                                 								
@@ -243,15 +243,15 @@
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.302114692" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/etc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/include/ap_sysc"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
                                     								
                                 </option>
                                 								
@@ -263,7 +263,7 @@
                                 								
                                 <option id="gnu.c.link.option.paths.821028781" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
@@ -277,7 +277,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.paths.620179408" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
                                     									
-                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx_vitis/Vitis/Vitis/2020.1/lnx64/tools/systemc/lib"/>
+                                    <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/lib"/>
                                     								
                                 </option>
                                 								
