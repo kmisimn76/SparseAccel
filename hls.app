@@ -6,7 +6,7 @@
     </Simulation>
     <files xmlns="">
         <file name="Systolic_Array_TEST_PCNN_based/hw_param.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
-        <file name="Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp" sc="0" tb="false" cflags="-DARRAY_K=16 -DARRAY_C=16 -DVEC_SIZE=16 -DBLOCK_SIZE=4 -DPORT_NUM=8" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>

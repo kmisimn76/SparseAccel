@@ -57,6 +57,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
@@ -90,6 +92,8 @@
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
@@ -156,6 +160,48 @@
                         </toolChain>
                         					
                     </folderInfo>
+                    					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.1052271600.1836166781" name="conv_sysarr_dbbuf.cpp" rcbsApplicability="disable" resourcePath="source/conv_sysarr_dbbuf.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038.1241326838">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038.1241326838" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.841137038">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1397097260" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+                                								
+                                <listOptionValue builtIn="false" value="ARRAY_K=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="ARRAY_C=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="VEC_SIZE=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="BLOCK_SIZE=4"/>
+                                								
+                                <listOptionValue builtIn="false" value="PORT_NUM=8"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.618876677" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.252424663" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.58110725" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
                     					
                     <sourceEntries>
                         						
@@ -225,6 +271,8 @@
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
                                     									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
+                                    									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
@@ -248,6 +296,8 @@
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                    									
+                                    <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
                                     									
                                     <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
                                     									
@@ -305,6 +355,48 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.227281044.494226943" name="conv_sysarr_dbbuf.cpp" rcbsApplicability="disable" resourcePath="source/conv_sysarr_dbbuf.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648.394485739">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648.394485739" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.814468780" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+                                								
+                                <listOptionValue builtIn="false" value="ARRAY_K=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="ARRAY_C=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="VEC_SIZE=16"/>
+                                								
+                                <listOptionValue builtIn="false" value="BLOCK_SIZE=4"/>
+                                								
+                                <listOptionValue builtIn="false" value="PORT_NUM=8"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.932606840" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/lnx64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/workspace"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/ap_sysc"/>
+                                								
+                                <listOptionValue builtIn="false" value="/home/sumin/tools/Xilinx/Vitis/2020.1/include/etc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1590004354" name="Other flags" superClass="gnu.cpp.compiler.option.other.other"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.886052134" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding=".apc|.settings|solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -335,12 +427,6 @@
         		
         <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
         		
-        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.227281044;cdt.managedbuild.config.gnu.exe.release.227281044.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.488936171;cdt.managedbuild.tool.gnu.c.compiler.input.1466310493">
-            			
-            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-            		
-        </scannerConfigBuildInfo>
-        		
         <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.227281044;cdt.managedbuild.config.gnu.exe.release.227281044.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.408693648;cdt.managedbuild.tool.gnu.cpp.compiler.input.467969874">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
@@ -348,6 +434,12 @@
         </scannerConfigBuildInfo>
         		
         <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.1052271600;cdt.managedbuild.config.gnu.exe.debug.1052271600.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.2106121353;cdt.managedbuild.tool.gnu.c.compiler.input.61491392">
+            			
+            <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+            		
+        </scannerConfigBuildInfo>
+        		
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.release.227281044;cdt.managedbuild.config.gnu.exe.release.227281044.;cdt.managedbuild.tool.gnu.c.compiler.exe.release.488936171;cdt.managedbuild.tool.gnu.c.compiler.input.1466310493">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
             		

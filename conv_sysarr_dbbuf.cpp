@@ -12,18 +12,23 @@
 //#define WEIGHT_DRAM_DEPTH 23040
 //#define   DATA_DRAM_DEPTH 20480
 //#define OUTPUT_DRAM_DEPTH 15680
-#define WEIGHT_L2_SIZE 2304
-#define   DATA_L2_SIZE 180 //256 //2048 / PORT_NUM + a
-#define OUTPUT_L2_SIZE 98 //196 //1568 / PORT_NUM
+#ifndef WEIGHT_L2_SIZE
+ #define WEIGHT_L2_SIZE 2304
+#endif
+#ifndef	  DATA_L2_SIZE
+ #define   DATA_L2_SIZE (2304/PORT_NUM) //2048//180 //256 //2048 / PORT_NUM + a
+#endif
+#ifndef OUTPUT_L2_SIZE
+ #define OUTPUT_L2_SIZE (1600/PORT_NUM) //1568//98 //196 //1568 / PORT_NUM
+#endif
 //#define   DATA_L2_SIZE 817216
 //#define WEIGHT_L2_SIZE 589824
 //#define OUTPUT_L2_SIZE 802816
 #define WEIGHT_L1_SIZE -1
 #define   BIAS_L2_SIZE 128
-#define   DATA_L1_SIZE 32 //256/PORT //196 //49
-#define OUTPUT_L1_SIZE 32 //256/PORT //196 //49
+#define   DATA_L1_SIZE (288/PORT_NUM) //256//32 //256/PORT //196 //49
+#define OUTPUT_L1_SIZE (288/PORT_NUM) //256//32 //256/PORT //196 //49
 //#define OUTPUT_L1_SIZE 64
-#define STREAM_BUFFER_SIZE 32 // <= L2 WH(WH_in) size
 
 
 #ifndef XILINX
@@ -86,8 +91,31 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
 		#pragma HLS loop_tripcount min=8 max=8
 		LOOP_L2_W_IN: for (int wi = 0; wi < TILESIZE_W/PORT_NUM; wi++) {
 			#pragma HLS loop_tripcount min=1 max=1
+//#pragma HLS DEPENDENCE variable=data_l2 intra
 		    for (int pt = 0; pt < PORT_NUM; pt++) {
             #pragma HLS unroll
+			#pragma HLS DEPENDENCE variable=data_l2
+                        int h = (ho * TILESIZE_H + hi) + r;
+                    	uint pt_r = (pt+s)%PORT_NUM; //dependency bottleneck?
+                        DPTYPE l2_data[ARRAY_C];
+			#pragma HLS ARRAY_PARTITION variable=l2_data dim=0 complete // Register
+
+
+                	for (int ci = 0; ci < ARRAY_C; ci++) { // place unroll to inner-most
+            			#pragma HLS unroll
+                                        if(pt<PORT_NUM-spr) {
+                                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp; //(pt+s)/PORT_NUM;
+                                            uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
+
+                                            l2_data[ci] = data_l2[datal2_ptr][pt_r][ci];
+                                        }
+                                        else {
+                                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + 1; //(pt+s)/PORT_NUM;
+                                        	uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
+
+                                            l2_data[ci] = data_l2[datal2_ptr][pt_r][ci];
+                			}
+			}
                 for (int cib = 0; cib < ARRAY_C/BLOCK_SIZE; cib++) { // place unroll to inner-most
                     #pragma HLS unroll
                     bool non_zero_check = false;
@@ -95,25 +123,12 @@ void runDataL2toL1_bitvec(DPTYPE (*data_l1)[PORT_NUM][ARRAY_C], short (*data_l1_
                     for (int bl = 0; bl < BLOCK_SIZE; bl++) { // place unroll to inner-most
                         #pragma HLS unroll
                         #pragma HLS DEPENDENCE variable=non_zero_check
-						#pragma HLS DEPENDENCE variable=data_l2
+			//#pragma HLS DEPENDENCE variable=data_l2 inter
 
-                        int h = (ho * TILESIZE_H + hi) + r;
                         int ci = cib*BLOCK_SIZE + bl;
-                        DPTYPE l2_data;
                         //int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + ((PORT_NUM-spr <= pt)?(1):(0)); //(pt+s)/PORT_NUM; // II violation
-                    	uint pt_r = (pt+s)%PORT_NUM; //dependency bottleneck?
-                        if(pt<PORT_NUM-spr) {
-                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp; //(pt+s)/PORT_NUM;
-                            uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
-                            l2_data = data_l2[datal2_ptr][pt_r][ci];
-                        }
-                        else {
-                        	int w = (wo * TILESIZE_W/PORT_NUM + wi) + sp + 1; //(pt+s)/PORT_NUM;
-                            uint datal2_ptr = co * H_in * (W_in/PORT_NUM+1) + h * (W_in/PORT_NUM+1) + w; // error? -> W_in can't be dividied by PORTNUM
-                            l2_data = data_l2[datal2_ptr][pt_r][ci];
-                        }
                         data_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ci] =
-                        		l2_data;
+                        		l2_data[ci];
                                 //data_l2[co * H_in * W_in + h * W_in + w][pt_r][ci];
                         if(data_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ci] != 0) {
                             non_zero_check = true;
@@ -356,7 +371,7 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
                 #pragma HLS DEPENDENCE variable=data_l1
                 #pragma HLS DEPENDENCE variable=data_l1_length*/
                 #pragma HLS pipeline II=1 //rewind
-                #pragma HLS latency min=1 max=2 // SIMD implementation
+                #pragma HLS latency min=1 max=9 // SIMD implementation
                 #pragma HLS LOOP_TRIPCOUNT min=1 max=25
                 /*DPTYPE data_reg[ARRAY_K][ARRAY_C];
                 MACTYPE output_reg[ARRAY_K][ARRAY_C];
@@ -393,9 +408,9 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 		                #pragma HLS ARRAY_PARTITION variable=output_reg dim=0 complete  // Register
 						MACTYPE sum = 0;
 						//#pragma HLS expression_balance
-#pragma HLS DEPENDENCE variable=data_l1
-#pragma HLS DEPENDENCE variable=weight_regfile
-#pragma HLS DEPENDENCE variable=output_l1
+//#pragma HLS DEPENDENCE variable=data_l1
+//#pragma HLS DEPENDENCE variable=weight_regfile
+//#pragma HLS DEPENDENCE variable=output_l1
 						LOOP_REDUCTION_BLOCK: for (int bl = 0; bl < BLOCK_SIZE; bl++) {
 							#pragma HLS unroll
 							uint ci = cib * BLOCK_SIZE + bl;
@@ -403,16 +418,19 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 							output_reg[ki][ci] = data_reg[ki][ci] * weight_regfile[ki][ci];
 							#pragma HLS BIND_OP variable=sum op=add impl=fabric
 							sum += output_reg[ki][ci];*/
-							data_reg[bl] = data_l1[addr][pt][ci];
-							output_reg[bl] = data_reg[bl] * weight_regfile[ki][ci];
-							#pragma HLS BIND_OP variable=sum op=add impl=fabric
-							sum += output_reg[bl];
-
-
 //							data_reg[bl] = data_l1[addr][pt][ci];
 //							output_reg[bl] = data_reg[bl] * weight_regfile[ki][ci];
+//							#pragma HLS BIND_OP variable=sum op=add impl=fabric
+//							sum += output_reg[bl];
+
+							data_reg[bl] = data_l1[addr][pt][ci];
+							MACTYPE tmp;
+							#pragma HLS BIND_OP variable=tmp op=mul impl=dsp
+							tmp = data_reg[bl] * weight_regfile[ki][ci];
+							output_reg[bl] = tmp;
+							//output_reg[bl] = data_reg[bl] * weight_regfile[ki][ci];
 						}
-/*
+
 #if BLOCK_SIZE == 1
 						sum = output_reg[0];
 #elif BLOCK_SIZE == 2
@@ -480,7 +498,6 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 #else
 	Unsupported BLOCK_SIZE
 #endif
-*/
 
 						if(valid_input) {
 							output_l1[i[cib]][bitvec_pt[cib]][ki][cib] = sum;
@@ -514,7 +531,7 @@ void runSIMD_bitvec(const DPTYPE weight_regfile[ARRAY_K][ARRAY_C], const DPTYPE 
 	}
 }
 #endif
-
+#ifndef __SYNTHESIS__
 //DPTYPE bias_l2[BIAS_L2_SIZE][ARRAY_K];
 DPTYPE bias_l2[ARRAY_K][BIAS_L2_SIZE];
 //DPTYPE weight_l2[WEIGHT_L2_SIZE][ARRAY_K];
@@ -522,7 +539,7 @@ DPTYPE weight_l2[ARRAY_K][WEIGHT_L2_SIZE];
 DPTYPE data_l2[DATA_L2_SIZE][PORT_NUM][ARRAY_C];
 MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
 MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
-
+#endif
 
 
 void weight_dram_read(DPTYPE weight_l2[ARRAY_K][WEIGHT_L2_SIZE], DPTYPE* weight_in,
@@ -588,59 +605,52 @@ void output_dram_write(MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K], MAC
 						uint kmo, uint hmo, uint wmo,
 						uint K_L2, uint H_L2, uint W_L2, uint WH)
 {
+//#define STREAM_BUFFER_WIDTH 4
+#define STREAM_BUFFER_SIZE 32 // bigger than or equeal to W_L2
 		MACTYPE stream_buffer[STREAM_BUFFER_SIZE][VEC_SIZE];
+		//MACTYPE stream_buffer[STREAM_BUFFER_WIDTH][STREAM_BUFFER_SIZE][VEC_SIZE];
+		//MACTYPE stream_result[STREAM_BUFFER_WIDTH][STREAM_BUFFER_SIZE][VEC_SIZE];
+		//#pragma HLS ARRAY_PARTITION variable=stream_buffer dim=3 complete
+		//#pragma HLS ARRAY_PARTITION variable=stream_result dim=3 complete
 		OUTPUT_DRAM_WRITE:
 		for (unsigned int ko = 0; ko < (K_L2 / VEC_SIZE); ko++) {
 			#pragma HLS loop_tripcount min=1 max=1
-			for (unsigned int h = 0; h < H_L2; h++) {
-				#pragma HLS loop_tripcount min=7 max=7
-				/*for (unsigned int w = 0; w < W_L2; w++) {
-					#pragma HLS loop_tripcount min=7 max=7
-					#pragma HLS pipeline
-					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-						#pragma HLS unroll
-						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*W_L2 + h*W_L2 + w;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							conv_out[global_khw] += output_l2[khw][ki];
-					}
-				}*/
+			//for (unsigned int ho = 0; ho < H_L2/STREAM_BUFFER_WIDTH; ho++) { // FIXME: Occur error when H_L2 cannot dividied by STREAM_BUFFER_WIDTH
+			for (unsigned int h = 0; h < H_L2; h++) { // FIXME: Occur error when H_L2 cannot dividied by STREAM_BUFFER_WIDTH
+				#pragma HLS loop_tripcount min=2 max=2
+				//for (unsigned int hi = 0; hi < STREAM_BUFFER_WIDTH; hi++) { // FIXME: Occur error when H_L2 cannot dividied by STREAM_BUFFER_WIDTH
 				OUTPUT_DRAM_STREA_IN: for (unsigned int w = 0; w < W_L2; w++) {
 					#pragma HLS loop_tripcount min=7 max=7
 					#pragma HLS pipeline
 					#pragma HLS DEPENDENCE variable=conv_out
 					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 						#pragma HLS unroll
+						//unsigned int h = ho*STREAM_BUFFER_WIDTH + hi;
 						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							stream_buffer[w][ki] = conv_out[global_khw];
+						//unsigned int v = ki;
+						//stream_buffer[hi][w][ki] = conv_out[global_khw];
+						stream_buffer[w][ki] = conv_out[global_khw];
 					}
 				}
+				//}
+				//for (unsigned int hi = 0; hi < STREAM_BUFFER_WIDTH; hi++) { // FIXME: Occur error when H_L2 cannot dividied by STREAM_BUFFER_WIDTH
+				//#pragma HLS unroll
 				OUTPUT_DRAM_STREA_OUT: for (unsigned int w = 0; w < W_L2; w++) {
 					#pragma HLS loop_tripcount min=7 max=7
 					#pragma HLS pipeline
 					#pragma HLS DEPENDENCE variable=conv_out
 					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 						#pragma HLS unroll
+						//unsigned int h = ho*STREAM_BUFFER_WIDTH + hi;
 						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
 						unsigned int khw = ko*H_L2*(W_L2/PORT_NUM) + h*(W_L2/PORT_NUM) + w/PORT_NUM;
 			                        unsigned int pt = w%PORT_NUM;
-						unsigned int v = ki;
-						//if(isFirst)
-						//	//conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ko][ki];
-						//	conv_out[global_khw] = output_l2[khw][ki] + bias_l2[ki][ko];
-						//else
-							conv_out[global_khw] = stream_buffer[w][ki] + output_l2[khw][pt][ki];
+						//unsigned int v = ki;
+						//conv_out[global_khw] = stream_buffer[hi][w][ki] + output_l2[khw][pt][ki];
+						conv_out[global_khw] = stream_buffer[w][ki] + output_l2[khw][pt][ki];
 					}
 				}
+				//}
 			}
 		}
 }
@@ -703,6 +713,16 @@ void Conv_sysarr(
 	//DO_PRAGMA(HLS INTERFACE ap_bus port=conv_out bundle=gmem3)
 
 	#pragma HLS expression_balance
+
+#ifdef __SYNTHESIS__
+//DPTYPE bias_l2[BIAS_L2_SIZE][ARRAY_K];
+DPTYPE bias_l2[ARRAY_K][BIAS_L2_SIZE];
+//DPTYPE weight_l2[WEIGHT_L2_SIZE][ARRAY_K];
+DPTYPE weight_l2[ARRAY_K][WEIGHT_L2_SIZE];
+DPTYPE data_l2[DATA_L2_SIZE][PORT_NUM][ARRAY_C];
+MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
+MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
+#endif
 
 	//DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l2 dim=2 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l2 dim=1 complete)

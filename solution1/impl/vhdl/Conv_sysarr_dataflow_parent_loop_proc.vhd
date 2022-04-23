@@ -350,6 +350,8 @@ attribute shreg_extract : string;
 
     component Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER IS
     port (
+        ap_clk : IN STD_LOGIC;
+        ap_rst : IN STD_LOGIC;
         m_axi_gmem1_AWVALID : OUT STD_LOGIC;
         m_axi_gmem1_AWREADY : IN STD_LOGIC;
         m_axi_gmem1_AWADDR : OUT STD_LOGIC_VECTOR (63 downto 0);
@@ -517,8 +519,6 @@ attribute shreg_extract : string;
         m_axi_gmem3_BUSER : IN STD_LOGIC_VECTOR (0 downto 0);
         conv_out : IN STD_LOGIC_VECTOR (63 downto 0);
         WH : IN STD_LOGIC_VECTOR (27 downto 0);
-        ap_clk : IN STD_LOGIC;
-        ap_rst : IN STD_LOGIC;
         weight_in_ap_vld : IN STD_LOGIC;
         kmo_ap_vld : IN STD_LOGIC;
         cmo_ap_vld : IN STD_LOGIC;
@@ -563,6 +563,8 @@ attribute shreg_extract : string;
 begin
     dataflow_in_loop_LOOP_S_MOST_OUTER_U0 : component Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER
     port map (
+        ap_clk => ap_clk,
+        ap_rst => ap_rst,
         m_axi_gmem1_AWVALID => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWVALID,
         m_axi_gmem1_AWREADY => ap_const_logic_0,
         m_axi_gmem1_AWADDR => dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWADDR,
@@ -730,8 +732,6 @@ begin
         m_axi_gmem3_BUSER => m_axi_gmem3_BUSER,
         conv_out => conv_out,
         WH => WH,
-        ap_clk => ap_clk,
-        ap_rst => ap_rst,
         weight_in_ap_vld => weight_in_ap_vld,
         kmo_ap_vld => kmo_ap_vld,
         cmo_ap_vld => cmo_ap_vld,

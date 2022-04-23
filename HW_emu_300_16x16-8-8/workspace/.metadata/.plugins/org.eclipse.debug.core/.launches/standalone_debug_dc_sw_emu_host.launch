@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.xilinx.opencl.launch.openCLLaunch">
+    <stringAttribute key="SDACCEL_DATA_TRANSFER_TRACE" value="coarse"/>
+    <booleanAttribute key="SDACCEL_ENABLE_LOP_TRACE" value="false"/>
+    <booleanAttribute key="SDACCEL_ENABLE_PROFILE" value="true"/>
+    <stringAttribute key="SDACCEL_STALL_TRACE" value="off"/>
+    <stringAttribute key="SDACCEL_TIMELINE_REPORT_STRING" value="Default"/>
+    <booleanAttribute key="SDX_DO_BINARY_CONTAINERS_ARGS" value="false"/>
+    <booleanAttribute key="SDX_USE_DEFAULT_WORKING_DIR" value="false"/>
+    <stringAttribute key="TRACE_BUFFER_SIZE" value="1M"/>
+    <stringAttribute key="TRACE_INTERVAL" value="10"/>
+    <booleanAttribute key="TRACE_OFFLOAD" value="false"/>
+    <stringAttribute key="com.xilinx.ide.dc.standalone.debug.executable" value="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/host"/>
+    <stringAttribute key="com.xilinx.ide.dc.standalone.debug.kernels" value="Conv_sysarr"/>
+    <stringAttribute key="com.xilinx.ide.dc.standalone.debug.target.flow" value="sw_emu"/>
+    <booleanAttribute key="com.xilinx.sdx.internal.opencl.language.ui.launch.ui.stop_at_kernal_start" value="true"/>
+    <stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="${env_var:XILINX_VITIS}/${env_var:RDI_PLATFORM}/tools/gdb/gdb-7.9.1/bin/gdb"/>
+    <booleanAttribute key="org.eclipse.cdt.dsf.gdb.internal.ui.launching.LocalApplicationCDebuggerTab.DEFAULTS_SET" value="true"/>
+    <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="gdb"/>
+    <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+    <booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+    <stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value="./conv.sw_emu.xclbin"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/host"/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="&lt;None&gt;"/>
+    <stringAttribute key="org.eclipse.cdt.launch.WORKING_DIRECTORY" value="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu"/>
+    <mapAttribute key="org.eclipse.debug.core.environmentVariables">
+        <mapEntry key="XILINX_OPENCL" value="${env_var:XILINX_VITIS}/"/>
+        <mapEntry key="XILINX_VITIS" value="${env_var:XILINX_VITIS}/"/>
+    </mapAttribute>
+    <stringAttribute key="org.eclipse.debug.ui.ATTR_CAPTURE_IN_FILE" value="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/standalone_debug_dc_sw_emu_host.launch.ui.log"/>
+    <stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#10;&lt;memoryBlockExpressionList context=&quot;reserved-for-future-use&quot;/&gt;&#10;"/>
+    <stringAttribute key="process_factory_id" value="org.eclipse.cdt.dsf.gdb.GdbProcessFactory"/>
+</launchConfiguration>

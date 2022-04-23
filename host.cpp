@@ -594,12 +594,12 @@ void set_param_data(int run_case)
 
 	param.L1_TILENUM_K = 32/ARRAY_K; ///
 	param.L1_TILENUM_C = 32/ARRAY_C;
-	param.L1_TILENUM_W = 2;
-	param.L1_TILENUM_H = 2;
+	param.L1_TILENUM_W = 1;
+	param.L1_TILENUM_H = 1;
 	param.L1_TILENUM_R = 3;
 	param.L1_TILENUM_S = 3;
-	param.TILESIZE_W = 8; //// is allowed(not matched with W_L1)
-	param.TILESIZE_H = 8;
+	param.TILESIZE_W = 16; //// is allowed(not matched with W_L1)
+	param.TILESIZE_H = 16;
 	param.TILESIZE_R = 1; //must be 1
 	param.TILESIZE_S = 1; //must be 1
 

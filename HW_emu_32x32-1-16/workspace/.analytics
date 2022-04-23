@@ -1,0 +1,18 @@
+timestamp=[2022-02-24 14:06:44], mode=WORKBENCH_START, duration=0:00:12.681, duration_ms=12681, data={}
+timestamp=[2022-02-24 14:06:48], mode=WORKBENCH_UI_INIT, duration=0:00:03.431, duration_ms=3431, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2022-02-24 14:06:50], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:04.780, duration_ms=4780, data={}
+timestamp=[2022-02-24 14:11:14], mode=WORKBENCH_START, duration=0:00:03.501, duration_ms=3501, data={}
+timestamp=[2022-02-24 14:11:14], mode=WORKBENCH_UI_INIT, duration=0:00:00.277, duration_ms=277, data={editors_count=2, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2022-02-24 14:11:15], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.315, duration_ms=1315, data={}
+timestamp=[2022-02-24 14:13:58], mode=WORKBENCH_START, duration=0:00:03.609, duration_ms=3609, data={}
+timestamp=[2022-02-24 14:13:59], mode=WORKBENCH_UI_INIT, duration=0:00:00.281, duration_ms=281, data={editors_count=2, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2022-02-24 14:14:00], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.385, duration_ms=1385, data={}
+timestamp=[2022-02-24 14:14:40], mode=WORKBENCH_START, duration=0:00:03.583, duration_ms=3583, data={}
+timestamp=[2022-02-24 14:14:41], mode=WORKBENCH_UI_INIT, duration=0:00:00.249, duration_ms=249, data={editors_count=2, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2022-02-24 14:14:42], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.474, duration_ms=1474, data={}
+timestamp=[2022-02-24 14:16:06], mode=WORKBENCH_START, duration=0:00:04.461, duration_ms=4461, data={}
+timestamp=[2022-02-24 14:16:06], mode=WORKBENCH_UI_INIT, duration=0:00:00.272, duration_ms=272, data={editors_count=3, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2022-02-24 14:16:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.886, duration_ms=1886, data={}
+timestamp=[2022-02-24 14:20:06], mode=WORKBENCH_START, duration=0:00:03.523, duration_ms=3523, data={}
+timestamp=[2022-02-24 14:20:07], mode=WORKBENCH_UI_INIT, duration=0:00:00.276, duration_ms=276, data={editors_count=1, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2022-02-24 14:20:08], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:01.376, duration_ms=1376, data={}

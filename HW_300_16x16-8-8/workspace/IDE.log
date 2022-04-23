@@ -1,0 +1,57 @@
+14:06:45 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:06:47 INFO  : Registering command handlers for Vitis TCF services
+14:06:48 INFO  : XRT server has started successfully on port '4351'
+14:06:50 INFO  : Platform repository initialization has completed.
+14:06:50 INFO  : XSCT server has started successfully.
+14:06:50 INFO  : Successfully done setting XSCT server connection channel  
+14:06:53 INFO  : plnx-install-location is set to ''
+14:06:53 INFO  : Successfully done setting workspace for the tool. 
+14:06:53 INFO  : Successfully done query RDI_DATADIR 
+14:11:14 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:11:14 INFO  : Launch configuration 'standalone_debug_dc_sw_emu_host' is updated to use the latest command line arguments.
+14:11:14 INFO  : Registering command handlers for Vitis TCF services
+14:11:15 INFO  : XRT server has started successfully on port '4352'
+14:11:15 INFO  : Platform repository initialization has completed.
+14:11:16 INFO  : XSCT server has started successfully.
+14:11:16 INFO  : Successfully done setting XSCT server connection channel  
+14:11:16 INFO  : plnx-install-location is set to ''
+14:11:16 INFO  : Successfully done setting workspace for the tool. 
+14:11:16 INFO  : Successfully done query RDI_DATADIR 
+14:13:58 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:13:59 INFO  : Registering command handlers for Vitis TCF services
+14:13:59 INFO  : XRT server has started successfully on port '4355'
+14:14:00 INFO  : Platform repository initialization has completed.
+14:14:00 INFO  : XSCT server has started successfully.
+14:14:00 INFO  : plnx-install-location is set to ''
+14:14:00 INFO  : Successfully done setting XSCT server connection channel  
+14:14:00 INFO  : Successfully done query RDI_DATADIR 
+14:14:00 INFO  : Successfully done setting workspace for the tool. 
+14:14:40 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:14:41 INFO  : Registering command handlers for Vitis TCF services
+14:14:41 INFO  : XRT server has started successfully on port '4351'
+14:14:42 INFO  : Platform repository initialization has completed.
+14:14:42 INFO  : XSCT server has started successfully.
+14:14:42 INFO  : plnx-install-location is set to ''
+14:14:42 INFO  : Successfully done setting XSCT server connection channel  
+14:14:42 INFO  : Successfully done query RDI_DATADIR 
+14:14:42 INFO  : Successfully done setting workspace for the tool. 
+14:16:05 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:16:06 INFO  : Launch configuration 'standalone_debug_dc_sw_emu_host' is updated to use the latest command line arguments.
+14:16:06 INFO  : Registering command handlers for Vitis TCF services
+14:16:07 INFO  : XRT server has started successfully on port '4353'
+14:16:07 INFO  : XSCT server has started successfully.
+14:16:07 INFO  : plnx-install-location is set to ''
+14:16:07 INFO  : Successfully done setting XSCT server connection channel  
+14:16:08 INFO  : Successfully done query RDI_DATADIR 
+14:16:08 INFO  : Successfully done setting workspace for the tool. 
+14:16:08 INFO  : Platform repository initialization has completed.
+14:20:06 INFO  : Launching XSCT server: xsct -n  -interactive /home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/HW_emu/workspace/temp_xsdb_launch_script.tcl
+14:20:06 INFO  : Launch configuration 'standalone_debug_dc_sw_emu_host' is updated to use the latest command line arguments.
+14:20:07 INFO  : Registering command handlers for Vitis TCF services
+14:20:07 INFO  : XRT server has started successfully on port '4353'
+14:20:08 INFO  : Platform repository initialization has completed.
+14:20:08 INFO  : XSCT server has started successfully.
+14:20:08 INFO  : Successfully done setting XSCT server connection channel  
+14:20:08 INFO  : plnx-install-location is set to ''
+14:20:08 INFO  : Successfully done setting workspace for the tool. 
+14:20:08 INFO  : Successfully done query RDI_DATADIR 

@@ -1,0 +1,166 @@
+/*
+
+Xilinx Vitis Analyzer v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:35 MDT 2020
+
+Process ID (PID): 13096
+License: Customer
+
+Current time: 	Wed Apr 20 14:24:11 KST 2022
+Time zone: 	Korean Standard Time (Asia/Seoul)
+
+OS: Ubuntu
+OS Version: 4.15.0-166-generic
+OS Architecture: amd64
+Available processors (cores): 48
+
+Display: Summit:14.0
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	/home/sumin/tools/Xilinx/Vitis/2020.1/tps/lnx64/jre9.0.4
+Java executable location: 	/home/sumin/tools/Xilinx/Vitis/2020.1/tps/lnx64/jre9.0.4/bin/java
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	sumin
+User home directory: /home/sumin
+User working directory: /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8
+User country: 	null
+User language: 	en
+User locale: 	en
+
+RDI_BASEROOT: /home/sumin/tools/Xilinx/Vitis
+HDI_APPROOT: /home/sumin/tools/Xilinx/Vitis/2020.1
+RDI_DATADIR: /home/sumin/tools/Xilinx/Vitis/2020.1/data
+RDI_BINDIR: /home/sumin/tools/Xilinx/Vitis/2020.1/bin
+
+Vitis Analyzer preferences file location: /home/sumin/.Xilinx/vitis_analyzer/2020.1/vitis_analyzer.xml
+Vitis Analyzer preferences directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/
+Vitis Analyzer layouts directory: /home/sumin/.Xilinx/vitis_analyzer/2020.1/data/layouts
+PlanAhead jar file location: 	/home/sumin/tools/Xilinx/Vitis/2020.1/lib/classes/frank.jar
+Vitis Analyzer log file location: 	/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/vitis_analyzer.log
+Vitis Analyzer journal file location: 	/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/vitis_analyzer.jou
+Engine tmp dir: 	./.Xil/vitis_analyzer-13096-Summit
+
+Xilinx Environment Variables
+----------------------------
+XILINX_DSP: 
+XILINX_PLANAHEAD: /home/sumin/tools/Xilinx/Vitis/2020.1
+XILINX_SDK: /home/sumin/tools/Xilinx/Vitis/2020.1
+XILINX_VITIS: /home/sumin/tools/Xilinx/Vitis/2020.1
+XILINX_VIVADO: /home/sumin/tools/Xilinx/Vivado/2020.1
+XILINX_VIVADO_HLS: /home/sumin/tools/Xilinx/Vivado/2020.1
+XILINX_XRT: /opt/xilinx/xrt
+
+
+GUI allocated memory:	185 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,531 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// bz (ct):  Open Files : addNotify
+dismissDialog("Open Files"); // bz (ct)
+// Tcl Command: 'create_project dummy'
+// TclEventType: PROJECT_NEW
+// Opening Summary: Type{value=LINK_SUMMARY},SummaryFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/conv.hw.xclbin.link_summary}
+// bz (ct):  Open Summary : addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1456 ms.
+// Tcl Message: create_project dummy 
+dismissDialog("Open Summary"); // bz (ct)
+// Opening Report: Type{value=BUILD_SUMMARY_REPORT},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/conv.hw.xclbin.link_summary}
+// [GUI Memory]: 109 MB (+111712kb) [00:00:11]
+// [Engine Memory]: 1,549 MB (+1473001kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,545 MB. GUI used memory: 50 MB. Current time: 4/20/22, 2:24:12 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 622 seconds
+selectButton((HResource) null, "Logs"); // l (Q, ct)
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1001 ms.
+// Elapsed time: 24 seconds
+selectButton((HResource) null, "Timing Summary"); // l (Q, ct)
+// Opening Report: Type{value=TIMING_SUMMARY_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/imp/xilinx_u200_xdma_201830_2_bb_locked_timing_summary_routed.rpt}
+// WARNING: HEventQueue.dispatchEvent() is taking  2257 ms.
+closeView((HResource) null, "Timing Summary"); // b
+selectButton((HResource) null, "Platform Diagram"); // l (Q, ct)
+// Elapsed time: 10 seconds
+selectTree("Report Navigator Tree", "[root, Type{value=SYSTEM_ESTIMATE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/system_estimate_conv.hw.xtxt}]", 4, false); // b (J, ct)
+// Opening Report: Type{value=SYSTEM_ESTIMATE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/system_estimate_conv.hw.xtxt}
+selectTree("Report Navigator Tree", "[root, Type{value=SYSTEM_GUIDANCE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/v++_link_conv.hw_guidance.pb}]", 5, false); // b (J, ct)
+// Opening Report: Type{value=SYSTEM_GUIDANCE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/v++_link_conv.hw_guidance.pb}
+// [GUI Memory]: 119 MB (+4842kb) [00:11:28]
+// [Engine Memory]: 1,674 MB (+49760kb) [00:11:28]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,677 MB. GUI used memory: 84 MB. Current time: 4/20/22, 2:35:33 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1955 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1127 ms.
+// Elapsed time: 571 seconds
+selectTree("Report Navigator Tree", "[root, Type{value=TIMING_SUMMARY_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/imp/xilinx_u200_xdma_201830_2_bb_locked_timing_summary_routed.rpt}]", 6, false); // b (J, ct)
+// Opening Report: Type{value=TIMING_SUMMARY_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/imp/xilinx_u200_xdma_201830_2_bb_locked_timing_summary_routed.rpt}
+selectCodeEditor("Timing Summary", 123, 295); // G (w, ct)
+selectCodeEditor("Timing Summary", 123, 295); // G (w, ct)
+selectTree("Report Navigator Tree", "[root, Type{value=UTILIZATION_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/imp/kernel_util_routed.xutil}]", 7, false); // b (J, ct)
+// Opening Report: Type{value=UTILIZATION_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/imp/kernel_util_routed.xutil}
+selectTree("Report Navigator Tree", "[root, Type{value=KERNEL_ESTIMATE_REPORT},SummaryFile{file=conv.hw.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/conv.hw/system_estimate_conv.hw.xtxt}]", 11, false); // b (J, ct)
+// Opening Report: Type{value=KERNEL_ESTIMATE_REPORT},SummaryFile{file=conv.hw.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/conv.hw/system_estimate_conv.hw.xtxt}
+// [GUI Memory]: 195 MB (+73023kb) [00:21:19]
+selectTree("Report Navigator Tree", "[root, Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/conv.hw/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}]", 13, false); // b (J, ct)
+// Opening Report: Type{value=HLS_SYNTHESIS_REPORT},SummaryFile{file=conv.hw.xo.compile_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/conv.hw/Conv_sysarr/Conv_sysarr/solution/.autopilot/db/Conv_sysarr.design.xml}
+// bz (ct):  Open HLS Synthesis Report : addNotify
+dismissDialog("Open HLS Synthesis Report"); // bz (ct)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,866 MB. GUI used memory: 126 MB. Current time: 4/20/22, 2:45:28 PM KST
+// Elapsed time: 10 seconds
+selectTree("Report Navigator Tree", "[root, Type{value=SYSTEM_ESTIMATE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/reports/link/system_estimate_conv.hw.xtxt}]", 4, false); // b (J, ct)
+selectTree("Report Navigator Tree", "[root, Type{value=SYSTEM_GUIDANCE_REPORT},SummaryFile{file=conv.hw.xclbin.link_summary isArchive=false},ReportFile{file=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_debug_300_16x16-4-8/_x/v++_link_conv.hw_guidance.pb}]", 5, false); // b (J, ct)
+// Elapsed time: 164 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System Guidance", 4); // m (l, ct)
+// WARNING: HEventQueue.dispatchEvent() is taking  1115 ms.
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Utilization", 3); // m (l, ct)
+// WARNING: HEventQueue.dispatchEvent() is taking  1998 ms.
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Timing Summary", 2); // m (l, ct)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System Guidance", 1); // m (l, ct)
+// WARNING: HEventQueue.dispatchEvent() is taking  1854 ms.
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "System Estimate", 0); // m (l, ct)
+// WARNING: HEventQueue.dispatchEvent() is taking  1827 ms.
+selectTab("MainWorkspace", (HResource) null, "conv.hw (Hardware)", 1); // m (l, ct)
+// [Engine Memory]: 1,871 MB (+118138kb) [00:46:17]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,871 MB. GUI used memory: 127 MB. Current time: 4/20/22, 3:15:32 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,828 MB. GUI used memory: 114 MB. Current time: 4/20/22, 3:45:32 PM KST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,827 MB. GUI used memory: 114 MB. Current time: 4/20/22, 4:15:32 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1035 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,808 MB. GUI used memory: 109 MB. Current time: 4/20/22, 4:45:32 PM KST
+// WARNING: HEventQueue.dispatchEvent() is taking  1564 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,808 MB. GUI used memory: 110 MB. Current time: 4/20/22, 5:15:32 PM KST

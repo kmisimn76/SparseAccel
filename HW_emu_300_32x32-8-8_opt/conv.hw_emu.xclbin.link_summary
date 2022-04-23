@@ -1,0 +1,1135 @@
+<ENTRY>
+{
+ "thisFile": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:07 2021",
+ "timestampMillis": "1619030287296",
+ "buildStep": {
+  "cmdId": "73216035-ac90-4445-b7e7-73bd214afea0",
+  "name": "v++",
+  "logFile": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/link.steps.log",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l --profile_kernel data:all:all:all --profile_kernel stall:all:all -t hw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g -D ARRAY_K=32 -D ARRAY_C=32 -D VEC_SIZE=32 -D BLOCK_SIZE=8 -D PORT_NUM=8 conv.hw_emu.xo -oconv.hw_emu.xclbin --config config_sp -j 12 ",
+  "args": [
+   "-l",
+   "--profile_kernel",
+   "data:all:all:all",
+   "--profile_kernel",
+   "stall:all:all",
+   "-t",
+   "hw_emu",
+   "--platform",
+   "xilinx_u200_xdma_201830_2",
+   "--save-temps",
+   "-g",
+   "-D",
+   "ARRAY_K=32",
+   "-D",
+   "ARRAY_C=32",
+   "-D",
+   "VEC_SIZE=32",
+   "-D",
+   "BLOCK_SIZE=8",
+   "-D",
+   "PORT_NUM=8",
+   "conv.hw_emu.xo",
+   "-oconv.hw_emu.xclbin",
+   "--config",
+   "config_sp",
+   "-j",
+   "12"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/config_sp",
+    "content": "kernel_frequency=300\n#platform=xilinx_u200_xdma_201830_2\n\ndebug=1\n#profile_kernel=data:all:all:all\n\n[connectivity]\n#sp=\u003ccompute_unit_name\u003e.\u003cinterface_name\u003e:\u003csptag[min:max]\u003e\nsp=Conv_sysarr_1.bias_in:DDR[0]\nsp=Conv_sysarr_1.weight_in:DDR[1]\nsp=Conv_sysarr_1.data_in:DDR[2]\nsp=Conv_sysarr_1.conv_out:DDR[3]\n\n#stream_connect=\u003ccu_name\u003e.\u003coutput_port\u003e:\u003ccu_name\u003e.\u003cinput_port\u003e:[\u003cfifo_depth\u003e]\n#stream_connect=memRead_1.bias_out:coreConv_1.bias_in\n#stream_connect=memRead_1.weight_out:coreConv_1.weight_in\n#stream_connect=memRead_1.data_out:coreConv_1.data_in\n##VGG connection\n#stream_connect=coreConv_1.conv_out:memWrite_1.conv_in\n##ResNet connection\n#stream_connect=coreConv_1.conv_out:batchNorm_1.conv_in\n#stream_connect=coreConv_1.bypass_out:memWrite_1.bypass_in\n#stream_connect=batchNorm_1.bn_out:memWrite_1.bn_in\n\n\n##used for pipelined pooling\n#stream_connect=memWrite_1.pool_sync_out:maxPool_1.pool_sync_in\n\n#nk=\u003ckernal_name\u003e:#:\u003ccu_name1\u003e.\u003ccu_name2\u003e...\u003ccu_name#\u003e\n#nk=DataLoad:1:DataLoad_1\n#nk=DataStore:1:DataStore_1\n\n[vivado]\n##dump all waveforms\nprop=fileset.sim_1.xsim.elaborate.debug_level=all\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:07 2021",
+ "timestampMillis": "1619030287296",
+ "status": {
+  "cmdId": "73216035-ac90-4445-b7e7-73bd214afea0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Apr 22 03:38:31 2021",
+ "timestampMillis": "1619030311011",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u200_xdma_201830_2.xpfm",
+  "hardwareDsa": "xilinx_u200_xdma_201830_2.dsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u200_xdma_201830_2",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW_EMU",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "conv.hw_emu",
+    "file": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin",
+    "reports": []
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "Conv_sysarr",
+     "file": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xo",
+     "reports": []
+    },
+    "sources": [
+     "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "Conv_sysarr_1"
+    ],
+    "type": "HLS"
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:33 2021",
+ "timestampMillis": "1619030313862",
+ "buildStep": {
+  "cmdId": "3ceeab9d-3de2-4c10-bdc6-b76ca38d5e9f",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xo -keep --config /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm --target emu --output_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int --temp_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xo",
+   "-keep",
+   "--config",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm",
+   "--target",
+   "emu",
+   "--output_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int",
+   "--temp_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/syslinkConfig.ini",
+    "content": "sp=Conv_sysarr_1.bias_in:DDR[0]\nsp=Conv_sysarr_1.weight_in:DDR[1]\nsp=Conv_sysarr_1.data_in:DDR[2]\nsp=Conv_sysarr_1.conv_out:DDR[3]\n\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:33 2021",
+ "timestampMillis": "1619030313863",
+ "status": {
+  "cmdId": "3ceeab9d-3de2-4c10-bdc6-b76ca38d5e9f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:46 2021",
+ "timestampMillis": "1619030326941",
+ "status": {
+  "cmdId": "3ceeab9d-3de2-4c10-bdc6-b76ca38d5e9f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:46 2021",
+ "timestampMillis": "1619030326942",
+ "buildStep": {
+  "cmdId": "ece77c6a-337d-4f74-bf30-00c3994ec943",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/sdsl.dat -rtd /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/cf2sw.rtd -xclbin /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.xml -o /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/sdsl.dat",
+   "-rtd",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/cf2sw.rtd",
+   "-xclbin",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:46 2021",
+ "timestampMillis": "1619030326943",
+ "status": {
+  "cmdId": "ece77c6a-337d-4f74-bf30-00c3994ec943",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:48 2021",
+ "timestampMillis": "1619030328992",
+ "status": {
+  "cmdId": "ece77c6a-337d-4f74-bf30-00c3994ec943",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:48 2021",
+ "timestampMillis": "1619030328994",
+ "buildStep": {
+  "cmdId": "a41dea0f-9e68-41fd-8da9-7a72e3e63db4",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:48 2021",
+ "timestampMillis": "1619030328995",
+ "status": {
+  "cmdId": "a41dea0f-9e68-41fd-8da9-7a72e3e63db4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:38:51 2021",
+ "timestampMillis": "1619030331610",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:51 2021",
+ "timestampMillis": "1619030331611",
+ "status": {
+  "cmdId": "a41dea0f-9e68-41fd-8da9-7a72e3e63db4",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:51 2021",
+ "timestampMillis": "1619030331613",
+ "buildStep": {
+  "cmdId": "be4d83fb-cdd8-4f1c-bb61-0a889f7103d5",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw_emu -f xilinx_u200_xdma_201830_2 -g -j 12 --kernel_frequency 300 --profile_kernel data:all:all:all --profile_kernel stall:all:all --remote_ip_cache /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/.ipcache -s --output_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int --log_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/logs/link --report_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/reports/link --config /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/vplConfig.ini -k /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link --emulation_mode debug_waveform --no-info --iprepo /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0 --messageDb /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/run_link/vpl.pb /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw_emu",
+   "-f",
+   "xilinx_u200_xdma_201830_2",
+   "-g",
+   "-j",
+   "12",
+   "--kernel_frequency",
+   "300",
+   "--profile_kernel",
+   "data:all:all:all",
+   "--profile_kernel",
+   "stall:all:all",
+   "--remote_ip_cache",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/.ipcache",
+   "-s",
+   "--output_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int",
+   "--log_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/logs/link",
+   "--report_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/reports/link",
+   "--config",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/vplConfig.ini",
+   "-k",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link",
+   "--emulation_mode",
+   "debug_waveform",
+   "--no-info",
+   "--iprepo",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0",
+   "--messageDb",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/run_link/vpl.pb",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nparam=hw_emu.enableDebugWaveform=1\nparam=compiler.vppCurrentWorkingDir=/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt\nmisc=BinaryName=conv.hw_emu\n\n[connectivity]\nnk=Conv_sysarr:1:Conv_sysarr_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\nprop=fileset.sim_1.xsim.elaborate.debug_level=all\n\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:51 2021",
+ "timestampMillis": "1619030331613",
+ "status": {
+  "cmdId": "be4d83fb-cdd8-4f1c-bb61-0a889f7103d5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Apr 22 03:38:53 2021",
+ "timestampMillis": "1619030333781",
+ "buildStep": {
+  "cmdId": "ffa38b96-baa5-4be0-b860-b08e91eb4656",
+  "name": "vpl",
+  "logFile": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/link.steps.log",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/vpl -t hw_emu -f xilinx_u200_xdma_201830_2 -g -j 12 --kernel_frequency 300 --profile_kernel data:all:all:all --profile_kernel stall:all:all --remote_ip_cache /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/.ipcache -s --output_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int --log_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/logs/link --report_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/reports/link --config /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/vplConfig.ini -k /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link --emulation_mode debug_waveform --no-info --iprepo /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/ip_repo/xilinx_com_hls_Conv_sysarr_1_0 --messageDb /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/run_link/vpl.pb /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:38:53 2021",
+ "timestampMillis": "1619030333781",
+ "status": {
+  "cmdId": "ffa38b96-baa5-4be0-b860-b08e91eb4656",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Thu Apr 22 03:39:05 2021",
+ "timestampMillis": "1619030345671",
+ "vivadoProject": {
+  "openDir": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:39:05 2021",
+ "timestampMillis": "1619030345672",
+ "buildStep": {
+  "cmdId": "d569dbc9-d3bb-441c-aecc-0ea6763dfe4c",
+  "name": "vivado",
+  "logFile": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:39:05 2021",
+ "timestampMillis": "1619030345673",
+ "status": {
+  "cmdId": "d569dbc9-d3bb-441c-aecc-0ea6763dfe4c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:22 2021",
+ "timestampMillis": "1619030602982",
+ "status": {
+  "cmdId": "d569dbc9-d3bb-441c-aecc-0ea6763dfe4c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603238",
+ "status": {
+  "cmdId": "ffa38b96-baa5-4be0-b860-b08e91eb4656",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603250",
+ "status": {
+  "cmdId": "be4d83fb-cdd8-4f1c-bb61-0a889f7103d5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603251",
+ "buildStep": {
+  "cmdId": "c236dcd5-cffd-4309-be91-5d513bc3c523",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "rtdgen",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603252",
+ "status": {
+  "cmdId": "c236dcd5-cffd-4309-be91-5d513bc3c523",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603252",
+ "buildStep": {
+  "cmdId": "6c2bfe3d-9ee8-4a0b-b9e8-71ff6ba83b26",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xrflink -f /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf --hls /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/debug/Conv_sysarr.xrf",
+  "args": [
+   "-f",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf",
+   "--hls",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/debug/Conv_sysarr.xrf"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603253",
+ "status": {
+  "cmdId": "6c2bfe3d-9ee8-4a0b-b9e8-71ff6ba83b26",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603610",
+ "status": {
+  "cmdId": "6c2bfe3d-9ee8-4a0b-b9e8-71ff6ba83b26",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603611",
+ "buildStep": {
+  "cmdId": "62fe2cde-5ca5-4c59-a232-abac0b42153b",
+  "name": "gcc",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xcpp -c -g -fPIC /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp -o /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o -I/home/sumin/tools/Xilinx/Vivado/2020.1/bin/../include -I/home/sumin/tools/Xilinx/Vitis/2020.1/bin/../include -g -D ARRAY_K=32 -D ARRAY_C=32 -D VEC_SIZE=32 -D BLOCK_SIZE=8 -D PORT_NUM=8 -I/home/sumin/workspace/Systolic_Array_TEST_PCNN_based -g",
+  "args": [
+   "-c",
+   "-g",
+   "-fPIC",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp",
+   "-o",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o",
+   "-I/home/sumin/tools/Xilinx/Vivado/2020.1/bin/../include",
+   "-I/home/sumin/tools/Xilinx/Vitis/2020.1/bin/../include",
+   "-g",
+   "-D",
+   "ARRAY_K=32",
+   "-D",
+   "ARRAY_C=32",
+   "-D",
+   "VEC_SIZE=32",
+   "-D",
+   "BLOCK_SIZE=8",
+   "-D",
+   "PORT_NUM=8",
+   "-I/home/sumin/workspace/Systolic_Array_TEST_PCNN_based",
+   "-g"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:23 2021",
+ "timestampMillis": "1619030603612",
+ "status": {
+  "cmdId": "62fe2cde-5ca5-4c59-a232-abac0b42153b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604491",
+ "status": {
+  "cmdId": "62fe2cde-5ca5-4c59-a232-abac0b42153b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604492",
+ "buildStep": {
+  "cmdId": "1fd98b39-df16-4be0-9df1-d94ceadaf4ed",
+  "name": "ar",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/binutils-2.26/bin/ar -cr /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o.a /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o",
+  "args": [
+   "-cr",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o.a",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604492",
+ "status": {
+  "cmdId": "1fd98b39-df16-4be0-9df1-d94ceadaf4ed",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604515",
+ "status": {
+  "cmdId": "1fd98b39-df16-4be0-9df1-d94ceadaf4ed",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604516",
+ "buildStep": {
+  "cmdId": "2f417707-ae23-400a-9ee4-d2fb25ce3d65",
+  "name": "g++",
+  "logFile": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.gpp_so.log",
+  "commandLine": "/usr/bin/env PATH=/usr/bin:/bin /home/sumin/tools/Xilinx/Vitis/2020.1/bin/xcpp -Wall -shared -Wl,-whole-archive,-soname,conv.hw_emu.so -o conv.hw_emu.so /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o.a -Wl,--no-whole-archive",
+  "args": [
+   "PATH=/usr/bin:/bin",
+   "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xcpp",
+   "-Wall",
+   "-shared",
+   "-Wl,-whole-archive,-soname,conv.hw_emu.so",
+   "-o",
+   "conv.hw_emu.so",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp.o.a",
+   "-Wl,--no-whole-archive"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604517",
+ "status": {
+  "cmdId": "2f417707-ae23-400a-9ee4-d2fb25ce3d65",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604596",
+ "status": {
+  "cmdId": "2f417707-ae23-400a-9ee4-d2fb25ce3d65",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604596",
+ "buildStep": {
+  "cmdId": "152897d3-ceee-4f25-b812-630c788250a7",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xrflink -f /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf --DWARF /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.so",
+  "args": [
+   "-f",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf",
+   "--DWARF",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.so"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604597",
+ "status": {
+  "cmdId": "152897d3-ceee-4f25-b812-630c788250a7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604949",
+ "status": {
+  "cmdId": "152897d3-ceee-4f25-b812-630c788250a7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604995",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu_xml.rtd",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "XCLBIN_INFO"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604998",
+ "buildStep": {
+  "cmdId": "764983ed-0edb-4d93-8fe2-5cfa052a0974",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -a /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/address_map.xml -sdsl /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/sdsl.dat -xclbin /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.xml -rtd /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.rtd -o /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml",
+  "args": [
+   "-a",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/address_map.xml",
+   "-sdsl",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/sdsl.dat",
+   "-xclbin",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/xclbin_orig.xml",
+   "-rtd",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.rtd",
+   "-o",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:24 2021",
+ "timestampMillis": "1619030604998",
+ "status": {
+  "cmdId": "764983ed-0edb-4d93-8fe2-5cfa052a0974",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:27 2021",
+ "timestampMillis": "1619030607095",
+ "status": {
+  "cmdId": "764983ed-0edb-4d93-8fe2-5cfa052a0974",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:32 2021",
+ "timestampMillis": "1619030612762",
+ "buildStep": {
+  "cmdId": "07c139a7-362a-493e-951a-6ef7bb148848",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xrflink -f /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf --kernel /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml",
+  "args": [
+   "-f",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf",
+   "--kernel",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:32 2021",
+ "timestampMillis": "1619030612763",
+ "status": {
+  "cmdId": "07c139a7-362a-493e-951a-6ef7bb148848",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613149",
+ "status": {
+  "cmdId": "07c139a7-362a-493e-951a-6ef7bb148848",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613150",
+ "buildStep": {
+  "cmdId": "14c2d190-dc5d-4a38-96af-98bd0d47328b",
+  "name": "xrflink",
+  "logFile": "",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xrflink -f /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf --hierarchy /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/_kernel_inst_paths.dat",
+  "args": [
+   "-f",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf",
+   "--hierarchy",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/_kernel_inst_paths.dat"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613151",
+ "status": {
+  "cmdId": "14c2d190-dc5d-4a38-96af-98bd0d47328b",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613508",
+ "status": {
+  "cmdId": "14c2d190-dc5d-4a38-96af-98bd0d47328b",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613512",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM_PLUS"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613513",
+ "buildStep": {
+  "cmdId": "8d8f214d-f52b-4754-bcf2-0afdcc1d8620",
+  "name": "rtdgen",
+  "logFile": "",
+  "commandLine": "writeSystemDiagram",
+  "args": [
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.rtd",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/systemDiagramModelSlrBaseAddress.json"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613513",
+ "status": {
+  "cmdId": "8d8f214d-f52b-4754-bcf2-0afdcc1d8620",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613514",
+ "status": {
+  "cmdId": "8d8f214d-f52b-4754-bcf2-0afdcc1d8620",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613516",
+ "status": {
+  "cmdId": "c236dcd5-cffd-4309-be91-5d513bc3c523",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613517",
+ "buildStep": {
+  "cmdId": "90132388-0f09-4b36-8de5-f601e2945ff7",
+  "name": "xclbinutil",
+  "logFile": "",
+  "commandLine": "xclbinutil --add-section DEBUG_DATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf --add-section DEBUG_IP_LAYOUT:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/debug_ip_layout.rtd --add-section BITSTREAM:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/behav.xse --force --target hw_emu --key-value SYS:dfx_enable:false --add-section :JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.rtd --append-section :JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu_xml.rtd --add-section BUILD_METADATA:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml --add-section SYSTEM_METADATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/systemDiagramModelSlrBaseAddress.json --output /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin",
+  "args": [
+   "--add-section",
+   "DEBUG_DATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/consolidated.cf",
+   "--add-section",
+   "DEBUG_IP_LAYOUT:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/debug_ip_layout.rtd",
+   "--add-section",
+   "BITSTREAM:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/behav.xse",
+   "--force",
+   "--target",
+   "hw_emu",
+   "--key-value",
+   "SYS:dfx_enable:false",
+   "--add-section",
+   ":JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.rtd",
+   "--append-section",
+   ":JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/appendSection.rtd",
+   "--add-section",
+   "CLOCK_FREQ_TOPOLOGY:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu_xml.rtd",
+   "--add-section",
+   "BUILD_METADATA:JSON:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu_build.rtd",
+   "--add-section",
+   "EMBEDDED_METADATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/conv.hw_emu.xml",
+   "--add-section",
+   "SYSTEM_METADATA:RAW:/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/link/int/systemDiagramModelSlrBaseAddress.json",
+   "--output",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613518",
+ "status": {
+  "cmdId": "90132388-0f09-4b36-8de5-f601e2945ff7",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613944",
+ "status": {
+  "cmdId": "90132388-0f09-4b36-8de5-f601e2945ff7",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613945",
+ "buildStep": {
+  "cmdId": "203899e1-25c2-4dfe-8840-cf06540e99c3",
+  "name": "xclbinutilinfo",
+  "logFile": "",
+  "commandLine": "xclbinutil --quiet --force --info /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin.info --input /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin",
+  "args": [
+   "--quiet",
+   "--force",
+   "--info",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin.info",
+   "--input",
+   "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/conv.hw_emu.xclbin"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:33 2021",
+ "timestampMillis": "1619030613946",
+ "status": {
+  "cmdId": "203899e1-25c2-4dfe-8840-cf06540e99c3",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:34 2021",
+ "timestampMillis": "1619030614890",
+ "status": {
+  "cmdId": "203899e1-25c2-4dfe-8840-cf06540e99c3",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Apr 22 03:43:34 2021",
+ "timestampMillis": "1619030614891",
+ "buildStep": {
+  "cmdId": "d4bed009-84d4-4511-80c8-fc844eb78f15",
+  "name": "generate_sc_driver",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:34 2021",
+ "timestampMillis": "1619030614892",
+ "status": {
+  "cmdId": "d4bed009-84d4-4511-80c8-fc844eb78f15",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:34 2021",
+ "timestampMillis": "1619030614892",
+ "status": {
+  "cmdId": "d4bed009-84d4-4511-80c8-fc844eb78f15",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:35 2021",
+ "timestampMillis": "1619030615726",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/reports/link/system_estimate_conv.hw_emu.xtxt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SYSTEM_ESTIMATE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:36 2021",
+ "timestampMillis": "1619030616046",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/reports/link/v++_link_conv.hw_emu_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:36 2021",
+ "timestampMillis": "1619030616047",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/v++_link_conv.hw_emu_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Apr 22 03:43:36 2021",
+ "timestampMillis": "1619030616048",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_300_32x32-8-8_opt/_x/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Apr 22 03:43:36 2021",
+ "timestampMillis": "1619030616049",
+ "status": {
+  "cmdId": "73216035-ac90-4445-b7e7-73bd214afea0",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

@@ -541,6 +541,8 @@ initial begin
 end
 
 Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER dataflow_in_loop_LOOP_S_MOST_OUTER_U0(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst),
     .m_axi_gmem1_AWVALID(dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWVALID),
     .m_axi_gmem1_AWREADY(1'b0),
     .m_axi_gmem1_AWADDR(dataflow_in_loop_LOOP_S_MOST_OUTER_U0_m_axi_gmem1_AWADDR),
@@ -708,8 +710,6 @@ Conv_sysarr_dataflow_in_loop_LOOP_S_MOST_OUTER dataflow_in_loop_LOOP_S_MOST_OUTE
     .m_axi_gmem3_BUSER(m_axi_gmem3_BUSER),
     .conv_out(conv_out),
     .WH(WH),
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst),
     .weight_in_ap_vld(weight_in_ap_vld),
     .kmo_ap_vld(kmo_ap_vld),
     .cmo_ap_vld(cmo_ap_vld),
