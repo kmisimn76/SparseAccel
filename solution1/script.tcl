@@ -5,7 +5,7 @@
 ############################################################
 open_project Systolic_Array_TEST_PCNN_based
 set_top Conv_sysarr
-add_files Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp -cflags "-D ARRAY_K=16 -D ARRAY_C=16 -D VEC_SIZE=16 -D BLOCK_SIZE=4 -D PORT_NUM=8"
+add_files Systolic_Array_TEST_PCNN_based/conv_sysarr_dbbuf.cpp -cflags "-DARRAY_K=16 -DARRAY_C=16 -DVEC_SIZE=16 -DBLOCK_SIZE=4 -DPORT_NUM=8"
 add_files Systolic_Array_TEST_PCNN_based/hw_param.h
 open_solution "solution1" -flow_target vivado
 set_part {xcu200-fsgd2104-2-e}

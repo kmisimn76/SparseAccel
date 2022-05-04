@@ -484,10 +484,10 @@ attribute shreg_extract : string;
     signal ap_block_state1 : BOOLEAN;
     signal R_L2_read_reg_4396 : STD_LOGIC_VECTOR (11 downto 0);
     signal S_L2_read_reg_4416 : STD_LOGIC_VECTOR (11 downto 0);
-    signal trunc_ln865_fu_2388_p1 : STD_LOGIC_VECTOR (11 downto 0);
-    signal trunc_ln865_reg_4441 : STD_LOGIC_VECTOR (11 downto 0);
-    signal trunc_ln867_fu_2392_p1 : STD_LOGIC_VECTOR (11 downto 0);
-    signal trunc_ln867_reg_4461 : STD_LOGIC_VECTOR (11 downto 0);
+    signal trunc_ln879_fu_2388_p1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal trunc_ln879_reg_4441 : STD_LOGIC_VECTOR (11 downto 0);
+    signal trunc_ln881_fu_2392_p1 : STD_LOGIC_VECTOR (11 downto 0);
+    signal trunc_ln881_reg_4461 : STD_LOGIC_VECTOR (11 downto 0);
     signal empty_fu_2396_p1 : STD_LOGIC_VECTOR (7 downto 0);
     signal empty_reg_4481 : STD_LOGIC_VECTOR (7 downto 0);
     signal c_fu_2400_p3 : STD_LOGIC_VECTOR (11 downto 0);
@@ -803,8 +803,8 @@ attribute shreg_extract : string;
     signal idxprom13_13_i_i_fu_2810_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal idxprom13_14_i_i_fu_2829_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal idxprom13_15_i_i_fu_2848_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal trunc_ln859_fu_2383_p1 : STD_LOGIC_VECTOR (7 downto 0);
-    signal trunc_ln859_fu_2383_p0 : STD_LOGIC_VECTOR (11 downto 0);
+    signal trunc_ln873_fu_2383_p1 : STD_LOGIC_VECTOR (7 downto 0);
+    signal trunc_ln873_fu_2383_p0 : STD_LOGIC_VECTOR (11 downto 0);
     signal c_1_fu_2412_p2 : STD_LOGIC_VECTOR (11 downto 0);
     signal c_2_fu_2423_p2 : STD_LOGIC_VECTOR (11 downto 0);
     signal c_3_fu_2433_p2 : STD_LOGIC_VECTOR (11 downto 0);
@@ -897,7 +897,7 @@ attribute shreg_extract : string;
 
 
 begin
-    mul_mul_12s_12s_12_4_1_U310 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U183 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -912,7 +912,7 @@ begin
         ce => grp_fu_4179_ce,
         dout => grp_fu_4179_p2);
 
-    mul_mul_12s_12s_12_4_1_U311 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U184 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -927,7 +927,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4187_p2);
 
-    mul_mul_12s_12s_12_4_1_U312 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U185 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -942,7 +942,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4192_p2);
 
-    mul_mul_12s_12s_12_4_1_U313 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U186 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -957,7 +957,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4197_p2);
 
-    mul_mul_12s_12s_12_4_1_U314 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U187 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -972,7 +972,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4202_p2);
 
-    mul_mul_12s_12s_12_4_1_U315 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U188 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -987,7 +987,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4207_p2);
 
-    mul_mul_12s_12s_12_4_1_U316 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U189 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1002,7 +1002,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4212_p2);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U317 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U190 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1014,14 +1014,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4187_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4217_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U318 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U191 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1033,14 +1033,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4192_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4225_p4);
 
-    mul_mul_12s_12s_12_4_1_U319 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U192 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1055,7 +1055,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4233_p2);
 
-    mul_mul_12s_12s_12_4_1_U320 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U193 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1070,7 +1070,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4238_p2);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U321 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U194 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1082,14 +1082,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4197_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4243_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U322 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U195 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1101,14 +1101,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4202_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4251_p4);
 
-    mul_mul_12s_12s_12_4_1_U323 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U196 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1123,7 +1123,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4259_p2);
 
-    mul_mul_12s_12s_12_4_1_U324 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U197 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1138,7 +1138,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4264_p2);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U325 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U198 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1150,14 +1150,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4207_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4269_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U326 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U199 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1169,14 +1169,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4212_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4277_p4);
 
-    mul_mul_12s_12s_12_4_1_U327 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U200 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1191,7 +1191,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4285_p2);
 
-    mul_mul_12s_12s_12_4_1_U328 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U201 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1206,7 +1206,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4290_p2);
 
-    mul_mul_12s_12s_12_4_1_U329 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U202 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1221,7 +1221,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4295_p2);
 
-    mul_mul_12s_12s_12_4_1_U330 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U203 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1236,7 +1236,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4300_p2);
 
-    mul_mul_12s_12s_12_4_1_U331 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U204 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1251,7 +1251,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4305_p2);
 
-    mul_mul_12s_12s_12_4_1_U332 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
+    mul_mul_12s_12s_12_4_1_U205 : component Conv_sysarr_mul_mul_12s_12s_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1266,7 +1266,7 @@ begin
         ce => ap_const_logic_1,
         dout => grp_fu_4310_p2);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U333 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U206 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1278,14 +1278,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4233_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4315_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U334 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U207 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1297,14 +1297,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4238_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4323_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U335 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U208 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1316,14 +1316,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4259_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4331_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U336 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U209 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1335,14 +1335,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4264_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4339_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U337 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U210 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1354,14 +1354,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4285_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4347_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U338 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U211 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1373,14 +1373,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4290_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4355_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U339 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U212 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1392,14 +1392,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4295_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4363_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U340 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U213 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1411,14 +1411,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4300_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4370_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U341 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U214 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1430,14 +1430,14 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4305_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4377_p4);
 
-    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U342 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
+    ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U215 : component Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1
     generic map (
         ID => 1,
         NUM_STAGE => 4,
@@ -1449,10 +1449,10 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        din0 => trunc_ln865_reg_4441,
+        din0 => trunc_ln879_reg_4441,
         din1 => grp_fu_4310_p2,
         din2 => S_L2_read_reg_4416,
-        din3 => trunc_ln867_reg_4461,
+        din3 => trunc_ln881_reg_4461,
         ce => ap_const_logic_1,
         dout => grp_fu_4384_p4);
 
@@ -1494,8 +1494,8 @@ begin
                 R_L2_read_reg_4396 <= R_L2_dout;
                 S_L2_read_reg_4416 <= S_L2_dout;
                 empty_reg_4481 <= empty_fu_2396_p1;
-                trunc_ln865_reg_4441 <= trunc_ln865_fu_2388_p1;
-                trunc_ln867_reg_4461 <= trunc_ln867_fu_2392_p1;
+                trunc_ln879_reg_4441 <= trunc_ln879_fu_2388_p1;
+                trunc_ln881_reg_4461 <= trunc_ln881_fu_2392_p1;
             end if;
         end if;
     end process;
@@ -2308,7 +2308,7 @@ begin
         end if; 
     end process;
 
-    ko_3_out_din <= trunc_ln859_fu_2383_p1;
+    ko_3_out_din <= trunc_ln873_fu_2383_p1;
 
     ko_3_out_write_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, C_L2_empty_n, R_L2_empty_n, S_L2_empty_n, ko_3_empty_n, co_empty_n, ro_empty_n, so_empty_n, ko_3_out_full_n, co_out_full_n, ro_out_full_n, so_out_full_n)
     begin
@@ -2427,10 +2427,10 @@ begin
         end if; 
     end process;
 
-    trunc_ln859_fu_2383_p0 <= ko_3_dout;
-    trunc_ln859_fu_2383_p1 <= trunc_ln859_fu_2383_p0(8 - 1 downto 0);
-    trunc_ln865_fu_2388_p1 <= ro_dout(12 - 1 downto 0);
-    trunc_ln867_fu_2392_p1 <= so_dout(12 - 1 downto 0);
+    trunc_ln873_fu_2383_p0 <= ko_3_dout;
+    trunc_ln873_fu_2383_p1 <= trunc_ln873_fu_2383_p0(8 - 1 downto 0);
+    trunc_ln879_fu_2388_p1 <= ro_dout(12 - 1 downto 0);
+    trunc_ln881_fu_2392_p1 <= so_dout(12 - 1 downto 0);
 
     weight_l2_0_address0_assign_proc : process(ap_CS_fsm_state10, ap_CS_fsm_state11, ap_CS_fsm_state12, ap_CS_fsm_state13, ap_CS_fsm_state14, ap_CS_fsm_state15, ap_CS_fsm_state16, ap_CS_fsm_state17, idxprom13_1_i_i_fu_2582_p1, idxprom13_3_i_i_fu_2620_p1, idxprom13_5_i_i_fu_2658_p1, idxprom13_7_i_i_fu_2696_p1, idxprom13_9_i_i_fu_2734_p1, idxprom13_11_i_i_fu_2772_p1, idxprom13_13_i_i_fu_2810_p1, idxprom13_15_i_i_fu_2848_p1)
     begin

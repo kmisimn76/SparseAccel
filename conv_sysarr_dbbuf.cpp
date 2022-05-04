@@ -263,6 +263,9 @@ void runOutputL1toL2(MACTYPE (*output_l1)[PORT_NUM][ARRAY_K][ARRAY_C/BLOCK_SIZE]
 			#pragma HLS loop_tripcount min=1 max=1
 #pragma HLS DEPENDENCE variable=output_l2
 #pragma HLS DEPENDENCE variable=output_l2_reduction
+            int h = (ho * TILESIZE_H + hi);
+            int w = (wo * TILESIZE_W/PORT_NUM + wi);
+            uint out_ptr = ko * H * (W/PORT_NUM) + h * (W/PORT_NUM) + w;
             int addr = (hi * TILESIZE_W/PORT_NUM + wi);
 		    for (int pt = 0; pt < PORT_NUM; pt++) {
             #pragma HLS unroll
@@ -270,8 +273,6 @@ void runOutputL1toL2(MACTYPE (*output_l1)[PORT_NUM][ARRAY_K][ARRAY_C/BLOCK_SIZE]
             //#pragma HLS unroll skip_exit_check factor=2 // skip_exit_check is needed for reducing latency
             //#pragma HLS pipeline rewind
                 //int k = (ko * ARRAY_K + ki);
-                int h = (ho * TILESIZE_H + hi);
-                int w = (wo * TILESIZE_W/PORT_NUM + wi);
                 //MACTYPE output = output_l1[hi * TILESIZE_W/PORT_NUM + wi][pt][ki];
                 MACTYPE output[ARRAY_K] = {0};
                 #pragma HLS ARRAY_PARTITION variable=output dim=0 complete // Register
@@ -288,13 +289,14 @@ void runOutputL1toL2(MACTYPE (*output_l1)[PORT_NUM][ARRAY_K][ARRAY_C/BLOCK_SIZE]
                 }
                 for (int ki = 0; ki < ARRAY_K; ki++) {
                     #pragma HLS unroll
-                    uint out_ptr = ko * H * (W/PORT_NUM) + h * (W/PORT_NUM) + w;
                     if(isFirst)
+                    	//output_l2[out_ptr][pt][ki] = output[ki];
                         output_l2_reduction[out_ptr][pt][ki] = output[ki];
                     else
+                    	//output_l2[out_ptr][pt][ki] = output[ki] + output_l2_reduction[out_ptr][pt][ki];
                         output_l2_reduction[out_ptr][pt][ki] += output[ki];
                     output_l2[out_ptr][pt][ki] = output_l2_reduction[out_ptr][pt][ki];
-                    //if(ko==0 && ki==0 && h==1 && w==0 && pt==0) printf("%d(%d) ", output_l2[ko * H * W + h * W + w][pt][ki], output[ki]);
+                    ////if(ko==0 && ki==0 && h==1 && w==0 && pt==0) printf("%d(%d) ", output_l2[ko * H * W + h * W + w][pt][ki], output[ki]);
                 }
             }
 		}
@@ -589,11 +591,11 @@ void input_dram_read(DPTYPE data_l2[DATA_L2_SIZE][PORT_NUM][ARRAY_C], DPTYPE* da
 				for(unsigned int w = 0; w < W_in_L2; w++) {
 					#pragma HLS loop_tripcount min=9 max=9
 					#pragma HLS pipeline
+					unsigned int chw = co*H_in_L2*(W_in_L2/PORT_NUM+1) + h*(W_in_L2/PORT_NUM+1) + (w/PORT_NUM);
+					unsigned int pt = w%PORT_NUM;
 					for(unsigned int ci = 0; ci < VEC_SIZE; ci++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
 						#pragma HLS unroll
 						unsigned int global_chw = ((cmo*(C_L2/VEC_SIZE)+co)*WH_in*WH_in + (hmo*H_L2+h)*WH_in + (wmo*W_L2+w))*VEC_SIZE + ci;
-						unsigned int chw = co*H_in_L2*(W_in_L2/PORT_NUM+1) + h*(W_in_L2/PORT_NUM+1) + (w/PORT_NUM);
-						unsigned int pt = w%PORT_NUM;
 						unsigned int v = ci;
 						data_l2[chw][pt][ci] = data_in[global_chw];
 					}
@@ -639,12 +641,12 @@ void output_dram_write(MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K], MAC
 					#pragma HLS loop_tripcount min=7 max=7
 					#pragma HLS pipeline
 					#pragma HLS DEPENDENCE variable=conv_out
+					unsigned int khw = ko*H_L2*(W_L2/PORT_NUM) + h*(W_L2/PORT_NUM) + w/PORT_NUM;
+		            unsigned int pt = w%PORT_NUM;
 					for (unsigned int ki = 0; ki < VEC_SIZE; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 						#pragma HLS unroll
 						//unsigned int h = ho*STREAM_BUFFER_WIDTH + hi;
 						unsigned int global_khw = ((kmo*(K_L2/VEC_SIZE)+ko)*WH*WH + (hmo*H_L2+h)*WH + (wmo*W_L2+w))*VEC_SIZE + ki;
-						unsigned int khw = ko*H_L2*(W_L2/PORT_NUM) + h*(W_L2/PORT_NUM) + w/PORT_NUM;
-			                        unsigned int pt = w%PORT_NUM;
 						//unsigned int v = ki;
 						//conv_out[global_khw] = stream_buffer[hi][w][ki] + output_l2[khw][pt][ki];
 						conv_out[global_khw] = stream_buffer[w][ki] + output_l2[khw][pt][ki];
@@ -728,15 +730,27 @@ MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=bias_l2 dim=1 complete)
 	//DO_PRAGMA(HLS ARRAY_PARTITION variable=weight_l2 dim=2 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=weight_l2 dim=1 complete)
-	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 dim=3 complete)
+//	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 dim=3 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2 dim=3 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2_reduction dim=3 complete)
+	DO_PRAGMA(HLS ARRAY_RESHAPE variable=data_l2 complete dim=3)
+//	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2 complete dim=3)
+//	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2_reduction complete dim=3)
+////	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2 cycle factor=2 dim=3)
+////	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2_reduction cycle factor=2 dim=3)
     #ifdef INPUT_SPARSE
-	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 dim=2 complete)
+//	DO_PRAGMA(HLS ARRAY_PARTITION variable=data_l2 dim=2 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2 dim=2 complete)
 	DO_PRAGMA(HLS ARRAY_PARTITION variable=output_l2_reduction dim=2 complete)
+	DO_PRAGMA(HLS ARRAY_RESHAPE variable=data_l2 complete dim=2)
+//	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2 complete dim=2)
+//	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2_reduction complete dim=2)
     #endif
 
+//#pragma HLS bind_storage variable=output_l2 type=RAM_2P impl=bram
+//#pragma HLS bind_storage variable=output_l2_reduction type=RAM_2P impl=bram
+	//#pragma HLS ARRAY_MAP variable=output_l2 instance=output_l2_unified horizontal
+	//#pragma HLS ARRAY_MAP variable=output_l2_reduction instance=output_l2_unified horizontal
 
     printf("Conv Sysarr start\n");
 	/*uint K = param.K;

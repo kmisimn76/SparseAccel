@@ -9,7 +9,7 @@
         <config_export format="xo" rtl="verilog" vivado_optimization_level="0" vivado_phys_opt="none" vivado_report_level="0"/>
     </config>
     <UIConfigurations>
-        <UIAutosynConf boardInfo="Alveo U200 Data Center Accelerator Card (xcu200-fsgd2104-2-e) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="true" isStopAskAgain="true" showDetailDesignViewer="false">
+        <UIAutosynConf boardInfo="Alveo U200 Data Center Accelerator Card (xcu200-fsgd2104-2-e) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="true" showDetailDesignViewer="false">
             <Platform>xilinx/virtexuplus/virtexuplus</Platform>
             <Platform>xilinx/virtexuplus/virtexuplus_fpv7</Platform>
             <customLibs/>

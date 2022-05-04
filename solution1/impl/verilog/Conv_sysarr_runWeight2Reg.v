@@ -910,10 +910,10 @@ reg    so_out_blk_n;
 reg    ap_block_state1;
 reg  signed [11:0] R_L2_read_reg_4396;
 reg  signed [11:0] S_L2_read_reg_4416;
-wire   [11:0] trunc_ln865_fu_2388_p1;
-reg   [11:0] trunc_ln865_reg_4441;
-wire   [11:0] trunc_ln867_fu_2392_p1;
-reg   [11:0] trunc_ln867_reg_4461;
+wire   [11:0] trunc_ln879_fu_2388_p1;
+reg   [11:0] trunc_ln879_reg_4441;
+wire   [11:0] trunc_ln881_fu_2392_p1;
+reg   [11:0] trunc_ln881_reg_4461;
 wire   [7:0] empty_fu_2396_p1;
 reg   [7:0] empty_reg_4481;
 wire   [11:0] c_fu_2400_p3;
@@ -1198,8 +1198,8 @@ wire   [63:0] idxprom13_12_i_i_fu_2791_p1;
 wire   [63:0] idxprom13_13_i_i_fu_2810_p1;
 wire   [63:0] idxprom13_14_i_i_fu_2829_p1;
 wire   [63:0] idxprom13_15_i_i_fu_2848_p1;
-wire   [7:0] trunc_ln859_fu_2383_p1;
-wire  signed [11:0] trunc_ln859_fu_2383_p0;
+wire   [7:0] trunc_ln873_fu_2383_p1;
+wire  signed [11:0] trunc_ln873_fu_2383_p0;
 wire   [11:0] c_1_fu_2412_p2;
 wire   [11:0] c_2_fu_2423_p2;
 wire   [11:0] c_3_fu_2433_p2;
@@ -1261,7 +1261,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U310(
+mul_mul_12s_12s_12_4_1_U183(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(ko_3_dout),
@@ -1276,7 +1276,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U311(
+mul_mul_12s_12s_12_4_1_U184(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1291,7 +1291,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U312(
+mul_mul_12s_12s_12_4_1_U185(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1306,7 +1306,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U313(
+mul_mul_12s_12s_12_4_1_U186(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1321,7 +1321,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U314(
+mul_mul_12s_12s_12_4_1_U187(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1336,7 +1336,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U315(
+mul_mul_12s_12s_12_4_1_U188(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1351,7 +1351,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U316(
+mul_mul_12s_12s_12_4_1_U189(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1368,13 +1368,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U317(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U190(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4187_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4217_p4)
 );
@@ -1387,13 +1387,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U318(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U191(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4192_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4225_p4)
 );
@@ -1404,7 +1404,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U319(
+mul_mul_12s_12s_12_4_1_U192(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1419,7 +1419,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U320(
+mul_mul_12s_12s_12_4_1_U193(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1436,13 +1436,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U321(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U194(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4197_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4243_p4)
 );
@@ -1455,13 +1455,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U322(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U195(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4202_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4251_p4)
 );
@@ -1472,7 +1472,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U323(
+mul_mul_12s_12s_12_4_1_U196(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1487,7 +1487,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U324(
+mul_mul_12s_12s_12_4_1_U197(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1504,13 +1504,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U325(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U198(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4207_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4269_p4)
 );
@@ -1523,13 +1523,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U326(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U199(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4212_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4277_p4)
 );
@@ -1540,7 +1540,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U327(
+mul_mul_12s_12s_12_4_1_U200(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1555,7 +1555,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U328(
+mul_mul_12s_12s_12_4_1_U201(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1570,7 +1570,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U329(
+mul_mul_12s_12s_12_4_1_U202(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1585,7 +1585,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U330(
+mul_mul_12s_12s_12_4_1_U203(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1600,7 +1600,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U331(
+mul_mul_12s_12s_12_4_1_U204(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1615,7 +1615,7 @@ Conv_sysarr_mul_mul_12s_12s_12_4_1 #(
     .din0_WIDTH( 12 ),
     .din1_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-mul_mul_12s_12s_12_4_1_U332(
+mul_mul_12s_12s_12_4_1_U205(
     .clk(ap_clk),
     .reset(ap_rst),
     .din0(R_L2_read_reg_4396),
@@ -1632,13 +1632,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U333(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U206(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4233_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4315_p4)
 );
@@ -1651,13 +1651,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U334(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U207(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4238_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4323_p4)
 );
@@ -1670,13 +1670,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U335(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U208(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4259_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4331_p4)
 );
@@ -1689,13 +1689,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U336(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U209(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4264_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4339_p4)
 );
@@ -1708,13 +1708,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U337(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U210(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4285_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4347_p4)
 );
@@ -1727,13 +1727,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U338(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U211(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4290_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4355_p4)
 );
@@ -1746,13 +1746,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U339(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U212(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4295_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4363_p4)
 );
@@ -1765,13 +1765,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U340(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U213(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4300_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4370_p4)
 );
@@ -1784,13 +1784,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U341(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U214(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4305_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4377_p4)
 );
@@ -1803,13 +1803,13 @@ Conv_sysarr_ama_addmuladd_12ns_12s_12s_12ns_12_4_1 #(
     .din2_WIDTH( 12 ),
     .din3_WIDTH( 12 ),
     .dout_WIDTH( 12 ))
-ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U342(
+ama_addmuladd_12ns_12s_12s_12ns_12_4_1_U215(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(trunc_ln865_reg_4441),
+    .din0(trunc_ln879_reg_4441),
     .din1(grp_fu_4310_p2),
     .din2(S_L2_read_reg_4416),
-    .din3(trunc_ln867_reg_4461),
+    .din3(trunc_ln881_reg_4461),
     .ce(1'b1),
     .dout(grp_fu_4384_p4)
 );
@@ -1839,8 +1839,8 @@ always @ (posedge ap_clk) begin
         R_L2_read_reg_4396 <= R_L2_dout;
         S_L2_read_reg_4416 <= S_L2_dout;
         empty_reg_4481 <= empty_fu_2396_p1;
-        trunc_ln865_reg_4441 <= trunc_ln865_fu_2388_p1;
-        trunc_ln867_reg_4461 <= trunc_ln867_fu_2392_p1;
+        trunc_ln879_reg_4441 <= trunc_ln879_fu_2388_p1;
+        trunc_ln881_reg_4461 <= trunc_ln881_fu_2392_p1;
     end
 end
 
@@ -3968,7 +3968,7 @@ assign idxprom13_9_i_i_fu_2734_p1 = $unsigned(grp_fu_4339_p4);
 
 assign idxprom13_i_i_fu_2563_p1 = $unsigned(grp_fu_4217_p4);
 
-assign ko_3_out_din = trunc_ln859_fu_2383_p1;
+assign ko_3_out_din = trunc_ln873_fu_2383_p1;
 
 assign mul512_i_i_fu_2428_p2 = ($signed(c_2_fu_2423_p2) + $signed(mul4_i_i_reg_4504));
 
@@ -4006,13 +4006,13 @@ assign ro_out_din = ro_dout;
 
 assign so_out_din = so_dout;
 
-assign trunc_ln859_fu_2383_p0 = ko_3_dout;
+assign trunc_ln873_fu_2383_p0 = ko_3_dout;
 
-assign trunc_ln859_fu_2383_p1 = trunc_ln859_fu_2383_p0[7:0];
+assign trunc_ln873_fu_2383_p1 = trunc_ln873_fu_2383_p0[7:0];
 
-assign trunc_ln865_fu_2388_p1 = ro_dout[11:0];
+assign trunc_ln879_fu_2388_p1 = ro_dout[11:0];
 
-assign trunc_ln867_fu_2392_p1 = so_dout[11:0];
+assign trunc_ln881_fu_2392_p1 = so_dout[11:0];
 
 always @ (posedge ap_clk) begin
     c_reg_4486[3:0] <= 4'b0000;

@@ -131,3 +131,51 @@
  }
 }
 </ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr 25 11:35:28 2021",
+ "timestampMillis": "1619318128243",
+ "status": {
+  "cmdId": "6bc279ea-ca01-4f1e-9c60-c35a1e714e26",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr 25 11:35:28 2021",
+ "timestampMillis": "1619318128567",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_32x32-1-16/_x/reports/conv.hw_emu/v++_compile_conv.hw_emu_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Apr 25 11:35:28 2021",
+ "timestampMillis": "1619318128568",
+ "report": {
+  "path": "/home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_emu_32x32-1-16/_x/v++_compile_conv.hw_emu_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Apr 25 11:35:28 2021",
+ "timestampMillis": "1619318128569",
+ "status": {
+  "cmdId": "c1d37b50-ad43-4932-ad4b-99f779da40a4",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>

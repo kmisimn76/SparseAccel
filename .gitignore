@@ -6,6 +6,7 @@ HW_*/_x
 HW_*/_x/*
 HW_*/_x/**
 HW_*/.*
+HW_*/*
 HW_imple/*.log
 HW_imple/*.wdb
 HW_imple/_x

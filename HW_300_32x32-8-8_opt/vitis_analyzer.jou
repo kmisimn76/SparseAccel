@@ -2,8 +2,8 @@
 # Vitis Analyzer v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
 # 
-# Start of session at: Sat Apr 23 11:36:56 2022
-# Process ID: 32180
+# Start of session at: Thu Apr 28 14:06:42 2022
+# Process ID: 47765
 # Current directory: /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_300_32x32-8-8_opt
 # Command line: vitis_analyzer conv.hw.xclbin.link_summary
 # Log file: /home/sumin/workspace/Systolic_Array_TEST_PCNN_based/HW_300_32x32-8-8_opt/vitis_analyzer.log
