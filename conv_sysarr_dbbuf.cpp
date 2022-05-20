@@ -746,6 +746,16 @@ MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
 //	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2 complete dim=2)
 //	DO_PRAGMA(HLS ARRAY_RESHAPE variable=output_l2_reduction complete dim=2)
     #endif
+#ifdef LUT_L2_OUTPUT
+	#pragma HLS bind_storage variable=output_l2 type=RAM_2P impl=LUTRAM
+	#pragma HLS bind_storage variable=output_l2_reduction type=RAM_2P impl=LUTRAM
+#endif
+#ifdef LUT_L2_INPUT
+	#pragma HLS bind_storage variable=data_l2 type=RAM_2P impl=LUTRAM
+#endif
+#ifdef LUT_L2_WEIGHT
+	#pragma HLS bind_storage variable=weight_l2 type=RAM_2P impl=LUTRAM
+#endif
 
 //#pragma HLS bind_storage variable=output_l2 type=RAM_2P impl=bram
 //#pragma HLS bind_storage variable=output_l2_reduction type=RAM_2P impl=bram
@@ -933,6 +943,20 @@ MACTYPE output_l2_reduction[OUTPUT_L2_SIZE][PORT_NUM][ARRAY_K];
 			#pragma HLS ARRAY_PARTITION variable=output_l1_local dim=3 complete
             #endif
 
+	#ifdef LUT_L1_OUTPUT
+			#pragma HLS bind_storage variable=output_l1 type=RAM_2P impl=LUTRAM
+			#pragma HLS bind_storage variable=output_l1_local type=RAM_2P impl=LUTRAM
+			#pragma HLS bind_storage variable=output_l1_bitvec type=RAM_2P impl=LUTRAM
+			#pragma HLS bind_storage variable=output_l1_length type=RAM_2P impl=LUTRAM
+	#endif
+	#ifdef LUT_L1_INPUT
+			#pragma HLS bind_storage variable=data_l1 type=RAM_2P impl=LUTRAM
+			#pragma HLS bind_storage variable=data_l1_bitvec type=RAM_2P impl=LUTRAM
+			#pragma HLS bind_storage variable=data_l1_length type=RAM_2P impl=LUTRAM
+	#endif
+	#ifdef LUT_L1_WEIGHT
+			#pragma HLS bind_storage variable=weight_regfile type=RAM_2P impl=LUTRAM
+	#endif
 			//Systolic Array
 			runWeight2Reg(weight_regfile, weight_l2, C_L2, R_L2, S_L2, ko, co, ro, so);
 			#ifdef INPUT_SPARSE
