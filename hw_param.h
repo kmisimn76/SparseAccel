@@ -8,11 +8,14 @@
 #include <string.h>
 #include <math.h>
 
+#define CEIL(x,y) ((x/y)+((x%y==0)?(0):(1)))
+
  // do not include these headers for host program, may cause compilation ERROR
 #ifndef XILINX
 #include "ap_axi_sdata.h"
 #include "ap_int.h"
 #include "hls_stream.h"
+//#include "hls_math.h"
 #endif
 
 
@@ -32,6 +35,12 @@ typedef int  MACTYPE;
 //#define VEC_SIZE 8 //32 // smaller than ARRAY_C,ARRAY_K
 //#define BLOCK_SIZE 8 //8 // divisible into ARRAY_C
 //#define PORT_NUM 8
+#define ARRAY_K 8
+#define ARRAY_W 8
+#define PORT_C 4
+#define PORT_K 4
+#define BLOCK_SIZE 4
+
 
 //typedef ap_axiu<512,0,0,0> k2k_data;
 #ifndef XILINX
@@ -71,6 +80,8 @@ typedef struct {
     uint H_in_L1;
     uint R_L1;
     uint S_L1;
+    uint TILESIZE_K; // W Size of a tile
+    uint TILESIZE_C;
     uint TILESIZE_W; // W Size of a tile
     uint TILESIZE_H;
     uint TILESIZE_R; //must be 1

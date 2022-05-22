@@ -1,3 +1,0 @@
-adder_tree_large_mul_32s_32s_32_1_1
-adder_tree_large_control_s_axi
-adder_tree_large

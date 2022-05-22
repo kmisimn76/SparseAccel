@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
-  <source>
-    <originFiles name="example.cpp" path="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/AdderTree_example/example.cpp"/>
-  </source>
-  <testbench>
-    <originFiles name="test.cpp" path="/home/sumin/workspace/hls_test/Sparse_Systolic_Array_TEST_PCNN_based/AdderTree_example/test.cpp"/>
-  </testbench>
-</autopilotfilemapping:AutoPilotFileMapping>

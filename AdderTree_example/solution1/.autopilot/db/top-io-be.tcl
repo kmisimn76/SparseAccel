@@ -1,1 +1,0 @@
-lappend RenamedRtlIO a.0 a_0 a.1 a_1 a.2 a_2 a.3 a_3 a.4 a_4 a.5 a_5 a.6 a_6 a.7 a_7 b.0 b_0 b.1 b_1 b.2 b_2 b.3 b_3 b.4 b_4 b.5 b_5 b.6 b_6 b.7 b_7 c.0 c_0 c.1 c_1 c.2 c_2 c.3 c_3 c.4 c_4 c.5 c_5 c.6 c_6 c.7 c_7

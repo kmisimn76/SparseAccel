@@ -1,7 +1,0 @@
-Running: xsim.dir/adder_tree_large/xsimk -simmode gui -wdb adder_tree_large.wdb -simrunnum 0 -socket 33415
-Design successfully loaded
-Design Loading Memory Usage: 37316 KB (Peak: 37372 KB)
-Design Loading CPU Usage: 0 ms
-Simulation completed
-Simulation Memory Usage: 119504 KB (Peak: 176584 KB)
-Simulation CPU Usage: 0 ms

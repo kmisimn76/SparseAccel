@@ -1,1 +1,0 @@
- {CheckOptions: [ {key: xilinx-tb-process.TopFunctionName, value: 'adder_tree_large'}, {key: xilinx-tb-process.KeepTopName, value: 1} ] } 

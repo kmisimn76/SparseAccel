@@ -1,4 +1,0 @@
-../../common/ocl_util.cpp: In function ‘_cl_program* ocl_util::createProgramFromFile(cl_context, const char*, _cl_device_id* const*, unsigned int)’:
-../../common/ocl_util.cpp:410:22: warning: ignoring attributes on template argument ‘cl_int {aka int}’ [-Wignored-attributes]
-   scoped_array<cl_int> binary_status(num_devices);
-                      ^
