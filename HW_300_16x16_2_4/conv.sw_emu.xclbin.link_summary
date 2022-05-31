@@ -9,13 +9,13 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat May 22 17:10:22 2021",
- "timestampMillis": "1621671022524",
+ "dateTimestamp": "Wed May 26 11:58:00 2021",
+ "timestampMillis": "1621997880587",
  "buildStep": {
-  "cmdId": "abc848f5-4d5e-40ab-bb9c-2ffa47d28ebf",
+  "cmdId": "82482062-d233-4932-9bac-bebad0c00e88",
   "name": "v++",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/link.steps.log",
-  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l -t sw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g conv.sw_emu.xo -oconv.sw_emu.xclbin --config config_sp -j 12 ",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -l -t sw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g -D ARRAY_K=16 -D ARRAY_W=16 -D PORT_C=4 -D PORT_K=4 -D BLOCK_SIZE=2 conv.sw_emu.xo -oconv.sw_emu.xclbin --config config_sp -j 12 ",
   "args": [
    "-l",
    "-t",
@@ -24,6 +24,16 @@
    "xilinx_u200_xdma_201830_2",
    "--save-temps",
    "-g",
+   "-D",
+   "ARRAY_K=16",
+   "-D",
+   "ARRAY_W=16",
+   "-D",
+   "PORT_C=4",
+   "-D",
+   "PORT_K=4",
+   "-D",
+   "BLOCK_SIZE=2",
    "conv.sw_emu.xo",
    "-oconv.sw_emu.xclbin",
    "--config",
@@ -44,10 +54,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:22 2021",
- "timestampMillis": "1621671022524",
+ "dateTimestamp": "Wed May 26 11:58:00 2021",
+ "timestampMillis": "1621997880588",
  "status": {
-  "cmdId": "abc848f5-4d5e-40ab-bb9c-2ffa47d28ebf",
+  "cmdId": "82482062-d233-4932-9bac-bebad0c00e88",
   "state": "CS_RUNNING"
  }
 }
@@ -55,8 +65,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sat May 22 17:10:41 2021",
- "timestampMillis": "1621671041546",
+ "dateTimestamp": "Wed May 26 11:58:19 2021",
+ "timestampMillis": "1621997899636",
  "buildSummary": {
   "hardwarePlatform": "xilinx_u200_xdma_201830_2.xpfm",
   "hardwareDsa": "xilinx_u200_xdma_201830_2.dsa",
@@ -99,10 +109,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:41 2021",
- "timestampMillis": "1621671041553",
+ "dateTimestamp": "Wed May 26 11:58:19 2021",
+ "timestampMillis": "1621997899642",
  "buildStep": {
-  "cmdId": "5b5ac9e1-923a-4e54-af84-2ecf23cbb507",
+  "cmdId": "57ab080a-7ca4-4821-862b-f73af0ed620f",
   "name": "regiongen",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_regiongen.log",
   "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/../runtime/bin/regiongen_new -v -m /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu.xml -t alg -o xcl_top",
@@ -123,10 +133,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:41 2021",
- "timestampMillis": "1621671041553",
+ "dateTimestamp": "Wed May 26 11:58:19 2021",
+ "timestampMillis": "1621997899643",
  "status": {
-  "cmdId": "5b5ac9e1-923a-4e54-af84-2ecf23cbb507",
+  "cmdId": "57ab080a-7ca4-4821-862b-f73af0ed620f",
   "state": "CS_RUNNING"
  }
 }
@@ -134,10 +144,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:42 2021",
- "timestampMillis": "1621671042818",
+ "dateTimestamp": "Wed May 26 11:58:20 2021",
+ "timestampMillis": "1621997900925",
  "status": {
-  "cmdId": "5b5ac9e1-923a-4e54-af84-2ecf23cbb507",
+  "cmdId": "57ab080a-7ca4-4821-862b-f73af0ed620f",
   "state": "CS_PASSED"
  }
 }
@@ -145,13 +155,13 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:42 2021",
- "timestampMillis": "1621671042821",
+ "dateTimestamp": "Wed May 26 11:58:20 2021",
+ "timestampMillis": "1621997900927",
  "buildStep": {
-  "cmdId": "6c84ce2f-5c97-4ee8-92ad-839b662b8f54",
+  "cmdId": "9aaab22a-e937-4b16-9e1d-7cdf56dbb60a",
   "name": "gcc",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/Conv_sysarr/Conv_sysarr_kernel_gcc.log",
-  "commandLine": "/home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin/gcc -I . -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/auto_cc/include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /usr/include/x86_64-linux-gnu -std=c++11 -g -I /home/sumin/workspace/SysArr_Output_Stataionary -g -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/conv_sysarr_dbbuf.o -MP -MF obj/conv_sysarr_dbbuf.Cd /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp -o obj/conv_sysarr_dbbuf.o",
+  "commandLine": "/home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/gcc-6.2.0/bin/gcc -I . -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/auto_cc/include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /usr/include/x86_64-linux-gnu -std=c++11 -g -D ARRAY_K=16 -D ARRAY_W=16 -D PORT_C=4 -D PORT_K=4 -D BLOCK_SIZE=2 -I /home/sumin/workspace/SysArr_Output_Stataionary -g -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/conv_sysarr_dbbuf.o -MP -MF obj/conv_sysarr_dbbuf.Cd /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/xo/Conv_sysarr/Conv_sysarr/cpu_sources/conv_sysarr_dbbuf.cpp -o obj/conv_sysarr_dbbuf.o",
   "args": [
    "-I",
    ".",
@@ -167,6 +177,16 @@
    "/usr/include/x86_64-linux-gnu",
    "-std=c++11",
    "-g",
+   "-D",
+   "ARRAY_K=16",
+   "-D",
+   "ARRAY_W=16",
+   "-D",
+   "PORT_C=4",
+   "-D",
+   "PORT_K=4",
+   "-D",
+   "BLOCK_SIZE=2",
    "-I",
    "/home/sumin/workspace/SysArr_Output_Stataionary",
    "-g",
@@ -192,10 +212,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:42 2021",
- "timestampMillis": "1621671042822",
+ "dateTimestamp": "Wed May 26 11:58:20 2021",
+ "timestampMillis": "1621997900928",
  "status": {
-  "cmdId": "6c84ce2f-5c97-4ee8-92ad-839b662b8f54",
+  "cmdId": "9aaab22a-e937-4b16-9e1d-7cdf56dbb60a",
   "state": "CS_RUNNING"
  }
 }
@@ -203,10 +223,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043813",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901934",
  "status": {
-  "cmdId": "6c84ce2f-5c97-4ee8-92ad-839b662b8f54",
+  "cmdId": "9aaab22a-e937-4b16-9e1d-7cdf56dbb60a",
   "state": "CS_PASSED"
  }
 }
@@ -214,10 +234,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043814",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901935",
  "buildStep": {
-  "cmdId": "dd839fd1-5bcb-437c-87eb-2c518006d453",
+  "cmdId": "bdb72c25-a71b-4758-b8ae-d5ad27e659cb",
   "name": "ar",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/Conv_sysarr/Conv_sysarr_ar.log",
   "commandLine": "/home/sumin/tools/Xilinx/Vivado/2020.1/tps/lnx64/binutils-2.26/bin/ar -cr /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/Conv_sysarr/Conv_sysarr.csim_cu.a /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/Conv_sysarr/obj/conv_sysarr_dbbuf.o",
@@ -234,10 +254,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043815",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901936",
  "status": {
-  "cmdId": "dd839fd1-5bcb-437c-87eb-2c518006d453",
+  "cmdId": "bdb72c25-a71b-4758-b8ae-d5ad27e659cb",
   "state": "CS_RUNNING"
  }
 }
@@ -245,10 +265,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043822",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901942",
  "status": {
-  "cmdId": "dd839fd1-5bcb-437c-87eb-2c518006d453",
+  "cmdId": "bdb72c25-a71b-4758-b8ae-d5ad27e659cb",
   "state": "CS_PASSED"
  }
 }
@@ -256,10 +276,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043823",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901943",
  "buildStep": {
-  "cmdId": "7f47ac7b-0bbe-4b5a-9596-efafade46a6e",
+  "cmdId": "c3b82db2-cb0b-4a86-b1da-d2e3989e875e",
   "name": "g++",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_xcl_top_gpp.log",
   "commandLine": "/usr/bin/env PATH=/usr/bin:/bin g++ -I . -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../common/technology/autopilot/opencl -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../data/emulation/include -I /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/auto_cc/include -fPIC -g -DHLS_STREAM_THREAD_SAFE -std=c++11 -fpermissive -c -MD -MT obj/xcl_top.o -MP -MF obj/xcl_top.CXXd xcl_top.cpp -o obj/xcl_top.o",
@@ -302,10 +322,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:43 2021",
- "timestampMillis": "1621671043824",
+ "dateTimestamp": "Wed May 26 11:58:21 2021",
+ "timestampMillis": "1621997901944",
  "status": {
-  "cmdId": "7f47ac7b-0bbe-4b5a-9596-efafade46a6e",
+  "cmdId": "c3b82db2-cb0b-4a86-b1da-d2e3989e875e",
   "state": "CS_RUNNING"
  }
 }
@@ -313,10 +333,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044717",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902845",
  "status": {
-  "cmdId": "7f47ac7b-0bbe-4b5a-9596-efafade46a6e",
+  "cmdId": "c3b82db2-cb0b-4a86-b1da-d2e3989e875e",
   "state": "CS_PASSED"
  }
 }
@@ -324,10 +344,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044718",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902846",
  "buildStep": {
-  "cmdId": "44735193-b37c-4f94-8ead-ec100c28bcae",
+  "cmdId": "7ec00bc5-e6a0-4359-8e42-d76050af30e3",
   "name": "g++",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_top_gpp.log",
   "commandLine": "/usr/bin/env PATH=/usr/bin:/bin g++ -fPIC -DHLS_STREAM_THREAD_SAFE -std=c++11 -Wall -shared -Wl,--whole-archive,-soname,conv.sw_emu.so -o conv.sw_emu.so Conv_sysarr/Conv_sysarr.csim_cu.a obj/xcl_top.o -Wl,--no-whole-archive -Wl,--as-needed -L /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lib/lnx64.o -lhlsmathsim -L /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/fpo_v7_0 -lgmp -lmpfr -lIp_floating_point_v7_0_bitacc_cmodel -Wl,-rpath,/home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/fpo_v7_0 -L /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/fft_v9_1 -lIp_xfft_v9_1_bitacc_cmodel -L /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/tools/fir_v7_0 -lgmp -lIp_fir_compiler_v7_2_bitacc_cmodel -L /home/sumin/tools/Xilinx/Vitis/2020.1/bin/../lnx64/lib/csim -lhlsmc++-GCC46",
@@ -374,10 +394,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044719",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902847",
  "status": {
-  "cmdId": "44735193-b37c-4f94-8ead-ec100c28bcae",
+  "cmdId": "7ec00bc5-e6a0-4359-8e42-d76050af30e3",
   "state": "CS_RUNNING"
  }
 }
@@ -385,10 +405,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044781",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902909",
  "status": {
-  "cmdId": "44735193-b37c-4f94-8ead-ec100c28bcae",
+  "cmdId": "7ec00bc5-e6a0-4359-8e42-d76050af30e3",
   "state": "CS_PASSED"
  }
 }
@@ -396,8 +416,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044783",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902910",
  "report": {
   "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_xml.rtd",
   "name": "",
@@ -409,10 +429,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044790",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902917",
  "buildStep": {
-  "cmdId": "90c36aed-3f7d-4832-a4aa-39a36007b54c",
+  "cmdId": "14f994f5-b3e0-4191-ab3c-e4670db9395f",
   "name": "xclbinutil",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_xclbinutil.log",
   "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xclbinutil --add-section BITSTREAM:RAW:/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu.so --force --target sw_emu --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_xml.rtd --add-section BUILD_METADATA:JSON:/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/link/int/conv.sw_emu.xml --add-section DEBUG_DATA:RAW:/dev/null --output /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/conv.sw_emu.xclbin",
@@ -441,10 +461,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:44 2021",
- "timestampMillis": "1621671044791",
+ "dateTimestamp": "Wed May 26 11:58:22 2021",
+ "timestampMillis": "1621997902918",
  "status": {
-  "cmdId": "90c36aed-3f7d-4832-a4aa-39a36007b54c",
+  "cmdId": "14f994f5-b3e0-4191-ab3c-e4670db9395f",
   "state": "CS_RUNNING"
  }
 }
@@ -452,10 +472,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045125",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903260",
  "status": {
-  "cmdId": "90c36aed-3f7d-4832-a4aa-39a36007b54c",
+  "cmdId": "14f994f5-b3e0-4191-ab3c-e4670db9395f",
   "state": "CS_PASSED"
  }
 }
@@ -463,10 +483,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045126",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903261",
  "buildStep": {
-  "cmdId": "dfb2f8b2-4b8f-4229-9fe2-df4f9821e5f3",
+  "cmdId": "1a0e4f7d-68cd-4749-8f83-77124bed2fab",
   "name": "xclbinutil",
   "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/conv.sw_emu.xclbin.info",
   "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/xclbinutil --quiet --info --input /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/conv.sw_emu.xclbin",
@@ -484,10 +504,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045127",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903262",
  "status": {
-  "cmdId": "dfb2f8b2-4b8f-4229-9fe2-df4f9821e5f3",
+  "cmdId": "1a0e4f7d-68cd-4749-8f83-77124bed2fab",
   "state": "CS_RUNNING"
  }
 }
@@ -495,10 +515,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045458",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903592",
  "status": {
-  "cmdId": "dfb2f8b2-4b8f-4229-9fe2-df4f9821e5f3",
+  "cmdId": "1a0e4f7d-68cd-4749-8f83-77124bed2fab",
   "state": "CS_PASSED"
  }
 }
@@ -506,8 +526,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045778",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903910",
  "report": {
   "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/reports/link/v++_link_conv.sw_emu_guidance.html",
   "name": "",
@@ -519,8 +539,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045779",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903911",
  "report": {
   "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/v++_link_conv.sw_emu_guidance.pb",
   "name": "",
@@ -532,8 +552,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045780",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903912",
  "report": {
   "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_16x16_2_4/_x/logs/optraceViewer.html",
   "name": "",
@@ -545,10 +565,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat May 22 17:10:45 2021",
- "timestampMillis": "1621671045780",
+ "dateTimestamp": "Wed May 26 11:58:23 2021",
+ "timestampMillis": "1621997903912",
  "status": {
-  "cmdId": "abc848f5-4d5e-40ab-bb9c-2ffa47d28ebf",
+  "cmdId": "82482062-d233-4932-9bac-bebad0c00e88",
   "state": "CS_PASSED"
  }
 }

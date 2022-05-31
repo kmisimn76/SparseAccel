@@ -35,11 +35,12 @@ typedef int  MACTYPE;
 //#define VEC_SIZE 8 //32 // smaller than ARRAY_C,ARRAY_K
 //#define BLOCK_SIZE 8 //8 // divisible into ARRAY_C
 //#define PORT_NUM 8
-#define ARRAY_K 8
-#define ARRAY_W 8
-#define PORT_C 4
-#define PORT_K 4
-#define BLOCK_SIZE 4
+
+//#define ARRAY_K 8
+//#define ARRAY_W 8
+//#define PORT_C 4
+//#define PORT_K 4
+//#define BLOCK_SIZE 4
 
 
 //typedef ap_axiu<512,0,0,0> k2k_data;
@@ -49,9 +50,12 @@ typedef int  MACTYPE;
 typedef struct {
     uint K;
     uint C;
-    uint WH;
-    uint WH_in;
-    uint RS;
+    uint H;
+    uint W;
+    uint H_in;
+    uint W_in;
+    uint R;
+    uint S;
 	uint L2_TILENUM_K;///
 	uint L2_TILENUM_C;
     uint L2_TILENUM_W; // W Size of a tile

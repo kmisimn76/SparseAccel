@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vitis Analyzer v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# 
+# Start of session at: Tue May 31 06:19:40 2022
+# Process ID: 5581
+# Current directory: /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2
+# Command line: vitis_analyzer conv.hw.xclbin.link_summary
+# Log file: /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2/vitis_analyzer.log
+# Journal file: /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2/vitis_analyzer.jou
+#-----------------------------------------------------------
+start_gui
+create_project dummy

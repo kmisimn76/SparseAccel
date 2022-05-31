@@ -1,17 +1,26 @@
 FAKETIME=faketime -f "-1y" 
 #v++ -t sw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g --profile_kernel data:all:all:all --profile_kernel stall:all:all:all --define VGG16 --temp_dir ./tmp.sw_emu -c -k Conv_sysarr --config config_sp.u50 -I'../' -o'tmp.sw_emu/coreConv.xo' '../conv_sysarr_dbbuf.cpp'
 
-TARGET=sw_emu
+#TARGET=sw_emu
 #TARGET=hw_emu
-#TARGET=hw
+TARGET=hw
 JOBS=-j 12
 OPTIMIZE=
 
-//DEFINE=  -D ARRAY_K=16
-//DEFINE+= -D ARRAY_C=16
-//DEFINE+= -D VEC_SIZE=16
-//DEFINE+= -D BLOCK_SIZE=4
-//DEFINE+= -D PORT_NUM=8
+#DEFINE=  -D ARRAY_K=16
+#DEFINE+= -D ARRAY_C=16
+#DEFINE+= -D VEC_SIZE=16
+#DEFINE+= -D BLOCK_SIZE=4
+#DEFINE+= -D PORT_NUM=8
+
+DEFINE+= -D ARRAY_K=16
+DEFINE+= -D ARRAY_W=16
+DEFINE+= -D PORT_C=4
+DEFINE+= -D PORT_K=4
+DEFINE+= -D BLOCK_SIZE=2
+
+
+
 
 #PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
 DEBUG=-g
