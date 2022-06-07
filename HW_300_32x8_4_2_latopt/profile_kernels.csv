@@ -1,0 +1,16 @@
+Compute Units: Running Time and Stalls
+Compute Unit, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+Conv_sysarr_1,2012.256,32.456,4.262,0.000
+
+Functions: Running Time and Stalls
+Compute Unit, Function, Running Time (us), Intra-Kernel Dataflow Stalls (%), External Memory Stalls (%), External Stream Stalls (%)
+Conv_sysarr_1,grp_dataflow_parent_loop_proc44_fu_1469,1916.330,32.456,0.713,0.000
+Conv_sysarr_1,grp_dataflow_parent_loop_proc44_fu_1469/dataflow_parent_loop_proc42_U0,1916.330,32.456,0.713,0.000
+
+Compute Units: Port Data Transfer
+Compute Unit, Port, Write Time (us), Outstanding Write (%), Read Time (us), Outstanding Read (%)
+Conv_sysarr_1,m_axi_gmem0,0.000,0.000,0.013,0.001
+Conv_sysarr_1,m_axi_gmem1,0.000,0.000,19.637,0.976
+Conv_sysarr_1,m_axi_gmem2,0.000,0.000,20.067,0.997
+Conv_sysarr_1,m_axi_gmem3,162.603,8.081,50.137,2.492
+

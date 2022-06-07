@@ -312,10 +312,12 @@ int main(int argc, char** argv)
     //for(int i=0;i<20;i++){
 
     //for(int i=0, run_case=0;i<len;i++, run_case++){
-    for(int i=1, run_case=1;i<2;i++, run_case++){
+//    for(int i=49, run_case=49;i<49+1;i++, run_case++){
+    for(int i=0, run_case=0;i<0+1;i++, run_case++){
 //    for(int j=0;j<17;j++){
-	int j = 0;
+	int j = 10;
         sparsity = sparsity_set[j][2];
+	sparsity=0.0;
     //{
 
 		printf("<<<<<<<<Iter %d>>>>>>>>>\n", i);
@@ -700,8 +702,8 @@ void set_param_data(int run_case)
 
 	}
 	else{ printf("Invalid case\n"); exit(1);}
-//#define RAND_INPUT
-//#define SPARSIFYING
+#define RAND_INPUT
+#define SPARSIFYING
 #ifdef RAND_INPUT
     for(int k = 0; k < param.K; k++)								bias[k]		= rand()%256-128;
     for(int k = 0; k < param.K*param.C*param.R*param.S; k++)		weight[k]	= rand()%256-128;
@@ -781,9 +783,17 @@ void reorder_params() {
 		for (unsigned int ro = 0; ro < param.R_L2; ro++) { //burst read
 		for (unsigned int so = 0; so < param.S_L2; so++) { //burst read
 			for (unsigned int ki = 0; ki < ARRAY_K; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
-				unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
+				/*unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
 				unsigned int global_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+cmo*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)+smo)
 												*(param.K_L2/ARRAY_K)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+co*param.S_L2*param.R_L2+ro*param.S_L2+so))*ARRAY_K + ki; //burst read
+				weight[global_kcrs] = weight_origin[origin_kcsrs];*/
+				/*unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
+				unsigned int global_kcrs = ((cmo*(param.L2_TILENUM_K)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+kmo*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)+smo)
+												*param.C_L2*(param.K_L2/ARRAY_K)*param.R_L2*param.S_L2 + (co*(param.K_L2/ARRAY_K)*param.S_L2*param.R_L2+ko*param.R_L2*param.S_L2+ro*param.S_L2+so))*ARRAY_K + ki; //burst read
+				weight[global_kcrs] = weight_origin[origin_kcsrs];*/
+				unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
+				unsigned int global_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)*(param.L2_TILENUM_C)+smo*(param.L2_TILENUM_C)+cmo)
+												*(param.K_L2/ARRAY_K)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+ro*param.S_L2*param.C_L2+so*param.C_L2+co))*ARRAY_K + ki; //burst read
 				weight[global_kcrs] = weight_origin[origin_kcsrs];
 			}
 		}
@@ -805,7 +815,8 @@ void reorder_params() {
 			for(unsigned int wo = 0; wo < CEIL(param.W_in,ARRAY_W); wo++) {
 				for(unsigned int wi = 0; wi < ARRAY_W; wi++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
 					unsigned int origin_chw = c*param.H_in*param.W_in + h*param.W_in + (wo*ARRAY_W + wi);
-					unsigned int global_chw = (c*param.H_in*CEIL(param.W_in,ARRAY_W) + h*CEIL(param.W_in,ARRAY_W) + wo)*ARRAY_W + wi;
+					//unsigned int global_chw = (c*param.H_in*CEIL(param.W_in,ARRAY_W) + h*CEIL(param.W_in,ARRAY_W) + wo)*ARRAY_W + wi;
+					unsigned int global_chw = (h*CEIL(param.W_in,ARRAY_W)*param.C + (wo)*param.C + c)*ARRAY_W + wi;
 					data[global_chw] = data_origin[origin_chw];
 				}
 			}
@@ -828,7 +839,8 @@ void reorder_output()
 				for(unsigned int wi = 0;wi < ARRAY_W; wi++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
 					int w = wo * ARRAY_W + wi;
 					unsigned int origin_khw = ((kmo*(param.K_L2)+k)*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w));
-					unsigned int global_khw = ((kmo*(param.K_L2)+k)*param.H*param.W/ARRAY_W + (hmo*param.H_L2+h)*param.W/ARRAY_W + (wmo*param.W_L2/ARRAY_W+wo))*ARRAY_W + wi;
+					//unsigned int global_khw = ((kmo*(param.K_L2)+k)*param.H*param.W/ARRAY_W + (hmo*param.H_L2+h)*param.W/ARRAY_W + (wmo*param.W_L2/ARRAY_W+wo))*ARRAY_W + wi;
+					unsigned int global_khw = ((hmo*param.H_L2+h)*(param.W/ARRAY_W)*param.K + (wmo*param.W_L2/ARRAY_W+wo)*param.K + (kmo*(param.K_L2)+k))*ARRAY_W + wi;
 					output[origin_khw] = out_origin[global_khw];
 				}
 			}
