@@ -1,0 +1,626 @@
+{
+    "schema_version": {
+        "major": "1",
+        "minor": "1",
+        "patch": "0"
+    },
+    "generation": {
+        "source": "ocl",
+        "PID": "2790",
+        "timestamp": "1654261265398"
+    },
+    "files": [
+        {
+            "name": "profile_summary.csv",
+            "type": "PROFILE"
+        },
+        {
+            "name": "timeline_trace.csv",
+            "type": "TRACE"
+        }
+    ],
+    "profile": {
+        "header": {
+            "name": "Profile Summary",
+            "generated": "2022-06-03 21:59:36",
+            "epochTime": "1654261176404",
+            "application": "host_resnet",
+            "platform": "Xilinx",
+            "toolVersion": "2020.2",
+            "XRT build version": "2.9.317",
+            "Build version branch": "2020.2_PU1",
+            "Build version hash": "b0230e59e22351fb957dc46a6e68d7560e5f630c",
+            "Build version date": "N\/A",
+            "flow": "Software Emulation",
+            "devices": [
+                "xilinx_u200_xdma_201830_2-0"
+            ],
+            "totalTime": "88991.687925000006"
+        },
+        "apiCalls": {
+            "clWaitForEvents": {
+                "numCalls": "106",
+                "totalTime": "36444.37238299998",
+                "minTime": "0.51561699999729171",
+                "avgTime": "343.81483380188672",
+                "maxTime": "4030.4239449999995"
+            },
+            "clFinish": {
+                "numCalls": "106",
+                "totalTime": "165.5365019999449",
+                "minTime": "0.0033299999995506369",
+                "avgTime": "1.5616651132070274",
+                "maxTime": "13.519052999996347"
+            },
+            "clSetKernelArg": {
+                "numCalls": "2438",
+                "totalTime": "24.608275999836223",
+                "minTime": "0.0029100000001562876",
+                "avgTime": "0.010093632485576789",
+                "maxTime": "2.5769789999976638"
+            },
+            "clCreateProgramWithBinary": {
+                "numCalls": "1",
+                "totalTime": "23.732209999999981",
+                "minTime": "23.732209999999981",
+                "avgTime": "23.732209999999981",
+                "maxTime": "23.732209999999981"
+            },
+            "clCreateBuffer": {
+                "numCalls": "212",
+                "totalTime": "10.466263999979674",
+                "minTime": "0.02246000000013737",
+                "avgTime": "0.049369169811224876",
+                "maxTime": "0.17699899999979607"
+            },
+            "clEnqueueTask": {
+                "numCalls": "53",
+                "totalTime": "3.9580050000286064",
+                "minTime": "0.052819999998973799",
+                "avgTime": "0.07467933962318124",
+                "maxTime": "0.1808389999996507"
+            },
+            "clEnqueueWriteBuffer": {
+                "numCalls": "159",
+                "totalTime": "2.6844909999717856",
+                "minTime": "0.011250000003201421",
+                "avgTime": "0.016883591194791107",
+                "maxTime": "0.16780900000003385"
+            },
+            "clReleaseMemObject": {
+                "numCalls": "636",
+                "totalTime": "2.2059300000050825",
+                "minTime": "0.0029700000013690442",
+                "avgTime": "0.0034684433962344067",
+                "maxTime": "0.023239999998622807"
+            },
+            "clCreateKernel": {
+                "numCalls": "1",
+                "totalTime": "1.9796819999999968",
+                "minTime": "1.9796819999999968",
+                "avgTime": "1.9796819999999968",
+                "maxTime": "1.9796819999999968"
+            },
+            "clEnqueueReadBuffer": {
+                "numCalls": "53",
+                "totalTime": "1.8939839999720789",
+                "minTime": "0.021000000000640284",
+                "avgTime": "0.035735547169284516",
+                "maxTime": "0.066949000000022352"
+            },
+            "clRetainMemObject": {
+                "numCalls": "424",
+                "totalTime": "1.4844730000095296",
+                "minTime": "0.0029700000004595495",
+                "avgTime": "0.0035011155660602108",
+                "maxTime": "0.041009999999914726"
+            },
+            "clReleaseEvent": {
+                "numCalls": "210",
+                "totalTime": "1.344326000039473",
+                "minTime": "0.0029699999995500548",
+                "avgTime": "0.006401552381140348",
+                "maxTime": "0.020819999997911509"
+            },
+            "clGetEventProfilingInfo": {
+                "numCalls": "106",
+                "totalTime": "0.69986700004392333",
+                "minTime": "0.0032600000013189856",
+                "avgTime": "0.006602518868338899",
+                "maxTime": "0.021119999997608829"
+            },
+            "clEnqueueMigrateMemObjects": {
+                "numCalls": "53",
+                "totalTime": "0.67862200000263329",
+                "minTime": "0.0090000000000145519",
+                "avgTime": "0.012804188679294967",
+                "maxTime": "0.048629999999775464"
+            },
+            "clRetainEvent": {
+                "numCalls": "106",
+                "totalTime": "0.4863999999488442",
+                "minTime": "0.0030299999998533167",
+                "avgTime": "0.0045886792448004161",
+                "maxTime": "0.0092700000022887252"
+            },
+            "clGetDeviceIDs": {
+                "numCalls": "5",
+                "totalTime": "0.071049999999985403",
+                "minTime": "0.003140000000001919",
+                "avgTime": "0.014209999999997081",
+                "maxTime": "0.055160000000000764"
+            },
+            "clGetExtensionFunctionAddress": {
+                "numCalls": "2",
+                "totalTime": "0.058480000000002974",
+                "minTime": "0.009540000000015425",
+                "avgTime": "0.029240000000001487",
+                "maxTime": "0.048939999999987549"
+            },
+            "clGetDeviceInfo": {
+                "numCalls": "2",
+                "totalTime": "0.043679999999994834",
+                "minTime": "0.0036100000000089949",
+                "avgTime": "0.021839999999997417",
+                "maxTime": "0.040069999999985839"
+            },
+            "clReleaseDevice": {
+                "numCalls": "3",
+                "totalTime": "0.019959999998945932",
+                "minTime": "0.0053699999989476055",
+                "avgTime": "0.0066533333329819771",
+                "maxTime": "0.0078100000000063119"
+            },
+            "clGetPlatformInfo": {
+                "numCalls": "6",
+                "totalTime": "0.019398999999992839",
+                "minTime": "0.002960000000001628",
+                "avgTime": "0.0032331666666654733",
+                "maxTime": "0.003719999999987067"
+            },
+            "clGetProgramInfo": {
+                "numCalls": "2",
+                "totalTime": "0.018000000000000682",
+                "minTime": "0.0075099999999963529",
+                "avgTime": "0.0090000000000003411",
+                "maxTime": "0.010490000000004329"
+            },
+            "clRetainDevice": {
+                "numCalls": "3",
+                "totalTime": "0.017788999999993393",
+                "minTime": "0.0036000000000058208",
+                "avgTime": "0.0059296666666644642",
+                "maxTime": "0.0073889999999892098"
+            },
+            "clGetProgramBuildInfo": {
+                "numCalls": "2",
+                "totalTime": "0.016459999999995034",
+                "minTime": "0.0072999999999865395",
+                "avgTime": "0.0082299999999975171",
+                "maxTime": "0.0091600000000084947"
+            },
+            "clCreateContext": {
+                "numCalls": "1",
+                "totalTime": "0.015889999999984639",
+                "minTime": "0.015889999999984639",
+                "avgTime": "0.015889999999984639",
+                "maxTime": "0.015889999999984639"
+            },
+            "clBuildProgram": {
+                "numCalls": "1",
+                "totalTime": "0.013159999999999172",
+                "minTime": "0.013159999999999172",
+                "avgTime": "0.013159999999999172",
+                "maxTime": "0.013159999999999172"
+            },
+            "clGetExtensionFunctionAddressForPlatform": {
+                "numCalls": "2",
+                "totalTime": "0.012410000000016908",
+                "minTime": "0.0033300000000053842",
+                "avgTime": "0.0062050000000084538",
+                "maxTime": "0.0090800000000115233"
+            },
+            "clReleaseCommandQueue": {
+                "numCalls": "1",
+                "totalTime": "0.010170000008656643",
+                "minTime": "0.010170000008656643",
+                "avgTime": "0.010170000008656643",
+                "maxTime": "0.010170000008656643"
+            },
+            "clCreateCommandQueue": {
+                "numCalls": "1",
+                "totalTime": "0.0064299999999946067",
+                "minTime": "0.0064299999999946067",
+                "avgTime": "0.0064299999999946067",
+                "maxTime": "0.0064299999999946067"
+            },
+            "clReleaseContext": {
+                "numCalls": "1",
+                "totalTime": "0.0058200000057695433",
+                "minTime": "0.0058200000057695433",
+                "avgTime": "0.0058200000057695433",
+                "maxTime": "0.0058200000057695433"
+            },
+            "clReleaseKernel": {
+                "numCalls": "1",
+                "totalTime": "0.0056500000064261258",
+                "minTime": "0.0056500000064261258",
+                "avgTime": "0.0056500000064261258",
+                "maxTime": "0.0056500000064261258"
+            },
+            "clReleaseProgram": {
+                "numCalls": "1",
+                "totalTime": "0.0049599999911151826",
+                "minTime": "0.0049599999911151826",
+                "avgTime": "0.0049599999911151826",
+                "maxTime": "0.0049599999911151826"
+            }
+        },
+        "kernelEnqueues": {
+            "Conv_sysarr": {
+                "numCalls": "53",
+                "totalTime": "36140.31275099999",
+                "minTime": "106.89374700000008",
+                "avgTime": "681.89269341509419",
+                "maxTime": "4030.4041559999996"
+            }
+        },
+        "computeUnitUtilization": [
+            {
+                "name": "Conv_sysarr_1",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "kernel": "Conv_sysarr",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1",
+                "numberOfCalls": "53",
+                "dataflow": "No",
+                "maxOverlappingExecutions": "0",
+                "dataflowAcceleration": "1.000000x",
+                "totalTime": "36138.583649000058",
+                "minTime": "106.86081800000011",
+                "avgTime": "681.8600688490576",
+                "maxTime": "4030.3501660000006",
+                "frequency": "300"
+            }
+        ],
+        "kernels": [
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "3654.5457500000002",
+                "duration": "4030.4041559999996",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "45283.551295999998",
+                "duration": "2364.7856170000014",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "74156.724711000003",
+                "duration": "2334.0161789999984",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "28718.159219000001",
+                "duration": "2275.0907819999993",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "52332.621755",
+                "duration": "2273.9243960000022",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "81006.211955000006",
+                "duration": "2142.0474819999945",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "21852.760310999998",
+                "duration": "2023.2193810000026",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "59311.227417000002",
+                "duration": "699.12483499999507",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "32677.52015",
+                "duration": "635.80653600000005",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            },
+            {
+                "name": "Conv_sysarr",
+                "instanceAddress": "93834228199792",
+                "contextId": "0",
+                "commandQueueID": "0",
+                "device": "xilinx_u200_xdma_201830_2-0",
+                "startTime": "56326.828562000002",
+                "duration": "631.29421999999613",
+                "globalWorkSize": "1:1:1",
+                "localWorkSize": "1:1:1"
+            }
+        ],
+        "hostGlobal": {
+            "writes": [
+                {
+                    "address": "1359872",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "84783.216031999997",
+                    "duration": "N\/A",
+                    "size": "2488.3200000000002",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "3588096",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "80993.968116999997",
+                    "duration": "N\/A",
+                    "size": "239.232",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "1400832",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "80993.781308000005",
+                    "duration": "N\/A",
+                    "size": "2187.2640000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "2502656",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "87798.150095999998",
+                    "duration": "N\/A",
+                    "size": "2433.0239999999999",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "16384",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "74146.264664999995",
+                    "duration": "N\/A",
+                    "size": "202.75200000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "1630208",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "74146.079066000006",
+                    "duration": "N\/A",
+                    "size": "2433.0239999999999",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "12288",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "85900.934492999993",
+                    "duration": "N\/A",
+                    "size": "1114.1120000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "12288",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "83646.453542000003",
+                    "duration": "N\/A",
+                    "size": "1105.9200000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "851968",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "18642.208360000001",
+                    "duration": "N\/A",
+                    "size": "931.84000000000003",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "208896",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "88885.854894000004",
+                    "duration": "N\/A",
+                    "size": "1114.1120000000001",
+                    "rate": "N\/A"
+                }
+            ],
+            "reads": [
+                {
+                    "address": "245760",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "7685.2322640000002",
+                    "duration": "N\/A",
+                    "size": "12845.056",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "5226496",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "30993.577430000001",
+                    "duration": "N\/A",
+                    "size": "7340.0320000000002",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "2760704",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "54606.76928",
+                    "duration": "N\/A",
+                    "size": "4014.0799999999999",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "2846720",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "14168.386823999999",
+                    "duration": "N\/A",
+                    "size": "3211.2640000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "2781184",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "17694.772674",
+                    "duration": "N\/A",
+                    "size": "3211.2640000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "356352",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "10216.359087000001",
+                    "duration": "N\/A",
+                    "size": "3211.2640000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "4988928",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "83148.510295999993",
+                    "duration": "N\/A",
+                    "size": "1835.008",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "1785856",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "23876.237991000002",
+                    "duration": "N\/A",
+                    "size": "1605.6320000000001",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "1994752",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "40782.206615000003",
+                    "duration": "N\/A",
+                    "size": "1835.008",
+                    "rate": "N\/A"
+                },
+                {
+                    "address": "1499136",
+                    "contextID": "0",
+                    "cmdQueueID": "0",
+                    "startTime": "34205.185421000002",
+                    "duration": "N\/A",
+                    "size": "1835.008",
+                    "rate": "N\/A"
+                }
+            ]
+        },
+        "guidanceMetadata": {
+            "DEVICE_EXEC_TIME": {
+                "xilinx_u200_xdma_201830_2-0": "85514.367565"
+            },
+            "CU_CALLS": {
+                "xilinx_u200_xdma_201830_2-0|Conv_sysarr_1": "53"
+            },
+            "MIGRATE_MEM": {
+                "host": "53"
+            },
+            "MEMORY_USAGE": {
+                "DDR": "4"
+            },
+            "PLRAM_DEVICE": {
+                "all": "1"
+            },
+            "HBM_DEVICE": {
+                "all": "0"
+            },
+            "KDMA_DEVICE": {
+                "all": "1"
+            },
+            "P2P_DEVICE": {
+                "all": "1"
+            },
+            "P2P_HOST_TRANSFERS": {
+                "host": "0"
+            },
+            "PORT_BIT_WIDTH": {
+                "Conv_sysarr_1\/m_axi_gmem0": "8",
+                "Conv_sysarr_1\/m_axi_gmem1": "8",
+                "Conv_sysarr_1\/m_axi_gmem2": "8",
+                "Conv_sysarr_1\/m_axi_gmem3": "32"
+            },
+            "KERNEL_COUNT": {
+                "Conv_sysarr": "1"
+            },
+            "OBJECTS_RELEASED": {
+                "all": "0"
+            }
+        }
+    }
+}

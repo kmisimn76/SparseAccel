@@ -1,0 +1,191 @@
+<ENTRY>
+{
+ "thisFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/conv.sw_emu.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Thu Jun  3 17:06:10 2021",
+ "timestampMillis": "1622707570634",
+ "buildStep": {
+  "cmdId": "6d1ceecc-65cc-42b4-803b-fa9512b6d7d9",
+  "name": "v++",
+  "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/conv.sw_emu/conv.sw_emu.steps.log",
+  "commandLine": "/home/sumin/tools/Xilinx/Vitis/2020.1/bin/unwrapped/lnx64.o/v++  --xp \"vivado_prop:run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --xp \"misc:report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" -t sw_emu --platform xilinx_u200_xdma_201830_2 --save-temps -g -c -k Conv_sysarr -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584 --config config_sp -I./.. -oconv.sw_emu.xo ./../conv_sysarr_dbbuf_latopt.cpp -j 12 ",
+  "args": [
+   "-t",
+   "sw_emu",
+   "--platform",
+   "xilinx_u200_xdma_201830_2",
+   "--save-temps",
+   "-g",
+   "-c",
+   "-k",
+   "Conv_sysarr",
+   "-D",
+   "ARRAY_K=32",
+   "-D",
+   "ARRAY_W=8",
+   "-D",
+   "PORT_C=2",
+   "-D",
+   "PORT_K=2",
+   "-D",
+   "BLOCK_SIZE=4",
+   "-D",
+   "WEIGHT_L1_SIZE=270",
+   "-D",
+   "DATA_L1_SIZE=497",
+   "-D",
+   "WEIGHT_L2_SIZE=4320",
+   "-D",
+   "DATA_L2_SIZE=7840",
+   "-D",
+   "OUTPUT_L2_SIZE=3584",
+   "--config",
+   "config_sp",
+   "-I./..",
+   "-oconv.sw_emu.xo",
+   "./../conv_sysarr_dbbuf_latopt.cpp",
+   "-j",
+   "12"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/config_sp",
+    "content": "kernel_frequency=300\n#platform=xilinx_u200_xdma_201830_2\n\ndebug=1\n#profile_kernel=data:all:all:all\n\n[connectivity]\n#sp=\u003ccompute_unit_name\u003e.\u003cinterface_name\u003e:\u003csptag[min:max]\u003e\nsp=Conv_sysarr_1.bias_in:DDR[1]\nsp=Conv_sysarr_1.weight_in:DDR[1]\nsp=Conv_sysarr_1.data_in:DDR[1]\nsp=Conv_sysarr_1.conv_out:DDR[1]\n\n#stream_connect=\u003ccu_name\u003e.\u003coutput_port\u003e:\u003ccu_name\u003e.\u003cinput_port\u003e:[\u003cfifo_depth\u003e]\n#stream_connect=memRead_1.bias_out:coreConv_1.bias_in\n#stream_connect=memRead_1.weight_out:coreConv_1.weight_in\n#stream_connect=memRead_1.data_out:coreConv_1.data_in\n##VGG connection\n#stream_connect=coreConv_1.conv_out:memWrite_1.conv_in\n##ResNet connection\n#stream_connect=coreConv_1.conv_out:batchNorm_1.conv_in\n#stream_connect=coreConv_1.bypass_out:memWrite_1.bypass_in\n#stream_connect=batchNorm_1.bn_out:memWrite_1.bn_in\n\n#slr=Conv_sysarr_1:SLR2\n\n##used for pipelined pooling\n#stream_connect=memWrite_1.pool_sync_out:maxPool_1.pool_sync_in\n\n#nk=\u003ckernal_name\u003e:#:\u003ccu_name1\u003e.\u003ccu_name2\u003e...\u003ccu_name#\u003e\n#nk=DataLoad:1:DataLoad_1\n#nk=DataStore:1:DataStore_1\n\n[vivado]\n##dump all waveforms\nprop=fileset.sim_1.xsim.elaborate.debug_level=all\n"
+   }
+  ],
+  "cwd": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  3 17:06:10 2021",
+ "timestampMillis": "1622707570635",
+ "status": {
+  "cmdId": "6d1ceecc-65cc-42b4-803b-fa9512b6d7d9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Thu Jun  3 17:06:29 2021",
+ "timestampMillis": "1622707589707",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u200_xdma_201830_2.xpfm",
+  "hardwareDsa": "xilinx_u200_xdma_201830_2.dsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u200_xdma_201830_2",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_SW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "Conv_sysarr",
+     "file": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/conv.sw_emu.xo",
+     "reports": []
+    },
+    "sources": [
+     "/home/sumin/workspace/SysArr_Output_Stataionary/conv_sysarr_dbbuf_latopt.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS"
+   }
+  ],
+  "toolVersion": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Thu Jun  3 17:06:29 2021",
+ "timestampMillis": "1622707589710",
+ "buildStep": {
+  "cmdId": "a6c13acc-f97b-4bff-b4b4-a38ca989cfa1",
+  "name": "vitis_hls",
+  "logFile": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/conv.sw_emu/Conv_sysarr/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/conv.sw_emu/Conv_sysarr/Conv_sysarr.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/conv.sw_emu/Conv_sysarr/Conv_sysarr.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  3 17:06:29 2021",
+ "timestampMillis": "1622707589711",
+ "status": {
+  "cmdId": "a6c13acc-f97b-4bff-b4b4-a38ca989cfa1",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  3 17:06:50 2021",
+ "timestampMillis": "1622707610602",
+ "status": {
+  "cmdId": "a6c13acc-f97b-4bff-b4b4-a38ca989cfa1",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  3 17:06:50 2021",
+ "timestampMillis": "1622707610932",
+ "report": {
+  "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/reports/conv.sw_emu/v++_compile_conv.sw_emu_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Thu Jun  3 17:06:50 2021",
+ "timestampMillis": "1622707610932",
+ "report": {
+  "path": "/home/sumin/workspace/SysArr_Output_Stataionary/HW_300_32x8_4_2_latopt/_x/v++_compile_conv.sw_emu_guidance.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Thu Jun  3 17:06:50 2021",
+ "timestampMillis": "1622707610933",
+ "status": {
+  "cmdId": "6d1ceecc-65cc-42b4-803b-fa9512b6d7d9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>

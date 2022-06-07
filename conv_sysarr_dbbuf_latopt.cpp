@@ -38,8 +38,7 @@ void runWeightL2toL1(DPTYPE weight_l1[WEIGHT_L1_SIZE][PORT_C][ARRAY_K][ARRAY_W/B
 //#pragma HLS inline
 	uint c0 = R_L2*S_L2;
 	//uint l2_ptr = weight_l2_ptr;
-	//int l2_ptr = ko*(C_L2/PORT_C)*R_L2*S_L2 + (co * C_L1/PORT_C)*R_L2*S_L2 + r*S_L2 + s
-	//                + cip*R_L2*S_L2;
+	//int l2_ptr = ko*(C_L2/PORT_C)*R_L2*S_L2 + r*S_L2*(C_L2/PORT_C) + s*(C_L2/PORT_C) + co*(C_L1/PORT_C); // DRAM reorder
 	for (int cip = 0; cip < C_L1/PORT_C; cip++) {
 		#pragma HLS pipeline
 		#pragma HLS loop_tripcount min=4 max=4
@@ -48,9 +47,8 @@ void runWeightL2toL1(DPTYPE weight_l1[WEIGHT_L1_SIZE][PORT_C][ARRAY_K][ARRAY_W/B
 			#pragma HLS unroll
 			for (int ki = 0; ki < ARRAY_K; ki++) {
 				#pragma HLS unroll
-				int k = (ko * ARRAY_K + ki);
+				//int k = (ko * ARRAY_K + ki);
 				int c = (co * C_L1/PORT_C + cip);
-				//int l2_ptr = ko*(C_L2/PORT_C)*R_L2*S_L2 + c*R_L2*S_L2 + r*S_L2 + s;
 				int l2_ptr = ko*(C_L2/PORT_C)*R_L2*S_L2 + r*S_L2*(C_L2/PORT_C) + s*(C_L2/PORT_C) + c; // DRAM reorder
 				DPTYPE wt_data = weight_l2[l2_ptr][pt][ki];
 				for (int bl = 0; bl < ARRAY_W/BLOCK_SIZE; bl++) {
@@ -81,6 +79,8 @@ void runDataL2toL1_bitvec(
 //#pragma HLS stable variable=s
 	//volatile const int s_ = s;
 	//int l2_ptr = co*(C_L1/PORT_C)*H_in*CEIL(W_in,ARRAY_W) + (ho + r)*CEIL(W_in,ARRAY_W) + (wo)    + cip*H_in*CEIL(W_in,ARRAY_W) + (((wi+s)>=ARRAY_W)?(1):(0));
+	int l2_ptr = co*(C_L1/PORT_C)*H_in*CEIL(W_in,ARRAY_W) + (ho + r)*CEIL(W_in,ARRAY_W) + (wo);
+	//int l2_ptr = 3;
 //	uint l2_ptr = data_l2_ptr;
 
 	const int sp = s/PORT_C;
@@ -122,7 +122,7 @@ LOOP_L2_W_IN:
 					//int l2_ptr = c * H_in * CEIL(W_in,ARRAY_W) + h * CEIL(W_in,ARRAY_W) + w;
 					uint w_add = ((wi+s)>=ARRAY_W)?(1):(0);
 					//uint l2_ptr = co*(C_L1/PORT_C)*H_in*CEIL(W_in,ARRAY_W) + (ho + r)*CEIL(W_in,ARRAY_W) + (wo)    + cip*H_in*CEIL(W_in,ARRAY_W);
-					uint l2_ptr = c * H_in * CEIL(W_in,ARRAY_W) + h * CEIL(W_in,ARRAY_W) + wo;
+					//uint l2_ptr = c * H_in * CEIL(W_in,ARRAY_W) + h * CEIL(W_in,ARRAY_W) + wo;
 					switch(s%ARRAY_W) {
 					case 0: data_l1[l1_ptr][pt][wi] = data_l2[l2_ptr+w_add][pt][(wi+0)%ARRAY_W]; break;
 #if ARRAY_W >= 2
@@ -170,7 +170,7 @@ LOOP_L2_W_IN:
 							}
 //			}
 		}
-		//l2_ptr += H_in*CEIL(W_in,ARRAY_W);
+		l2_ptr += H_in*CEIL(W_in,ARRAY_W);
 	} // Loop cip
 
 	for (int wib = 0; wib < ARRAY_W/BLOCK_SIZE; wib++) { // place unroll to inner-most
@@ -211,9 +211,9 @@ void runOutputRegtoL2(MACTYPE output_regfile[ARRAY_W][ARRAY_K], MACTYPE output_l
 		//uint output_l2_ptr) {
 //#pragma HLS inline
 	uint c0 = H_L2*(W_L2/ARRAY_W);
-	//uint c1 = (W_L2/ARRAY_W);
-	//uint offset = (ko*(ARRAY_K/PORT_K)*c0);
-	//int l2_ptr = ho*c1 + wo + offset;
+	uint c1 = (W_L2/ARRAY_W);
+	uint offset = (ko*(ARRAY_K/PORT_K)*c0);
+	int l2_ptr = ho*c1 + wo + offset;
 	//uint l2_ptr = output_l2_ptr;
 	for(int kip=0; kip<ARRAY_K/PORT_K; kip++) {
 	#pragma HLS pipeline
@@ -224,7 +224,7 @@ void runOutputRegtoL2(MACTYPE output_regfile[ARRAY_W][ARRAY_K], MACTYPE output_l
 			for(int wi=0; wi<ARRAY_W; wi++) {
 			#pragma HLS unroll
 				int ki = kip*PORT_K + pt;
-				int l2_ptr = (ko*(ARRAY_K/PORT_K) + kip)*H_L2*(W_L2/ARRAY_W) + ho*(W_L2/ARRAY_W) + wo;
+				//int l2_ptr = (ko*(ARRAY_K/PORT_K) + kip)*H_L2*(W_L2/ARRAY_W) + ho*(W_L2/ARRAY_W) + wo;
 				///int l2_ptr = kip*c0 + ho*c1 + wo + offset;
 				MACTYPE sum;
 				if(isFirst) sum = 0;
@@ -232,7 +232,7 @@ void runOutputRegtoL2(MACTYPE output_regfile[ARRAY_W][ARRAY_K], MACTYPE output_l
 				output_l2[l2_ptr][pt][wi] = sum + output_regfile[wi][ki];
 			}
 		}
-		//l2_ptr += c0;
+		l2_ptr += c0;
 	}
 }
 
