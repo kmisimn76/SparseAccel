@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/sumin/workspace/hls_test/Systolic_Array_PCNN_based/solution1/./sim/autowrap/testbench/conv_sysarr_dbbuf.cpp_pre.cpp.tb.cpp

@@ -1,1 +1,0 @@
- {CheckOptions: [ {key: xilinx-tb-process.TopFunctionName, value: 'Conv_sysarr'}, {key: xilinx-tb-process.KeepTopName, value: 1} ] } 
