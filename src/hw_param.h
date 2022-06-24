@@ -11,7 +11,7 @@
 #define CEIL(x,y) ((x/y)+((x%y==0)?(0):(1)))
 
  // do not include these headers for host program, may cause compilation ERROR
-#ifndef XILINX
+#ifndef TESTBENCH
 #include "ap_axi_sdata.h"
 #include "ap_int.h"
 #include "hls_stream.h"

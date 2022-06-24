@@ -27,7 +27,7 @@
 
 
 			
-#ifndef XILINX
+#ifndef TESTBENCH
 extern "C" {
 #endif
 void runWeightL2toL1(DPTYPE weight_l1[WEIGHT_L1_SIZE][PORT_C][ARRAY_K][ARRAY_W/BLOCK_SIZE], DPTYPE weight_l2[WEIGHT_L2_SIZE][PORT_C][ARRAY_K],
@@ -757,6 +757,7 @@ void Conv_sysarr(
 	}
 	}
 }
-#ifndef XILINX
+#ifndef TESTBENCH
 }
 #endif
+
