@@ -1,0 +1,10 @@
+.run
+build.*
+log.*
+*.o
+*.xo
+*.xclbin
+*.xclbin.info
+*.xclbin.compile_summary
+*.xclbin.link_summary
+*.log

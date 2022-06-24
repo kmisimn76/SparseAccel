@@ -1,0 +1,35 @@
+kernel_frequency=300
+#platform=xilinx_u200_xdma_201830_2
+
+debug=1
+#profile_kernel=data:all:all:all
+
+[connectivity]
+#sp=<compute_unit_name>.<interface_name>:<sptag[min:max]>
+sp=Conv_sysarr_1.bias_in:DDR[1]
+sp=Conv_sysarr_1.weight_in:DDR[1]
+sp=Conv_sysarr_1.data_in:DDR[1]
+sp=Conv_sysarr_1.conv_out:DDR[1]
+
+#stream_connect=<cu_name>.<output_port>:<cu_name>.<input_port>:[<fifo_depth>]
+#stream_connect=memRead_1.bias_out:coreConv_1.bias_in
+#stream_connect=memRead_1.weight_out:coreConv_1.weight_in
+#stream_connect=memRead_1.data_out:coreConv_1.data_in
+##VGG connection
+#stream_connect=coreConv_1.conv_out:memWrite_1.conv_in
+##ResNet connection
+#stream_connect=coreConv_1.conv_out:batchNorm_1.conv_in
+#stream_connect=coreConv_1.bypass_out:memWrite_1.bypass_in
+#stream_connect=batchNorm_1.bn_out:memWrite_1.bn_in
+
+
+##used for pipelined pooling
+#stream_connect=memWrite_1.pool_sync_out:maxPool_1.pool_sync_in
+
+#nk=<kernal_name>:#:<cu_name1>.<cu_name2>...<cu_name#>
+#nk=DataLoad:1:DataLoad_1
+#nk=DataStore:1:DataStore_1
+
+[vivado]
+##dump all waveforms
+prop=fileset.sim_1.xsim.elaborate.debug_level=all
