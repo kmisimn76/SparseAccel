@@ -38,26 +38,31 @@ conv.${TARGET}.xclbin: ../../conv_sysarr.cpp
 	${FAKETIME} v++ -l ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} ${DEFINE} conv.${TARGET}.xo -o'conv.${TARGET}.xclbin' --config config_sp ${JOBS}
 
 .PHONY: testbench
-testbench: $(HOST_OBJS)
-	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../testbench.cpp
+testbench: ../TestBench.cpp ../../../common/timer.cpp ../../../common/ocl_util.cpp $(HOST_OBJS)
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../TestBench.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../../../common/timer.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../../../common/ocl_util.cpp
-	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) testbench.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) TestBench.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
 
 .PHONY: emu
 emu:
 #ifeq ($(PLATFORM), x86)
 	emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
-	#XCL_EMULATION_MODE=$(TARGET) ./testbench conv.${TARGET}.xclbin > tb_output_log.txt
-	XCL_EMULATION_MODE=$(TARGET) ./testbench conv.${TARGET}.xclbin > tb_output_log.txt || (echo "\n\n\n           test failed.... :( \n      @(${shell pwd})\n\n\n"; sh -c 'exit 1')
+	XCL_EMULATION_MODE=$(TARGET) ./testbench conv.${TARGET}.xclbin > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(${shell pwd})\n\n\n"; sh -c 'exit 1')
 #else
 #	$(ABS_COMMON_REPO)/utility/run_emulation.pl "$(PACKAGE_OUT)/launch_$(FLOW).sh | tee embedded_run.log" "./run_app.sh $(FLOW)" "TEST PASSED" "7"
 #endif
 
 
 clean:
+	-rm -rf build.sw_emu/*
+	-rm -rf build.hw_emu/*
+	-rm -rf build.hw/*
+	-rm -rf log.sw_emu/*
+	-rm -rf log.hw_emu/*
+	-rm -rf log.hw/*
 	-rm *.o
-	-rm test
+	-rm testbench
 	-rm *.xo
 	-rm *.xclbin
 	-rm *.ltx

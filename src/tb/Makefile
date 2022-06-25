@@ -10,3 +10,6 @@ sw_emu_output_stationary:
 	@echo "."
 	@echo "."
 	@echo "       TEST PASSED! :)\n\n\n"
+
+clean:
+	$(MAKE) -C case_output_stationary clean
