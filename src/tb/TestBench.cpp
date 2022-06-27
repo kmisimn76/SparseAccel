@@ -5,7 +5,7 @@
 #define CL_USE_DEPRECATED_OPENCL_1_2_APIS
 #define TESTBENCH // for ignore vitis header
 
-#include <stdio.h>
+#include <stdio.h> //TODO: eliminate unused header
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
@@ -13,12 +13,14 @@
 #include <fstream>
 #include <vector>
 #include <CL/cl2.hpp>
+
 #include "ocl_util.h"
 #include "timer.h"
 using namespace std;
 
 #include "hw_param.h"
 #include "TestEnvironment.h"
+
 /*
 typedef struct layer_info_ {
 	uint K;
@@ -52,9 +54,10 @@ typedef struct layer_info_ {
 	bool is_test_layer;
 }LayerInfo;*/
 
-//class ConvTask : public TargetTask<LayerInfo, DPTYPE> {
-class ConvTask : public TargetTask {
+#define DMA_ALIGNMENT   4096
+class ConvTask : public TargetTask { //TODO: seperate to another file
 	public:
+		void initializeHostBuffer();
 		void reorderInputs();
 		void reorderOutput();
 		void setInput() {}
@@ -63,28 +66,33 @@ class ConvTask : public TargetTask {
 		void computeGold();
 		void sparsify(void* _data, int _len, float _sparsity);
 		void score();
+		void cleanup();
 };
 
-void testFirstLayer();
-void testFiveLayers();
-void testAllLayers();
+void testFirstLayer(TestEnvironment& test_env, char* layer_info_file_name);
+void testFiveLayers(TestEnvironment& test_env, char* layer_info_file_name);
+void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name);
 int get_layer_info(const char* filename, std::vector<LayerInfo> &layer_infos);
+
 
 int main(int argc, char** argv)
 {
-	if (argc != 2){
+	if (argc != 3){
 		printf("Error: wrong commad format, usage:\n");
-		printf("%s <binaryfile>\n", argv[0]);
+		printf("%s <binaryfile> <test layer info file>\n", argv[0]);
 		return EXIT_FAILURE;
 	}
-	test_env.kernel_file_name=argv[1];
+	char* kernel_file_name = argv[1];
+	char* layer_info_file_name = argv[2];
 
-	test_env.initializeOcl();
-	test_env.initializeHostBuffer();
+	TestEnvironment test_env;
+	test_env.kernel_file_name = kernel_file_name;
 
-	//testFirstLayer();
-	testFiveLayers();
-	//testAllLayers();
+	test_env.initializeOclEnv();
+
+	//testFirstLayer(test_env,layer_info_file_name);
+	//testFiveLayers(test_env,layer_info_file_name);
+	testAllLayers(test_env,layer_info_file_name);
 
 	test_env.cleanup();
 	printf("End test\n");
@@ -93,13 +101,13 @@ int main(int argc, char** argv)
 }
 
 const int ALL_LAYERS=-1;
-void testSpecificLayers(int start_layer_num, int end_layer_num);
-void testFirstLayer() { testSpecificLayers(0, 1);/*only first layer*/ }
-void testFiveLayers() { testSpecificLayers(0, 5); }
-void testAllLayers() {  testSpecificLayers(0, ALL_LAYERS); }
-void testSpecificLayers(int start_layer_num, int end_layer_num) {
+void testSpecificLayers(TestEnvironment& test_env, char* layer_info_file_name, int start_layer_num, int end_layer_num);
+void testFirstLayer(TestEnvironment& test_env, char* layer_info_file_name) { testSpecificLayers(test_env, layer_info_file_name, 0, 1);/*only first layer*/ }
+void testFiveLayers(TestEnvironment& test_env, char* layer_info_file_name) { testSpecificLayers(test_env, layer_info_file_name, 0, 5); }
+void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name) {  testSpecificLayers(test_env, layer_info_file_name, 0, ALL_LAYERS); }
+void testSpecificLayers(TestEnvironment& test_env, char* layer_info_file_name, int start_layer_num, int end_layer_num) {
 	std::vector<LayerInfo> layer_infos;
-	int len = get_layer_info("./../layer_info.txt", layer_infos);
+	int len = get_layer_info(layer_info_file_name, layer_infos);
 
 	if(len<end_layer_num) { printf("forced all layer: len<end_layer_num"); end_layer_num = len;}
 	if(end_layer_num == ALL_LAYERS) { end_layer_num = len; }
@@ -109,9 +117,10 @@ void testSpecificLayers(int start_layer_num, int end_layer_num) {
 		printf("\nIter %d\n", run_iter);
 
 		ConvTask temp_task;
-		temp_task.cur_layer_info = &test_env.cur_layer_info;
 		temp_task.cl_data = test_env.cl_data;
 		test_env.target_task = &temp_task;
+
+		test_env.target_task->initializeHostBuffer();
 
 		test_env.target_task->setLayerParam(layer_infos.at(run_iter));
 		test_env.target_task->setSyntheticInput();
@@ -132,6 +141,7 @@ void testSpecificLayers(int start_layer_num, int end_layer_num) {
 
 		// score
 		test_env.target_task->score();
+		test_env.target_task->cleanup();
 		printf("=>Run complete, No errors!\n");
 	}
 
@@ -168,6 +178,20 @@ int get_layer_info(const char* filename, std::vector<LayerInfo> &layer_infos)
 	return n;
 }
 
+void ConvTask::initializeHostBuffer() {
+	const int MAX_WEIGHT_SIZE=23592960;
+	const int MAX_DATA_SIZE=32688640;
+	const int MAX_BIAS_SIZE=20480;
+	const int MAX_OUTPUT_SIZE=32112640;
+	this->cur_layer_info.weight = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_info.data = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_DATA_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_info.bias = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_BIAS_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_info.output = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_info.gold = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_info.weight_original = (DPTYPE*)malloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE);
+	this->cur_layer_info.data_original = (DPTYPE*)malloc(sizeof(DPTYPE)*MAX_DATA_SIZE);
+
+}
 void ConvTask::setLayerParam(LayerInfo layer_info)
 {
 	NPU_PARAM param;
@@ -276,72 +300,70 @@ void ConvTask::setLayerParam(LayerInfo layer_info)
 	printf(" =>L1 Tile K,C,W,H,R(S): %d %d %d %d %d %d\n", param.L1_TILENUM_K, param.L1_TILENUM_C, param.L1_TILENUM_W, param.L1_TILENUM_H, param.L1_TILENUM_R, param.L1_TILENUM_S);
 	printf(" =>InTile  K,C,W,H,R(S): %d %d %d %d %d %d\n", param.TILESIZE_K, param.TILESIZE_C, param.TILESIZE_W, param.TILESIZE_H, param.TILESIZE_R, param.TILESIZE_S);
 
-	test_env.cur_layer_info.layer_param = param;
+	this->cur_layer_info.layer_param = param;
 }
 
 
 void ConvTask::setSyntheticInput() {
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
 #define RAND_INPUT
 #define SPARSIFYING
 #ifdef RAND_INPUT
 	for(int k = 0; k < param.K; k++)
-		test_env.cur_layer_info.bias[k] = rand()%256-128;
+		this->cur_layer_info.bias[k] = rand()%256-128;
 	for(int k = 0; k < param.K*param.C*param.R*param.S; k++)
-		test_env.cur_layer_info.weight[k] = rand()%256-128;
+		this->cur_layer_info.weight[k] = rand()%256-128;
 	for(int k = 0; k < param.C*param.H_in*param.W_in; k++)
-		test_env.cur_layer_info.data[k] = rand()%256-128;
+		this->cur_layer_info.data[k] = rand()%256-128;
 #else
 	for(int k = 0; k < param.K; k++)  {
-		test_env.cur_layer_info.bias[k] = rand()%256-128;
-		test_env.cur_layer_info.bias[k] = 1;
+		this->cur_layer_info.bias[k] = rand()%256-128;
+		this->cur_layer_info.bias[k] = 1;
 	} for(int k = 0; k < param.K*param.C*param.R*param.S; k++) {
 		int lk = k/(param.C*param.R*param.S); int c=(k%(param.C*param.R*param.S))/(param.R*param.S); int rs=k%(param.R*param.S);
-		test_env.cur_layer_info.weight[k] = rand()%256-128;
-		test_env.cur_layer_info.weight[k] = 1;
+		this->cur_layer_info.weight[k] = rand()%256-128;
+		this->cur_layer_info.weight[k] = 1;
 	} for(int k = 0; k < param.C*param.H_in*param.W_in; k++) {
 		int c = k/param.H_in*param.W_in;
 		int h = (k%(param.H_in*param.W_in))/param.W_in;
 		int w = k%param.W_in;
-		test_env.cur_layer_info.data[k] = rand()%256-128;
-		test_env.cur_layer_info.data[k] = w%2;
+		this->cur_layer_info.data[k] = rand()%256-128;
+		this->cur_layer_info.data[k] = w%2;
 	}
 #endif
 #ifdef SPARSIFYING
 	float sparsity = 0.8; //TODO: automation
 	printf("=>Data sparsifying");
-	sparsify(test_env.cur_layer_info.data, param.C*param.H_in*param.W_in, sparsity);
+	sparsify(this->cur_layer_info.data, param.C*param.H_in*param.W_in, sparsity);
 	//printf("=>Weight sparsifying");
 	//sparsify(test_env.weight, param.K*param.C*param.R*param.S, sparsity);
 #endif
 
-	test_env.cur_layer_info.weight_buf_size = param.K * param.C * param.R * param.S;
-	test_env.cur_layer_info.bias_buf_size = param.K;
-	test_env.cur_layer_info.in_buf_size = param.C * param.H_in * CEIL(param.W_in,ARRAY_W)*ARRAY_W;
-	test_env.cur_layer_info.out_buf_size = param.K * param.H * param.W;
+	this->cur_layer_info.weight_buf_size = param.K * param.C * param.R * param.S;
+	this->cur_layer_info.bias_buf_size = param.K;
+	this->cur_layer_info.in_buf_size = param.C * param.H_in * CEIL(param.W_in,ARRAY_W)*ARRAY_W;
+	this->cur_layer_info.out_buf_size = param.K * param.H * param.W;
 
-	test_env.cur_layer_info.weight_original = (DPTYPE*)malloc(sizeof(DPTYPE)*test_env.cur_layer_info.weight_buf_size);
-	test_env.cur_layer_info.data_original = (DPTYPE*)malloc(sizeof(DPTYPE)*test_env.cur_layer_info.in_buf_size);
-	memcpy(test_env.cur_layer_info.weight_original, test_env.cur_layer_info.weight, sizeof(DPTYPE)*test_env.cur_layer_info.weight_buf_size);
-	memcpy(test_env.cur_layer_info.data_original, test_env.cur_layer_info.data, sizeof(DPTYPE)*test_env.cur_layer_info.in_buf_size);
+	memcpy(this->cur_layer_info.weight_original, this->cur_layer_info.weight, sizeof(DPTYPE)*this->cur_layer_info.weight_buf_size);
+	memcpy(this->cur_layer_info.data_original, this->cur_layer_info.data, sizeof(DPTYPE)*this->cur_layer_info.in_buf_size);
 }
 
 void ConvTask::reorderInputs() {
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
 	// bias
-	DPTYPE* bias_origin = new DPTYPE[test_env.cur_layer_info.bias_buf_size]();
-	memcpy(bias_origin, test_env.cur_layer_info.bias, test_env.cur_layer_info.bias_buf_size * sizeof(DPTYPE));
+	DPTYPE* bias_origin = new DPTYPE[this->cur_layer_info.bias_buf_size]();
+	memcpy(bias_origin, this->cur_layer_info.bias, this->cur_layer_info.bias_buf_size * sizeof(DPTYPE));
 	for (unsigned int ko = 0; ko < param.K/ARRAY_K; ko++) {
 		for (unsigned int ki = 0; ki < ARRAY_K; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_K) / ARRAY_K
 			unsigned int origin_k = ko*ARRAY_K + ki;
 			unsigned int global_k = (ko)*ARRAY_K + ki;
-			test_env.cur_layer_info.bias[global_k] = bias_origin[origin_k];
+			this->cur_layer_info.bias[global_k] = bias_origin[origin_k];
 		}
 	}
 	delete bias_origin;
 	// weight
-	DPTYPE* weight_origin = new DPTYPE[test_env.cur_layer_info.weight_buf_size]();
-	memcpy(weight_origin, test_env.cur_layer_info.weight, test_env.cur_layer_info.weight_buf_size * sizeof(DPTYPE));
+	DPTYPE* weight_origin = new DPTYPE[this->cur_layer_info.weight_buf_size]();
+	memcpy(weight_origin, this->cur_layer_info.weight, this->cur_layer_info.weight_buf_size * sizeof(DPTYPE));
 	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) {
 	 for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) {
 	  for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
@@ -350,16 +372,16 @@ void ConvTask::reorderInputs() {
 	     for (int smo = 0; smo < param.L2_TILENUM_S; smo++) {
 	      for (unsigned int ko = 0; ko < (param.K_L2 / ARRAY_K); ko++) {
 	       for (unsigned int co = 0; co < param.C_L2; co++) {
-	        for (unsigned int ro = 0; ro < param.R_L2; ro++) {
-	         for (unsigned int so = 0; so < param.S_L2; so++) {
-	          for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
+		for (unsigned int ro = 0; ro < param.R_L2; ro++) {
+		 for (unsigned int so = 0; so < param.S_L2; so++) {
+		  for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
 			unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
 			unsigned int global_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)*(param.L2_TILENUM_C)+smo*(param.L2_TILENUM_C)+cmo)
 				*(param.K_L2/ARRAY_K)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+ro*param.S_L2*param.C_L2+so*param.C_L2+co))*ARRAY_K + ki;
-				test_env.cur_layer_info.weight[global_kcrs] = weight_origin[origin_kcsrs];
-	          }
-	         }
-	        }
+				this->cur_layer_info.weight[global_kcrs] = weight_origin[origin_kcsrs];
+		  }
+		 }
+		}
 	       }
 	      }
 	     }
@@ -370,15 +392,15 @@ void ConvTask::reorderInputs() {
 	}
 	delete weight_origin;
 	// input
-	DPTYPE* data_origin = new DPTYPE[test_env.cur_layer_info.in_buf_size]();
-	memcpy(data_origin, test_env.cur_layer_info.data, test_env.cur_layer_info.in_buf_size * sizeof(DPTYPE));
+	DPTYPE* data_origin = new DPTYPE[this->cur_layer_info.in_buf_size]();
+	memcpy(data_origin, this->cur_layer_info.data, this->cur_layer_info.in_buf_size * sizeof(DPTYPE));
 	for (unsigned int c = 0; c < param.C; c++) {
 		for(unsigned int h = 0; h < param.H_in; h++) {
 			for(unsigned int wo = 0; wo < CEIL(param.W_in,ARRAY_W); wo++) {
 				for(unsigned int wi = 0; wi < ARRAY_W; wi++) { 
 					unsigned int origin_chw = c*param.H_in*param.W_in + h*param.W_in + (wo*ARRAY_W + wi);
 					unsigned int global_chw = (h*CEIL(param.W_in,ARRAY_W)*param.C + (wo)*param.C + c)*ARRAY_W + wi;
-					test_env.cur_layer_info.data[global_chw] = data_origin[origin_chw];
+					this->cur_layer_info.data[global_chw] = data_origin[origin_chw];
 				}
 			}
 		}
@@ -387,9 +409,9 @@ void ConvTask::reorderInputs() {
 }
 void ConvTask::reorderOutput()
 {
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
-	MACTYPE* out_origin = new MACTYPE[test_env.cur_layer_info.out_buf_size]();
-	memcpy(out_origin, test_env.cur_layer_info.output, test_env.cur_layer_info.out_buf_size * sizeof(MACTYPE));
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
+	MACTYPE* out_origin = new MACTYPE[this->cur_layer_info.out_buf_size]();
+	memcpy(out_origin, this->cur_layer_info.output, this->cur_layer_info.out_buf_size * sizeof(MACTYPE));
 	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) {
 	 for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
 	  for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
@@ -400,7 +422,7 @@ void ConvTask::reorderOutput()
 		int w = wo * ARRAY_W + wi;
 		unsigned int origin_khw = ((kmo*(param.K_L2)+k)*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w));
 		unsigned int global_khw = ((hmo*param.H_L2+h)*(param.W/ARRAY_W)*param.K + (wmo*param.W_L2/ARRAY_W+wo)*param.K + (kmo*(param.K_L2)+k))*ARRAY_W + wi;
-		test_env.cur_layer_info.output[origin_khw] = out_origin[global_khw];
+		this->cur_layer_info.output[origin_khw] = out_origin[global_khw];
 	      }
 	     }
 	    }
@@ -414,7 +436,7 @@ void ConvTask::sparsify(void* _data_void, int _len, float _sparsity)
 {
 	DPTYPE* _data = (DPTYPE*)_data_void;
 	const int groupsize[3] = {1,1,4}; //W,H,C
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
 
 	bool* mask = new bool[_len];
 	for(int i=0;i<_len;i++) // zero mask
@@ -456,19 +478,19 @@ void ConvTask::sparsify(void* _data_void, int _len, float _sparsity)
 
 void ConvTask::computeGold()
 {
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
 	for(int k=0;k<param.K;k++){
 		for(int h=0;h<param.H;h++){
 			for(int w=0;w<param.W;w++){
 				int output_ptr = k*param.H*param.W + h*param.W + w;
 				int bias_ptr = k;
-				test_env.cur_layer_info.gold[output_ptr] = test_env.cur_layer_info.bias[bias_ptr];
+				this->cur_layer_info.gold[output_ptr] = this->cur_layer_info.bias[bias_ptr];
 				for(int c=0;c<param.C;c++){
 					for(int r=0;r<param.R;r++){
 						for(int s=0;s<param.S;s++){
 							int data_ptr = c*param.H_in*param.W_in + (h+r)*param.W_in + (w+s);
 							int weight_ptr = k*param.C*param.R*param.S + c*param.R*param.S + r*param.S + s;
-							test_env.cur_layer_info.gold[output_ptr] += test_env.cur_layer_info.data[data_ptr] * test_env.cur_layer_info.weight[weight_ptr];
+							this->cur_layer_info.gold[output_ptr] += this->cur_layer_info.data[data_ptr] * this->cur_layer_info.weight[weight_ptr];
 						}
 					}
 				}
@@ -479,19 +501,27 @@ void ConvTask::computeGold()
 
 void ConvTask::score()
 {
-	const NPU_PARAM param = test_env.cur_layer_info.layer_param;
+	const NPU_PARAM param = this->cur_layer_info.layer_param;
 	int cnt = 0;
 	for(int wh=0;wh<param.H*param.W;wh++) {
 		for (unsigned int k = 0; k < param.K; k++) {
 			unsigned int ptr = k*param.H*param.W + wh;
-			int out = test_env.cur_layer_info.output[ptr];
-			if(out != test_env.cur_layer_info.gold[ptr])
+			int out = this->cur_layer_info.output[ptr];
+			if(out != this->cur_layer_info.gold[ptr])
 			{
-				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out, test_env.cur_layer_info.gold[ptr], cnt);
-				exit(1);
-			}
-			cnt ++;
+			printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out, this->cur_layer_info.gold[ptr], cnt);
+			exit(1);
 		}
+		cnt ++;
 	}
 }
+}
 
+void ConvTask::cleanup() {
+	alignedFree(this->cur_layer_info.weight);
+	alignedFree(this->cur_layer_info.data);
+	alignedFree(this->cur_layer_info.bias);
+	alignedFree(this->cur_layer_info.output);
+	alignedFree(this->cur_layer_info.weight_original);
+	alignedFree(this->cur_layer_info.data_original);
+}
