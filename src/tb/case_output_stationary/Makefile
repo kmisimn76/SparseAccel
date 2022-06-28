@@ -26,29 +26,35 @@ DEBUG=-g
 
 xrt_path = $(XILINX_XRT)
 LINK_CONFIG = -L$(xrt_path)/lib -lOpenCL -lpthread -lrt -lstdc++
-HEADER_OPTION = -I../../../common -I../.. -I..
+HEADER_OPTION = -I../../../common -I../.. -I.. -I../../device
 BUILD_DIR = ./build.${TARGET}
 LOG_DIR = ./log.${TARGET}
 
-all: conv.${TARGET}.xo conv.${TARGET}.xclbin testbench emu
+all: conv.${TARGET}.xclbin testbench emu
 
-conv.${TARGET}.xo: ../../conv_sysarr.cpp
-	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k Conv_sysarr ${DEFINE} --config config_sp ${HEADER_OPTION} -o'conv.${TARGET}.xo' ./../../conv_sysarr.cpp ${JOBS}
-conv.${TARGET}.xclbin: ../../conv_sysarr.cpp
-	${FAKETIME} v++ -l ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} ${DEFINE} conv.${TARGET}.xo -o'conv.${TARGET}.xclbin' --config config_sp ${JOBS}
+conv.${TARGET}.xo: ../../device/Conv_sysarr.cpp
+	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k Conv_sysarr ${DEFINE} --config config_sp ${HEADER_OPTION} -o'conv.${TARGET}.xo' ./../../device/Conv_sysarr.cpp ${JOBS}
+
+maxpool.${TARGET}.xo: ../../device/maxPool.cpp
+	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k maxPool ${DEFINE} --config config_sp ${HEADER_OPTION} -o'maxpool.${TARGET}.xo' ./../../device/maxPool.cpp ${JOBS}
+
+conv.${TARGET}.xclbin: conv.${TARGET}.xo maxpool.${TARGET}.xo
+	${FAKETIME} v++ -l ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} ${DEFINE} conv.${TARGET}.xo maxpool.${TARGET}.xo -o'conv.${TARGET}.xclbin' --config config_sp ${JOBS}
 
 TestBench.o: ../TestBench.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../TestBench.cpp
-TestEnvironment.o: ../TestEnvironment.cpp
+TestEnvironment.o: ../TestEnvironment.cpp ../TestEnvironment.h
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../TestEnvironment.cpp
+ConvTask.o: ../Tasks/ConvTask.cpp ../Tasks/ConvTask.h
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/ConvTask.cpp
 timer.o: ../../../common/timer.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../../../common/timer.cpp
 ocl_util.o: ../../../common/ocl_util.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../../../common/ocl_util.cpp
 
 .PHONY: testbench
-testbench: TestBench.o TestEnvironment.o timer.o ocl_util.o
-	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) TestBench.o TestEnvironment.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
+testbench: TestBench.o TestEnvironment.o ConvTask.o timer.o ocl_util.o
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) TestBench.o TestEnvironment.o ConvTask.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
 
 .PHONY: emu
 emu:

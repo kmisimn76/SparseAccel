@@ -13,7 +13,7 @@ Iter 0
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800803
  =>Group sparsified rate: 0.412508
-=>Kernel time (ms): 	6209.207194
+=>Kernel time (ms): 	6432.740300
 =>Run complete, No errors!
 
 Iter 1
@@ -24,7 +24,7 @@ Iter 1
  =>InTile  K,C,W,H,R(S): 32 10 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800778
  =>Group sparsified rate: 0.413597
-=>Kernel time (ms): 	124.466726
+=>Kernel time (ms): 	123.044904
 =>Run complete, No errors!
 
 Iter 2
@@ -35,7 +35,7 @@ Iter 2
  =>InTile  K,C,W,H,R(S): 32 72 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800743
  =>Group sparsified rate: 0.410940
-=>Kernel time (ms): 	301.039228
+=>Kernel time (ms): 	293.922015
 =>Run complete, No errors!
 
 Iter 3
@@ -46,7 +46,7 @@ Iter 3
  =>InTile  K,C,W,H,R(S): 32 16 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800738
  =>Group sparsified rate: 0.409598
-=>Kernel time (ms): 	450.420981
+=>Kernel time (ms): 	441.929345
 =>Run complete, No errors!
 
 Iter 4
@@ -57,7 +57,7 @@ Iter 4
  =>InTile  K,C,W,H,R(S): 32 6 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800754
  =>Group sparsified rate: 0.410856
-=>Kernel time (ms): 	823.679247
+=>Kernel time (ms): 	836.014137
 =>Run complete, No errors!
 
 Iter 5
@@ -68,7 +68,7 @@ Iter 5
  =>InTile  K,C,W,H,R(S): 32 130 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800797
  =>Group sparsified rate: 0.411088
-=>Kernel time (ms): 	586.729806
+=>Kernel time (ms): 	590.108148
 =>Run complete, No errors!
 
 Iter 6
@@ -79,7 +79,7 @@ Iter 6
  =>InTile  K,C,W,H,R(S): 32 50 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800699
  =>Group sparsified rate: 0.413339
-=>Kernel time (ms): 	386.316604
+=>Kernel time (ms): 	377.555201
 =>Run complete, No errors!
 
 Iter 7
@@ -90,7 +90,7 @@ Iter 7
  =>InTile  K,C,W,H,R(S): 32 128 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800751
  =>Group sparsified rate: 0.412214
-=>Kernel time (ms): 	661.339578
+=>Kernel time (ms): 	644.081067
 =>Run complete, No errors!
 
 Iter 8
@@ -101,7 +101,7 @@ Iter 8
  =>InTile  K,C,W,H,R(S): 32 72 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800816
  =>Group sparsified rate: 0.410280
-=>Kernel time (ms): 	335.893261
+=>Kernel time (ms): 	327.351081
 =>Run complete, No errors!
 
 Iter 9
@@ -112,7 +112,7 @@ Iter 9
  =>InTile  K,C,W,H,R(S): 32 60 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800809
  =>Group sparsified rate: 0.412872
-=>Kernel time (ms): 	560.710352
+=>Kernel time (ms): 	561.357358
 =>Run complete, No errors!
 
 Iter 10
@@ -123,7 +123,7 @@ Iter 10
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800747
  =>Group sparsified rate: 0.410470
-=>Kernel time (ms): 	5170.568405
+=>Kernel time (ms): 	5351.025284
 =>Run complete, No errors!
 
 Iter 11
@@ -134,7 +134,7 @@ Iter 11
  =>InTile  K,C,W,H,R(S): 32 86 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800768
  =>Group sparsified rate: 0.410507
-=>Kernel time (ms): 	2552.671024
+=>Kernel time (ms): 	2565.312272
 =>Run complete, No errors!
 
 Iter 12
@@ -145,7 +145,7 @@ Iter 12
  =>InTile  K,C,W,H,R(S): 32 266 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800798
  =>Group sparsified rate: 0.412141
-=>Kernel time (ms): 	297.858967
+=>Kernel time (ms): 	295.369190
 =>Run complete, No errors!
 
 Iter 13
@@ -156,7 +156,7 @@ Iter 13
  =>InTile  K,C,W,H,R(S): 32 66 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800578
  =>Group sparsified rate: 0.414029
-=>Kernel time (ms): 	327.545049
+=>Kernel time (ms): 	320.082935
 =>Run complete, No errors!
 
 Iter 14
@@ -167,7 +167,7 @@ Iter 14
  =>InTile  K,C,W,H,R(S): 32 134 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800802
  =>Group sparsified rate: 0.411447
-=>Kernel time (ms): 	623.873861
+=>Kernel time (ms): 	615.823290
 =>Run complete, No errors!
 
 Iter 15
@@ -178,7 +178,7 @@ Iter 15
  =>InTile  K,C,W,H,R(S): 32 40 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800761
  =>Group sparsified rate: 0.409623
-=>Kernel time (ms): 	318.172639
+=>Kernel time (ms): 	317.539892
 =>Run complete, No errors!
 
 Iter 16
@@ -189,7 +189,7 @@ Iter 16
  =>InTile  K,C,W,H,R(S): 32 4 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.801133
  =>Group sparsified rate: 0.408791
-=>Kernel time (ms): 	552.675707
+=>Kernel time (ms): 	552.427837
 =>Run complete, No errors!
 
 Iter 17
@@ -200,7 +200,7 @@ Iter 17
  =>InTile  K,C,W,H,R(S): 32 132 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800779
  =>Group sparsified rate: 0.406791
-=>Kernel time (ms): 	663.485629
+=>Kernel time (ms): 	666.012632
 =>Run complete, No errors!
 
 Iter 18
@@ -325,8 +325,8 @@ Args: 2048,544,7,8,7,8,1,1
  16,  4,  1,  7        ,  1,  1
  32, 68,  1,  8,  1,  8,  1,  1
  32, 68,  1,  8,          1,  1 
-=>Kernel time (ms): 	310.971793
+=>Kernel time (ms): 	309.190299
 =>Run complete, No errors!
 latency report
-6209.207194,124.466726,301.039228,450.420981,823.679247,586.729806,386.316604,661.339578,335.893261,560.710352,5170.568405,2552.671024,297.858967,327.545049,623.873861,318.172639,552.675707,663.485629,310.971793,
+6432.740300,123.044904,293.922015,441.929345,836.014137,590.108148,377.555201,644.081067,327.351081,561.357358,5351.025284,2565.312272,295.369190,320.082935,615.823290,317.539892,552.427837,666.012632,309.190299,
 End test
