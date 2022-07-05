@@ -32,7 +32,6 @@ void MaxPoolTask::initializeHostBuffer() {
 	this->cur_layer_data.data_original = (DPTYPE*)malloc(sizeof(DPTYPE)*MAX_DATA_SIZE);
 }
 
-#define NUM_OF_ARGS 42/*37*/ //# of args of HLS kernel
 void MaxPoolTask::initializeClBuffer(ocl_data_* cl_data)
 {
 	cl_int status;
@@ -141,7 +140,7 @@ void MaxPoolTask::setSyntheticInput(bool random, bool sparsifying) {
 			int h = (idx%(param.WH_in*param.WH_in))/param.WH_in;
 			int w = idx%param.WH_in;
 			this->cur_layer_data.data[idx] = rand()%256-128; //
-			this->cur_layer_data.data[idx] = c;
+			this->cur_layer_data.data[idx] = w;
 		}
 	}
 

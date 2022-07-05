@@ -21,8 +21,8 @@ using namespace std;
 #include "TestEnvironment.h"
 #include "Tasks/MaxPoolTask.h"
 
-void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name);
-int get_layer_info(const char* filename, std::vector<MaxPoolLayerInfo> &layer_infos);
+MaxPoolLayerInfo get_test_layer_info();
+long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_info);
 
 int main(int argc, char** argv)
 {
@@ -39,7 +39,8 @@ int main(int argc, char** argv)
 
 	test_env.initializeOclEnv(TestEnv::KNL_NUM_MAXPOOL);
 
-	testAllLayers(test_env,layer_info_file_name);
+	MaxPoolLayerInfo layer_info = get_test_layer_info();
+	runTestLayerWithMeasure(test_env, layer_info);
 
 	test_env.cleanup();
 	printf("End test\n");
@@ -48,24 +49,6 @@ int main(int argc, char** argv)
 }
 
 
-long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_info);
-void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name)
-{
-	std::vector<MaxPoolLayerInfo> layer_infos;
-	int len = get_layer_info(layer_info_file_name, layer_infos);
-	std::vector<double> latency_each_layers;
-	for(int run_iter=0;run_iter<len;run_iter++){
-		printf("\nIter %d\n", run_iter);
-		long latency = runTestLayerWithMeasure(test_env, layer_infos.at(run_iter));
-		latency_each_layers.push_back((double)latency/1000000.0);
-	}
-
-	printf("latency report\n");
-	for(int run_iter=0;run_iter<len;run_iter++){
-		printf("%lf,", latency_each_layers.at(run_iter));
-	}
-	printf("\n");
-}
 //TODO: reuse common test code
 long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_info)
 {
@@ -76,7 +59,7 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_
 
 	test_env.target_task->setLayerParamAndBufSize(&layer_info);
 
-	bool random_input = true;
+	bool random_input = false;
 	bool sparsifying = false;
 	test_env.target_task->setSyntheticInput(random_input, sparsifying);
 	test_env.target_task->computeGold();
@@ -101,7 +84,22 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_
 	return latency;
 }
 
-int get_layer_info(const char* filename, std::vector<MaxPoolLayerInfo> &layer_infos)
+MaxPoolLayerInfo get_test_layer_info()
+{
+	MaxPoolLayerInfo layer_info;
+
+	layer_info.C = 16;
+	layer_info.WH = 4;
+	layer_info.WH_in = 8;
+	layer_info.RS = 2;
+	layer_info.stride = 2;
+	layer_info.padding_out = 0;
+	layer_info.is_test_layer = true;
+
+	return layer_info;
+}
+
+int get_layer_info(const char* filename, std::vector<ConvLayerInfo> &layer_infos)
 {
 	FILE* f = fopen(filename, "r");
 	printf("Filename: %s\n", filename);
@@ -110,8 +108,15 @@ int get_layer_info(const char* filename, std::vector<MaxPoolLayerInfo> &layer_in
 	printf("N: %d\n", n);
 	for (int i=0; i<n; i++)
 	{
-		MaxPoolLayerInfo new_layer_info;
-		fscanf(f,"%d,%d,%d,%d,%d,%d", &new_layer_info.C, &new_layer_info.WH, &new_layer_info.WH_in, &new_layer_info.RS, &new_layer_info.stride, &new_layer_info.padding_out);
+		ConvLayerInfo new_layer_info;
+		uint meanless_data;
+		fscanf(f,"%d,%d,%d,%d,%d,%d,", &new_layer_info.K,&new_layer_info.C,&new_layer_info.H,&new_layer_info.W,&new_layer_info.R,&new_layer_info.S);
+		fscanf(f,"%f,", &new_layer_info.density);
+		fscanf(f,"%d,%d,%d,%d,%d,%d,%d,", &new_layer_info.L2K,&new_layer_info.L2C,&new_layer_info.L2H,&new_layer_info.L2W,&new_layer_info.L2R,&new_layer_info.L2S, &meanless_data);
+		fscanf(f,"%d,%d,%d,%d,%d,%d,%d,", &new_layer_info.L1K,&new_layer_info.L1C,&new_layer_info.L1H,&new_layer_info.L1W,&new_layer_info.L1R,&new_layer_info.L1S, &meanless_data);
+		fscanf(f,"%d,%d,%d,%d,%d,%d,%d", &new_layer_info.TK,&new_layer_info.TC,&new_layer_info.TH,&new_layer_info.TW,&new_layer_info.TR,&new_layer_info.TS, &meanless_data);
+		new_layer_info.W_in = new_layer_info.W + new_layer_info.S -1;
+		new_layer_info.H_in = new_layer_info.H + new_layer_info.R -1;
 		new_layer_info.is_test_layer = false;
 		layer_infos.push_back(new_layer_info);
 	}

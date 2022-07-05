@@ -2,13 +2,52 @@ Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
 Loading: 'accelerator.sw_emu.xclbin'
+Filename: ./test_maxpool_layer_info.txt
+N: 4
+
+Iter 0
 =>MaxPool Layer Info
  =>C    : 16
+ =>WH   : 4
+ =>WH in: 8
+ =>RS   : 2
+ =>Strid: 2
+ =>Padd : 0
+=>Kernel time (ms): 	0.597058
+=>Run complete, No errors!
+
+Iter 1
+=>MaxPool Layer Info
+ =>C    : 32
  =>WH   : 8
  =>WH in: 16
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Kernel time (ms): 	0.626868
+=>Kernel time (ms): 	0.445479
 =>Run complete, No errors!
+
+Iter 2
+=>MaxPool Layer Info
+ =>C    : 16
+ =>WH   : 1
+ =>WH in: 7
+ =>RS   : 7
+ =>Strid: 7
+ =>Padd : 0
+=>Kernel time (ms): 	0.285299
+=>Run complete, No errors!
+
+Iter 3
+=>MaxPool Layer Info
+ =>C    : 32
+ =>WH   : 9
+ =>WH in: 16
+ =>RS   : 2
+ =>Strid: 2
+ =>Padd : 1
+=>Kernel time (ms): 	0.477828
+=>Run complete, No errors!
+latency report
+0.597058,0.445479,0.285299,0.477828,
 End test

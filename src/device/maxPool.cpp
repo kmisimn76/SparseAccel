@@ -5,9 +5,9 @@ extern "C" {
 #endif
 //#define CUSTOM_RS 3 //if RESNET
 //#define CUSTOM_RS 2 //if VGG
+//#define CUSTOM_STRIDE 2	//if RESNET or VGG
 #define CUSTOM_RS (RS)
-//#define CUSTOM_STRIDE (stride)
-#define CUSTOM_STRIDE 2	//if RESNET or VGG
+#define CUSTOM_STRIDE (stride)
 
 void maxPool(
 		//uint K,//unused
@@ -75,7 +75,6 @@ void maxPool(
 					int output_ptr=(co * WH * WH + (h+Padding_out) * WH + (w+Padding_out)) * VEC_SIZE + ci;
 					pool_out[output_ptr] = tmp[ci];
 					pool_out_MACTYPE[output_ptr] = tmp[ci];
-
 				}
 			}
 		}

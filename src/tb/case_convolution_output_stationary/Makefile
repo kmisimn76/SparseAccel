@@ -60,12 +60,12 @@ testbench: ConvTestBench.o TestEnvironment.o ConvTask.o timer.o ocl_util.o
 .PHONY: emu
 emu:
 	emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
-	XCL_EMULATION_MODE=$(TARGET) ./testbench accelerator.${TARGET}.xclbin ./../test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(${shell pwd})\n\n\n"; sh -c 'exit 1')
+	XCL_EMULATION_MODE=$(TARGET) ./testbench accelerator.${TARGET}.xclbin ./test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(${shell pwd})\n\n\n"; sh -c 'exit 1')
 
 .PHONY: debug
 debug:
 	emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
-	XCL_EMULATION_MODE=sw_emu gdb --args ./testbench accelerator.sw_emu.xclbin ./../test_layer_info.txt
+	XCL_EMULATION_MODE=sw_emu gdb --args ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt
 
 
 clean:
