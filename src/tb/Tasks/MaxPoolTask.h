@@ -5,6 +5,16 @@
 #include "maxPool.h"
 #include "TestEnvironment.h"
 
+typedef struct maxpool_layer_info_ {
+	unsigned int C;
+	unsigned int WH;
+	unsigned int WH_in;
+	unsigned int RS;
+	unsigned int stride;
+	unsigned int padding_out;
+	bool is_test_layer;
+}MaxPoolLayerInfo;
+
 typedef struct maxpool_param_ {
 	unsigned int C;
 	unsigned int WH;
@@ -14,7 +24,7 @@ typedef struct maxpool_param_ {
 	unsigned int padding_out;
 }MaxPoolParam;
 
-class MaxPoolLayerInfo {
+class MaxPoolLayerData {
 	public:
 		MaxPoolParam layer_param;
 		unsigned int in_buf_size = 0;
@@ -30,7 +40,7 @@ class MaxPoolLayerInfo {
 
 class MaxPoolTask : public TargetTask {
 	public:
-		MaxPoolLayerInfo cur_layer_info;
+		MaxPoolLayerData cur_layer_data;
 
 		cl::Buffer data_buf;
 		cl::Buffer output_buf;
@@ -40,14 +50,15 @@ class MaxPoolTask : public TargetTask {
 		void initializeClBuffer(ocl_data_*);
 		void setClArgs(ocl_data_*);
 		void enqueData(ocl_data_*);
-		void readData(ocl_data_*, cl::Event*);
+		void readData(ocl_data_*);
+		void runTask(ocl_data_*);
 
 		void reorderInputs();
 		void reorderOutput();
 
 		void setInputData() {}
-		void setLayerParamAndBufSize(LayerInfo layer_info);
-		void setSyntheticInput();
+		void setLayerParamAndBufSize(void* maxpool_layer_info);
+		void setSyntheticInput(bool random, bool sparsifying);
 
 		void computeGold();
 		void score();
@@ -55,6 +66,7 @@ class MaxPoolTask : public TargetTask {
 		void sparsify(void* _data, int _len, float _sparsity);
 
 		void cleanup();
+
 };
 
 #endif

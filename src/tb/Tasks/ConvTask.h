@@ -5,6 +5,42 @@
 #include "Conv_sysarr.h"
 #include "TestEnvironment.h"
 
+
+//TODO : temporal moved (used @ TargetTask) -> essential?
+typedef struct conv_layer_info_ {
+	uint K;
+	uint C;
+	uint H;
+	uint W;
+	uint H_in;
+	uint W_in;
+	uint R;
+	uint S;
+	float density;
+	uint L2K;
+	uint L2C;
+	uint L2H;
+	uint L2W;
+	uint L2R;
+	uint L2S;
+	uint L1K;
+	uint L1C;
+	uint L1H;
+	uint L1W;
+	uint L1R;
+	uint L1S;
+	uint TK;
+	uint TC;
+	uint TH;
+	uint TW;
+	uint TR;
+	uint TS;
+
+	bool is_test_layer;
+}ConvLayerInfo;
+
+
+
 typedef struct {
     uint K;
     uint C;
@@ -48,11 +84,11 @@ typedef struct {
     uint TILESIZE_H;
     uint TILESIZE_R; //must be 1
     uint TILESIZE_S; //must be 1
-} NPU_PARAM;
+} CONV_PARAM;
 
-class ConvLayerInfo { //TODO: rename ConvLayerInfo -> ConvLayerData?
+class ConvLayerData {
 	public:
-		NPU_PARAM layer_param;
+		CONV_PARAM layer_param;
 		unsigned int bias_buf_size = 0;
 		unsigned int weight_buf_size = 0;
 		unsigned int in_buf_size = 0;
@@ -69,7 +105,7 @@ class ConvLayerInfo { //TODO: rename ConvLayerInfo -> ConvLayerData?
 
 class ConvTask : public TargetTask {
 	public:
-		ConvLayerInfo cur_layer_info;
+		ConvLayerData cur_layer_data;
 
 		cl::Buffer data_buf; //TODO: move to ConvLayerInfo(Data)
 		cl::Buffer output_buf;
@@ -87,7 +123,7 @@ class ConvTask : public TargetTask {
 		void reorderOutput();
 
 		void setInputData() {}
-		void setLayerParamAndBufSize(LayerInfo layer_info);
+		void setLayerParamAndBufSize(void* conv_layer_info);
 		void setSyntheticInput(bool random, bool sparsifying);
 
 		void computeGold();

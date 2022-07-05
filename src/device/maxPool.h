@@ -7,7 +7,7 @@
 #include <string.h>
 #include <math.h>
 
-#ifndef XILINX
+#ifndef TESTBENCH
 #include "ap_axi_sdata.h"
 #include "ap_int.h"
 #include "hls_stream.h"
@@ -73,9 +73,7 @@ typedef  unsigned char   uchar;
 
 #endif
 
-#define ARRAY_K 16
-#define ARRAY_C 16
-#define VEC_SIZE 16 // smaller than ARRAY_C,ARRAY_K
+//#define VEC_SIZE 16 // smaller than ARRAY_C,ARRAY_K
 
 //typedef ap_axiu<512,0,0,0> k2k_data;
 #ifndef XILINX

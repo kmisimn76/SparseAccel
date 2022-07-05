@@ -92,7 +92,7 @@ char* TestEnvironment::readBinaryFile(const std::string &xclbin_file_name, unsig
 }
 
 
-void TestEnvironment::initializeOclEnv()
+void TestEnvironment::initializeOclEnv(long compiled_kernel_list)
 {
 	cl_int status;
 	this->cl_data = new ocl_data_();
@@ -113,10 +113,14 @@ void TestEnvironment::initializeOclEnv()
 	status = this->cl_data->program.build(this->cl_data->device);
 	checkError(status, "Failed to build program");
 
-	this->cl_data->knl_conv = cl::Kernel(this->cl_data->program, this->knl_name_conv, &status);
-	checkError(status, "Failed to create kernel (conv)");
-	this->cl_data->knl_maxpool = cl::Kernel(this->cl_data->program, this->knl_name_maxpool, &status);
-	checkError(status, "Failed to create kernel (maxpool)");
+	if((compiled_kernel_list & TestEnv::KNL_NUM_CONV) > 0) {
+		this->cl_data->knl_conv = cl::Kernel(this->cl_data->program, this->knl_name_conv, &status);
+		checkError(status, "Failed to create kernel (conv)");
+	}
+	if((compiled_kernel_list & TestEnv::KNL_NUM_MAXPOOL) > 0) {
+		this->cl_data->knl_maxpool = cl::Kernel(this->cl_data->program, this->knl_name_maxpool, &status);
+		checkError(status, "Failed to create kernel (maxpool)");
+	}
 }
 
 void TestEnvironment::initializeClBuffer()

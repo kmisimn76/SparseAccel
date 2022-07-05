@@ -7,20 +7,6 @@ FAKETIME=faketime -f "-1y"
 JOBS=-j 12
 OPTIMIZE=
 
-DEFINE+= -D ARRAY_K=32
-DEFINE+= -D ARRAY_W=8
-DEFINE+= -D PORT_C=2
-DEFINE+= -D PORT_K=2
-DEFINE+= -D BLOCK_SIZE=4
-
-DEFINE+= -D WEIGHT_L1_SIZE=27000
-DEFINE+= -D DATA_L1_SIZE=49700
-
-DEFINE+= -D WEIGHT_L2_SIZE=43200
-DEFINE+= -D DATA_L2_SIZE=78400
-DEFINE+= -D OUTPUT_L2_SIZE=35840
-
-
 PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
 DEBUG=-g
 
@@ -47,6 +33,8 @@ TestEnvironment.o: ../TestEnvironment.cpp ../TestEnvironment.h
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../TestEnvironment.cpp
 ConvTask.o: ../Tasks/ConvTask.cpp ../Tasks/ConvTask.h
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/ConvTask.cpp
+MaxPoolTask.o: ../Tasks/MaxPoolTask.cpp ../Tasks/MaxPoolTask.h
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/MaxPoolTask.cpp
 timer.o: ../../../common/timer.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ../../../common/timer.cpp
 ocl_util.o: ../../../common/ocl_util.cpp

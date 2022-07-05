@@ -14,40 +14,6 @@
 #include "timer.h"
 using namespace ocl_util;
 
-//TODO : temporal moved (used @ TargetTask) -> essential?
-typedef struct layer_info_ {
-	uint K;
-	uint C;
-	uint H;
-	uint W;
-	uint H_in;
-	uint W_in;
-	uint R;
-	uint S;
-	float density;
-	uint L2K;
-	uint L2C;
-	uint L2H;
-	uint L2W;
-	uint L2R;
-	uint L2S;
-	uint L1K;
-	uint L1C;
-	uint L1H;
-	uint L1W;
-	uint L1R;
-	uint L1S;
-	uint TK;
-	uint TC;
-	uint TH;
-	uint TW;
-	uint TR;
-	uint TS;
-
-	bool is_test_layer;
-}LayerInfo;
-
-
 class ocl_data_ {
 	public:
 		cl::Event task_event;
@@ -72,7 +38,7 @@ class TargetTask { //Interface
 		virtual void runTask(ocl_data_*) {}
 		virtual void reorderInputs() {}
 		virtual void reorderOutput() {}
-		virtual void setLayerParamAndBufSize(LayerInfo layer_info) {}
+		virtual void setLayerParamAndBufSize(void* layer_info) {} // using void pointer to increase polymorphism
 		virtual void setInputData() {}
 		virtual void setSyntheticInput(bool random, bool sparsifying) {}
 		virtual void computeGold() {}
@@ -80,11 +46,19 @@ class TargetTask { //Interface
 		virtual void score() {}
 		virtual void cleanup() {}
 };
+
+namespace TestEnv {
+//Kernel List for initializeOclEnv
+const long KNL_NUM_CONV		= 0x00000001;
+const long KNL_NUM_MAXPOOL	= 0x00000002;
+}
+
 class TestEnvironment {
 	private:
 	public:
 		const char* knl_name_conv = "Conv_sysarr";
 		const char* knl_name_maxpool = "maxPool";
+
 		char *kernel_file_name;
 
 		ocl_data_* cl_data;
@@ -100,7 +74,7 @@ class TestEnvironment {
 		std::vector<cl::Device> getDevices(const std::string& vendor_name);
 		char* readBinaryFile(const std::string &xclbin_file_name, unsigned &nb);
 
-		void initializeOclEnv();
+		void initializeOclEnv(long compiled_kernel_list);
 
 		void initializeClBuffer(); //wrapper
 		void setClArgs(); //wrapper
