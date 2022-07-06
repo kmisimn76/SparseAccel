@@ -1,0 +1,109 @@
+Found cl_data->platform: Xilinx
+Device Nums: 1
+Device Name: xilinx_u200_xdma_201830_2
+Loading: 'accelerator.sw_emu.xclbin'
+Filename: ./test_layer_info.txt
+N: 4
+
+Iter 0
+=>Kernel Mapping Info
+ =>K,C,H,W,R,S : 64 4 224 224 7 7
+ =>L2 Tile K,C,W,H,R(S): 2 1 7 56 1 1
+ =>L1 Tile K,C,W,H,R(S): 1 2 4 4 7 7
+ =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
+=>Data sparsifying =>Eltwise sparsified rate: 0.800803
+ =>Group sparsified rate: 0.412508
+=>MaxPool Layer Info
+ =>C    : 64
+ =>WH   : 112
+ =>WH in: 224
+ =>RS   : 2
+ =>Strid: 2
+ =>Padd : 0
+=>Conv Kernel time (ms): 	6399.029132
+=>Maxpool Kernel time (ms): 	44.576856
+=>Run complete, No errors!
+
+Iter 1
+=>Kernel Mapping Info
+ =>K,C,H,W,R,S : 128 260 64 64 1 1
+ =>L2 Tile K,C,W,H,R(S): 1 2 2 16 1 1
+ =>L1 Tile K,C,W,H,R(S): 4 1 4 4 1 1
+ =>InTile  K,C,W,H,R(S): 32 130 8 1 1 1
+=>Data sparsifying =>Eltwise sparsified rate: 0.800793
+ =>Group sparsified rate: 0.411155
+=>MaxPool Layer Info
+ =>C    : 128
+ =>WH   : 32
+ =>WH in: 64
+ =>RS   : 2
+ =>Strid: 2
+ =>Padd : 0
+=>Conv Kernel time (ms): 	675.529344
+=>Maxpool Kernel time (ms): 	12.690079
+=>Run complete, No errors!
+
+Iter 2
+=>Kernel Mapping Info
+ =>K,C,H,W,R,S : 512 240 32 32 1 1
+ =>L2 Tile K,C,W,H,R(S): 4 2 1 16 1 1
+ =>L1 Tile K,C,W,H,R(S): 4 2 4 2 1 1
+ =>InTile  K,C,W,H,R(S): 32 60 8 1 1 1
+=>Data sparsifying =>Eltwise sparsified rate: 0.800757
+ =>Group sparsified rate: 0.410889
+=>MaxPool Layer Info
+ =>C    : 512
+ =>WH   : 16
+ =>WH in: 32
+ =>RS   : 2
+ =>Strid: 2
+ =>Padd : 0
+=>Conv Kernel time (ms): 	662.449360
+=>Maxpool Kernel time (ms): 	11.609480
+=>Run complete, No errors!
+
+Iter 3
+=>Kernel Mapping Info
+ =>K,C,H,W,R,S : 2048 544 8 8 1 1
+ =>L2 Tile K,C,W,H,R(S): 4 2 1 1 1 1
+ =>L1 Tile K,C,W,H,R(S): 16 4 1 8 1 1
+ =>InTile  K,C,W,H,R(S): 32 68 8 1 1 1
+=>Data sparsifying =>Eltwise sparsified rate: 0.800753
+ =>Group sparsified rate: 0.411190
+=>MaxPool Layer Info
+ =>C    : 2048
+ =>WH   : 1
+ =>WH in: 8
+ =>RS   : 8
+ =>Strid: 8
+ =>Padd : 0
+=>Conv Kernel time (ms): 	359.759670
+Args: 64,4,224,224,230,230,7,7
+  2,  1, 56,  7        ,  1,  1
+ 32,  4,  4, 32, 10, 38,  7,  7
+  1,  2,  4,  4        ,  7,  7
+ 32,  2,  1,  8,  1,  8,  1,  1
+ 32,  2,  1,  8,          1,  1 
+Args: 128,260,64,64,64,64,1,1
+  1,  2, 16,  2        ,  1,  1
+128,130,  4, 32,  4, 32,  1,  1
+  4,  1,  4,  4        ,  1,  1
+ 32,130,  1,  8,  1,  8,  1,  1
+ 32,130,  1,  8,          1,  1 
+Args: 512,240,32,32,32,32,1,1
+  4,  2, 16,  1        ,  1,  1
+128,120,  2, 32,  2, 32,  1,  1
+  4,  2,  4,  2        ,  1,  1
+ 32, 60,  1,  8,  1,  8,  1,  1
+ 32, 60,  1,  8,          1,  1 
+Args: 2048,544,8,8,8,8,1,1
+  4,  2,  1,  1        ,  1,  1
+512,272,  8,  8,  8,  8,  1,  1
+ 16,  4,  1,  8        ,  1,  1
+ 32, 68,  1,  8,  1,  8,  1,  1
+ 32, 68,  1,  8,          1,  1 
+=>Maxpool Kernel time (ms): 	1.527652
+=>Run complete, No errors!
+latency report
+6443.605988,688.219423,674.058840,361.287322,
+End test

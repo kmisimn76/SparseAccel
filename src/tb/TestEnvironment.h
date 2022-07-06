@@ -49,7 +49,7 @@ class TargetTask { //Interface
 
 namespace TestEnv {
 //Kernel List for initializeOclEnv
-const long KNL_NUM_CONV		= 0x00000001;
+const long KNL_NUM_CONV		= 0x00000001; //TODO: rename KNL_NUM_CONV -> KNL_CONV ?
 const long KNL_NUM_MAXPOOL	= 0x00000002;
 }
 

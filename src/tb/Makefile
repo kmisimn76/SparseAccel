@@ -4,7 +4,8 @@ all: sw_emu
 	
 #sw_emu: sw_emu_convolution_output_stationary sw_emu_maxpool
 #sw_emu: sw_emu_convolution_output_stationary
-sw_emu: sw_emu_maxpool
+#sw_emu: sw_emu_maxpool
+sw_emu: sw_emu_conv_out_stat_then_maxpool
 
 sw_emu_convolution_output_stationary:
 	$(MAKE) -C case_convolution_output_stationary TARGET=sw_emu
@@ -20,6 +21,14 @@ sw_emu_maxpool:
 	@echo "."
 	@echo "."
 	@echo "   Test Target: case_maxpool"
+	@echo "       TEST PASSED! :)\n\n\n"
+
+sw_emu_conv_out_stat_then_maxpool:
+	$(MAKE) -C case_conv_out_stat_then_maxpool TARGET=sw_emu
+	@echo "."
+	@echo "."
+	@echo "."
+	@echo "   Test Target: case_conv_out_stat_then_maxpool"
 	@echo "       TEST PASSED! :)\n\n\n"
 
 clean:
