@@ -1,11 +1,10 @@
 FAKETIME=faketime -f "-1y" 
 
+
 all: sw_emu
-	
-#sw_emu: sw_emu_convolution_output_stationary sw_emu_maxpool
-#sw_emu: sw_emu_convolution_output_stationary
-#sw_emu: sw_emu_maxpool
-sw_emu: sw_emu_conv_out_stat_then_maxpool
+sw_emu: sw_emu_convolution_output_stationary\
+	sw_emu_maxpool\
+	sw_emu_conv_out_stat_then_maxpool
 
 sw_emu_convolution_output_stationary:
 	$(MAKE) -C case_convolution_output_stationary TARGET=sw_emu

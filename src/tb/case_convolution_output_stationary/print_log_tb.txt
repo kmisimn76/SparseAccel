@@ -2,8 +2,8 @@ Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
 Loading: 'accelerator.sw_emu.xclbin'
-Filename: ./../test_layer_info.txt
-N: 19
+Filename: ./test_layer_info.txt
+N: 4
 
 Iter 0
 =>Kernel Mapping Info
@@ -13,320 +13,65 @@ Iter 0
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800803
  =>Group sparsified rate: 0.412508
-=>Kernel time (ms): 	6196.592564
+=>Kernel time (ms): 	6210.625409
 =>Run complete, No errors!
 
 Iter 1
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 64 100 56 56 1 1
- =>L2 Tile K,C,W,H,R(S): 1 2 7 4 1 1
- =>L1 Tile K,C,W,H,R(S): 2 5 1 14 1 1
- =>InTile  K,C,W,H,R(S): 32 10 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800778
- =>Group sparsified rate: 0.413597
-=>Kernel time (ms): 	120.863356
-=>Run complete, No errors!
-
-Iter 2
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 64 288 56 56 1 1
- =>L2 Tile K,C,W,H,R(S): 1 2 1 14 1 1
- =>L1 Tile K,C,W,H,R(S): 2 2 7 4 1 1
- =>InTile  K,C,W,H,R(S): 32 72 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800743
- =>Group sparsified rate: 0.410940
-=>Kernel time (ms): 	293.413328
-=>Run complete, No errors!
-
-Iter 3
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 256 96 56 56 1 1
- =>L2 Tile K,C,W,H,R(S): 1 3 7 4 1 1
- =>L1 Tile K,C,W,H,R(S): 8 2 1 14 1 1
- =>InTile  K,C,W,H,R(S): 32 16 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800738
- =>Group sparsified rate: 0.409598
-=>Kernel time (ms): 	442.902830
-=>Run complete, No errors!
-
-Iter 4
 =>Kernel Mapping Info
  =>K,C,H,W,R,S : 64 72 56 56 3 3
  =>L2 Tile K,C,W,H,R(S): 2 2 7 2 1 1
  =>L1 Tile K,C,W,H,R(S): 1 6 1 28 3 3
  =>InTile  K,C,W,H,R(S): 32 6 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800754
- =>Group sparsified rate: 0.410856
-=>Kernel time (ms): 	825.059134
+=>Data sparsifying =>Eltwise sparsified rate: 0.800857
+ =>Group sparsified rate: 0.409598
+=>Kernel time (ms): 	829.990864
 =>Run complete, No errors!
 
-Iter 5
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 128 260 56 64 1 1
- =>L2 Tile K,C,W,H,R(S): 1 2 2 14 1 1
- =>L1 Tile K,C,W,H,R(S): 4 1 4 4 1 1
- =>InTile  K,C,W,H,R(S): 32 130 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800797
- =>Group sparsified rate: 0.411088
-=>Kernel time (ms): 	586.480380
-=>Run complete, No errors!
-
-Iter 6
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 150 28 32 1 1
- =>L2 Tile K,C,W,H,R(S): 8 1 4 14 1 1
- =>L1 Tile K,C,W,H,R(S): 2 3 1 2 1 1
- =>InTile  K,C,W,H,R(S): 32 50 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800699
- =>Group sparsified rate: 0.413339
-=>Kernel time (ms): 	375.239336
-=>Run complete, No errors!
-
-Iter 7
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 128 128 28 32 3 3
- =>L2 Tile K,C,W,H,R(S): 4 1 2 4 1 1
- =>L1 Tile K,C,W,H,R(S): 1 1 2 7 3 3
- =>InTile  K,C,W,H,R(S): 32 128 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800751
- =>Group sparsified rate: 0.412214
-=>Kernel time (ms): 	643.838444
-=>Run complete, No errors!
-
-Iter 8
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 128 576 28 32 1 1
- =>L2 Tile K,C,W,H,R(S): 1 4 2 2 1 1
- =>L1 Tile K,C,W,H,R(S): 4 2 2 14 1 1
- =>InTile  K,C,W,H,R(S): 32 72 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800816
- =>Group sparsified rate: 0.410280
-=>Kernel time (ms): 	326.146970
-=>Run complete, No errors!
-
-Iter 9
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 240 28 32 1 1
- =>L2 Tile K,C,W,H,R(S): 4 2 1 14 1 1
- =>L1 Tile K,C,W,H,R(S): 4 2 4 2 1 1
- =>InTile  K,C,W,H,R(S): 32 60 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800809
- =>Group sparsified rate: 0.412872
-=>Kernel time (ms): 	560.137849
-=>Run complete, No errors!
-
-Iter 10
+Iter 2
 =>Kernel Mapping Info
  =>K,C,H,W,R,S : 256 256 28 32 3 3
  =>L2 Tile K,C,W,H,R(S): 8 4 4 1 1 1
  =>L1 Tile K,C,W,H,R(S): 1 32 1 28 3 3
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800747
- =>Group sparsified rate: 0.410470
-=>Kernel time (ms): 	5162.388884
-=>Run complete, No errors!
-
-Iter 11
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 1120 516 28 32 1 1
- =>L2 Tile K,C,W,H,R(S): 5 2 1 14 1 1
- =>L1 Tile K,C,W,H,R(S): 7 3 4 2 1 1
- =>InTile  K,C,W,H,R(S): 32 86 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800768
- =>Group sparsified rate: 0.410507
-=>Kernel time (ms): 	2549.964693
-=>Run complete, No errors!
-
-Iter 12
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 256 1064 14 16 1 1
- =>L2 Tile K,C,W,H,R(S): 2 2 2 2 1 1
- =>L1 Tile K,C,W,H,R(S): 4 2 1 7 1 1
- =>InTile  K,C,W,H,R(S): 32 266 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800798
- =>Group sparsified rate: 0.412141
-=>Kernel time (ms): 	300.882146
-=>Run complete, No errors!
-
-Iter 13
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 1056 264 14 16 1 1
- =>L2 Tile K,C,W,H,R(S): 11 2 1 1 1 1
- =>L1 Tile K,C,W,H,R(S): 3 2 2 14 1 1
- =>InTile  K,C,W,H,R(S): 32 66 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800578
- =>Group sparsified rate: 0.414029
-=>Kernel time (ms): 	316.753619
-=>Run complete, No errors!
-
-Iter 14
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 1072 14 16 1 1
- =>L2 Tile K,C,W,H,R(S): 16 2 1 2 1 1
- =>L1 Tile K,C,W,H,R(S): 1 4 2 7 1 1
- =>InTile  K,C,W,H,R(S): 32 134 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800802
+=>Data sparsifying =>Eltwise sparsified rate: 0.800724
  =>Group sparsified rate: 0.411447
-=>Kernel time (ms): 	614.912049
+=>Kernel time (ms): 	5225.924308
 =>Run complete, No errors!
 
-Iter 15
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 2160 7 8 1 1
- =>L2 Tile K,C,W,H,R(S): 4 2 1 1 1 1
- =>L1 Tile K,C,W,H,R(S): 4 27 1 7 1 1
- =>InTile  K,C,W,H,R(S): 32 40 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800761
- =>Group sparsified rate: 0.409623
-=>Kernel time (ms): 	313.920712
-=>Run complete, No errors!
-
-Iter 16
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 2176 520 7 8 1 1
- =>L2 Tile K,C,W,H,R(S): 17 65 1 1 1 1
- =>L1 Tile K,C,W,H,R(S): 4 2 1 7 1 1
- =>InTile  K,C,W,H,R(S): 32 4 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.801133
- =>Group sparsified rate: 0.408791
-=>Kernel time (ms): 	538.975737
-=>Run complete, No errors!
-
-Iter 17
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 528 7 8 3 3
- =>L2 Tile K,C,W,H,R(S): 16 2 1 1 1 1
- =>L1 Tile K,C,W,H,R(S): 1 2 1 7 3 3
- =>InTile  K,C,W,H,R(S): 32 132 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800779
- =>Group sparsified rate: 0.406791
-=>Kernel time (ms): 	662.590768
-=>Run complete, No errors!
-
-Iter 18
+Iter 3
 =>Kernel Mapping Info
  =>K,C,H,W,R,S : 2048 544 7 8 1 1
  =>L2 Tile K,C,W,H,R(S): 4 2 1 1 1 1
  =>L1 Tile K,C,W,H,R(S): 16 4 1 7 1 1
  =>InTile  K,C,W,H,R(S): 32 68 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800781
- =>Group sparsified rate: 0.410320
+=>Data sparsifying =>Eltwise sparsified rate: 0.801175
+ =>Group sparsified rate: 0.411896
 Args: 64,4,224,224,230,230,7,7
   2,  1, 56,  7        ,  1,  1
  32,  4,  4, 32, 10, 38,  7,  7
   1,  2,  4,  4        ,  7,  7
  32,  2,  1,  8,  1,  8,  1,  1
  32,  2,  1,  8,          1,  1 
-Args: 64,100,56,56,56,56,1,1
-  1,  2,  4,  7        ,  1,  1
- 64, 50, 14,  8, 14,  8,  1,  1
-  2,  5,  1, 14        ,  1,  1
- 32, 10,  1,  8,  1,  8,  1,  1
- 32, 10,  1,  8,          1,  1 
-Args: 64,288,56,56,56,56,1,1
-  1,  2, 14,  1        ,  1,  1
- 64,144,  4, 56,  4, 56,  1,  1
-  2,  2,  7,  4        ,  1,  1
- 32, 72,  1,  8,  1,  8,  1,  1
- 32, 72,  1,  8,          1,  1 
-Args: 256,96,56,56,56,56,1,1
-  1,  3,  4,  7        ,  1,  1
-256, 32, 14,  8, 14,  8,  1,  1
-  8,  2,  1, 14        ,  1,  1
- 32, 16,  1,  8,  1,  8,  1,  1
- 32, 16,  1,  8,          1,  1 
 Args: 64,72,56,56,58,58,3,3
   2,  2,  2,  7        ,  1,  1
  32, 36, 28,  8, 30, 10,  3,  3
   1,  6,  1, 28        ,  3,  3
  32,  6,  1,  8,  1,  8,  1,  1
  32,  6,  1,  8,          1,  1 
-Args: 128,260,56,64,56,64,1,1
-  1,  2, 14,  2        ,  1,  1
-128,130,  4, 32,  4, 32,  1,  1
-  4,  1,  4,  4        ,  1,  1
- 32,130,  1,  8,  1,  8,  1,  1
- 32,130,  1,  8,          1,  1 
-Args: 512,150,28,32,28,32,1,1
-  8,  1, 14,  4        ,  1,  1
- 64,150,  2,  8,  2,  8,  1,  1
-  2,  3,  1,  2        ,  1,  1
- 32, 50,  1,  8,  1,  8,  1,  1
- 32, 50,  1,  8,          1,  1 
-Args: 128,128,28,32,30,34,3,3
-  4,  1,  4,  2        ,  1,  1
- 32,128,  7, 16,  9, 18,  3,  3
-  1,  1,  2,  7        ,  3,  3
- 32,128,  1,  8,  1,  8,  1,  1
- 32,128,  1,  8,          1,  1 
-Args: 128,576,28,32,28,32,1,1
-  1,  4,  2,  2        ,  1,  1
-128,144, 14, 16, 14, 16,  1,  1
-  4,  2,  2, 14        ,  1,  1
- 32, 72,  1,  8,  1,  8,  1,  1
- 32, 72,  1,  8,          1,  1 
-Args: 512,240,28,32,28,32,1,1
-  4,  2, 14,  1        ,  1,  1
-128,120,  2, 32,  2, 32,  1,  1
-  4,  2,  4,  2        ,  1,  1
- 32, 60,  1,  8,  1,  8,  1,  1
- 32, 60,  1,  8,          1,  1 
 Args: 256,256,28,32,30,34,3,3
   8,  4,  1,  4        ,  1,  1
  32, 64, 28,  8, 30, 10,  3,  3
   1, 32,  1, 28        ,  3,  3
  32,  2,  1,  8,  1,  8,  1,  1
  32,  2,  1,  8,          1,  1 
-Args: 1120,516,28,32,28,32,1,1
-  5,  2, 14,  1        ,  1,  1
-224,258,  2, 32,  2, 32,  1,  1
-  7,  3,  4,  2        ,  1,  1
- 32, 86,  1,  8,  1,  8,  1,  1
- 32, 86,  1,  8,          1,  1 
-Args: 256,1064,14,16,14,16,1,1
-  2,  2,  2,  2        ,  1,  1
-128,532,  7,  8,  7,  8,  1,  1
-  4,  2,  1,  7        ,  1,  1
- 32,266,  1,  8,  1,  8,  1,  1
- 32,266,  1,  8,          1,  1 
-Args: 1056,264,14,16,14,16,1,1
- 11,  2,  1,  1        ,  1,  1
- 96,132, 14, 16, 14, 16,  1,  1
-  3,  2,  2, 14        ,  1,  1
- 32, 66,  1,  8,  1,  8,  1,  1
- 32, 66,  1,  8,          1,  1 
-Args: 512,1072,14,16,14,16,1,1
- 16,  2,  2,  1        ,  1,  1
- 32,536,  7, 16,  7, 16,  1,  1
-  1,  4,  2,  7        ,  1,  1
- 32,134,  1,  8,  1,  8,  1,  1
- 32,134,  1,  8,          1,  1 
-Args: 512,2160,7,8,7,8,1,1
-  4,  2,  1,  1        ,  1,  1
-128,1080,  7,  8,  7,  8,  1,  1
-  4, 27,  1,  7        ,  1,  1
- 32, 40,  1,  8,  1,  8,  1,  1
- 32, 40,  1,  8,          1,  1 
-Args: 2176,520,7,8,7,8,1,1
- 17, 65,  1,  1        ,  1,  1
-128,  8,  7,  8,  7,  8,  1,  1
-  4,  2,  1,  7        ,  1,  1
- 32,  4,  1,  8,  1,  8,  1,  1
- 32,  4,  1,  8,          1,  1 
-Args: 512,528,7,8,9,10,3,3
- 16,  2,  1,  1        ,  1,  1
- 32,264,  7,  8,  9, 10,  3,  3
-  1,  2,  1,  7        ,  3,  3
- 32,132,  1,  8,  1,  8,  1,  1
- 32,132,  1,  8,          1,  1 
 Args: 2048,544,7,8,7,8,1,1
   4,  2,  1,  1        ,  1,  1
 512,272,  7,  8,  7,  8,  1,  1
  16,  4,  1,  7        ,  1,  1
  32, 68,  1,  8,  1,  8,  1,  1
  32, 68,  1,  8,          1,  1 
-=>Kernel time (ms): 	313.758094
+=>Kernel time (ms): 	309.177290
 =>Run complete, No errors!
 latency report
-6196.592564,120.863356,293.413328,442.902830,825.059134,586.480380,375.239336,643.838444,326.146970,560.137849,5162.388884,2549.964693,300.882146,316.753619,614.912049,313.920712,538.975737,662.590768,313.758094,
+6210.625409,829.990864,5225.924308,309.177290,
 End test
