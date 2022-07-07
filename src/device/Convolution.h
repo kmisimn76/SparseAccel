@@ -1,7 +1,7 @@
 
 
-#ifndef _CONV_SYSARR_H
-#define _CONV_SYSARR_H
+#ifndef _CONVOLUTION_H
+#define _CONVOLUTION_H
 
 #include <stdio.h>
 #include <stdlib.h>

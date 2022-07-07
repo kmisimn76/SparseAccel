@@ -18,7 +18,7 @@
 #include "timer.h"
 using namespace std;
 
-#include "Tasks/ConvTask.h"
+#include "Tasks/ConvWeightStationaryTask.h"
 
 #define DMA_ALIGNMENT   4096
 
@@ -122,22 +122,22 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.R = 3;
 		param.S = 3;
 		param.L2_TILENUM_K = 1; ///
-		param.L2_TILENUM_C = 2;
-		param.L2_TILENUM_W = 1;
+		param.L2_TILENUM_C = 1;
+		param.L2_TILENUM_W = 2;
 		param.L2_TILENUM_H = 2;
 		param.L2_TILENUM_R = 1;
 		param.L2_TILENUM_S = 1;
 
 		param.L1_TILENUM_K = 16/ARRAY_K; ///
-		param.L1_TILENUM_C = 2;
-		param.L1_TILENUM_W = 16/ARRAY_W;
-		param.L1_TILENUM_H = 8;
+		param.L1_TILENUM_C = 32/ARRAY_C;
+		param.L1_TILENUM_W = 2;
+		param.L1_TILENUM_H = 2;
 		param.L1_TILENUM_R = 3;
 		param.L1_TILENUM_S = 3;
 		param.TILESIZE_K = ARRAY_K; //// is allowed(not matched with W_L1)
-		param.TILESIZE_C = 8; //// is allowed(not matched with W_L1)
-		param.TILESIZE_W = ARRAY_W; //// is allowed(not matched with W_L1)
-		param.TILESIZE_H = 1;
+		param.TILESIZE_C = ARRAY_C; //// is allowed(not matched with W_L1)
+		param.TILESIZE_W = 4;
+		param.TILESIZE_H = 4;
 		param.TILESIZE_R = 1; //must be 1
 		param.TILESIZE_S = 1; //must be 1
 
@@ -220,7 +220,7 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 
 	this->cur_layer_data.weight_buf_size = param.K * param.C * param.R * param.S;
 	this->cur_layer_data.bias_buf_size = param.K;
-	this->cur_layer_data.in_buf_size = param.C * param.H_in * CEIL(param.W_in,ARRAY_W)*ARRAY_W;
+	this->cur_layer_data.in_buf_size = param.C * param.H_in * param.W_in;
 	this->cur_layer_data.out_buf_size = param.K * param.H * param.W;
 }
 
@@ -249,7 +249,7 @@ void ConvTask::setSyntheticInput(bool random, bool sparsifying) {
 			int h = (idx%(param.H_in*param.W_in))/param.W_in;
 			int w = idx%param.W_in;
 			this->cur_layer_data.data[idx] = rand()%256-128;
-			this->cur_layer_data.data[idx] = w%2;
+			this->cur_layer_data.data[idx] = 1;
 		}
 	}
 
@@ -282,45 +282,45 @@ void ConvTask::reorderInputs() {
 	DPTYPE* weight_origin = new DPTYPE[this->cur_layer_data.weight_buf_size]();
 	memcpy(weight_origin, this->cur_layer_data.weight, this->cur_layer_data.weight_buf_size * sizeof(DPTYPE));
 	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) {
-	 for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) {
-	  for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
-	   for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
-	    for (int rmo = 0; rmo < param.L2_TILENUM_R; rmo++) {
-	     for (int smo = 0; smo < param.L2_TILENUM_S; smo++) {
-	      for (unsigned int ko = 0; ko < (param.K_L2 / ARRAY_K); ko++) {
-	       for (unsigned int co = 0; co < param.C_L2; co++) {
+	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) {
+	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
+	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
+	for (int rmo = 0; rmo < param.L2_TILENUM_R; rmo++) {
+	for (int smo = 0; smo < param.L2_TILENUM_S; smo++) {
+		for (unsigned int ko = 0; ko < (param.K_L2 / ARRAY_K); ko++) {
+		for (unsigned int co = 0; co < param.C_L2; co++) {
 		for (unsigned int ro = 0; ro < param.R_L2; ro++) {
-		 for (unsigned int so = 0; so < param.S_L2; so++) {
-		  for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
-			unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
-			unsigned int device_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)*(param.L2_TILENUM_C)+smo*(param.L2_TILENUM_C)+cmo)
-				*(param.K_L2/ARRAY_K)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+ro*param.S_L2*param.C_L2+so*param.C_L2+co))*ARRAY_K + ki;
+		for (unsigned int so = 0; so < param.S_L2; so++) {
+			for (unsigned int ki = 0; ki < ARRAY_K; ki++) {
+				unsigned int origin_kcsrs = ((kmo*param.K_L2+(ko*ARRAY_K+ki))*param.C*param.R*param.S + (cmo*param.C_L2+co)*param.R*param.S + (rmo*param.R_L2+ro)*param.S + (smo*param.S_L2 + so));
+				unsigned int device_kcrs = ((kmo*(param.L2_TILENUM_C)*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+cmo*(param.L2_TILENUM_R)*(param.L2_TILENUM_S)+rmo*(param.L2_TILENUM_S)+smo)
+							*(param.K_L2/ARRAY_K)*param.C_L2*param.R_L2*param.S_L2 + (ko*param.C_L2*param.R_L2*param.S_L2+co*param.S_L2*param.R_L2+ro*param.S_L2+so))*ARRAY_K + ki;
 				this->cur_layer_data.weight[device_kcrs] = weight_origin[origin_kcsrs];
-		  }
-		 }
+			}
 		}
-	       }
-	      }
-	     }
-	    }
-	   }
-	  }
-	 }
+	}
+	}
+	}
+	}
+	}
+	}
+	}
+	}
 	}
 	delete weight_origin;
 	// input
 	DPTYPE* data_origin = new DPTYPE[this->cur_layer_data.in_buf_size]();
 	memcpy(data_origin, this->cur_layer_data.data, this->cur_layer_data.in_buf_size * sizeof(DPTYPE));
-	for (unsigned int c = 0; c < param.C; c++) {
-		for(unsigned int h = 0; h < param.H_in; h++) {
-			for(unsigned int wo = 0; wo < CEIL(param.W_in,ARRAY_W); wo++) {
-				for(unsigned int wi = 0; wi < ARRAY_W; wi++) { 
-					unsigned int origin_chw = c*param.H_in*param.W_in + h*param.W_in + (wo*ARRAY_W + wi);
-					unsigned int device_chw = (h*CEIL(param.W_in,ARRAY_W)*param.C + (wo)*param.C + c)*ARRAY_W + wi;
+	for (int cmo = 0; cmo < param.L2_TILENUM_C; cmo++) {
+	for (unsigned int co = 0; co < param.C_L2/ARRAY_C; co++) {
+		for(unsigned int wh = 0; wh < param.H_in*param.W_in; wh++) {
+				for(unsigned int ci = 0; ci < ARRAY_C; ci++) {
+					unsigned int origin_chw = ((cmo*(param.C_L2)+(co*ARRAY_C+ci))*param.H_in*param.W_in + wh);
+					unsigned int device_chw = ((cmo*(param.C_L2/ARRAY_C)+co)*param.H_in*param.W_in + wh)*ARRAY_C + ci;
 					this->cur_layer_data.data[device_chw] = data_origin[origin_chw];
 				}
-			}
 		}
+	}
 	}
 	delete data_origin;
 }
@@ -329,25 +329,25 @@ void ConvTask::reorderOutput()
 	const CONV_PARAM param = this->cur_layer_data.layer_param;
 	MACTYPE* out_origin = new MACTYPE[this->cur_layer_data.out_buf_size]();
 	memcpy(out_origin, this->cur_layer_data.output, this->cur_layer_data.out_buf_size * sizeof(MACTYPE));
-	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) {
-	 for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
-	  for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
-	   for (unsigned int k = 0; k < param.K_L2; k++) {
-	    for(unsigned int h = 0; h < param.H_L2; h++) {
-	     for(unsigned int wo = 0; wo < param.W_L2/ARRAY_W; wo++) {
-	      for(unsigned int wi = 0;wi < ARRAY_W; wi++) {
-		int w = wo * ARRAY_W + wi;
-		unsigned int origin_khw = ((kmo*(param.K_L2)+k)*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w));
-		unsigned int device_khw = ((hmo*param.H_L2+h)*(param.W/ARRAY_W)*param.K + (wmo*param.W_L2/ARRAY_W+wo)*param.K + (kmo*(param.K_L2)+k))*ARRAY_W + wi;
-		this->cur_layer_data.output[origin_khw] = out_origin[device_khw];
-	      }
-	     }
-	    }
-	   }
-	  }
-	 }
+	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) { // Inner channel
+	for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
+	for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
+	for (unsigned int ko = 0; ko < param.K_L2/ARRAY_K; ko++) {
+		for(unsigned int h = 0; h < param.H_L2; h++) {
+			for(unsigned int w = 0; w < param.W_L2; w++) {
+				for(unsigned int ki = 0;ki < ARRAY_K; ki++) { // TODO: split VECSIZE -> (VECSIZE/ARRAY_C) / ARRAY_C
+					unsigned int origin_khw = ((kmo*(param.K_L2)+(ko*ARRAY_K+ki))*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w));
+					unsigned int device_khw = ((kmo*(param.K_L2/ARRAY_K)+ko)*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w))*ARRAY_K + ki;
+					this->cur_layer_data.output[origin_khw] = out_origin[device_khw];
+				}
+			}
+		}
+	}
+	}
+	}
 	}
 	delete out_origin;
+
 }
 
 void ConvTask::sparsify(void* _data_void, int _len, float _sparsity)

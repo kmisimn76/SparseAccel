@@ -1,3 +1,9 @@
+/*
+ * Optimized for Conv Weight stationary
+ *
+*/
+
+
 #include "maxPool.h"
 
 #ifndef XILINX

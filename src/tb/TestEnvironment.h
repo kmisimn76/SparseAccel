@@ -56,7 +56,7 @@ const long KNL_NUM_MAXPOOL	= 0x00000002;
 class TestEnvironment {
 	private:
 	public:
-		const char* knl_name_conv = "Conv_sysarr";
+		const char* knl_name_conv = "Convolution";
 		const char* knl_name_maxpool = "maxPool";
 
 		char *kernel_file_name;

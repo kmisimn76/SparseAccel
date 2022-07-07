@@ -2,7 +2,7 @@
 #ifndef _CONV_TASK_H
 #define _CONV_TASK_H
 
-#include "Conv_sysarr.h"
+#include "Convolution.h"
 #include "TestEnvironment.h"
 
 

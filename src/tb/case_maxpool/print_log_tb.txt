@@ -13,7 +13,7 @@ Iter 0
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Kernel time (ms): 	0.642482
+=>Kernel time (ms): 	0.576868
 =>Run complete, No errors!
 
 Iter 1
@@ -24,7 +24,7 @@ Iter 1
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Kernel time (ms): 	0.455181
+=>Kernel time (ms): 	0.477219
 =>Run complete, No errors!
 
 Iter 2
@@ -35,7 +35,7 @@ Iter 2
  =>RS   : 7
  =>Strid: 7
  =>Padd : 0
-=>Kernel time (ms): 	0.264001
+=>Kernel time (ms): 	0.293529
 =>Run complete, No errors!
 
 Iter 3
@@ -46,8 +46,8 @@ Iter 3
  =>RS   : 2
  =>Strid: 2
  =>Padd : 1
-=>Kernel time (ms): 	0.432212
+=>Kernel time (ms): 	0.595637
 =>Run complete, No errors!
 latency report
-0.642482,0.455181,0.264001,0.432212,
+0.576868,0.477219,0.293529,0.595637,
 End test

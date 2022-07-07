@@ -19,7 +19,7 @@
 using namespace std;
 
 #include "TestEnvironment.h"
-#include "Tasks/ConvTask.h"
+#include "Tasks/ConvOutputStationaryTask.h"
 #include "Tasks/MaxPoolTask.h"
 
 void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name);

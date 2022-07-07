@@ -19,7 +19,7 @@
 using namespace std;
 
 #include "TestEnvironment.h"
-#include "Tasks/ConvOutputStationaryTask.h"
+#include "Tasks/ConvWeightStationaryTask.h"
 
 void testFirstLayer(TestEnvironment& test_env, char* layer_info_file_name);
 void testFiveLayers(TestEnvironment& test_env, char* layer_info_file_name);
@@ -92,7 +92,7 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, int run_iter, ConvLayerI
 	test_env.target_task->setLayerParamAndBufSize(&layer_info);
 
 	bool random_input = true;
-	bool sparsifying = true;
+	bool sparsifying = false;
 	test_env.target_task->setSyntheticInput(random_input, sparsifying);
 	test_env.target_task->computeGold();
 
@@ -128,10 +128,10 @@ int get_layer_info(const char* filename, std::vector<ConvLayerInfo> &layer_infos
 	{
 		ConvLayerInfo new_layer_info;
 		uint meanless_data;
-		fscanf(f,"%d,%d,%d,%d,%d,%d,", &new_layer_info.K,&new_layer_info.C,&new_layer_info.H,&new_layer_info.W,&new_layer_info.R,&new_layer_info.S);
-		fscanf(f,"%f,", &new_layer_info.density);
-		fscanf(f,"%d,%d,%d,%d,%d,%d,%d,", &new_layer_info.L2K,&new_layer_info.L2C,&new_layer_info.L2H,&new_layer_info.L2W,&new_layer_info.L2R,&new_layer_info.L2S, &meanless_data);
-		fscanf(f,"%d,%d,%d,%d,%d,%d,%d,", &new_layer_info.L1K,&new_layer_info.L1C,&new_layer_info.L1H,&new_layer_info.L1W,&new_layer_info.L1R,&new_layer_info.L1S, &meanless_data);
+		fscanf(f,"%d,%d,%d,%d,%d,%d:", &new_layer_info.K,&new_layer_info.C,&new_layer_info.H,&new_layer_info.W,&new_layer_info.R,&new_layer_info.S);
+		fscanf(f,"%f:", &new_layer_info.density);
+		fscanf(f,"%d,%d,%d,%d,%d,%d,%d:", &new_layer_info.L2K,&new_layer_info.L2C,&new_layer_info.L2H,&new_layer_info.L2W,&new_layer_info.L2R,&new_layer_info.L2S, &meanless_data);
+		fscanf(f,"%d,%d,%d,%d,%d,%d,%d:", &new_layer_info.L1K,&new_layer_info.L1C,&new_layer_info.L1H,&new_layer_info.L1W,&new_layer_info.L1R,&new_layer_info.L1S, &meanless_data);
 		fscanf(f,"%d,%d,%d,%d,%d,%d,%d", &new_layer_info.TK,&new_layer_info.TC,&new_layer_info.TH,&new_layer_info.TW,&new_layer_info.TR,&new_layer_info.TS, &meanless_data);
 		new_layer_info.W_in = new_layer_info.W + new_layer_info.S -1;
 		new_layer_info.H_in = new_layer_info.H + new_layer_info.R -1;

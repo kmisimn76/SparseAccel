@@ -20,8 +20,8 @@ Iter 0
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	6261.925226
-=>Maxpool Kernel time (ms): 	44.324833
+=>Conv Kernel time (ms): 	6287.178499
+=>Maxpool Kernel time (ms): 	45.351975
 =>Run complete, No errors!
 
 Iter 1
@@ -39,8 +39,8 @@ Iter 1
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	677.745960
-=>Maxpool Kernel time (ms): 	6.676572
+=>Conv Kernel time (ms): 	672.316260
+=>Maxpool Kernel time (ms): 	12.447414
 =>Run complete, No errors!
 
 Iter 2
@@ -58,8 +58,8 @@ Iter 2
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	640.928237
-=>Maxpool Kernel time (ms): 	11.556227
+=>Conv Kernel time (ms): 	643.327346
+=>Maxpool Kernel time (ms): 	12.228755
 =>Run complete, No errors!
 
 Iter 3
@@ -77,7 +77,7 @@ Iter 3
  =>RS   : 8
  =>Strid: 8
  =>Padd : 0
-=>Conv Kernel time (ms): 	360.360951
+=>Conv Kernel time (ms): 	352.102369
 Args: 64,4,224,224,230,230,7,7
   2,  1, 56,  7        ,  1,  1
  32,  4,  4, 32, 10, 38,  7,  7
@@ -102,8 +102,8 @@ Args: 2048,544,8,8,8,8,1,1
  16,  4,  1,  8        ,  1,  1
  32, 68,  1,  8,  1,  8,  1,  1
  32, 68,  1,  8,          1,  1 
-=>Maxpool Kernel time (ms): 	1.760846
+=>Maxpool Kernel time (ms): 	1.489475
 =>Run complete, No errors!
 latency report
-6306.250059,684.422532,652.484464,362.121797,
+6332.530474,684.763674,655.556101,353.591844,
 End test

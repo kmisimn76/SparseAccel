@@ -2,9 +2,20 @@ FAKETIME=faketime -f "-1y"
 
 
 all: sw_emu
-sw_emu: sw_emu_convolution_output_stationary\
+sw_emu: \
+	sw_emu_convolution_weight_stationary\
+	#sw_emu_convolution_output_stationary\
 	sw_emu_maxpool\
-	sw_emu_conv_out_stat_then_maxpool
+	sw_emu_conv_out_stat_then_maxpool\
+	#
+
+sw_emu_convolution_weight_stationary:
+	$(MAKE) -C case_convolution_weight_stationary TARGET=sw_emu
+	@echo "."
+	@echo "."
+	@echo "."
+	@echo "   Test Target: case_convolution_weight_stationary"
+	@echo "       TEST PASSED! :)\n\n\n"
 
 sw_emu_convolution_output_stationary:
 	$(MAKE) -C case_convolution_output_stationary TARGET=sw_emu
@@ -33,3 +44,4 @@ sw_emu_conv_out_stat_then_maxpool:
 clean:
 	$(MAKE) -C case_convolution_output_stationary clean
 	$(MAKE) -C case_maxpool clean
+	$(MAKE) -C case_conv_out_stat_then_maxpool clean

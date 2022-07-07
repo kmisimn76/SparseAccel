@@ -1,4 +1,4 @@
-#include "Conv_sysarr.h"
+#include "Convolution.h"
 
 #define INPUT_SPARSE
 #define SIMD
@@ -493,7 +493,7 @@ void output_dram_write(MACTYPE output_l2[OUTPUT_L2_SIZE][PORT_K][ARRAY_W], MACTY
 	}
 }
 
-void Conv_sysarr(
+void Convolution( //SparseSIMD Output Stationary
 	    uint K,
 	    uint C,
 	    uint H,

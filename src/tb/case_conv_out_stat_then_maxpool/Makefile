@@ -35,8 +35,8 @@ LOG_DIR = ./log.${TARGET}
 all: accelerator.${TARGET}.xclbin testbench emu
 
 # Build HLS Kernel
-conv.${TARGET}.xo: ../../device/Conv_sysarr.cpp
-	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k Conv_sysarr ${DEFINE} --config config_sp ${HEADER_OPTION} -o'conv.${TARGET}.xo' ./../../device/Conv_sysarr.cpp ${JOBS}
+conv.${TARGET}.xo: ../../device/SparseSIMD_Output_Stationary.cpp
+	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k Convolution ${DEFINE} --config config_sp ${HEADER_OPTION} -o'conv.${TARGET}.xo' ./../../device/SparseSIMD_Output_Stationary.cpp ${JOBS}
 maxpool.${TARGET}.xo: ../../device/maxPool.cpp
 	${FAKETIME} v++ ${PROFILE} -t ${TARGET} ${OPTIMIZE} --platform xilinx_u200_xdma_201830_2 --save-temps ${DEBUG} --log_dir ${LOG_DIR} --temp_dir ${BUILD_DIR} -c -k maxPool ${DEFINE} --config config_sp ${HEADER_OPTION} -o'maxpool.${TARGET}.xo' ./../../device/maxPool.cpp ${JOBS}
 accelerator.${TARGET}.xclbin: conv.${TARGET}.xo maxpool.${TARGET}.xo
@@ -53,13 +53,13 @@ ocl_util.o: ../../../common/ocl_util.cpp
 # Build TestBench - Specific
 ConvAndMaxPoolTestBench.o: ./ConvAndMaxPoolTestBench.cpp
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ././ConvAndMaxPoolTestBench.cpp
-ConvTask.o: ../Tasks/ConvTask.cpp ../Tasks/ConvTask.h
-	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/ConvTask.cpp
+ConvOutputStationaryTask.o: ../Tasks/ConvOutputStationaryTask.cpp ../Tasks/ConvOutputStationaryTask.h
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/ConvOutputStationaryTask.cpp
 MaxPoolTask.o: ../Tasks/MaxPoolTask.cpp ../Tasks/MaxPoolTask.h
 	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) $(CXXFLAGS) $(COMP_CONFIG) $(OCV_LIBS) $(HEADER_OPTION) -c ./../Tasks/MaxPoolTask.cpp
 .PHONY: testbench
-testbench: ConvAndMaxPoolTestBench.o TestEnvironment.o ConvTask.o MaxPoolTask.o timer.o ocl_util.o
-	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) ConvAndMaxPoolTestBench.o TestEnvironment.o ConvTask.o MaxPoolTask.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
+testbench: ConvAndMaxPoolTestBench.o TestEnvironment.o ConvOutputStationaryTask.o MaxPoolTask.o timer.o ocl_util.o
+	g++ $(DEBUG) ${DEFINE} $(OCV_LIBDIRS) $(OCV_INCLUDES) ConvAndMaxPoolTestBench.o TestEnvironment.o ConvOutputStationaryTask.o MaxPoolTask.o timer.o ocl_util.o -o testbench $(LINK_CONFIG) $(OCV_LIBS)
 
 # Run Test
 .PHONY: emu
