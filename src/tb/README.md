@@ -22,9 +22,9 @@ Task 추가 방법
 3. ```[taskname].cpp```에서 원하는 커널에 대한 task 구현
 	* 레이어 파라미터 관련: *Info 구조체는 testcase와의 SW 인터페이스(특히 ```setLayerParamAndBufSize``` 함수에서 사용), *_PARAM 구조체는 HLS kernel에 직접 전달할 정보 역할
 	* runTask 함수는 주로 복사해서 사용 가능하나, kernel 객체 명 수정 필요할 것
-	* 기본적으로 reorderInput, reorderOutput 함수는 호출되는 것을 가정함(TestEnvironment.cpp).
+	* 기본적으로 ```reorderInput```, ```reorderOutput``` 함수는 호출되는 것을 가정함(```TestEnvironment.cpp```).
 4. 새로운 HLS kernel을 추가한 경우,
-	1. ```./TestEnvironment.h``` 코드에 (1) ocl_data_ 클래스에 해당 kernel 객체, (2) 커널 번호(```KNL_NUM_... 변수``), (3) 커널명(```knl_name_... 변수```) 추가
+	1. ```./TestEnvironment.h``` 코드에 (1) ocl_data_ 클래스에 해당 kernel 객체, (2) 커널 번호(```KNL_NUM_... 변수```), (3) 커널명(```knl_name_... 변수```) 추가
 	2. ```./TestEnvironment.cpp``` 코드의 initializeOclEnv 함수에, 기존 코드 참고하여 cl::Kernel 객체 생성 코드 추가(참고: compiled_kernel_list & [해당 커널 번호] > 0이면, TestEnvironmnet에서 해당 커널 사용이 요구된 것임)
 
 Case 추가 방법
