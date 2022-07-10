@@ -2,6 +2,7 @@ Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
 Loading: 'accelerator.sw_emu.xclbin'
+run SW emu testcase
 Filename: ./test_layer_info.txt
 N: 4
 
@@ -13,7 +14,7 @@ Iter 0
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800803
  =>Group sparsified rate: 0.412508
-=>Kernel time (ms): 	6191.966835
+=>Kernel time (ms): 	6222.001848
 =>Run complete, No errors!
 
 Iter 1
@@ -24,7 +25,7 @@ Iter 1
  =>InTile  K,C,W,H,R(S): 32 6 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800857
  =>Group sparsified rate: 0.409598
-=>Kernel time (ms): 	826.501846
+=>Kernel time (ms): 	826.069218
 =>Run complete, No errors!
 
 Iter 2
@@ -35,7 +36,7 @@ Iter 2
  =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
 =>Data sparsifying =>Eltwise sparsified rate: 0.800724
  =>Group sparsified rate: 0.411447
-=>Kernel time (ms): 	5165.205325
+=>Kernel time (ms): 	5159.796060
 =>Run complete, No errors!
 
 Iter 3
@@ -70,8 +71,8 @@ Args: 2048,544,7,8,7,8,1,1
  16,  4,  1,  7        ,  1,  1
  32, 68,  1,  8,  1,  8,  1,  1
  32, 68,  1,  8,          1,  1 
-=>Kernel time (ms): 	308.105875
+=>Kernel time (ms): 	309.625081
 =>Run complete, No errors!
-latency report
-6191.966835,826.501846,5165.205325,308.105875,
+latency report (ms)
+6222.001848,826.069218,5159.796060,309.625081,
 End test

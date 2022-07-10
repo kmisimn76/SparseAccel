@@ -61,7 +61,7 @@ class MaxPoolTask : public TargetTask {
 		void setSyntheticInput(bool random, bool sparsifying);
 
 		void computeGold();
-		void score();
+		int score();
 
 		void sparsify(void* _data, int _len, float _sparsity);
 

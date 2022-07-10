@@ -2,6 +2,7 @@ Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
 Loading: 'accelerator.sw_emu.xclbin'
+run SW emu testcase
 Filename: ./test_layer_info.txt
 N: 4
 
@@ -20,8 +21,8 @@ Iter 0
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	6287.178499
-=>Maxpool Kernel time (ms): 	45.351975
+=>Conv Kernel time (ms): 	6212.621007
+=>Maxpool Kernel time (ms): 	44.121956
 =>Run complete, No errors!
 
 Iter 1
@@ -39,8 +40,8 @@ Iter 1
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	672.316260
-=>Maxpool Kernel time (ms): 	12.447414
+=>Conv Kernel time (ms): 	672.778214
+=>Maxpool Kernel time (ms): 	6.665391
 =>Run complete, No errors!
 
 Iter 2
@@ -58,8 +59,8 @@ Iter 2
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Conv Kernel time (ms): 	643.327346
-=>Maxpool Kernel time (ms): 	12.228755
+=>Conv Kernel time (ms): 	637.666740
+=>Maxpool Kernel time (ms): 	5.988469
 =>Run complete, No errors!
 
 Iter 3
@@ -77,7 +78,7 @@ Iter 3
  =>RS   : 8
  =>Strid: 8
  =>Padd : 0
-=>Conv Kernel time (ms): 	352.102369
+=>Conv Kernel time (ms): 	356.776738
 Args: 64,4,224,224,230,230,7,7
   2,  1, 56,  7        ,  1,  1
  32,  4,  4, 32, 10, 38,  7,  7
@@ -102,8 +103,8 @@ Args: 2048,544,8,8,8,8,1,1
  16,  4,  1,  8        ,  1,  1
  32, 68,  1,  8,  1,  8,  1,  1
  32, 68,  1,  8,          1,  1 
-=>Maxpool Kernel time (ms): 	1.489475
+=>Maxpool Kernel time (ms): 	1.770850
 =>Run complete, No errors!
 latency report
-6332.530474,684.763674,655.556101,353.591844,
+6256.742963,679.443605,643.655209,358.547588,
 End test

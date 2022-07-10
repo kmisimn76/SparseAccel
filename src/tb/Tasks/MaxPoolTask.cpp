@@ -265,11 +265,11 @@ void MaxPoolTask::computeGold()
 	}
 }
 
-void MaxPoolTask::score()
+int MaxPoolTask::score()
 {
 	const MaxPoolParam param = this->cur_layer_data.layer_param;
 	int cnt = 0;
-	bool incur_err = false;
+	bool assert_error = false;
 	for(int wh=0;wh<param.WH*param.WH;wh++) {
 		for (unsigned int k = 0; k < param.C; k++) {
 			unsigned int ptr = k*param.WH*param.WH + wh;
@@ -277,12 +277,13 @@ void MaxPoolTask::score()
 			if(out != this->cur_layer_data.gold[ptr])
 			{
 				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.WH, wh%param.WH, out, this->cur_layer_data.gold[ptr], cnt);
-				incur_err = true;
+				assert_error = true;
 			}
 			cnt ++;
 		}
 	}
-	if(incur_err) exit(1);
+	if(assert_error) return 1;
+	return 0;
 }
 
 void MaxPoolTask::cleanup() {

@@ -24,6 +24,7 @@ using namespace std;
 void testFirstLayer(TestEnvironment& test_env, char* layer_info_file_name);
 void testFiveLayers(TestEnvironment& test_env, char* layer_info_file_name);
 void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name);
+void testSampleLayer(TestEnvironment& test_env);
 int get_layer_info(const char* filename, std::vector<ConvLayerInfo> &layer_infos);
 
 
@@ -36,15 +37,25 @@ int main(int argc, char** argv)
 	}
 	char* kernel_file_name = argv[1];
 	char* layer_info_file_name = argv[2];
+	bool is_sw_emu = (strstr(kernel_file_name, "sw_emu") != NULL)?(true):(false);
+	bool is_hw_emu = (strstr(kernel_file_name, "hw_emu") != NULL)?(true):(false);
+	bool is_hw = (strstr(kernel_file_name, "hw") != NULL)?(true):(false);
 
 	TestEnvironment test_env;
 	test_env.kernel_file_name = kernel_file_name;
 
 	test_env.initializeOclEnv(TestEnv::KNL_NUM_CONV);
 
-	//testFirstLayer(test_env,layer_info_file_name);
-	//testFiveLayers(test_env,layer_info_file_name);
-	testAllLayers(test_env,layer_info_file_name);
+	if(is_sw_emu || is_hw) {
+		printf("run SW emu testcase\n");
+		//testFirstLayer(test_env,layer_info_file_name);
+		//testFiveLayers(test_env,layer_info_file_name);
+		testAllLayers(test_env,layer_info_file_name);
+	}
+	if(is_hw_emu) {
+		printf("run HW emu testcase\n");
+		testSampleLayer(test_env);
+	}
 
 	test_env.cleanup();
 	printf("End test\n");
@@ -55,7 +66,7 @@ int main(int argc, char** argv)
 
 const int ALL_LAYERS=-1;
 void testRangeLayers(TestEnvironment& test_env, char* layer_info_file_name, int start_layer_num, int end_layer_num);
-long runTestLayerWithMeasure(TestEnvironment& test_env, int run_iter, ConvLayerInfo& layer_info);
+long runTestLayerWithMeasure(TestEnvironment& test_env, ConvLayerInfo& layer_info);
 
 void testFirstLayer(TestEnvironment& test_env, char* layer_info_file_name) { testRangeLayers(test_env, layer_info_file_name, 0, 1);/*only first layer*/ }
 void testFiveLayers(TestEnvironment& test_env, char* layer_info_file_name) { testRangeLayers(test_env, layer_info_file_name, 0, 5); }
@@ -71,18 +82,24 @@ void testRangeLayers(TestEnvironment& test_env, char* layer_info_file_name, int 
 	std::vector<double> latency_each_layers;
 	for(int run_iter=start_layer_num;run_iter<end_layer_num;run_iter++){
 		printf("\nIter %d\n", run_iter);
-		long latency = runTestLayerWithMeasure(test_env, run_iter, layer_infos.at(run_iter));
+		long latency = runTestLayerWithMeasure(test_env, layer_infos.at(run_iter));
 		latency_each_layers.push_back((double)latency/1000000.0);
 	}
 
-	printf("latency report\n");
+	printf("latency report (ms)\n");
 	for(int run_iter=start_layer_num;run_iter<end_layer_num;run_iter++){
 		printf("%lf,", latency_each_layers.at(run_iter));
 	}
 	printf("\n");
 }
+void testSampleLayer(TestEnvironment& test_env) {
+	ConvLayerInfo layer_info;
+	layer_info.is_test_layer = true;
+	long latency = runTestLayerWithMeasure(test_env, layer_info);
+	printf("Test layer latency(ms): %lf\n", (double)latency/1000000.0);
+}
 //TODO: reuse common test code
-long runTestLayerWithMeasure(TestEnvironment& test_env, int run_iter, ConvLayerInfo& layer_info)
+long runTestLayerWithMeasure(TestEnvironment& test_env, ConvLayerInfo& layer_info)
 {
 	ConvTask temp_task;
 	test_env.target_task = &temp_task;
@@ -92,7 +109,7 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, int run_iter, ConvLayerI
 	test_env.target_task->setLayerParamAndBufSize(&layer_info);
 
 	bool random_input = true;
-	bool sparsifying = false;
+	bool sparsifying = true;
 	test_env.target_task->setSyntheticInput(random_input, sparsifying);
 	test_env.target_task->computeGold();
 
@@ -109,7 +126,9 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, int run_iter, ConvLayerI
 	test_env.readDataWithReorder();
 
 	// score
-	test_env.target_task->score();
+	int assert_error;
+	assert_error = test_env.target_task->score();
+	if(assert_error == 1) exit(1);
 	test_env.target_task->cleanup();
 	printf("=>Run complete, No errors!\n");
 

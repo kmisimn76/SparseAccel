@@ -16,6 +16,7 @@ DEFINE+= -D BLOCK_SIZE=4
 DEFINE+= -D WEIGHT_L1_SIZE=27000
 DEFINE+= -D DATA_L1_SIZE=49700
 
+DEFINE+= -D BIAS_L2_SIZE=128
 DEFINE+= -D WEIGHT_L2_SIZE=43200
 DEFINE+= -D DATA_L2_SIZE=78400
 DEFINE+= -D OUTPUT_L2_SIZE=35840
@@ -68,17 +69,20 @@ debug:
 	XCL_EMULATION_MODE=sw_emu gdb --args ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt
 
 
-clean:
+clean: clean_hw clean_sw clean_log
+clean_hw:
+	-rm *.xo
+	-rm *.xclbin
+clean_sw:
+	-rm *.o
+	-rm testbench
+clean_log:
 	-rm -rf build.sw_emu/*
 	-rm -rf build.hw_emu/*
 	-rm -rf build.hw/*
 	-rm -rf log.sw_emu/*
 	-rm -rf log.hw_emu/*
 	-rm -rf log.hw/*
-	-rm *.o
-	-rm testbench
-	-rm *.xo
-	-rm *.xclbin
 	-rm *.ltx
 	-rm -r _x
 	-rm *.log

@@ -2,6 +2,7 @@ Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
 Loading: 'accelerator.sw_emu.xclbin'
+run SW emu testcase
 Filename: ./test_maxpool_layer_info.txt
 N: 4
 
@@ -13,7 +14,7 @@ Iter 0
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Kernel time (ms): 	0.576868
+=>Kernel time (ms): 	0.563038
 =>Run complete, No errors!
 
 Iter 1
@@ -24,7 +25,7 @@ Iter 1
  =>RS   : 2
  =>Strid: 2
  =>Padd : 0
-=>Kernel time (ms): 	0.477219
+=>Kernel time (ms): 	0.476267
 =>Run complete, No errors!
 
 Iter 2
@@ -35,7 +36,7 @@ Iter 2
  =>RS   : 7
  =>Strid: 7
  =>Padd : 0
-=>Kernel time (ms): 	0.293529
+=>Kernel time (ms): 	0.558478
 =>Run complete, No errors!
 
 Iter 3
@@ -46,8 +47,8 @@ Iter 3
  =>RS   : 2
  =>Strid: 2
  =>Padd : 1
-=>Kernel time (ms): 	0.595637
+=>Kernel time (ms): 	0.442527
 =>Run complete, No errors!
 latency report
-0.576868,0.477219,0.293529,0.595637,
+0.563038,0.476267,0.558478,0.442527,
 End test

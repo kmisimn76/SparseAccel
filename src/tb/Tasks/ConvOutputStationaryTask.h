@@ -6,7 +6,6 @@
 #include "TestEnvironment.h"
 
 
-//TODO : temporal moved (used @ TargetTask) -> essential?
 typedef struct conv_layer_info_ {
 	uint K;
 	uint C;
@@ -38,7 +37,6 @@ typedef struct conv_layer_info_ {
 
 	bool is_test_layer;
 }ConvLayerInfo;
-
 
 
 typedef struct {
@@ -127,7 +125,7 @@ class ConvTask : public TargetTask {
 		void setSyntheticInput(bool random, bool sparsifying);
 
 		void computeGold();
-		void score();
+		int score();
 
 		void sparsify(void* _data, int _len, float _sparsity);
 

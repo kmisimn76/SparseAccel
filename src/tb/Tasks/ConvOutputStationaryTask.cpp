@@ -113,7 +113,7 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 	CONV_PARAM param;
 
 	if(layer_info.is_test_layer){
-		param.K = 16;
+		param.K = 32;
 		param.C = 32;
 		param.H = 16;
 		param.W = 16;
@@ -128,7 +128,7 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.L2_TILENUM_R = 1;
 		param.L2_TILENUM_S = 1;
 
-		param.L1_TILENUM_K = 16/ARRAY_K; ///
+		param.L1_TILENUM_K = 32/ARRAY_K; ///
 		param.L1_TILENUM_C = 2;
 		param.L1_TILENUM_W = 16/ARRAY_W;
 		param.L1_TILENUM_H = 8;
@@ -417,10 +417,11 @@ void ConvTask::computeGold()
 	}
 }
 
-void ConvTask::score()
+int ConvTask::score()
 {
 	const CONV_PARAM param = this->cur_layer_data.layer_param;
 	int cnt = 0;
+	bool assert_error = false;
 	for(int wh=0;wh<param.H*param.W;wh++) {
 		for (unsigned int k = 0; k < param.K; k++) {
 			unsigned int ptr = k*param.H*param.W + wh;
@@ -428,11 +429,13 @@ void ConvTask::score()
 			if(out != this->cur_layer_data.gold[ptr])
 			{
 				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out, this->cur_layer_data.gold[ptr], cnt);
-				exit(1);
+				assert_error = true;
 			}
 			cnt ++;
 		}
 	}
+	if(assert_error) return 1;
+	return 0;
 }
 
 void ConvTask::cleanup() {

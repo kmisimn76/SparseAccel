@@ -43,7 +43,7 @@ class TargetTask { //Interface
 		virtual void setSyntheticInput(bool random, bool sparsifying) {}
 		virtual void computeGold() {}
 		virtual void sparsify(void* _data, int _len, float _sparsity) {}
-		virtual void score() {}
+		virtual int  score() {}
 		virtual void cleanup() {}
 };
 

@@ -22,6 +22,7 @@ using namespace std;
 #include "Tasks/MaxPoolTask.h"
 
 void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name);
+void testSampleLayer(TestEnvironment& test_env);
 int get_layer_info(const char* filename, std::vector<MaxPoolLayerInfo> &layer_infos);
 
 int main(int argc, char** argv)
@@ -33,13 +34,23 @@ int main(int argc, char** argv)
 	}
 	char* kernel_file_name = argv[1];
 	char* layer_info_file_name = argv[2];
+	bool is_sw_emu = (strstr(kernel_file_name, "sw_emu") != NULL)?(true):(false);
+	bool is_hw_emu = (strstr(kernel_file_name, "hw_emu") != NULL)?(true):(false);
+	bool is_hw = (strstr(kernel_file_name, "hw") != NULL)?(true):(false);
 
 	TestEnvironment test_env;
 	test_env.kernel_file_name = kernel_file_name;
 
 	test_env.initializeOclEnv(TestEnv::KNL_NUM_MAXPOOL);
 
-	testAllLayers(test_env,layer_info_file_name);
+	if(is_sw_emu || is_hw) {
+		printf("run SW emu testcase\n");
+		testAllLayers(test_env,layer_info_file_name);
+	}
+	if(is_hw_emu) {
+		printf("run HW emu testcase\n");
+		testSampleLayer(test_env);
+	}
 
 	test_env.cleanup();
 	printf("End test\n");
@@ -65,6 +76,12 @@ void testAllLayers(TestEnvironment& test_env, char* layer_info_file_name)
 		printf("%lf,", latency_each_layers.at(run_iter));
 	}
 	printf("\n");
+}
+void testSampleLayer(TestEnvironment& test_env) {
+	MaxPoolLayerInfo layer_info;
+	layer_info.is_test_layer = true;
+	long latency = runTestLayerWithMeasure(test_env, layer_info);
+	printf("Test layer latency(ms): %lf\n", (double)latency/1000000.0);
 }
 //TODO: reuse common test code
 long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_info)
@@ -94,7 +111,9 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_
 	test_env.readDataWithReorder();
 
 	// score
-	test_env.target_task->score();
+	int assert_error;
+	assert_error = test_env.target_task->score();
+	if(assert_error == 1) exit(1);
 	test_env.target_task->cleanup();
 	printf("=>Run complete, No errors!\n");
 
