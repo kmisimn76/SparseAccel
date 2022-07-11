@@ -74,19 +74,25 @@ debug:
 	XCL_EMULATION_MODE=sw_emu gdb --args ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt
 
 
-clean:
+clean: clean_hw clean_sw clean_log
+clean_hw:
+	-rm *.xo
+	-rm *.xclbin
+clean_sw:
+	-rm *.o
+	-rm testbench
+clean_log:
 	-rm -rf build.sw_emu/*
 	-rm -rf build.hw_emu/*
 	-rm -rf build.hw/*
 	-rm -rf log.sw_emu/*
 	-rm -rf log.hw_emu/*
 	-rm -rf log.hw/*
-	-rm *.o
-	-rm testbench
-	-rm *.xo
-	-rm *.xclbin
 	-rm *.ltx
 	-rm -r _x
 	-rm *.log
 	-rm *summary
 	-rm *.xclbin.info
+	-rm xilinx_u200_xdma_201830_2-0-accelerator.*
+	-rm emconfig.json
+	-rm *.jou

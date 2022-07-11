@@ -87,3 +87,6 @@ clean_log:
 	-rm *.log
 	-rm *summary
 	-rm *.xclbin.info
+	-rm xilinx_u200_xdma_201830_2-0-accelerator.*
+	-rm emconfig.json
+	-rm *.jou
