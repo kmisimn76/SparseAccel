@@ -37,9 +37,9 @@ int main(int argc, char** argv)
 	}
 	char* kernel_file_name = argv[1];
 	char* layer_info_file_name = argv[2];
-	bool is_sw_emu = (strstr(kernel_file_name, "sw_emu") != NULL)?(true):(false);
-	bool is_hw_emu = (strstr(kernel_file_name, "hw_emu") != NULL)?(true):(false);
-	bool is_hw = (strstr(kernel_file_name, "hw") != NULL)?(true):(false);
+	bool is_sw_emu = (strstr(kernel_file_name, ".sw_emu.") != NULL)?(true):(false);
+	bool is_hw_emu = (strstr(kernel_file_name, ".hw_emu.") != NULL)?(true):(false);
+	bool is_hw = (strstr(kernel_file_name, ".hw.") != NULL)?(true):(false);
 
 	TestEnvironment test_env;
 	test_env.kernel_file_name = kernel_file_name;

@@ -6,10 +6,9 @@ debug=1
 
 [connectivity]
 #sp=<compute_unit_name>.<interface_name>:<sptag[min:max]>
-sp=Conv_sysarr_1.bias_in:DDR[1]
-sp=Conv_sysarr_1.weight_in:DDR[1]
-sp=Conv_sysarr_1.data_in:DDR[1]
-sp=Conv_sysarr_1.conv_out:DDR[1]
+sp=maxPool_1.data_in:DDR[2]
+sp=maxPool_1.pool_out:DDR[2]
+sp=maxPool_1.pool_out_MACTYPE:DDR[2]
 
 #stream_connect=<cu_name>.<output_port>:<cu_name>.<input_port>:[<fifo_depth>]
 #stream_connect=memRead_1.bias_out:coreConv_1.bias_in

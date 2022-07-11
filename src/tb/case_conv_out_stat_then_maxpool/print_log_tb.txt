@@ -1,110 +1,29 @@
 Found cl_data->platform: Xilinx
 Device Nums: 1
 Device Name: xilinx_u200_xdma_201830_2
-Loading: 'accelerator.sw_emu.xclbin'
-run SW emu testcase
-Filename: ./test_layer_info.txt
-N: 4
-
-Iter 0
+Loading: 'accelerator.hw_emu.xclbin'
+Device Nums: 1
+Device Name: xilinx_u200_xdma_201830_2
+Loading: 'accelerator.hw_emu.xclbin'
+INFO: [HW-EMU 01] Hardware emulation runs simulation underneath. Using a large data set will result in long simulation times. It is recommended that a small dataset is used for faster execution. The flow uses approximate models for DDR memory and interconnect and hence the performance data generated is approximate.
+run HW emu testcase
 =>Kernel Mapping Info
- =>K,C,H,W,R,S : 64 4 224 224 7 7
- =>L2 Tile K,C,W,H,R(S): 2 1 7 56 1 1
- =>L1 Tile K,C,W,H,R(S): 1 2 4 4 7 7
- =>InTile  K,C,W,H,R(S): 32 2 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800803
- =>Group sparsified rate: 0.412508
-=>MaxPool Layer Info
- =>C    : 64
- =>WH   : 112
- =>WH in: 224
- =>RS   : 2
- =>Strid: 2
- =>Padd : 0
-=>Conv Kernel time (ms): 	6212.621007
-=>Maxpool Kernel time (ms): 	44.121956
-=>Run complete, No errors!
+ =>K,C,H,W,R,S : 32 32 16 16 3 3
+ =>L2 Tile K,C,W,H,R(S): 1 2 1 2 1 1
+ =>L1 Tile K,C,W,H,R(S): 1 2 2 8 3 3
+ =>InTile  K,C,W,H,R(S): 32 8 8 1 1 1
+=>Data sparsifying =>Eltwise sparsified rate: 0.800733
+ =>Group sparsified rate: 0.422363
+ERROR: CL_OUT_OF_HOST_MEMORY 
+Location: ./../Tasks/ConvOutputStationaryTask.cpp:54
+Failed to migrate buffer
+INFO::[ Vitis-EM 22 ] [Time elapsed: 0 minute(s) 37 seconds, Emulation time: 0.0576636 ms]
+Data transfer between kernel(s) and global memory(s)
+Convolution_1:m_axi_gmem0-DDR[1]          RD = 0.000 KB               WR = 0.000 KB        
+Convolution_1:m_axi_gmem1-DDR[1]          RD = 0.000 KB               WR = 0.000 KB        
+Convolution_1:m_axi_gmem2-DDR[1]          RD = 0.000 KB               WR = 0.000 KB        
+Convolution_1:m_axi_gmem3-DDR[1]          RD = 0.000 KB               WR = 0.000 KB        
+maxPool_1:m_axi_gmem5-DDR[2]          RD = 0.000 KB               WR = 0.000 KB        
+maxPool_1:m_axi_gmem6-DDR[2]          RD = 0.000 KB               WR = 0.000 KB        
+maxPool_1:m_axi_gmem7-DDR[2]          RD = 0.000 KB               WR = 0.000 KB        
 
-Iter 1
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 128 260 64 64 1 1
- =>L2 Tile K,C,W,H,R(S): 1 2 2 16 1 1
- =>L1 Tile K,C,W,H,R(S): 4 1 4 4 1 1
- =>InTile  K,C,W,H,R(S): 32 130 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800793
- =>Group sparsified rate: 0.411155
-=>MaxPool Layer Info
- =>C    : 128
- =>WH   : 32
- =>WH in: 64
- =>RS   : 2
- =>Strid: 2
- =>Padd : 0
-=>Conv Kernel time (ms): 	672.778214
-=>Maxpool Kernel time (ms): 	6.665391
-=>Run complete, No errors!
-
-Iter 2
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 512 240 32 32 1 1
- =>L2 Tile K,C,W,H,R(S): 4 2 1 16 1 1
- =>L1 Tile K,C,W,H,R(S): 4 2 4 2 1 1
- =>InTile  K,C,W,H,R(S): 32 60 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800757
- =>Group sparsified rate: 0.410889
-=>MaxPool Layer Info
- =>C    : 512
- =>WH   : 16
- =>WH in: 32
- =>RS   : 2
- =>Strid: 2
- =>Padd : 0
-=>Conv Kernel time (ms): 	637.666740
-=>Maxpool Kernel time (ms): 	5.988469
-=>Run complete, No errors!
-
-Iter 3
-=>Kernel Mapping Info
- =>K,C,H,W,R,S : 2048 544 8 8 1 1
- =>L2 Tile K,C,W,H,R(S): 4 2 1 1 1 1
- =>L1 Tile K,C,W,H,R(S): 16 4 1 8 1 1
- =>InTile  K,C,W,H,R(S): 32 68 8 1 1 1
-=>Data sparsifying =>Eltwise sparsified rate: 0.800753
- =>Group sparsified rate: 0.411190
-=>MaxPool Layer Info
- =>C    : 2048
- =>WH   : 1
- =>WH in: 8
- =>RS   : 8
- =>Strid: 8
- =>Padd : 0
-=>Conv Kernel time (ms): 	356.776738
-Args: 64,4,224,224,230,230,7,7
-  2,  1, 56,  7        ,  1,  1
- 32,  4,  4, 32, 10, 38,  7,  7
-  1,  2,  4,  4        ,  7,  7
- 32,  2,  1,  8,  1,  8,  1,  1
- 32,  2,  1,  8,          1,  1 
-Args: 128,260,64,64,64,64,1,1
-  1,  2, 16,  2        ,  1,  1
-128,130,  4, 32,  4, 32,  1,  1
-  4,  1,  4,  4        ,  1,  1
- 32,130,  1,  8,  1,  8,  1,  1
- 32,130,  1,  8,          1,  1 
-Args: 512,240,32,32,32,32,1,1
-  4,  2, 16,  1        ,  1,  1
-128,120,  2, 32,  2, 32,  1,  1
-  4,  2,  4,  2        ,  1,  1
- 32, 60,  1,  8,  1,  8,  1,  1
- 32, 60,  1,  8,          1,  1 
-Args: 2048,544,8,8,8,8,1,1
-  4,  2,  1,  1        ,  1,  1
-512,272,  8,  8,  8,  8,  1,  1
- 16,  4,  1,  8        ,  1,  1
- 32, 68,  1,  8,  1,  8,  1,  1
- 32, 68,  1,  8,          1,  1 
-=>Maxpool Kernel time (ms): 	1.770850
-=>Run complete, No errors!
-latency report
-6256.742963,679.443605,643.655209,358.547588,
-End test
