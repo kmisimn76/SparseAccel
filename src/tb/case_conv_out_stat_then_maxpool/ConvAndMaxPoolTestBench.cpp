@@ -103,7 +103,6 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, ConvLayerInfo& conv_laye
 	MaxPoolTask maxpool_task;
 	bool random_input;
 	bool sparsifying;
-	cl::Event* evt;
 	cl_ulong total_latency = 0.0;
 	cl_ulong latency;
 
@@ -114,17 +113,6 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, ConvLayerInfo& conv_laye
 	conv_task.setSyntheticInput(random_input, sparsifying);
 	conv_task.computeGold();
 
-	//run conv task
-	test_env.target_task = &conv_task;
-	test_env.initializeClBuffer();
-	test_env.enqueDataWithReorder();
-	test_env.setClArgs();
-	evt = test_env.runTaskWithWait();
-	latency = test_env.computeLatencyOfTask(evt);
-	total_latency += latency;
-	printf("=>Conv Kernel time (ms): \t%lf\n", (double)latency/1000000.0);
-	test_env.readDataWithReorder();
-
 	maxpool_task.initializeHostBuffer();
 	maxpool_task.setLayerParamAndBufSize(&maxpool_layer_info);
 	random_input = true;
@@ -132,13 +120,22 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, ConvLayerInfo& conv_laye
 	maxpool_task.setSyntheticInput(random_input, sparsifying);
 	maxpool_task.computeGold();
 
+	//run conv task
+	test_env.target_task = &conv_task;
+	test_env.initializeClBuffer();
+	test_env.setClArgs();
+	test_env.enqueDataWithReorder();
+	latency = test_env.runTaskWithWait();
+	total_latency += latency;
+	printf("=>Conv Kernel time (ms): \t%lf\n", (double)latency/1000000.0);
+	test_env.readDataWithReorder();
+
 	//run maxpool task
 	test_env.target_task = &maxpool_task;
 	test_env.initializeClBuffer();
-	test_env.enqueDataWithReorder();
 	test_env.setClArgs();
-	evt = test_env.runTaskWithWait();
-	latency = test_env.computeLatencyOfTask(evt);
+	test_env.enqueDataWithReorder();
+	latency = test_env.runTaskWithWait();
 	total_latency += latency;
 	printf("=>Maxpool Kernel time (ms): \t%lf\n", (double)latency/1000000.0);
 	test_env.readDataWithReorder();

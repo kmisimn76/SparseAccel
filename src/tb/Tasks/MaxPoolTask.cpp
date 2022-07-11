@@ -41,11 +41,6 @@ void MaxPoolTask::initializeClBuffer(ocl_data_* cl_data)
 	checkError(status, "Failed to create buffer for output");
 	this->output_MACTYPE_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY, this->cur_layer_data.out_buf_size*sizeof(MACTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for output");
-
-	status = cl_data->que.enqueueMigrateMemObjects({this->data_buf,this->output_buf,this->output_MACTYPE_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
-	checkError(status, "Failed to migrate buffer");
-
-	cl_data->que.finish();
 }
 
 void MaxPoolTask::setClArgs(ocl_data_* cl_data)
@@ -64,29 +59,35 @@ void MaxPoolTask::setClArgs(ocl_data_* cl_data)
 	status |= cl_data->knl_maxpool.setArg(7, this->output_buf);
 	status |= cl_data->knl_maxpool.setArg(8, this->output_MACTYPE_buf);
 	checkError(status, "Failed to set buffer args");
+
+	status = cl_data->que_maxpool.enqueueMigrateMemObjects({this->data_buf,this->output_buf,this->output_MACTYPE_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
+	checkError(status, "Failed to migrate buffer");
+
+	cl_data->que_maxpool.finish();
 }
 
 
-void MaxPoolTask::enqueData(ocl_data_* cl_data)
+void MaxPoolTask::enqueDataAndWait(ocl_data_* cl_data)
 {
 	cl_int status;
-	status = cl_data->que.enqueueWriteBuffer(this->data_buf, CL_FALSE, 0, this->cur_layer_data.in_buf_size * sizeof(DPTYPE), this->cur_layer_data.data, nullptr, nullptr);
+	status = cl_data->que_maxpool.enqueueWriteBuffer(this->data_buf, CL_FALSE, 0, this->cur_layer_data.in_buf_size * sizeof(DPTYPE), this->cur_layer_data.data, nullptr, nullptr);
 	checkError(status, "Failed to transfer input image");
+	cl_data->que_maxpool.finish();
 
 }
-void MaxPoolTask::readData(ocl_data_* cl_data)
+void MaxPoolTask::readDataAndWait(ocl_data_* cl_data)
 {
 	cl_int status;
-	status = cl_data->que.enqueueReadBuffer(this->output_buf, CL_FALSE, 0, sizeof(DPTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output, nullptr, nullptr);
-	status = cl_data->que.enqueueReadBuffer(this->output_MACTYPE_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output_MACTYPE, nullptr, nullptr);
+	status = cl_data->que_maxpool.enqueueReadBuffer(this->output_buf, CL_FALSE, 0, sizeof(DPTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output, nullptr, nullptr);
+	status = cl_data->que_maxpool.enqueueReadBuffer(this->output_MACTYPE_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output_MACTYPE, nullptr, nullptr);
 	checkError(status, "Failed to set transfer output data");
+	cl_data->que_maxpool.finish();
 }
 
 void MaxPoolTask::runTask(ocl_data_* cl_data)
 {
 	cl::Event* event = &(cl_data->task_event);
-	cl_uint	status = cl_data->que.enqueueTask(cl_data->knl_maxpool, &cl_data->event_que, event);
-	cl_data->event_que.push_back(*event);
+	cl_uint	status = cl_data->que_maxpool.enqueueTask(cl_data->knl_maxpool, NULL, event);
 	checkError(status, "Failed to cl_data->queue task");
 }
 

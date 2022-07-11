@@ -20,9 +20,10 @@ class ocl_data_ {
 		cl::Context context;
 		cl::Program program;
 		std::vector<cl::Device> device;
-		cl::CommandQueue que;
 		std::vector<cl::Event> event_que;
 
+		cl::CommandQueue que_conv;
+		cl::CommandQueue que_maxpool;
 		cl::Kernel knl_conv;
 		cl::Kernel knl_maxpool;
 };
@@ -33,8 +34,8 @@ class TargetTask { //Interface
 		virtual void initializeHostBuffer() {}
 		virtual void initializeClBuffer(ocl_data_*) {}
 		virtual void setClArgs(ocl_data_*) {}
-		virtual void enqueData(ocl_data_*) {}
-		virtual void readData(ocl_data_*) {}
+		virtual void enqueDataAndWait(ocl_data_*) {}
+		virtual void readDataAndWait(ocl_data_*) {}
 		virtual void runTask(ocl_data_*) {}
 		virtual void reorderInputs() {}
 		virtual void reorderOutput() {}
@@ -67,8 +68,8 @@ class TestEnvironment {
 		TestEnvironment() {}
 		~TestEnvironment() {}
 
-		cl::Event* runTaskWithWait();
-		cl_ulong computeLatencyOfTask(cl::Event* event);
+		cl_ulong runTaskWithWait();
+		cl_ulong computeLatencyFromEvent(cl::Event* event);
 		void flushEventQue(); //OpenCl Synch
 
 		std::vector<cl::Device> getDevices(const std::string& vendor_name);

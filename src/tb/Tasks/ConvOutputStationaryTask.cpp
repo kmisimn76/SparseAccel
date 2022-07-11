@@ -49,11 +49,6 @@ void ConvTask::initializeClBuffer(ocl_data_* cl_data)
 	checkError(status, "Failed to create buffer for data");
 	this->output_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY, this->cur_layer_data.out_buf_size*sizeof(MACTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for output");
-
-	status = cl_data->que.enqueueMigrateMemObjects({this->bias_buf,this->weights_buf,this->data_buf,this->output_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
-	checkError(status, "Failed to migrate buffer");
-
-	cl_data->que.finish();
 }
 
 typedef union CONV_PARAM_TEMP_
@@ -78,32 +73,38 @@ void ConvTask::setClArgs(ocl_data_* cl_data)
 	status |= cl_data->knl_conv.setArg(NUM_OF_ARGS+2, this->data_buf);
 	status |= cl_data->knl_conv.setArg(NUM_OF_ARGS+3, this->output_buf);
 	checkError(status, "Failed to set buffer args");
+
+	status = cl_data->que_conv.enqueueMigrateMemObjects({this->output_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
+	checkError(status, "Failed to migrate buffer");
+	cl_data->que_conv.finish();
 }
 
 
-void ConvTask::enqueData(ocl_data_* cl_data)
+void ConvTask::enqueDataAndWait(ocl_data_* cl_data)
 {
+
 	cl_int status;
-	status = cl_data->que.enqueueWriteBuffer(this->weights_buf, CL_FALSE, 0, this->cur_layer_data.weight_buf_size * sizeof(DPTYPE), this->cur_layer_data.weight, nullptr, nullptr);
+	status = cl_data->que_conv.enqueueWriteBuffer(this->weights_buf, CL_FALSE, 0, this->cur_layer_data.weight_buf_size * sizeof(DPTYPE), this->cur_layer_data.weight, nullptr, nullptr);
 	checkError(status, "Failed to transfer weight");
-	status = cl_data->que.enqueueWriteBuffer(this->bias_buf, CL_FALSE, 0, this->cur_layer_data.bias_buf_size * sizeof(DPTYPE), this->cur_layer_data.bias, nullptr, nullptr);
+	status = cl_data->que_conv.enqueueWriteBuffer(this->bias_buf, CL_FALSE, 0, this->cur_layer_data.bias_buf_size * sizeof(DPTYPE), this->cur_layer_data.bias, nullptr, nullptr);
 	checkError(status, "Failed to transfer weight");
-	status = cl_data->que.enqueueWriteBuffer(this->data_buf, CL_FALSE, 0, this->cur_layer_data.in_buf_size * sizeof(DPTYPE), this->cur_layer_data.data, nullptr, nullptr);
+	status = cl_data->que_conv.enqueueWriteBuffer(this->data_buf, CL_FALSE, 0, this->cur_layer_data.in_buf_size * sizeof(DPTYPE), this->cur_layer_data.data, nullptr, nullptr);
 	checkError(status, "Failed to transfer input image");
+	cl_data->que_conv.finish();
 
 }
-void ConvTask::readData(ocl_data_* cl_data)
+void ConvTask::readDataAndWait(ocl_data_* cl_data)
 {
 	cl_int status;
-	status = cl_data->que.enqueueReadBuffer(this->output_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output, nullptr, nullptr);
+	status = cl_data->que_conv.enqueueReadBuffer(this->output_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output, nullptr, nullptr);
 	checkError(status, "Failed to set transfer output data");
+	cl_data->que_conv.finish();
 }
 
 void ConvTask::runTask(ocl_data_* cl_data)
 {
 	cl::Event* event = &(cl_data->task_event);
-	cl_uint	status = cl_data->que.enqueueTask(cl_data->knl_conv, &cl_data->event_que, event);
-	cl_data->event_que.push_back(*event);
+	cl_uint	status = cl_data->que_conv.enqueueTask(cl_data->knl_conv, NULL, event);
 	checkError(status, "Failed to cl_data->queue task");
 }
 

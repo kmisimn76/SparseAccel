@@ -25,14 +25,14 @@ const char *vendor_name = "Xilinx";
 #define DEVICE_TYPE CL_DEVICE_TYPE_ACCELERATOR
 
 
-cl::Event* TestEnvironment::runTaskWithWait() {
+cl_ulong TestEnvironment::runTaskWithWait() {
 	this->target_task->runTask(this->cl_data);
-
+	this->cl_data->event_que.push_back(cl_data->task_event);
 	cl_uint status = this->cl_data->task_event.wait();
 	checkError(status, "Failed to wait event");
-	return &(this->cl_data->task_event);
+	return this->computeLatencyFromEvent(&(this->cl_data->task_event));
 }
-cl_ulong TestEnvironment::computeLatencyOfTask(cl::Event* event) {
+cl_ulong TestEnvironment::computeLatencyFromEvent(cl::Event* event) {
 	cl_ulong time_start, time_end;
 	event->getProfilingInfo(CL_PROFILING_COMMAND_START, &time_start);
 	event->getProfilingInfo(CL_PROFILING_COMMAND_END, &time_end);
@@ -101,8 +101,6 @@ void TestEnvironment::initializeOclEnv(long compiled_kernel_list)
 
 	this->cl_data->context = cl::Context(this->cl_data->device[0], NULL, NULL, NULL, &status);
 	checkError(status, "Failed to create cl_data->context");
-	this->cl_data->que = cl::CommandQueue(this->cl_data->context, this->cl_data->device[0], cl::QueueProperties::Profiling | cl::QueueProperties::OutOfOrder, &status);
-	checkError(status, "Failed to create command queue");
 
 	// Create Program Objects
 	unsigned fileBufSize;
@@ -114,10 +112,14 @@ void TestEnvironment::initializeOclEnv(long compiled_kernel_list)
 	checkError(status, "Failed to build program");
 
 	if((compiled_kernel_list & TestEnv::KNL_NUM_CONV) > 0) {
+		this->cl_data->que_conv = cl::CommandQueue(this->cl_data->context, this->cl_data->device[0], cl::QueueProperties::Profiling /*| cl::QueueProperties::OutOfOrder*/, &status);
+		checkError(status, "Failed to create command queue");
 		this->cl_data->knl_conv = cl::Kernel(this->cl_data->program, this->knl_name_conv, &status);
 		checkError(status, "Failed to create kernel (conv)");
 	}
 	if((compiled_kernel_list & TestEnv::KNL_NUM_MAXPOOL) > 0) {
+		this->cl_data->que_maxpool = cl::CommandQueue(this->cl_data->context, this->cl_data->device[0], cl::QueueProperties::Profiling /*| cl::QueueProperties::OutOfOrder*/, &status);
+		checkError(status, "Failed to create command queue");
 		this->cl_data->knl_maxpool = cl::Kernel(this->cl_data->program, this->knl_name_maxpool, &status);
 		checkError(status, "Failed to create kernel (maxpool)");
 	}
@@ -136,15 +138,11 @@ void TestEnvironment::enqueDataWithReorder()
 {
 	this->target_task->reorderInputs(); //data reorder
 
-	this->target_task->enqueData(this->cl_data);
-
-	this->cl_data->que.finish();
+	this->target_task->enqueDataAndWait(this->cl_data);
 }
 void TestEnvironment::readDataWithReorder()
 {
-	this->target_task->readData(this->cl_data);
-
-	this->cl_data->que.finish();
+	this->target_task->readDataAndWait(this->cl_data);
 	this->target_task->reorderOutput(); //data reorder
 }
 

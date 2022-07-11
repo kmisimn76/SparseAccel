@@ -99,13 +99,11 @@ long runTestLayerWithMeasure(TestEnvironment& test_env, MaxPoolLayerInfo& layer_
 	test_env.target_task->computeGold();
 
 	test_env.initializeClBuffer();
-	test_env.enqueDataWithReorder();
 	test_env.setClArgs();
+	test_env.enqueDataWithReorder();
 
 	// run
-	cl::Event* evt = test_env.runTaskWithWait();
-
-	cl_ulong latency = test_env.computeLatencyOfTask(evt);
+	cl_ulong latency = test_env.runTaskWithWait();
 	printf("=>Kernel time (ms): \t%lf\n", (double)latency/1000000.0);
 
 	test_env.readDataWithReorder();

@@ -49,8 +49,8 @@ class MaxPoolTask : public TargetTask {
 		void initializeHostBuffer();
 		void initializeClBuffer(ocl_data_*);
 		void setClArgs(ocl_data_*);
-		void enqueData(ocl_data_*);
-		void readData(ocl_data_*);
+		void enqueDataAndWait(ocl_data_*);
+		void readDataAndWait(ocl_data_*);
 		void runTask(ocl_data_*);
 
 		void reorderInputs();
