@@ -11,10 +11,10 @@ cd src/tb/
 
 make pre_commit_check > log 2>&1
 if [ "$?" -ne 0 ]; then
-   echo "Build failed"
+   echo "Testbench failed"
    cat log
    exit 1
 fi
 
-echo "Build success"
+echo "Testbench success"
 exit 0

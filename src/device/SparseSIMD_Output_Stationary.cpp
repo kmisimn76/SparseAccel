@@ -578,6 +578,7 @@ void Convolution( //SparseSIMD Output Stationary
 		}
 	}
 	}
+
 }
 #ifndef TESTBENCH
 }

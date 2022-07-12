@@ -25,9 +25,8 @@ DEFINE+= -D OUTPUT_L2_SIZE=3584
 ifeq ($(TARGET),hw)
 	PROFILE=
 else
-	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all
 endif
-#PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
 DEBUG=-g
 
 xrt_path = $(XILINX_XRT)

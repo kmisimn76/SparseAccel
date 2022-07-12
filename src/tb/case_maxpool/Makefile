@@ -9,8 +9,11 @@ OPTIMIZE=
 
 DEFINE+= -D VEC_SIZE=8
 
-
-PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+ifeq ($(TARGET),hw)
+	PROFILE=
+else
+	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all
+endif
 DEBUG=-g
 
 xrt_path = $(XILINX_XRT)

@@ -21,7 +21,11 @@ DEFINE+= -D DATA_L2_SIZE=576 #1152/PORT_NUM #2304/PORT_NUM
 DEFINE+= -D OUTPUT_L2_SIZE=512 #1024/PORT_NUM #1600/PORT_NUM
 
 
-PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+ifeq ($(TARGET),hw)
+	PROFILE=
+else
+	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all
+endif
 DEBUG=-g
 
 xrt_path = $(XILINX_XRT)

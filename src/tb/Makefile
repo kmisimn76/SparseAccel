@@ -5,9 +5,9 @@ FAKETIME=faketime -f "-1y"
 
 #SW Emulation list
 SW_EMU_LIST =
-#SW_EMU_LIST += sw_emu_convolution_output_stationary
-SW_EMU_LIST += sw_emu_convolution_weight_stationary
-SW_EMU_LIST += sw_emu_maxpool
+SW_EMU_LIST += sw_emu_convolution_output_stationary
+#SW_EMU_LIST += sw_emu_convolution_weight_stationary
+#SW_EMU_LIST += sw_emu_maxpool
 #SW_EMU_LIST += sw_emu_conv_out_stat_then_maxpool
 
 #HW Emulation list
