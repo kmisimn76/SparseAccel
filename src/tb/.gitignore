@@ -23,9 +23,11 @@ print_log_tb.txt
 case_*/testbench
 case_*/.run
 case_*/.Xil
+case_*/.ipcache
 case_*/build.*
 case_*/log.*
 case_*/*.o
+case_*/*.ltx
 case_*/*.xo
 case_*/*.xo.compile_summary
 case_*/*.xclbin

@@ -11,4 +11,4 @@ Directory info
 
 
 ## Must do
-cp pre-commit .git/hooks/
+run ```./please_run.sh``` or ```cp pre-commit .git/hooks/```
