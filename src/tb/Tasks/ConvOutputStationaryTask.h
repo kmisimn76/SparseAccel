@@ -34,56 +34,61 @@ typedef struct conv_layer_info_ {
 	uint TW;
 	uint TR;
 	uint TS;
+    	uint Stride;
+	uint Padding;
+	float scale_factor;
 
 	bool is_test_layer;
 }ConvLayerInfo;
 
 
 typedef struct {
-    uint K;
-    uint C;
-    uint H;
-    uint W;
-    uint H_in;
-    uint W_in;
-    uint R;
-    uint S;
+	uint K;
+	uint C;
+	uint H;
+	uint W;
+	uint H_in;
+	uint W_in;
+	uint R;
+	uint S;
 	uint L2_TILENUM_K;///
 	uint L2_TILENUM_C;
-    uint L2_TILENUM_W; // W Size of a tile
-    uint L2_TILENUM_H;
-    uint L2_TILENUM_R;
-    uint L2_TILENUM_S;
-    uint K_L2;
-    uint C_L2;
-    uint W_L2;
-    uint H_L2;
-    uint W_in_L2;
-    uint H_in_L2;
-    uint R_L2;
-    uint S_L2;
+	uint L2_TILENUM_W; // W Size of a tile
+	uint L2_TILENUM_H;
+	uint L2_TILENUM_R;
+	uint L2_TILENUM_S;
+	uint K_L2;
+	uint C_L2;
+	uint W_L2;
+	uint H_L2;
+	uint W_in_L2;
+	uint H_in_L2;
+	uint R_L2;
+	uint S_L2;
 	uint L1_TILENUM_K;///
 	uint L1_TILENUM_C;
-    uint L1_TILENUM_W; // W Size of a tile
-    uint L1_TILENUM_H;
-    uint L1_TILENUM_R;
-    uint L1_TILENUM_S;
-    uint K_L1;
-    uint C_L1;
-    uint W_L1;
-    uint H_L1;
-    uint W_in_L1;
-    uint H_in_L1;
-    uint R_L1;
-    uint S_L1;
-    uint TILESIZE_K; // W Size of a tile
-    uint TILESIZE_C;
-    uint TILESIZE_W; // W Size of a tile
-    uint TILESIZE_H;
-    uint TILESIZE_R; //must be 1
-    uint TILESIZE_S; //must be 1
+	uint L1_TILENUM_W; // W Size of a tile
+	uint L1_TILENUM_H;
+	uint L1_TILENUM_R;
+	uint L1_TILENUM_S;
+	uint K_L1;
+	uint C_L1;
+	uint W_L1;
+	uint H_L1;
+	uint W_in_L1;
+	uint H_in_L1;
+	uint R_L1;
+	uint S_L1;
+	uint TILESIZE_K; // W Size of a tile
+	uint TILESIZE_C;
+	uint TILESIZE_W; // W Size of a tile
+	uint TILESIZE_H;
+	uint TILESIZE_R; //must be 1
+	uint TILESIZE_S; //must be 1
+	uint Stride;
+	uint Padding;
+	float scale_factor;
 } CONV_PARAM;
-
 class ConvLayerData {
 	public:
 		CONV_PARAM layer_param;
@@ -97,8 +102,11 @@ class ConvLayerData {
 		DPTYPE* weight_original;
 		DPTYPE* data_original;
 		DPTYPE* bias;
-		MACTYPE* output;
+		DPTYPE* output_quant;
+		MACTYPE* output_raw;
 		MACTYPE* gold;
+		DPTYPE* gold_quant;
+
 };
 
 class ConvTask : public TargetTask {
@@ -106,9 +114,10 @@ class ConvTask : public TargetTask {
 		ConvLayerData cur_layer_data;
 
 		cl::Buffer data_buf; //TODO: move to ConvLayerInfo(Data)
-		cl::Buffer output_buf;
 		cl::Buffer weights_buf;
 		cl::Buffer bias_buf;
+		cl::Buffer output_quant_buf;
+		cl::Buffer output_raw_buf;
 
 		void initializeHostBuffer();
 		void initializeClBuffer(ocl_data_*);

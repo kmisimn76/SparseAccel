@@ -1,2 +1,2 @@
-* conv_sysarr.cpp : accelerator main
+* device/ : accelerator HLS kernel code
 * tb/ : testbench

@@ -1,0 +1,70 @@
+make -C case_convolution_weight_stationary TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_convolution_weight_stationary'
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512    ConvTestBench.o TestEnvironment.o ConvWeightStationaryTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_convolution_weight_stationary)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 39796
+UID: 1002
+[Tue Jul 12 07:44:42 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_convolution_weight_stationary/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_convolution_weight_stationary'
+.
+.
+.
+   Test Target: case_convolution_weight_stationary
+       TEST PASSED! :)
+
+
+
+make -C case_maxpool TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_maxpool'
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/MaxPoolTask.cpp
+g++ -g -D VEC_SIZE=8   MaxPoolTestBench.o TestEnvironment.o MaxPoolTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_maxpool_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_maxpool)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 39910
+UID: 1002
+[Tue Jul 12 07:45:54 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_maxpool/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+[XRT] WARNING: Profiling may contain incomplete information. Please ensure all OpenCL objects are released by your host code (e.g., clReleaseProgram()).
+
+
+
+           test failed.... :( 
+      @(/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_maxpool)
+
+
+
+Makefile:50: recipe for target 'emu' failed
+make[1]: *** [emu] Error 1
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/Systolic_Array_TEST_PCNN_based/src/tb/case_maxpool'
+Makefile:35: recipe for target 'sw_emu_maxpool' failed
+make: *** [sw_emu_maxpool] Error 2

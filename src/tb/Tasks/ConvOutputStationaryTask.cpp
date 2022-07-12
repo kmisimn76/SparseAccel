@@ -30,14 +30,14 @@ void ConvTask::initializeHostBuffer() {
 	this->cur_layer_data.weight = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE, DMA_ALIGNMENT);
 	this->cur_layer_data.data = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_DATA_SIZE, DMA_ALIGNMENT);
 	this->cur_layer_data.bias = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_BIAS_SIZE, DMA_ALIGNMENT);
-	this->cur_layer_data.output = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_data.output_quant = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_data.output_raw = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
 	this->cur_layer_data.gold = (MACTYPE*)alignedMalloc(sizeof(MACTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
+	this->cur_layer_data.gold_quant = (DPTYPE*)alignedMalloc(sizeof(DPTYPE)*MAX_OUTPUT_SIZE, DMA_ALIGNMENT);
 	this->cur_layer_data.weight_original = (DPTYPE*)malloc(sizeof(DPTYPE)*MAX_WEIGHT_SIZE);
 	this->cur_layer_data.data_original = (DPTYPE*)malloc(sizeof(DPTYPE)*MAX_DATA_SIZE);
-
 }
 
-#define NUM_OF_ARGS 42/*37*/ //# of args of HLS kernel
 void ConvTask::initializeClBuffer(ocl_data_* cl_data)
 {
 	cl_int status;
@@ -47,42 +47,81 @@ void ConvTask::initializeClBuffer(ocl_data_* cl_data)
 	checkError(status, "Failed to create buffer for bias");
 	this->data_buf = cl::Buffer(cl_data->context, CL_MEM_READ_ONLY, this->cur_layer_data.in_buf_size*sizeof(DPTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for data");
-	this->output_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY, this->cur_layer_data.out_buf_size*sizeof(MACTYPE), nullptr, &status);
+	this->output_quant_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY, this->cur_layer_data.out_buf_size*sizeof(DPTYPE), nullptr, &status);
+	checkError(status, "Failed to create buffer for output");
+	this->output_raw_buf = cl::Buffer(cl_data->context, CL_MEM_WRITE_ONLY, this->cur_layer_data.out_buf_size*sizeof(MACTYPE), nullptr, &status);
 	checkError(status, "Failed to create buffer for output");
 }
 
-typedef union CONV_PARAM_TEMP_
-{
-	CONV_PARAM origin;
-	unsigned int dest[NUM_OF_ARGS];
-}CONV_PARAM_TEMP;
 void ConvTask::setClArgs(ocl_data_* cl_data)
 {
-	cl_int status;
+	cl_int status = 0;
 	// Set Kernel Arg
+	auto param = this->cur_layer_data.layer_param;
 	int argi = 0;
-	CONV_PARAM_TEMP tmp;
-	tmp.origin = this->cur_layer_data.layer_param;
-	status = 0;
-	for(int i=0;i<NUM_OF_ARGS;i++)
-		status |= cl_data->knl_conv.setArg(i, tmp.dest[i]);
+	status |= cl_data->knl_conv.setArg(argi++, param.K);
+	status |= cl_data->knl_conv.setArg(argi++, param.C);
+	status |= cl_data->knl_conv.setArg(argi++, param.H);
+	status |= cl_data->knl_conv.setArg(argi++, param.W);
+	status |= cl_data->knl_conv.setArg(argi++, param.H_in);
+	status |= cl_data->knl_conv.setArg(argi++, param.W_in);
+	status |= cl_data->knl_conv.setArg(argi++, param.R);
+	status |= cl_data->knl_conv.setArg(argi++, param.S);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_K);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_C);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_W);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_H);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_R);
+	status |= cl_data->knl_conv.setArg(argi++, param.L2_TILENUM_S);
+	status |= cl_data->knl_conv.setArg(argi++, param.K_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.C_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.W_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.H_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.W_in_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.H_in_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.R_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.S_L2);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_K);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_C);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_W);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_H);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_R);
+	status |= cl_data->knl_conv.setArg(argi++, param.L1_TILENUM_S);
+	status |= cl_data->knl_conv.setArg(argi++, param.K_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.C_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.W_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.H_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.W_in_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.H_in_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.R_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.S_L1);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_K);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_C);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_W);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_H);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_R);
+	status |= cl_data->knl_conv.setArg(argi++, param.TILESIZE_S);
+	status |= cl_data->knl_conv.setArg(argi++, param.Stride);
+	status |= cl_data->knl_conv.setArg(argi++, param.Padding);
+	status |= cl_data->knl_conv.setArg(argi++, param.scale_factor);
 	checkError(status, "Failed to set argument of kernel");
 
-	status = cl_data->knl_conv.setArg(NUM_OF_ARGS+0, this->bias_buf);
-	status |= cl_data->knl_conv.setArg(NUM_OF_ARGS+1, this->weights_buf);
-	status |= cl_data->knl_conv.setArg(NUM_OF_ARGS+2, this->data_buf);
-	status |= cl_data->knl_conv.setArg(NUM_OF_ARGS+3, this->output_buf);
+	status = cl_data->knl_conv.setArg(45, this->bias_buf);
+	status |= cl_data->knl_conv.setArg(46, this->weights_buf);
+	status |= cl_data->knl_conv.setArg(47, this->data_buf);
+	status |= cl_data->knl_conv.setArg(48, this->output_quant_buf);
+	status |= cl_data->knl_conv.setArg(49, this->output_raw_buf);
 	checkError(status, "Failed to set buffer args");
 
-	status = cl_data->que_conv.enqueueMigrateMemObjects({this->output_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
+	status = cl_data->que_conv.enqueueMigrateMemObjects({this->output_quant_buf,this->output_raw_buf}, CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED);
 	checkError(status, "Failed to migrate buffer");
+
 	cl_data->que_conv.finish();
 }
 
 
 void ConvTask::enqueDataAndWait(ocl_data_* cl_data)
 {
-
 	cl_int status;
 	status = cl_data->que_conv.enqueueWriteBuffer(this->weights_buf, CL_FALSE, 0, this->cur_layer_data.weight_buf_size * sizeof(DPTYPE), this->cur_layer_data.weight, nullptr, nullptr);
 	checkError(status, "Failed to transfer weight");
@@ -91,12 +130,13 @@ void ConvTask::enqueDataAndWait(ocl_data_* cl_data)
 	status = cl_data->que_conv.enqueueWriteBuffer(this->data_buf, CL_FALSE, 0, this->cur_layer_data.in_buf_size * sizeof(DPTYPE), this->cur_layer_data.data, nullptr, nullptr);
 	checkError(status, "Failed to transfer input image");
 	cl_data->que_conv.finish();
-
 }
 void ConvTask::readDataAndWait(ocl_data_* cl_data)
 {
 	cl_int status;
-	status = cl_data->que_conv.enqueueReadBuffer(this->output_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output, nullptr, nullptr);
+	status = cl_data->que_conv.enqueueReadBuffer(this->output_quant_buf, CL_FALSE, 0, sizeof(DPTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output_quant, nullptr, nullptr);
+	checkError(status, "Failed to set transfer output data");
+	status = cl_data->que_conv.enqueueReadBuffer(this->output_raw_buf, CL_FALSE, 0, sizeof(MACTYPE) * this->cur_layer_data.out_buf_size, this->cur_layer_data.output_raw, nullptr, nullptr);
 	checkError(status, "Failed to set transfer output data");
 	cl_data->que_conv.finish();
 }
@@ -158,6 +198,11 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.S_L2 = param.S_L1*param.L1_TILENUM_S;
 		param.W_in_L2 = param.W_L2 + param.S_L2-1; // TILENUM_W + TILENUM_R/2. and don't need thinking about stride
 		param.H_in_L2 = param.H_L2 + param.R_L2-1;
+
+		//TODO setting below
+		param.Stride = 1;
+		param.Padding = 0;
+		param.scale_factor = 1.;
 	}
 	else {
 		param.K = layer_info.K;
@@ -209,6 +254,11 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.L2_TILENUM_H = layer_info.L2H;
 		param.L2_TILENUM_R = layer_info.L2R;
 		param.L2_TILENUM_S = layer_info.L2S;
+
+		//TODO setting
+		param.Stride = 1;
+		param.Padding = 0;
+		param.scale_factor = 1.;
 	}
 
 	printf("=>Kernel Mapping Info\n");
@@ -328,8 +378,11 @@ void ConvTask::reorderInputs() {
 void ConvTask::reorderOutput()
 {
 	const CONV_PARAM param = this->cur_layer_data.layer_param;
-	MACTYPE* out_origin = new MACTYPE[this->cur_layer_data.out_buf_size]();
-	memcpy(out_origin, this->cur_layer_data.output, this->cur_layer_data.out_buf_size * sizeof(MACTYPE));
+
+	DPTYPE* out_quant_origin = new DPTYPE[this->cur_layer_data.out_buf_size]();
+	MACTYPE* out_raw_origin = new MACTYPE[this->cur_layer_data.out_buf_size]();
+	memcpy(out_quant_origin, this->cur_layer_data.output_quant, this->cur_layer_data.out_buf_size * sizeof(DPTYPE));
+	memcpy(out_raw_origin, this->cur_layer_data.output_raw, this->cur_layer_data.out_buf_size * sizeof(MACTYPE));
 	for (int kmo = 0; kmo < param.L2_TILENUM_K; kmo++) {
 	 for (int hmo = 0; hmo < param.L2_TILENUM_H; hmo++) {
 	  for (int wmo = 0; wmo < param.L2_TILENUM_W; wmo++) {
@@ -340,7 +393,8 @@ void ConvTask::reorderOutput()
 		int w = wo * ARRAY_W + wi;
 		unsigned int origin_khw = ((kmo*(param.K_L2)+k)*param.H*param.W + (hmo*param.H_L2+h)*param.W + (wmo*param.W_L2+w));
 		unsigned int device_khw = ((hmo*param.H_L2+h)*(param.W/ARRAY_W)*param.K + (wmo*param.W_L2/ARRAY_W+wo)*param.K + (kmo*(param.K_L2)+k))*ARRAY_W + wi;
-		this->cur_layer_data.output[origin_khw] = out_origin[device_khw];
+		this->cur_layer_data.output_quant[origin_khw] = out_quant_origin[device_khw];
+		this->cur_layer_data.output_raw[origin_khw] = out_raw_origin[device_khw];
 	      }
 	     }
 	    }
@@ -348,7 +402,8 @@ void ConvTask::reorderOutput()
 	  }
 	 }
 	}
-	delete out_origin;
+	delete out_quant_origin;
+	delete out_raw_origin;
 }
 
 void ConvTask::sparsify(void* _data_void, int _len, float _sparsity)
@@ -410,6 +465,7 @@ void ConvTask::computeGold()
 							int data_ptr = c*param.H_in*param.W_in + (h+r)*param.W_in + (w+s);
 							int weight_ptr = k*param.C*param.R*param.S + c*param.R*param.S + r*param.S + s;
 							this->cur_layer_data.gold[output_ptr] += this->cur_layer_data.data[data_ptr] * this->cur_layer_data.weight[weight_ptr];
+							this->cur_layer_data.gold_quant[output_ptr] += 0; //TODO implementation
 						}
 					}
 				}
@@ -426,12 +482,19 @@ int ConvTask::score()
 	for(int wh=0;wh<param.H*param.W;wh++) {
 		for (unsigned int k = 0; k < param.K; k++) {
 			unsigned int ptr = k*param.H*param.W + wh;
-			int out = this->cur_layer_data.output[ptr];
-			if(out != this->cur_layer_data.gold[ptr])
+			DPTYPE out_quant = this->cur_layer_data.output_quant[ptr];
+			MACTYPE out_raw = this->cur_layer_data.output_raw[ptr];
+			if(out_raw != this->cur_layer_data.gold[ptr])
 			{
-				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out, this->cur_layer_data.gold[ptr], cnt);
+				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out_raw, this->cur_layer_data.gold[ptr], cnt);
 				assert_error = true;
 			}
+			//TODO implementation
+			/*if(out_quant != this->cur_layer_data.gold_quant[ptr])
+			{
+				printf("Error(%d or %d (CHW:%d,%d,%d)): %d (gold %d), # of correct: %d\n", ptr, ptr, k, wh/param.W, wh%param.W, out_quant, this->cur_layer_data.gold[ptr], cnt);
+				assert_error = true;
+			}*/
 			cnt ++;
 		}
 	}
@@ -443,8 +506,10 @@ void ConvTask::cleanup() {
 	alignedFree(this->cur_layer_data.weight);
 	alignedFree(this->cur_layer_data.data);
 	alignedFree(this->cur_layer_data.bias);
-	alignedFree(this->cur_layer_data.output);
-	alignedFree(this->cur_layer_data.weight_original);
-	alignedFree(this->cur_layer_data.data_original);
+	alignedFree(this->cur_layer_data.output_raw);
+	alignedFree(this->cur_layer_data.output_quant);
+	free(this->cur_layer_data.weight_original);
+	free(this->cur_layer_data.data_original);
 	alignedFree(this->cur_layer_data.gold);
+	alignedFree(this->cur_layer_data.gold_quant);
 }

@@ -13,16 +13,21 @@ DEFINE+= -D PORT_C=2
 DEFINE+= -D PORT_K=2
 DEFINE+= -D BLOCK_SIZE=4
 
-DEFINE+= -D WEIGHT_L1_SIZE=27000
-DEFINE+= -D DATA_L1_SIZE=49700
+DEFINE+= -D WEIGHT_L1_SIZE=270
+DEFINE+= -D DATA_L1_SIZE=497
 
 DEFINE+= -D BIAS_L2_SIZE=128
-DEFINE+= -D WEIGHT_L2_SIZE=43200
-DEFINE+= -D DATA_L2_SIZE=78400
-DEFINE+= -D OUTPUT_L2_SIZE=35840
+DEFINE+= -D WEIGHT_L2_SIZE=4320
+DEFINE+= -D DATA_L2_SIZE=7840
+DEFINE+= -D OUTPUT_L2_SIZE=3584
 
 
-PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+ifeq ($(TARGET),hw)
+	PROFILE=
+else
+	PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
+endif
+#PROFILE=--profile_kernel data:all:all:all --profile_kernel stall:all:all # move to config_sp
 DEBUG=-g
 
 xrt_path = $(XILINX_XRT)

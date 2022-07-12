@@ -3,7 +3,8 @@ usage
 
 	make sw_emu  #for SW emulation
 	make hw_emu  #for HW emulation
-	make hw  #for HW synthesis & test
+	make fpga  #for HW synthesis & test
+	[@ case directory] make debug #to run gdb
 
 Details
 =========
@@ -30,7 +31,7 @@ Task 추가 방법
 Case 추가 방법
 =========
 * 한번 작성되어 검증된 testcase는 효율적 유지보수 위해 최대한 수정하지 않는 것이 원칙?
-1. 추가하고자 하는 test case 이름으로 기존 test case 폴더를 복사
+1. 추가하고자 하는 test case 이름으로 기존 test case 폴더를 복사. 폴더명은 ```case_```로 시작하도록 작성할 것(Makefile에서 이를 가정함).
 2. 복사한 폴더의 ```Makefile``` 수정
 	* Build HLS Kernel: 필요한 task에서 사용할 kernel object(.xo)를 빌드하도록 수정, 이를 accelerator.xclbin에서 링크
 	* Build TestBench - Specific: 필요한 task의 object(.o)를 빌드하도록 수정, 이를 testbench 실행파일에서 링크

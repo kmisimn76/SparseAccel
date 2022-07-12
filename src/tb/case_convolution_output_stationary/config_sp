@@ -9,7 +9,8 @@ debug=1
 sp=Convolution_1.bias_in:DDR[1]
 sp=Convolution_1.weight_in:DDR[1]
 sp=Convolution_1.data_in:DDR[1]
-sp=Convolution_1.conv_out:DDR[1]
+sp=Convolution_1.conv_out_quant:DDR[1]
+sp=Convolution_1.conv_out_raw:DDR[1]
 
 #nk=<kernal_name>:#:<cu_name1>.<cu_name2>...<cu_name#>
 #nk=DataLoad:1:DataLoad_1

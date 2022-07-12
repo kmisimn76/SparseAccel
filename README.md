@@ -8,3 +8,7 @@ Directory info
 * common : used library
 * src : accelerator code
 * runcase : Experiment cases, build directory
+
+
+## Must do
+cp pre-commit .git/hooks/
