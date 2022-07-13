@@ -1,0 +1,378 @@
+make -C case_conv_sparse_output_stationary TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_output_stationary'
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584      -I../../../common -I../.. -I.. -I../../device -c ././ConvTestBench.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584      -I../../../common -I../.. -I.. -I../../device -c ./../TestEnvironment.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584      -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/ConvSparseOutputStationaryTask.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584      -I../../../common -I../.. -I.. -I../../device -c ../../../common/timer.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584      -I../../../common -I../.. -I.. -I../../device -c ../../../common/ocl_util.cpp
+../../../common/ocl_util.cpp: In function ‘_cl_program* ocl_util::createProgramFromFile(cl_context, const char*, _cl_device_id* const*, unsigned int)’:
+../../../common/ocl_util.cpp:410:22: warning: ignoring attributes on template argument ‘cl_int {aka int}’ [-Wignored-attributes]
+   scoped_array<cl_int> binary_status(num_devices);
+                      ^
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=270 -D DATA_L1_SIZE=497 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=4320 -D DATA_L2_SIZE=7840 -D OUTPUT_L2_SIZE=3584   ConvTestBench.o TestEnvironment.o ConvSparseOutputStationaryTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_output_stationary)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 47431
+UID: 1002
+[Wed Jul 13 03:10:49 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_output_stationary/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_output_stationary'
+.
+.
+.
+   Test Target: case_conv_sparse_output_stationary
+       TEST PASSED! :)
+
+
+
+make -C case_conv_sparse_weight_stationary TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary'
+faketime -f "-1y"  v++ --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -c -k Convolution -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512  --config config_sp -I../../../common -I../.. -I.. -I../../device -o'conv.sw_emu.xo' ./../../device/SparseSIMD_Weight_Stationary.cpp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/build.sw_emu/reports/conv.sw_emu
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/log.sw_emu/conv.sw_emu
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:35005
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/conv.sw_emu.xo.compile_summary, at Tue Jul 13 12:11:24 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:11:24 2021
+Running Rule Check Server on port:40889
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/build.sw_emu/reports/conv.sw_emu/v++_compile_conv.sw_emu_guidance.html', at Tue Jul 13 12:11:25 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-242] Creating kernel: 'Convolution'
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-586] Created conv.sw_emu.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/conv.sw_emu.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 49s
+INFO: [v++ 60-1653] Closing dispatch client.
+faketime -f "-1y"  v++ -l --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512  conv.sw_emu.xo -o'accelerator.sw_emu.xclbin' --config config_sp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/build.sw_emu/reports/link
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/log.sw_emu/link
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:34479
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/accelerator.sw_emu.xclbin.link_summary, at Tue Jul 13 12:12:17 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:12:17 2021
+Running Rule Check Server on port:46165
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html', at Tue Jul 13 12:12:18 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-629] Linking for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-645] kernel flags are '-g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72 -D OUTPUT_L1_SIZE=72 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576 -D OUTPUT_L2_SIZE=512 -I /home/sumin/workspace/FPGA/SparseAccel/common -I /home/sumin/workspace/FPGA/SparseAccel/src -I /home/sumin/workspace/FPGA/SparseAccel/src/tb -I /home/sumin/workspace/FPGA/SparseAccel/src/device -g'
+INFO: [v++ 60-586] Created accelerator.sw_emu.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html
+	Steps Log File: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/log.sw_emu/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/accelerator.sw_emu.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 23s
+INFO: [v++ 60-1653] Closing dispatch client.
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512       -I../../../common -I../.. -I.. -I../../device -c ././ConvTestBench.cpp
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512       -I../../../common -I../.. -I.. -I../../device -c ./../TestEnvironment.cpp
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512       -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/ConvSparseWeightStationaryTask.cpp
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512       -I../../../common -I../.. -I.. -I../../device -c ../../../common/timer.cpp
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512       -I../../../common -I../.. -I.. -I../../device -c ../../../common/ocl_util.cpp
+../../../common/ocl_util.cpp: In function ‘_cl_program* ocl_util::createProgramFromFile(cl_context, const char*, _cl_device_id* const*, unsigned int)’:
+../../../common/ocl_util.cpp:410:22: warning: ignoring attributes on template argument ‘cl_int {aka int}’ [-Wignored-attributes]
+   scoped_array<cl_int> binary_status(num_devices);
+                      ^
+g++ -g -D ARRAY_K=16 -D ARRAY_C=16 -D BLOCK_SIZE=4 -D PORT_NUM=4 -D DATA_L1_SIZE=72  -D OUTPUT_L1_SIZE=72  -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=2304 -D DATA_L2_SIZE=576  -D OUTPUT_L2_SIZE=512    ConvTestBench.o TestEnvironment.o ConvSparseWeightStationaryTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 47934
+UID: 1002
+[Wed Jul 13 03:12:42 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_weight_stationary'
+.
+.
+.
+   Test Target: case_conv_sparse_weight_stationary
+       TEST PASSED! :)
+
+
+
+make -C case_maxpool TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool'
+faketime -f "-1y"  v++ --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -c -k maxPool -D VEC_SIZE=8 --config config_sp -I../../../common -I../.. -I.. -I../../device -o'maxpool.sw_emu.xo' ./../../device/maxPool.cpp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/build.sw_emu/reports/maxpool.sw_emu
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/log.sw_emu/maxpool.sw_emu
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:46823
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/maxpool.sw_emu.xo.compile_summary, at Tue Jul 13 12:13:55 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:13:55 2021
+Running Rule Check Server on port:41763
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/build.sw_emu/reports/maxpool.sw_emu/v++_compile_maxpool.sw_emu_guidance.html', at Tue Jul 13 12:13:56 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-242] Creating kernel: 'maxPool'
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-586] Created maxpool.sw_emu.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/maxpool.sw_emu.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 30s
+INFO: [v++ 60-1653] Closing dispatch client.
+faketime -f "-1y"  v++ -l --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -D VEC_SIZE=8 maxpool.sw_emu.xo -o'accelerator.sw_emu.xclbin' --config config_sp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/build.sw_emu/reports/link
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/log.sw_emu/link
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:35281
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/accelerator.sw_emu.xclbin.link_summary, at Tue Jul 13 12:14:28 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:14:28 2021
+Running Rule Check Server on port:43391
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html', at Tue Jul 13 12:14:29 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-629] Linking for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-645] kernel flags are '-g -D VEC_SIZE=8 -I /home/sumin/workspace/FPGA/SparseAccel/common -I /home/sumin/workspace/FPGA/SparseAccel/src -I /home/sumin/workspace/FPGA/SparseAccel/src/tb -I /home/sumin/workspace/FPGA/SparseAccel/src/device -g'
+INFO: [v++ 60-586] Created accelerator.sw_emu.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html
+	Steps Log File: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/log.sw_emu/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/accelerator.sw_emu.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 23s
+INFO: [v++ 60-1653] Closing dispatch client.
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ././MaxPoolTestBench.cpp
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../TestEnvironment.cpp
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/MaxPoolTask.cpp
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ../../../common/timer.cpp
+g++ -g -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ../../../common/ocl_util.cpp
+../../../common/ocl_util.cpp: In function ‘_cl_program* ocl_util::createProgramFromFile(cl_context, const char*, _cl_device_id* const*, unsigned int)’:
+../../../common/ocl_util.cpp:410:22: warning: ignoring attributes on template argument ‘cl_int {aka int}’ [-Wignored-attributes]
+   scoped_array<cl_int> binary_status(num_devices);
+                      ^
+g++ -g -D VEC_SIZE=8   MaxPoolTestBench.o TestEnvironment.o MaxPoolTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_maxpool_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 48436
+UID: 1002
+[Wed Jul 13 03:14:53 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_maxpool'
+.
+.
+.
+   Test Target: case_maxpool
+       TEST PASSED! :)
+
+
+
+make -C case_conv_sparse_out_stat_then_maxpool TARGET=sw_emu
+make[1]: Entering directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool'
+faketime -f "-1y"  v++ --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -c -k Convolution -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8 --config config_sp -I../../../common -I../.. -I.. -I../../device -o'conv.sw_emu.xo' ./../../device/SparseSIMD_Output_Stationary.cpp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/conv.sw_emu
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/log.sw_emu/conv.sw_emu
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:37811
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/conv.sw_emu.xo.compile_summary, at Tue Jul 13 12:15:06 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:15:06 2021
+Running Rule Check Server on port:36959
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/conv.sw_emu/v++_compile_conv.sw_emu_guidance.html', at Tue Jul 13 12:15:07 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-242] Creating kernel: 'Convolution'
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-586] Created conv.sw_emu.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/conv.sw_emu.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 40s
+INFO: [v++ 60-1653] Closing dispatch client.
+faketime -f "-1y"  v++ --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -c -k maxPool -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8 --config config_sp -I../../../common -I../.. -I.. -I../../device -o'maxpool.sw_emu.xo' ./../../device/maxPool.cpp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ compile can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/maxpool.sw_emu
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/log.sw_emu/maxpool.sw_emu
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:44279
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/maxpool.sw_emu.xo.compile_summary, at Tue Jul 13 12:15:48 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:15:48 2021
+Running Rule Check Server on port:36079
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/maxpool.sw_emu/v++_compile_maxpool.sw_emu_guidance.html', at Tue Jul 13 12:15:49 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-585] Compiling for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-242] Creating kernel: 'maxPool'
+INFO: [v++ 60-594] Finished kernel compilation
+INFO: [v++ 60-586] Created maxpool.sw_emu.xo
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/maxpool.sw_emu.xo.compile_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 30s
+INFO: [v++ 60-1653] Closing dispatch client.
+faketime -f "-1y"  v++ -l --profile_kernel data:all:all:all --profile_kernel stall:all:all -t sw_emu  --platform xilinx_u200_xdma_201830_2 --save-temps -g --log_dir ./log.sw_emu --temp_dir ./build.sw_emu -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8 conv.sw_emu.xo maxpool.sw_emu.xo -o'accelerator.sw_emu.xclbin' --config config_sp -j 12
+Option Map File Used: '/home/sumin/tools/Xilinx/Vitis/2020.1/data/vitis/vpp/optMap.xml'
+
+****** v++ v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/link
+	Log files: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/log.sw_emu/link
+INFO: [v++ 60-1657] Initializing dispatch client.
+Running Dispatch Server on port:34773
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/accelerator.sw_emu.xclbin.link_summary, at Tue Jul 13 12:16:21 2021
+INFO: [v++ 60-1316] Initiating connection to rulecheck server, at Tue Jul 13 12:16:21 2021
+Running Rule Check Server on port:37255
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html', at Tue Jul 13 12:16:22 2021
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [v++ 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+INFO: [v++ 60-1302] Platform 'xilinx_u200_xdma_201830_2.xpfm' has been explicitly enabled for this release.
+INFO: [v++ 60-629] Linking for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u200_xdma_201830_2
+WARNING: [v++ 60-889] User-specified kernel frequency for ID 0 is the same as the default frequency 300 MHz, so it will be ignored
+INFO: [v++ 60-645] kernel flags are '-g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8 -I /home/sumin/workspace/FPGA/SparseAccel/common -I /home/sumin/workspace/FPGA/SparseAccel/src -I /home/sumin/workspace/FPGA/SparseAccel/src/tb -I /home/sumin/workspace/FPGA/SparseAccel/src/device -g'
+INFO: [v++ 60-645] kernel flags are '-g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8 -I /home/sumin/workspace/FPGA/SparseAccel/common -I /home/sumin/workspace/FPGA/SparseAccel/src -I /home/sumin/workspace/FPGA/SparseAccel/src/tb -I /home/sumin/workspace/FPGA/SparseAccel/src/device -g'
+INFO: [v++ 60-586] Created accelerator.sw_emu.xclbin
+INFO: [v++ 60-1307] Run completed. Additional information can be found in:
+	Guidance: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/build.sw_emu/reports/link/v++_link_accelerator.sw_emu_guidance.html
+	Steps Log File: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/log.sw_emu/link/link.steps.log
+
+INFO: [v++ 60-2343] Use the vitis_analyzer tool to visualize and navigate the relevant reports. Run the following command. 
+    vitis_analyzer /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/accelerator.sw_emu.xclbin.link_summary 
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 23s
+INFO: [v++ 60-1653] Closing dispatch client.
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ././ConvAndMaxPoolTestBench.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../TestEnvironment.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/ConvSparseOutputStationaryTask.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ./../Tasks/MaxPoolTask.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ../../../common/timer.cpp
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8      -I../../../common -I../.. -I.. -I../../device -c ../../../common/ocl_util.cpp
+../../../common/ocl_util.cpp: In function ‘_cl_program* ocl_util::createProgramFromFile(cl_context, const char*, _cl_device_id* const*, unsigned int)’:
+../../../common/ocl_util.cpp:410:22: warning: ignoring attributes on template argument ‘cl_int {aka int}’ [-Wignored-attributes]
+   scoped_array<cl_int> binary_status(num_devices);
+                      ^
+g++ -g -D ARRAY_K=32 -D ARRAY_W=8 -D PORT_C=2 -D PORT_K=2 -D BLOCK_SIZE=4 -D WEIGHT_L1_SIZE=27000 -D DATA_L1_SIZE=49700 -D BIAS_L2_SIZE=128 -D WEIGHT_L2_SIZE=43200 -D DATA_L2_SIZE=78400 -D OUTPUT_L2_SIZE=35840 -D VEC_SIZE=8   ConvAndMaxPoolTestBench.o TestEnvironment.o ConvSparseOutputStationaryTask.o MaxPoolTask.o timer.o ocl_util.o -o testbench -L/opt/xilinx/xrt/lib -lOpenCL -lpthread -lrt -lstdc++ 
+emconfigutil --platform xilinx_u200_xdma_201830_2 --od .
+
+****** configutil v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+INFO: [ConfigUtil 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u200_xdma_201830_2/xilinx_u200_xdma_201830_2.xpfm
+INFO: [ConfigUtil 60-1578]   This platform contains Device Support Archive '/opt/xilinx/platforms/xilinx_u200_xdma_201830_2/hw/xilinx_u200_xdma_201830_2.dsa'
+emulation configuration file `emconfig.json` is created in . directory 
+XCL_EMULATION_MODE=sw_emu ./testbench accelerator.sw_emu.xclbin ./test_layer_info.txt > print_log_tb.txt || (echo "\n\n\n           test failed.... :( \n      @(/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool)\n\n\n"; sh -c 'exit 1')
+XRT build version: 2.9.317
+Build hash: b0230e59e22351fb957dc46a6e68d7560e5f630c
+Build date: 2021-03-13 05:10:45
+Git branch: 2020.2_PU1
+PID: 49142
+UID: 1002
+[Wed Jul 13 03:16:48 2022 GMT]
+HOST: Summit
+EXE: /home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool/testbench
+[XRT] WARNING: The data_transfer_trace setting of coarse is not supported in emulation. Fine will be used.
+make[1]: Leaving directory '/home/sumin/workspace/FPGA/SparseAccel/src/tb/case_conv_sparse_out_stat_then_maxpool'
+.
+.
+.
+   Test Target: case_conv_sparse_out_stat_then_maxpool
+       TEST PASSED! :)
+
+
+
