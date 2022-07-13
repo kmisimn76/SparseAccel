@@ -22,6 +22,8 @@ typedef struct maxpool_param_ {
 	unsigned int RS;
 	unsigned int stride;
 	unsigned int padding_out;
+
+	float sparsity;
 }MaxPoolParam;
 
 class MaxPoolLayerData {

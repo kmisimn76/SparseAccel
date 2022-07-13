@@ -88,6 +88,8 @@ typedef struct {
 	uint Stride;
 	uint Padding;
 	float scale_factor;
+
+	float sparsity;
 } CONV_PARAM;
 class ConvLayerData {
 	public:

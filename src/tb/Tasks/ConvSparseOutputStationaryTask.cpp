@@ -154,6 +154,7 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 	CONV_PARAM param;
 
 	if(layer_info.is_test_layer){
+		layer_info.density = 0.2;
 		param.K = 32;
 		param.C = 32;
 		param.H = 16;
@@ -203,6 +204,8 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.Stride = 1;
 		param.Padding = 0;
 		param.scale_factor = 1.;
+
+		param.sparsity = 0.8;
 	}
 	else {
 		param.K = layer_info.K;
@@ -259,6 +262,8 @@ void ConvTask::setLayerParamAndBufSize(void* conv_layer_info)
 		param.Stride = 1;
 		param.Padding = 0;
 		param.scale_factor = 1.;
+
+		param.sparsity = 1.0 - layer_info.density;
 	}
 
 	printf("=>Kernel Mapping Info\n");
@@ -305,9 +310,8 @@ void ConvTask::setSyntheticInput(bool random, bool sparsifying) {
 	}
 
 	if(sparsifying) {
-		float sparsity = 0.8; //TODO: automation
 		printf("=>Data sparsifying");
-		sparsify(this->cur_layer_data.data, param.C*param.H_in*param.W_in, sparsity);
+		sparsify(this->cur_layer_data.data, param.C*param.H_in*param.W_in, param.sparsity);
 		//printf("=>Weight sparsifying");
 		//sparsify(test_env.weight, param.K*param.C*param.R*param.S, sparsity);
 	}
