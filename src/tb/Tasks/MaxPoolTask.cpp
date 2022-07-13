@@ -103,6 +103,8 @@ void MaxPoolTask::setLayerParamAndBufSize(void* maxpool_layer_info)
 		param.RS    = 2;
 		param.stride= 2;
 		param.padding_out = 0;
+
+		param.sparsity = 0.8;
 	}
 	else {
 		param.C     = layer_info.C;
@@ -111,6 +113,9 @@ void MaxPoolTask::setLayerParamAndBufSize(void* maxpool_layer_info)
 		param.RS    = layer_info.RS;
 		param.stride= layer_info.stride;
 		param.padding_out = layer_info.padding_out;
+
+		// TODO automation
+		param.sparsity = 0.8;
 	}
 
 	printf("=>MaxPool Layer Info\n");
@@ -146,9 +151,8 @@ void MaxPoolTask::setSyntheticInput(bool random, bool sparsifying) {
 	}
 
 	if(sparsifying) {
-		float sparsity = 0.8; //TODO: automation
 		printf("=>Data sparsifying");
-		sparsify(this->cur_layer_data.data, param.C*param.WH_in*param.WH_in, sparsity);
+		sparsify(this->cur_layer_data.data, param.C*param.WH_in*param.WH_in, param.sparsity);
 	}
 
 	memcpy(this->cur_layer_data.data_original, this->cur_layer_data.data, sizeof(DPTYPE)*this->cur_layer_data.in_buf_size);
