@@ -5,6 +5,7 @@ FAKETIME=faketime -f "-1y"
 
 #SW Emulation list
 SW_EMU_LIST =
+SW_EMU_LIST += sw_emu_conv_dense_output_stationary
 SW_EMU_LIST += sw_emu_conv_dense_weight_stationary
 SW_EMU_LIST += sw_emu_conv_sparse_output_stationary
 SW_EMU_LIST += sw_emu_conv_sparse_weight_stationary
@@ -13,6 +14,7 @@ SW_EMU_LIST += sw_emu_conv_sparse_out_stat_then_maxpool
 
 #HW Emulation list
 HW_EMU_LIST =
+HW_EMU_LIST += hw_emu_conv_dense_output_stationary
 HW_EMU_LIST += hw_emu_conv_dense_weight_stationary
 HW_EMU_LIST += hw_emu_conv_sparse_output_stationary
 HW_EMU_LIST += hw_emu_conv_sparse_weight_stationary
@@ -21,6 +23,7 @@ HW_EMU_LIST += hw_emu_conv_sparse_out_stat_then_maxpool
 
 #FPGA running list
 FPGA_LIST =
+#FPGA_LIST += fpga_conv_dense_output_stationary
 #FPGA_LIST += fpga_conv_dense_weight_stationary
 FPGA_LIST += fpga_conv_sparse_output_stationary
 #FPGA_LIST += fpga_conv_sparse_weight_stationary
@@ -30,6 +33,7 @@ FPGA_LIST += fpga_conv_sparse_output_stationary
 
 #pre-commit sw emulation list
 PRE_COMMIT_LIST =
+PRE_COMMIT_LIST += sw_emu_conv_dense_output_stationary
 PRE_COMMIT_LIST += sw_emu_conv_dense_weight_stationary
 PRE_COMMIT_LIST += sw_emu_conv_sparse_output_stationary
 PRE_COMMIT_LIST += sw_emu_conv_sparse_weight_stationary
@@ -75,6 +79,7 @@ fpga_%: case_%
 
 
 clean:
+	$(MAKE) -C case_conv_dense_output_stationary clean
 	$(MAKE) -C case_conv_dense_weight_stationary clean
 	$(MAKE) -C case_conv_sparse_weight_stationary clean
 	$(MAKE) -C case_conv_sparse_output_stationary clean
