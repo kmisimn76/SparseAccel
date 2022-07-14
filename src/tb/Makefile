@@ -76,7 +76,7 @@ fpga_%: case_%
 
 clean:
 	$(MAKE) -C case_conv_dense_weight_stationary clean
-	$(MAKE) -C case_convolution_weight_stationary clean
-	$(MAKE) -C case_convolution_output_stationary clean
+	$(MAKE) -C case_conv_sparse_weight_stationary clean
+	$(MAKE) -C case_conv_sparse_output_stationary clean
 	$(MAKE) -C case_maxpool clean
-	$(MAKE) -C case_conv_out_stat_then_maxpool clean
+	$(MAKE) -C case_conv_sparse_out_stat_then_maxpool clean
